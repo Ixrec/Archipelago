@@ -1,6 +1,14 @@
+import os
 from typing import Callable, Dict, NamedTuple, Optional
 
 from BaseClasses import Item, ItemClassification, MultiWorld
+
+from . import jsonc
+
+filename = os.path.join(os.path.dirname(__file__), 'outer_wilds_logic.jsonc')
+with open(filename) as jsonc_data:
+    logic = jsonc.load(jsonc_data)
+    print("loaded .jsonc logic file, ", len(logic.items()))
 
 
 class OuterWildsItem(Item):

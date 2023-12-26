@@ -1,0 +1,76 @@
+[
+    // we use a "Space" region to express that the Spaceship lets us go between all the major regions
+    // as well as access a handful of warp pad-less locations like Attlerock and Hollow's Lantern
+
+    { "from": "Hourglass Twins",    "to": "Space", "requires": [ "Spaceship" ] },
+    { "from": "Timber Hearth",      "to": "Space", "requires": [ "Spaceship" ] },
+    { "from": "Brittle Hollow",     "to": "Space", "requires": [ "Spaceship" ] },
+    { "from": "White Hole Station", "to": "Space", "requires": [ "Spaceship" ] },
+    { "from": "Giant's Deep",       "to": "Space", "requires": [ "Spaceship" ] },
+    { "from": "Space", "to": "Hourglass Twins", "requires": [] },
+    { "from": "Space", "to": "Timber Hearth", "requires": [] },
+    { "from": "Space", "to": "Brittle Hollow", "requires": [] },
+    { "from": "Space", "to": "White Hole Station", "requires": [] },
+    { "from": "Space", "to": "Giant's Deep", "requires": [] },
+
+    // the only astral body you can't land on without an item
+    { "from": "Quantum Moon", "to": "Space", "requires": [ "Spaceship" ] },
+    { "from": "Space", "to": "Quantum Moon", "requires": [ "Imaging Rule" ] },
+
+    // these will become dynamic after we implement random spawn
+    { "from": "Menu", "to": "Timber Hearth Village", "requires": [] },
+    { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ "Spaceship" ] },
+
+    // you can simply fall into the black hole inside BH instead of using the warp pad
+    { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [] },
+
+    // you can simply jump off the ceiling and fall to the Hanging City
+    { "from": "Black Hole Forge", "to": "Brittle Hollow", "requires": [] },
+
+    // Dark Bramble has the most complex logic in the base game, enough so
+    // that we benefit from representing it as two regions in the logic:
+    // - the locations you can check by tracking Feldspar, and
+    // - the locations you can check by tracking the Nomai escape pod and vessel
+    {
+        "from": "Space",
+        "to": "Dark Bramble - Feldspar",
+        "requires": [
+            // this particular check doesn't have "guard" anglerfish in vanilla,
+            // but DB rando / fog warp rando might make it necessary
+            "Silent Running Mode",
+            { "anyOf": [
+                // follow Feldspar's signal on the OW Ventures frequency, or
+                "Signalscope",
+                // launch a Scout into the DB seed back on TH
+                // since DB can only be reached by Spaceship, we don't need a "can reach TH" condition here
+                "Scout"
+            ] }
+        ]
+    },
+    {
+        "from": "Space",
+        "to": "Dark Bramble - Nomai",
+        "requires": [
+            // for the "guard" anglerfish
+            "Silent Running Mode",
+            // to follow the Escape Pod 3 signal
+            "Signalscope",
+            "Distress Beacon Frequency",
+        ]
+    },
+
+    // these will become dynamic after we implement warp pad randomization
+    { "from": "Hourglass Twins", "to": "Sun Station", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Hourglass Twins", "to": "Ash Twin Interior", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Hourglass Twins", "to": "Timber Hearth", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Hourglass Twins", "to": "Black Hole Forge", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Hourglass Twins", "to": "Giant's Deep", "requires": [ "Nomai Warp Codes" ] },
+
+    { "from": "Sun Station", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Ash Twin Interior", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Timber Hearth", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Black Hole Forge", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Giant's Deep", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
+
+    { "from": "White Hole Station", "to": "Brittle Hollow", "requires": [ "Nomai Warp Codes" ] },
+]

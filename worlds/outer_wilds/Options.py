@@ -17,13 +17,7 @@ class DeathLink(Toggle):
     display_name = "Death Link"
 
 
-class Textsanity(Toggle):
-    """Every line of Nomai text is a check. You've been warned."""
-    display_name = "Textsanity"
-
-
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     goal: Goal
     death_link: DeathLink
-    textsanity: Textsanity

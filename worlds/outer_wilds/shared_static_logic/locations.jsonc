@@ -1,0 +1,345 @@
+[
+    // this region will no longer be static when we implement random ship spawn
+    {
+        "address": null, "name": "Enter Your Spaceship", "locked_item": "Spaceship",
+        "region": "Timber Hearth Village"
+    },
+
+    // per AP docs, 1085038250 was randomly chosen from the range of
+    // positive 32-bit integers to avoid conflicts with other AP games
+    {
+        "address": 1085038250, "name": "Sun Station (Projection Stone Text)",
+        // this is a one-location region because it has a warp pad
+        "region": "Sun Station", "requires": [ "Translator" ]
+    },
+
+    // Ember Twin
+    {
+        "address": 1085038251, "name": "ET: High Energy Lab (Upper Text Wall)",
+        "region": "Hourglass Twins", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038252, "name": "ET: Sunless City Shrine (Entrance Text Wall)",
+        "region": "Hourglass Twins", "requires": [ "Translator", "Ghost Matter Wavelength" ]
+    },
+    {
+        "address": 1085038253, "name": "ET: Quantum Moon Locator (Text Scroll)",
+        "region": "Hourglass Twins", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038254, "name": "ET: Fossil (Children's Text)",
+        "region": "Hourglass Twins", "requires": [ "Translator", "Scout" ]
+    },
+    {
+        "address": 1085038255, "name": "ET: Lakebed Cave (Floor Text)",
+        "region": "Hourglass Twins", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038256, "name": "ET: Coleus' Cave (Text Wall)",
+        "region": "Hourglass Twins", "requires": [ "Translator", "Entanglement Rule" ]
+    },
+
+    // Ash Twin
+    {
+        "address": 1085038257, "name": "Enter the Ash Twin Project",
+        // this is a one-location region because it has a warp pad
+        "region": "Ash Twin Interior", "requires": []
+    },
+
+    // Timber Hearth
+    {
+        "address": 1085038258, "name": "TH: Ghost Matter Plaque",
+        "region": "Timber Hearth Village", "requires": []
+    },
+    {
+        "address": 1085038259, "name": "TH: Zero-G Repairs",
+        "region": "Timber Hearth Village", "requires": []
+    },
+    {
+        "address": 1085038260, "name": "TH: Get the Translator from Hal",
+        "region": "Timber Hearth Village", "requires": []
+    },
+    {
+        "address": 1085038261, "name": "TH: Talk to Hornfels",
+        "region": "Timber Hearth Village", "requires": []
+    },
+    {
+        "address": 1085038262, "name": "TH: Bramble Seed Crater",
+        "region": "Timber Hearth", "requires": []
+    },
+    {
+        "address": 1085038263, "name": "TH: Mines (Text Wall)",
+        "region": "Timber Hearth", "requires": [ "Translator" ]
+    },
+
+    // Attlerock
+    {
+        "address": 1085038264, "name": "AR: Signal Locator (Text Wall)",
+        "region": "Space", "requires": [ "Translator" ]
+    },
+
+    // Brittle Hollow
+    {
+        "address": 1085038265, "name": "BH: Southern Observatory (Tornado Text Wall)",
+        "region": "Brittle Hollow", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038266, "name": "BH: Old Settlement Murals",
+        "region": "Brittle Hollow", "requires": []
+    },
+    {
+        "address": 1085038267, "name": "BH: Forge (2nd Scroll)",
+        // this is a one-location region because it has a warp pad
+        "region": "Black Hole Forge",
+        "requires": [
+            { "region": "Brittle Hollow" }, // need to reach the forge controls in Hanging City first
+            "Translator"
+        ]
+    },
+    {
+        "address": 1085038268, "name": "BH: Tower (Top Floor Text Wall)",
+        "region": "Brittle Hollow", "requires": [ "Translator" ]
+    },
+
+    // Hollow's Lantern
+    {
+        "address": 1085038269, "name": "Volcanic Testing Site (Text Wall)",
+        "region": "Space", "requires": [ "Translator" ]
+    },
+
+    // White Hole Station
+    {
+        "address": 1085038270, "name": "WHS (Text Wall)",
+        // this is a one-location region because it has a warp pad
+        "region": "White Hole Station", "requires": [ "Translator" ]
+    },
+
+    // Giant's Deep
+    // Entering the orbital probe cannon, the northern hurricane or the counterclockwise tornado
+    // all require the Spaceship, so those parts of Giant's Deep are in the "Space" region
+    {
+        "address": 1085038271, "name": "GD: Enter the Orbital Probe Cannon",
+        "region": "Space", "requires": []
+    },
+    {
+        "address": 1085038272, "name": "GD: Control Module Logs (Text Wheels)",
+        "region": "Space", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038273, "name": "GD: Bramble Island (Tape Recorder)",
+        "region": "Giant's Deep", "requires": [ "Translator", "Ghost Matter Wavelength" ]
+    },
+    {
+        "address": 1085038274, "name": "GD: Construction Yard (Text Wall)",
+        "region": "Giant's Deep", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038275, "name": "GD: Construction Yard (Text Wall)",
+        "region": "Giant's Deep", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038276, "name": "GD: Tower Rule (Pedestal Text)",
+        "region": "Space", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038277, "name": "GD: Complete the Tower (Text Wall)",
+        "region": "Space", "requires": [ "Translator", "Imaging Rule" ]
+    },
+    {
+        "address": 1085038278, "name": "GD: Enter the Ocean Depths",
+        "region": "Space", "requires": [ "Tornado Aerodynamic Adjustments" ]
+    },
+    {
+        "address": 1085038279, "name": "GD: Enter the Core",
+        "region": "Space", "requires": [ "Tornado Aerodynamic Adjustments", "Electrical Insulation" ]
+    },
+    {
+        // spoiler-free name, as opposed to e.g. "Eye of the Universe Coordinates"
+        "address": 1085038280, "name": "GD: See the Coordinates",
+        "region": "Space", "requires": [ "Tornado Aerodynamic Adjustments", "Electrical Insulation" ]
+    },
+
+    // Interloper
+    {
+        "address": 1085038281, "name": "Frozen Shuttle Log (Text Wheel)",
+        "requires": [
+            { "anyOf": [
+                { "region": "Space" }, // land on the Interloper with your Spaceship, or
+                { "region": "Hourglass Twins" }, // use Ember Twin's Gravity Cannon to recall the shuttle
+            ] },
+            "Translator"
+        ]
+    },
+    {
+        // spoiler-free name, as opposed to e.g. "Interloper Core"
+        "address": 1085038282, "name": "Ruptured Core (Text Wheel)",
+        "region": "Space", "requires": [ "Translator", "Scout", "Ghost Matter Wavelength" ]
+    },
+
+    // Quantum Moon
+    {
+        "address": 1085038283, "name": "QM: Land",
+        "region": "Quantum Moon", "requires": [] // handled by the region connection
+    },
+    {
+        "address": 1085038284, "name": "Solanum's Shuttle Log (Text Wheel)",
+        "requires": [
+            { "anyOf": [
+                { "region": "Quantum Moon" }, // land on the Quantum Moon directly, or
+                { "region": "Brittle Hollow" }, // use Brittle Hollow's Gravity Cannon to recall the shuttle
+            ] },
+            "Translator"
+        ]
+    },
+    {
+        // spoiler-free name, as opposed to e.g. "Meet Solanum"
+        "address": 1085038285, "name": "QM: Explore the Sixth Location",
+        "region": "Quantum Moon", "requires": [ "Entanglement Rule", "Shrine Door Codes" ]
+    },
+
+    // Dark Bramble
+    // see connection logic for more comments
+    {
+        // spoiler-free name, as opposed to e.g. "Frozen Jellyfish Note"
+        "address": 1085038286, "name": "DB: Feldspar's Note",
+        "region": "Dark Bramble - Feldspar", "requires": []
+    },
+    {
+        "address": 1085038287, "name": "DB: Nomai Grave (Text Wheel)",
+        "region": "Dark Bramble - Nomai", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038288, "name": "DB: Find The Vessel",
+        "region": "Dark Bramble - Nomai", "requires": [
+            "Scout" // to launch into the DB seed at Nomai Grave
+        ]
+    },
+
+    // Signalscope Frequencies
+    {
+        "address": 1085038289, "name": "Distress Beacon Frequency",
+        "requires": [
+            "Signalscope",
+            { "anyOf": [
+                { "location": "BH: Escape Pod 1 Signal" },
+                { "location": "ET: Escape Pod 2 Signal" }
+                // since pod 3 logically requires this frequency to reach, it's not part of this rule
+            ] }
+        ]
+    },
+    {
+        "address": 1085038290, "name": "Quantum Fluctuations Frequency",
+        "requires": [
+            "Signalscope",
+            { "anyOf": [
+                { "location": "TH: Museum Shard Signal" },
+                { "location": "TH: Grove Shard Signal" },
+                { "location": "ET: Cave Shard Signal" },
+                { "location": "TH: Grove Shard Signal" },
+                { "location": "BH: Tower Shard Signal" },
+                { "location": "GD: Island Shard Signal" },
+                { "location": "Quantum Moon Signal" }
+            ] }
+        ]
+    },
+    {
+        "address": 1085038291, "name": "Hide & Seek Frequency",
+        // the only signalscope location that doesn't require the signalscope to scan
+        "region": "Timber Hearth Village", "requires": []
+    },
+
+    // Signalscope Signals
+    {
+        "address": 1085038292, "name": "ET: Drum Signal",
+        "region": "Hourglass Twins", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038293, "name": "AR: Whistling Signal",
+        "region": "Space", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038294, "name": "BH: Banjo Signal",
+        "region": "Brittle Hollow", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038295, "name": "GD: Flute Signal",
+        "region": "Giant's Deep", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038296, "name": "DB: Harmonica Signal",
+        "region": "Dark Bramble - Feldspar", "requires": [] // see connection logic
+    },
+    {
+        "address": 1085038297, "name": "TH: Museum Shard Signal",
+        "region": "Timber Hearth Village", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038298, "name": "TH: Grove Shard Signal",
+        "region": "Timber Hearth", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038299, "name": "ET: Cave Shard Signal",
+        "region": "Hourglass Twins", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038300, "name": "BH: Tower Shard Signal",
+        "region": "Brittle Hollow", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038301, "name": "GD: Island Shard Signal",
+        "region": "Space", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038302, "name": "Quantum Moon Signal",
+        "region": "Space", "requires": [
+            "Signalscope",
+            { "anyOf": [
+                // if you have the frequency, you can scan the QM signal from your ship without landing on it
+                "Quantum Fluctuations Frequency",
+                // otherwise you have to land on it to get into "Unidentified Signal Detected" range
+                "Imaging Rule"
+            ] }
+        ]
+    },
+    {
+        "address": 1085038303, "name": "BH: Escape Pod 1 Signal",
+        "region": "Brittle Hollow", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038304, "name": "ET: Escape Pod 2 Signal",
+        "region": "Hourglass Twins", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038305, "name": "DB: Escape Pod 3 Signal",
+        "region": "Dark Bramble - Nomai", "requires": [] // see connection logic
+    },
+    {
+        "address": 1085038306, "name": "TH: Galena's Radio Signal",
+        "region": "Timber Hearth Village", "requires": [ "Signalscope" ]
+    },
+    {
+        "address": 1085038307, "name": "TH: Tephra's Radio Signal",
+        "region": "Timber Hearth Village", "requires": [ "Signalscope" ]
+    },
+
+    // Victory events
+    {
+        "address": null, "name": "Victory - Song of Five", "locked_item": "Victory - Song of Five",
+        "requires": [
+            { "location": "Enter the Ash Twin Project" },
+            "Warp Core Installation Manual",
+            { "location": "DB: Find The Vessel" },
+            "Coordinates"
+        ]
+    },
+    {
+        "address": null, "name": "Victory - Song of Six", "locked_item": "Victory - Song of Six",
+        "requires": [
+            { "location": "QM: Explore the Sixth Location" },
+            { "location": "Enter the Ash Twin Project" },
+            "Warp Core Installation Manual",
+            { "location": "DB: Find The Vessel" },
+            "Coordinates"
+        ]
+    },
+]

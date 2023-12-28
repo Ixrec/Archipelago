@@ -2,7 +2,7 @@
     // this region will no longer be static when we implement random ship spawn
     {
         "address": null, "name": "Enter Your Spaceship", "locked_item": "Spaceship",
-        "region": "Timber Hearth Village"
+        "region": "Timber Hearth Village", "requires": [ "Launch Codes" ]
     },
 
     // per AP docs, 1085038250 was randomly chosen from the range of

@@ -12,9 +12,13 @@ class Goal(Choice):
     option_song_of_six = 1
 
 
-class DeathLink(Toggle):
-    """When you die, everyone dies. Of course the reverse is true too."""
+class DeathLink(Choice):
+    """When you die, everyone dies. Of course the reverse is true too.
+    The "default" option will not include deaths to meditation, the supernova or the time loop ending."""
     display_name = "Death Link"
+    option_off = 0
+    option_default = 1
+    option_all_deaths = 2
 
 
 @dataclass

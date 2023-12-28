@@ -71,10 +71,9 @@ region_data_table: Dict[str, OuterWildsRegionData] = {}
 def create_regions(mw: MultiWorld, p: int, create_item: Callable[[str], OuterWildsItem]) -> None:
     # start by ensuring every region is a key in region_data_table
     for ld in locations_data:
-        if "region" in ld:
-            region_name = ld["region"]
-            if region_name not in region_data_table:
-                region_data_table[region_name] = OuterWildsRegionData()
+        region_name = ld["region"]
+        if region_name not in region_data_table:
+            region_data_table[region_name] = OuterWildsRegionData()
 
     for cd in connections_data:
         if cd["from"] not in region_data_table:

@@ -1,12 +1,11 @@
 from typing import List
 
-from BaseClasses import Region, Tutorial
+from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
+
 from .Items import OuterWildsItem, item_data_table, item_table, item_name_groups
-from .Locations import OuterWildsLocation, location_data_table, location_table, locked_locations, location_name_groups
+from .LocationsAndRegions import location_table, location_name_groups, create_regions
 from .Options import OuterWildsGameOptions
-from .Regions import region_data_table
-from .Rules import set_rules
 
 
 class OuterWildsWebWorld(WebWorld):
@@ -25,12 +24,16 @@ class OuterWildsWebWorld(WebWorld):
 
 class OuterWildsWorld(World):
     game = "Outer Wilds"
-    data_version = 1
     web = OuterWildsWebWorld()
-    options_dataclass = OuterWildsGameOptions
-    options: OuterWildsGameOptions
-    location_name_to_id = location_table
+
+    # the latest stable AP release when this apworld was created; no point supporting anything older
+    required_client_version = (0, 4, 3)
+    required_server_version = (0, 4, 3)
+
+    # members and methods implemented by Items.py and items.jsonc
+
     item_name_to_id = item_table
+    item_name_groups = item_name_groups
 
     def create_item(self, name: str) -> OuterWildsItem:
         return OuterWildsItem(name, item_data_table[name].type, item_data_table[name].code, self.player)
@@ -43,38 +46,38 @@ class OuterWildsWorld(World):
 
         self.multiworld.itempool += item_pool
 
-    def create_regions(self) -> None:
-        # Create regions.
-        for region_name in region_data_table.keys():
-            region = Region(region_name, self.player, self.multiworld)
-            self.multiworld.regions.append(region)
-
-        # Create locations.
-        for region_name, region_data in region_data_table.items():
-            region = self.multiworld.get_region(region_name, self.player)
-            region.add_locations({
-                location_name: location_data.address for location_name, location_data in location_data_table.items()
-                if location_data.region == region_name and location_data.can_create(self.multiworld, self.player)
-            }, OuterWildsLocation)
-            region.add_exits(region_data_table[region_name].connecting_regions)
-
-        # Place locked locations.
-        for location_name, location_data in locked_locations.items():
-            # Ignore locations we never created.
-            if not location_data.can_create(self.multiworld, self.player):
-                continue
-
-            locked_item = self.create_item(location_data_table[location_name].locked_item)
-            self.multiworld.get_location(location_name, self.player).place_locked_item(locked_item)
+        # add enough "Nothing"s to make item count equal location count
+        filler_needed = len(self.location_name_to_id) - len(self.item_name_to_id)
+        self.multiworld.itempool += [self.create_item("Nothing") for _ in range(filler_needed)]
 
     def get_filler_item_name(self) -> str:
+        # todo: after we have more interesting filler items, see if we can make
+        # this rotate between fillers to evenly fill remaining locations
         return "Nothing"
 
-    set_rules = set_rules
+    # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
+
+    location_name_to_id = location_table
+    location_name_groups = location_name_groups
+
+    def create_regions(self) -> None:
+        create_regions(self.multiworld, self.player, self.create_item)
+
+    # members and methods related to Options.py
+
+    options_dataclass = OuterWildsGameOptions
+    options: OuterWildsGameOptions
+
+    def set_rules(self) -> None:
+        # here we only set the completion condition; all the location and region rules were set earlier
+        option_key_to_item_name = {
+            'song_of_five': "Victory - Song of Five",
+            'song_of_six': "Victory - Song of Six",
+        }
+
+        goal = getattr(self.multiworld, "goal")[self.player]
+        goal_item = option_key_to_item_name[goal.current_key]
+        self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
 
     def fill_slot_data(self):
-        return {}
-
-    item_name_groups = item_name_groups
-
-    location_name_groups = location_name_groups
+        return self.options.as_dict("goal", "death_link")

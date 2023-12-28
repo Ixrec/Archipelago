@@ -162,6 +162,7 @@
     // Interloper
     {
         "address": 1085038281, "name": "Frozen Shuttle Log (Text Wheel)",
+        "region": "Multiple",
         "requires": [
             { "anyOf": [
                 { "region": "Space" }, // land on the Interloper with your Spaceship, or
@@ -183,6 +184,7 @@
     },
     {
         "address": 1085038284, "name": "Solanum's Shuttle Log (Text Wheel)",
+        "region": "Multiple",
         "requires": [
             { "anyOf": [
                 { "region": "Quantum Moon" }, // land on the Quantum Moon directly, or
@@ -218,6 +220,7 @@
     // Signalscope Frequencies
     {
         "address": 1085038289, "name": "Distress Beacon Frequency",
+        "region": "Multiple",
         "requires": [
             "Signalscope",
             { "anyOf": [
@@ -229,6 +232,7 @@
     },
     {
         "address": 1085038290, "name": "Quantum Fluctuations Frequency",
+        "region": "Multiple",
         "requires": [
             "Signalscope",
             { "anyOf": [

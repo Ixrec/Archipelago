@@ -1,10 +1,12 @@
 import os
 from typing import Callable, Dict, List, NamedTuple, Optional
 
+from worlds.generic.Rules import set_rule
 from BaseClasses import Location, MultiWorld, Region
 
 from . import jsonc
 from .Items import OuterWildsItem
+from .RuleEval import eval_rule
 
 
 class OuterWildsLocation(Location):
@@ -99,8 +101,13 @@ def create_regions(mw: MultiWorld, p: int, create_item: Callable[[str], OuterWil
         for exit_connection in exit_connections:
             exit_name = exit_connection["to"]
             exit_names.append(exit_name)
-            rules[exit_name] = lambda state: True  # todo: actually parse rules
+            rules[exit_name] = lambda state, rule=exit_connection["requires"]: eval_rule(state, p, rule)
         region.add_exits(exit_names, rules)
+
+    # add access rules to the locations
+    for ld in locations_data:
+        set_rule(mw.get_location(ld["name"], p),
+                 lambda state, rule=ld["requires"]: eval_rule(state, p, rule))
 
     # place locked locations
     for name, data in location_data_table.items():

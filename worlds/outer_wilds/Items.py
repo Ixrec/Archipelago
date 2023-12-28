@@ -5,11 +5,6 @@ from BaseClasses import Item, ItemClassification, MultiWorld
 
 from . import jsonc
 
-filename = os.path.join(os.path.dirname(__file__), 'outer_wilds_logic.jsonc')
-with open(filename) as jsonc_data:
-    logic = jsonc.load(jsonc_data)
-    print("loaded .jsonc logic file, ", len(logic.items()))
-
 
 class OuterWildsItem(Item):
     game = "Outer Wilds"
@@ -21,66 +16,47 @@ class OuterWildsItemData(NamedTuple):
     can_create: Callable[[MultiWorld, int], bool] = lambda multiworld, player: True
 
 
-# per AP docs, randomly chosen from the range of positive 32-bit integers
-# to avoid conflicts with any other AP game's ids
-min_item_id = 1734473680
+filename = os.path.join(os.path.dirname(__file__), 'shared_static_logic/items.jsonc')
+with open(filename) as jsonc_data:
+    items_data = jsonc.load(jsonc_data)
 
-item_data_table: Dict[str, OuterWildsItemData] = {
-    "Nothing": OuterWildsItemData(
-        code=min_item_id + 0,
-        type=ItemClassification.filler,
-    ),
-
-    "Launch Codes": OuterWildsItemData(
-        code=min_item_id + 1,
-        type=ItemClassification.progression,
-    ),
-    "Spaceship": OuterWildsItemData(
-        code=None,
-        type=ItemClassification.progression,
-    ),
-    "Translator": OuterWildsItemData(
-        code=min_item_id + 2,
-        type=ItemClassification.progression,
-    ),
-    "Signalscope": OuterWildsItemData(
-        code=min_item_id + 3,
-        type=ItemClassification.progression,
-    ),
-    "Scout": OuterWildsItemData(
-        code=min_item_id + 4,
-        type=ItemClassification.progression,
-    ),
-
-    # "Distress Beacon Frequency"
-    "Quantum Fluctuations Frequency": OuterWildsItemData(
-        code=min_item_id + 100,
-        type=ItemClassification.progression,  # just for testing
-    ),
-    "Hide & Seek Frequency": OuterWildsItemData(
-        code=min_item_id + 101,
-        type=ItemClassification.filler,
-    ),
-
-    "Museum Shard Signal": OuterWildsItemData(
-        code=min_item_id + 102,
-        type=ItemClassification.filler,
-    ),
-    "Grove Shard Signal": OuterWildsItemData(
-        code=min_item_id + 103,
-        type=ItemClassification.filler,
-    ),
+item_types_map = {
+    "progression": ItemClassification.progression,
+    "useful": ItemClassification.useful,
+    "filler": ItemClassification.filler
 }
+
+item_data_table: Dict[str, OuterWildsItemData] = {}
+for item in items_data:
+    item_data_table[item["name"]] = OuterWildsItemData(
+        code=(item["code"] if "code" in item else None),
+        type=item_types_map[item["type"]]
+    )
 
 item_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
 
 item_name_groups = {
     "Frequencies": {
+        "Distress Beacon Frequency",
         "Quantum Fluctuations Frequency",
         "Hide & Seek Frequency"
     },
     "Signals": {
+        "Chert's Signal",
+        "Esker's Signal",
+        "Riebeck's Signal",
+        "Gabbro's Signal",
+        "Feldspar's Signal",
         "Museum Shard Signal",
         "Grove Shard Signal",
-    },
+        "Cave Shard Signal",
+        "Tower Shard Signal",
+        "Island Shard Signal",
+        "Quantum Moon Signal",
+        "Escape Pod 1 Signal",
+        "Escape Pod 2 Signal",
+        "Escape Pod 3 Signal",
+        "Galena's Radio Signal",
+        "Tephra's Radio Signal"
+    }
 }

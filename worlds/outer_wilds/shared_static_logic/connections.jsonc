@@ -17,6 +17,12 @@
     { "from": "Quantum Moon", "to": "Space", "requires": [ "Spaceship" ] },
     { "from": "Space", "to": "Quantum Moon", "requires": [ "Imaging Rule" ] },
 
+    // "Multiple" is a fictitious region used to hold locations which can be checked from
+    // multiple places in-game, and thus don't fit well into normal region logic.
+    // This connection ensures Multiple is always reachable, so the logic for these
+    // locations can be left entirely to each location's own access rule.
+    { "from": "Menu", "to": "Multiple", "requires": [] },
+
     // these will become dynamic after we implement random spawn
     { "from": "Menu", "to": "Timber Hearth Village", "requires": [] },
     { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ "Spaceship" ] },

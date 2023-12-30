@@ -61,6 +61,7 @@
     },
     {
         "address": 1085038261, "name": "TH: Talk to Hornfels",
+        "locked_item": "Launch Codes", // until we have non-vanilla spawns
         "region": "Timber Hearth Village", "requires": []
     },
     {

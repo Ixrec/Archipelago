@@ -26,9 +26,9 @@ class OuterWildsWorld(World):
     game = "Outer Wilds"
     web = OuterWildsWebWorld()
 
-    # the latest stable AP release when this apworld was created; no point supporting anything older
-    required_client_version = (0, 4, 3)
-    required_server_version = (0, 4, 3)
+    # because we use options_dataclass, this is the minimum AP version we support
+    required_client_version = (0, 4, 4)
+    required_server_version = (0, 4, 4)
 
     # members and methods implemented by Items.py and items.jsonc
 

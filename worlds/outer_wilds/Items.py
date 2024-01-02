@@ -1,4 +1,5 @@
 import os
+import pkgutil
 from typing import Callable, Dict, NamedTuple, Optional
 
 from BaseClasses import Item, ItemClassification, MultiWorld
@@ -16,9 +17,8 @@ class OuterWildsItemData(NamedTuple):
     can_create: Callable[[MultiWorld, int], bool] = lambda multiworld, player: True
 
 
-filename = os.path.join(os.path.dirname(__file__), 'shared_static_logic/items.jsonc')
-with open(filename) as jsonc_data:
-    items_data = jsonc.load(jsonc_data)
+jsonc_data = pkgutil.get_data(__name__, 'shared_static_logic/items.jsonc')
+items_data = jsonc.loads(jsonc_data.decode('utf-8'))
 
 item_types_map = {
     "progression": ItemClassification.progression,

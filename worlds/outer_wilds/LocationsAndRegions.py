@@ -1,4 +1,5 @@
 import os
+import pkgutil
 from typing import Callable, Dict, List, NamedTuple, Optional
 
 from worlds.generic.Rules import set_rule
@@ -24,13 +25,11 @@ class OuterWildsRegionData(NamedTuple):
     connecting_regions: List[str] = []
 
 
-locations_filename = os.path.join(os.path.dirname(__file__), 'shared_static_logic/locations.jsonc')
-with open(locations_filename) as jsonc_data:
-    locations_data = jsonc.load(jsonc_data)
+jsonc_locations_data = pkgutil.get_data(__name__, 'shared_static_logic/locations.jsonc')
+locations_data = jsonc.loads(jsonc_locations_data.decode('utf-8'))
 
-connections_filename = os.path.join(os.path.dirname(__file__), 'shared_static_logic/connections.jsonc')
-with open(connections_filename) as jsonc_data:
-    connections_data = jsonc.load(jsonc_data)
+jsonc_connections_data = pkgutil.get_data(__name__, 'shared_static_logic/connections.jsonc')
+connections_data = jsonc.loads(jsonc_connections_data.decode('utf-8'))
 
 
 location_data_table: Dict[str, OuterWildsLocationData] = {}

@@ -167,7 +167,7 @@
         "requires": [
             { "anyOf": [
                 { "region": "Space" }, // land on the Interloper with your Spaceship, or
-                { "region": "Hourglass Twins" }, // use Ember Twin's Gravity Cannon to recall the shuttle
+                { "region": "Hourglass Twins" } // use Ember Twin's Gravity Cannon to recall the shuttle
             ] },
             "Translator"
         ]
@@ -189,7 +189,7 @@
         "requires": [
             { "anyOf": [
                 { "region": "Quantum Moon" }, // land on the Quantum Moon directly, or
-                { "region": "Brittle Hollow" }, // use Brittle Hollow's Gravity Cannon to recall the shuttle
+                { "region": "Brittle Hollow" } // use Brittle Hollow's Gravity Cannon to recall the shuttle
             ] },
             "Translator"
         ]
@@ -348,5 +348,5 @@
             { "location": "DB: Find The Vessel" },
             "Coordinates"
         ]
-    },
+    }
 ]

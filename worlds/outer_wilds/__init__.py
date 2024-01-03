@@ -41,7 +41,8 @@ class OuterWildsWorld(World):
     def create_items(self) -> None:
         item_pool: List[OuterWildsItem] = []
         for name, item in item_data_table.items():
-            if item.code and item.can_create(self.multiworld, self.player):
+            # todo: come up with a better way to exclude locked / pre-placed items from the itempool
+            if item.code and name != "Launch Codes":
                 item_pool.append(self.create_item(name))
 
         self.multiworld.itempool += item_pool

@@ -14,7 +14,6 @@ class OuterWildsItem(Item):
 class OuterWildsItemData(NamedTuple):
     code: Optional[int] = None
     type: ItemClassification = ItemClassification.filler
-    can_create: Callable[[MultiWorld, int], bool] = lambda multiworld, player: True
 
 
 jsonc_data = pkgutil.get_data(__name__, 'shared_static_logic/items.jsonc')

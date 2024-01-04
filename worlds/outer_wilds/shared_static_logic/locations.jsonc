@@ -128,7 +128,7 @@
     },
     {
         "address": 1085038273, "name": "GD: Bramble Island (Tape Recorder)",
-        "region": "Giant's Deep", "requires": [ "Translator", "Ghost Matter Wavelength" ]
+        "region": "Giant's Deep", "requires": [ "Ghost Matter Wavelength" ]
     },
     {
         "address": 1085038274, "name": "GD: Construction Yard (Text Wall)",

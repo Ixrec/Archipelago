@@ -272,7 +272,8 @@
     },
     {
         "address": 1085038296, "name": "DB: Harmonica Signal",
-        "region": "Dark Bramble - Feldspar", "requires": [] // see connection logic
+        "region": "Dark Bramble - Feldspar", // see connection logic
+        "requires": [ "Signalscope" ]
     },
     {
         "address": 1085038297, "name": "TH: Museum Shard Signal",

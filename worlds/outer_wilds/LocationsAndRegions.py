@@ -69,7 +69,7 @@ location_name_groups = {
     "Hourglass Twins": {
         "ET: High Energy Lab (Upper Text Wall)",
         "ET: Sunless City Shrine (Entrance Text Wall)",
-        "ET: Quantum Moon Locator (Text Scroll)",
+        "ET: Quantum Moon Locator (2nd Scroll)",
         "ET: Fossil (Children's Text)",
         "ET: Lakebed Cave (Floor Text)",
         "ET: Coleus' Cave (Text Wall)",
@@ -83,7 +83,7 @@ location_name_groups = {
         "TH: Zero-G Repairs",
         "TH: Get the Translator from Hal",
         "TH: Talk to Hornfels",
-        "TH: Bramble Seed Crater",
+        "TH: Talk to Tektite about Bramble Seed",
         "TH: Mines (Text Wall)",
         "Hide & Seek Frequency",
         "TH: Museum Shard Signal",

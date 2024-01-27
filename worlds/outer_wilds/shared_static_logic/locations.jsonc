@@ -93,8 +93,8 @@
         // this is a one-location region because it has a warp pad
         "region": "Black Hole Forge",
         "requires": [
-            { "region": "Brittle Hollow" }, // need to reach the forge controls in Hanging City first
-            "Translator"
+            "Translator",
+            { "region": "Brittle Hollow" } // need to reach the forge controls in Hanging City first
         ]
     },
     {
@@ -165,11 +165,11 @@
         "address": 1085038281, "name": "Frozen Shuttle Log (Text Wheel)",
         "region": "Multiple",
         "requires": [
+            "Translator",
             { "anyOf": [
                 { "region": "Space" }, // land on the Interloper with your Spaceship, or
                 { "region": "Hourglass Twins" } // use Ember Twin's Gravity Cannon to recall the shuttle
-            ] },
-            "Translator"
+            ] }
         ]
     },
     {
@@ -187,11 +187,11 @@
         "address": 1085038284, "name": "Solanum's Shuttle Log (Text Wheel)",
         "region": "Multiple",
         "requires": [
+            "Translator",
             { "anyOf": [
                 { "region": "Quantum Moon" }, // land on the Quantum Moon directly, or
                 { "region": "Brittle Hollow" } // use Brittle Hollow's Gravity Cannon to recall the shuttle
-            ] },
-            "Translator"
+            ] }
         ]
     },
     {
@@ -333,21 +333,21 @@
         "address": null, "name": "Victory - Song of Five", "locked_item": "Victory - Song of Five",
         "region": "Dark Bramble - Nomai",
         "requires": [
-            { "location": "Enter the Ash Twin Project" },
             "Warp Core Installation Manual",
-            { "location": "DB: Find The Vessel" },
-            "Coordinates"
+            "Coordinates",
+            { "location": "Enter the Ash Twin Project" },
+            { "location": "DB: Find The Vessel" }
         ]
     },
     {
         "address": null, "name": "Victory - Song of Six", "locked_item": "Victory - Song of Six",
         "region": "Dark Bramble - Nomai",
         "requires": [
-            { "location": "QM: Explore the Sixth Location" },
-            { "location": "Enter the Ash Twin Project" },
             "Warp Core Installation Manual",
+            "Coordinates",
+            { "location": "Enter the Ash Twin Project" },
             { "location": "DB: Find The Vessel" },
-            "Coordinates"
+            { "location": "QM: Explore the Sixth Location" }
         ]
     }
 ]

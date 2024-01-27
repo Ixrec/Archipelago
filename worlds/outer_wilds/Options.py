@@ -5,8 +5,8 @@ from Options import Choice, Toggle, PerGameCommonOptions
 
 class Goal(Choice):
     """The victory condition for your Archipelago run.
-    Song of Five: Reach the Eye and gather the 5 Hearthian travelers
-    Song of Six: Reach the Eye and gather 6 travelers (5 Hearthians and Solanum)."""
+    Song of Five: Reach the Eye
+    Song of Six: Reach the Eye after meeting Solanum"""
     display_name = "Goal"
     option_song_of_five = 0
     option_song_of_six = 1

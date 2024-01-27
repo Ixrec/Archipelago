@@ -77,8 +77,7 @@ class OuterWildsWorld(World):
             'song_of_six': "Victory - Song of Six",
         }
 
-        goal = getattr(self.multiworld, "goal")[self.player]
-        goal_item = option_key_to_item_name[goal.current_key]
+        goal_item = option_key_to_item_name[self.options.goal.current_key]
         self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
 
     def fill_slot_data(self):

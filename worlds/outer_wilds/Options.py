@@ -21,7 +21,14 @@ class DeathLink(Choice):
     option_all_deaths = 2
 
 
+# DLC + logsanity is another 71 checks. "rumor sanity" would be another 103 (+22 with DLC).
+class Logsanity(Toggle):
+    """Adds a location for every (non-DLC, non-rumor) ship log fact in the game, which totals 178 new checks."""
+    display_name = "Logsanity"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     goal: Goal
     death_link: DeathLink
+    logsanity: Logsanity

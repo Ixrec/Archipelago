@@ -7,6 +7,7 @@ from BaseClasses import Location, MultiWorld, Region
 
 from . import jsonc
 from .Items import OuterWildsItem
+from .Options import OuterWildsGameOptions
 from .RuleEval import eval_rule
 
 
@@ -19,6 +20,7 @@ class OuterWildsLocationData(NamedTuple):
     address: Optional[int] = None
     can_create: Callable[[MultiWorld, int], bool] = lambda multiworld, player: True
     locked_item: Optional[str] = None
+    creation_settings: Optional[List[str]] = None
 
 
 class OuterWildsRegionData(NamedTuple):
@@ -37,10 +39,11 @@ for location_datum in locations_data:
     location_data_table[location_datum["name"]] = OuterWildsLocationData(
         address=location_datum["address"],
         region=(location_datum["region"] if "region" in location_datum else None),
-        locked_item=(location_datum["locked_item"] if "locked_item" in location_datum else None)
+        locked_item=(location_datum["locked_item"] if "locked_item" in location_datum else None),
+        creation_settings=(location_datum["creation_settings"] if "creation_settings" in location_datum else None)
     )
 
-location_table = {name: data.address for name, data in location_data_table.items() if data.address is not None}
+all_non_event_locations_table = {name: data.address for name, data in location_data_table.items() if data.address is not None}
 
 location_name_groups = {
     "Frequencies": {
@@ -124,7 +127,12 @@ location_name_groups = {
 region_data_table: Dict[str, OuterWildsRegionData] = {}
 
 
-def create_regions(mw: MultiWorld, p: int, create_item: Callable[[str], OuterWildsItem]) -> None:
+def create_regions(
+        mw: MultiWorld,
+        p: int,
+        create_item: Callable[[str], OuterWildsItem],
+        options: OuterWildsGameOptions
+) -> None:
     # start by ensuring every region is a key in region_data_table
     for ld in locations_data:
         region_name = ld["region"]
@@ -141,11 +149,18 @@ def create_regions(mw: MultiWorld, p: int, create_item: Callable[[str], OuterWil
     for region_name in region_data_table.keys():
         mw.regions.append(Region(region_name, p, mw))
 
+    # filter locations by settings (currently logsanity is the only setting relevant here)
+    relevant_settings = set()
+    if options.logsanity.value == 1:
+        relevant_settings.add("logsanity")
+    locations_to_create = {k: v for k, v in location_data_table.items()
+                           if v.creation_settings is None or relevant_settings.issuperset(v.creation_settings)}
+
     # add locations and connections to each region
     for region_name, region_data in region_data_table.items():
         region = mw.get_region(region_name, p)
         region.add_locations({
-            location_name: location_data.address for location_name, location_data in location_data_table.items()
+            location_name: location_data.address for location_name, location_data in locations_to_create.items()
             if location_data.region == region_name
         }, OuterWildsLocation)
 
@@ -158,10 +173,11 @@ def create_regions(mw: MultiWorld, p: int, create_item: Callable[[str], OuterWil
             rules[exit_name] = lambda state, rule=exit_connection["requires"]: eval_rule(state, p, rule)
         region.add_exits(exit_names, rules)
 
-    # add access rules to the locations
+    # add access rules to the created locations
     for ld in locations_data:
-        set_rule(mw.get_location(ld["name"], p),
-                 lambda state, rule=ld["requires"]: eval_rule(state, p, rule))
+        if ld["name"] in locations_to_create:
+            set_rule(mw.get_location(ld["name"], p),
+                     lambda state, rule=ld["requires"]: eval_rule(state, p, rule))
 
     # place locked locations
     for name, data in location_data_table.items():

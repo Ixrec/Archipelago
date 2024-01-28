@@ -7,21 +7,30 @@
     { "from": "Brittle Hollow",     "to": "Space", "requires": [ "Spaceship" ] },
     { "from": "White Hole Station", "to": "Space", "requires": [ "Spaceship" ] },
     { "from": "Giant's Deep",       "to": "Space", "requires": [ "Spaceship" ] },
+    { "from": "Quantum Moon",       "to": "Space", "requires": [ "Spaceship" ] },
     { "from": "Space", "to": "Hourglass Twins", "requires": [] },
     { "from": "Space", "to": "Timber Hearth", "requires": [] },
     { "from": "Space", "to": "Brittle Hollow", "requires": [] },
     { "from": "Space", "to": "White Hole Station", "requires": [] },
     { "from": "Space", "to": "Giant's Deep", "requires": [] },
-
     // the only astral body you can't land on without an item
-    { "from": "Quantum Moon", "to": "Space", "requires": [ "Spaceship" ] },
     { "from": "Space", "to": "Quantum Moon", "requires": [ "Imaging Rule" ] },
+
+    { "from": "Quantum Moon", "to": "Quantum Shrine", "requires": [ "Shrine Door Codes" ] },
+    { "from": "Quantum Shrine", "to": "Sixth Location", "requires": [ "Entanglement Rule" ] },
 
     // "Multiple" is a fictitious region used to hold locations which can be checked from
     // multiple places in-game, and thus don't fit well into normal region logic.
     // This connection ensures Multiple is always reachable, so the logic for these
     // locations can be left entirely to each location's own access rule.
     { "from": "Menu", "to": "Multiple", "requires": [] },
+
+    { "from": "Multiple", "to": "Solanum's Shuttle Interior", "requires": [
+        { "anyOf": [
+            { "region": "Quantum Moon" }, // land on the Quantum Moon directly, or
+            { "region": "Brittle Hollow" } // use Brittle Hollow's Gravity Cannon to recall the shuttle
+        ] }
+    ] },
 
     // these will become dynamic after we implement random spawn
     { "from": "Menu", "to": "Timber Hearth Village", "requires": [] },
@@ -33,10 +42,12 @@
     // you can simply jump off the ceiling and fall to the Hanging City
     { "from": "Black Hole Forge", "to": "Brittle Hollow", "requires": [] },
 
-    // Dark Bramble has the most complex logic in the base game, enough so
-    // that we benefit from representing it as two regions in the logic:
-    // - the locations you can check by tracking Feldspar, and
-    // - the locations you can check by tracking the Nomai escape pod and vessel
+    { "from": "Space", "to": "Giant's Deep - Ocean Depths", "requires": [ "Tornado Aerodynamic Adjustments" ] },
+    { "from": "Giant's Deep - Ocean Depths", "to": "Giant's Deep - Core", "requires": [ "Electrical Insulation" ] },
+
+    { "from": "Space", "to": "Interloper Core", "requires": [ "Scout", "Ghost Matter Wavelength" ] },
+
+    // Dark Bramble has the most complex logic in the base game
     {
         "from": "Space",
         "to": "Dark Bramble - Feldspar",
@@ -55,15 +66,18 @@
     },
     {
         "from": "Space",
-        "to": "Dark Bramble - Nomai",
+        "to": "Dark Bramble - Nomai Grave",
         "requires": [
             // for the "guard" anglerfish
             "Silent Running Mode",
             // to follow the Escape Pod 3 signal
             "Signalscope",
-            "Distress Beacon Frequency",
+            "Distress Beacon Frequency"
         ]
     },
+    { "from": "Dark Bramble - Nomai Grave", "to": "Dark Bramble - The Vessel", "requires": [
+        "Scout" // to launch into the DB seed at Nomai Grave
+    ] },
 
     // these will become dynamic after we implement warp pad randomization
     { "from": "Hourglass Twins", "to": "Sun Station", "requires": [ "Nomai Warp Codes" ] },
@@ -78,5 +92,5 @@
     { "from": "Black Hole Forge", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
     { "from": "Giant's Deep", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
 
-    { "from": "White Hole Station", "to": "Brittle Hollow", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "White Hole Station", "to": "Brittle Hollow", "requires": [ "Nomai Warp Codes" ] }
 ]

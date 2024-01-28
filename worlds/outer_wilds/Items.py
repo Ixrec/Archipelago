@@ -32,7 +32,7 @@ for item in items_data:
         type=item_types_map[item["type"]]
     )
 
-item_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
+all_non_event_items_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
 
 item_name_groups = {
     "Frequencies": {

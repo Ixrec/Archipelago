@@ -3,8 +3,8 @@ from typing import List
 from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
 
-from .Items import OuterWildsItem, item_data_table, item_table, item_name_groups
-from .LocationsAndRegions import location_table, location_name_groups, create_regions
+from .Items import OuterWildsItem, item_data_table, all_non_event_items_table, item_name_groups
+from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
 from .Options import OuterWildsGameOptions
 
 
@@ -33,7 +33,7 @@ class OuterWildsWorld(World):
 
     # members and methods implemented by Items.py and items.jsonc
 
-    item_name_to_id = item_table
+    item_name_to_id = all_non_event_items_table
     item_name_groups = item_name_groups
 
     def create_item(self, name: str) -> OuterWildsItem:
@@ -59,11 +59,11 @@ class OuterWildsWorld(World):
 
     # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
 
-    location_name_to_id = location_table
+    location_name_to_id = all_non_event_locations_table
     location_name_groups = location_name_groups
 
     def create_regions(self) -> None:
-        create_regions(self.multiworld, self.player, self.create_item)
+        create_regions(self.multiworld, self.player, self.create_item, self.options)
 
     # members and methods related to Options.py
 

@@ -2,12 +2,12 @@
     // we use a "Space" region to express that the Spaceship lets us go between all the major regions
     // as well as access a handful of warp pad-less locations like Attlerock and Hollow's Lantern
 
-    { "from": "Hourglass Twins",    "to": "Space", "requires": [ "Spaceship" ] },
-    { "from": "Timber Hearth",      "to": "Space", "requires": [ "Spaceship" ] },
-    { "from": "Brittle Hollow",     "to": "Space", "requires": [ "Spaceship" ] },
-    { "from": "White Hole Station", "to": "Space", "requires": [ "Spaceship" ] },
-    { "from": "Giant's Deep",       "to": "Space", "requires": [ "Spaceship" ] },
-    { "from": "Quantum Moon",       "to": "Space", "requires": [ "Spaceship" ] },
+    { "from": "Hourglass Twins",    "to": "Space", "requires": [ "Launch Codes" ] },
+    { "from": "Timber Hearth",      "to": "Space", "requires": [ "Launch Codes" ] },
+    { "from": "Brittle Hollow",     "to": "Space", "requires": [ "Launch Codes" ] },
+    { "from": "White Hole Station", "to": "Space", "requires": [ "Launch Codes" ] },
+    { "from": "Giant's Deep",       "to": "Space", "requires": [ "Launch Codes" ] },
+    { "from": "Quantum Moon",       "to": "Space", "requires": [ "Launch Codes" ] },
     { "from": "Space", "to": "Hourglass Twins", "requires": [] },
     { "from": "Space", "to": "Timber Hearth", "requires": [] },
     { "from": "Space", "to": "Brittle Hollow", "requires": [] },
@@ -34,7 +34,7 @@
 
     // these will become dynamic after we implement random spawn
     { "from": "Menu", "to": "Timber Hearth Village", "requires": [] },
-    { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ "Spaceship" ] },
+    { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ "Launch Codes" ] },
 
     // you can simply fall into the black hole inside BH instead of using the warp pad
     { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [] },

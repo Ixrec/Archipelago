@@ -125,22 +125,14 @@ location_name_groups = {
 }
 
 
-cached_locations_to_create: Optional[dict[str, OuterWildsLocationData]] = None
-
-
 def get_locations_to_create(options: OuterWildsGameOptions) -> dict[str, OuterWildsLocationData]:
-    global cached_locations_to_create
-    if cached_locations_to_create is not None:
-        return cached_locations_to_create
-
     # filter locations by settings (currently logsanity is the only setting relevant here)
     relevant_settings = set()
     if options.logsanity.value == 1:
         relevant_settings.add("logsanity")
 
-    cached_locations_to_create = {k: v for k, v in location_data_table.items()
-                                  if v.creation_settings is None or relevant_settings.issuperset(v.creation_settings)}
-    return cached_locations_to_create
+    return {k: v for k, v in location_data_table.items()
+            if v.creation_settings is None or relevant_settings.issuperset(v.creation_settings)}
 
 
 region_data_table: Dict[str, OuterWildsRegionData] = {}

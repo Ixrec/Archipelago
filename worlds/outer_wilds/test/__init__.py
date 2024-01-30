@@ -14,6 +14,43 @@ class OuterWildsTestBase(WorldTestBase):
     def get_location_count(self) -> int:
         return sum(1 for _ in self.multiworld.get_locations(1))
 
+    def can_reach_location_with(self, location_name: str, item_names: list[str]) -> bool:
+        state = self.make_state_with(item_names)
+        return state.can_reach(location_name, "Location", 1)
+
+    def location_requires_exactly(self, location_name: str, item_names: list[str]) -> bool:
+        items = self.get_items_by_name(item_names)
+        state = CollectionState(self.multiworld)
+
+        # check that it can be reached with all the items
+        for i in items:
+            state.collect(i)
+        if not state.can_reach(location_name, "Location", 1):
+            return False
+
+        # check that removing any one item makes it unreachable again
+        for i in items:
+            state.remove(i)
+            if state.can_reach(location_name, "Location", 1):
+                return False
+            state.collect(i)
+
+        return True
+
+    def assert_all_locations_requiring_exactly(self, location_names: list[str], item_names: list[str]) -> None:
+        for location in self.multiworld.get_locations():
+            if location.name in location_names:
+                self.assertTrue(
+                    self.location_requires_exactly(location.name, item_names),
+                    f"location '{location}' should require exactly {item_names} to reach, but it doesn't"
+                )
+            else:
+                self.assertFalse(
+                    self.location_requires_exactly(location.name, item_names),
+                    f"location '{location}' was not one of the locations being asserted on, "
+                    f"but it requires exactly {item_names} to reach, so it should be"
+                )
+
     def test_all_worlds(self) -> None:
         self.assertAccessDependency(
             ["Victory - Song of Five", "Victory - Song of Six"],
@@ -73,12 +110,10 @@ class TestDefaultWorld(OuterWildsTestBase):
             [["Electrical Insulation"]]
         )
 
-        state = CollectionState(self.multiworld)
-        self.collect_all_but(["Ghost Matter Wavelength"], state)
-        self.assertFalse(state.can_reach("Ruptured Core (Text Wheel)", "Location", 1))
-
-        state = self.make_state_with(["Launch Codes", "Scout", "Ghost Matter Wavelength", "Translator"])
-        self.assertTrue(state.can_reach("Ruptured Core (Text Wheel)", "Location", 1))
+        self.assert_all_locations_requiring_exactly(
+            ["Ruptured Core (Text Wheel)"],
+            ["Launch Codes", "Scout", "Ghost Matter Wavelength", "Translator"]
+        )
 
         # logsanity locations don't exist, so trying to access one raises
         self.assertRaises(KeyError, lambda: self.multiworld.get_location("Ship Log: Village 1 - Identify", 1))

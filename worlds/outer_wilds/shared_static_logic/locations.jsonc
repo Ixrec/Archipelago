@@ -510,10 +510,7 @@
         "creation_settings": [ "logsanity" ], "address": 1085039042, "name": "Ship Log: Village 2 - Statue Eyes Opened",
         "region": "Timber Hearth Village", "requires": []
     },
-    {
-        "creation_settings": [ "logsanity" ], "address": 1085039043, "name": "Ship Log: Village 3 - Never Opened Before",
-        "region": "Timber Hearth Village", "requires": []
-    },
+    // removed 1085039043 / Village 3 because it's perma-missable
     {
         "creation_settings": [ "logsanity" ], "address": 1085039044, "name": "Ship Log: Zero-G Cave 1 - Identify",
         "region": "Timber Hearth Village", "requires": []

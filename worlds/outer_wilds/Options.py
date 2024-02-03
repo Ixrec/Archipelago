@@ -23,7 +23,7 @@ class DeathLink(Choice):
 
 # DLC + logsanity is another 71 checks. "rumor sanity" would be another 103 (+22 with DLC).
 class Logsanity(Toggle):
-    """Adds a location for every (non-DLC, non-rumor) ship log fact in the game, which totals 178 new checks."""
+    """Adds 176 locations for all the (non-DLC, non-rumor, non-missable) ship log facts in the game."""
     display_name = "Logsanity"
 
 

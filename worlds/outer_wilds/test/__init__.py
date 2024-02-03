@@ -140,7 +140,7 @@ class TestLogsanityWorld(OuterWildsTestBase):
     }
 
     def test_logsanity_world(self):
-        self.assertEqual(self.get_location_count(), 237)  # 60 default + 177 logsanity locations
+        self.assertEqual(self.get_location_count(), 236)  # 60 default + 176 logsanity locations
 
         # make sure the logsanity locations exist; this one requires nothing to reach
         self.assertTrue(self.multiworld.state.can_reach("Ship Log: Village 1 - Identify", "Location", 1))

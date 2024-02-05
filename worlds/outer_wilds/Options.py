@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import Choice, Toggle, PerGameCommonOptions
+from Options import Choice, DefaultOnToggle, Toggle, PerGameCommonOptions
 
 
 class Goal(Choice):
@@ -10,6 +10,11 @@ class Goal(Choice):
     display_name = "Goal"
     option_song_of_five = 0
     option_song_of_six = 1
+
+
+class RandomizeCoordinates(DefaultOnToggle):
+    """Randomize the Eye of the Universe coordinates needed to reach the end of the game."""
+    display_name = "Randomize Coordinates"
 
 
 class DeathLink(Choice):
@@ -30,5 +35,6 @@ class Logsanity(Toggle):
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     goal: Goal
+    randomize_coordinates: RandomizeCoordinates
     death_link: DeathLink
     logsanity: Logsanity

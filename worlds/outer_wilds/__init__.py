@@ -1,4 +1,5 @@
-from typing import List
+import json
+from typing import List, TextIO
 
 from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
@@ -32,6 +33,12 @@ class OuterWildsWorld(World):
     required_client_version = (0, 4, 4)
     # but the server is allowed to be a little older
     required_server_version = (0, 4, 3)
+
+    eotu_coordinates = 'vanilla'
+
+    def generate_early(self) -> None:
+        self.eotu_coordinates = generate_random_coordinates(self.random) \
+            if self.options.randomize_coordinates else "vanilla"
 
     # members and methods implemented by Items.py and items.jsonc
 
@@ -87,9 +94,17 @@ class OuterWildsWorld(World):
 
     def fill_slot_data(self):
         slot_data = self.options.as_dict("goal", "death_link", "logsanity")
-        slot_data["eotu_coordinates"] = generate_random_coordinates(self.random) \
-            if self.options.randomize_coordinates else "vanilla"
+        slot_data["eotu_coordinates"] = self.eotu_coordinates
         # Archipelago does not yet have apworld versions (data_version is deprecated),
         # so we have to roll our own with slot_data for the time being
         slot_data["apworld_version"] = "0.2.0-dev"
         return slot_data
+
+    def write_spoiler(self, spoiler_handle: TextIO) -> None:
+        if self.eotu_coordinates != 'vanilla':
+            spoiler_handle.write('\n\nRandomized Eye of the Universe Coordinates:'
+                                 '\n(0-5 are the points of the hexagon, starting at '
+                                 'the rightmost point and going counterclockwise)'
+                                 '\n\n%s\n%s\n%s\n\n' % (json.dumps(self.eotu_coordinates[0]),
+                                                         json.dumps(self.eotu_coordinates[1]),
+                                                         json.dumps(self.eotu_coordinates[2])))

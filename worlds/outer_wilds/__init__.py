@@ -7,6 +7,7 @@ from .Items import OuterWildsItem, item_data_table, all_non_event_items_table, i
 from .LocationsAndRegions import (all_non_event_locations_table, location_name_groups,
                                   create_regions, get_locations_to_create)
 from .Options import OuterWildsGameOptions
+from .Coordinates import generate_random_coordinates
 
 
 class OuterWildsWebWorld(WebWorld):
@@ -86,6 +87,8 @@ class OuterWildsWorld(World):
 
     def fill_slot_data(self):
         slot_data = self.options.as_dict("goal", "death_link", "logsanity")
+        slot_data["eotu_coordinates"] = generate_random_coordinates(self.random) \
+            if self.options.randomize_coordinates else "vanilla"
         # Archipelago does not yet have apworld versions (data_version is deprecated),
         # so we have to roll our own with slot_data for the time being
         slot_data["apworld_version"] = "0.2.0-dev"

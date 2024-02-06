@@ -11,6 +11,18 @@ six_point_coordinates = 6 * 5 * 4 * 3 * 2 * 1
 total_possible_coordinates = (two_point_coordinates + three_point_coordinates + four_point_coordinates +
                               five_point_coordinates + six_point_coordinates)
 
+# Some Nomai coordinates are nearly identical to English letters, namely: N, I/l and C
+# To avoid even the miniscule chance of randomized coordinates resembling a bad word,
+# we prevent those specific letter-shaped coordinates from being used.
+# Since lists are not hashable, we have to use tuples here.
+deny_list = {
+    # 0 = Right, 1 = UpperRight, 2 = UpperLeft, 3 = Left, 4 = LowerLeft, 5 = LowerRight
+    (4, 2, 5, 1),  # N
+    (4, 2),  # I/l (left of center)
+    (5, 1),  # I/l (right of center)
+    (5, 4, 3, 2, 1)  # C
+}
+
 
 def generate_random_coordinates(random: Random) -> List[List[int]]:
     selections = [
@@ -20,6 +32,11 @@ def generate_random_coordinates(random: Random) -> List[List[int]]:
     ]
     selected_coordinates = list(map(get_coordinate_for_number, selections))
     map(validate_coordinate, selected_coordinates)
+
+    # if we hit the deny list, simply try again
+    for c in selected_coordinates:
+        if (tuple(c) in deny_list) or (tuple(reversed(c)) in deny_list):
+            return generate_random_coordinates(random)
     return selected_coordinates
 
 

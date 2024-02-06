@@ -1,12 +1,11 @@
 import json
-from typing import List, TextIO
+from typing import TextIO
 
 from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
 
-from .Items import OuterWildsItem, item_data_table, all_non_event_items_table, item_name_groups
-from .LocationsAndRegions import (all_non_event_locations_table, location_name_groups,
-                                  create_regions, get_locations_to_create)
+from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
+from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
 from .Options import OuterWildsGameOptions
 from .Coordinates import generate_random_coordinates
 
@@ -46,23 +45,10 @@ class OuterWildsWorld(World):
     item_name_groups = item_name_groups
 
     def create_item(self, name: str) -> OuterWildsItem:
-        return OuterWildsItem(name, item_data_table[name].type, item_data_table[name].code, self.player)
+        return create_item(self.player, name)
 
     def create_items(self) -> None:
-        item_pool: List[OuterWildsItem] = []
-        for name, item in item_data_table.items():
-            # todo: come up with a better way to exclude locked / pre-placed items from the itempool
-            if item.code and name != "Launch Codes":
-                item_pool.append(self.create_item(name))
-
-        self.multiworld.itempool += item_pool
-
-        real_location_count = sum(v.address is not None for k, v in get_locations_to_create(self.options).items())
-        real_item_count = sum(v.code is not None for k, v in item_data_table.items())
-
-        # add enough "Nothing"s to make item count equal location count
-        filler_needed = real_location_count - real_item_count
-        self.multiworld.itempool += [self.create_item("Nothing") for _ in range(filler_needed)]
+        create_items(self.multiworld, self.options, self.player)
 
     def get_filler_item_name(self) -> str:
         # todo: after we have more interesting filler items, see if we can make

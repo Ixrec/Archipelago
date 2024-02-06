@@ -6,7 +6,6 @@ from BaseClasses import Item, ItemClassification, MultiWorld
 
 from . import jsonc
 from .Options import OuterWildsGameOptions
-from .LocationsAndRegions import get_locations_to_create
 
 
 class OuterWildsItem(Item):
@@ -76,9 +75,6 @@ def create_items(multiworld: MultiWorld, options: OuterWildsGameOptions, player:
 
     multiworld.itempool += item_pool
 
-    real_location_count = sum(v.address is not None for k, v in get_locations_to_create(options).items())
-    real_item_count = sum(v.code is not None for k, v in item_data_table.items())
-
     # add enough "Nothing"s to make item count equal location count
-    filler_needed = real_location_count - real_item_count
+    filler_needed = len(multiworld.get_unfilled_locations(player)) - len(item_pool)
     multiworld.itempool += [create_item(player, "Nothing") for _ in range(filler_needed)]

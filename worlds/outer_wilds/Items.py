@@ -1,10 +1,12 @@
 import os
 import pkgutil
-from typing import Callable, Dict, NamedTuple, Optional
+from typing import Dict, List, NamedTuple, Optional
 
 from BaseClasses import Item, ItemClassification, MultiWorld
 
 from . import jsonc
+from .Options import OuterWildsGameOptions
+from .LocationsAndRegions import get_locations_to_create
 
 
 class OuterWildsItem(Item):
@@ -26,10 +28,10 @@ item_types_map = {
 }
 
 item_data_table: Dict[str, OuterWildsItemData] = {}
-for item in items_data:
-    item_data_table[item["name"]] = OuterWildsItemData(
-        code=(item["code"] if "code" in item else None),
-        type=item_types_map[item["type"]]
+for items_data_entry in items_data:
+    item_data_table[items_data_entry["name"]] = OuterWildsItemData(
+        code=(items_data_entry["code"] if "code" in items_data_entry else None),
+        type=item_types_map[items_data_entry["type"]]
     )
 
 all_non_event_items_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
@@ -59,3 +61,24 @@ item_name_groups = {
         "Tephra's Radio Signal"
     }
 }
+
+
+def create_item(player: int, name: str) -> OuterWildsItem:
+    return OuterWildsItem(name, item_data_table[name].type, item_data_table[name].code, player)
+
+
+def create_items(multiworld: MultiWorld, options: OuterWildsGameOptions, player: int) -> None:
+    item_pool: List[OuterWildsItem] = []
+    for name, item in item_data_table.items():
+        # todo: come up with a better way to exclude locked / pre-placed items from the itempool
+        if item.code and name != "Launch Codes":
+            item_pool.append(create_item(player, name))
+
+    multiworld.itempool += item_pool
+
+    real_location_count = sum(v.address is not None for k, v in get_locations_to_create(options).items())
+    real_item_count = sum(v.code is not None for k, v in item_data_table.items())
+
+    # add enough "Nothing"s to make item count equal location count
+    filler_needed = real_location_count - real_item_count
+    multiworld.itempool += [create_item(player, "Nothing") for _ in range(filler_needed)]

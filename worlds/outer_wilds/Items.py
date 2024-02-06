@@ -1,6 +1,7 @@
 import os
 import pkgutil
 from typing import Dict, List, NamedTuple, Optional
+from random import Random
 
 from BaseClasses import Item, ItemClassification, MultiWorld
 
@@ -66,15 +67,37 @@ def create_item(player: int, name: str) -> OuterWildsItem:
     return OuterWildsItem(name, item_data_table[name].type, item_data_table[name].code, player)
 
 
-def create_items(multiworld: MultiWorld, options: OuterWildsGameOptions, player: int) -> None:
-    item_pool: List[OuterWildsItem] = []
+repeatable_filler_weights = {
+    "Nothing": 0,  # no longer used, here for backwards compatibility
+    "Oxygen Refill": 10,
+    "Jetpack Fuel Refill": 10,
+    "Marshmallow": 8,
+    "Perfect Marshmallow": 1,
+    "Burnt Marshmallow": 1,
+}
+
+
+def create_items(random: Random, multiworld: MultiWorld, options: OuterWildsGameOptions, player: int) -> None:
+    prog_and_useful_items: List[OuterWildsItem] = []
+    unique_filler: List[OuterWildsItem] = []
     for name, item in item_data_table.items():
-        # todo: come up with a better way to exclude locked / pre-placed items from the itempool
-        if item.code and name != "Launch Codes":
-            item_pool.append(create_item(player, name))
+        if item.type != ItemClassification.filler:
+            # todo: come up with a better way to exclude locked / pre-placed items from the itempool
+            if item.code and name != "Launch Codes":
+                prog_and_useful_items.append(create_item(player, name))
+        else:
+            if name not in repeatable_filler_weights:
+                unique_filler.append(create_item(player, name))
+
+    item_pool = prog_and_useful_items + unique_filler
+
+    # add enough "repeatable"/non-unique filler items to make item count equal location count
+    repeatable_filler_needed = len(multiworld.get_unfilled_locations(player)) - len(item_pool)
+    repeatable_filler = random.choices(
+        population=list(repeatable_filler_weights.keys()),
+        weights=list(repeatable_filler_weights.values()),
+        k=repeatable_filler_needed
+    )
+    item_pool += (create_item(player, name) for name in repeatable_filler)
 
     multiworld.itempool += item_pool
-
-    # add enough "Nothing"s to make item count equal location count
-    filler_needed = len(multiworld.get_unfilled_locations(player)) - len(item_pool)
-    multiworld.itempool += [create_item(player, "Nothing") for _ in range(filler_needed)]

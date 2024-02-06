@@ -48,12 +48,11 @@ class OuterWildsWorld(World):
         return create_item(self.player, name)
 
     def create_items(self) -> None:
-        create_items(self.multiworld, self.options, self.player)
+        create_items(self.random, self.multiworld, self.options, self.player)
 
     def get_filler_item_name(self) -> str:
-        # todo: after we have more interesting filler items, see if we can make
-        # this rotate between fillers to evenly fill remaining locations
-        return "Nothing"
+        # used in corner cases (e.g. plando, item_links) where even a well-behaved world may end up "missing" items
+        return "Marshmallow"
 
     # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
 

@@ -387,7 +387,7 @@
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039012, "name": "Ship Log: ET Gravity Cannon 1 - Visit",
+        "creation_settings": [ "logsanity" ], "address": 1085039012, "name": "Ship Log: ET Gravity Cannon 1 - Activate",
         "region": "Hourglass Twins", "requires": []
     },
     {
@@ -576,7 +576,7 @@
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039060, "name": "Ship Log: BH Gravity Cannon 1 - Visit",
+        "creation_settings": [ "logsanity" ], "address": 1085039060, "name": "Ship Log: BH Gravity Cannon 1 - Activate",
         "region": "Brittle Hollow", "requires": []
     },
     {

@@ -1,7 +1,7 @@
 [
     // per AP docs, 1734473680 was randomly chosen from the range of
     // positive 32-bit integers to avoid conflicts with other AP games
-    { "code": 1734473680, "name": "Nothing", "type": "filler" },
+    { "code": 1734473680, "name": "Nothing", "type": "filler" }, // no longer used, here for backwards compatibility
 
     { "code": 1734473681, "name": "Launch Codes", "type": "progression" },
 
@@ -47,5 +47,11 @@
     { "code": 1734473717, "name": "Landing Camera", "type": "useful" },
     { "code": 1734473718, "name": "Eject Button", "type": "filler" },
     { "code": 1734473719, "name": "Velocity Matcher", "type": "useful" },
-    { "code": 1734473720, "name": "Surface Integrity Scanner", "type": "filler" }
+    { "code": 1734473720, "name": "Surface Integrity Scanner", "type": "filler" },
+
+    { "code": 1734473721, "name": "Oxygen Refill", "type": "filler" },
+    { "code": 1734473722, "name": "Jetpack Fuel Refill", "type": "filler" },
+    { "code": 1734473723, "name": "Marshmallow", "type": "filler" },
+    { "code": 1734473724, "name": "Perfect Marshmallow", "type": "filler" },
+    { "code": 1734473725, "name": "Burnt Marshmallow", "type": "filler" }
 ]

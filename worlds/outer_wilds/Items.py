@@ -59,7 +59,8 @@ item_name_groups = {
         "Escape Pod 3 Signal",
         "Galena's Radio Signal",
         "Tephra's Radio Signal"
-    }
+    },
+    "Tornado": {"Tornado Aerodynamic Adjustments"}
 }
 
 

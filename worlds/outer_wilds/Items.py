@@ -37,31 +37,56 @@ for items_data_entry in items_data:
 
 all_non_event_items_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
 
+item_names: set[str] = set(entry["name"] for entry in items_data)
 item_name_groups = {
-    "Frequencies": {
-        "Distress Beacon Frequency",
-        "Quantum Fluctuations Frequency",
-        "Hide & Seek Frequency"
+    # Auto-generated groups
+    # We don't need an "Everything" group because AP makes that for us
+
+    "progression": set(entry["name"] for entry in items_data if entry["type"] == "progression"),
+    "useful": set(entry["name"] for entry in items_data if entry["type"] == "useful"),
+    "filler": set(entry["name"] for entry in items_data if entry["type"] == "filler"),
+    "trap": set(entry["name"] for entry in items_data if entry["type"] == "trap"),
+
+    "Frequencies": set(n for n in item_names if n.endswith(" Frequency")),
+    "Signals": set(n for n in item_names if n.endswith(" Signal")),
+
+    # Manually curated groups
+    "Ship Upgrades": {
+        "Tornado Aerodynamic Adjustments",
+        "Silent Running Mode",
+        "Autopilot",
+        "Landing Camera",
     },
-    "Signals": {
-        "Chert's Signal",
-        "Esker's Signal",
-        "Riebeck's Signal",
-        "Gabbro's Signal",
-        "Feldspar's Signal",
-        "Museum Shard Signal",
-        "Grove Shard Signal",
-        "Cave Shard Signal",
-        "Tower Shard Signal",
-        "Island Shard Signal",
-        "Quantum Moon Signal",
-        "Escape Pod 1 Signal",
-        "Escape Pod 2 Signal",
-        "Escape Pod 3 Signal",
-        "Galena's Radio Signal",
-        "Tephra's Radio Signal"
+    "Tools": {
+        "Translator",
+        "Signalscope",
+        "Scout",
+        "Ghost Matter Wavelength",
+        "Imaging Rule",
     },
-    "Tornado": {"Tornado Aerodynamic Adjustments"}
+
+    # Aliases
+    "Little Scout": {"Scout"},
+    "Probe": {"Scout"},
+    "Anglerfish": {"Silent Running Mode"},
+    "Tornado": {"Tornado Aerodynamic Adjustments"},
+    "Insulation": {"Electrical Insulation"},
+    "Jellyfish": {"Electrical Insulation"},
+    "Quantum Wavelength": {"Imaging Rule"},
+    "Quantum Camera": {"Imaging Rule"},
+    "GM": {"Ghost Matter Wavelength"},
+    "Ghost Matter": {"Ghost Matter Wavelength"},
+    "GM Wavelength": {"Ghost Matter Wavelength"},
+    "Advanced Warp Core": {"Warp Core Installation Manual"},
+    "Eye Coordinates": {"Coordinates"},
+    "EotU Coordinates": {"Coordinates"},
+    "Eye of the Universe Coordinates": {"Coordinates"},
+    "DBF": {"Distress Beacon Frequency"},
+    "DB Frequency": {"Distress Beacon Frequency"},
+    "QFF": {"Quantum Fluctuations Frequency"},
+    "QF Frequency": {"Quantum Fluctuations Frequency"},
+    "HSF": {"Hide & Seek Frequency"},
+    "HS Frequency": {"Hide & Seek Frequency"},
 }
 
 

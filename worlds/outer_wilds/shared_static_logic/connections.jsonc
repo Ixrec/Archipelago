@@ -39,8 +39,16 @@
     // you can simply fall into the black hole inside BH instead of using the warp pad
     { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [] },
 
-    // you can simply jump off the ceiling and fall to the Hanging City
+    // you can simply jump off/out and fall to the rest of the Hanging City
+    { "from": "Hanging City Ceiling", "to": "Brittle Hollow", "requires": [] },
     { "from": "Black Hole Forge", "to": "Brittle Hollow", "requires": [] },
+
+    // This connection is tricky because you need to reach the forge controls in Hanging City first,
+    // and then get back to whichever warp pad connects to Hanging City Ceiling _in the same loop_.
+    // I believe that requires either the Spaceship or a "warp path" from the Northern Glacier pad to
+    // the Hanging City Ceiling pad. The latter is hard to write logic for, so we require the ship.
+    // And once the ship is required, { "region": "Brittle Hollow" } would be redundant.
+    { "from": "Hanging City Ceiling", "to": "Black Hole Forge", "requires": [ "Launch Codes" ] },
 
     { "from": "Space", "to": "Giant's Deep - Ocean Depths", "requires": [ "Tornado Aerodynamic Adjustments" ] },
     { "from": "Giant's Deep - Ocean Depths", "to": "Giant's Deep - Core", "requires": [ "Electrical Insulation" ] },
@@ -83,13 +91,13 @@
     { "from": "Hourglass Twins", "to": "Sun Station", "requires": [ "Nomai Warp Codes" ] },
     { "from": "Hourglass Twins", "to": "Ash Twin Interior", "requires": [ "Nomai Warp Codes" ] },
     { "from": "Hourglass Twins", "to": "Timber Hearth", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Hourglass Twins", "to": "Black Hole Forge", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Hourglass Twins", "to": "Hanging City Ceiling", "requires": [ "Nomai Warp Codes" ] },
     { "from": "Hourglass Twins", "to": "Giant's Deep", "requires": [ "Nomai Warp Codes" ] },
 
     { "from": "Sun Station", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
     { "from": "Ash Twin Interior", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
     { "from": "Timber Hearth", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Black Hole Forge", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Hanging City Ceiling", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
     { "from": "Giant's Deep", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
 
     { "from": "White Hole Station", "to": "Brittle Hollow", "requires": [ "Nomai Warp Codes" ] }

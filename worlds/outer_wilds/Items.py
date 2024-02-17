@@ -42,7 +42,8 @@ item_name_groups = {
     # Auto-generated groups
     # We don't need an "Everything" group because AP makes that for us
 
-    "progression": set(entry["name"] for entry in items_data if entry["type"] == "progression"),
+    "progression": set(entry["name"] for entry in items_data
+                       if entry["type"] == "progression" and entry["code"] is not None),
     "useful": set(entry["name"] for entry in items_data if entry["type"] == "useful"),
     "filler": set(entry["name"] for entry in items_data if entry["type"] == "filler"),
     "trap": set(entry["name"] for entry in items_data if entry["type"] == "trap"),

@@ -45,83 +45,27 @@ for location_datum in locations_data:
 
 all_non_event_locations_table = {name: data.address for name, data in location_data_table.items() if data.address is not None}
 
+location_names: set[str] = set(entry["name"] for entry in locations_data)
 location_name_groups = {
-    "Frequencies": {
-        "Distress Beacon Frequency",
-        "Quantum Fluctuations Frequency",
-        "Hide & Seek Frequency",
-    },
-    "Signals": {
-        "ET: Drum Signal",
-        "AR: Whistling Signal",
-        "BH: Banjo Signal",
-        "GD: Flute Signal",
-        "DB: Harmonica Signal",
-        "TH: Museum Shard Signal",
-        "TH: Grove Shard Signal",
-        "ET: Cave Shard Signal",
-        "BH: Tower Shard Signal",
-        "GD: Island Shard Signal",
-        "Quantum Moon Signal",
-        "BH: Escape Pod 1 Signal",
-        "ET: Escape Pod 2 Signal",
-        "DB: Escape Pod 3 Signal",
-        "TH: Galena's Radio Signal",
-        "TH: Tephra's Radio Signal",
-    },
-    "Hourglass Twins": {
-        "ET: High Energy Lab (Upper Text Wall)",
-        "ET: Sunless City Shrine (Entrance Text Wall)",
-        "ET: Quantum Moon Locator (2nd Scroll)",
-        "ET: Fossil (Children's Text)",
-        "ET: Lakebed Cave (Floor Text)",
-        "ET: Coleus' Cave (Text Wall)",
-        "Enter the Ash Twin Project",
-        "ET: Drum Signal",
-        "ET: Cave Shard Signal",
-        "ET: Escape Pod 2 Signal",
-    },
-    "Timber Hearth": {
-        "TH: Ghost Matter Plaque",
-        "TH: Zero-G Repairs",
-        "TH: Get the Translator from Hal",
-        "TH: Talk to Hornfels",
-        "TH: Talk to Tektite about Bramble Seed",
-        "TH: Mines (Text Wall)",
-        "Hide & Seek Frequency",
-        "TH: Museum Shard Signal",
-        "TH: Grove Shard Signal",
-    },
-    "Brittle Hollow": {
-        "BH: Southern Observatory (Tornado Text Wall)",
-        "BH: Old Settlement Murals",
-        "BH: Forge (2nd Scroll)",
-        "BH: Tower (Top Floor Text Wall)",
-        "BH: Banjo Signal",
-        "BH: Tower Shard Signal",
-        "BH: Escape Pod 1 Signal",
-    },
-    "Giant's Deep": {
-        "GD: Enter the Orbital Probe Cannon",
-        "GD: Control Module Logs (Text Wheels)",
-        "GD: Bramble Island (Tape Recorder)",
-        "GD: Construction Yard (Text Wall)",
-        "GD: Statue Island Workshop (Text Wheel)",
-        "GD: Tower Rule (Pedestal Text)",
-        "GD: Complete the Tower (Text Wall)",
-        "GD: Enter the Ocean Depths",
-        "GD: Enter the Core",
-        "GD: See the Coordinates",
-    },
-    "Quantum Moon": {
-        "QM: Land",
-        "QM: Explore the Sixth Location",
-    },
-    "Dark Bramble": {
-        "DB: Feldspar's Note",
-        "DB: Nomai Grave (Text Wheel)",
-        "DB: Find The Vessel",
-    },
+    # For now, all of our location groups are auto-generated
+    # We don't need an "Everywhere" group because AP makes that for us
+
+    "Frequencies": set(n for n in location_names if n.endswith(" Frequency")),
+    "Signals": set(n for n in location_names if n.endswith(" Signal")),
+
+    "Ember Twin": set(n for n in location_names if n.startswith("ET: ") or n.startswith("ET Ship Log: ")),
+    "Ash Twin": set(n for n in location_names if n.startswith("AT: ") or n.startswith("AT Ship Log: ")),
+    "Hourglass Twins": set(n for n in location_names if
+                           n.startswith("ET: ") or n.startswith("ET Ship Log: ") or
+                           n.startswith("AT: ") or n.startswith("AT Ship Log: ")),
+    "Timber Hearth": set(n for n in location_names if n.startswith("TH: ") or n.startswith("TH Ship Log: ")),
+    "Attlerock": set(n for n in location_names if n.startswith("AR: ") or n.startswith("AR Ship Log: ")),
+    "Brittle Hollow": set(n for n in location_names if n.startswith("BH: ") or n.startswith("BH Ship Log: ")),
+    "Giant's Deep": set(n for n in location_names if n.startswith("GD: ") or n.startswith("GD Ship Log: ")),
+    "Dark Bramble": set(n for n in location_names if n.startswith("DB: ") or n.startswith("DB Ship Log: ")),
+    "Quantum Moon": set(n for n in location_names if n.startswith("QM: ") or n.startswith("QM Ship Log: ")),
+
+    "Ship Logs": set(n for n in location_names if "Ship Log: " in n),
 }
 
 

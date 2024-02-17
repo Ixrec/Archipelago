@@ -45,9 +45,9 @@
 
     { "code": 1734473716, "name": "Autopilot", "type": "useful" },
     { "code": 1734473717, "name": "Landing Camera", "type": "useful" },
-    { "code": 1734473718, "name": "Eject Button", "type": "filler" },
+    { "code": 1734473718, "name": "Eject Button", "type": "useful" },
     { "code": 1734473719, "name": "Velocity Matcher", "type": "useful" },
-    { "code": 1734473720, "name": "Surface Integrity Scanner", "type": "filler" },
+    { "code": 1734473720, "name": "Surface Integrity Scanner", "type": "useful" },
 
     { "code": 1734473721, "name": "Oxygen Refill", "type": "filler" },
     { "code": 1734473722, "name": "Jetpack Fuel Refill", "type": "filler" },

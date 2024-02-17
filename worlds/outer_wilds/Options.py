@@ -1,6 +1,7 @@
 from dataclasses import dataclass
+from schema import Schema, And
 
-from Options import Choice, DefaultOnToggle, Toggle, PerGameCommonOptions
+from Options import Choice, DefaultOnToggle, OptionDict, PerGameCommonOptions, Range, Toggle
 
 
 class Goal(Choice):
@@ -15,6 +16,35 @@ class Goal(Choice):
 class RandomizeCoordinates(DefaultOnToggle):
     """Randomize the Eye of the Universe coordinates needed to reach the end of the game."""
     display_name = "Randomize Coordinates"
+
+
+class TrapChance(Range):
+    """The probability for each filler item (including unique filler) to be replaced with a trap item.
+    The exact number of trap items will still be somewhat random, so you can't know
+    if you've seen the 'last trap' in your world without checking the spoiler log.
+    If you don't want any traps, set this to 0."""
+    display_name = "Trap Chance"
+    range_start = 0
+    range_end = 100
+    default = 15
+
+
+class TrapTypeWeights(OptionDict):
+    """When a filler item is replaced with a trap, these weights determine the
+    odds for each trap type to be selected.
+    If you don't want a specific trap type, set its weight to 0.
+    Setting all weights to 0 is the same as setting trap_chance to 0."""
+    schema = Schema({
+        "Ship Damage Trap": And(int, lambda n: n >= 0),
+        "Meditation Trap": And(int, lambda n: n >= 0),
+        "Audio Trap": And(int, lambda n: n >= 0),
+    })
+    display_name = "Trap Type Weights"
+    default = {
+        "Ship Damage Trap": 2,
+        "Meditation Trap": 2,
+        "Audio Trap": 1,
+    }
 
 
 class DeathLink(Choice):
@@ -36,5 +66,7 @@ class Logsanity(Toggle):
 class OuterWildsGameOptions(PerGameCommonOptions):
     goal: Goal
     randomize_coordinates: RandomizeCoordinates
+    trap_chance: TrapChance
+    trap_type_weights: TrapTypeWeights
     death_link: DeathLink
     logsanity: Logsanity

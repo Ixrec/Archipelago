@@ -85,12 +85,8 @@
     },
     {
         "address": 1085038267, "name": "BH: Forge (2nd Scroll)",
-        // this is a one-location region because it has a warp pad
         "region": "Black Hole Forge",
-        "requires": [
-            "Translator",
-            { "region": "Brittle Hollow" } // need to reach the forge controls in Hanging City first
-        ]
+        "requires": [ "Translator" ]
     },
     {
         "address": 1085038268, "name": "BH: Tower (Top Floor Text Wall)",

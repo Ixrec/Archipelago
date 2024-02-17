@@ -143,15 +143,17 @@ class TestLogsanityWorld(OuterWildsTestBase):
         self.assertEqual(self.get_location_count(), 236)  # 60 default + 176 logsanity locations
 
         # make sure the logsanity locations exist; this one requires nothing to reach
-        self.assertTrue(self.multiworld.state.can_reach("Ship Log: Village 1 - Identify", "Location", 1))
+        self.assertTrue(self.multiworld.state.can_reach("TH Ship Log: Village 1 - Identify", "Location", 1))
 
         # and some of those new locations are Insulation-gated
         self.assertAccessDependency(
             [
                 "GD: Enter the Core", "GD: See the Coordinates",
-                "Ship Log: Ocean Depths 2 - Coral Forest",
-                "Ship Log: Probe Tracking Module 1 - Millions", "Ship Log: Probe Tracking Module 2 - Anomaly Located",
-                "Ship Log: Probe Tracking Module 3 - Statue", "Ship Log: Probe Tracking Module 4 - Coordinates"
+                "GD Ship Log: Ocean Depths 2 - Coral Forest",
+                "GD Ship Log: Probe Tracking Module 1 - Millions",
+                "GD Ship Log: Probe Tracking Module 2 - Anomaly Located",
+                "GD Ship Log: Probe Tracking Module 3 - Statue",
+                "GD Ship Log: Probe Tracking Module 4 - Coordinates"
             ],
             [["Electrical Insulation"]]
         )

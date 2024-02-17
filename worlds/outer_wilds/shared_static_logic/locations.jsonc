@@ -355,376 +355,376 @@
     },
 
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039004, "name": "Ship Log: Chert's Camp 1 - Visit",
+        "creation_settings": [ "logsanity" ], "address": 1085039004, "name": "ET Ship Log: Chert's Camp 1 - Visit",
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039005, "name": "Ship Log: Chert's Camp 2 - Supernovae",
+        "creation_settings": [ "logsanity" ], "address": 1085039005, "name": "ET Ship Log: Chert's Camp 2 - Supernovae",
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039006, "name": "Ship Log: Chert's Camp 3 - Universe Dying",
+        "creation_settings": [ "logsanity" ], "address": 1085039006, "name": "ET Ship Log: Chert's Camp 3 - Universe Dying",
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039007, "name": "Ship Log: Chert's Camp 4 - Old Age",
+        "creation_settings": [ "logsanity" ], "address": 1085039007, "name": "ET Ship Log: Chert's Camp 4 - Old Age",
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039008, "name": "Ship Log: Chert's Camp 5 - Imminent Death",
+        "creation_settings": [ "logsanity" ], "address": 1085039008, "name": "ET Ship Log: Chert's Camp 5 - Imminent Death",
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039009, "name": "Ship Log: QM Locator 1 - Purpose",
+        "creation_settings": [ "logsanity" ], "address": 1085039009, "name": "ET Ship Log: QM Locator 1 - Purpose",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039010, "name": "Ship Log: QM Locator 2 - Quantum Mechanics",
+        "creation_settings": [ "logsanity" ], "address": 1085039010, "name": "ET Ship Log: QM Locator 2 - Quantum Mechanics",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039011, "name": "Ship Log: QM Locator 3 - Five Locations",
+        "creation_settings": [ "logsanity" ], "address": 1085039011, "name": "ET Ship Log: QM Locator 3 - Five Locations",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039012, "name": "Ship Log: ET Gravity Cannon 1 - Activate",
+        "creation_settings": [ "logsanity" ], "address": 1085039012, "name": "ET Ship Log: Gravity Cannon 1 - Activate",
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039013, "name": "Ship Log: ET Gravity Cannon 2 - Recall Shuttle",
+        "creation_settings": [ "logsanity" ], "address": 1085039013, "name": "ET Ship Log: Gravity Cannon 2 - Recall Shuttle",
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039014, "name": "Ship Log: Escape Pod 2 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039014, "name": "ET Ship Log: Escape Pod 2 1 - Identify",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039015, "name": "Ship Log: Escape Pod 2 2 - Vessel",
+        "creation_settings": [ "logsanity" ], "address": 1085039015, "name": "ET Ship Log: Escape Pod 2 2 - Vessel",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039016, "name": "Ship Log: High Energy Lab 1 - Temporal Anomaly",
+        "creation_settings": [ "logsanity" ], "address": 1085039016, "name": "ET Ship Log: High Energy Lab 1 - Temporal Anomaly",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039017, "name": "Ship Log: High Energy Lab 2 - Increasing Interval",
+        "creation_settings": [ "logsanity" ], "address": 1085039017, "name": "ET Ship Log: High Energy Lab 2 - Increasing Interval",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039018, "name": "Ship Log: High Energy Lab 3 - Ash Twin Project",
+        "creation_settings": [ "logsanity" ], "address": 1085039018, "name": "ET Ship Log: High Energy Lab 3 - Ash Twin Project",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039019, "name": "Ship Log: AT Tower Designs 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039019, "name": "ET Ship Log: AT Tower Designs 1 - Identify",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039020, "name": "Ship Log: AT Tower Designs 2 - Different Planets",
+        "creation_settings": [ "logsanity" ], "address": 1085039020, "name": "ET Ship Log: AT Tower Designs 2 - Different Planets",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039021, "name": "Ship Log: AT Tower Designs 3 - Reflect Destinations",
+        "creation_settings": [ "logsanity" ], "address": 1085039021, "name": "ET Ship Log: AT Tower Designs 3 - Reflect Destinations",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039022, "name": "Ship Log: AT Tower Designs 4 - Ash Twin Project",
+        "creation_settings": [ "logsanity" ], "address": 1085039022, "name": "ET Ship Log: AT Tower Designs 4 - Ash Twin Project",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039023, "name": "Ship Log: Sunless City 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039023, "name": "ET Ship Log: Sunless City 1 - Identify",
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039024, "name": "Ship Log: Sunless City 2 - Sun Station Debate",
+        "creation_settings": [ "logsanity" ], "address": 1085039024, "name": "ET Ship Log: Sunless City 2 - Sun Station Debate",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039025, "name": "Ship Log: Sunless City 3 - Eye Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039025, "name": "ET Ship Log: Sunless City 3 - Eye Signal",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039026, "name": "Ship Log: Anglerfish Fossil 1 - Children's Game",
+        "creation_settings": [ "logsanity" ], "address": 1085039026, "name": "ET Ship Log: Anglerfish Fossil 1 - Children's Game",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039027, "name": "Ship Log: Anglerfish Fossil 2 - Blindfold Rule",
+        "creation_settings": [ "logsanity" ], "address": 1085039027, "name": "ET Ship Log: Anglerfish Fossil 2 - Blindfold Rule",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039028, "name": "Ship Log: Anglerfish Fossil 3 - Adult Response",
+        "creation_settings": [ "logsanity" ], "address": 1085039028, "name": "ET Ship Log: Anglerfish Fossil 3 - Adult Response",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039029, "name": "Ship Log: Quantum Caves 1 - Wandering Rock",
+        "creation_settings": [ "logsanity" ], "address": 1085039029, "name": "ET Ship Log: Quantum Caves 1 - Wandering Rock",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039030, "name": "Ship Log: Quantum Caves 2 - Quantum Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039030, "name": "ET Ship Log: Quantum Caves 2 - Quantum Signal",
         "region": "Hourglass Twins", "requires": [ "Signalscope" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039031, "name": "Ship Log: Lakebed Cave 1 - Coleus Disappeared",
+        "creation_settings": [ "logsanity" ], "address": 1085039031, "name": "ET Ship Log: Lakebed Cave 1 - Coleus Disappeared",
         "region": "Hourglass Twins", "requires": [ "Translator" ] // this is the floor text in Lakebed Cave itself
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039032, "name": "Ship Log: Lakebed Cave 2 - Entanglement Rule",
+        "creation_settings": [ "logsanity" ], "address": 1085039032, "name": "ET Ship Log: Lakebed Cave 2 - Entanglement Rule",
         "region": "Hourglass Twins", "requires": [ "Translator", "Entanglement Rule" ] // wall text where Coleus was trapped
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039033, "name": "Ship Log: Lakebed Cave 3 - Conscious Being Theory",
+        "creation_settings": [ "logsanity" ], "address": 1085039033, "name": "ET Ship Log: Lakebed Cave 3 - Conscious Being Theory",
         "region": "Hourglass Twins", "requires": [ "Translator", "Entanglement Rule" ] // wall text where Coleus was trapped
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039034, "name": "Ship Log: AT Towers 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039034, "name": "AT Ship Log: Towers 1 - Identify",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039035, "name": "Ship Log: AT Towers 2 - White Hole Station",
+        "creation_settings": [ "logsanity" ], "address": 1085039035, "name": "AT Ship Log: Towers 2 - White Hole Station",
         "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039036, "name": "Ship Log: ATP 1 - Entered",
+        "creation_settings": [ "logsanity" ], "address": 1085039036, "name": "AT Ship Log: ATP 1 - Entered",
         "region": "Ash Twin Interior", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039037, "name": "Ship Log: ATP 2 - Mask Monoliths",
+        "creation_settings": [ "logsanity" ], "address": 1085039037, "name": "AT Ship Log: ATP 2 - Mask Monoliths",
         "region": "Ash Twin Interior", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039038, "name": "Ship Log: ATP 3 - Supernova Energy",
+        "creation_settings": [ "logsanity" ], "address": 1085039038, "name": "AT Ship Log: ATP 3 - Supernova Energy",
         "region": "Ash Twin Interior", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039039, "name": "Ship Log: ATP 4 - Sun Station Failure",
+        "creation_settings": [ "logsanity" ], "address": 1085039039, "name": "AT Ship Log: ATP 4 - Sun Station Failure",
         "region": "Ash Twin Interior", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039040, "name": "Ship Log: ATP 5 - Advanced Warp Core",
+        "creation_settings": [ "logsanity" ], "address": 1085039040, "name": "AT Ship Log: ATP 5 - Advanced Warp Core",
         "region": "Ash Twin Interior", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039041, "name": "Ship Log: Village 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039041, "name": "TH Ship Log: Village 1 - Identify",
         "region": "Timber Hearth Village", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039042, "name": "Ship Log: Village 2 - Statue Eyes Opened",
+        "creation_settings": [ "logsanity" ], "address": 1085039042, "name": "TH Ship Log: Village 2 - Statue Eyes Opened",
         "region": "Timber Hearth Village", "requires": []
     },
     // removed 1085039043 / Village 3 because it's perma-missable
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039044, "name": "Ship Log: Zero-G Cave 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039044, "name": "TH Ship Log: Zero-G Cave 1 - Identify",
         "region": "Timber Hearth Village", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039045, "name": "Ship Log: Zero-G Cave 2 - Repair",
+        "creation_settings": [ "logsanity" ], "address": 1085039045, "name": "TH Ship Log: Zero-G Cave 2 - Repair",
         "region": "Timber Hearth Village", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039046, "name": "Ship Log: Dark Bramble Seed 1 - Tektite",
+        "creation_settings": [ "logsanity" ], "address": 1085039046, "name": "TH Ship Log: Dark Bramble Seed 1 - Tektite",
         "region": "Timber Hearth", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039047, "name": "Ship Log: Dark Bramble Seed 2 - Harmonica Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039047, "name": "TH Ship Log: Dark Bramble Seed 2 - Harmonica Signal",
         "region": "Timber Hearth", "requires": [ "Signalscope" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039048, "name": "Ship Log: Dark Bramble Seed 3 - Scout Photos",
+        "creation_settings": [ "logsanity" ], "address": 1085039048, "name": "TH Ship Log: Dark Bramble Seed 3 - Scout Photos",
         "region": "Timber Hearth", "requires": [ "Scout" ] // shoot your scout into the seed and take a photo of the anglerfish skeleton
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039049, "name": "Ship Log: Nomai Mines 1 - Ash Twin Shell",
+        "creation_settings": [ "logsanity" ], "address": 1085039049, "name": "TH Ship Log: Nomai Mines 1 - Ash Twin Shell",
         "region": "Timber Hearth", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039050, "name": "Ship Log: Nomai Mines 2 - No Physical Entrance",
+        "creation_settings": [ "logsanity" ], "address": 1085039050, "name": "TH Ship Log: Nomai Mines 2 - No Physical Entrance",
         "region": "Timber Hearth", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039051, "name": "Ship Log: Nomai Mines 3 - Four-Eyed Lifeforms",
+        "creation_settings": [ "logsanity" ], "address": 1085039051, "name": "TH Ship Log: Nomai Mines 3 - Four-Eyed Lifeforms",
         "region": "Timber Hearth", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039052, "name": "Ship Log: Quantum Grove 1 - Quantum Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039052, "name": "TH Ship Log: Quantum Grove 1 - Quantum Signal",
         "region": "Timber Hearth", "requires": [ "Signalscope" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039053, "name": "Ship Log: Quantum Grove 2 - Poem",
+        "creation_settings": [ "logsanity" ], "address": 1085039053, "name": "TH Ship Log: Quantum Grove 2 - Poem",
         "region": "Timber Hearth", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039054, "name": "Ship Log: Esker's Camp",
+        "creation_settings": [ "logsanity" ], "address": 1085039054, "name": "AR Ship Log: Esker's Camp",
         "region": "Space", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039055, "name": "Ship Log: Lunar Lookout",
+        "creation_settings": [ "logsanity" ], "address": 1085039055, "name": "AR Ship Log: Lunar Lookout",
         "region": "Space", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039056, "name": "Ship Log: Eye Signal Locator 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039056, "name": "AR Ship Log: Eye Signal Locator 1 - Identify",
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039057, "name": "Ship Log: Eye Signal Locator 2 - Failure",
+        "creation_settings": [ "logsanity" ], "address": 1085039057, "name": "AR Ship Log: Eye Signal Locator 2 - Failure",
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039058, "name": "Ship Log: Riebeck's Camp 1 - Visit",
+        "creation_settings": [ "logsanity" ], "address": 1085039058, "name": "BH Ship Log: Riebeck's Camp 1 - Visit",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039059, "name": "Ship Log: Riebeck's Camp 2 - Archaeology",
+        "creation_settings": [ "logsanity" ], "address": 1085039059, "name": "BH Ship Log: Riebeck's Camp 2 - Archaeology",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039060, "name": "Ship Log: BH Gravity Cannon 1 - Activate",
+        "creation_settings": [ "logsanity" ], "address": 1085039060, "name": "BH Ship Log: Gravity Cannon 1 - Activate",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039061, "name": "Ship Log: BH Gravity Cannon 2 - Recall Shuttle",
+        "creation_settings": [ "logsanity" ], "address": 1085039061, "name": "BH Ship Log: Gravity Cannon 2 - Recall Shuttle",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039062, "name": "Ship Log: BH Tower 1 - Sixth Location",
+        "creation_settings": [ "logsanity" ], "address": 1085039062, "name": "BH Ship Log: Tower 1 - Sixth Location",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039063, "name": "Ship Log: BH Tower 2 - Pilgrimage",
+        "creation_settings": [ "logsanity" ], "address": 1085039063, "name": "BH Ship Log: Tower 2 - Pilgrimage",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039064, "name": "Ship Log: BH Tower 3 - United Goal",
+        "creation_settings": [ "logsanity" ], "address": 1085039064, "name": "BH Ship Log: Tower 3 - United Goal",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039065, "name": "Ship Log: Tower Shard 1 - Grove Objects",
+        "creation_settings": [ "logsanity" ], "address": 1085039065, "name": "BH Ship Log: Tower Shard 1 - Grove Objects",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039066, "name": "Ship Log: Tower Shard 2 - Piece of Moon",
+        "creation_settings": [ "logsanity" ], "address": 1085039066, "name": "BH Ship Log: Tower Shard 2 - Piece of Moon",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039067, "name": "Ship Log: Tower Shard 3 - QM Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039067, "name": "BH Ship Log: Tower Shard 3 - QM Signal",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039068, "name": "Ship Log: Northern Glacier 1 - Visit",
+        "creation_settings": [ "logsanity" ], "address": 1085039068, "name": "BH Ship Log: Northern Glacier 1 - Visit",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039069, "name": "Ship Log: Northern Glacier 2 - WHS",
+        "creation_settings": [ "logsanity" ], "address": 1085039069, "name": "BH Ship Log: Northern Glacier 2 - WHS",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039070, "name": "Ship Log: Escape Pod 1 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039070, "name": "BH Ship Log: Escape Pod 1 1 - Identify",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039071, "name": "Ship Log: Escape Pod 1 2 - Vessel",
+        "creation_settings": [ "logsanity" ], "address": 1085039071, "name": "BH Ship Log: Escape Pod 1 2 - Vessel",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039072, "name": "Ship Log: Old Settlement 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039072, "name": "BH Ship Log: Old Settlement 1 - Identify",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039073, "name": "Ship Log: Old Settlement 2 - Eye-Shaped Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039073, "name": "BH Ship Log: Old Settlement 2 - Eye-Shaped Signal",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039074, "name": "Ship Log: Old Settlement 3 - Eye of the Universe",
+        "creation_settings": [ "logsanity" ], "address": 1085039074, "name": "BH Ship Log: Old Settlement 3 - Eye of the Universe",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039075, "name": "Ship Log: Old Settlement 4 - Abandoned",
+        "creation_settings": [ "logsanity" ], "address": 1085039075, "name": "BH Ship Log: Old Settlement 4 - Abandoned",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039076, "name": "Ship Log: Old Settlement Mural 1",
+        "creation_settings": [ "logsanity" ], "address": 1085039076, "name": "BH Ship Log: Old Settlement Mural 1",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039077, "name": "Ship Log: Old Settlement Mural 2",
+        "creation_settings": [ "logsanity" ], "address": 1085039077, "name": "BH Ship Log: Old Settlement Mural 2",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039078, "name": "Ship Log: Old Settlement Mural 3",
+        "creation_settings": [ "logsanity" ], "address": 1085039078, "name": "BH Ship Log: Old Settlement Mural 3",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039079, "name": "Ship Log: Hanging City 1 - Visit",
+        "creation_settings": [ "logsanity" ], "address": 1085039079, "name": "BH Ship Log: Hanging City 1 - Visit",
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039080, "name": "Ship Log: Hanging City 2 - BHF Switch",
+        "creation_settings": [ "logsanity" ], "address": 1085039080, "name": "BH Ship Log: Hanging City 2 - BHF Switch",
         "region": "Brittle Hollow", "requires": [] // this is for simply using the orb, so no items needed
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039081, "name": "Ship Log: Hanging City 3 - Warp Core",
+        "creation_settings": [ "logsanity" ], "address": 1085039081, "name": "BH Ship Log: Hanging City 3 - Warp Core",
         "region": "Brittle Hollow", "requires": [ "Translator" ] // meltwater district text wall
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039082, "name": "Ship Log: Hanging City 4 - Eye Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039082, "name": "BH Ship Log: Hanging City 4 - Eye Signal",
         "region": "Brittle Hollow", "requires": [ "Translator" ] // eye shrine text wall
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039083, "name": "Ship Log: Black Hole Forge 1 - Astral Body Alignment",
+        "creation_settings": [ "logsanity" ], "address": 1085039083, "name": "BH Ship Log: Black Hole Forge 1 - Astral Body Alignment",
         "region": "Black Hole Forge", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039084, "name": "Ship Log: Black Hole Forge 2 - Receiver Location",
+        "creation_settings": [ "logsanity" ], "address": 1085039084, "name": "BH Ship Log: Black Hole Forge 2 - Receiver Location",
         "region": "Black Hole Forge", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039085, "name": "Ship Log: Black Hole Forge 3 - Hourglass Twins",
+        "creation_settings": [ "logsanity" ], "address": 1085039085, "name": "BH Ship Log: Black Hole Forge 3 - Hourglass Twins",
         "region": "Black Hole Forge", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039086, "name": "Ship Log: Black Hole Forge 4 - Ash Twin Towers",
+        "creation_settings": [ "logsanity" ], "address": 1085039086, "name": "BH Ship Log: Black Hole Forge 4 - Ash Twin Towers",
         "region": "Black Hole Forge", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039087, "name": "Ship Log: Black Hole Forge 5 - Poke's Warp Core",
+        "creation_settings": [ "logsanity" ], "address": 1085039087, "name": "BH Ship Log: Black Hole Forge 5 - Poke's Warp Core",
         "region": "Black Hole Forge", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039088, "name": "Ship Log: Alignment Angle Diagram 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039088, "name": "BH Ship Log: Alignment Angle Diagram 1 - Identify",
         "region": "Black Hole Forge", "requires": [] // just for looking at it
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039089, "name": "Ship Log: Alignment Angle Diagram 2 - Five Degrees",
+        "creation_settings": [ "logsanity" ], "address": 1085039089, "name": "BH Ship Log: Alignment Angle Diagram 2 - Five Degrees",
         "region": "Black Hole Forge", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039090, "name": "Ship Log: Alignment Angle Diagram 3 - Several Seconds",
+        "creation_settings": [ "logsanity" ], "address": 1085039090, "name": "BH Ship Log: Alignment Angle Diagram 3 - Several Seconds",
         "region": "Black Hole Forge", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039091, "name": "Ship Log: Alignment Angle Diagram 4 - Active Window",
+        "creation_settings": [ "logsanity" ], "address": 1085039091, "name": "BH Ship Log: Alignment Angle Diagram 4 - Active Window",
         "region": "Black Hole Forge", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039092, "name": "Ship Log: Southern Observatory 1 - Eye Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039092, "name": "BH Ship Log: Southern Observatory 1 - Eye Signal",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039093, "name": "Ship Log: Southern Observatory 2 - Distant Orbit",
+        "creation_settings": [ "logsanity" ], "address": 1085039093, "name": "BH Ship Log: Southern Observatory 2 - Distant Orbit",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039094, "name": "Ship Log: Southern Observatory 3 - Deep Space Probe",
+        "creation_settings": [ "logsanity" ], "address": 1085039094, "name": "BH Ship Log: Southern Observatory 3 - Deep Space Probe",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039095, "name": "Ship Log: Southern Observatory 4 - Probability",
+        "creation_settings": [ "logsanity" ], "address": 1085039095, "name": "BH Ship Log: Southern Observatory 4 - Probability",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039096, "name": "Ship Log: Tornado Simulation 1 - Mostly Clockwise",
+        "creation_settings": [ "logsanity" ], "address": 1085039096, "name": "BH Ship Log: Tornado Simulation 1 - Mostly Clockwise",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039097, "name": "Ship Log: Tornado Simulation 2 - Below the Current",
+        "creation_settings": [ "logsanity" ], "address": 1085039097, "name": "BH Ship Log: Tornado Simulation 2 - Below the Current",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
@@ -740,203 +740,203 @@
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039101, "name": "Ship Log: Ocean Depths 1 - Electrical Field",
+        "creation_settings": [ "logsanity" ], "address": 1085039101, "name": "GD Ship Log: Ocean Depths 1 - Electrical Field",
         "region": "Giant's Deep - Ocean Depths", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039102, "name": "Ship Log: Ocean Depths 2 - Coral Forest",
+        "creation_settings": [ "logsanity" ], "address": 1085039102, "name": "GD Ship Log: Ocean Depths 2 - Coral Forest",
         "region": "Giant's Deep - Core", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039103, "name": "Ship Log: Gabbro's Island 1 - Hammock",
+        "creation_settings": [ "logsanity" ], "address": 1085039103, "name": "GD Ship Log: Gabbro's Island 1 - Hammock",
         "region": "Giant's Deep", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039104, "name": "Ship Log: Gabbro's Island 2 - Gabbro's Statue",
+        "creation_settings": [ "logsanity" ], "address": 1085039104, "name": "GD Ship Log: Gabbro's Island 2 - Gabbro's Statue",
         "region": "Giant's Deep", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039105, "name": "Ship Log: Gabbro's Island 3 - Remembers Dying",
+        "creation_settings": [ "logsanity" ], "address": 1085039105, "name": "GD Ship Log: Gabbro's Island 3 - Remembers Dying",
         "region": "Giant's Deep", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039106, "name": "Ship Log: Gabbro's Island 4 - Only Two Aware",
+        "creation_settings": [ "logsanity" ], "address": 1085039106, "name": "GD Ship Log: Gabbro's Island 4 - Only Two Aware",
         "region": "Giant's Deep", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039107, "name": "Ship Log: Construction Yard 1 - Built OPC",
+        "creation_settings": [ "logsanity" ], "address": 1085039107, "name": "GD Ship Log: Construction Yard 1 - Built OPC",
         "region": "Giant's Deep", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039108, "name": "Ship Log: Construction Yard 2 - Hiatus",
+        "creation_settings": [ "logsanity" ], "address": 1085039108, "name": "GD Ship Log: Construction Yard 2 - Hiatus",
         "region": "Giant's Deep", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039109, "name": "Ship Log: Construction Yard 3 - Recent Launch",
+        "creation_settings": [ "logsanity" ], "address": 1085039109, "name": "GD Ship Log: Construction Yard 3 - Recent Launch",
         "region": "Giant's Deep", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039110, "name": "Ship Log: Bramble Island",
+        "creation_settings": [ "logsanity" ], "address": 1085039110, "name": "GD Ship Log: Bramble Island",
         "region": "Giant's Deep", "requires": [ "Ghost Matter Wavelength" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039111, "name": "Ship Log: Statue Island 1 - Purpose",
+        "creation_settings": [ "logsanity" ], "address": 1085039111, "name": "GD Ship Log: Statue Island 1 - Purpose",
         "region": "Giant's Deep", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039112, "name": "Ship Log: Statue Island 2 - Beach Statue",
+        "creation_settings": [ "logsanity" ], "address": 1085039112, "name": "GD Ship Log: Statue Island 2 - Beach Statue",
         "region": "Giant's Deep", "requires": [] // just for looking at the statue, no items needed
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039113, "name": "Ship Log: Island Workshop 1 - Memories",
+        "creation_settings": [ "logsanity" ], "address": 1085039113, "name": "GD Ship Log: Island Workshop 1 - Memories",
         "region": "Giant's Deep", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039114, "name": "Ship Log: Island Workshop 2 - Masks",
+        "creation_settings": [ "logsanity" ], "address": 1085039114, "name": "GD Ship Log: Island Workshop 2 - Masks",
         "region": "Giant's Deep", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039115, "name": "Ship Log: Island Workshop 3 - Activation",
+        "creation_settings": [ "logsanity" ], "address": 1085039115, "name": "GD Ship Log: Island Workshop 3 - Activation",
         "region": "Giant's Deep", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039116, "name": "Ship Log: GD Tower 1 - Quantum Journey",
+        "creation_settings": [ "logsanity" ], "address": 1085039116, "name": "GD Ship Log: Tower 1 - Quantum Journey",
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039117, "name": "Ship Log: GD Tower 2 - Observing an Image",
+        "creation_settings": [ "logsanity" ], "address": 1085039117, "name": "GD Ship Log: Tower 2 - Observing an Image",
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039118, "name": "Ship Log: GD Tower 3 - Rule of Imaging",
+        "creation_settings": [ "logsanity" ], "address": 1085039118, "name": "GD Ship Log: Tower 3 - Rule of Imaging",
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039119, "name": "Ship Log: GD Tower 4 - Other Shards",
+        "creation_settings": [ "logsanity" ], "address": 1085039119, "name": "GD Ship Log: Tower 4 - Other Shards",
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039120, "name": "Ship Log: OPC 1 - Entered",
+        "creation_settings": [ "logsanity" ], "address": 1085039120, "name": "GD Ship Log: OPC 1 - Entered",
         "region": "Space", "requires": [] // just entering the central chamber
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039121, "name": "Ship Log: OPC 2 - Purpose",
+        "creation_settings": [ "logsanity" ], "address": 1085039121, "name": "GD Ship Log: OPC 2 - Purpose",
         "region": "Space", "requires": [ "Translator" ] // control module projection stone text
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039122, "name": "Ship Log: OPC 3 - Maximum Power",
+        "creation_settings": [ "logsanity" ], "address": 1085039122, "name": "GD Ship Log: OPC 3 - Maximum Power",
         "region": "Space", "requires": [ "Translator" ] // control module projection stone text
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039123, "name": "Ship Log: Probe Tracking Module 1 - Millions",
+        "creation_settings": [ "logsanity" ], "address": 1085039123, "name": "GD Ship Log: Probe Tracking Module 1 - Millions",
         "region": "Giant's Deep - Core", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039124, "name": "Ship Log: Probe Tracking Module 2 - Anomaly Located",
+        "creation_settings": [ "logsanity" ], "address": 1085039124, "name": "GD Ship Log: Probe Tracking Module 2 - Anomaly Located",
         "region": "Giant's Deep - Core", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039125, "name": "Ship Log: Probe Tracking Module 3 - Statue",
+        "creation_settings": [ "logsanity" ], "address": 1085039125, "name": "GD Ship Log: Probe Tracking Module 3 - Statue",
         "region": "Giant's Deep - Core", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039126, "name": "Ship Log: Probe Tracking Module 4 - Coordinates",
+        "creation_settings": [ "logsanity" ], "address": 1085039126, "name": "GD Ship Log: Probe Tracking Module 4 - Coordinates",
         "region": "Giant's Deep - Core", "requires": [ "Translator" ] // this requires translating the terminal, not just seeing the coords
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039127, "name": "Ship Log: Launch Module 1 - Damaged",
+        "creation_settings": [ "logsanity" ], "address": 1085039127, "name": "GD Ship Log: Launch Module 1 - Damaged",
         "region": "Space", "requires": [] // just entering the module
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039128, "name": "Ship Log: Launch Module 2 - Only Once",
+        "creation_settings": [ "logsanity" ], "address": 1085039128, "name": "GD Ship Log: Launch Module 2 - Only Once",
         "region": "Space", "requires": [ "Translator" ] // launch module projection stone text
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039129, "name": "Ship Log: Launch Module 3 - Receive Data",
+        "creation_settings": [ "logsanity" ], "address": 1085039129, "name": "GD Ship Log: Launch Module 3 - Receive Data",
         "region": "Space", "requires": [ "Translator" ] // launch module projection stone text
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039130, "name": "Ship Log: Control Module 1 - Recent Launch Request",
+        "creation_settings": [ "logsanity" ], "address": 1085039130, "name": "GD Ship Log: Control Module 1 - Recent Launch Request",
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039131, "name": "Ship Log: Control Module 2 - Compromised",
+        "creation_settings": [ "logsanity" ], "address": 1085039131, "name": "GD Ship Log: Control Module 2 - Compromised",
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039132, "name": "Ship Log: Feldspar's Camp 1 - Alive",
+        "creation_settings": [ "logsanity" ], "address": 1085039132, "name": "DB Ship Log: Feldspar's Camp 1 - Alive",
         "region": "Dark Bramble - Feldspar", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039133, "name": "Ship Log: Feldspar's Camp 2 - Space Doesn't Work",
+        "creation_settings": [ "logsanity" ], "address": 1085039133, "name": "DB Ship Log: Feldspar's Camp 2 - Space Doesn't Work",
         "region": "Dark Bramble - Feldspar", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039134, "name": "Ship Log: Feldspar's Camp 3 - Peace And Quiet",
+        "creation_settings": [ "logsanity" ], "address": 1085039134, "name": "DB Ship Log: Feldspar's Camp 3 - Peace And Quiet",
         "region": "Dark Bramble - Feldspar", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039135, "name": "Ship Log: Frozen Jellyfish 1 - Outside",
+        "creation_settings": [ "logsanity" ], "address": 1085039135, "name": "DB Ship Log: Frozen Jellyfish 1 - Outside",
         "region": "Dark Bramble - Feldspar", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039136, "name": "Ship Log: Frozen Jellyfish 2 - Inside",
+        "creation_settings": [ "logsanity" ], "address": 1085039136, "name": "DB Ship Log: Frozen Jellyfish 2 - Inside",
         "region": "Dark Bramble - Feldspar", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039137, "name": "Ship Log: Frozen Jellyfish 3 - Do Not Eat",
+        "creation_settings": [ "logsanity" ], "address": 1085039137, "name": "DB Ship Log: Frozen Jellyfish 3 - Do Not Eat",
         "region": "Dark Bramble - Feldspar", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039138, "name": "Ship Log: Escape Pod 3 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039138, "name": "DB Ship Log: Escape Pod 3 1 - Identify",
         "region": "Dark Bramble - Nomai Grave", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039139, "name": "Ship Log: Escape Pod 3 2 - Vessel",
+        "creation_settings": [ "logsanity" ], "address": 1085039139, "name": "DB Ship Log: Escape Pod 3 2 - Vessel",
         "region": "Dark Bramble - Nomai Grave", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039140, "name": "Ship Log: Escape Pod 3 3 - Two Beacons",
+        "creation_settings": [ "logsanity" ], "address": 1085039140, "name": "DB Ship Log: Escape Pod 3 3 - Two Beacons",
         "region": "Dark Bramble - Nomai Grave", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039141, "name": "Ship Log: Nomai Grave 1 - Followed Beacon",
+        "creation_settings": [ "logsanity" ], "address": 1085039141, "name": "DB Ship Log: Nomai Grave 1 - Followed Beacon",
         "region": "Dark Bramble - Nomai Grave", "requires": [ "Translator" ] // text wheel
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039142, "name": "Ship Log: Nomai Grave 2 - Within the Seed",
+        "creation_settings": [ "logsanity" ], "address": 1085039142, "name": "DB Ship Log: Nomai Grave 2 - Within the Seed",
         "region": "Dark Bramble - Nomai Grave", "requires": [ "Translator" ] // text wheel
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039143, "name": "Ship Log: Nomai Grave 3 - Beacon Dying",
+        "creation_settings": [ "logsanity" ], "address": 1085039143, "name": "DB Ship Log: Nomai Grave 3 - Beacon Dying",
         "region": "Dark Bramble - Nomai Grave", "requires": [ "Translator" ] // text wheel
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039144, "name": "Ship Log: Nomai Grave 4 - Scout Photos",
+        "creation_settings": [ "logsanity" ], "address": 1085039144, "name": "DB Ship Log: Nomai Grave 4 - Scout Photos",
         "region": "Dark Bramble - Nomai Grave", "requires": [ "Scout" ] // shoot your scout into the seed and take a photo of the vessel
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039145, "name": "Ship Log: The Vessel 1 - Entered",
+        "creation_settings": [ "logsanity" ], "address": 1085039145, "name": "DB Ship Log: The Vessel 1 - Entered",
         "region": "Dark Bramble - The Vessel", "requires": [] // just enter the bridge, no items
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039146, "name": "Ship Log: The Vessel 2 - Dead Core",
+        "creation_settings": [ "logsanity" ], "address": 1085039146, "name": "DB Ship Log: The Vessel 2 - Dead Core",
         "region": "Dark Bramble - The Vessel", "requires": [ "Warp Core Installation Manual" ] // put the dead warp core into the socket
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039147, "name": "Ship Log: The Vessel 3 - Input Pillar",
+        "creation_settings": [ "logsanity" ], "address": 1085039147, "name": "DB Ship Log: The Vessel 3 - Input Pillar",
         "region": "Dark Bramble - The Vessel", "requires": [] // activate the coordinates input pillar, which only involves the floor orb
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039148, "name": "Ship Log: The Vessel 4 - Call For Help",
+        "creation_settings": [ "logsanity" ], "address": 1085039148, "name": "DB Ship Log: The Vessel 4 - Call For Help",
         "region": "Dark Bramble - The Vessel", "requires": [ "Translator" ] // upper right text wall
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039149, "name": "Ship Log: The Vessel 5 - Clans Regrouping",
+        "creation_settings": [ "logsanity" ], "address": 1085039149, "name": "DB Ship Log: The Vessel 5 - Clans Regrouping",
         "region": "Dark Bramble - The Vessel", "requires": [ "Translator" ] // upper left text wall
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039150, "name": "Ship Log: The Vessel 6 - Original Recording",
+        "creation_settings": [ "logsanity" ], "address": 1085039150, "name": "DB Ship Log: The Vessel 6 - Original Recording",
         "region": "Dark Bramble - The Vessel", "requires": [ "Translator" ] // text wheel on lower level
     },
     {
@@ -988,11 +988,11 @@
         "region": "Interloper Core", "requires": [ "Translator" ] // text wheel
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039163, "name": "Ship Log: Quantum Moon 1 - Land",
+        "creation_settings": [ "logsanity" ], "address": 1085039163, "name": "QM Ship Log: Quantum Moon 1 - Land",
         "region": "Quantum Moon", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039164, "name": "Ship Log: Quantum Moon 2 - Corpse",
+        "creation_settings": [ "logsanity" ], "address": 1085039164, "name": "QM Ship Log: Quantum Moon 2 - Corpse",
         "region": "Quantum Moon", "requires": []
     },
     {
@@ -1004,43 +1004,43 @@
         "region": "Solanum's Shuttle Interior", "requires": [ "Translator" ] // text wheel inside shuttle
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039167, "name": "Ship Log: Quantum Shrine 1 - Identify",
+        "creation_settings": [ "logsanity" ], "address": 1085039167, "name": "QM Ship Log: Quantum Shrine 1 - Identify",
         "region": "Quantum Shrine", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039168, "name": "Ship Log: Quantum Shrine 2 - Imaging Rule",
+        "creation_settings": [ "logsanity" ], "address": 1085039168, "name": "QM Ship Log: Quantum Shrine 2 - Imaging Rule",
         "region": "Quantum Shrine", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039169, "name": "Ship Log: Quantum Shrine 3 - Entanglement Rule",
+        "creation_settings": [ "logsanity" ], "address": 1085039169, "name": "QM Ship Log: Quantum Shrine 3 - Entanglement Rule",
         "region": "Quantum Shrine", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039170, "name": "Ship Log: Quantum Shrine 4 - Sixth Location Rule",
+        "creation_settings": [ "logsanity" ], "address": 1085039170, "name": "QM Ship Log: Quantum Shrine 4 - Sixth Location Rule",
         "region": "Quantum Shrine", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039171, "name": "Ship Log: Sixth Location 1 - Visit",
+        "creation_settings": [ "logsanity" ], "address": 1085039171, "name": "QM Ship Log: Sixth Location 1 - Visit",
         "region": "Sixth Location", "requires": [] // just attempt to talk to Solanum, no text translation needed
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039172, "name": "Ship Log: Sixth Location 2 - Eye's Moon",
+        "creation_settings": [ "logsanity" ], "address": 1085039172, "name": "QM Ship Log: Sixth Location 2 - Eye's Moon",
         "region": "Sixth Location", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039173, "name": "Ship Log: Sixth Location 3 - Reflects Eye",
+        "creation_settings": [ "logsanity" ], "address": 1085039173, "name": "QM Ship Log: Sixth Location 3 - Reflects Eye",
         "region": "Sixth Location", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039174, "name": "Ship Log: Sixth Location 4 - Macro-Quantum Source",
+        "creation_settings": [ "logsanity" ], "address": 1085039174, "name": "QM Ship Log: Sixth Location 4 - Macro-Quantum Source",
         "region": "Sixth Location", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039175, "name": "Ship Log: Sixth Location 5 - Conscious Observer",
+        "creation_settings": [ "logsanity" ], "address": 1085039175, "name": "QM Ship Log: Sixth Location 5 - Conscious Observer",
         "region": "Sixth Location", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039176, "name": "Ship Log: Sixth Location 6 - Not Entirely Alive",
+        "creation_settings": [ "logsanity" ], "address": 1085039176, "name": "QM Ship Log: Sixth Location 6 - Not Entirely Alive",
         "region": "Sixth Location", "requires": [ "Translator" ]
     }
 ]

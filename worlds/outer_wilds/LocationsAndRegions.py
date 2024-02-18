@@ -23,7 +23,6 @@ class OuterWildsLocationData(NamedTuple):
     region: str
     address: Optional[int] = None
     can_create: Callable[[MultiWorld, int], bool] = lambda multiworld, player: True
-    locked_item: Optional[str] = None
     creation_settings: Optional[List[str]] = None
 
 
@@ -43,7 +42,6 @@ for location_datum in locations_data:
     location_data_table[location_datum["name"]] = OuterWildsLocationData(
         address=location_datum["address"],
         region=(location_datum["region"] if "region" in location_datum else None),
-        locked_item=(location_datum["locked_item"] if "locked_item" in location_datum else None),
         creation_settings=(location_datum["creation_settings"] if "creation_settings" in location_datum else None)
     )
 
@@ -86,7 +84,7 @@ def get_locations_to_create(options: OuterWildsGameOptions) -> dict[str, OuterWi
 region_data_table: Dict[str, OuterWildsRegionData] = {}
 
 
-def create_regions(world: "OuterWildsWorld", create_item: Callable[[str], OuterWildsItem],) -> None:
+def create_regions(world: "OuterWildsWorld") -> None:
     mw = world.multiworld
     p = world.player
     options = world.options
@@ -131,8 +129,3 @@ def create_regions(world: "OuterWildsWorld", create_item: Callable[[str], OuterW
         if ld["name"] in locations_to_create:
             set_rule(mw.get_location(ld["name"], p),
                      lambda state, rule=ld["requires"]: eval_rule(state, p, rule))
-
-    # place locked locations
-    for name, data in location_data_table.items():
-        if data.locked_item:
-            mw.get_location(name, p).place_locked_item(create_item(data.locked_item))

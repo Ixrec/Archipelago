@@ -57,5 +57,5 @@
 
     { "code": 1734473726, "name": "Ship Damage Trap", "type": "trap" },
     { "code": 1734473727, "name": "Audio Trap", "type": "trap" },
-    { "code": 1734473728, "name": "Meditation Trap", "type": "trap" }
+    { "code": 1734473728, "name": "Nap Trap", "type": "trap" }
 ]

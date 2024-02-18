@@ -604,12 +604,12 @@
         "region": "Brittle Hollow", "requires": [ "Translator" ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039068, "name": "BH Ship Log: Northern Glacier 1 - Visit",
-        "region": "Brittle Hollow", "requires": []
+        "creation_settings": [ "logsanity" ], "address": 1085039068, "name": "BH Ship Log: Northern Glacier 1 - Identify",
+        "region": "Brittle Hollow", "requires": [ "Translator" ] // Nomai text in either NG building
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039069, "name": "BH Ship Log: Northern Glacier 2 - WHS",
-        "region": "Brittle Hollow", "requires": [ "Translator" ]
+        "region": "Brittle Hollow", "requires": [ "Translator" ] // Nomai text in the larger, lower NG building
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039070, "name": "BH Ship Log: Escape Pod 1 1 - Identify",
@@ -952,8 +952,8 @@
         "region": "White Hole Station", "requires": [ "Translator" ] // text wall in WHS
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039155, "name": "Ship Log: Frozen Shuttle 1 - Found",
-        "region": "Space", "requires": [] // land on the Interloper and look at it
+        "creation_settings": [ "logsanity" ], "address": 1085039155, "name": "Ship Log: Frozen Shuttle 1 - Identify",
+        "region": "Space", "requires": [ "Translator" ] // text wheel just outside the shuttle, on Interloper surface
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039156, "name": "Ship Log: Frozen Shuttle 2 - Energy Readings",

@@ -1,5 +1,6 @@
 import os
 import pkgutil
+import typing
 from typing import Callable, Dict, List, NamedTuple, Optional
 
 from worlds.generic.Rules import set_rule
@@ -9,6 +10,9 @@ from . import jsonc
 from .Items import OuterWildsItem
 from .Options import OuterWildsGameOptions
 from .RuleEval import eval_rule
+
+if typing.TYPE_CHECKING:
+    from . import OuterWildsWorld
 
 
 class OuterWildsLocation(Location):
@@ -82,12 +86,11 @@ def get_locations_to_create(options: OuterWildsGameOptions) -> dict[str, OuterWi
 region_data_table: Dict[str, OuterWildsRegionData] = {}
 
 
-def create_regions(
-        mw: MultiWorld,
-        p: int,
-        create_item: Callable[[str], OuterWildsItem],
-        options: OuterWildsGameOptions
-) -> None:
+def create_regions(world: "OuterWildsWorld", create_item: Callable[[str], OuterWildsItem],) -> None:
+    mw = world.multiworld
+    p = world.player
+    options = world.options
+
     # start by ensuring every region is a key in region_data_table
     for ld in locations_data:
         region_name = ld["region"]

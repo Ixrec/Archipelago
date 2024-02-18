@@ -79,7 +79,6 @@
     },
     {
         "address": 1085038261, "name": "TH: Talk to Hornfels",
-        "locked_item": "Launch Codes", // until we have non-vanilla spawns
         "region": "Timber Hearth Village", "requires": []
     },
     {
@@ -418,7 +417,7 @@
 
     // Victory events
     {
-        "address": null, "name": "Victory - Song of Five", "locked_item": "Victory - Song of Five",
+        "address": null, "name": "Victory - Song of Five",
         "region": "Dark Bramble - The Vessel",
         "requires": [
             "Warp Core Installation Manual",
@@ -427,7 +426,7 @@
         ]
     },
     {
-        "address": null, "name": "Victory - Song of Six", "locked_item": "Victory - Song of Six",
+        "address": null, "name": "Victory - Song of Six",
         "region": "Dark Bramble - The Vessel",
         "requires": [
             "Warp Core Installation Manual",

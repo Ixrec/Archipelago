@@ -118,14 +118,17 @@ def create_items(world: "OuterWildsWorld") -> None:
     prog_and_useful_items: List[OuterWildsItem] = []
     unique_filler: List[OuterWildsItem] = []
     for name, item in item_data_table.items():
-        if item.type == ItemClassification.filler:
+        if item.code is None:
+            # here we rely on our event items and event locations having identical names
+            multiworld.get_location(name, player).place_locked_item(create_item(player, name))
+        elif name == "Launch Codes":  # in a future version this should say `and options.spawn == "vanilla"`
+            # in vanilla spawn, Launch Codes is locked to Hornfels to ensure the player starts the time loop
+            multiworld.get_location("TH: Talk to Hornfels", player).place_locked_item(create_item(player, name))
+        elif item.type == ItemClassification.filler:
             if name not in repeatable_filler_weights:
                 unique_filler.append(create_item(player, name))
-        else:
-            if item.type != ItemClassification.trap:
-                # todo: come up with a better way to exclude locked / pre-placed items from the itempool
-                if item.code and name != "Launch Codes":
-                    prog_and_useful_items.append(create_item(player, name))
+        elif item.type != ItemClassification.trap:
+            prog_and_useful_items.append(create_item(player, name))
 
     unique_filler_with_traps = unique_filler
 

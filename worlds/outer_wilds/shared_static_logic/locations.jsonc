@@ -33,12 +33,35 @@
         "address": 1085038256, "name": "ET: Coleus' Cave (Text Wall)",
         "region": "Hourglass Twins", "requires": [ "Translator", "Entanglement Rule" ]
     },
+    {
+        "address": 1085038319, "name": "ET: Enter Sunless City",
+        "region": "Hourglass Twins", "requires": []
+    },
+    {
+        "address": 1085038320, "name": "ET: Chert's QM Locator Recorder",
+        "region": "Hourglass Twins", "requires": []
+    },
+    {
+        "address": 1085038327, "name": "ET: QM Locator Fuel Tank",
+        "region": "Hourglass Twins", "requires": []
+    },
+    {
+        "address": 1085038328, "name": "ET: Chert's Camp Fuel Tank",
+        "region": "Hourglass Twins", "requires": []
+    },
 
     // Ash Twin
     {
-        "address": 1085038257, "name": "Enter the Ash Twin Project",
-        // this is a one-location region because it has a warp pad
+        "address": 1085038257, "name": "AT: Enter the Ash Twin Project",
         "region": "Ash Twin Interior", "requires": []
+    },
+    {
+        "address": 1085038322, "name": "AT: HGT Towers (Text Wall)",
+        "region": "Hourglass Twins", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038323, "name": "AT: BH Tower (Text Wall)",
+        "region": "Hourglass Twins", "requires": [ "Translator" ]
     },
 
     // Timber Hearth
@@ -67,11 +90,35 @@
         "address": 1085038263, "name": "TH: Mines (Text Wall)",
         "region": "Timber Hearth", "requires": [ "Translator" ]
     },
+    {
+        "address": 1085038309, "name": "TH: Hornfels' Radio Tower Campfire Note",
+        "region": "Timber Hearth", "requires": []
+    },
+    {
+        "address": 1085038310, "name": "TH: Chert's Grove Shard Plaque",
+        "region": "Timber Hearth", "requires": []
+    },
 
     // Attlerock
     {
         "address": 1085038264, "name": "AR: Signal Locator (Text Wall)",
         "region": "Space", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038311, "name": "AR: Riebeck's Signal Locator Recorder",
+        "region": "Space", "requires": []
+    },
+    {
+        "address": 1085038312, "name": "AR: Chert's Ice Crater Recorder",
+        "region": "Space", "requires": []
+    },
+    {
+        "address": 1085038313, "name": "AR: Esker's Lunar Lookout Plaque",
+        "region": "Space", "requires": []
+    },
+    {
+        "address": 1085038329, "name": "AR: Ice Crater Fuel Tank",
+        "region": "Space", "requires": []
     },
 
     // Brittle Hollow
@@ -91,6 +138,40 @@
     {
         "address": 1085038268, "name": "BH: Tower (Top Floor Text Wall)",
         "region": "Brittle Hollow", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038314, "name": "BH: Feldspar's Spare Fuel Note",
+        "region": "Brittle Hollow", "requires": []
+    },
+    {
+        "address": 1085038315, "name": "BH: Riebeck's Southern Observatory Recorder",
+        "region": "Brittle Hollow", "requires": []
+    },
+    {
+        "address": 1085038316, "name": "BH: Riebeck's Surface Campsite Note",
+        "region": "Brittle Hollow", "requires": []
+    },
+    {
+        "address": 1085038317, "name": "BH: Solanum's Class Report (2nd Scroll)",
+        // Sadly does not require GM Wavelength. You have to avoid a lot of GM, but just looking at
+        // the crystals tell you where the GM is so the camera provides no new information.
+        "region": "Brittle Hollow", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038318, "name": "BH: Eye Shrine (Text Wall)",
+        "region": "Brittle Hollow", "requires": [ "Translator" ]
+    },
+    {
+        "address": 1085038324, "name": "BH: Visit Hanging City",
+        "region": "Brittle Hollow", "requires": []
+    },
+    {
+        "address": 1085038330, "name": "BH: Northern Glacier Fuel Tank",
+        "region": "Brittle Hollow", "requires": []
+    },
+    {
+        "address": 1085038331, "name": "BH: Riebeck's Camp Fuel Tank",
+        "region": "Brittle Hollow", "requires": []
     },
 
     // Hollow's Lantern
@@ -118,7 +199,7 @@
         "region": "Space", "requires": [ "Translator" ]
     },
     {
-        "address": 1085038273, "name": "GD: Bramble Island (Tape Recorder)",
+        "address": 1085038273, "name": "GD: Bramble Island Recorder",
         "region": "Giant's Deep", "requires": [ "Ghost Matter Wavelength" ]
     },
     {
@@ -149,6 +230,22 @@
         // spoiler-free name, as opposed to e.g. "Eye of the Universe Coordinates"
         "address": 1085038280, "name": "GD: See the Coordinates",
         "region": "Giant's Deep - Core", "requires": []
+    },
+    {
+        "address": 1085038325, "name": "GD: Find Gabbro's Ship",
+        "region": "Giant's Deep", "requires": []
+    },
+    {
+        "address": 1085038326, "name": "GD: Find Gabbro's Statue",
+        "region": "Giant's Deep", "requires": []
+    },
+    {
+        "address": 1085038332, "name": "GD: Bramble Island Fuel Tank",
+        "region": "Giant's Deep", "requires": []
+    },
+    {
+        "address": 1085038333, "name": "GD: Gabbro's Camp Fuel Tank",
+        "region": "Giant's Deep", "requires": []
     },
 
     // Interloper
@@ -192,12 +289,21 @@
         "region": "Dark Bramble - Feldspar", "requires": []
     },
     {
+        // spoiler-free name, as opposed to e.g. "Frozen Jellyfish Tape Recorder"
+        "address": 1085038308, "name": "DB: Feldspar's Recorder",
+        "region": "Dark Bramble - Feldspar", "requires": []
+    },
+    {
         "address": 1085038287, "name": "DB: Nomai Grave (Text Wheel)",
         "region": "Dark Bramble - Nomai Grave", "requires": [ "Translator" ]
     },
     {
         "address": 1085038288, "name": "DB: Find The Vessel",
         "region": "Dark Bramble - The Vessel", "requires": []
+    },
+    {
+        "address": 1085038334, "name": "DB: Feldspar's Camp Fuel Tank",
+        "region": "Dark Bramble - Feldspar", "requires": []
     },
 
     // Signalscope Frequencies
@@ -317,7 +423,7 @@
         "requires": [
             "Warp Core Installation Manual",
             "Coordinates",
-            { "location": "Enter the Ash Twin Project" }
+            { "location": "AT: Enter the Ash Twin Project" }
         ]
     },
     {
@@ -326,12 +432,14 @@
         "requires": [
             "Warp Core Installation Manual",
             "Coordinates",
-            { "location": "Enter the Ash Twin Project" },
+            { "location": "AT: Enter the Ash Twin Project" },
             { "location": "QM: Explore the Sixth Location" }
         ]
     },
 
 // Logsanity Locations
+// These location ids start at 1085039000 (i.e. rounding up to the next thousand),
+// to make it slightly easier to add default locations in the future.
 
     {
         "creation_settings": [ "logsanity" ], "address": 1085039000, "name": "Ship Log: Sun Station 1 - Purpose",

@@ -45,7 +45,7 @@ class OuterWildsWorld(World):
     location_name_groups = location_name_groups
 
     def create_regions(self) -> None:
-        create_regions(self, self.create_item)
+        create_regions(self)
 
     # members and methods implemented by Items.py and items.jsonc
 

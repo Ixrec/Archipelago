@@ -4,7 +4,7 @@ from ..Items import repeatable_filler_weights
 trap_names = [
     "Ship Damage Trap",
     "Audio Trap",
-    "Meditation Trap",
+    "Nap Trap",
 ]
 
 
@@ -39,7 +39,7 @@ class TestAllAudioTrapsWorld(OuterWildsTestBase):
         "trap_chance": 100,
         "trap_type_weights": {
             "Ship Damage Trap": 0,
-            "Meditation Trap": 0,
+            "Nap Trap": 0,
             "Audio Trap": 1,
         }
     }
@@ -59,7 +59,7 @@ class TestAllShipDamageTrapsWorld(OuterWildsTestBase):
         "trap_chance": 100,
         "trap_type_weights": {
             "Ship Damage Trap": 1,
-            "Meditation Trap": 0,
+            "Nap Trap": 0,
             "Audio Trap": 0,
         }
     }
@@ -82,7 +82,7 @@ class TestEveryKindOfTrapWorld(OuterWildsTestBase):
         "trap_chance": 100,
         "trap_type_weights": {
             "Ship Damage Trap": 1,
-            "Meditation Trap": 1,
+            "Nap Trap": 1,
             "Audio Trap": 1,
         }
     }

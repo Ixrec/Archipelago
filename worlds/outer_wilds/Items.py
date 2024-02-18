@@ -1,5 +1,6 @@
 import os
 import pkgutil
+import typing
 from typing import Dict, List, NamedTuple, Optional
 from random import Random
 
@@ -7,6 +8,9 @@ from BaseClasses import Item, ItemClassification, MultiWorld
 
 from . import jsonc
 from .Options import OuterWildsGameOptions
+
+if typing.TYPE_CHECKING:
+    from . import OuterWildsWorld
 
 
 class OuterWildsItem(Item):
@@ -105,7 +109,12 @@ repeatable_filler_weights = {
 }
 
 
-def create_items(random: Random, multiworld: MultiWorld, options: OuterWildsGameOptions, player: int) -> None:
+def create_items(world: "OuterWildsWorld") -> None:
+    random = world.random
+    multiworld = world.multiworld
+    options = world.options
+    player = world.player
+
     prog_and_useful_items: List[OuterWildsItem] = []
     unique_filler: List[OuterWildsItem] = []
     for name, item in item_data_table.items():

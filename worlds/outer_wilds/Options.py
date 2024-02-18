@@ -36,13 +36,13 @@ class TrapTypeWeights(OptionDict):
     Setting all weights to 0 is the same as setting trap_chance to 0."""
     schema = Schema({
         "Ship Damage Trap": And(int, lambda n: n >= 0),
-        "Meditation Trap": And(int, lambda n: n >= 0),
+        "Nap Trap": And(int, lambda n: n >= 0),
         "Audio Trap": And(int, lambda n: n >= 0),
     })
     display_name = "Trap Type Weights"
     default = {
         "Ship Damage Trap": 2,
-        "Meditation Trap": 2,
+        "Nap Trap": 2,
         "Audio Trap": 1,
     }
 

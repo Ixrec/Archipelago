@@ -135,9 +135,10 @@ def create_items(world: "OuterWildsWorld") -> None:
     filler_chance = 1 - trap_chance
     apply_trap_items = options.trap_chance > 0 and any(v > 0 for v in options.trap_type_weights.values())
     if apply_trap_items:
+        trap_weights_sum = sum(trap_weights.values())
         trap_overwrites = random.choices(
             population=[None] + list(trap_weights.keys()),
-            weights=[filler_chance] + list(v * trap_chance for v in trap_weights.values()),
+            weights=[filler_chance] + list((w / trap_weights_sum) * trap_chance for w in trap_weights.values()),
             k=len(unique_filler)
         )
         for i in range(0, len(unique_filler)):
@@ -149,14 +150,18 @@ def create_items(world: "OuterWildsWorld") -> None:
     unique_item_count = len(prog_and_useful_items) + len(unique_filler)
     repeatable_filler_needed = len(multiworld.get_unfilled_locations(player)) - unique_item_count
     junk_names = list(repeatable_filler_weights.keys())
-    junk_values = list(repeatable_filler_weights.values())
+    junk_weights = list(repeatable_filler_weights.values())
     if apply_trap_items:
+        filler_weights_sum = sum(repeatable_filler_weights.values())
+        normalized_filler_weights = list((w / filler_weights_sum) * filler_chance
+                                         for w in repeatable_filler_weights.values())
+        trap_weights_sum = sum(trap_weights.values())
+        normalized_trap_weights = list((w / trap_weights_sum) * trap_chance for w in trap_weights.values())
         junk_names += list(trap_weights.keys())
-        junk_values = list(v * filler_chance for v in junk_values)
-        junk_values += list(v * trap_chance for v in trap_weights.values())
+        junk_weights = normalized_filler_weights + normalized_trap_weights
     repeatable_filler_names_with_traps = random.choices(
         population=junk_names,
-        weights=junk_values,
+        weights=junk_weights,
         k=repeatable_filler_needed
     )
     repeatable_filler_with_traps = list(create_item(player, name) for name in repeatable_filler_names_with_traps)

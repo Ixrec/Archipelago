@@ -39,6 +39,14 @@ class OuterWildsWorld(World):
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
 
+    # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
+
+    location_name_to_id = all_non_event_locations_table
+    location_name_groups = location_name_groups
+
+    def create_regions(self) -> None:
+        create_regions(self, self.create_item)
+
     # members and methods implemented by Items.py and items.jsonc
 
     item_name_to_id = all_non_event_items_table
@@ -48,27 +56,21 @@ class OuterWildsWorld(World):
         return create_item(self.player, name)
 
     def create_items(self) -> None:
-        create_items(self.random, self.multiworld, self.options, self.player)
+        create_items(self)
 
     def get_filler_item_name(self) -> str:
         # used in corner cases (e.g. plando, item_links) where even a well-behaved world may end up "missing" items
         return "Marshmallow"
-
-    # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
-
-    location_name_to_id = all_non_event_locations_table
-    location_name_groups = location_name_groups
-
-    def create_regions(self) -> None:
-        create_regions(self.multiworld, self.player, self.create_item, self.options)
 
     # members and methods related to Options.py
 
     options_dataclass = OuterWildsGameOptions
     options: OuterWildsGameOptions
 
+    # miscellaneous smaller methods
+
     def set_rules(self) -> None:
-        # here we only set the completion condition; all the location and region rules were set earlier
+        # here we only set the completion condition; all the location/region rules were set in create_regions()
         option_key_to_item_name = {
             'song_of_five': "Victory - Song of Five",
             'song_of_six': "Victory - Song of Six",

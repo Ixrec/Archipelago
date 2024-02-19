@@ -3,6 +3,7 @@ from typing import Any
 
 from BaseClasses import CollectionState
 
+
 # In the .jsonc files we use, a location or region connection's "access rule" is defined
 # by a "requires" key, whose value is an array of "criteria" strings or objects.
 # These rules are designed to be evaluated by both this Python code and

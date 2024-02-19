@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 from schema import Schema, And
 
 from Options import Choice, DefaultOnToggle, OptionDict, PerGameCommonOptions, Range, Toggle

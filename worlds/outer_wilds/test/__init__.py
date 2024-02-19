@@ -1,3 +1,5 @@
+from typing import List
+
 from test.bases import WorldTestBase, CollectionState
 
 
@@ -5,7 +7,7 @@ class OuterWildsTestBase(WorldTestBase):
     game = "Outer Wilds"
     player: int = 1
 
-    def make_state_with(self, item_names: list[str]) -> CollectionState:
+    def make_state_with(self, item_names: List[str]) -> CollectionState:
         state = CollectionState(self.multiworld)
         for i in self.get_items_by_name(item_names):
             state.collect(i)
@@ -14,11 +16,11 @@ class OuterWildsTestBase(WorldTestBase):
     def get_location_count(self) -> int:
         return sum(1 for _ in self.multiworld.get_locations(1))
 
-    def can_reach_location_with(self, location_name: str, item_names: list[str]) -> bool:
+    def can_reach_location_with(self, location_name: str, item_names: List[str]) -> bool:
         state = self.make_state_with(item_names)
         return state.can_reach(location_name, "Location", 1)
 
-    def location_requires_exactly(self, location_name: str, item_names: list[str]) -> bool:
+    def location_requires_exactly(self, location_name: str, item_names: List[str]) -> bool:
         items = self.get_items_by_name(item_names)
         state = CollectionState(self.multiworld)
 
@@ -37,7 +39,7 @@ class OuterWildsTestBase(WorldTestBase):
 
         return True
 
-    def assert_all_locations_requiring_exactly(self, location_names: list[str], item_names: list[str]) -> None:
+    def assert_all_locations_requiring_exactly(self, location_names: List[str], item_names: List[str]) -> None:
         for location in self.multiworld.get_locations():
             if location.name in location_names:
                 self.assertTrue(

@@ -1,13 +1,10 @@
-import os
 import pkgutil
 import typing
 from typing import Callable, Dict, List, NamedTuple, Optional
 
-from worlds.generic.Rules import set_rule
 from BaseClasses import Location, MultiWorld, Region
-
+from worlds.generic.Rules import set_rule
 from . import jsonc
-from .Items import OuterWildsItem
 from .Options import OuterWildsGameOptions
 from .RuleEval import eval_rule
 

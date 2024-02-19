@@ -1,6 +1,5 @@
-from typing import List
 from random import Random
-
+from typing import List
 
 two_point_coordinates = 6 * 5
 three_point_coordinates = 6 * 5 * 4

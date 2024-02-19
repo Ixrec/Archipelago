@@ -19,19 +19,6 @@
     { "from": "Quantum Moon", "to": "Quantum Shrine", "requires": [ "Shrine Door Codes" ] },
     { "from": "Quantum Shrine", "to": "Sixth Location", "requires": [ "Entanglement Rule" ] },
 
-    // "Multiple" is a fictitious region used to hold locations which can be checked from
-    // multiple places in-game, and thus don't fit well into normal region logic.
-    // This connection ensures Multiple is always reachable, so the logic for these
-    // locations can be left entirely to each location's own access rule.
-    { "from": "Menu", "to": "Multiple", "requires": [] },
-
-    { "from": "Multiple", "to": "Solanum's Shuttle Interior", "requires": [
-        { "anyOf": [
-            { "region": "Quantum Moon" }, // land on the Quantum Moon directly, or
-            { "region": "Brittle Hollow" } // use Brittle Hollow's Gravity Cannon to recall the shuttle
-        ] }
-    ] },
-
     // these will become dynamic after we implement random spawn
     { "from": "Menu", "to": "Timber Hearth Village", "requires": [] },
     { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ "Launch Codes" ] },
@@ -54,6 +41,34 @@
     { "from": "Giant's Deep - Ocean Depths", "to": "Giant's Deep - Core", "requires": [ "Electrical Insulation" ] },
 
     { "from": "Space", "to": "Interloper Core", "requires": [ "Scout", "Ghost Matter Wavelength" ] },
+
+    // representing frequencies/shuttles/etc as abstract regions turns out to be much faster than an anyOf rule
+
+    { "from": "Hourglass Twins", "to": "Distress Beacon Frequency", "requires": [] },
+    { "from": "Brittle Hollow", "to": "Distress Beacon Frequency", "requires": [] },
+    // since pod 3 logically requires this frequency to reach, we don't include Dark Bramble here
+
+    { "from": "Timber Hearth", "to": "Quantum Fluctuations Frequency", "requires": [] },
+    { "from": "Hourglass Twins", "to": "Quantum Fluctuations Frequency", "requires": [] },
+    { "from": "Brittle Hollow", "to": "Quantum Fluctuations Frequency", "requires": [] },
+    { "from": "Space", "to": "Quantum Fluctuations Frequency", "requires": [] },
+    // we ignore the extra requirements on Quantum Moon Signal since, if you can get
+    // to the "Space" region, you can get this frequency from the Tower Shard instead
+
+    // land on the Interloper with your Spaceship, or
+    { "from": "Space", "to": "Frozen Shuttle Log", "requires": [] },
+    // use Ember Twin's Gravity Cannon to recall the shuttle
+    { "from": "Hourglass Twins", "to": "Frozen Shuttle Log", "requires": [] },
+
+    // if you have the frequency, you can scan the QM signal from your ship without landing on it
+    { "from": "Space", "to": "Quantum Moon Signal", "requires": [ "Quantum Fluctuations Frequency" ] },
+    // otherwise you have to land on it to get into "Unidentified Signal Detected" range
+    { "from": "Quantum Moon", "to": "Quantum Moon Signal", "requires": [] },
+
+    // land on the Quantum Moon directly, or
+    { "from": "Quantum Moon", "to": "Solanum's Shuttle Interior", "requires": [] },
+    // use Brittle Hollow's Gravity Cannon to recall the shuttle
+    { "from": "Brittle Hollow", "to": "Solanum's Shuttle Interior", "requires": [] },
 
     // Dark Bramble has the most complex logic in the base game
     {

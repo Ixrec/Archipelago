@@ -1,6 +1,6 @@
 import pkgutil
 import typing
-from typing import Callable, Dict, List, NamedTuple, Optional
+from typing import Callable, Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import Location, MultiWorld, Region
 from worlds.generic.Rules import set_rule
@@ -42,9 +42,10 @@ for location_datum in locations_data:
         creation_settings=(location_datum["creation_settings"] if "creation_settings" in location_datum else None)
     )
 
-all_non_event_locations_table = {name: data.address for name, data in location_data_table.items() if data.address is not None}
+all_non_event_locations_table = {name: data.address for name, data
+                                 in location_data_table.items() if data.address is not None}
 
-location_names: set[str] = set(entry["name"] for entry in locations_data)
+location_names: Set[str] = set(entry["name"] for entry in locations_data)
 location_name_groups = {
     # For now, all of our location groups are auto-generated
     # We don't need an "Everywhere" group because AP makes that for us
@@ -68,7 +69,7 @@ location_name_groups = {
 }
 
 
-def get_locations_to_create(options: OuterWildsGameOptions) -> dict[str, OuterWildsLocationData]:
+def get_locations_to_create(options: OuterWildsGameOptions) -> Dict[str, OuterWildsLocationData]:
     # filter locations by settings (currently logsanity is the only setting relevant here)
     relevant_settings = set()
     if options.logsanity.value == 1:

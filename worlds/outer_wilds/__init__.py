@@ -3,11 +3,10 @@ from typing import TextIO
 
 from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
-
+from .Coordinates import generate_random_coordinates
 from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
 from .Options import OuterWildsGameOptions
-from .Coordinates import generate_random_coordinates
 
 
 class OuterWildsWebWorld(WebWorld):

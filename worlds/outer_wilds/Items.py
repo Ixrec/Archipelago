@@ -1,13 +1,9 @@
-import os
 import pkgutil
 import typing
 from typing import Dict, List, NamedTuple, Optional
-from random import Random
 
-from BaseClasses import Item, ItemClassification, MultiWorld
-
+from BaseClasses import Item, ItemClassification
 from . import jsonc
-from .Options import OuterWildsGameOptions
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld

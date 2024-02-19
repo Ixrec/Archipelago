@@ -877,11 +877,11 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039118, "name": "GD Ship Log: Tower 3 - Rule of Imaging",
-        "region": "Space", "requires": [ "Translator" ]
+        "region": "Space", "requires": [ "Translator", "Imaging Rule" ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039119, "name": "GD Ship Log: Tower 4 - Other Shards",
-        "region": "Space", "requires": [ "Translator" ]
+        "region": "Space", "requires": [ "Translator", "Imaging Rule" ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039120, "name": "GD Ship Log: OPC 1 - Entered",

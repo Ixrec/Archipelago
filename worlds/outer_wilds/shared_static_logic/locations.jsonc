@@ -250,14 +250,7 @@
     // Interloper
     {
         "address": 1085038281, "name": "Frozen Shuttle Log (Text Wheel)",
-        "region": "Multiple",
-        "requires": [
-            "Translator",
-            { "anyOf": [
-                { "region": "Space" }, // land on the Interloper with your Spaceship, or
-                { "region": "Hourglass Twins" } // use Ember Twin's Gravity Cannon to recall the shuttle
-            ] }
-        ]
+        "region": "Frozen Shuttle Log", "requires": [ "Translator" ]
     },
     {
         // spoiler-free name, as opposed to e.g. "Interloper Core"
@@ -308,30 +301,11 @@
     // Signalscope Frequencies
     {
         "address": 1085038289, "name": "Distress Beacon Frequency",
-        "region": "Multiple",
-        "requires": [
-            "Signalscope",
-            { "anyOf": [
-                { "location": "BH: Escape Pod 1 Signal" },
-                { "location": "ET: Escape Pod 2 Signal" }
-                // since pod 3 logically requires this frequency to reach, it's not part of this rule
-            ] }
-        ]
+        "region": "Distress Beacon Frequency", "requires": [ "Signalscope" ]
     },
     {
         "address": 1085038290, "name": "Quantum Fluctuations Frequency",
-        "region": "Multiple",
-        "requires": [
-            "Signalscope",
-            { "anyOf": [
-                { "location": "TH: Museum Shard Signal" },
-                { "location": "TH: Grove Shard Signal" },
-                { "location": "ET: Cave Shard Signal" },
-                { "location": "BH: Tower Shard Signal" },
-                { "location": "GD: Island Shard Signal" },
-                { "location": "Quantum Moon Signal" }
-            ] }
-        ]
+        "region": "Quantum Fluctuations Frequency", "requires": [ "Signalscope" ]
     },
     {
         "address": 1085038291, "name": "Hide & Seek Frequency",
@@ -383,15 +357,7 @@
     },
     {
         "address": 1085038302, "name": "Quantum Moon Signal",
-        "region": "Space", "requires": [
-            "Signalscope",
-            { "anyOf": [
-                // if you have the frequency, you can scan the QM signal from your ship without landing on it
-                "Quantum Fluctuations Frequency",
-                // otherwise you have to land on it to get into "Unidentified Signal Detected" range
-                "Imaging Rule"
-            ] }
-        ]
+        "region": "Quantum Moon Signal", "requires": [ "Signalscope" ]
     },
     {
         "address": 1085038303, "name": "BH: Escape Pod 1 Signal",

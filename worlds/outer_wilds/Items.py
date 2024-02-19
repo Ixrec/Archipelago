@@ -127,6 +127,8 @@ def create_items(world: "OuterWildsWorld") -> None:
             prog_and_useful_items.append(create_item(player, name))
 
     unique_filler_with_traps = unique_filler
+    if options.goal == 'song_of_six':
+        raise 'six!'
 
     # replace some unique filler items with trap items, depending on trap settings
     trap_weights = options.trap_type_weights

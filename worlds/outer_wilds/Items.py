@@ -1,6 +1,6 @@
 import pkgutil
 import typing
-from typing import Dict, List, NamedTuple, Optional
+from typing import Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import Item, ItemClassification
 from . import jsonc
@@ -37,7 +37,7 @@ for items_data_entry in items_data:
 
 all_non_event_items_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
 
-item_names: set[str] = set(entry["name"] for entry in items_data)
+item_names: Set[str] = set(entry["name"] for entry in items_data)
 item_name_groups = {
     # Auto-generated groups
     # We don't need an "Everything" group because AP makes that for us

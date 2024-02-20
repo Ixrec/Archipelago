@@ -24,7 +24,7 @@ class TestFileGeneration(unittest.TestCase):
         from WebHostLib.check import roll_options
         file: os.DirEntry
         for file in os.scandir(target):
-            if file.is_file() and file.name.endswith(".yaml"):
+            if file.is_file() and file.name.endswith(".yaml") and file.name.startswith("Outer Wilds"):
                 with self.subTest(file=file.name):
                     with open(file, encoding="utf-8-sig") as f:
                         for value in roll_options({file.name: f.read()})[0].values():

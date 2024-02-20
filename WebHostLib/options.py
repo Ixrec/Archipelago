@@ -32,6 +32,8 @@ def create():
     }
 
     for game_name, world in AutoWorldRegister.world_types.items():
+        if game_name != "Outer Wilds":
+            continue
 
         all_options: typing.Dict[str, Options.AssembleOptions] = world.options_dataclass.type_hints
 

@@ -95,6 +95,14 @@ def create_item(player: int, name: str) -> OuterWildsItem:
     return OuterWildsItem(name, item_data_table[name].type, item_data_table[name].code, player)
 
 
+# All progression and useful item types have a hardcoded number of instances regardless of options.
+# It's almost always 1, so we only have to write down the number in this map when it's not 1.
+repeated_prog_useful_items = {
+    "Oxygen Capacity Upgrade": 2,
+    "Fuel Capacity Upgrade": 2,
+    "Boost Duration Upgrade": 2,
+}
+
 repeatable_filler_weights = {
     "Nothing": 0,  # no longer used, here for backwards compatibility
     "Oxygen Refill": 10,
@@ -124,7 +132,11 @@ def create_items(world: "OuterWildsWorld") -> None:
             if name not in repeatable_filler_weights:
                 unique_filler.append(create_item(player, name))
         elif item.type != ItemClassification.trap:
-            prog_and_useful_items.append(create_item(player, name))
+            instances = 1
+            if name in repeated_prog_useful_items:
+                instances = repeated_prog_useful_items[name]
+            for _ in range(0, instances):
+                prog_and_useful_items.append(create_item(player, name))
 
     unique_filler_with_traps = unique_filler
 

@@ -66,33 +66,27 @@
     { "from": "Brittle Hollow", "to": "Solanum's Shuttle Interior", "requires": [] },
 
     // Dark Bramble has the most complex logic in the base game
-    {
-        "from": "Space",
-        "to": "Dark Bramble - Feldspar",
-        "requires": [
-            // this particular check doesn't have "guard" anglerfish in vanilla,
-            // but DB rando / fog warp rando might make it necessary
-            { "item": "Silent Running Mode" },
-            { "anyOf": [
-                // follow Feldspar's signal on the OW Ventures frequency, or
-                { "item": "Signalscope" },
-                // launch a Scout into the DB seed back on TH
-                // since DB can only be reached by Spaceship, we don't need a "can reach TH" condition here
-                { "item": "Scout" }
-            ] }
-        ]
-    },
-    {
-        "from": "Space",
-        "to": "Dark Bramble - Nomai Grave",
-        "requires": [
-            // for the "guard" anglerfish
-            { "item": "Silent Running Mode" },
-            // to follow the Escape Pod 3 signal
-            { "item": "Signalscope" },
-            { "item": "Distress Beacon Frequency" }
-        ]
-    },
+    { "from": "Space", "to": "Dark Bramble", "requires": [
+        // not every part of DB has "guard" anglerfish in vanilla,
+        // but DB rando / fog warp rando might make it necessary
+        { "item": "Silent Running Mode" }
+    ] },
+
+    // To find Feldspar, either follow the harmonica signal on the OW Ventures frequency...
+    { "from": "Dark Bramble", "to": "Dark Bramble - Feldspar", "requires": [
+        { "item": "Signalscope" },
+        { "item": "Feldspar's Signal" }
+    ] },
+    // ...or launch a Scout into the DB seed back on TH.
+    // Since DB can only be reached by Spaceship, we don't need an explicit "can reach TH" condition here.
+    { "from": "Dark Bramble", "to": "Dark Bramble - Feldspar", "requires": [ { "item": "Scout" } ] },
+
+    { "from": "Dark Bramble", "to": "Dark Bramble - Nomai Grave", "requires": [
+        // to follow the Escape Pod 3 signal
+        { "item": "Signalscope" },
+        { "item": "Distress Beacon Frequency" },
+        { "item": "Escape Pod 3 Signal" }
+    ] },
     { "from": "Dark Bramble - Nomai Grave", "to": "Dark Bramble - The Vessel", "requires": [
         { "item": "Scout" } // to launch into the DB seed at Nomai Grave
     ] },

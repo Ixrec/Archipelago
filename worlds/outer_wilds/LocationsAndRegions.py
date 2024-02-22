@@ -6,7 +6,7 @@ from BaseClasses import Location, MultiWorld, Region
 from worlds.generic.Rules import set_rule
 from . import jsonc
 from .Options import OuterWildsGameOptions
-from .RuleEval import eval_rule
+from .RuleEval import eval_rule, simple_rule
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld
@@ -119,11 +119,15 @@ def create_regions(world: "OuterWildsWorld") -> None:
         for exit_connection in exit_connections:
             exit_name = exit_connection["to"]
             exit_names.append(exit_name)
-            rules[exit_name] = lambda state, rule=exit_connection["requires"]: eval_rule(state, p, rule)
+            r = exit_connection["requires"]
+            s = simple_rule(p, r)
+            rules[exit_name] = s or (lambda state, rule=r: eval_rule(state, p, rule))
         region.add_exits(exit_names, rules)
 
     # add access rules to the created locations
     for ld in locations_data:
         if ld["name"] in locations_to_create:
+            r = ld["requires"]
+            s = simple_rule(p, r)
             set_rule(mw.get_location(ld["name"], p),
-                     lambda state, rule=ld["requires"]: eval_rule(state, p, rule))
+                     s or (lambda state, rule=r: eval_rule(state, p, rule)))

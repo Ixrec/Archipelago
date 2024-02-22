@@ -1,5 +1,5 @@
 import json
-from typing import Any
+from typing import Any, Callable, Optional
 
 from BaseClasses import CollectionState
 
@@ -11,6 +11,16 @@ from BaseClasses import CollectionState
 
 # In particular: this eval_rule() function is the main piece of code which will have to
 # be implemented in both languages, so it's important we keep the implementations in sync
+
+
+def simple_rule(p: int, rule: [Any]) -> Optional[Callable[[CollectionState], bool]]:
+    item_names = []
+    for criterion in rule:
+        if isinstance(criterion, dict) and len(criterion.items()) != 1 and next(iter(criterion.keys())) == "item":
+            item_names.append(next(iter(criterion.values())))
+        else:
+            return None
+    return lambda state: state.has_all(item_names, p)
 
 
 def eval_rule(state: CollectionState, p: int, rule: [Any]) -> bool:

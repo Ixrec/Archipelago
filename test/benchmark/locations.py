@@ -50,6 +50,8 @@ def run_locations_benchmark():
 
         def main(self):
             for game in sorted(AutoWorld.AutoWorldRegister.world_types):
+                if game != "Outer Wilds":
+                    continue
                 summary_data: typing.Dict[str, collections.Counter[str]] = {
                     "empty_state": collections.Counter(),
                     "all_state": collections.Counter(),

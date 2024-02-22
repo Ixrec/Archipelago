@@ -18,19 +18,19 @@ def eval_rule(state: CollectionState, p: int, rule: [Any]) -> bool:
 
 
 def eval_criterion(state: CollectionState, p: int, criterion: Any) -> bool:
-    # just a string means it's an item criterion
-    if isinstance(criterion, str):
-        return state.has(criterion, p)
-    elif isinstance(criterion, dict):
+    # all valid criteria are dicts
+    if isinstance(criterion, dict):
         # we're only using JSON objects / Python dicts here as discriminated unions,
         # so there should always be exactly one key-value pair
         if len(criterion.items()) != 1:
             return False
         key, value = next(iter(criterion.items()))
 
-        # { "anyOf": [ ... ] } and { "location": "foo" } and { "region": "bar" } mean exactly
-        # what they sound like, and those are the only kinds of non-string criteria.
-        if key == "anyOf" and isinstance(value, list):
+        # { "item": "..." } and { "anyOf": [ ... ] } and { "location": "foo" } and { "region": "bar" }
+        # mean exactly what they sound like, and those are the only kinds of criteria.
+        if key == "item" and isinstance(value, str):
+            return state.has(value, p)
+        elif key == "anyOf" and isinstance(value, list):
             return any(eval_criterion(state, p, sub_criterion) for sub_criterion in value)
         elif key == "location" and isinstance(value, str):
             return state.can_reach(value, "Location", p)

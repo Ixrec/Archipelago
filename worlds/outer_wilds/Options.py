@@ -63,6 +63,12 @@ class Logsanity(Toggle):
     display_name = "Logsanity"
 
 
+class ShuffleSpacesuit(Toggle):
+    """Puts the spacesuit into the Archipelago item pool, forcing you to play suitless until it's found.
+    This is a HIGHLY EXPERIMENTAL setting. Expect logic bugs. Feedback encouraged."""
+    display_name = "Shuffle Spacesuit"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     goal: Goal
@@ -71,3 +77,4 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     trap_type_weights: TrapTypeWeights
     death_link: DeathLink
     logsanity: Logsanity
+    shuffle_spacesuit: ShuffleSpacesuit

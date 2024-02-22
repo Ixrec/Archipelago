@@ -98,9 +98,9 @@ def create_item(player: int, name: str) -> OuterWildsItem:
 # All progression and useful item types have a hardcoded number of instances regardless of options.
 # It's almost always 1, so we only have to write down the number in this map when it's not 1.
 repeated_prog_useful_items = {
-    "Oxygen Capacity Upgrade": 2,
-    "Fuel Capacity Upgrade": 2,
-    "Boost Duration Upgrade": 2,
+    "Oxygen Capacity Upgrade": 3,
+    "Fuel Capacity Upgrade": 3,
+    "Boost Duration Upgrade": 3,
 }
 
 repeatable_filler_weights = {

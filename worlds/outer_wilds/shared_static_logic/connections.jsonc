@@ -2,26 +2,26 @@
     // we use a "Space" region to express that the Spaceship lets us go between all the major regions
     // as well as access a handful of warp pad-less locations like Attlerock and Hollow's Lantern
 
-    { "from": "Hourglass Twins",    "to": "Space", "requires": [ "Launch Codes" ] },
-    { "from": "Timber Hearth",      "to": "Space", "requires": [ "Launch Codes" ] },
-    { "from": "Brittle Hollow",     "to": "Space", "requires": [ "Launch Codes" ] },
-    { "from": "White Hole Station", "to": "Space", "requires": [ "Launch Codes" ] },
-    { "from": "Giant's Deep",       "to": "Space", "requires": [ "Launch Codes" ] },
-    { "from": "Quantum Moon",       "to": "Space", "requires": [ "Launch Codes" ] },
+    { "from": "Hourglass Twins",    "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
+    { "from": "Timber Hearth",      "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
+    { "from": "Brittle Hollow",     "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
+    { "from": "White Hole Station", "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
+    { "from": "Giant's Deep",       "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
+    { "from": "Quantum Moon",       "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
     { "from": "Space", "to": "Hourglass Twins", "requires": [] },
     { "from": "Space", "to": "Timber Hearth", "requires": [] },
     { "from": "Space", "to": "Brittle Hollow", "requires": [] },
     { "from": "Space", "to": "White Hole Station", "requires": [] },
     { "from": "Space", "to": "Giant's Deep", "requires": [] },
     // the only astral body you can't land on without an item
-    { "from": "Space", "to": "Quantum Moon", "requires": [ "Imaging Rule" ] },
+    { "from": "Space", "to": "Quantum Moon", "requires": [ { "item": "Imaging Rule" } ] },
 
-    { "from": "Quantum Moon", "to": "Quantum Shrine", "requires": [ "Shrine Door Codes" ] },
-    { "from": "Quantum Shrine", "to": "Sixth Location", "requires": [ "Entanglement Rule" ] },
+    { "from": "Quantum Moon", "to": "Quantum Shrine", "requires": [ { "item": "Shrine Door Codes" } ] },
+    { "from": "Quantum Shrine", "to": "Sixth Location", "requires": [ { "item": "Entanglement Rule" } ] },
 
     // these will become dynamic after we implement random spawn
     { "from": "Menu", "to": "Timber Hearth Village", "requires": [] },
-    { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ "Launch Codes" ] },
+    { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ { "item": "Launch Codes" } ] },
 
     // you can simply fall into the black hole inside BH instead of using the warp pad
     { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [] },
@@ -35,12 +35,12 @@
     // I believe that requires either the Spaceship or a "warp path" from the Northern Glacier pad to
     // the Hanging City Ceiling pad. The latter is hard to write logic for, so we require the ship.
     // And once the ship is required, { "region": "Brittle Hollow" } would be redundant.
-    { "from": "Hanging City Ceiling", "to": "Black Hole Forge", "requires": [ "Launch Codes" ] },
+    { "from": "Hanging City Ceiling", "to": "Black Hole Forge", "requires": [ { "item": "Launch Codes" } ] },
 
-    { "from": "Space", "to": "Giant's Deep - Ocean Depths", "requires": [ "Tornado Aerodynamic Adjustments" ] },
-    { "from": "Giant's Deep - Ocean Depths", "to": "Giant's Deep - Core", "requires": [ "Electrical Insulation" ] },
+    { "from": "Space", "to": "Giant's Deep - Ocean Depths", "requires": [ { "item": "Tornado Aerodynamic Adjustments" } ] },
+    { "from": "Giant's Deep - Ocean Depths", "to": "Giant's Deep - Core", "requires": [ { "item": "Electrical Insulation" } ] },
 
-    { "from": "Space", "to": "Interloper Core", "requires": [ "Scout", "Ghost Matter Wavelength" ] },
+    { "from": "Space", "to": "Interloper Core", "requires": [ { "item": "Scout" }, { "item": "Ghost Matter Wavelength" } ] },
 
     // representing frequencies/shuttles/etc as abstract regions turns out to be much faster than an anyOf rule
 
@@ -61,7 +61,7 @@
     { "from": "Hourglass Twins", "to": "Frozen Shuttle Log", "requires": [] },
 
     // if you have the frequency, you can scan the QM signal from your ship without landing on it
-    { "from": "Space", "to": "Quantum Moon Signal", "requires": [ "Quantum Fluctuations Frequency" ] },
+    { "from": "Space", "to": "Quantum Moon Signal", "requires": [ { "item": "Quantum Fluctuations Frequency" } ] },
     // otherwise you have to land on it to get into "Unidentified Signal Detected" range
     { "from": "Quantum Moon", "to": "Quantum Moon Signal", "requires": [] },
 
@@ -77,13 +77,13 @@
         "requires": [
             // this particular check doesn't have "guard" anglerfish in vanilla,
             // but DB rando / fog warp rando might make it necessary
-            "Silent Running Mode",
+            { "item": "Silent Running Mode" },
             { "anyOf": [
                 // follow Feldspar's signal on the OW Ventures frequency, or
-                "Signalscope",
+                { "item": "Signalscope" },
                 // launch a Scout into the DB seed back on TH
                 // since DB can only be reached by Spaceship, we don't need a "can reach TH" condition here
-                "Scout"
+                { "item": "Scout" }
             ] }
         ]
     },
@@ -92,28 +92,28 @@
         "to": "Dark Bramble - Nomai Grave",
         "requires": [
             // for the "guard" anglerfish
-            "Silent Running Mode",
+            { "item": "Silent Running Mode" },
             // to follow the Escape Pod 3 signal
-            "Signalscope",
-            "Distress Beacon Frequency"
+            { "item": "Signalscope" },
+            { "item": "Distress Beacon Frequency" }
         ]
     },
     { "from": "Dark Bramble - Nomai Grave", "to": "Dark Bramble - The Vessel", "requires": [
-        "Scout" // to launch into the DB seed at Nomai Grave
+        { "item": "Scout" } // to launch into the DB seed at Nomai Grave
     ] },
 
     // these will become dynamic after we implement warp pad randomization
-    { "from": "Hourglass Twins", "to": "Sun Station", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Hourglass Twins", "to": "Ash Twin Interior", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Hourglass Twins", "to": "Timber Hearth", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Hourglass Twins", "to": "Hanging City Ceiling", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Hourglass Twins", "to": "Giant's Deep", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Hourglass Twins", "to": "Sun Station", "requires": [ { "item": "Nomai Warp Codes" } ] },
+    { "from": "Hourglass Twins", "to": "Ash Twin Interior", "requires": [ { "item": "Nomai Warp Codes" } ] },
+    { "from": "Hourglass Twins", "to": "Timber Hearth", "requires": [ { "item": "Nomai Warp Codes" } ] },
+    { "from": "Hourglass Twins", "to": "Hanging City Ceiling", "requires": [ { "item": "Nomai Warp Codes" } ] },
+    { "from": "Hourglass Twins", "to": "Giant's Deep", "requires": [ { "item": "Nomai Warp Codes" } ] },
 
-    { "from": "Sun Station", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Ash Twin Interior", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Timber Hearth", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Hanging City Ceiling", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
-    { "from": "Giant's Deep", "to": "Hourglass Twins", "requires": [ "Nomai Warp Codes" ] },
+    { "from": "Sun Station", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
+    { "from": "Ash Twin Interior", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
+    { "from": "Timber Hearth", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
+    { "from": "Hanging City Ceiling", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
+    { "from": "Giant's Deep", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
 
-    { "from": "White Hole Station", "to": "Brittle Hollow", "requires": [ "Nomai Warp Codes" ] }
+    { "from": "White Hole Station", "to": "Brittle Hollow", "requires": [ { "item": "Nomai Warp Codes" } ] }
 ]

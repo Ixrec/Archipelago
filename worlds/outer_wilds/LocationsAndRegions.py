@@ -119,11 +119,12 @@ def create_regions(world: "OuterWildsWorld") -> None:
         for exit_connection in exit_connections:
             exit_name = exit_connection["to"]
             exit_names.append(exit_name)
-            rules[exit_name] = lambda state, rule=exit_connection["requires"]: eval_rule(state, p, rule)
+            rule = exit_connection["requires"]
+            rules[exit_name] = None if len(rule) == 0 else lambda state, r=rule: eval_rule(state, p, r)
         region.add_exits(exit_names, rules)
 
     # add access rules to the created locations
     for ld in locations_data:
-        if ld["name"] in locations_to_create:
+        if ld["name"] in locations_to_create and len(ld["requires"]) > 0:
             set_rule(mw.get_location(ld["name"], p),
-                     lambda state, rule=ld["requires"]: eval_rule(state, p, rule))
+                     lambda state, r=ld["requires"]: eval_rule(state, p, r))

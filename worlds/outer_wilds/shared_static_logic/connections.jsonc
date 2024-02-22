@@ -1,13 +1,8 @@
 [
     // we use a "Space" region to express that the Spaceship lets us go between all the major regions
     // as well as access a handful of warp pad-less locations like Attlerock and Hollow's Lantern
+    { "from": "Menu", "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
 
-    { "from": "Hourglass Twins",    "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
-    { "from": "Timber Hearth",      "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
-    { "from": "Brittle Hollow",     "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
-    { "from": "White Hole Station", "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
-    { "from": "Giant's Deep",       "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
-    { "from": "Quantum Moon",       "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
     { "from": "Space", "to": "Hourglass Twins", "requires": [] },
     { "from": "Space", "to": "Timber Hearth", "requires": [] },
     { "from": "Space", "to": "Brittle Hollow", "requires": [] },

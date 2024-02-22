@@ -69,6 +69,7 @@ class OuterWildsTestBase(WorldTestBase):
             "Silent Running Mode",
             "Signalscope",
             "Distress Beacon Frequency",
+            "Escape Pod 3 Signal",
             "Scout",
             "Coordinates"
         ]).can_reach("Victory - Song of Five", "Location", 1))
@@ -80,6 +81,7 @@ class OuterWildsTestBase(WorldTestBase):
             "Silent Running Mode",
             "Signalscope",
             "Distress Beacon Frequency",
+            "Escape Pod 3 Signal",
             "Scout",
             "Coordinates"
         ]).can_reach("Victory - Song of Six", "Location", 1))
@@ -91,6 +93,7 @@ class OuterWildsTestBase(WorldTestBase):
             "Silent Running Mode",
             "Signalscope",
             "Distress Beacon Frequency",
+            "Escape Pod 3 Signal",
             "Scout",
             "Coordinates",
             # added by Song of Six

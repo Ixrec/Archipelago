@@ -69,11 +69,11 @@
     },
     {
         "address": 1085038322, "name": "AT: HGT Towers (Text Wall)",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038323, "name": "AT: BH Tower (Text Wall)",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
 
     // Timber Hearth
@@ -156,7 +156,7 @@
     },
     {
         "address": 1085038315, "name": "BH: Riebeck's Southern Observatory Recorder",
-        "region": "Brittle Hollow", "requires": []
+        "region": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038316, "name": "BH: Riebeck's Surface Campsite Note",

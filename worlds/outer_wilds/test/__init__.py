@@ -63,6 +63,7 @@ class OuterWildsTestBase(WorldTestBase):
         # setting only changes which one is used in the completion_condition,
         # so these "go mode" tests pass regardless of the Goal setting
         self.assertTrue(self.make_state_with([
+            "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
             "Warp Core Installation Manual",
@@ -75,6 +76,7 @@ class OuterWildsTestBase(WorldTestBase):
         ]).can_reach("Victory - Song of Five", "Location", 1))
 
         self.assertFalse(self.make_state_with([
+            "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
             "Warp Core Installation Manual",
@@ -87,6 +89,7 @@ class OuterWildsTestBase(WorldTestBase):
         ]).can_reach("Victory - Song of Six", "Location", 1))
 
         self.assertTrue(self.make_state_with([
+            "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
             "Warp Core Installation Manual",

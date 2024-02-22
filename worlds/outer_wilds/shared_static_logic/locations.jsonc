@@ -353,47 +353,47 @@
     },
     {
         "address": 1085038297, "name": "TH: Museum Shard Signal",
-        "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" } ]
+        "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "address": 1085038298, "name": "TH: Grove Shard Signal",
-        "region": "Timber Hearth", "requires": [ { "item": "Signalscope" } ]
+        "region": "Timber Hearth", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "address": 1085038299, "name": "ET: Cave Shard Signal",
-        "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "address": 1085038300, "name": "BH: Tower Shard Signal",
-        "region": "Brittle Hollow", "requires": [ { "item": "Signalscope" } ]
+        "region": "Brittle Hollow", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "address": 1085038301, "name": "GD: Island Shard Signal",
-        "region": "Space", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" } ]
+        "region": "Space", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "address": 1085038302, "name": "Quantum Moon Signal",
-        "region": "Quantum Moon Signal", "requires": [ { "item": "Signalscope" } ]
+        "region": "Quantum Moon Signal", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "address": 1085038303, "name": "BH: Escape Pod 1 Signal",
-        "region": "Brittle Hollow", "requires": [ { "item": "Signalscope" } ]
+        "region": "Brittle Hollow", "requires": [ { "item": "Signalscope" }, { "item": "Distress Beacon Frequency" } ]
     },
     {
         "address": 1085038304, "name": "ET: Escape Pod 2 Signal",
-        "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" }, { "item": "Distress Beacon Frequency" } ]
     },
     {
         "address": 1085038305, "name": "DB: Escape Pod 3 Signal",
-        "region": "Dark Bramble - Nomai Grave", "requires": [] // see connection logic
+        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Distress Beacon Frequency" } ] // see connection logic
     },
     {
         "address": 1085038306, "name": "TH: Galena's Radio Signal",
-        "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" } ]
+        "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Hide & Seek Frequency" } ]
     },
     {
         "address": 1085038307, "name": "TH: Tephra's Radio Signal",
-        "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" } ]
+        "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Hide & Seek Frequency" } ]
     },
 
     // Victory events

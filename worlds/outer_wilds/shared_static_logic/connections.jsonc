@@ -19,11 +19,16 @@
     { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ { "item": "Launch Codes" } ] },
 
     // you can simply fall into the black hole inside BH instead of using the warp pad
-    { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [] },
+    { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [
+        { "anyOf": [
+            { "item": "Spacesuit" }, // for movement/oxygen after jumping in the black hole
+            { "item": "Nomai Warp Codes" } // for using the warp pad, which does not require the suit
+        ] }
+    ] },
 
     // you can simply jump off/out and fall to the rest of the Hanging City
-    { "from": "Hanging City Ceiling", "to": "Brittle Hollow", "requires": [] },
-    { "from": "Black Hole Forge", "to": "Brittle Hollow", "requires": [] },
+    { "from": "Hanging City Ceiling", "to": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ] },
+    { "from": "Black Hole Forge", "to": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ] },
 
     // This connection is tricky because you need to reach the forge controls in Hanging City first,
     // and then get back to whichever warp pad connects to Hanging City Ceiling _in the same loop_.
@@ -33,9 +38,9 @@
     { "from": "Hanging City Ceiling", "to": "Black Hole Forge", "requires": [ { "item": "Launch Codes" } ] },
 
     { "from": "Space", "to": "Giant's Deep - Ocean Depths", "requires": [ { "item": "Tornado Aerodynamic Adjustments" } ] },
-    { "from": "Giant's Deep - Ocean Depths", "to": "Giant's Deep - Core", "requires": [ { "item": "Electrical Insulation" } ] },
+    { "from": "Giant's Deep - Ocean Depths", "to": "Giant's Deep - Core", "requires": [ { "item": "Electrical Insulation" }, { "item": "Spacesuit" } ] },
 
-    { "from": "Space", "to": "Interloper Core", "requires": [ { "item": "Scout" }, { "item": "Ghost Matter Wavelength" } ] },
+    { "from": "Space", "to": "Interloper Core", "requires": [ { "item": "Scout" }, { "item": "Ghost Matter Wavelength" }, { "item": "Spacesuit" } ] },
 
     // representing frequencies/shuttles/etc as abstract regions turns out to be much faster than an anyOf rule
 
@@ -88,7 +93,8 @@
         { "item": "Escape Pod 3 Signal" }
     ] },
     { "from": "Dark Bramble - Nomai Grave", "to": "Dark Bramble - The Vessel", "requires": [
-        { "item": "Scout" } // to launch into the DB seed at Nomai Grave
+        { "item": "Scout" }, // to launch into the DB seed at Nomai Grave
+        { "item": "Spacesuit" } // to enter the Vessel
     ] },
 
     // these will become dynamic after we implement warp pad randomization

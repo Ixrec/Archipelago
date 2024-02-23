@@ -21,8 +21,8 @@
     { "code": 1734473695, "name": "Coordinates", "type": "progression" },
 
     { "code": 1734473697, "name": "Distress Beacon Frequency", "type": "progression" },
-    { "code": 1734473698, "name": "Quantum Fluctuations Frequency", "type": "useful" },
-    { "code": 1734473699, "name": "Hide & Seek Frequency", "type": "filler" },
+    { "code": 1734473698, "name": "Quantum Fluctuations Frequency", "type": "progression" },
+    { "code": 1734473699, "name": "Hide & Seek Frequency", "type": "progression" },
 
     { "code": 1734473700, "name": "Chert's Signal", "type": "filler" },
     { "code": 1734473701, "name": "Esker's Signal", "type": "filler" },

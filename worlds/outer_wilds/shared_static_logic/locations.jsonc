@@ -256,7 +256,7 @@
     },
     {
         "address": 1085038332, "name": "GD: Bramble Island Fuel Tank",
-        "region": "Giant's Deep", "requires": [ { "item": "Spacesuit" } ]
+        "region": "Giant's Deep", "requires": [ { "item": "Ghost Matter Wavelength" }, { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038333, "name": "GD: Gabbro's Camp Fuel Tank",

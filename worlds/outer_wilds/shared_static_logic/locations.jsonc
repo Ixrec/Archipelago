@@ -47,7 +47,7 @@
     },
     {
         "address": 1085038319, "name": "ET: Enter Sunless City",
-        "region": "Hourglass Twins", "requires": []
+        "region": "Hourglass Twins", "requires": [ { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038320, "name": "ET: Chert's QM Locator Recorder",
@@ -55,11 +55,11 @@
     },
     {
         "address": 1085038327, "name": "ET: QM Locator Fuel Tank",
-        "region": "Hourglass Twins", "requires": []
+        "region": "Hourglass Twins", "requires": [ { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038328, "name": "ET: Chert's Camp Fuel Tank",
-        "region": "Hourglass Twins", "requires": []
+        "region": "Hourglass Twins", "requires": [ { "item": "Spacesuit" } ]
     },
 
     // Ash Twin
@@ -129,7 +129,7 @@
     },
     {
         "address": 1085038329, "name": "AR: Ice Crater Fuel Tank",
-        "region": "Space", "requires": []
+        "region": "Space", "requires": [ { "item": "Spacesuit" } ]
     },
 
     // Brittle Hollow
@@ -166,7 +166,7 @@
         "address": 1085038317, "name": "BH: Solanum's Class Report (2nd Scroll)",
         // Sadly does not require GM Wavelength. You have to avoid a lot of GM, but just looking at
         // the crystals tell you where the GM is so the camera provides no new information.
-        "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ]
+        "region": "Brittle Hollow", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038318, "name": "BH: Eye Shrine (Text Wall)",
@@ -178,11 +178,11 @@
     },
     {
         "address": 1085038330, "name": "BH: Northern Glacier Fuel Tank",
-        "region": "Brittle Hollow", "requires": []
+        "region": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038331, "name": "BH: Riebeck's Camp Fuel Tank",
-        "region": "Brittle Hollow", "requires": []
+        "region": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ]
     },
 
     // Hollow's Lantern
@@ -256,11 +256,11 @@
     },
     {
         "address": 1085038332, "name": "GD: Bramble Island Fuel Tank",
-        "region": "Giant's Deep", "requires": []
+        "region": "Giant's Deep", "requires": [ { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038333, "name": "GD: Gabbro's Camp Fuel Tank",
-        "region": "Giant's Deep", "requires": []
+        "region": "Giant's Deep", "requires": [ { "item": "Spacesuit" } ]
     },
 
     // Interloper
@@ -311,7 +311,7 @@
     },
     {
         "address": 1085038334, "name": "DB: Feldspar's Camp Fuel Tank",
-        "region": "Dark Bramble - Feldspar", "requires": []
+        "region": "Dark Bramble - Feldspar", "requires": [ { "item": "Spacesuit" } ]
     },
 
     // Signalscope Frequencies

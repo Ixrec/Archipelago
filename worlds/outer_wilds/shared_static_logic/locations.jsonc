@@ -187,7 +187,7 @@
 
     // Hollow's Lantern
     {
-        "address": 1085038269, "name": "Volcanic Testing Site (Text Wall)",
+        "address": 1085038269, "name": "HL: Volcanic Testing Site (Text Wall)",
         "region": "Space", "requires": [ { "item": "Translator" } ]
     },
 
@@ -812,15 +812,15 @@
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039098, "name": "Ship Log: Volcanic Testing Site 1 - Purpose",
+        "creation_settings": [ "logsanity" ], "address": 1085039098, "name": "HL Ship Log: Volcanic Testing Site 1 - Purpose",
         "region": "Space", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039099, "name": "Ship Log: Volcanic Testing Site 2 - Briefly Supernova-Proof",
+        "creation_settings": [ "logsanity" ], "address": 1085039099, "name": "HL Ship Log: Volcanic Testing Site 2 - Briefly Supernova-Proof",
         "region": "Space", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039100, "name": "Ship Log: Volcanic Testing Site 3 - Smallest Crack",
+        "creation_settings": [ "logsanity" ], "address": 1085039100, "name": "HL Ship Log: Volcanic Testing Site 3 - Smallest Crack",
         "region": "Space", "requires": [ { "item": "Translator" } ]
     },
     {

@@ -317,11 +317,11 @@
     // Signalscope Frequencies
     {
         "address": 1085038289, "name": "Distress Beacon Frequency",
-        "region": "Distress Beacon Frequency", "requires": [ { "item": "Signalscope" } ]
+        "region": "Distress Beacon Frequency", "requires": [ { "item": "Signalscope" }, { "item": "Distress Beacon Frequency" } ]
     },
     {
         "address": 1085038290, "name": "Quantum Fluctuations Frequency",
-        "region": "Quantum Fluctuations Frequency", "requires": [ { "item": "Signalscope" } ]
+        "region": "Quantum Fluctuations Frequency", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "address": 1085038291, "name": "Hide & Seek Frequency",
@@ -544,7 +544,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039030, "name": "ET Ship Log: Quantum Caves 2 - Quantum Signal",
-        "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039031, "name": "ET Ship Log: Lakebed Cave 1 - Coleus Disappeared",
@@ -609,7 +609,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039047, "name": "TH Ship Log: Dark Bramble Seed 2 - Harmonica Signal",
-        "region": "Timber Hearth", "requires": [ { "item": "Signalscope" } ]
+        "region": "Timber Hearth", "requires": [ { "item": "Signalscope" }, { "item": "Feldspar's Signal" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039048, "name": "TH Ship Log: Dark Bramble Seed 3 - Scout Photos",
@@ -629,7 +629,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039052, "name": "TH Ship Log: Quantum Grove 1 - Quantum Signal",
-        "region": "Timber Hearth", "requires": [ { "item": "Signalscope" } ]
+        "region": "Timber Hearth", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039053, "name": "TH Ship Log: Quantum Grove 2 - Poem",

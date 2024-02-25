@@ -60,8 +60,8 @@
     // use Ember Twin's Gravity Cannon to recall the shuttle
     { "from": "Hourglass Twins", "to": "Frozen Shuttle Log", "requires": [] },
 
-    // if you have the frequency, you can scan the QM signal from your ship without landing on it
-    { "from": "Space", "to": "Quantum Moon Signal", "requires": [ { "item": "Quantum Fluctuations Frequency" } ] },
+    // if you have both the frequency and signal items, you can scan the QM signal from your ship without landing on it
+    { "from": "Space", "to": "Quantum Moon Signal", "requires": [ { "item": "Quantum Moon Signal" } ] },
     // otherwise you have to land on it to get into "Unidentified Signal Detected" range
     { "from": "Quantum Moon", "to": "Quantum Moon Signal", "requires": [] },
 

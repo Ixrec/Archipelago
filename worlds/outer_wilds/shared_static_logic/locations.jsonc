@@ -500,7 +500,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039019, "name": "ET Ship Log: AT Tower Designs 1 - Identify",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Spacesuit" } ] // you only need to look at the designs on the HEL walls
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039020, "name": "ET Ship Log: AT Tower Designs 2 - Different Planets",

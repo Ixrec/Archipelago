@@ -28,7 +28,6 @@
 
     // you can simply jump off/out and fall to the rest of the Hanging City
     { "from": "Hanging City Ceiling", "to": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ] },
-    { "from": "Black Hole Forge", "to": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ] },
 
     // This connection is tricky because you need to reach the forge controls in Hanging City first,
     // and then get back to whichever warp pad connects to Hanging City Ceiling _in the same loop_.

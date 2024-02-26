@@ -316,83 +316,83 @@
 
     // Signalscope Frequencies
     {
-        "address": 1085038289, "name": "Distress Beacon Frequency",
+        "address": 1085038289, "name": "Scan Any Distress Beacon",
         "region": "Distress Beacon Frequency", "requires": [ { "item": "Signalscope" }, { "item": "Distress Beacon Frequency" } ]
     },
     {
-        "address": 1085038290, "name": "Quantum Fluctuations Frequency",
+        "address": 1085038290, "name": "Scan Any Quantum Fluctuation",
         "region": "Quantum Fluctuations Frequency", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
-        "address": 1085038291, "name": "Hide & Seek Frequency",
+        "address": 1085038291, "name": "TH: Receive Hide & Seek Frequency",
         // the only signalscope location that doesn't require the signalscope to scan
         "region": "Timber Hearth Village", "requires": []
     },
 
     // Signalscope Signals
     {
-        "address": 1085038292, "name": "ET: Drum Signal",
+        "address": 1085038292, "name": "ET: Scan Drum Signal",
         "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" } ]
     },
     {
-        "address": 1085038293, "name": "AR: Whistling Signal",
+        "address": 1085038293, "name": "AR: Scan Whistling Signal",
         "region": "Space", "requires": [ { "item": "Signalscope" } ]
     },
     {
-        "address": 1085038294, "name": "BH: Banjo Signal",
+        "address": 1085038294, "name": "BH: Scan Banjo Signal",
         "region": "Brittle Hollow", "requires": [ { "item": "Signalscope" } ]
     },
     {
-        "address": 1085038295, "name": "GD: Flute Signal",
+        "address": 1085038295, "name": "GD: Scan Flute Signal",
         "region": "Giant's Deep", "requires": [ { "item": "Signalscope" } ]
     },
     {
-        "address": 1085038296, "name": "DB: Harmonica Signal",
+        "address": 1085038296, "name": "DB: Scan Harmonica Signal",
         "region": "Dark Bramble - Feldspar", // see connection logic
         "requires": [ { "item": "Signalscope" } ]
     },
     {
-        "address": 1085038297, "name": "TH: Museum Shard Signal",
+        "address": 1085038297, "name": "TH: Scan Museum Shard Signal",
         "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
-        "address": 1085038298, "name": "TH: Grove Shard Signal",
+        "address": 1085038298, "name": "TH: Scan Grove Shard Signal",
         "region": "Timber Hearth", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
-        "address": 1085038299, "name": "ET: Cave Shard Signal",
+        "address": 1085038299, "name": "ET: Scan Cave Shard Signal",
         "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
-        "address": 1085038300, "name": "BH: Tower Shard Signal",
+        "address": 1085038300, "name": "BH: Scan Tower Shard Signal",
         "region": "Brittle Hollow", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
-        "address": 1085038301, "name": "GD: Island Shard Signal",
+        "address": 1085038301, "name": "GD: Scan Island Shard Signal",
         "region": "Space", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
-        "address": 1085038302, "name": "Quantum Moon Signal",
+        "address": 1085038302, "name": "Scan Quantum Moon Signal",
         "region": "Quantum Moon Signal", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
-        "address": 1085038303, "name": "BH: Escape Pod 1 Signal",
+        "address": 1085038303, "name": "BH: Scan Escape Pod 1 Signal",
         "region": "Brittle Hollow", "requires": [ { "item": "Signalscope" }, { "item": "Distress Beacon Frequency" } ]
     },
     {
-        "address": 1085038304, "name": "ET: Escape Pod 2 Signal",
+        "address": 1085038304, "name": "ET: Scan Escape Pod 2 Signal",
         "region": "Hourglass Twins", "requires": [ { "item": "Signalscope" }, { "item": "Distress Beacon Frequency" } ]
     },
     {
-        "address": 1085038305, "name": "DB: Escape Pod 3 Signal",
+        "address": 1085038305, "name": "DB: Scan Escape Pod 3 Signal",
         "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Distress Beacon Frequency" } ] // see connection logic
     },
     {
-        "address": 1085038306, "name": "TH: Galena's Radio Signal",
+        "address": 1085038306, "name": "TH: Scan Galena's Radio Signal",
         "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Hide & Seek Frequency" } ]
     },
     {
-        "address": 1085038307, "name": "TH: Tephra's Radio Signal",
+        "address": 1085038307, "name": "TH: Scan Tephra's Radio Signal",
         "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Hide & Seek Frequency" } ]
     },
 

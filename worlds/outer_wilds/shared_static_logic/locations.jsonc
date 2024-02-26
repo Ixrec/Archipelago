@@ -22,7 +22,7 @@
         ]
     },
     {
-        "address": 1085038253, "name": "ET: Quantum Moon Locator (2nd Scroll)",
+        "address": 1085038253, "name": "ET: QM Locator (2nd Scroll)",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -64,7 +64,7 @@
 
     // Ash Twin
     {
-        "address": 1085038257, "name": "AT: Enter the Ash Twin Project",
+        "address": 1085038257, "name": "AT: Enter the ATP",
         "region": "Ash Twin Interior", "requires": []
     },
     {
@@ -372,7 +372,7 @@
         "region": "Space", "requires": [ { "item": "Signalscope" }, { "item": "Spacesuit" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
-        "address": 1085038302, "name": "Scan Quantum Moon Signal",
+        "address": 1085038302, "name": "Scan QM Signal",
         "region": "Quantum Moon Signal", "requires": [ { "item": "Signalscope" }, { "item": "Quantum Fluctuations Frequency" } ]
     },
     {
@@ -403,7 +403,7 @@
         "requires": [
             { "item": "Warp Core Installation Manual" },
             { "item": "Coordinates" },
-            { "location": "AT: Enter the Ash Twin Project" }
+            { "location": "AT: Enter the ATP" }
         ]
     },
     {
@@ -412,7 +412,7 @@
         "requires": [
             { "item": "Warp Core Installation Manual" },
             { "item": "Coordinates" },
-            { "location": "AT: Enter the Ash Twin Project" },
+            { "location": "AT: Enter the ATP" },
             { "location": "QM: Explore the Sixth Location" }
         ]
     },
@@ -495,7 +495,7 @@
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039018, "name": "ET Ship Log: High Energy Lab 3 - Ash Twin Project",
+        "creation_settings": [ "logsanity" ], "address": 1085039018, "name": "ET Ship Log: High Energy Lab 3 - ATP",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
@@ -511,7 +511,7 @@
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039022, "name": "ET Ship Log: AT Tower Designs 4 - Ash Twin Project",
+        "creation_settings": [ "logsanity" ], "address": 1085039022, "name": "ET Ship Log: AT Tower Designs 4 - ATP",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
@@ -563,7 +563,7 @@
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039035, "name": "AT Ship Log: Towers 2 - White Hole Station",
+        "creation_settings": [ "logsanity" ], "address": 1085039035, "name": "AT Ship Log: Towers 2 - WHS",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
@@ -1072,11 +1072,11 @@
         "region": "Interloper Core", "requires": [ { "item": "Translator" } ] // text wheel
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039163, "name": "QM Ship Log: Quantum Moon 1 - Land",
+        "creation_settings": [ "logsanity" ], "address": 1085039163, "name": "QM Ship Log: QM 1 - Land",
         "region": "Quantum Moon", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039164, "name": "QM Ship Log: Quantum Moon 2 - Corpse",
+        "creation_settings": [ "logsanity" ], "address": 1085039164, "name": "QM Ship Log: QM 2 - Corpse",
         "region": "Quantum Moon", "requires": []
     },
     {

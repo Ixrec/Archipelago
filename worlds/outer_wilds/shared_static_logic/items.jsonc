@@ -34,7 +34,7 @@
     { "code": 1734473707, "name": "Cave Shard Signal", "type": "filler" },
     { "code": 1734473708, "name": "Tower Shard Signal", "type": "filler" },
     { "code": 1734473709, "name": "Island Shard Signal", "type": "filler" },
-    { "code": 1734473710, "name": "Quantum Moon Signal", "type": "useful" },
+    { "code": 1734473710, "name": "Quantum Moon Signal", "type": "progression" },
     { "code": 1734473711, "name": "Escape Pod 1 Signal", "type": "filler" },
     { "code": 1734473712, "name": "Escape Pod 2 Signal", "type": "filler" },
     { "code": 1734473713, "name": "Escape Pod 3 Signal", "type": "progression" },

@@ -169,7 +169,7 @@
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "address": 1085038318, "name": "BH: Eye Shrine (Text Wall)",
+        "address": 1085038318, "name": "BH: Hanging City Shrine (Text Wall)",
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -434,7 +434,7 @@
         "region": "Sun Station", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039003, "name": "Ship Log: Sun Station 4 - Natural End",
+        "creation_settings": [ "logsanity" ], "address": 1085039003, "name": "Ship Log: Sun Station 4 - Current Status",
         "region": "Sun Station", "requires": [ { "item": "Translator" } ]
     },
 
@@ -447,7 +447,7 @@
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039006, "name": "ET Ship Log: Chert's Camp 3 - Universe Dying",
+        "creation_settings": [ "logsanity" ], "address": 1085039006, "name": "ET Ship Log: Chert's Camp 3 - All The Stars",
         "region": "Hourglass Twins", "requires": []
     },
     {
@@ -455,7 +455,7 @@
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039008, "name": "ET Ship Log: Chert's Camp 5 - Imminent Death",
+        "creation_settings": [ "logsanity" ], "address": 1085039008, "name": "ET Ship Log: Chert's Camp 5 - Resignation",
         "region": "Hourglass Twins", "requires": []
     },
     {
@@ -463,7 +463,7 @@
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039010, "name": "ET Ship Log: QM Locator 2 - Quantum Mechanics",
+        "creation_settings": [ "logsanity" ], "address": 1085039010, "name": "ET Ship Log: QM Locator 2 - Hypothesis",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -475,7 +475,7 @@
         "region": "Hourglass Twins", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039013, "name": "ET Ship Log: Gravity Cannon 2 - Recall Shuttle",
+        "creation_settings": [ "logsanity" ], "address": 1085039013, "name": "ET Ship Log: Gravity Cannon 2 - Recall",
         "region": "Hourglass Twins", "requires": []
     },
     {
@@ -523,7 +523,7 @@
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039025, "name": "ET Ship Log: Sunless City 3 - Eye Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039025, "name": "ET Ship Log: Sunless City 3 - Signal",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
@@ -555,7 +555,7 @@
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Entanglement Rule" }, { "item": "Spacesuit" } ] // wall text where Coleus was trapped
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039033, "name": "ET Ship Log: Lakebed Cave 3 - Conscious Being Theory",
+        "creation_settings": [ "logsanity" ], "address": 1085039033, "name": "ET Ship Log: Lakebed Cave 3 - Theorizing",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Entanglement Rule" }, { "item": "Spacesuit" } ] // wall text where Coleus was trapped
     },
     {
@@ -571,19 +571,19 @@
         "region": "Ash Twin Interior", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039037, "name": "AT Ship Log: ATP 2 - Mask Monoliths",
+        "creation_settings": [ "logsanity" ], "address": 1085039037, "name": "AT Ship Log: ATP 2 - Monoliths",
         "region": "Ash Twin Interior", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039038, "name": "AT Ship Log: ATP 3 - Supernova Energy",
+        "creation_settings": [ "logsanity" ], "address": 1085039038, "name": "AT Ship Log: ATP 3 - Energy",
         "region": "Ash Twin Interior", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039039, "name": "AT Ship Log: ATP 4 - Sun Station Failure",
+        "creation_settings": [ "logsanity" ], "address": 1085039039, "name": "AT Ship Log: ATP 4 - Sun Station",
         "region": "Ash Twin Interior", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039040, "name": "AT Ship Log: ATP 5 - Advanced Warp Core",
+        "creation_settings": [ "logsanity" ], "address": 1085039040, "name": "AT Ship Log: ATP 5 - Core",
         "region": "Ash Twin Interior", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -616,7 +616,7 @@
         "region": "Timber Hearth", "requires": [ { "item": "Scout" } ] // shoot your scout into the seed and take a photo of the anglerfish skeleton
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039049, "name": "TH Ship Log: Nomai Mines 1 - Ash Twin Shell",
+        "creation_settings": [ "logsanity" ], "address": 1085039049, "name": "TH Ship Log: Nomai Mines 1 - Shell",
         "region": "Timber Hearth", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -664,7 +664,7 @@
         "region": "Brittle Hollow", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039061, "name": "BH Ship Log: Gravity Cannon 2 - Recall Shuttle",
+        "creation_settings": [ "logsanity" ], "address": 1085039061, "name": "BH Ship Log: Gravity Cannon 2 - Recall",
         "region": "Brittle Hollow", "requires": []
     },
     {
@@ -684,7 +684,7 @@
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039066, "name": "BH Ship Log: Tower Shard 2 - Piece of Moon",
+        "creation_settings": [ "logsanity" ], "address": 1085039066, "name": "BH Ship Log: Tower Shard 2 - Hypothesis",
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -716,7 +716,7 @@
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039074, "name": "BH Ship Log: Old Settlement 3 - Eye of the Universe",
+        "creation_settings": [ "logsanity" ], "address": 1085039074, "name": "BH Ship Log: Old Settlement 3 - Named",
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -748,7 +748,7 @@
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ] // meltwater district text wall
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039082, "name": "BH Ship Log: Hanging City 4 - Eye Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039082, "name": "BH Ship Log: Hanging City 4 - Signal",
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ] // eye shrine text wall
     },
     {
@@ -788,7 +788,7 @@
         "region": "Black Hole Forge", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039092, "name": "BH Ship Log: Southern Observatory 1 - Eye Signal",
+        "creation_settings": [ "logsanity" ], "address": 1085039092, "name": "BH Ship Log: Southern Observatory 1 - Signal",
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
@@ -804,11 +804,11 @@
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039096, "name": "BH Ship Log: Tornado Simulation 1 - Mostly Clockwise",
+        "creation_settings": [ "logsanity" ], "address": 1085039096, "name": "BH Ship Log: Tornado Simulation 1 - Most Cyclones",
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039097, "name": "BH Ship Log: Tornado Simulation 2 - Below the Current",
+        "creation_settings": [ "logsanity" ], "address": 1085039097, "name": "BH Ship Log: Tornado Simulation 2 - Below",
         "region": "Brittle Hollow", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
@@ -816,7 +816,7 @@
         "region": "Space", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039099, "name": "HL Ship Log: Volcanic Testing Site 2 - Briefly Supernova-Proof",
+        "creation_settings": [ "logsanity" ], "address": 1085039099, "name": "HL Ship Log: Volcanic Testing Site 2 - Shell",
         "region": "Space", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -840,11 +840,11 @@
         "region": "Giant's Deep", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039105, "name": "GD Ship Log: Gabbro's Island 3 - Remembers Dying",
+        "creation_settings": [ "logsanity" ], "address": 1085039105, "name": "GD Ship Log: Gabbro's Island 3 - Remembers",
         "region": "Giant's Deep", "requires": []
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039106, "name": "GD Ship Log: Gabbro's Island 4 - Only Two Aware",
+        "creation_settings": [ "logsanity" ], "address": 1085039106, "name": "GD Ship Log: Gabbro's Island 4 - Only Ones",
         "region": "Giant's Deep", "requires": []
     },
     {
@@ -856,7 +856,7 @@
         "region": "Giant's Deep", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039109, "name": "GD Ship Log: Construction Yard 3 - Recent Launch",
+        "creation_settings": [ "logsanity" ], "address": 1085039109, "name": "GD Ship Log: Construction Yard 3 - Launch",
         "region": "Giant's Deep", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
@@ -884,11 +884,11 @@
         "region": "Giant's Deep", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039116, "name": "GD Ship Log: Tower 1 - Quantum Journey",
+        "creation_settings": [ "logsanity" ], "address": 1085039116, "name": "GD Ship Log: Tower 1 - Journey",
         "region": "Space", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039117, "name": "GD Ship Log: Tower 2 - Observing an Image",
+        "creation_settings": [ "logsanity" ], "address": 1085039117, "name": "GD Ship Log: Tower 2 - Observing",
         "region": "Space", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
@@ -940,15 +940,15 @@
         "region": "Space", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ] // launch module projection stone text
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039130, "name": "GD Ship Log: Control Module 1 - Recent Launch Request",
+        "creation_settings": [ "logsanity" ], "address": 1085039130, "name": "GD Ship Log: Control Module 1 - Request",
         "region": "Space", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039131, "name": "GD Ship Log: Control Module 2 - Compromised",
+        "creation_settings": [ "logsanity" ], "address": 1085039131, "name": "GD Ship Log: Control Module 2 - Status",
         "region": "Space", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039132, "name": "DB Ship Log: Feldspar's Camp 1 - Alive",
+        "creation_settings": [ "logsanity" ], "address": 1085039132, "name": "DB Ship Log: Feldspar's Camp 1 - Status",
         "region": "Dark Bramble - Feldspar", "requires": []
     },
     {
@@ -1032,7 +1032,7 @@
         "region": "White Hole Station", "requires": [ { "item": "Translator" } ] // projection stone text, requires carrying it out of WHS
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039153, "name": "Ship Log: WHS 3 - Arrive Before",
+        "creation_settings": [ "logsanity" ], "address": 1085039153, "name": "Ship Log: WHS 3 - Temporal Anomaly",
         "region": "White Hole Station", "requires": [ { "item": "Translator" } ] // projection stone text, requires carrying it out of WHS
     },
     {
@@ -1048,7 +1048,7 @@
         "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ] // text wheel inside the shuttle, read by recalling to ET
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039157, "name": "Ship Log: Frozen Shuttle 3 - Stayed Behind",
+        "creation_settings": [ "logsanity" ], "address": 1085039157, "name": "Ship Log: Frozen Shuttle 3 - Stayed",
         "region": "Space", "requires": [ { "item": "Translator" } ] // text wheel just outside the shuttle, on Interloper surface
     },
     {
@@ -1108,15 +1108,15 @@
         "region": "Sixth Location", "requires": [] // just attempt to talk to Solanum, no text translation needed
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039172, "name": "QM Ship Log: Sixth Location 2 - Eye's Moon",
+        "creation_settings": [ "logsanity" ], "address": 1085039172, "name": "QM Ship Log: Sixth Location 2 - Moon",
         "region": "Sixth Location", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039173, "name": "QM Ship Log: Sixth Location 3 - Reflects Eye",
+        "creation_settings": [ "logsanity" ], "address": 1085039173, "name": "QM Ship Log: Sixth Location 3 - Reflection",
         "region": "Sixth Location", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039174, "name": "QM Ship Log: Sixth Location 4 - Macro-Quantum Source",
+        "creation_settings": [ "logsanity" ], "address": 1085039174, "name": "QM Ship Log: Sixth Location 4 - Source",
         "region": "Sixth Location", "requires": [ { "item": "Translator" } ]
     },
     {
@@ -1124,7 +1124,7 @@
         "region": "Sixth Location", "requires": [ { "item": "Translator" } ]
     },
     {
-        "creation_settings": [ "logsanity" ], "address": 1085039176, "name": "QM Ship Log: Sixth Location 6 - Not Entirely Alive",
+        "creation_settings": [ "logsanity" ], "address": 1085039176, "name": "QM Ship Log: Sixth Location 6 - Status",
         "region": "Sixth Location", "requires": [ { "item": "Translator" } ]
     }
 ]

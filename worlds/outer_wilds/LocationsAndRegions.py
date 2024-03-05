@@ -50,7 +50,11 @@ location_name_groups = {
     # For now, all of our location groups are auto-generated
     # We don't need an "Everywhere" group because AP makes that for us
 
-    "Frequencies": set(n for n in location_names if n.endswith(" Frequency")),
+    "Frequencies": {
+        "Scan Any Distress Beacon",
+        "Scan Any Quantum Fluctuation",
+        "TH: Receive Hide & Seek Frequency",
+    },
     "Signals": set(n for n in location_names if n.endswith(" Signal")),
 
     "Ember Twin": set(n for n in location_names if n.startswith("ET: ") or n.startswith("ET Ship Log: ")),

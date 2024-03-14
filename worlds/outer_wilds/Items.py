@@ -97,11 +97,11 @@ def create_item(player: int, name: str) -> OuterWildsItem:
 
 # All progression and useful item types have a hardcoded number of instances regardless of options.
 # It's almost always 1, so we only have to write down the number in this map when it's not 1.
-repeated_prog_useful_items = {
-    "Oxygen Capacity Upgrade": 3,
-    "Fuel Capacity Upgrade": 3,
-    "Boost Duration Upgrade": 3,
-}
+# repeated_prog_useful_items = {
+#     "Oxygen Capacity Upgrade": 3,
+#     "Fuel Capacity Upgrade": 3,
+#     "Boost Duration Upgrade": 3,
+# }
 
 repeatable_filler_weights = {
     "Nothing": 0,  # no longer used, here for backwards compatibility
@@ -116,7 +116,7 @@ repeatable_filler_weights = {
 def create_items(world: "OuterWildsWorld") -> None:
     random = world.random
     multiworld = world.multiworld
-    options = world.options
+    # options = world.options
     player = world.player
 
     prog_and_useful_items: List[OuterWildsItem] = []
@@ -125,11 +125,11 @@ def create_items(world: "OuterWildsWorld") -> None:
         if item.code is None:
             # here we rely on our event items and event locations having identical names
             multiworld.get_location(name, player).place_locked_item(create_item(player, name))
-        elif name == "Spacesuit":
-            if options.shuffle_spacesuit.value == 0:
-                multiworld.push_precollected(create_item(player, "Spacesuit"))
-            else:
-                prog_and_useful_items.append(create_item(player, "Spacesuit"))
+        # elif name == "Spacesuit":
+        #     if options.shuffle_spacesuit.value == 0:
+        #         multiworld.push_precollected(create_item(player, "Spacesuit"))
+        #     else:
+        #         prog_and_useful_items.append(create_item(player, "Spacesuit"))
         elif name == "Launch Codes":  # in a future version this should say `and options.spawn == "vanilla"`
             # in vanilla spawn, Launch Codes is locked to Hornfels to ensure the player starts the time loop
             multiworld.get_location("TH: Talk to Hornfels", player).place_locked_item(create_item(player, name))
@@ -138,29 +138,29 @@ def create_items(world: "OuterWildsWorld") -> None:
                 unique_filler.append(create_item(player, name))
         elif item.type != ItemClassification.trap:
             instances = 1
-            if name in repeated_prog_useful_items:
-                instances = repeated_prog_useful_items[name]
+            # if name in repeated_prog_useful_items:
+            #     instances = repeated_prog_useful_items[name]
             for _ in range(0, instances):
                 prog_and_useful_items.append(create_item(player, name))
 
     unique_filler_with_traps = unique_filler
 
     # replace some unique filler items with trap items, depending on trap settings
-    trap_weights = options.trap_type_weights
-    trap_chance = (options.trap_chance / 100)
-    filler_chance = 1 - trap_chance
-    apply_trap_items = options.trap_chance > 0 and any(v > 0 for v in options.trap_type_weights.values())
-    if apply_trap_items:
-        trap_weights_sum = sum(trap_weights.values())
-        trap_overwrites = random.choices(
-            population=[None] + list(trap_weights.keys()),
-            weights=[filler_chance] + list((w / trap_weights_sum) * trap_chance for w in trap_weights.values()),
-            k=len(unique_filler)
-        )
-        for i in range(0, len(unique_filler)):
-            trap_overwrite = trap_overwrites[i]
-            if trap_overwrite is not None:
-                unique_filler_with_traps[i] = create_item(player, trap_overwrite)
+    # trap_weights = options.trap_type_weights
+    # trap_chance = (options.trap_chance / 100)
+    # filler_chance = 1 - trap_chance
+    # apply_trap_items = options.trap_chance > 0 and any(v > 0 for v in options.trap_type_weights.values())
+    # if apply_trap_items:
+    #     trap_weights_sum = sum(trap_weights.values())
+    #     trap_overwrites = random.choices(
+    #         population=[None] + list(trap_weights.keys()),
+    #         weights=[filler_chance] + list((w / trap_weights_sum) * trap_chance for w in trap_weights.values()),
+    #         k=len(unique_filler)
+    #     )
+    #     for i in range(0, len(unique_filler)):
+    #         trap_overwrite = trap_overwrites[i]
+    #         if trap_overwrite is not None:
+    #             unique_filler_with_traps[i] = create_item(player, trap_overwrite)
 
     # add enough "repeatable"/non-unique filler items (and/or traps) to make item count equal location count
     # here we use the term "junk" to mean "filler or trap items"
@@ -168,14 +168,14 @@ def create_items(world: "OuterWildsWorld") -> None:
     repeatable_filler_needed = len(multiworld.get_unfilled_locations(player)) - unique_item_count
     junk_names = list(repeatable_filler_weights.keys())
     junk_weights = list(repeatable_filler_weights.values())
-    if apply_trap_items:
-        filler_weights_sum = sum(repeatable_filler_weights.values())
-        normalized_filler_weights = list((w / filler_weights_sum) * filler_chance
-                                         for w in repeatable_filler_weights.values())
-        trap_weights_sum = sum(trap_weights.values())
-        normalized_trap_weights = list((w / trap_weights_sum) * trap_chance for w in trap_weights.values())
-        junk_names += list(trap_weights.keys())
-        junk_weights = normalized_filler_weights + normalized_trap_weights
+    # if apply_trap_items:
+    #     filler_weights_sum = sum(repeatable_filler_weights.values())
+    #     normalized_filler_weights = list((w / filler_weights_sum) * filler_chance
+    #                                      for w in repeatable_filler_weights.values())
+    #     trap_weights_sum = sum(trap_weights.values())
+    #     normalized_trap_weights = list((w / trap_weights_sum) * trap_chance for w in trap_weights.values())
+    #     junk_names += list(trap_weights.keys())
+    #     junk_weights = normalized_filler_weights + normalized_trap_weights
     repeatable_filler_names_with_traps = random.choices(
         population=junk_names,
         weights=junk_weights,

@@ -72,9 +72,9 @@ class ShuffleSpacesuit(Toggle):
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     goal: Goal
-    randomize_coordinates: RandomizeCoordinates
-    trap_chance: TrapChance
-    trap_type_weights: TrapTypeWeights
+    # randomize_coordinates: RandomizeCoordinates
+    # trap_chance: TrapChance
+    # trap_type_weights: TrapTypeWeights
     death_link: DeathLink
-    logsanity: Logsanity
-    shuffle_spacesuit: ShuffleSpacesuit
+    # logsanity: Logsanity
+    # shuffle_spacesuit: ShuffleSpacesuit

@@ -76,8 +76,8 @@ location_name_groups = {
 def get_locations_to_create(options: OuterWildsGameOptions) -> Dict[str, OuterWildsLocationData]:
     # filter locations by settings (currently logsanity is the only setting relevant here)
     relevant_settings = set()
-    if options.logsanity.value == 1:
-        relevant_settings.add("logsanity")
+    # if options.logsanity.value == 1:
+    #     relevant_settings.add("logsanity")
 
     return {k: v for k, v in location_data_table.items()
             if v.creation_settings is None or relevant_settings.issuperset(v.creation_settings)}

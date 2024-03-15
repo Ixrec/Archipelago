@@ -44,20 +44,20 @@ item_name_groups = {
 
     "progression": set(entry["name"] for entry in items_data
                        if entry["type"] == "progression" and entry["code"] is not None),
-    "useful": set(entry["name"] for entry in items_data if entry["type"] == "useful"),
+    # "useful": set(entry["name"] for entry in items_data if entry["type"] == "useful"),
     "filler": set(entry["name"] for entry in items_data if entry["type"] == "filler"),
-    "trap": set(entry["name"] for entry in items_data if entry["type"] == "trap"),
+    # "trap": set(entry["name"] for entry in items_data if entry["type"] == "trap"),
 
     "Frequencies": set(n for n in item_names if n.endswith(" Frequency")),
     "Signals": set(n for n in item_names if n.endswith(" Signal")),
 
     # Manually curated groups
-    "Ship Upgrades": {
-        "Tornado Aerodynamic Adjustments",
-        "Silent Running Mode",
-        "Autopilot",
-        "Landing Camera",
-    },
+    # "Ship Upgrades": {
+    #     "Tornado Aerodynamic Adjustments",
+    #     "Silent Running Mode",
+    #     "Autopilot",
+    #     "Landing Camera",
+    # },
     "Tools": {
         "Translator",
         "Signalscope",

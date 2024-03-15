@@ -92,8 +92,8 @@
         { "item": "Escape Pod 3 Signal" }
     ] },
     { "from": "Dark Bramble - Nomai Grave", "to": "Dark Bramble - The Vessel", "requires": [
-        { "item": "Scout" }, // to launch into the DB seed at Nomai Grave
-        { "item": "Spacesuit" } // to enter the Vessel
+        { "item": "Scout" }//, // to launch into the DB seed at Nomai Grave
+        //{ "item": "Spacesuit" } // to enter the Vessel
     ] },
 
     // these will become dynamic after we implement warp pad randomization

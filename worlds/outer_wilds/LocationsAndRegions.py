@@ -69,7 +69,7 @@ location_name_groups = {
     "Dark Bramble": set(n for n in location_names if n.startswith("DB: ") or n.startswith("DB Ship Log: ")),
     "Quantum Moon": set(n for n in location_names if n.startswith("QM: ") or n.startswith("QM Ship Log: ")),
 
-    "Ship Logs": set(n for n in location_names if "Ship Log: " in n),
+    # "Ship Logs": set(n for n in location_names if "Ship Log: " in n),
 }
 
 

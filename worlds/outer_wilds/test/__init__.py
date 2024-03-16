@@ -110,7 +110,7 @@ class TestDefaultWorld(OuterWildsTestBase):
     options = {}
 
     def test_default_world(self):
-        self.assertEqual(self.get_location_count(), 60)  # 86)  # default locations, including Victory events
+        self.assertEqual(self.get_location_count(), 86)  # default locations, including Victory events
 
         # with default locations, Insulation only blocks 2 checks
         self.assertAccessDependency(
@@ -133,7 +133,7 @@ class TestSongOfSixWorld(OuterWildsTestBase):
     }
 
     def test_six_world(self):
-        self.assertEqual(self.get_location_count(), 60)  # 86)  # same as song of five
+        self.assertEqual(self.get_location_count(), 86)  # same as song of five
 
         # same as song of five
         self.assertAccessDependency(

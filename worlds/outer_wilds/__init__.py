@@ -84,7 +84,7 @@ class OuterWildsWorld(World):
         # slot_data["eotu_coordinates"] = self.eotu_coordinates
         # Archipelago does not yet have apworld versions (data_version is deprecated),
         # so we have to roll our own with slot_data for the time being
-        slot_data["apworld_version"] = "0.1.4"
+        slot_data["apworld_version"] = "0.1.5"
         return slot_data
 
     # def write_spoiler(self, spoiler_handle: TextIO) -> None:

@@ -248,7 +248,7 @@ class AdventureWorld(World):
                 self.created_items += 1
 
     def create_regions(self) -> None:
-        create_regions(self.multiworld, self.player, self.dragon_rooms)
+        create_regions(self.multiworld.random, self.multiworld, self.player, self.dragon_rooms)
 
     set_rules = set_rules
 

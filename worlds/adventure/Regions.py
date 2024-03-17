@@ -1,5 +1,6 @@
 from BaseClasses import MultiWorld, Region, Entrance, LocationProgressType
 from .Locations import location_table, LocationData, AdventureLocation, dragon_room_to_region
+from random import Random
 
 
 def connect(world: MultiWorld, player: int, source: str, target: str, rule: callable = lambda state: True,
@@ -24,9 +25,9 @@ def connect(world: MultiWorld, player: int, source: str, target: str, rule: call
         connect(world, player, target, source, rule, True)
 
 
-def create_regions(multiworld: MultiWorld, player: int, dragon_rooms: []) -> None:
+def create_regions(random: Random, multiworld: MultiWorld, player: int, dragon_rooms: []) -> None:
     for name, locdata in location_table.items():
-        locdata.get_position(multiworld.random)
+        locdata.get_position(random)
 
     menu = Region("Menu", player, multiworld)
 

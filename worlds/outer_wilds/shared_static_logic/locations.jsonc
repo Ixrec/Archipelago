@@ -131,6 +131,10 @@
         "address": 1085038329, "name": "AR: Ice Crater Fuel Tank",
         "region": "Space", "requires": []// { "item": "Spacesuit" } ]
     },
+    {
+        "address": 1085038335, "name": "AR: Esker's House Fuel Tank",
+        "region": "Space", "requires": []
+    },
 
     // Brittle Hollow
     {

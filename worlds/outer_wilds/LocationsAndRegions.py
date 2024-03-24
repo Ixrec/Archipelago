@@ -69,15 +69,15 @@ location_name_groups = {
     "Dark Bramble": set(n for n in location_names if n.startswith("DB: ") or n.startswith("DB Ship Log: ")),
     "Quantum Moon": set(n for n in location_names if n.startswith("QM: ") or n.startswith("QM Ship Log: ")),
 
-    # "Ship Logs": set(n for n in location_names if "Ship Log: " in n),
+    "Ship Logs": set(n for n in location_names if "Ship Log: " in n),
 }
 
 
 def get_locations_to_create(options: OuterWildsGameOptions) -> Dict[str, OuterWildsLocationData]:
     # filter locations by settings (currently logsanity is the only setting relevant here)
     relevant_settings = set()
-    # if options.logsanity.value == 1:
-    #     relevant_settings.add("logsanity")
+    if options.logsanity.value == 1:
+        relevant_settings.add("logsanity")
 
     return {k: v for k, v in location_data_table.items()
             if v.creation_settings is None or relevant_settings.issuperset(v.creation_settings)}

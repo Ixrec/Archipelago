@@ -80,7 +80,7 @@ class OuterWildsWorld(World):
         self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
 
     def fill_slot_data(self):
-        slot_data = self.options.as_dict("goal", "death_link")  # , "logsanity")
+        slot_data = self.options.as_dict("goal", "death_link", "logsanity")
         # slot_data["eotu_coordinates"] = self.eotu_coordinates
         # Archipelago does not yet have apworld versions (data_version is deprecated),
         # so we have to roll our own with slot_data for the time being

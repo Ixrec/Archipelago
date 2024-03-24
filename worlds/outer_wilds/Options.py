@@ -76,5 +76,5 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     # trap_chance: TrapChance
     # trap_type_weights: TrapTypeWeights
     death_link: DeathLink
-    # logsanity: Logsanity
+    logsanity: Logsanity
     # shuffle_spacesuit: ShuffleSpacesuit

@@ -27,11 +27,6 @@ class OuterWildsWorld(World):
     game = "Outer Wilds"
     web = OuterWildsWebWorld()
 
-    # because we use options_dataclass, this is the minimum AP version we support generating with
-    required_client_version = (0, 4, 4)
-    # but the server is allowed to be a little older
-    required_server_version = (0, 4, 3)
-
     # eotu_coordinates = 'vanilla'
 
     def generate_early(self) -> None:

@@ -77,13 +77,17 @@
     ] },
 
     // To find Feldspar, either follow the harmonica signal on the OW Ventures frequency...
-    { "from": "Dark Bramble", "to": "Dark Bramble - Feldspar", "requires": [
+    { "from": "Dark Bramble", "to": "Dark Bramble - Feldspar via Signal", "requires": [
         { "item": "Signalscope" },
         { "item": "Feldspar's Signal" }
     ] },
     // ...or launch a Scout into the DB seed back on TH.
     // Since DB can only be reached by Spaceship, we don't need an explicit "can reach TH" condition here.
-    { "from": "Dark Bramble", "to": "Dark Bramble - Feldspar", "requires": [ { "item": "Scout" } ] },
+    { "from": "Dark Bramble", "to": "Dark Bramble - Feldspar via Scout", "requires": [ { "item": "Scout" } ] },
+
+    // either way you reach the same group of Feldspar-related locations
+    { "from": "Dark Bramble - Feldspar via Signal", "to": "Dark Bramble - Feldspar", "requires": [] },
+    { "from": "Dark Bramble - Feldspar via Scout", "to": "Dark Bramble - Feldspar", "requires": [] },
 
     { "from": "Dark Bramble", "to": "Dark Bramble - Nomai Grave", "requires": [
         // to follow the Escape Pod 3 signal

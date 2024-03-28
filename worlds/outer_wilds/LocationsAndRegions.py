@@ -122,6 +122,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
         rules = {}
         for exit_connection in exit_connections:
             exit_name = exit_connection["to"]
+            assert exit_name not in exit_names
             exit_names.append(exit_name)
             rule = exit_connection["requires"]
             rules[exit_name] = None if len(rule) == 0 else lambda state, r=rule: eval_rule(state, p, r)

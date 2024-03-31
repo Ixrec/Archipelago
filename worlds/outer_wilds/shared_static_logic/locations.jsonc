@@ -528,7 +528,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039025, "name": "ET Ship Log: Sunless City 3 - Signal",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Ghost Matter Wavelength" } ]//, { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039026, "name": "ET Ship Log: Anglerfish Fossil 1 - Children's Game",

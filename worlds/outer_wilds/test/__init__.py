@@ -7,48 +7,65 @@ class OuterWildsTestBase(WorldTestBase):
     game = "Outer Wilds"
     player: int = 1
 
-    def make_state_with(self, item_names: List[str]) -> CollectionState:
+    def makeStateWith(self, item_names: List[str]) -> CollectionState:
         state = CollectionState(self.multiworld)
         for i in self.get_items_by_name(item_names):
             state.collect(i)
         return state
 
-    def get_location_count(self) -> int:
+    def getLocationCount(self) -> int:
         return sum(1 for _ in self.multiworld.get_locations(1))
 
-    def can_reach_location_with(self, location_name: str, item_names: List[str]) -> bool:
-        state = self.make_state_with(item_names)
-        return state.can_reach(location_name, "Location", 1)
+    def isReachableWith(self, location_name: str, item_names: List[str]) -> bool:
+        state = self.makeStateWith(item_names)
+        return state.can_reach_location(location_name, 1)
 
-    def location_requires_exactly(self, location_name: str, item_names: List[str]) -> bool:
+    def assertReachableWith(self, location_name: str, item_names: List[str]) -> None:
+        self.assertTrue(self.isReachableWith(location_name, item_names))
+
+    def assertNotReachableWith(self, location_name: str, item_names: List[str]) -> None:
+        self.assertFalse(self.isReachableWith(location_name, item_names))
+
+    # we can't realistically prove there is no other combination of items that works,
+    # so what this actually tests is having all item_names is enough to reach the location,
+    # and missing any one of those item_names is not enough to reach it.
+    def requiresAllOf(self, location_name: str, item_names: List[str]) -> bool:
         items = self.get_items_by_name(item_names)
         state = CollectionState(self.multiworld)
 
         # check that it can be reached with all the items
         for i in items:
             state.collect(i)
-        if not state.can_reach(location_name, "Location", 1):
+        if not state.can_reach_location(location_name, 1):
             return False
 
         # check that removing any one item makes it unreachable again
         for i in items:
             state.remove(i)
-            if state.can_reach(location_name, "Location", 1):
+            if state.can_reach_location(location_name, 1):
                 return False
             state.collect(i)
 
         return True
 
-    def assert_all_locations_requiring_exactly(self, location_names: List[str], item_names: List[str]) -> None:
+    # Note that pre-collected items like Launch Codes are ignored by AP reachability logic,
+    # so it doesn't matter
+    def assertRequiresAllOf(self, location_name: str, item_names: List[str]) -> None:
+        self.assertTrue(self.requiresAllOf(location_name, item_names))
+
+    # Checks that the listed locations requiresAllOf(item_names), and that
+    # every other location in the multiworld does not requiresAllOf(item_names).
+    # This may have unintuitive results for locations which can be reached multiple ways.
+    def assertEverywhereRequiringAllOf(self, location_names: List[str], item_names: List[str]) -> None:
         for location in self.multiworld.get_locations():
             if location.name in location_names:
                 self.assertTrue(
-                    self.location_requires_exactly(location.name, item_names),
+                    self.requiresAllOf(location.name, item_names),
                     f"location '{location}' should require exactly {item_names} to reach, but it doesn't"
                 )
             else:
                 self.assertFalse(
-                    self.location_requires_exactly(location.name, item_names),
+                    self.requiresAllOf(location.name, item_names),
                     f"location '{location}' was not one of the locations being asserted on, "
                     f"but it requires exactly {item_names} to reach, so it should be"
                 )
@@ -62,7 +79,7 @@ class OuterWildsTestBase(WorldTestBase):
         # for now, we create the Victory events unconditionally, and the Goal
         # setting only changes which one is used in the completion_condition,
         # so these "go mode" tests pass regardless of the Goal setting
-        self.assertTrue(self.make_state_with([
+        self.assertTrue(self.makeStateWith([
             # "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
@@ -75,7 +92,7 @@ class OuterWildsTestBase(WorldTestBase):
             "Coordinates"
         ]).can_reach("Victory - Song of Five", "Location", 1))
 
-        self.assertFalse(self.make_state_with([
+        self.assertFalse(self.makeStateWith([
             # "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
@@ -88,7 +105,7 @@ class OuterWildsTestBase(WorldTestBase):
             "Coordinates"
         ]).can_reach("Victory - Song of Six", "Location", 1))
 
-        self.assertTrue(self.make_state_with([
+        self.assertTrue(self.makeStateWith([
             # "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
@@ -110,7 +127,7 @@ class TestDefaultWorld(OuterWildsTestBase):
     options = {}
 
     def test_default_world(self):
-        self.assertEqual(self.get_location_count(), 87)  # default locations, including Victory events
+        self.assertEqual(self.getLocationCount(), 87)  # default locations, including Victory events
 
         # with default locations, Insulation only blocks 2 checks
         self.assertAccessDependency(
@@ -118,7 +135,7 @@ class TestDefaultWorld(OuterWildsTestBase):
             [["Electrical Insulation"]]
         )
 
-        self.assert_all_locations_requiring_exactly(
+        self.assertEverywhereRequiringAllOf(
             ["Ruptured Core (Text Wheel)"],
             ["Launch Codes", "Scout", "Ghost Matter Wavelength", "Translator"]
         )
@@ -133,7 +150,7 @@ class TestSongOfSixWorld(OuterWildsTestBase):
     }
 
     def test_six_world(self):
-        self.assertEqual(self.get_location_count(), 87)  # same as song of five
+        self.assertEqual(self.getLocationCount(), 87)  # same as song of five
 
         # same as song of five
         self.assertAccessDependency(
@@ -148,10 +165,10 @@ class TestLogsanityWorld(OuterWildsTestBase):
     }
 
     def test_logsanity_world(self):
-        self.assertEqual(self.get_location_count(), 263)  # 87 default + 176 logsanity locations
+        self.assertEqual(self.getLocationCount(), 263)  # 87 default + 176 logsanity locations
 
         # make sure the logsanity locations exist; this one requires nothing to reach
-        self.assertTrue(self.multiworld.state.can_reach("TH Ship Log: Village 1 - Identify", "Location", 1))
+        self.assertReachableWith("TH Ship Log: Village 1 - Identify", [])
 
         # and some of those new locations are Insulation-gated
         self.assertAccessDependency(
@@ -165,3 +182,19 @@ class TestLogsanityWorld(OuterWildsTestBase):
             ],
             [["Electrical Insulation"]]
         )
+
+        self.assertNotReachableWith("GD: Enter the Core", [])
+        self.assertNotReachableWith("GD: Enter the Core", ["Tornado Aerodynamic Adjustments"])
+        self.assertNotReachableWith("GD: Enter the Core", ["Electrical Insulation"])
+        self.assertReachableWith("GD: Enter the Core", [
+            "Tornado Aerodynamic Adjustments", "Electrical Insulation"
+        ])
+
+        self.assertNotReachableWith("GD Ship Log: Bramble Island", [])
+        self.assertReachableWith("GD Ship Log: Bramble Island", ["Ghost Matter Wavelength"])
+
+        self.assertNotReachableWith("GD: Bramble Island Recorder", [])
+        self.assertReachableWith("GD: Bramble Island Recorder", ["Ghost Matter Wavelength"])
+
+        self.assertNotReachableWith("GD: Bramble Island Fuel Tank", [])
+        self.assertReachableWith("GD: Bramble Island Fuel Tank", ["Ghost Matter Wavelength"])

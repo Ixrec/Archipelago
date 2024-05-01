@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 from schema import Schema, And
 
-from Options import Choice, DefaultOnToggle, OptionDict, PerGameCommonOptions, Range, Toggle
+from Options import Choice, DefaultOnToggle, OptionDict, PerGameCommonOptions, Range, StartInventoryPool, Toggle
 
 
 class Goal(Choice):
@@ -71,6 +71,7 @@ class ShuffleSpacesuit(Toggle):
 
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
+    start_inventory_from_pool: StartInventoryPool
     goal: Goal
     # randomize_coordinates: RandomizeCoordinates
     trap_chance: TrapChance

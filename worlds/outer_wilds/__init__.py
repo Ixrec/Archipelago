@@ -54,7 +54,10 @@ class OuterWildsWorld(World):
         create_items(self)
 
     def get_filler_item_name(self) -> str:
-        # used in corner cases (e.g. plando, item_links) where even a well-behaved world may end up "missing" items
+        # Used in corner cases (e.g. plando, item_links, start_inventory_from_pool)
+        # where even a well-behaved world may end up "missing" items.
+        # Technically this "should" be a random choice among all filler/trap items
+        # the world is configured to have, but it's not worth that much effort.
         return "Marshmallow"
 
     # members and methods related to Options.py

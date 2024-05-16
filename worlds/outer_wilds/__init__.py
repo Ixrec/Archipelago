@@ -3,7 +3,7 @@ from typing import TextIO
 
 from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
-# from .Coordinates import generate_random_coordinates
+from .Coordinates import generate_random_coordinates
 from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
 from .Options import OuterWildsGameOptions
@@ -27,12 +27,11 @@ class OuterWildsWorld(World):
     game = "Outer Wilds"
     web = OuterWildsWebWorld()
 
-    # eotu_coordinates = 'vanilla'
+    eotu_coordinates = 'vanilla'
 
     def generate_early(self) -> None:
-        pass
-        # self.eotu_coordinates = generate_random_coordinates(self.random) \
-        #     if self.options.randomize_coordinates else "vanilla"
+        self.eotu_coordinates = generate_random_coordinates(self.random) \
+            if self.options.randomize_coordinates else "vanilla"
 
     # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
 
@@ -79,17 +78,17 @@ class OuterWildsWorld(World):
 
     def fill_slot_data(self):
         slot_data = self.options.as_dict("goal", "death_link", "logsanity")
-        # slot_data["eotu_coordinates"] = self.eotu_coordinates
+        slot_data["eotu_coordinates"] = self.eotu_coordinates
         # Archipelago does not yet have apworld versions (data_version is deprecated),
         # so we have to roll our own with slot_data for the time being
         slot_data["apworld_version"] = "0.2.0"
         return slot_data
 
-    # def write_spoiler(self, spoiler_handle: TextIO) -> None:
-    #     if self.eotu_coordinates != 'vanilla':
-    #         spoiler_handle.write('\n\nRandomized Eye of the Universe Coordinates:'
-    #                              '\n(0-5 are the points of the hexagon, starting at '
-    #                              'the rightmost point and going counterclockwise)'
-    #                              '\n\n%s\n%s\n%s\n\n' % (json.dumps(self.eotu_coordinates[0]),
-    #                                                      json.dumps(self.eotu_coordinates[1]),
-    #                                                      json.dumps(self.eotu_coordinates[2])))
+    def write_spoiler(self, spoiler_handle: TextIO) -> None:
+        if self.eotu_coordinates != 'vanilla':
+            spoiler_handle.write('\n\nRandomized Eye of the Universe Coordinates:'
+                                 '\n(0-5 are the points of the hexagon, starting at '
+                                 'the rightmost point and going counterclockwise)'
+                                 '\n\n%s\n%s\n%s\n\n' % (json.dumps(self.eotu_coordinates[0]),
+                                                         json.dumps(self.eotu_coordinates[1]),
+                                                         json.dumps(self.eotu_coordinates[2])))

@@ -36,8 +36,8 @@
     // And once the ship is required, { "region": "Brittle Hollow" } would be redundant.
     { "from": "Hanging City Ceiling", "to": "Black Hole Forge", "requires": [ { "item": "Launch Codes" } ] },
 
-    { "from": "Space", "to": "Giant's Deep - Ocean Depths", "requires": [ { "item": "Tornado Aerodynamic Adjustments" } ] },
-    { "from": "Giant's Deep - Ocean Depths", "to": "Giant's Deep - Core", "requires": [ { "item": "Electrical Insulation" } ] },//, { "item": "Spacesuit" } ] },
+    { "from": "Space", "to": "GD Ocean Depths", "requires": [ { "item": "Tornado Aerodynamic Adjustments" } ] },
+    { "from": "GD Ocean Depths", "to": "GD Core", "requires": [ { "item": "Electrical Insulation" } ] },//, { "item": "Spacesuit" } ] },
 
     { "from": "Space", "to": "Interloper Core", "requires": [ { "item": "Scout" }, { "item": "Ghost Matter Wavelength" } ] },//, { "item": "Spacesuit" } ] },
 
@@ -77,25 +77,25 @@
     ] },
 
     // To find Feldspar, either follow the harmonica signal on the OW Ventures frequency...
-    { "from": "Dark Bramble", "to": "Dark Bramble - Feldspar via Signal", "requires": [
+    { "from": "Dark Bramble", "to": "Feldspar via Signal", "requires": [
         { "item": "Signalscope" },
         { "item": "Feldspar's Signal" }
     ] },
     // ...or launch a Scout into the DB seed back on TH.
     // Since DB can only be reached by Spaceship, we don't need an explicit "can reach TH" condition here.
-    { "from": "Dark Bramble", "to": "Dark Bramble - Feldspar via Scout", "requires": [ { "item": "Scout" } ] },
+    { "from": "Dark Bramble", "to": "Feldspar via Scout", "requires": [ { "item": "Scout" } ] },
 
     // either way you reach the same group of Feldspar-related locations
-    { "from": "Dark Bramble - Feldspar via Signal", "to": "Dark Bramble - Feldspar", "requires": [] },
-    { "from": "Dark Bramble - Feldspar via Scout", "to": "Dark Bramble - Feldspar", "requires": [] },
+    { "from": "Feldspar via Signal", "to": "Feldspar's Camp", "requires": [] },
+    { "from": "Feldspar via Scout", "to": "Feldspar's Camp", "requires": [] },
 
-    { "from": "Dark Bramble", "to": "Dark Bramble - Nomai Grave", "requires": [
+    { "from": "Dark Bramble", "to": "Nomai Grave", "requires": [
         // to follow the Escape Pod 3 signal
         { "item": "Signalscope" },
         { "item": "Distress Beacon Frequency" },
         { "item": "Escape Pod 3 Signal" }
     ] },
-    { "from": "Dark Bramble - Nomai Grave", "to": "Dark Bramble - The Vessel", "requires": [
+    { "from": "Nomai Grave", "to": "The Vessel", "requires": [
         { "item": "Scout" }//, // to launch into the DB seed at Nomai Grave
         //{ "item": "Spacesuit" } // to enter the Vessel
     ] },

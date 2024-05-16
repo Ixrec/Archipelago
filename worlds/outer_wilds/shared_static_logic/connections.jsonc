@@ -6,7 +6,7 @@
     { "from": "Space", "to": "Hourglass Twins", "requires": [] },
     { "from": "Space", "to": "Timber Hearth", "requires": [] },
     { "from": "Space", "to": "Brittle Hollow", "requires": [] },
-    { "from": "Space", "to": "White Hole Station", "requires": [ ] },// { "item": "Spacesuit" } ] },
+    { "from": "Space", "to": "White Hole Station", "requires": [ { "item": "Spacesuit" } ] },
     { "from": "Space", "to": "Giant's Deep", "requires": [] },
     // the only astral body you can't land on without an item
     { "from": "Space", "to": "Quantum Moon", "requires": [ { "item": "Imaging Rule" } ] },
@@ -20,14 +20,14 @@
 
     // you can simply fall into the black hole inside BH instead of using the warp pad
     { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [
-        //{ "anyOf": [
-            //{ "item": "Spacesuit" }, // for movement/oxygen after jumping in the black hole
+        { "anyOf": [
+            { "item": "Spacesuit" }, // for movement/oxygen after jumping in the black hole
             { "item": "Nomai Warp Codes" } // for using the warp pad, which does not require the suit
-        //] }
+        ] }
     ] },
 
     // you can simply jump off/out and fall to the rest of the Hanging City
-    { "from": "Hanging City Ceiling", "to": "Brittle Hollow", "requires": [ ] },// { "item": "Spacesuit" } ] },
+    { "from": "Hanging City Ceiling", "to": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ] },
 
     // This connection is tricky because you need to reach the forge controls in Hanging City first,
     // and then get back to whichever warp pad connects to Hanging City Ceiling _in the same loop_.
@@ -37,9 +37,9 @@
     { "from": "Hanging City Ceiling", "to": "Black Hole Forge", "requires": [ { "item": "Launch Codes" } ] },
 
     { "from": "Space", "to": "GD Ocean Depths", "requires": [ { "item": "Tornado Aerodynamic Adjustments" } ] },
-    { "from": "GD Ocean Depths", "to": "GD Core", "requires": [ { "item": "Electrical Insulation" } ] },//, { "item": "Spacesuit" } ] },
+    { "from": "GD Ocean Depths", "to": "GD Core", "requires": [ { "item": "Electrical Insulation" }, { "item": "Spacesuit" } ] },
 
-    { "from": "Space", "to": "Interloper Core", "requires": [ { "item": "Scout" }, { "item": "Ghost Matter Wavelength" } ] },//, { "item": "Spacesuit" } ] },
+    { "from": "Space", "to": "Interloper Core", "requires": [ { "item": "Scout" }, { "item": "Ghost Matter Wavelength" }, { "item": "Spacesuit" } ] },
 
     // representing frequencies/shuttles/etc as abstract regions turns out to be much faster than an anyOf rule
 
@@ -96,18 +96,18 @@
         { "item": "Escape Pod 3 Signal" }
     ] },
     { "from": "Nomai Grave", "to": "The Vessel", "requires": [
-        { "item": "Scout" }//, // to launch into the DB seed at Nomai Grave
-        //{ "item": "Spacesuit" } // to enter the Vessel
+        { "item": "Scout" }, // to launch into the DB seed at Nomai Grave
+        { "item": "Spacesuit" } // to enter the Vessel
     ] },
 
     // these will become dynamic after we implement warp pad randomization
-    { "from": "Hourglass Twins", "to": "Sun Station", "requires": [ { "item": "Nomai Warp Codes" } ] },//, { "item": "Spacesuit" } ] },
+    { "from": "Hourglass Twins", "to": "Sun Station", "requires": [ { "item": "Nomai Warp Codes" }, { "item": "Spacesuit" } ] },
     { "from": "Hourglass Twins", "to": "Ash Twin Interior", "requires": [ { "item": "Nomai Warp Codes" } ] },
     { "from": "Hourglass Twins", "to": "Timber Hearth", "requires": [ { "item": "Nomai Warp Codes" } ] },
     { "from": "Hourglass Twins", "to": "Hanging City Ceiling", "requires": [ { "item": "Nomai Warp Codes" } ] },
     { "from": "Hourglass Twins", "to": "Giant's Deep", "requires": [ { "item": "Nomai Warp Codes" } ] },
 
-    { "from": "Sun Station", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },//, { "item": "Spacesuit" } ] },
+    { "from": "Sun Station", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" }, { "item": "Spacesuit" } ] },
     { "from": "Ash Twin Interior", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
     { "from": "Timber Hearth", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
     { "from": "Hanging City Ceiling", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },

@@ -73,7 +73,7 @@ class ShuffleSpacesuit(Toggle):
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
     goal: Goal
-    # randomize_coordinates: RandomizeCoordinates
+    randomize_coordinates: RandomizeCoordinates
     trap_chance: TrapChance
     trap_type_weights: TrapTypeWeights
     death_link: DeathLink

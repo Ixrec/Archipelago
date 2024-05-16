@@ -239,16 +239,16 @@
     },
     {
         "address": 1085038278, "name": "GD: Enter the Ocean Depths",
-        "region": "Giant's Deep - Ocean Depths", "requires": []
+        "region": "GD Ocean Depths", "requires": []
     },
     {
         "address": 1085038279, "name": "GD: Enter the Core",
-        "region": "Giant's Deep - Core", "requires": []
+        "region": "GD Core", "requires": []
     },
     {
         // spoiler-free name, as opposed to e.g. "Eye of the Universe Coordinates"
         "address": 1085038280, "name": "GD: See the Coordinates",
-        "region": "Giant's Deep - Core", "requires": []
+        "region": "GD Core", "requires": []
     },
     {
         "address": 1085038325, "name": "GD: Find Gabbro's Ship",
@@ -298,24 +298,24 @@
     {
         // spoiler-free name, as opposed to e.g. "Frozen Jellyfish Note"
         "address": 1085038286, "name": "DB: Feldspar's Note",
-        "region": "Dark Bramble - Feldspar", "requires": []
+        "region": "Feldspar's Camp", "requires": []
     },
     {
         // spoiler-free name, as opposed to e.g. "Frozen Jellyfish Tape Recorder"
         "address": 1085038308, "name": "DB: Feldspar's Recorder",
-        "region": "Dark Bramble - Feldspar", "requires": []
+        "region": "Feldspar's Camp", "requires": []
     },
     {
         "address": 1085038287, "name": "DB: Nomai Grave (Text Wheel)",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Translator" } ]
+        "region": "Nomai Grave", "requires": [ { "item": "Translator" } ]
     },
     {
         "address": 1085038288, "name": "DB: Find The Vessel",
-        "region": "Dark Bramble - The Vessel", "requires": []
+        "region": "The Vessel", "requires": []
     },
     {
         "address": 1085038334, "name": "DB: Feldspar's Camp Fuel Tank",
-        "region": "Dark Bramble - Feldspar", "requires": []// { "item": "Spacesuit" } ]
+        "region": "Feldspar's Camp", "requires": []// { "item": "Spacesuit" } ]
     },
 
     // Signalscope Frequencies
@@ -352,7 +352,7 @@
     },
     {
         "address": 1085038296, "name": "DB: Scan Harmonica Signal",
-        "region": "Dark Bramble - Feldspar", // see connection logic
+        "region": "Feldspar's Camp", // see connection logic
         "requires": [ { "item": "Signalscope" } ]
     },
     {
@@ -389,7 +389,7 @@
     },
     {
         "address": 1085038305, "name": "DB: Scan Escape Pod 3 Signal",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Distress Beacon Frequency" } ] // see connection logic
+        "region": "Nomai Grave", "requires": [ { "item": "Distress Beacon Frequency" } ] // see connection logic
     },
     {
         "address": 1085038306, "name": "TH: Scan Galena's Radio Signal",
@@ -403,7 +403,7 @@
     // Victory events
     {
         "address": null, "name": "Victory - Song of Five",
-        "region": "Dark Bramble - The Vessel",
+        "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
             { "item": "Coordinates" },
@@ -412,7 +412,7 @@
     },
     {
         "address": null, "name": "Victory - Song of Six",
-        "region": "Dark Bramble - The Vessel",
+        "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
             { "item": "Coordinates" },
@@ -829,11 +829,11 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039101, "name": "GD Ship Log: Ocean Depths 1 - Electrical Field",
-        "region": "Giant's Deep - Ocean Depths", "requires": []
+        "region": "GD Ocean Depths", "requires": []
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039102, "name": "GD Ship Log: Ocean Depths 2 - Coral Forest",
-        "region": "Giant's Deep - Core", "requires": []
+        "region": "GD Core", "requires": []
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039103, "name": "GD Ship Log: Gabbro's Island 1 - Hammock",
@@ -917,19 +917,19 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039123, "name": "GD Ship Log: Probe Tracking Module 1 - Millions",
-        "region": "Giant's Deep - Core", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
+        "region": "GD Core", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039124, "name": "GD Ship Log: Probe Tracking Module 2 - Anomaly Located",
-        "region": "Giant's Deep - Core", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
+        "region": "GD Core", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039125, "name": "GD Ship Log: Probe Tracking Module 3 - Statue",
-        "region": "Giant's Deep - Core", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
+        "region": "GD Core", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039126, "name": "GD Ship Log: Probe Tracking Module 4 - Coordinates",
-        "region": "Giant's Deep - Core", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ] // this requires translating the terminal, not just seeing the coords
+        "region": "GD Core", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ] // this requires translating the terminal, not just seeing the coords
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039127, "name": "GD Ship Log: Launch Module 1 - Damaged",
@@ -953,79 +953,79 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039132, "name": "DB Ship Log: Feldspar's Camp 1 - Status",
-        "region": "Dark Bramble - Feldspar", "requires": []
+        "region": "Feldspar's Camp", "requires": []
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039133, "name": "DB Ship Log: Feldspar's Camp 2 - Space Doesn't Work",
-        "region": "Dark Bramble - Feldspar", "requires": []
+        "region": "Feldspar's Camp", "requires": []
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039134, "name": "DB Ship Log: Feldspar's Camp 3 - Peace And Quiet",
-        "region": "Dark Bramble - Feldspar", "requires": []
+        "region": "Feldspar's Camp", "requires": []
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039135, "name": "DB Ship Log: Frozen Jellyfish 1 - Outside",
-        "region": "Dark Bramble - Feldspar", "requires": []// { "item": "Spacesuit" } ] // The suit is required to navigate/survive the vine interior
+        "region": "Feldspar's Camp", "requires": []// { "item": "Spacesuit" } ] // The suit is required to navigate/survive the vine interior
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039136, "name": "DB Ship Log: Frozen Jellyfish 2 - Inside",
-        "region": "Dark Bramble - Feldspar", "requires": []// { "item": "Spacesuit" } ]
+        "region": "Feldspar's Camp", "requires": []// { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039137, "name": "DB Ship Log: Frozen Jellyfish 3 - Do Not Eat",
-        "region": "Dark Bramble - Feldspar", "requires": []// { "item": "Spacesuit" } ]
+        "region": "Feldspar's Camp", "requires": []// { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039138, "name": "DB Ship Log: Escape Pod 3 1 - Identify",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
+        "region": "Nomai Grave", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039139, "name": "DB Ship Log: Escape Pod 3 2 - Vessel",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
+        "region": "Nomai Grave", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039140, "name": "DB Ship Log: Escape Pod 3 3 - Two Beacons",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
+        "region": "Nomai Grave", "requires": [ { "item": "Translator" } ]//, { "item": "Spacesuit" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039141, "name": "DB Ship Log: Nomai Grave 1 - Followed Beacon",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Translator" } ] // text wheel
+        "region": "Nomai Grave", "requires": [ { "item": "Translator" } ] // text wheel
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039142, "name": "DB Ship Log: Nomai Grave 2 - Within the Seed",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Translator" } ] // text wheel
+        "region": "Nomai Grave", "requires": [ { "item": "Translator" } ] // text wheel
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039143, "name": "DB Ship Log: Nomai Grave 3 - Beacon Dying",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Translator" } ] // text wheel
+        "region": "Nomai Grave", "requires": [ { "item": "Translator" } ] // text wheel
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039144, "name": "DB Ship Log: Nomai Grave 4 - Scout Photos",
-        "region": "Dark Bramble - Nomai Grave", "requires": [ { "item": "Scout" } ] // shoot your scout into the seed and take a photo of the vessel
+        "region": "Nomai Grave", "requires": [ { "item": "Scout" } ] // shoot your scout into the seed and take a photo of the vessel
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039145, "name": "DB Ship Log: The Vessel 1 - Entered",
-        "region": "Dark Bramble - The Vessel", "requires": [] // just enter the bridge, no items
+        "region": "The Vessel", "requires": [] // just enter the bridge, no items
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039146, "name": "DB Ship Log: The Vessel 2 - Dead Core",
-        "region": "Dark Bramble - The Vessel", "requires": [ { "item": "Warp Core Installation Manual" } ] // put the dead warp core into the socket
+        "region": "The Vessel", "requires": [ { "item": "Warp Core Installation Manual" } ] // put the dead warp core into the socket
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039147, "name": "DB Ship Log: The Vessel 3 - Input Pillar",
-        "region": "Dark Bramble - The Vessel", "requires": [] // activate the coordinates input pillar, which only involves the floor orb
+        "region": "The Vessel", "requires": [] // activate the coordinates input pillar, which only involves the floor orb
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039148, "name": "DB Ship Log: The Vessel 4 - Call For Help",
-        "region": "Dark Bramble - The Vessel", "requires": [ { "item": "Translator" } ] // upper right text wall
+        "region": "The Vessel", "requires": [ { "item": "Translator" } ] // upper right text wall
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039149, "name": "DB Ship Log: The Vessel 5 - Clans Regrouping",
-        "region": "Dark Bramble - The Vessel", "requires": [ { "item": "Translator" } ] // upper left text wall
+        "region": "The Vessel", "requires": [ { "item": "Translator" } ] // upper left text wall
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039150, "name": "DB Ship Log: The Vessel 6 - Original Recording",
-        "region": "Dark Bramble - The Vessel", "requires": [ { "item": "Translator" } ] // text wheel on lower level
+        "region": "The Vessel", "requires": [ { "item": "Translator" } ] // text wheel on lower level
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039151, "name": "Ship Log: WHS 1 - Warp Towers",

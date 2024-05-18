@@ -50,7 +50,8 @@ class TrapTypeWeights(OptionDict):
 
 class DeathLink(Choice):
     """When you die, everyone dies. Of course the reverse is true too.
-    The "default" option will not include deaths to meditation, the supernova or the time loop ending."""
+    The "default" option will not include deaths to meditation, the supernova or the time loop ending.
+    Be aware that the game mod provides a 'Death Link Override' setting, in case you change your mind later."""
     display_name = "Death Link"
     option_off = 0
     option_default = 1

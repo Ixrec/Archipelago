@@ -143,6 +143,16 @@ class TestDefaultWorld(OuterWildsTestBase):
         # logsanity locations don't exist, so trying to access one raises
         self.assertRaises(KeyError, lambda: self.multiworld.get_location("Ship Log: Village 1 - Identify", 1))
 
+        # Feldspar's Camp is one of the few places with two different "logical paths", so check that both are in-logic
+        self.assertNotReachableWith("DB: Feldspar's Camp Fuel Tank", ["Silent Running Mode"])
+        self.assertNotReachableWith("DB: Feldspar's Camp Fuel Tank", ["Silent Running Mode", "Signalscope"])
+        self.assertReachableWith("DB: Feldspar's Camp Fuel Tank", [
+            "Silent Running Mode", "Signalscope", "Feldspar's Signal"
+        ])
+        self.assertReachableWith("DB: Feldspar's Camp Fuel Tank", [
+            "Silent Running Mode", "Scout"
+        ])
+
 
 class TestSongOfSixWorld(OuterWildsTestBase):
     options = {

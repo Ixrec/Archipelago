@@ -1,6 +1,7 @@
 from typing import List
 
 from test.bases import WorldTestBase, CollectionState
+from ..Options import Goal
 
 
 class OuterWildsTestBase(WorldTestBase):
@@ -79,7 +80,7 @@ class OuterWildsTestBase(WorldTestBase):
         # for now, we create the Victory events unconditionally, and the Goal
         # setting only changes which one is used in the completion_condition,
         # so these "go mode" tests pass regardless of the Goal setting
-        self.assertTrue(self.makeStateWith([
+        self.assertRequiresAllOf("Victory - Song of Five", [
             "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
@@ -90,9 +91,9 @@ class OuterWildsTestBase(WorldTestBase):
             "Escape Pod 3 Signal",
             "Scout",
             "Coordinates"
-        ]).can_reach("Victory - Song of Five", "Location", 1))
+        ])
 
-        self.assertFalse(self.makeStateWith([
+        self.assertNotReachableWith("Victory - Song of Six", [
             "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
@@ -103,9 +104,9 @@ class OuterWildsTestBase(WorldTestBase):
             "Escape Pod 3 Signal",
             "Scout",
             "Coordinates"
-        ]).can_reach("Victory - Song of Six", "Location", 1))
+        ])
 
-        self.assertTrue(self.makeStateWith([
+        self.assertRequiresAllOf("Victory - Song of Six", [
             "Spacesuit",
             "Launch Codes",
             "Nomai Warp Codes",
@@ -120,7 +121,7 @@ class OuterWildsTestBase(WorldTestBase):
             "Imaging Rule",
             "Shrine Door Codes",
             "Entanglement Rule"
-        ]).can_reach("Victory - Song of Six", "Location", 1))
+        ])
 
 
 class TestDefaultWorld(OuterWildsTestBase):
@@ -156,7 +157,7 @@ class TestDefaultWorld(OuterWildsTestBase):
 
 class TestSongOfSixWorld(OuterWildsTestBase):
     options = {
-        "goal": 1
+        "goal": Goal.option_song_of_six
     }
 
     def test_six_world(self):
@@ -208,3 +209,31 @@ class TestLogsanityWorld(OuterWildsTestBase):
 
         self.assertNotReachableWith("GD: Bramble Island Fuel Tank", [])
         self.assertReachableWith("GD: Bramble Island Fuel Tank", ["Ghost Matter Wavelength"])
+
+
+class TestSuitlessWorld(OuterWildsTestBase):
+    options = {
+        "shuffle_spacesuit": "true",
+        "logsanity": "true"
+    }
+
+
+class TestSuitlessSongOfSixWorld(OuterWildsTestBase):
+    options = {
+        "shuffle_spacesuit": "true",
+        "logsanity": "true",
+        "goal": Goal.option_song_of_six
+    }
+
+
+class TestSuitlessLogsanityWorld(OuterWildsTestBase):
+    options = {
+        "shuffle_spacesuit": "true"
+    }
+
+
+class TestSuitlessLogsanitySongOfSixWorld(OuterWildsTestBase):
+    options = {
+        "shuffle_spacesuit": "true",
+        "goal": Goal.option_song_of_six
+    }

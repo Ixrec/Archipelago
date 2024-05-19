@@ -9,7 +9,13 @@
     { "from": "Space", "to": "White Hole Station", "requires": [ { "item": "Spacesuit" } ] },
     { "from": "Space", "to": "Giant's Deep", "requires": [] },
     // the only astral body you can't land on without an item
-    { "from": "Space", "to": "Quantum Moon", "requires": [ { "item": "Imaging Rule" } ] },
+    { "from": "Space", "to": "Quantum Moon", "requires": [
+        { "item": "Imaging Rule" },
+        { "anyOf": [
+            { "item": "Spacesuit" }, // in this case "Spacesuit" implies the Scout Launcher and its Photo Mode
+            { "item": "Scout" } // without Photo Mode, the only way to take a photo is launching a Scout from the ship
+        ] }
+    ] },
 
     { "from": "Quantum Moon", "to": "Quantum Shrine", "requires": [ { "item": "Shrine Door Codes" } ] },
     { "from": "Quantum Shrine", "to": "Sixth Location", "requires": [ { "item": "Entanglement Rule" } ] },

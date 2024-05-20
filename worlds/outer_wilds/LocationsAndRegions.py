@@ -144,6 +144,6 @@ def create_regions(world: "OuterWildsWorld") -> None:
         e.randomization_type = EntranceType.TWO_WAY
         disconnect_entrance_for_randomization(e)
 
-    randomize_entrances(world, True, lambda _: [])
+    state = randomize_entrances(world, True, lambda _: [])
 
     x = 2  # breakpoint goes here

@@ -26,8 +26,6 @@
 
     // you can simply fall into the black hole inside BH, which requires the suit to get into WHS
     { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [ { "item": "Spacesuit" } ] },
-    // or use the warp pad to go directly inside
-    { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [ { "item": "Nomai Warp Codes" } ] },
 
     // you can simply jump off/out and fall to the rest of the Hanging City
     { "from": "Hanging City Ceiling", "to": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ] },
@@ -104,17 +102,6 @@
     ] },
 
     // these will become dynamic after we implement warp pad randomization
-    { "from": "Hourglass Twins", "to": "Sun Station", "requires": [ { "item": "Nomai Warp Codes" }, { "item": "Spacesuit" } ] },
     { "from": "Hourglass Twins", "to": "Ash Twin Interior", "requires": [ { "item": "Nomai Warp Codes" } ] },
-    { "from": "Hourglass Twins", "to": "Timber Hearth", "requires": [ { "item": "Nomai Warp Codes" } ] },
-    { "from": "Hourglass Twins", "to": "Hanging City Ceiling", "requires": [ { "item": "Nomai Warp Codes" } ] },
-    { "from": "Hourglass Twins", "to": "Giant's Deep", "requires": [ { "item": "Nomai Warp Codes" } ] },
-
-    { "from": "Sun Station", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" }, { "item": "Spacesuit" } ] },
-    { "from": "Ash Twin Interior", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
-    { "from": "Timber Hearth", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
-    { "from": "Hanging City Ceiling", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
-    { "from": "Giant's Deep", "to": "Hourglass Twins", "requires": [ { "item": "Nomai Warp Codes" } ] },
-
-    { "from": "White Hole Station", "to": "Brittle Hollow", "requires": [ { "item": "Nomai Warp Codes" } ] }
+    { "from": "Hourglass Twins", "to": "Timber Hearth", "requires": [ { "item": "Nomai Warp Codes" } ] }
 ]

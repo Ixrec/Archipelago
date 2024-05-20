@@ -2,6 +2,7 @@ import json
 from typing import TextIO
 
 from BaseClasses import Tutorial
+from entrance_rando import randomize_entrances
 from worlds.AutoWorld import WebWorld, World
 from .Coordinates import generate_random_coordinates
 from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
@@ -75,6 +76,10 @@ class OuterWildsWorld(World):
 
         goal_item = option_key_to_item_name[self.options.goal.current_key]
         self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
+
+        state = randomize_entrances(self, True, lambda _: [])
+
+        x = 2
 
     def fill_slot_data(self):
         slot_data = self.options.as_dict("goal", "death_link", "logsanity")

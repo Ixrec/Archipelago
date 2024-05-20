@@ -3,6 +3,7 @@ import typing
 from typing import Callable, Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import Location, MultiWorld, Region
+from entrance_rando import disconnect_entrance_for_randomization, EntranceType, randomize_entrances
 from worlds.generic.Rules import set_rule
 from . import jsonc
 from .Options import OuterWildsGameOptions
@@ -109,6 +110,8 @@ def create_regions(world: "OuterWildsWorld") -> None:
 
     locations_to_create = get_locations_to_create(options)
 
+    warp_pad_connections = set()
+
     # add locations and connections to each region
     for region_name, region_data in region_data_table.items():
         region = mw.get_region(region_name, p)
@@ -124,6 +127,8 @@ def create_regions(world: "OuterWildsWorld") -> None:
             exit_name = exit_connection["to"]
             exit_names.append(exit_name)
             rule = exit_connection["requires"]
+            if any(("item" in req and req["item"] == "Nomai Warp Codes") for req in rule):
+                warp_pad_connections.add((region.name, exit_name))
             rules[exit_name] = None if len(rule) == 0 else lambda state, r=rule: eval_rule(state, p, r)
         region.add_exits(exit_names, rules)
 
@@ -132,3 +137,13 @@ def create_regions(world: "OuterWildsWorld") -> None:
         if ld["name"] in locations_to_create and len(ld["requires"]) > 0:
             set_rule(mw.get_location(ld["name"], p),
                      lambda state, r=ld["requires"]: eval_rule(state, p, r))
+
+    # try generic ER
+    for (r1, r2) in warp_pad_connections:
+        e = mw.get_entrance(f"{r1} -> {r2}", p)
+        e.randomization_type = EntranceType.TWO_WAY
+        disconnect_entrance_for_randomization(e)
+
+    randomize_entrances(world, True, lambda _: [])
+
+    x = 2  # breakpoint goes here

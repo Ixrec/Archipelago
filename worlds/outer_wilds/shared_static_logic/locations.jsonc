@@ -133,7 +133,7 @@
     },
     {
         "address": 1085038335, "name": "AR: Esker's House Fuel Tank",
-        "region": "Space", "requires": []
+        "region": "Space", "requires": [ { "item": "Spacesuit" } ]
     },
 
     // Brittle Hollow

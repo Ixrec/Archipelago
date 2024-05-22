@@ -1,14 +1,14 @@
 from random import Random
 from typing import List
 
-two_point_coordinates = 6 * 5
-three_point_coordinates = 6 * 5 * 4
-four_point_coordinates = 6 * 5 * 4 * 3
-five_point_coordinates = 6 * 5 * 4 * 3 * 2
-six_point_coordinates = 6 * 5 * 4 * 3 * 2 * 1
+two_point_coordinates = 6 * 5                  # 30 = 1.5%
+three_point_coordinates = 6 * 5 * 4            # 120 = 6%
+four_point_coordinates = 6 * 5 * 4 * 3         # 360 = 18.5%
+five_point_coordinates = 6 * 5 * 4 * 3 * 2     # 720 = 37%
+six_point_coordinates = 6 * 5 * 4 * 3 * 2 * 1  # 720 = 37%
 
 total_possible_coordinates = (two_point_coordinates + three_point_coordinates + four_point_coordinates +
-                              five_point_coordinates + six_point_coordinates)
+                              five_point_coordinates + six_point_coordinates)  # 1950
 
 # Some Nomai coordinates are nearly identical to English letters, namely: N, I/l and C
 # To avoid even the miniscule chance of randomized coordinates resembling a bad word,

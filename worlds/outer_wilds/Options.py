@@ -70,11 +70,18 @@ class ShuffleSpacesuit(Toggle):
     display_name = "Shuffle Spacesuit"
 
 
+class RandomizeDarkBrambleLayout(Toggle):
+    """Randomizes which Dark Bramble 'rooms' link to which other rooms, so you have
+    to use your Signalscope and Scout instead of remembering the vanilla layout."""
+    display_name = "Randomize Dark Bramble Layout"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
     goal: Goal
     randomize_coordinates: RandomizeCoordinates
+    randomize_dark_bramble_layout: RandomizeDarkBrambleLayout
     trap_chance: TrapChance
     trap_type_weights: TrapTypeWeights
     death_link: DeathLink

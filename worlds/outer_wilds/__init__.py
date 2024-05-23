@@ -4,6 +4,7 @@ from typing import TextIO
 from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
 from .Coordinates import generate_random_coordinates
+from .DBLayout import generate_random_db_layout
 from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
 from .Options import OuterWildsGameOptions
@@ -28,10 +29,13 @@ class OuterWildsWorld(World):
     web = OuterWildsWebWorld()
 
     eotu_coordinates = 'vanilla'
+    db_layout = 'vanilla'
 
     def generate_early(self) -> None:
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
+        self.db_layout = generate_random_db_layout(self.random) \
+            if self.options.randomize_dark_bramble_layout else "vanilla"
 
     # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
 
@@ -79,6 +83,7 @@ class OuterWildsWorld(World):
     def fill_slot_data(self):
         slot_data = self.options.as_dict("goal", "death_link", "logsanity")
         slot_data["eotu_coordinates"] = self.eotu_coordinates
+        slot_data["db_layout"] = self.db_layout
         # Archipelago does not yet have apworld versions (data_version is deprecated),
         # so we have to roll our own with slot_data for the time being
         slot_data["apworld_version"] = "0.2.0"
@@ -86,9 +91,14 @@ class OuterWildsWorld(World):
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:
         if self.eotu_coordinates != 'vanilla':
-            spoiler_handle.write('\n\nRandomized Eye of the Universe Coordinates:'
-                                 '\n(0-5 are the points of the hexagon, starting at '
-                                 'the rightmost point and going counterclockwise)'
+            spoiler_handle.write('\nRandomized Eye of the Universe Coordinates'
+                                 '\n0-5 are the points of the hexagon, starting at '
+                                 'the rightmost point and going counterclockwise'
                                  '\n\n%s\n%s\n%s\n\n' % (json.dumps(self.eotu_coordinates[0]),
                                                          json.dumps(self.eotu_coordinates[1]),
                                                          json.dumps(self.eotu_coordinates[2])))
+        if self.db_layout != 'vanilla':
+            spoiler_handle.write('\nRandomized Dark Bramble Layout'
+                                 '\nRoom names are (H)ub, (E)scapePod, (A)nglerNest, '
+                                 '(P)ioneer, E(X)itOnly, (V)essel, (C)luster, (S)mallNest'
+                                 '\n\n%s\n\n' % self.db_layout.replace('|', '\n'))

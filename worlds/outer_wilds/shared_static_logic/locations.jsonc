@@ -69,7 +69,7 @@
     },
     {
         "address": 1085038322, "name": "AT: HGT Towers (Text Wall)",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]
     },
     {
         "address": 1085038323, "name": "AT: BH Tower (Text Wall)",
@@ -160,7 +160,7 @@
     },
     {
         "address": 1085038315, "name": "BH: Riebeck's Southern Observatory Recorder",
-        "region": "Brittle Hollow", "requires": [ { "item": "Spacesuit" } ]
+        "region": "Brittle Hollow", "requires": []
     },
     {
         "address": 1085038316, "name": "BH: Riebeck's Surface Campsite Note",
@@ -298,12 +298,12 @@
     {
         // spoiler-free name, as opposed to e.g. "Frozen Jellyfish Note"
         "address": 1085038286, "name": "DB: Feldspar's Note",
-        "region": "Feldspar's Camp", "requires": []
+        "region": "Feldspar's Camp", "requires": [ { "item": "Spacesuit" } ]
     },
     {
         // spoiler-free name, as opposed to e.g. "Frozen Jellyfish Tape Recorder"
         "address": 1085038308, "name": "DB: Feldspar's Recorder",
-        "region": "Feldspar's Camp", "requires": []
+        "region": "Feldspar's Camp", "requires": [ { "item": "Spacesuit" } ]
     },
     {
         "address": 1085038287, "name": "DB: Nomai Grave (Text Wheel)",
@@ -853,7 +853,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039107, "name": "GD Ship Log: Construction Yard 1 - Built OPC",
-        "region": "Giant's Deep", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
+        "region": "Giant's Deep", "requires": [ { "item": "Translator" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039108, "name": "GD Ship Log: Construction Yard 2 - Hiatus",
@@ -865,7 +865,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039110, "name": "GD Ship Log: Bramble Island",
-        "region": "Giant's Deep", "requires": [ { "item": "Ghost Matter Wavelength" }, { "item": "Spacesuit" } ]
+        "region": "Giant's Deep", "requires": [ { "item": "Ghost Matter Wavelength" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039111, "name": "GD Ship Log: Statue Island 1 - Purpose",
@@ -917,19 +917,19 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039123, "name": "GD Ship Log: Probe Tracking Module 1 - Millions",
-        "region": "GD Core", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
+        "region": "GD Core", "requires": [ { "item": "Translator" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039124, "name": "GD Ship Log: Probe Tracking Module 2 - Anomaly Located",
-        "region": "GD Core", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
+        "region": "GD Core", "requires": [ { "item": "Translator" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039125, "name": "GD Ship Log: Probe Tracking Module 3 - Statue",
-        "region": "GD Core", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
+        "region": "GD Core", "requires": [ { "item": "Translator" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039126, "name": "GD Ship Log: Probe Tracking Module 4 - Coordinates",
-        "region": "GD Core", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ] // this requires translating the terminal, not just seeing the coords
+        "region": "GD Core", "requires": [ { "item": "Translator" } ] // this requires translating the terminal, not just seeing the coords
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039127, "name": "GD Ship Log: Launch Module 1 - Damaged",

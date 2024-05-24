@@ -237,3 +237,12 @@ class TestSuitlessLogsanitySongOfSixWorld(OuterWildsTestBase):
         "logsanity": "true",
         "goal": Goal.option_song_of_six
     }
+
+    def test_suitless_logic(self):
+        # Spacesuit is required for PTM locations (via region logic rather than location logic)
+        self.assertNotReachableWith("GD Ship Log: Probe Tracking Module 1 - Millions", [
+            "Tornado Aerodynamic Adjustments", "Electrical Insulation", "Translator"
+        ])
+        self.assertReachableWith("GD Ship Log: Probe Tracking Module 1 - Millions", [
+            "Tornado Aerodynamic Adjustments", "Electrical Insulation", "Spacesuit", "Translator"
+        ])

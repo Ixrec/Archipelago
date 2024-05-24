@@ -69,7 +69,7 @@
     },
     {
         "address": 1085038322, "name": "AT: HGT Towers (Text Wall)",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]
     },
     {
         "address": 1085038323, "name": "AT: BH Tower (Text Wall)",

@@ -213,27 +213,27 @@ class TestLogsanityWorld(OuterWildsTestBase):
 
 class TestSuitlessWorld(OuterWildsTestBase):
     options = {
-        "shuffle_spacesuit": "true",
-        "logsanity": "true"
+        "shuffle_spacesuit": "true"
     }
 
 
 class TestSuitlessSongOfSixWorld(OuterWildsTestBase):
     options = {
         "shuffle_spacesuit": "true",
-        "logsanity": "true",
         "goal": Goal.option_song_of_six
     }
 
 
 class TestSuitlessLogsanityWorld(OuterWildsTestBase):
     options = {
-        "shuffle_spacesuit": "true"
+        "shuffle_spacesuit": "true",
+        "logsanity": "true"
     }
 
 
 class TestSuitlessLogsanitySongOfSixWorld(OuterWildsTestBase):
     options = {
         "shuffle_spacesuit": "true",
+        "logsanity": "true",
         "goal": Goal.option_song_of_six
     }

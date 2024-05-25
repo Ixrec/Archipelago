@@ -564,7 +564,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039034, "name": "AT Ship Log: Towers 1 - Identify",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039035, "name": "AT Ship Log: Towers 2 - WHS",
@@ -705,7 +705,7 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039070, "name": "BH Ship Log: Escape Pod 1 1 - Identify",
-        "region": "Brittle Hollow", "requires": [ { "item": "Translator" }, { "item": "Spacesuit" } ]
+        "region": "Brittle Hollow", "requires": [ { "item": "Translator" } ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039071, "name": "BH Ship Log: Escape Pod 1 2 - Vessel",

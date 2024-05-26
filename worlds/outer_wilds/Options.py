@@ -71,8 +71,9 @@ class ShuffleSpacesuit(Toggle):
 
 
 class RandomizeDarkBrambleLayout(Toggle):
-    """Randomizes which Dark Bramble 'rooms' link to which other rooms, so you have
-    to use your Signalscope and Scout instead of remembering the vanilla layout."""
+    """Randomizes which Dark Bramble 'rooms' link to which other rooms, so you can't rely on your memory of the vanilla
+    layout. Be aware that randomized layouts are often significantly harder to navigate than vanilla Dark Bramble,
+    since they allow several paths to the same room and more complex loops / recursion."""
     display_name = "Randomize Dark Bramble Layout"
 
 

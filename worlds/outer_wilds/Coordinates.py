@@ -23,6 +23,24 @@ deny_list = {
 }
 
 
+def coordinate_description(coordinate: list[int]) -> str:
+    point_descriptions = []
+    for point in coordinate:
+        if point == 0:
+            point_descriptions.append("Right")
+        elif point == 1:
+            point_descriptions.append("Upper Right")
+        elif point == 2:
+            point_descriptions.append("Upper Left")
+        elif point == 3:
+            point_descriptions.append("Left")
+        elif point == 4:
+            point_descriptions.append("Lower Left")
+        elif point == 5:
+            point_descriptions.append("Lower Right")
+    return str.join(", ", point_descriptions)
+
+
 def generate_random_coordinates(random: Random) -> List[List[int]]:
     selections = [
         random.randint(0, total_possible_coordinates - 1),

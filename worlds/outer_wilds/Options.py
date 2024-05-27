@@ -65,8 +65,7 @@ class Logsanity(Toggle):
 
 
 class ShuffleSpacesuit(Toggle):
-    """Puts the spacesuit into the Archipelago item pool, forcing you to play suitless until it's found.
-    This is a HIGHLY EXPERIMENTAL setting. Expect logic bugs. Feedback encouraged."""
+    """Puts the spacesuit into the Archipelago item pool, forcing you to play suitless until it's found."""
     display_name = "Shuffle Spacesuit"
 
 

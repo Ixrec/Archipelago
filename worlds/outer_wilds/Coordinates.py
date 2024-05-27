@@ -10,6 +10,14 @@ six_point_coordinates = 6 * 5 * 4 * 3 * 2 * 1  # 720 = 37%
 total_possible_coordinates = (two_point_coordinates + three_point_coordinates + four_point_coordinates +
                               five_point_coordinates + six_point_coordinates)  # 1950
 
+coordinates_with_n_points = {
+    2: two_point_coordinates,
+    3: three_point_coordinates,
+    4: four_point_coordinates,
+    5: five_point_coordinates,
+    6: six_point_coordinates,
+}
+
 # Some Nomai coordinates are nearly identical to English letters, namely: N, I/l and C
 # To avoid even the miniscule chance of randomized coordinates resembling a bad word,
 # we prevent those specific letter-shaped coordinates from being used.
@@ -42,12 +50,23 @@ def coordinate_description(coordinate: list[int]) -> str:
 
 
 def generate_random_coordinates(random: Random) -> List[List[int]]:
-    selections = [
-        random.randint(0, total_possible_coordinates - 1),
-        random.randint(0, total_possible_coordinates - 1),
-        random.randint(0, total_possible_coordinates - 1),
+    # give each size an equal chance, so coordinates aren't dominated by the more numerous 5- and 6-point shapes
+    sizes = [
+        random.randint(2, 6),
+        random.randint(2, 6),
+        random.randint(2, 6),
     ]
-    selected_coordinates = list(map(get_coordinate_for_number, selections))
+    selections = [
+        random.randint(0, coordinates_with_n_points[sizes[0]] - 1),
+        random.randint(0, coordinates_with_n_points[sizes[1]] - 1),
+        random.randint(0, coordinates_with_n_points[sizes[2]] - 1),
+    ]
+    selected_coordinates = [
+        get_coordinate_points_for_number(sizes[0], selections[0]),
+        get_coordinate_points_for_number(sizes[1], selections[1]),
+        get_coordinate_points_for_number(sizes[2], selections[2]),
+    ]
+
     map(validate_coordinate, selected_coordinates)
 
     # if we hit the deny list, simply try again
@@ -68,26 +87,27 @@ def get_coordinate_for_number(coord_index: int) -> List[int]:
     assert coord_index < total_possible_coordinates
 
     if coord_index < two_point_coordinates:
-        return get_coordinate_points_for_number(2, two_point_coordinates, coord_index)
+        return get_coordinate_points_for_number(2, coord_index)
     coord_index -= two_point_coordinates
 
     if coord_index < three_point_coordinates:
-        return get_coordinate_points_for_number(3, three_point_coordinates, coord_index)
+        return get_coordinate_points_for_number(3, coord_index)
     coord_index -= three_point_coordinates
 
     if coord_index < four_point_coordinates:
-        return get_coordinate_points_for_number(4, four_point_coordinates, coord_index)
+        return get_coordinate_points_for_number(4, coord_index)
     coord_index -= four_point_coordinates
 
     if coord_index < five_point_coordinates:
-        return get_coordinate_points_for_number(5, five_point_coordinates, coord_index)
+        return get_coordinate_points_for_number(5, coord_index)
     coord_index -= five_point_coordinates
 
-    return get_coordinate_points_for_number(6, six_point_coordinates, coord_index)
+    return get_coordinate_points_for_number(6, coord_index)
 
 
 # Now the number represents an index into the list of all possible coordinates of one specific length
-def get_coordinate_points_for_number(point_count: int, possible_coords: int, coord_index: int) -> List[int]:
+def get_coordinate_points_for_number(point_count: int, coord_index: int) -> List[int]:
+    possible_coords = coordinates_with_n_points[point_count]
     points_not_taken = [0, 1, 2, 3, 4, 5]
     coord_points = []
     bucket_size = possible_coords

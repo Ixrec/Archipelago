@@ -3,7 +3,7 @@ from typing import TextIO
 
 from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
-from .Coordinates import generate_random_coordinates
+from .Coordinates import coordinate_description, generate_random_coordinates
 from .DBLayout import generate_random_db_layout
 from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
@@ -91,14 +91,14 @@ class OuterWildsWorld(World):
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:
         if self.eotu_coordinates != 'vanilla':
-            spoiler_handle.write('\nRandomized Eye of the Universe Coordinates'
-                                 '\n0-5 are the points of the hexagon, starting at '
-                                 'the rightmost point and going counterclockwise'
-                                 '\n\n%s\n%s\n%s\n\n' % (json.dumps(self.eotu_coordinates[0]),
-                                                         json.dumps(self.eotu_coordinates[1]),
-                                                         json.dumps(self.eotu_coordinates[2])))
+            spoiler_handle.write('\nRandomized Coordinates for %s:'
+                                 '\n\n%s\n%s\n%s\n' % (self.multiworld.player_name[self.player],
+                                                       coordinate_description(self.eotu_coordinates[0]),
+                                                       coordinate_description(self.eotu_coordinates[1]),
+                                                       coordinate_description(self.eotu_coordinates[2])))
         if self.db_layout != 'vanilla':
-            spoiler_handle.write('\nRandomized Dark Bramble Layout'
+            spoiler_handle.write('\nRandomized Dark Bramble Layout for %s:'
                                  '\nRoom names are (H)ub, (E)scapePod, (A)nglerNest, '
                                  '(P)ioneer, E(X)itOnly, (V)essel, (C)luster, (S)mallNest'
-                                 '\n\n%s\n\n' % self.db_layout.replace('|', '\n'))
+                                 '\n\n%s\n' % (self.multiworld.player_name[self.player],
+                                               self.db_layout.replace('|', '\n')))

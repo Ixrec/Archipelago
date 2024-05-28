@@ -76,11 +76,22 @@ class RandomizeDarkBrambleLayout(Toggle):
     display_name = "Randomize Dark Bramble Layout"
 
 
+class RandomizeOrbits(DefaultOnToggle):
+    """Randomizes:
+    - The order of the five planets (the Hourglass Twins as a whole, Timber Hearth, Brittle Hollow, Giant's Deep,
+    Dark Bramble), i.e. which ones are closer or farther from the sun
+    - The orbit angles of the five planets, as well as four satellites (Sun Station, Attlerock, Hollow's Lantern, and
+    the Orbital Probe Cannon)
+    - The axes of rotation for Ember Twin, Ash Twin, Timber Hearth and Brittle Hollow"""
+    display_name = "Randomize Orbits"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
     goal: Goal
     randomize_coordinates: RandomizeCoordinates
+    randomize_orbits: RandomizeOrbits
     randomize_dark_bramble_layout: RandomizeDarkBrambleLayout
     trap_chance: TrapChance
     trap_type_weights: TrapTypeWeights

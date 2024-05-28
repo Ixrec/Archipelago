@@ -5,6 +5,7 @@ from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
 from .Coordinates import coordinate_description, generate_random_coordinates
 from .DBLayout import generate_random_db_layout
+from .Orbits import generate_random_orbits
 from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
 from .Options import OuterWildsGameOptions
@@ -30,12 +31,17 @@ class OuterWildsWorld(World):
 
     eotu_coordinates = 'vanilla'
     db_layout = 'vanilla'
+    planet_order = 'vanilla'
+    orbit_angles = 'vanilla'
+    rotation_axes = 'vanilla'
 
     def generate_early(self) -> None:
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
         self.db_layout = generate_random_db_layout(self.random) \
             if self.options.randomize_dark_bramble_layout else "vanilla"
+        (self.planet_order, self.orbit_angles, self.rotation_axes) = generate_random_orbits(self.random) \
+            if self.options.randomize_orbits else "vanilla"
 
     # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
 
@@ -84,6 +90,9 @@ class OuterWildsWorld(World):
         slot_data = self.options.as_dict("goal", "death_link", "logsanity")
         slot_data["eotu_coordinates"] = self.eotu_coordinates
         slot_data["db_layout"] = self.db_layout
+        slot_data["planet_order"] = self.planet_order
+        slot_data["orbit_angles"] = self.orbit_angles
+        slot_data["rotation_axes"] = self.rotation_axes
         # Archipelago does not yet have apworld versions (data_version is deprecated),
         # so we have to roll our own with slot_data for the time being
         slot_data["apworld_version"] = "0.2.0"
@@ -102,3 +111,8 @@ class OuterWildsWorld(World):
                                  '(P)ioneer, E(X)itOnly, (V)essel, (C)luster, (S)mallNest'
                                  '\n\n%s\n' % (self.multiworld.player_name[self.player],
                                                self.db_layout.replace('|', '\n')))
+        if self.planet_order != 'vanilla':
+            spoiler_handle.write('\nRandomized Orbits for %s:'
+                                 '\n\nPlanet Order: %s\nOrbit Angles: %s\nRotation Axes: %s\n' %
+                                 (self.multiworld.player_name[self.player],
+                                  self.planet_order, self.orbit_angles, self.rotation_axes))

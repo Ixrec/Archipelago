@@ -31,7 +31,7 @@ deny_list = {
 }
 
 
-def coordinate_description(coordinate: list[int]) -> str:
+def coordinate_description(coordinate: List[int]) -> str:
     point_descriptions = []
     for point in coordinate:
         if point == 0:

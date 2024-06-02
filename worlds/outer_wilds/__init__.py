@@ -38,8 +38,9 @@ class OuterWildsWorld(World):
     def generate_early(self) -> None:
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
-        self.db_layout = generate_random_db_layout(self.random) \
-            if self.options.randomize_dark_bramble_layout else "vanilla"
+        db_option = self.options.randomize_dark_bramble_layout
+        self.db_layout = generate_random_db_layout(self.random, db_option) \
+            if db_option != db_option.option_false else "vanilla"
         (self.planet_order, self.orbit_angles, self.rotation_axes) = generate_random_orbits(self.random) \
             if self.options.randomize_orbits else "vanilla"
 

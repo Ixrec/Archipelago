@@ -1,6 +1,7 @@
 from enum import Enum
 from random import Random
 from typing import List
+from .Options import RandomizeDarkBrambleLayout
 
 
 # In the stringified layout format we want to output for slot data, the vanilla DB layout is:
@@ -78,7 +79,7 @@ warps_in_room = {
 }
 
 
-def generate_random_db_layout(random: Random) -> str:
+def generate_random_db_layout(random: Random, db_option: RandomizeDarkBrambleLayout) -> str:
     # If we needed a "Dark Bramble layout" class, these would be its members:
     entrance: DBRoom
     mapped_warps: dict[DBWarp, DBRoom] = {}
@@ -91,7 +92,10 @@ def generate_random_db_layout(random: Random) -> str:
 
     # Step 1: Select an entrance
 
-    entrance = random.choice(unused_transit_rooms)
+    if db_option == RandomizeDarkBrambleLayout.option_hub_start:
+        entrance = DBRoom.Hub
+    else:
+        entrance = random.choice(unused_transit_rooms)
     unused_transit_rooms.remove(entrance)
 
     unmapped_warps.extend(warps_in_room[entrance])

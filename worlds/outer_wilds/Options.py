@@ -69,11 +69,15 @@ class ShuffleSpacesuit(Toggle):
     display_name = "Shuffle Spacesuit"
 
 
-class RandomizeDarkBrambleLayout(Toggle):
-    """Randomizes which Dark Bramble 'rooms' link to which other rooms, so you can't rely on your memory of the vanilla
-    layout. Be aware that randomized layouts are often significantly harder to navigate than vanilla Dark Bramble,
-    since they allow several paths to the same room and more complex loops / recursion."""
+class RandomizeDarkBrambleLayout(Choice):
+    """Randomizes which Dark Bramble 'rooms' link to which other rooms, so you can't rely on your memory of the vanilla layout.
+    Be aware that randomized layouts are often significantly harder to navigate than vanilla Dark Bramble, since they allow several paths to the same room and more complex loops / recursion.
+    'hub_start' forces the first room to be Hub (same as the vanilla game), which tends to generate shorter and simpler paths than full randomization."""
     display_name = "Randomize Dark Bramble Layout"
+    option_false = 0
+    option_true = 1
+    option_hub_start = 2
+    default = 0
 
 
 class RandomizeOrbits(DefaultOnToggle):

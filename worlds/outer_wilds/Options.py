@@ -100,6 +100,7 @@ class Spawn(Choice):
     and the Launch Codes are placed randomly like any other AP item. The ship will spawn next to you so you can still use
     the ship log/tracker and recover health/fuel/oxygen. It just won't take off without Launch Codes.
     """
+    display_name = "Spawn"
     option_vanilla = 0
     option_hourglass_twins = 1
     option_timber_hearth = 2

@@ -4,6 +4,7 @@ from typing import Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import Item, ItemClassification
 from . import jsonc
+from .Options import Spawn
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld
@@ -130,7 +131,7 @@ def create_items(world: "OuterWildsWorld") -> None:
                 multiworld.push_precollected(create_item(player, "Spacesuit"))
             else:
                 prog_and_useful_items.append(create_item(player, "Spacesuit"))
-        elif name == "Launch Codes":  # in a future version this should say `and options.spawn == "vanilla"`
+        elif name == "Launch Codes" and options.spawn == Spawn.option_vanilla:
             # in vanilla spawn, Launch Codes is locked to Hornfels to ensure the player starts the time loop
             multiworld.get_location("TH: Talk to Hornfels", player).place_locked_item(create_item(player, name))
         elif item.type == ItemClassification.filler:

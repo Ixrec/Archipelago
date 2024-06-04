@@ -65,7 +65,10 @@ class Logsanity(Toggle):
 
 
 class ShuffleSpacesuit(Toggle):
-    """Puts the spacesuit into the Archipelago item pool, forcing you to play suitless until it's found."""
+    """
+    Puts the spacesuit into the Archipelago item pool, forcing you to play suitless until it's found.
+    This option is not compatible with non-vanilla spawns.
+    """
     display_name = "Shuffle Spacesuit"
 
 
@@ -88,10 +91,28 @@ class RandomizeOrbits(DefaultOnToggle):
     display_name = "Randomize Orbits"
 
 
+class Spawn(Choice):
+    """
+    Where you start the game.
+    'vanilla' is the same as the base game: you wake up in the TH Village, have to talk to Hornfels to get the Launch Codes,
+    then walk by the statue to start the time loop.
+    All other options (including timber_hearth) will spawn you in your spacesuit, with the time loop already started,
+    and the Launch Codes are placed randomly like any other AP item. The ship will spawn next to you so you can still use
+    the ship log/tracker and recover health/fuel/oxygen. It just won't take off without Launch Codes.
+    """
+    option_vanilla = 0
+    option_hourglass_twins = 1
+    option_timber_hearth = 2
+    option_brittle_hollow = 3
+    option_giants_deep = 4
+    default = 0
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
     goal: Goal
+    spawn: Spawn
     randomize_coordinates: RandomizeCoordinates
     randomize_orbits: RandomizeOrbits
     randomize_dark_bramble_layout: RandomizeDarkBrambleLayout

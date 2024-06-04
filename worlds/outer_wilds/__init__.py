@@ -8,7 +8,7 @@ from .DBLayout import generate_random_db_layout
 from .Orbits import generate_random_orbits
 from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
-from .Options import OuterWildsGameOptions
+from .Options import OuterWildsGameOptions, Spawn
 
 
 class OuterWildsWebWorld(WebWorld):
@@ -36,6 +36,11 @@ class OuterWildsWorld(World):
     rotation_axes = 'vanilla'
 
     def generate_early(self) -> None:
+        # validate options
+        if self.options.shuffle_spacesuit and self.options.spawn != Spawn.option_vanilla:
+            raise NotImplementedError('Incompatible options: shuffle_spacesuit is true and spawn is non-vanilla (%s)', self.options.spawn)
+
+        # generate game-specific randomizations separate from AP items/locations
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
         db_option = self.options.randomize_dark_bramble_layout
@@ -88,7 +93,7 @@ class OuterWildsWorld(World):
         self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
 
     def fill_slot_data(self):
-        slot_data = self.options.as_dict("goal", "death_link", "logsanity")
+        slot_data = self.options.as_dict("goal", "death_link", "logsanity", "spawn")
         slot_data["eotu_coordinates"] = self.eotu_coordinates
         slot_data["db_layout"] = self.db_layout
         slot_data["planet_order"] = self.planet_order

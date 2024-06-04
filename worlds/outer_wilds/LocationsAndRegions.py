@@ -5,7 +5,7 @@ from typing import Callable, Dict, List, NamedTuple, Optional, Set
 from BaseClasses import Location, MultiWorld, Region
 from worlds.generic.Rules import set_rule
 from . import jsonc
-from .Options import OuterWildsGameOptions
+from .Options import OuterWildsGameOptions, Spawn
 from .RuleEval import eval_rule
 
 if typing.TYPE_CHECKING:
@@ -133,3 +133,16 @@ def create_regions(world: "OuterWildsWorld") -> None:
         if ld["name"] in locations_to_create and len(ld["requires"]) > 0:
             set_rule(mw.get_location(ld["name"], p),
                      lambda state, r=ld["requires"]: eval_rule(state, p, r))
+
+    # add dynamic logic, i.e. connections based on player options
+    menu = mw.get_region("Menu", p)
+    if options.spawn == Spawn.option_vanilla:
+        menu.add_exits(["Timber Hearth Village"])
+    elif options.spawn == Spawn.option_hourglass_twins:
+        menu.add_exits(["Hourglass Twins"])
+    elif options.spawn == Spawn.option_timber_hearth:
+        menu.add_exits(["Timber Hearth"])
+    elif options.spawn == Spawn.option_brittle_hollow:
+        menu.add_exits(["Brittle Hollow"])
+    elif options.spawn == Spawn.option_giants_deep:
+        menu.add_exits(["Giant's Deep"])

@@ -94,11 +94,13 @@ class RandomizeOrbits(DefaultOnToggle):
 class Spawn(Choice):
     """
     Where you start the game.
-    'vanilla' is the same as the base game: you wake up in the TH Village, have to talk to Hornfels to get the Launch Codes,
-    then walk by the statue to start the time loop.
-    All other options (including timber_hearth) will spawn you in your spacesuit, with the time loop already started,
-    and the Launch Codes are placed randomly like any other AP item. The ship will spawn next to you so you can still use
-    the ship log/tracker and recover health/fuel/oxygen. It just won't take off without Launch Codes.
+    'vanilla' is the same as the base game: you wake up in TH Village, talk to Hornfels to get the Launch Codes, then walk by the Nomai statue to start the time loop.
+    All other options (including timber_hearth) will spawn you in your spacesuit, with the time loop already started, and the Launch Codes item placed randomly like any other AP item.
+    The idea is that non-vanilla spawns will require you to play "shipless" for a while, possibly using Nomai Warp Codes to visit other planets. The ship will still spawn nearby, so you can use the ship log/tracker right away.
+    When playing with non-vanilla spawns, we recommend:
+    - Consider enabling randomize_warp_pads for greater variety if you get warp codes early
+    - Consider enabling early_key_item in non-solo games, or else your first session may end after only 4-10 checks
+    - Install a fast-forward mod such as Alter Time or Cheat And Debug Mod, since you may need to do a lot of waiting for e.g. Ash Twin sand or Giant's Deep islands
     """
     display_name = "Spawn"
     option_vanilla = 0
@@ -109,13 +111,37 @@ class Spawn(Choice):
     default = 0
 
 
+class EarlyKeyItem(Choice):
+    """
+    Ensure that at least one of Translator, Nomai Warp Codes, or Launch Codes will be somewhere in sphere 1.
+    On 'local', sphere 1 means any location that you can reach with only your starting inventory.
+    On 'global', sphere 1 means any location that any player in the multiworld can reach with their starting inventories.
+    This is intended to prevent games with non-vanilla spawns from becoming blocked after only 4-10 checks.
+    """
+    display_name = "Early Key Item"
+    option_off = 0
+    option_local = 1
+    option_global = 2
+
+
+class RandomizeWarpPlatforms(Toggle):
+    """
+    Randomize which Nomai warp platforms are connected to each other.
+    Warp connections are still 'coupled', i.e. if platform A warps to platform B, then B will take you back to A.
+    Highly recommended when playing with non-vanilla spawns.
+    """
+    display_name = "Randomize Warp Platforms"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
     goal: Goal
     spawn: Spawn
+    early_key_item: EarlyKeyItem
     randomize_coordinates: RandomizeCoordinates
     randomize_orbits: RandomizeOrbits
+    randomize_warp_platforms: RandomizeWarpPlatforms
     randomize_dark_bramble_layout: RandomizeDarkBrambleLayout
     trap_chance: TrapChance
     trap_type_weights: TrapTypeWeights

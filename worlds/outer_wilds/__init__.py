@@ -6,9 +6,10 @@ from worlds.AutoWorld import WebWorld, World
 from .Coordinates import coordinate_description, generate_random_coordinates
 from .DBLayout import generate_random_db_layout
 from .Orbits import generate_random_orbits
+from .WarpPlatforms import generate_random_warp_platform_mapping
 from .Items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .LocationsAndRegions import all_non_event_locations_table, location_name_groups, create_regions
-from .Options import OuterWildsGameOptions, Spawn
+from .Options import OuterWildsGameOptions, RandomizeDarkBrambleLayout, Spawn
 
 
 class OuterWildsWebWorld(WebWorld):
@@ -34,6 +35,7 @@ class OuterWildsWorld(World):
     planet_order = 'vanilla'
     orbit_angles = 'vanilla'
     rotation_axes = 'vanilla'
+    warps = 'vanilla'
 
     def generate_early(self) -> None:
         # validate options
@@ -43,11 +45,14 @@ class OuterWildsWorld(World):
         # generate game-specific randomizations separate from AP items/locations
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
-        db_option = self.options.randomize_dark_bramble_layout
-        self.db_layout = generate_random_db_layout(self.random, db_option) \
-            if db_option != db_option.option_false else "vanilla"
+        self.warps = generate_random_warp_platform_mapping(self.random) \
+            if self.options.randomize_warp_platforms else "vanilla"
         (self.planet_order, self.orbit_angles, self.rotation_axes) = generate_random_orbits(self.random) \
             if self.options.randomize_orbits else ("vanilla", "vanilla", "vanilla")
+
+        db_option = self.options.randomize_dark_bramble_layout
+        self.db_layout = generate_random_db_layout(self.random, db_option) \
+            if db_option != RandomizeDarkBrambleLayout.option_false else "vanilla"
 
     # members and methods implemented by LocationsAndRegions.py, locations.jsonc and connections.jsonc
 
@@ -122,3 +127,8 @@ class OuterWildsWorld(World):
                                  '\n\nPlanet Order: %s\nOrbit Angles: %s\nRotation Axes: %s\n' %
                                  (self.multiworld.player_name[self.player],
                                   self.planet_order, self.orbit_angles, self.rotation_axes))
+        if self.warps != 'vanilla':
+            spoiler_handle.write('\nRandomized Warp Platforms for %s:'
+                                 '\n\n%s\n' %
+                                 (self.multiworld.player_name[self.player],
+                                  self.warps))

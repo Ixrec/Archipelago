@@ -4,7 +4,7 @@ from typing import Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import Item, ItemClassification
 from . import jsonc
-from .Options import Spawn
+from .Options import EarlyKeyItem, Spawn
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld
@@ -186,3 +186,10 @@ def create_items(world: "OuterWildsWorld") -> None:
 
     itempool = prog_and_useful_items + unique_filler_with_traps + repeatable_filler_with_traps
     multiworld.itempool += itempool
+
+    if options.early_key_item:
+        key_item = random.choice(["Translator", "Nomai Warp Codes", "Launch Codes"])
+        if options.early_key_item == EarlyKeyItem.option_local:
+            multiworld.local_early_items[player][key_item] = 1
+        elif options.early_key_item == EarlyKeyItem.option_global:
+            multiworld.early_items[player][key_item] = 1

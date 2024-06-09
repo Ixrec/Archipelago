@@ -96,7 +96,7 @@ class OuterWildsWorld(World):
         slot_data["rotation_axes"] = self.rotation_axes
         # Archipelago does not yet have apworld versions (data_version is deprecated),
         # so we have to roll our own with slot_data for the time being
-        slot_data["apworld_version"] = "0.2.1"
+        slot_data["apworld_version"] = "0.2.2"
         return slot_data
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:

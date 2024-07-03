@@ -116,7 +116,8 @@ class EarlyKeyItem(Choice):
     Ensure that at least one of Translator, Nomai Warp Codes, or Launch Codes will be somewhere in sphere 1.
     On 'local', sphere 1 means any location that you can reach with only your starting inventory.
     On 'global', sphere 1 means any location that any player in the multiworld can reach with their starting inventories.
-    This is intended to prevent games with non-vanilla spawns from becoming blocked after only 4-10 checks.
+    This is primarily intended to prevent games with non-vanilla spawns from becoming blocked too quickly.
+    In addition, without this AP seems to almost always put Launch Codes in sphere 1, so this also helps increase variety.
     """
     display_name = "Early Key Item"
     option_off = 0

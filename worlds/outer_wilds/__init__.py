@@ -1,5 +1,5 @@
 import json
-from typing import TextIO
+from typing import Any, Dict, TextIO
 
 from BaseClasses import Tutorial
 from worlds.AutoWorld import WebWorld, World
@@ -36,11 +36,29 @@ class OuterWildsWorld(World):
     orbit_angles = 'vanilla'
     rotation_axes = 'vanilla'
     warps = 'vanilla'
+    spawn = Spawn.option_vanilla
+
+    # this is how we tell the Universal Tracker we want to use re_gen_passthrough
+    @staticmethod
+    def interpret_slot_data(slot_data: Dict[str, Any]) -> Dict[str, Any]:
+        return slot_data
 
     def generate_early(self) -> None:
         # validate options
         if self.options.shuffle_spacesuit and self.options.spawn != Spawn.option_vanilla:
             raise NotImplementedError('Incompatible options: shuffle_spacesuit is true and spawn is non-vanilla (%s)', self.options.spawn)
+
+        # implement Universal Tracker support
+        if hasattr(self.multiworld, "generation_is_fake"):
+            if hasattr(self.multiworld, "re_gen_passthrough"):
+                if "Outer Wilds" in self.multiworld.re_gen_passthrough:
+                    slot_data = self.multiworld.re_gen_passthrough["Outer Wilds"]
+                    self.warps = slot_data["warps"]
+                    self.spawn = slot_data["spawn"]
+            return
+
+        # when Universal Tracker is not involved, spawn is just a normal option
+        self.spawn = self.options.spawn
 
         # generate game-specific randomizations separate from AP items/locations
         self.eotu_coordinates = generate_random_coordinates(self.random) \

@@ -188,8 +188,13 @@ def create_items(world: "OuterWildsWorld") -> None:
     multiworld.itempool += itempool
 
     if options.early_key_item:
-        key_item = random.choice(["Translator", "Nomai Warp Codes", "Launch Codes"])
-        if options.early_key_item == EarlyKeyItem.option_local:
-            multiworld.local_early_items[player][key_item] = 1
-        elif options.early_key_item == EarlyKeyItem.option_global:
-            multiworld.early_items[player][key_item] = 1
+        key_item = None
+        if options.early_key_item == EarlyKeyItem.option_any:
+            key_item = random.choice(["Translator", "Nomai Warp Codes", "Launch Codes"])
+        elif options.early_key_item == EarlyKeyItem.option_translator:
+            key_item = "Translator"
+        elif options.early_key_item == EarlyKeyItem.option_nomai_warp_codes:
+            key_item = "Nomai Warp Codes"
+        elif options.early_key_item == EarlyKeyItem.option_launch_codes:
+            key_item = "Launch Codes"
+        multiworld.local_early_items[player][key_item] = 1

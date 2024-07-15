@@ -64,6 +64,6 @@ class TestHGTSpawnRandomWarpEKI(OuterWildsTestBase):
     options = {
         "spawn": Spawn.option_hourglass_twins,
         "randomize_warp_platforms": True,
-        "early_key_item": EarlyKeyItem.option_global,
+        "early_key_item": EarlyKeyItem.option_nomai_warp_codes,
     }
 

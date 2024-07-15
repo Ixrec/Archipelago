@@ -113,16 +113,19 @@ class Spawn(Choice):
 
 class EarlyKeyItem(Choice):
     """
-    Ensure that at least one of Translator, Nomai Warp Codes, or Launch Codes will be somewhere in sphere 1.
-    On 'local', sphere 1 means any location that you can reach with only your starting inventory.
-    On 'global', sphere 1 means any location that any player in the multiworld can reach with their starting inventories.
-    This is primarily intended to prevent games with non-vanilla spawns from becoming blocked too quickly.
-    In addition, without this AP seems to almost always put Launch Codes in sphere 1, so this also helps increase variety.
+    Ensure that either Translator, Nomai Warp Codes, or Launch Codes will be somewhere in sphere 1 and
+    in your own world, guaranteeing you can find it without waiting on other players.
+    `any` randomly selects one of these items to place early.
+
+    Recommended for games with non-vanilla spawns, especially async games.
+    In addition, without this AP seems to almost always put Launch Codes in sphere 1, so `any` also helps increase variety.
     """
     display_name = "Early Key Item"
     option_off = 0
-    option_local = 1
-    option_global = 2
+    option_any = 1
+    option_translator = 2
+    option_nomai_warp_codes = 3
+    option_launch_codes = 4
 
 
 class RandomizeWarpPlatforms(Toggle):

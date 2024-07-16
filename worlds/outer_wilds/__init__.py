@@ -2,6 +2,7 @@ import json
 from typing import Any, Dict, TextIO
 
 from BaseClasses import Tutorial
+from Options import OptionError
 from worlds.AutoWorld import WebWorld, World
 from .Coordinates import coordinate_description, generate_random_coordinates
 from .DBLayout import generate_random_db_layout
@@ -46,7 +47,7 @@ class OuterWildsWorld(World):
     def generate_early(self) -> None:
         # validate options
         if self.options.shuffle_spacesuit and self.options.spawn != Spawn.option_vanilla:
-            raise NotImplementedError('Incompatible options: shuffle_spacesuit is true and spawn is non-vanilla (%s)', self.options.spawn)
+            raise OptionError('Incompatible options: shuffle_spacesuit is true and spawn is non-vanilla (%s)', self.options.spawn)
 
         # implement Universal Tracker support
         if hasattr(self.multiworld, "generation_is_fake"):

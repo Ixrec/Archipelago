@@ -2,10 +2,25 @@ from . import OuterWildsTestBase
 from ..Options import EarlyKeyItem, Spawn
 
 
-class TestRandomWarp(OuterWildsTestBase):
+class TestRandomWarpDeterminism(OuterWildsTestBase):
     options = {
         "randomize_warp_platforms": True,
     }
+    seed = 1
+
+    def world_setup(self, *args, **kwargs):
+        super().world_setup(self.seed)
+
+    def test_determinism(self):
+        self.assertListEqual(self.world.warps, [
+            ('SS', 'GD'),
+            ('ATP', 'ET'),
+            ('BHF', 'WHS'),
+            ('BHT', 'TH'),
+            ('THT', 'BHNG'),
+            ('ST', 'ETT'),
+            ('GDT', 'ATT'),
+        ])
 
 
 class TestHGTSpawn(OuterWildsTestBase):

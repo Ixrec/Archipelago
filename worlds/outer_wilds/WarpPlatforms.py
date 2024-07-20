@@ -40,6 +40,13 @@ def generate_random_warp_platform_mapping(random: Random) -> List[Tuple[str, str
     for dead_end_platform in dead_end_platforms:
         available_platforms = [p for p in unmapped_platforms if p in platforms_reachable_by_ship]
 
+        # Sun Station is the only warp platform that disappears about halfway through the loop.
+        # Technically every other platform is exposed by then, but for some the margin is just too small.
+        if dead_end_platform == 'SS':  # actually falls into the sun at 11:30 - 11:40
+            available_platforms.remove('THT')  # exposed at ~10:30
+            available_platforms.remove('BHT')  # exposed at ~10:30
+            available_platforms.remove('GDT')  # exposed at ~11:00
+
         destination = random.choice(available_platforms)
         mappings.append((dead_end_platform, destination))
         unmapped_platforms.remove(dead_end_platform)

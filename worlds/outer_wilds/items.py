@@ -4,7 +4,7 @@ from typing import Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import Item, ItemClassification
 from . import jsonc
-from .Options import EarlyKeyItem, Spawn
+from .options import EarlyKeyItem, Spawn
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld

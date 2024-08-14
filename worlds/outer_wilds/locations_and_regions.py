@@ -5,9 +5,9 @@ from typing import Callable, Dict, List, NamedTuple, Optional, Set
 from BaseClasses import CollectionState, Location, MultiWorld, Region
 from worlds.generic.Rules import set_rule
 from . import jsonc
-from .Options import OuterWildsGameOptions, Spawn
-from .RuleEval import eval_rule
-from .WarpPlatforms import warp_platform_to_logical_region, warp_platform_required_items
+from .options import OuterWildsGameOptions, Spawn
+from .rule_eval import eval_rule
+from .warp_platforms import warp_platform_to_logical_region, warp_platform_required_items
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld

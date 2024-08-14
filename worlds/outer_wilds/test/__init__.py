@@ -1,7 +1,7 @@
 from typing import List
 
 from test.bases import WorldTestBase, CollectionState
-from ..Options import Goal
+from ..options import Goal
 
 
 class OuterWildsTestBase(WorldTestBase):

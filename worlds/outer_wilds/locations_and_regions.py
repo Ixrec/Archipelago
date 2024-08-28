@@ -7,7 +7,7 @@ from typing import Any, Callable, Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import CollectionState, Location, MultiWorld, Region
 from worlds.generic.Rules import set_rule
-from .options import OuterWildsGameOptions, Spawn
+from .options import OuterWildsGameOptions, Spawn, get_creation_settings
 from .warp_platforms import warp_platform_to_logical_region, warp_platform_required_items
 
 if typing.TYPE_CHECKING:
@@ -76,13 +76,15 @@ location_name_groups = {
 
 
 def get_locations_to_create(options: OuterWildsGameOptions) -> Dict[str, OuterWildsLocationData]:
-    # filter locations by settings (currently logsanity is the only setting relevant here)
-    relevant_settings = set()
-    if options.logsanity.value == 1:
-        relevant_settings.add("logsanity")
-
+    relevant_settings = get_creation_settings(options)
     return {k: v for k, v in location_data_table.items()
             if v.creation_settings is None or relevant_settings.issuperset(v.creation_settings)}
+
+
+def get_connections_to_create(options: OuterWildsGameOptions) -> List[Any]:
+    relevant_settings = get_creation_settings(options)
+    return [c for c in connections_data
+            if "creation_settings" not in c or relevant_settings.issuperset(c["creation_settings"])]
 
 
 region_data_table: Dict[str, OuterWildsRegionData] = {}
@@ -94,12 +96,16 @@ def create_regions(world: "OuterWildsWorld") -> None:
     options = world.options
 
     # start by ensuring every region is a key in region_data_table
-    for ld in locations_data:
-        region_name = ld["region"]
+    locations_to_create = get_locations_to_create(options)
+
+    for ld in locations_to_create.values():
+        region_name = ld.region
         if region_name not in region_data_table:
             region_data_table[region_name] = OuterWildsRegionData()
 
-    for cd in connections_data:
+    connections_to_create = get_connections_to_create(options)
+
+    for cd in connections_to_create:
         if cd["from"] not in region_data_table:
             region_data_table[cd["from"]] = OuterWildsRegionData()
         if cd["to"] not in region_data_table:
@@ -109,8 +115,6 @@ def create_regions(world: "OuterWildsWorld") -> None:
     for region_name in region_data_table.keys():
         mw.regions.append(Region(region_name, p, mw))
 
-    locations_to_create = get_locations_to_create(options)
-
     # add locations and connections to each region
     for region_name, region_data in region_data_table.items():
         region = mw.get_region(region_name, p)
@@ -119,7 +123,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
             if location_data.region == region_name
         }, OuterWildsLocation)
 
-        exit_connections = [cd for cd in connections_data if cd["from"] == region_name]
+        exit_connections = [cd for cd in connections_to_create if cd["from"] == region_name]
         for connection in exit_connections:
             to = connection["to"]
             requires = connection["requires"]

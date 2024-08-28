@@ -41,9 +41,6 @@
     { "code": 1734473714, "name": "Galena's Radio Signal", "type": "filler" },
     { "code": 1734473715, "name": "Tephra's Radio Signal", "type": "filler" },
 
-    { "code": null, "name": "Victory - Song of Five", "type": "progression" },
-    { "code": null, "name": "Victory - Song of Six", "type": "progression" },
-
     { "code": 1734473716, "name": "Autopilot", "type": "useful" },
     { "code": 1734473717, "name": "Landing Camera", "type": "useful" },
     { "code": 1734473718, "name": "Eject Button", "type": "useful" },
@@ -61,5 +58,27 @@
 
     { "code": 1734473726, "name": "Ship Damage Trap", "type": "trap" },
     { "code": 1734473727, "name": "Audio Trap", "type": "trap" },
-    { "code": 1734473728, "name": "Nap Trap", "type": "trap" }
+    { "code": 1734473728, "name": "Nap Trap", "type": "trap" },
+
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473733, "name": "Stranger Light Modulator", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473734, "name": "Breach Override Codes", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473735, "name": "River Lowlands Painting Code", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473736, "name": "Cinder Isles Painting Code", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473737, "name": "Hidden Gorge Painting Code", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473738, "name": "Dream Totem Patch", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473739, "name": "Raft Docks Patch", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473740, "name": "Limbo Warp Patch", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473741, "name": "Projection Range Patch", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": 1734473742, "name": "Alarm Bypass Patch", "type": "progression" },
+
+    { "code": 1734473743, "name": "Deep Space Radio Frequency", "type": "progression" },
+    { "code": 1734473744, "name": "Radio Tower Signal", "type": "filler" },
+    { "code": 1734473745, "name": "Deep Space Satellite Signal", "type": "filler" },
+
+    { "code": null, "name": "Victory - Song of Five", "type": "progression" },
+    { "code": null, "name": "Victory - Song of the Nomai", "type": "progression" },
+    { "code": null, "name": "Victory - Song of the Stranger", "type": "progression" },
+    { "code": null, "name": "Victory - Song of Six", "type": "progression" },
+    { "code": null, "name": "Victory - Song of Seven", "type": "progression" },
+    { "code": null, "name": "Victory - Echoes of the Eye", "type": "progression" }
 ]

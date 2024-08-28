@@ -109,15 +109,19 @@ class OuterWildsWorld(World):
     def set_rules(self) -> None:
         # here we only set the completion condition; all the location/region rules were set in create_regions()
         option_key_to_item_name = {
-            'song_of_five': "Victory - Song of Five",
-            'song_of_six': "Victory - Song of Six",
+            'song_of_five':         "Victory - Song of Five",
+            'song_of_the_nomai':    "Victory - Song of the Nomai",
+            'song_of_the_stranger': "Victory - Song of the Stranger",
+            'song_of_six':          "Victory - Song of Six",
+            'song_of_seven':        "Victory - Song of Seven",
+            'echoes_of_the_eye':    "Victory - Echoes of the Eye",
         }
 
         goal_item = option_key_to_item_name[self.options.goal.current_key]
         self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
 
     def fill_slot_data(self):
-        slot_data = self.options.as_dict("goal", "death_link", "logsanity", "spawn")
+        slot_data = self.options.as_dict("goal", "death_link", "logsanity", "spawn", "enable_eote_dlc")
         slot_data["eotu_coordinates"] = self.eotu_coordinates
         slot_data["db_layout"] = self.db_layout
         slot_data["planet_order"] = self.planet_order

@@ -400,27 +400,6 @@
         "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Hide & Seek Frequency" } ]
     },
 
-    // Victory events
-    {
-        "address": null, "name": "Victory - Song of Five",
-        "region": "The Vessel",
-        "requires": [
-            { "item": "Warp Core Installation Manual" },
-            { "item": "Coordinates" },
-            { "location": "AT: Enter the ATP" }
-        ]
-    },
-    {
-        "address": null, "name": "Victory - Song of Six",
-        "region": "The Vessel",
-        "requires": [
-            { "item": "Warp Core Installation Manual" },
-            { "item": "Coordinates" },
-            { "location": "AT: Enter the ATP" },
-            { "location": "QM: Explore the Sixth Location" }
-        ]
-    },
-
 // Logsanity Locations
 // These location ids start at 1085039000 (i.e. rounding up to the next thousand),
 // to make it slightly easier to add default locations in the future.
@@ -1137,5 +1116,621 @@
     {
         "creation_settings": [ "logsanity" ], "address": 1085039176, "name": "QM Ship Log: Sixth Location 6 - Status",
         "region": "Sixth Location", "requires": [ { "item": "Translator" } ]
+    },
+
+    // didn't add these until DLC integration because I was unsure how these would work and if a DLC-less game has these
+    {
+        "address": 1085039177, "name": "TH: Scan Radio Tower Signal",
+        "region": "Timber Hearth", "requires": [
+            { "item": "Signalscope" },
+            { "item": "Deep Space Radio Frequency" }
+        ]
+    },
+    {
+        "address": 1085039178, "name": "Scan Deep Space Satellite Signal",
+        "region": "Space", "requires": [
+            { "item": "Signalscope" },
+            { "item": "Deep Space Radio Frequency" }
+        ]
+    },
+    {
+        "address": 1085039179, "name": "Gabbro's Satellite Recorder",
+        "region": "Space", "requires": []
+    },
+
+// EotE DLC Default Locations
+
+    // River Lowlands (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040000, "name": "EotE: River Lowlands Workshop",
+        "region": "River Lowlands", "requires": [
+            { "item": "Ghost Matter Wavelength" }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040001, "name": "EotE: River Lowlands Slide Reel",
+        "region": "River Lowlands", "requires": []
+    },
+
+    // Cinder Isles (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040002, "name": "EotE: Cinder Isles Eye",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040003, "name": "EotE: Cinder Isles Slide Reel",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040004, "name": "EotE: Island Tower Slide Reel",
+        "region": "Cinder Isles", "requires": []
+    },
+
+    // Hidden Gorge (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040005, "name": "EotE: Hidden Gorge Slide Reel",
+        "region": "Hidden Gorge", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040006, "name": "EotE: Laboratory Experiments Slide Reel",
+        "region": "Hidden Gorge Laboratory", "requires": []
+    },
+
+    // Reservoir (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040007, "name": "EotE: Reservoir Jammer Projection",
+        "region": "Reservoir", "requires": [
+            { "anyOf": [
+                { "item": "Scout" }, // the door code is written down inside the building
+                { "region": "Cinder Isles Symbol Room" } // and also in the symbol room
+            ] }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040008, "name": "EotE: Reservoir Stranger Projection",
+        "region": "Reservoir", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040009, "name": "EotE: Reservoir Slide Reel",
+        "region": "Reservoir", "requires": []
+    },
+
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040010, "name": "EotE: Submerged Structure",
+        "region": "Reservoir", "requires": []
+    },
+
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040011, "name": "EotE: Find an Artifact",
+        "region": "Stranger Sunside Hangar", "requires": [
+            // The usable artifacts are located in the RL workshop, the HG slide projector room, and the HG laboratory.
+            // Since this location is used in multiple important region connections, we'll optimize it by checking
+            // directly for the items needed to reach those locations instead of using { "location": ... } clauses.
+            { "anyOf": [
+                { "item": "Ghost Matter Wavelength" }, // to safely enter River Lowlands Workshop
+                { "item": "Stranger Light Modulator" }, // to use a raft and an elevator to reach Hidden Gorge
+                { "item": "Breach Override Codes" } // to enter Hidden Gorge Laboratory
+            ] }
+        ]
+    },
+
+    // Dreamworld/Simulation (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040012, "name": "DW: Shrouded Woodlands Bridge",
+        "region": "Shrouded Woodlands", "requires": [
+            { "item": "Dream Totem Patch" } // project the bridge
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040013, "name": "DW: Starlit Cove Burned Building",
+        "region": "Starlit Cove", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040014, "name": "DW: Starlit Cove Upper Tower Floors",
+        "region": "Starlit Cove", "requires": [
+            { "item": "Dream Totem Patch" } // project dock w/ walkway to lower tower entrance
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040015, "name": "DW: Endless Canyon Mural",
+        "region": "Endless Canyon", "requires": [
+            { "item": "Dream Totem Patch" } // project multiple bridges, and hand warp to reach 2nd projection totem
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040016, "name": "DW: Vault Vision", // behind the dream equivalent of the reservoir prison
+        "region": "Dream Raft Loop", "requires": [
+            { "item": "Dream Totem Patch" } // hand warp to reach the vision torch
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040017, "name": "DW: Subterranean Lake Green Light",
+        "region": "Subterranean Lake", "requires": []
+    },
+
+    // The Stranger (second pass, after subterranean lake vision)
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040018, "name": "EotE: Symbol Room Temple Code",
+        "region": "Cinder Isles Symbol Room", "requires": []
+    },
+
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040019, "name": "EotE: Abandoned Temple",
+        "region": "Abandoned Temple", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040020, "name": "EotE: Abandoned Temple Slide Reel",
+        "region": "Abandoned Temple", "requires": [
+            { "location": "EotE: Symbol Room Temple Code" }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040021, "name": "EotE: Map Projections",
+        "region": "Abandoned Temple", "requires": [
+            { "location": "EotE: Symbol Room Temple Code" }
+        ]
+    },
+
+    // Slide Burning Rooms
+
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040022, "name": "EotE: River Lowlands Secret Slide Reel",
+        "region": "River Lowlands", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040023, "name": "EotE: Cinder Isles Secret Slide Reel",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040024, "name": "EotE: Hidden Gorge Secret Slide Reel",
+        "region": "Hidden Gorge", "requires": [
+            { "item": "Stranger Light Modulator" },
+            { "item": "Scout" } // shoot the scout through a small hole so its lights can reach the door sensor
+        ]
+    },
+
+    // Dreamworld Secret Libraries
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040025, "name": "DW: Woodlands Archive Story Reel",
+        "region": "Shrouded Woodlands Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040026, "name": "DW: Woodlands Archive Glitch Reel",
+        "region": "Shrouded Woodlands Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040027, "name": "DW: Cove Archive Story Reel",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040028, "name": "DW: Cove Archive 1st Glitch Reel",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040029, "name": "DW: Cove Archive 2nd Glitch Reel",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040030, "name": "DW: Canyon Archive Story Reel",
+        "region": "Endless Canyon Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040031, "name": "DW: Canyon Archive Glitch Reel",
+        "region": "Endless Canyon Archive", "requires": []
+    },
+
+    // Dreamworld Finale
+    {
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085040032, "name": "DW: Sealed Vault",
+        "region": "Sealed Vault", "requires": []
+    },
+
+// EotE DLC Logsanity Locations
+// These location ids start at 1085041000 (i.e. rounding up to the next thousand),
+// to make it slightly easier to add default locations in the future.
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041000, "name": "TH Ship Log: Radio Tower",
+        "region": "Timber Hearth", "requires": [ { "item": "Signalscope" } ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041001, "name": "EotE Ship Log: The Stranger",
+        "region": "Menu", "requires": [] // in rando, this will be a freebie like Village 1
+    },
+
+    // River Lowlands (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041002, "name": "EotE Ship Log: River Lowlands 1 - Visit",
+        "region": "River Lowlands", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041003, "name": "EotE Ship Log: River Lowlands 2 - Workshop",
+        "region": "River Lowlands", "requires": [
+            { "item": "Ghost Matter Wavelength" }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041004, "name": "EotE Ship Log: Lowlands Slide Reel 1 - Origin",
+        "region": "River Lowlands", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041005, "name": "EotE Ship Log: Lowlands Slide Reel 2 - Burned",
+        "region": "River Lowlands", "requires": []
+    },
+
+    // Cinder Isles (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041006, "name": "EotE Ship Log: Cinder Isles 1 - Visit",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041007, "name": "EotE Ship Log: Cinder Isles 2 - Eye",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041008, "name": "EotE Ship Log: Cinder Isles Slide Reel 1 - Anomaly",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041009, "name": "EotE Ship Log: Cinder Isles Slide Reel 2 - Burned",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041010, "name": "EotE Ship Log: Island Tower 1 - Upper Floors",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041011, "name": "EotE Ship Log: Island Tower 2 - Slide Reel",
+        "region": "Cinder Isles", "requires": []
+    },
+
+    // Hidden Gorge (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041012, "name": "EotE Ship Log: Hidden Gorge 1 - Visit",
+        "region": "Hidden Gorge", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041013, "name": "EotE Ship Log: Hidden Gorge Slide Reel 1 - Green Fire",
+        "region": "Hidden Gorge", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041014, "name": "EotE Ship Log: Hidden Gorge Slide Reel 2 - Burned",
+        "region": "Hidden Gorge", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041015, "name": "EotE Ship Log: Laboratory 1 - Enter",
+        "region": "Hidden Gorge Laboratory", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041016, "name": "EotE Ship Log: Laboratory 2 - Sleep",
+        "region": "Hidden Gorge Laboratory", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041017, "name": "EotE Ship Log: Laboratory 3 - Experiments",
+        "region": "Hidden Gorge Laboratory", "requires": []
+    },
+
+    // Reservoir (first pass)
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041018, "name": "EotE Ship Log: Reservoir 1 - Visit",
+        "region": "Reservoir", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041019, "name": "EotE Ship Log: Reservoir 2 - Broken Connection",
+        "region": "Reservoir", "requires": [
+            { "anyOf": [
+                { "item": "Scout" }, // the door code is written down inside the building
+                { "region": "Cinder Isles Symbol Room" } // and also in the symbol room
+            ] }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041020, "name": "EotE Ship Log: Reservoir 3 - Predicted Radius",
+        "region": "Reservoir", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041021, "name": "EotE Ship Log: Reservoir Slide Reel 1 - Vault",
+        "region": "Reservoir", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041022, "name": "EotE Ship Log: Reservoir Slide Reel 2 - Burned",
+        "region": "Reservoir", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041023, "name": "EotE Ship Log: Submerged Structure 1 - Enter",
+        "region": "Reservoir", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041024, "name": "EotE Ship Log: Submerged Structure 2 - Vault",
+        "region": "Reservoir", "requires": []
+    },
+
+    // Dreamworld/Simulation (first pass)
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041025, "name": "DW Ship Log: Shrouded Woodlands 1 - Visit",
+        "region": "Shrouded Woodlands", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041026, "name": "DW Ship Log: Shrouded Woodlands 2 - Music",
+        "region": "Shrouded Woodlands", "requires": [
+            { "item": "Dream Totem Patch" } // project a bridge to the island closest to the "party house"
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041027, "name": "DW Ship Log: Shrouded Woodlands 3 - Covered Bridge",
+        "region": "Shrouded Woodlands", "requires": [
+            { "item": "Dream Totem Patch" } // project the bridge
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041028, "name": "DW Ship Log: Starlit Cove 1 - Visit",
+        "region": "Starlit Cove", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041029, "name": "DW Ship Log: Starlit Cove 2 - Alarm Bell",
+        "region": "Starlit Cove", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041030, "name": "DW Ship Log: Starlit Cove 3 - Burned Building",
+        "region": "Starlit Cove", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041031, "name": "DW Ship Log: Starlit Cove 4 - Upper Floors",
+        "region": "Starlit Cove", "requires": [
+            { "item": "Dream Totem Patch" } // project dock w/ walkway to lower tower entrance
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041032, "name": "DW Ship Log: Endless Canyon 1 - Visit",
+        "region": "Endless Canyon", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041033, "name": "DW Ship Log: Endless Canyon 2 - Mural",
+        "region": "Endless Canyon", "requires": [
+            { "item": "Dream Totem Patch" } // project multiple bridges, and hand warp to reach 2nd projection totem
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041034, "name": "DW Ship Log: Subterranean Lake 1 - Visit",
+        "region": "Subterranean Lake", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041035, "name": "DW Ship Log: Subterranean Lake 2 - Green Light",
+        "region": "Subterranean Lake", "requires": []
+    },
+
+    // The Stranger (second pass, after subterranean lake vision)
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041036, "name": "EotE Ship Log: Symbol Room 1 - Enter",
+        "region": "Cinder Isles Symbol Room", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041037, "name": "EotE Ship Log: Symbol Room 2 - Burned Away",
+        "region": "Cinder Isles Symbol Room", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041038, "name": "EotE Ship Log: Symbol Room 3 - Reel Symbol",
+        "region": "Cinder Isles Symbol Room", "requires": []
+    },
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041039, "name": "EotE Ship Log: Abandoned Temple 1 - Enter",
+        "region": "Abandoned Temple", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041040, "name": "EotE Ship Log: Abandoned Temple 2 - Symbols",
+        "region": "Abandoned Temple", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041041, "name": "EotE Ship Log: Abandoned Temple 3 - Secret Room",
+        "region": "Abandoned Temple", "requires": [
+            { "location": "EotE: Symbol Room Temple Code" }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041042, "name": "EotE Ship Log: Abandoned Temple 4 - Reels",
+        "region": "Abandoned Temple", "requires": [
+            { "location": "EotE: Symbol Room Temple Code" }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041043, "name": "EotE Ship Log: Map Projection 1",
+        "region": "Abandoned Temple", "requires": [
+            { "location": "EotE: Symbol Room Temple Code" }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041044, "name": "EotE Ship Log: Map Projection 2",
+        "region": "Abandoned Temple", "requires": [
+            { "location": "EotE: Symbol Room Temple Code" }
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041045, "name": "EotE Ship Log: Map Projection 3",
+        "region": "Abandoned Temple", "requires": [
+            { "location": "EotE: Symbol Room Temple Code" }
+        ]
+    },
+
+    // Slide Burning Rooms
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041046, "name": "EotE Ship Log: River Lowlands Secret Room 1 - Enter",
+        "region": "River Lowlands", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041047, "name": "EotE Ship Log: River Lowlands Secret Room 2 - Slide Reel",
+        "region": "River Lowlands", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041048, "name": "EotE Ship Log: Cinder Isles Secret Room 1 - Enter",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041049, "name": "EotE Ship Log: Cinder Isles Secret Room 2 - Slide Reel",
+        "region": "Cinder Isles", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041050, "name": "EotE Ship Log: Hidden Gorge Secret Room 1 - Enter",
+        "region": "Hidden Gorge", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041051, "name": "EotE Ship Log: Hidden Gorge Secret Room 2 - Slide Reel",
+        "region": "Hidden Gorge", "requires": [
+            { "item": "Stranger Light Modulator" },
+            { "item": "Scout" } // shoot the scout through a small hole so its lights can reach the door sensor
+        ]
+    },
+
+    // Dreamworld Secret Libraries
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041052, "name": "DW Ship Log: Shrouded Woodlands Archive 1 - Enter",
+        "region": "Shrouded Woodlands Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041053, "name": "DW Ship Log: Shrouded Woodlands Archive 2 - Destroyed Again",
+        "region": "Shrouded Woodlands Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041054, "name": "DW Ship Log: Shrouded Woodlands Archive 3 - Origin",
+        "region": "Shrouded Woodlands Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041055, "name": "DW Ship Log: Shrouded Woodlands Archive 4 - Sacrifice",
+        "region": "Shrouded Woodlands Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041056, "name": "DW Ship Log: Shrouded Woodlands Archive 5 - Jumping Off",
+        "region": "Shrouded Woodlands Archive", "requires": []
+    },
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041057, "name": "DW Ship Log: Starlit Cove Archive 1 - Enter",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041058, "name": "DW Ship Log: Starlit Cove Archive 2 - Destroyed Again",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041059, "name": "DW Ship Log: Starlit Cove Archive 3 - Anomaly",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041060, "name": "DW Ship Log: Starlit Cove Archive 4 - Signal Blocker",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041061, "name": "DW Ship Log: Starlit Cove Archive 5 - After Death",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041062, "name": "DW Ship Log: Starlit Cove Archive 6 - Failing Bell",
+        "region": "Starlit Cove Archive", "requires": []
+    },
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041063, "name": "DW Ship Log: Endless Canyon Archive 1 - Enter",
+        "region": "Endless Canyon Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041064, "name": "DW Ship Log: Endless Canyon Archive 2 - Destroyed Again",
+        "region": "Endless Canyon Archive", "requires": [
+            { "item": "Projection Range Patch" } // use invisible bridges to reach this burned code
+        ]
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041065, "name": "DW Ship Log: Endless Canyon Archive 3 - Green Fire",
+        "region": "Endless Canyon Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041066, "name": "DW Ship Log: Endless Canyon Archive 4 - Simulated",
+        "region": "Endless Canyon Archive", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041067, "name": "DW Ship Log: Endless Canyon Archive 5 - Walking Beyond",
+        "region": "Endless Canyon Archive", "requires": []
+    },
+
+    // Dreamworld Finale
+
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041068, "name": "DW Ship Log: Sealed Vault 1 - Imprisoned",
+        "region": "Sealed Vault", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041069, "name": "DW Ship Log: Sealed Vault 2 - Actions",
+        "region": "Sealed Vault", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041070, "name": "DW Ship Log: Sealed Vault 3 - History",
+        "region": "Sealed Vault", "requires": []
+    },
+    {
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041071, "name": "DW Ship Log: Sealed Vault 4 - Farewell",
+        "region": "Sealed Vault", "requires": []
+    },
+
+// Victory events
+
+    {
+        "address": null, "name": "Victory - Song of Five",
+        "region": "The Vessel",
+        "requires": [
+            { "item": "Warp Core Installation Manual" }, // all the "Song of..." victories need these 3
+            { "item": "Coordinates" },
+            { "location": "AT: Enter the ATP" }
+        ]
+    },
+    {
+        "address": null, "name": "Victory - Song of the Nomai",
+        "region": "The Vessel",
+        "requires": [
+            { "item": "Warp Core Installation Manual" },
+            { "item": "Coordinates" },
+            { "location": "AT: Enter the ATP" },
+            { "location": "QM: Explore the Sixth Location" } // Nomai means meeting Solanum
+        ]
+    },
+    {
+        "address": null, "name": "Victory - Song of the Stranger",
+        "region": "The Vessel",
+        "requires": [
+            { "item": "Warp Core Installation Manual" },
+            { "item": "Coordinates" },
+            { "location": "AT: Enter the ATP" },
+            { "region": "Sealed Vault" } // Stranger means meeting Prisoner
+        ]
+    },
+    {
+        "address": null, "name": "Victory - Song of Six",
+        "region": "The Vessel",
+        "requires": [
+            { "item": "Warp Core Installation Manual" },
+            { "item": "Coordinates" },
+            { "location": "AT: Enter the ATP" },
+            { "anyOf": [ // Six means either Solanum OR Prisoner
+                { "location": "QM: Explore the Sixth Location" },
+                { "region": "Sealed Vault" }
+            ] }
+        ]
+    },
+    {
+        "address": null, "name": "Victory - Song of Seven",
+        "region": "The Vessel",
+        "requires": [
+            { "item": "Warp Core Installation Manual" },
+            { "item": "Coordinates" },
+            { "location": "AT: Enter the ATP" },
+            { "location": "QM: Explore the Sixth Location" }, // Seven means both Solanum AND Prisoner
+            { "region": "Sealed Vault" }
+        ]
+    },
+    {
+        "address": null, "name": "Victory - Echoes of the Eye",
+        "region": "Sealed Vault", "requires": []
     }
 ]

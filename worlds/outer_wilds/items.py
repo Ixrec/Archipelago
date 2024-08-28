@@ -5,7 +5,7 @@ import typing
 from typing import Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import Item, ItemClassification
-from .options import EarlyKeyItem, Spawn
+from .options import EarlyKeyItem, OuterWildsGameOptions, Spawn, get_creation_settings
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld
@@ -18,6 +18,7 @@ class OuterWildsItem(Item):
 class OuterWildsItemData(NamedTuple):
     code: Optional[int] = None
     type: ItemClassification = ItemClassification.filler
+    creation_settings: Optional[List[str]] = None
 
 
 pickled_data = pkgutil.get_data(__name__, "shared_static_logic/static_logic.pickle")
@@ -34,7 +35,8 @@ item_data_table: Dict[str, OuterWildsItemData] = {}
 for items_data_entry in items_data:
     item_data_table[items_data_entry["name"]] = OuterWildsItemData(
         code=(items_data_entry["code"] if "code" in items_data_entry else None),
-        type=item_types_map[items_data_entry["type"]]
+        type=item_types_map[items_data_entry["type"]],
+        creation_settings=(items_data_entry["creation_settings"] if "creation_settings" in items_data_entry else None)
     )
 
 all_non_event_items_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
@@ -115,15 +117,23 @@ repeatable_filler_weights = {
 }
 
 
+def get_items_to_create(options: OuterWildsGameOptions) -> Dict[str, OuterWildsItemData]:
+    relevant_settings = get_creation_settings(options)
+    return {k: v for k, v in item_data_table.items()
+            if v.creation_settings is None or relevant_settings.issuperset(v.creation_settings)}
+
+
 def create_items(world: "OuterWildsWorld") -> None:
     random = world.random
     multiworld = world.multiworld
     options = world.options
     player = world.player
 
+    items_to_create = get_items_to_create(options)
+
     prog_and_useful_items: List[OuterWildsItem] = []
     unique_filler: List[OuterWildsItem] = []
-    for name, item in item_data_table.items():
+    for name, item in items_to_create.items():
         if item.code is None:
             # here we rely on our event items and event locations having identical names
             multiworld.get_location(name, player).place_locked_item(create_item(player, name))

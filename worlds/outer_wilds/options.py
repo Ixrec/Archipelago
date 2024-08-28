@@ -1,17 +1,28 @@
 from dataclasses import dataclass
 
 from schema import Schema, And
+from typing import Set
 
 from Options import Choice, DefaultOnToggle, OptionDict, PerGameCommonOptions, Range, StartInventoryPool, Toggle
 
 
 class Goal(Choice):
-    """The victory condition for your Archipelago run.
-    Song of Five: Reach the Eye
-    Song of Six: Reach the Eye after meeting Solanum"""
+    """The victory condition for your Archipelago run. Goals involving the Prisoner require enable_eote_dlc to be true.
+
+    Song of Five:         Reach the Eye
+    Song of the Nomai:    Reach the Eye after meeting Solanum
+    Song of the Stranger: Reach the Eye after meeting the Prisoner
+    Song of Six:          Reach the Eye after meeting either Solanum or the Prisoner
+    Song of Seven:        Reach the Eye after meeting both Solanum and the Prisoner
+    Echoes of the Eye:    Meet the Prisoner and complete the DLC
+    """
     display_name = "Goal"
     option_song_of_five = 0
-    option_song_of_six = 1
+    option_song_of_the_nomai = 1
+    option_song_of_the_stranger = 2
+    option_song_of_six = 3
+    option_song_of_seven = 4
+    option_echoes_of_the_eye = 5
 
 
 class RandomizeCoordinates(DefaultOnToggle):
@@ -140,12 +151,21 @@ class RandomizeWarpPlatforms(Toggle):
     display_name = "Randomize Warp Platforms"
 
 
+class EnableEchoesOfTheEyeDLC(Toggle):
+    """
+    Incorporates Echoes of the Eye content into the randomizer in the form of an additional 10 items and 33 locations.
+    If logsanity is enabled, that will add another 72 locations, for a total of 105 DLC locations.
+    """
+    display_name = "Enable Echoes of the Eye DLC"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
     goal: Goal
     spawn: Spawn
     early_key_item: EarlyKeyItem
+    enable_eote_dlc: EnableEchoesOfTheEyeDLC
     randomize_coordinates: RandomizeCoordinates
     randomize_orbits: RandomizeOrbits
     randomize_warp_platforms: RandomizeWarpPlatforms
@@ -155,3 +175,12 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     death_link: DeathLink
     logsanity: Logsanity
     shuffle_spacesuit: ShuffleSpacesuit
+
+
+def get_creation_settings(options: OuterWildsGameOptions) -> Set[str]:
+    relevant_settings = set()
+    if options.logsanity.value == 1:
+        relevant_settings.add("logsanity")
+    if options.enable_eote_dlc.value == 1:
+        relevant_settings.add("enable_eote_dlc")
+    return relevant_settings

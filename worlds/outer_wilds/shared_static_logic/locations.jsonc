@@ -1034,21 +1034,16 @@
     {
         "creation_settings": [ "logsanity" ], "address": 1085039152, "name": "Ship Log: WHS 2 - Alignment",
         "region": "White Hole Station", "requires": [
-            { "item": "Translator" },
-            { "anyOf": [ // projection stone text, requires carrying it out of WHS
-                { "item": "Launch Codes" },
-                { "item": "Nomai Warp Codes" }
-            ] }
+            { "item": "Translator" },  // This is projection stone text, which requires carrying it back to BH.
+            { "item": "Launch Codes" } // Because of warp rando, we can't assume warp codes let you warp from WHS to BH,
+                                       // so for logic we only accept Launch Codes (see also HCC->BHF connection).
         ]
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039153, "name": "Ship Log: WHS 3 - Temporal Anomaly",
         "region": "White Hole Station", "requires": [
-            { "item": "Translator" },
-            { "anyOf": [ // projection stone text, requires carrying it out of WHS
-                { "item": "Launch Codes" },
-                { "item": "Nomai Warp Codes" }
-            ] }
+            { "item": "Translator" }, // more projection stone text, see previous comment
+            { "item": "Launch Codes" }
         ]
     },
     {

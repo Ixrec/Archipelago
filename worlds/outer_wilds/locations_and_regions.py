@@ -120,15 +120,14 @@ def create_regions(world: "OuterWildsWorld") -> None:
         }, OuterWildsLocation)
 
         exit_connections = [cd for cd in connections_data if cd["from"] == region_name]
-        exit_names = []
-        rules = {}
-        for exit_connection in exit_connections:
-            exit_name = exit_connection["to"]
-            assert exit_name not in exit_names
-            exit_names.append(exit_name)
-            rule = exit_connection["requires"]
-            rules[exit_name] = None if len(rule) == 0 else lambda state, r=rule: eval_rule(state, p, r)
-        region.add_exits(exit_names, rules)
+        for connection in exit_connections:
+            to = connection["to"]
+            requires = connection["requires"]
+            rule = None if len(requires) == 0 else lambda state, r=requires: eval_rule(state, p, r)
+            entrance = region.connect(mw.get_region(to, p), None, rule)
+            indirect_regions = regions_referenced_by_rule(requires)
+            for indirect_region in indirect_regions:
+                mw.register_indirect_condition(indirect_region, entrance)
 
     # add access rules to the created locations
     for ld in locations_data:
@@ -227,3 +226,30 @@ def eval_criterion(state: CollectionState, p: int, criterion: Any) -> bool:
             return state.can_reach(value, "Region", p)
 
     raise ValueError("Unable to evaluate rule criterion: " + json.dumps(criterion))
+
+
+# Per AP docs:
+# "When using state.can_reach within an entrance access condition,
+# you must also use multiworld.register_indirect_condition."
+# And to call register_indirect_condition, we need to know what regions a rule is referencing.
+# Figuring out the regions referenced by a rule ends up being very similar to evaluating that rule.
+def regions_referenced_by_rule(rule: [Any]) -> [str]:
+    return [region for criterion in rule for region in regions_referenced_by_criterion(criterion)]
+
+
+def regions_referenced_by_criterion(criterion: Any) -> [str]:
+    # see eval_criterion comments
+    if isinstance(criterion, dict):
+        if len(criterion.items()) != 1:
+            return False
+        key, value = next(iter(criterion.items()))
+        if key == "item":
+            return []
+        elif key == "anyOf":
+            return [region for sub_criterion in value for region in regions_referenced_by_criterion(sub_criterion)]
+        elif key == "location":
+            return [location_data_table[value].region]
+        elif key == "region":
+            return [value]
+
+    raise ValueError("Invalid rule criterion: " + json.dumps(criterion))

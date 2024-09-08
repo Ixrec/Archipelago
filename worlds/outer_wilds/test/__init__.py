@@ -78,64 +78,43 @@ class OuterWildsTestBase(WorldTestBase):
                     f"but it requires exactly {item_names} to reach, so it should be"
                 )
 
-    def test_all_worlds(self) -> None:
-        self.assertAccessDependency(
-            ["Victory - Song of Five", "Victory - Song of Six"],
-            [["Coordinates"]]
-        )
+    song_of_five_required_items = [
+        "Spacesuit",
+        "Launch Codes",
+        "Nomai Warp Codes",
+        "Warp Core Installation Manual",
+        "Silent Running Mode",
+        "Signalscope",
+        "Distress Beacon Frequency",
+        "Escape Pod 3 Signal",
+        "Scout",
+        "Coordinates"
+    ]
 
+    # "additional" relative to song of five
+    song_of_the_nomai_additional_required_items = [
+        "Imaging Rule",
+        "Shrine Door Codes",
+        "Entanglement Rule"
+    ]
+
+    def test_all_worlds(self) -> None:
         # for now, we create the Victory events unconditionally, and the Goal
         # setting only changes which one is used in the completion_condition,
         # so these "go mode" tests pass regardless of the Goal setting
-        self.assertRequiresAllOf("Victory - Song of Five", [
-            "Spacesuit",
-            "Launch Codes",
-            "Nomai Warp Codes",
-            "Warp Core Installation Manual",
-            "Silent Running Mode",
-            "Signalscope",
-            "Distress Beacon Frequency",
-            "Escape Pod 3 Signal",
-            "Scout",
-            "Coordinates"
-        ])
+        self.assertRequiresAllOf("Victory - Song of Five", self.song_of_five_required_items)
 
-        self.assertNotReachableWith("Victory - Song of Six", [
-            "Spacesuit",
-            "Launch Codes",
-            "Nomai Warp Codes",
-            "Warp Core Installation Manual",
-            "Silent Running Mode",
-            "Signalscope",
-            "Distress Beacon Frequency",
-            "Escape Pod 3 Signal",
-            "Scout",
-            "Coordinates"
-        ])
+        self.assertNotReachableWith("Victory - Song of the Nomai", self.song_of_five_required_items)
 
-        self.assertRequiresAllOf("Victory - Song of Six", [
-            "Spacesuit",
-            "Launch Codes",
-            "Nomai Warp Codes",
-            "Warp Core Installation Manual",
-            "Silent Running Mode",
-            "Signalscope",
-            "Distress Beacon Frequency",
-            "Escape Pod 3 Signal",
-            "Scout",
-            "Coordinates",
-            # added by Song of Six
-            "Imaging Rule",
-            "Shrine Door Codes",
-            "Entanglement Rule"
-        ])
+        self.assertRequiresAllOf("Victory - Song of the Nomai",
+                                 self.song_of_five_required_items + self.song_of_the_nomai_additional_required_items)
 
 
 class TestDefaultWorld(OuterWildsTestBase):
     options = {}
 
     def test_default_world(self):
-        self.assertEqual(self.getLocationCount(), 90)  # default locations, including Victory events
+        self.assertEqual(self.getLocationCount(), 90)  # default locations, including 2 Victory events
 
         # with default locations, Insulation only blocks 2 checks
         self.assertAccessDependency(
@@ -161,10 +140,16 @@ class TestDefaultWorld(OuterWildsTestBase):
             "Silent Running Mode", "Scout"
         ])
 
+        # On default options, these are the only two goals, and the only locations requiring coordinates
+        self.assertAccessDependency(
+            ["Victory - Song of Five", "Victory - Song of the Nomai"],
+            [["Coordinates"]]
+        )
 
-class TestSongOfSixWorld(OuterWildsTestBase):
+
+class TestSongOfNomaiWorld(OuterWildsTestBase):
     options = {
-        "goal": Goal.option_song_of_six
+        "goal": Goal.option_song_of_the_nomai
     }
 
     def test_six_world(self):
@@ -183,7 +168,7 @@ class TestLogsanityWorld(OuterWildsTestBase):
     }
 
     def test_logsanity_world(self):
-        self.assertEqual(self.getLocationCount(), 266)  # 90 default + 176 logsanity locations
+        self.assertEqual(self.getLocationCount(), 266)  # 88(+2V) default + 176 logsanity locations
 
         # make sure the logsanity locations exist; this one requires nothing to reach
         self.assertReachableWith("TH Ship Log: Village 1 - Identify", [])
@@ -224,10 +209,10 @@ class TestSuitlessWorld(OuterWildsTestBase):
     }
 
 
-class TestSuitlessSongOfSixWorld(OuterWildsTestBase):
+class TestSuitlessSongOfNomaiWorld(OuterWildsTestBase):
     options = {
         "shuffle_spacesuit": "true",
-        "goal": Goal.option_song_of_six
+        "goal": Goal.option_song_of_the_nomai
     }
 
 
@@ -238,11 +223,11 @@ class TestSuitlessLogsanityWorld(OuterWildsTestBase):
     }
 
 
-class TestSuitlessLogsanitySongOfSixWorld(OuterWildsTestBase):
+class TestSuitlessLogsanitySongOfNomaiWorld(OuterWildsTestBase):
     options = {
         "shuffle_spacesuit": "true",
         "logsanity": "true",
-        "goal": Goal.option_song_of_six
+        "goal": Goal.option_song_of_the_nomai
     }
 
     def test_suitless_logic(self):

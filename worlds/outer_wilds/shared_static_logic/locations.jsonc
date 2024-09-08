@@ -1696,7 +1696,7 @@
         ]
     },
     {
-        "address": null, "name": "Victory - Song of the Stranger",
+        "creation_settings": [ "enable_eote_dlc" ], "address": null, "name": "Victory - Song of the Stranger",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
@@ -1706,7 +1706,7 @@
         ]
     },
     {
-        "address": null, "name": "Victory - Song of Six",
+        "creation_settings": [ "enable_eote_dlc" ], "address": null, "name": "Victory - Song of Six",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
@@ -1719,7 +1719,7 @@
         ]
     },
     {
-        "address": null, "name": "Victory - Song of Seven",
+        "creation_settings": [ "enable_eote_dlc" ], "address": null, "name": "Victory - Song of Seven",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
@@ -1730,7 +1730,7 @@
         ]
     },
     {
-        "address": null, "name": "Victory - Echoes of the Eye",
+        "creation_settings": [ "enable_eote_dlc" ], "address": null, "name": "Victory - Echoes of the Eye",
         "region": "Sealed Vault", "requires": []
     }
 ]

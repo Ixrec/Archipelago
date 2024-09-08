@@ -77,8 +77,8 @@
 
     { "code": null, "name": "Victory - Song of Five", "type": "progression" },
     { "code": null, "name": "Victory - Song of the Nomai", "type": "progression" },
-    { "code": null, "name": "Victory - Song of the Stranger", "type": "progression" },
-    { "code": null, "name": "Victory - Song of Six", "type": "progression" },
-    { "code": null, "name": "Victory - Song of Seven", "type": "progression" },
-    { "code": null, "name": "Victory - Echoes of the Eye", "type": "progression" }
+    { "creation_settings": [ "enable_eote_dlc" ], "code": null, "name": "Victory - Song of the Stranger", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": null, "name": "Victory - Song of Six", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": null, "name": "Victory - Song of Seven", "type": "progression" },
+    { "creation_settings": [ "enable_eote_dlc" ], "code": null, "name": "Victory - Echoes of the Eye", "type": "progression" }
 ]

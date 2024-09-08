@@ -7,12 +7,68 @@ class TestDLC(OuterWildsTestBase):
     }
 
     def test_eote_dlc(self):
-        self.assertEqual(self.getLocationCount(), 123)  # 90 base game + 33 DLC locations
+        self.assertEqual(self.getLocationCount(), 127)  # 88(+2V) base game + 33(+4V) DLC locations
 
         self.assertNotReachableWith("EotE: River Lowlands Workshop", [])
         self.assertReachableWith("EotE: River Lowlands Workshop", [
             "Ghost Matter Wavelength"
         ])
+
+    def test_eote_goals(self):
+        # With DLC enabled there are more victory events, but "only 'Song of' goals need Coordinates" remains true
+        self.assertAccessDependency(
+            [
+                "Victory - Song of Five", "Victory - Song of the Nomai", "Victory - Song of the Stranger",
+                "Victory - Song of Six", "Victory - Song of Seven"
+            ],
+            [["Coordinates"]]
+        )
+
+        # these items are required on every path to the Prisoner
+        eote_required_items = [
+            "Launch Codes",  # to get to Stranger without spawning there
+            "Dream Totem Patch",  # all paths to Dream Raft Loop involve a totem or two
+            "Limbo Warp Patch",  # need all 3 glitches to enter the finale from Dream Raft Loop
+            "Projection Range Patch",
+            "Alarm Bypass Patch",
+        ]
+        # getting from Stranger to Dreamworld is the part with multiple "item paths"
+        self.assertReachableWith("Victory - Echoes of the Eye", eote_required_items + [
+            "Stranger Light Modulator", "Hidden Gorge Painting Code"
+        ])
+        self.assertReachableWith("Victory - Echoes of the Eye", eote_required_items + [
+            "Breach Override Codes", "Hidden Gorge Painting Code"
+        ])
+        self.assertReachableWith("Victory - Echoes of the Eye", eote_required_items + [
+            "Ghost Matter Wavelength", "River Lowlands Painting Code"
+        ])
+        self.assertReachableWith("Victory - Echoes of the Eye", eote_required_items + [
+            "Ghost Matter Wavelength", "Stranger Light Modulator", "Cinder Isles Painting Code"
+        ])
+
+        self.assertReachableWith(
+            "Victory - Song of the Stranger",
+            self.song_of_five_required_items +
+            eote_required_items + ["Ghost Matter Wavelength", "River Lowlands Painting Code"]
+        )
+
+        self.assertReachableWith(
+            "Victory - Song of Six",
+            self.song_of_five_required_items +
+            eote_required_items + ["Ghost Matter Wavelength", "River Lowlands Painting Code"]
+        )
+        self.assertReachableWith(
+            "Victory - Song of Six",
+            self.song_of_five_required_items +
+            self.song_of_the_nomai_additional_required_items
+        )
+
+        self.assertReachableWith(
+            "Victory - Song of Seven",
+            self.song_of_five_required_items +
+            self.song_of_the_nomai_additional_required_items +
+            eote_required_items + ["Ghost Matter Wavelength", "River Lowlands Painting Code"]
+        )
 
 
 class TestDLCWithLogsanity(OuterWildsTestBase):
@@ -22,9 +78,9 @@ class TestDLCWithLogsanity(OuterWildsTestBase):
     }
 
     def test_eote_dlc(self):
-        # 90 base game default locations + 176 base game logsanity locations +
-        # 33 DLC default locations + 72 DLC logsanity locations
-        self.assertEqual(self.getLocationCount(), 371)
+        # 88(+2V) base game default locations + 176 base game logsanity locations +
+        # 33(+4V) DLC default locations + 72 DLC logsanity locations
+        self.assertEqual(self.getLocationCount(), 375)
 
         # the obvious route: use the RL artifact on the RL flame
         self.assertReachableWith("DW Ship Log: Shrouded Woodlands 1 - Visit", [

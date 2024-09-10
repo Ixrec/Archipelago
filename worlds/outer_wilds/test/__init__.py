@@ -114,7 +114,7 @@ class TestDefaultWorld(OuterWildsTestBase):
     options = {}
 
     def test_default_world(self):
-        self.assertEqual(self.getLocationCount(), 90)  # default locations, including 2 Victory events
+        self.assertEqual(self.getLocationCount(), 89)  # default locations, including 2 Victory events
 
         # with default locations, Insulation only blocks 2 checks
         self.assertAccessDependency(
@@ -153,7 +153,7 @@ class TestSongOfNomaiWorld(OuterWildsTestBase):
     }
 
     def test_six_world(self):
-        self.assertEqual(self.getLocationCount(), 90)  # same as song of five
+        self.assertEqual(self.getLocationCount(), 89)  # same as song of five
 
         # same as song of five
         self.assertAccessDependency(
@@ -168,7 +168,7 @@ class TestLogsanityWorld(OuterWildsTestBase):
     }
 
     def test_logsanity_world(self):
-        self.assertEqual(self.getLocationCount(), 266)  # 88(+2V) default + 176 logsanity locations
+        self.assertEqual(self.getLocationCount(), 265)  # 87(+2V) default + 176 logsanity locations
 
         # make sure the logsanity locations exist; this one requires nothing to reach
         self.assertReachableWith("TH Ship Log: Village 1 - Identify", [])

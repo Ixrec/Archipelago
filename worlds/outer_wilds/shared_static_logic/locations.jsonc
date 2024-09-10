@@ -1591,7 +1591,7 @@
         "region": "Shrouded Woodlands Archive", "requires": []
     },
     {
-        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041053, "name": "DW Ship Log: Shrouded Woodlands Archive 2 - Destroyed Again",
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041053, "name": "DW Ship Log: Shrouded Woodlands Archive 2 - Destroyed",
         "region": "Shrouded Woodlands Archive", "requires": []
     },
     {
@@ -1612,7 +1612,7 @@
         "region": "Starlit Cove Archive", "requires": []
     },
     {
-        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041058, "name": "DW Ship Log: Starlit Cove Archive 2 - Destroyed Again",
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041058, "name": "DW Ship Log: Starlit Cove Archive 2 - Destroyed",
         "region": "Starlit Cove Archive", "requires": []
     },
     {
@@ -1637,7 +1637,7 @@
         "region": "Endless Canyon Archive", "requires": []
     },
     {
-        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041064, "name": "DW Ship Log: Endless Canyon Archive 2 - Destroyed Again",
+        "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041064, "name": "DW Ship Log: Endless Canyon Archive 2 - Destroyed",
         "region": "Endless Canyon Archive", "requires": [
             { "item": "Projection Range Patch" } // use invisible bridges to reach this burned code
         ]

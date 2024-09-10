@@ -7,7 +7,7 @@ class TestDLC(OuterWildsTestBase):
     }
 
     def test_eote_dlc(self):
-        self.assertEqual(self.getLocationCount(), 127)  # 88(+2V) base game + 33(+4V) DLC locations
+        self.assertEqual(self.getLocationCount(), 127)  # 87(+2V) base game + 34(+4V) DLC locations
 
         self.assertNotReachableWith("EotE: River Lowlands Workshop", [])
         self.assertReachableWith("EotE: River Lowlands Workshop", [
@@ -77,9 +77,9 @@ class TestDLCWithLogsanity(OuterWildsTestBase):
         "logsanity": 1
     }
 
-    def test_eote_dlc(self):
-        # 88(+2V) base game default locations + 176 base game logsanity locations +
-        # 33(+4V) DLC default locations + 72 DLC logsanity locations
+    def test_eote_dlc_with_logsanity(self):
+        # 87(+2V) base game default locations + 176 base game logsanity locations +
+        # 34(+4V) DLC default locations + 72 DLC logsanity locations
         self.assertEqual(self.getLocationCount(), 375)
 
         # the obvious route: use the RL artifact on the RL flame

@@ -1118,7 +1118,9 @@
         "region": "Sixth Location", "requires": [ { "item": "Translator" } ]
     },
 
-    // didn't add these until DLC integration because I was unsure how these would work and if a DLC-less game has these
+    // I didn't add these until DLC integration because a) I wasn't sure if a DLC-less game had any of all of these,
+    // and b) I hadn't decided whether this satellite photo puzzle would be part of logically reaching The Stranger.
+    // Turns out the radio signals are in the base game, and only the tape recorders are DLC-exclusive.
     {
         "address": 1085039177, "name": "TH: Scan Radio Tower Signal",
         "region": "Timber Hearth", "requires": [
@@ -1134,7 +1136,7 @@
         ]
     },
     {
-        "address": 1085039179, "name": "Gabbro's Satellite Recorder",
+        "creation_settings": [ "enable_eote_dlc" ], "address": 1085039179, "name": "Gabbro's Satellite Recorder",
         "region": "Space", "requires": []
     },
 
@@ -1331,7 +1333,7 @@
 
     {
         "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041000, "name": "TH Ship Log: Radio Tower",
-        "region": "Timber Hearth", "requires": [ { "item": "Signalscope" } ]
+        "region": "Timber Hearth", "requires": []
     },
     {
         "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041001, "name": "EotE Ship Log: The Stranger",

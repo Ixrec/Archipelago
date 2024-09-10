@@ -1403,7 +1403,7 @@
     },
     {
         "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041016, "name": "EotE Ship Log: Laboratory 2 - Sleep",
-        "region": "Hidden Gorge Laboratory", "requires": []
+        "region": "Hidden Gorge Laboratory", "requires": [ { "item": "Stranger Light Modulator" } ]
     },
     {
         "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041017, "name": "EotE Ship Log: Laboratory 3 - Experiments",

@@ -10,7 +10,7 @@ from .orbits import generate_random_orbits
 from .warp_platforms import generate_random_warp_platform_mapping
 from .items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .locations_and_regions import all_non_event_locations_table, location_name_groups, create_regions
-from .options import OuterWildsGameOptions, RandomizeDarkBrambleLayout, Spawn
+from .options import OuterWildsGameOptions, RandomizeDarkBrambleLayout, Spawn, Goal
 
 
 class OuterWildsWebWorld(WebWorld):
@@ -46,6 +46,16 @@ class OuterWildsWorld(World):
 
     def generate_early(self) -> None:
         # validate options
+        if not self.options.enable_eote_dlc:
+            if self.options.spawn == Spawn.option_stranger:
+                raise OptionError('Incompatible options: stranger spawn requires enable_eote_dlc to be true')
+            if self.options.goal in [
+                Goal.option_song_of_the_stranger,
+                Goal.option_song_of_seven,
+                Goal.option_echoes_of_the_eye
+            ]:
+                raise OptionError('Incompatible options: goal %s requires enable_eote_dlc to be true', self.options.goal)
+
         if self.options.shuffle_spacesuit and self.options.spawn != Spawn.option_vanilla:
             raise OptionError('Incompatible options: shuffle_spacesuit is true and spawn is non-vanilla (%s)', self.options.spawn)
 

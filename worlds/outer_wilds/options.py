@@ -153,8 +153,11 @@ class RandomizeWarpPlatforms(Toggle):
 
 class EnableEchoesOfTheEyeDLC(Toggle):
     """
-    Incorporates Echoes of the Eye content into the randomizer in the form of an additional 10 items and 33 locations.
-    If logsanity is enabled, that will add another 72 locations, for a total of 105 DLC locations.
+    Incorporates Echoes of the Eye content into the randomizer with an additional 10 items and 34 locations.
+    If logsanity is enabled, that will add another 72 locations, for a total of 106 DLC locations.
+
+    When this is enabled, the randomizer mod will give you the "The Stranger" ship log automatically,
+    so you can fly there without repeating the satellite puzzle (once you have Launch Codes).
     """
     display_name = "Enable Echoes of the Eye DLC"
 

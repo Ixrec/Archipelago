@@ -151,6 +151,8 @@ def create_regions(world: "OuterWildsWorld") -> None:
         menu.add_exits(["Brittle Hollow"])
     elif world.spawn == Spawn.option_giants_deep:
         menu.add_exits(["Giant's Deep"])
+    elif world.spawn == Spawn.option_stranger:
+        menu.add_exits(["Stranger Sunside Hangar"])
 
     if world.warps == 'vanilla':
         def has_codes(state): return state.has("Nomai Warp Codes", p)

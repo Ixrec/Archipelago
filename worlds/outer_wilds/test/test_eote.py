@@ -24,7 +24,7 @@ class TestDLC(OuterWildsTestBase):
             [["Coordinates"]]
         )
 
-        # these items are required on every path to the Prisoner
+        # these items are required on every path to the Prisoner (from a non-Stranger spawn)
         eote_required_items = [
             "Launch Codes",  # to get to Stranger without spawning there
             "Dream Totem Patch",  # all paths to Dream Raft Loop involve a totem or two
@@ -102,3 +102,42 @@ class TestDLCWithLogsanity(OuterWildsTestBase):
         self.assertNotReachableWith("DW Ship Log: Shrouded Woodlands 1 - Visit", [ "Dream Totem Patch", "Raft Docks Patch" ])
         self.assertNotReachableWith("DW Ship Log: Shrouded Woodlands 1 - Visit", [ "Stranger Light Modulator", "Hidden Gorge Painting Code" ])
         self.assertNotReachableWith("DW Ship Log: Shrouded Woodlands 1 - Visit", [ "Stranger Light Modulator", "Hidden Gorge Painting Code", "Raft Docks Patch" ])
+
+
+class TestStrangerSpawn(OuterWildsTestBase):
+    options = {
+        "enable_eote_dlc": 1,
+        "logsanity": 1,
+        "spawn": "stranger",
+    }
+
+    def test_stranger_spawn(self):
+        self.assertReachableWith("EotE Ship Log: River Lowlands 1 - Visit", [])
+
+        self.assertNotReachableWith("TH: Talk to Hornfels", [])
+        self.assertReachableWith("TH: Talk to Hornfels", ["Launch Codes"])
+
+        self.assertReachableWith("Victory - Echoes of the Eye", [
+            # without "Launch Codes"
+            "Dream Totem Patch",  # all paths to Dream Raft Loop involve a totem or two
+            "Limbo Warp Patch",  # need all 3 glitches to enter the finale from Dream Raft Loop
+            "Projection Range Patch",
+            "Alarm Bypass Patch",
+            "Stranger Light Modulator",
+            "Hidden Gorge Painting Code"
+        ])
+
+
+class TestSpawnElsewhere(OuterWildsTestBase):
+    options = {
+        "enable_eote_dlc": 1,
+        "logsanity": 1,
+        "spawn": "hourglass_twins",  # doesn't matter where, as long as it's neither TH nor Stranger
+    }
+
+    def test_stranger_spawn(self):
+        self.assertNotReachableWith("EotE Ship Log: River Lowlands 1 - Visit", [])
+        self.assertReachableWith("EotE Ship Log: River Lowlands 1 - Visit", ["Launch Codes"])
+
+        self.assertNotReachableWith("TH: Talk to Hornfels", [])
+        self.assertReachableWith("TH: Talk to Hornfels", ["Launch Codes"])

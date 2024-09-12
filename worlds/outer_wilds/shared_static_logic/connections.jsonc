@@ -154,7 +154,7 @@
 
     { "creation_settings": [ "enable_eote_dlc" ], "from": "Cinder Isles", "to": "Cinder Isles Symbol Room", "requires": [
         { "region": "Starlit Cove" }, // to extinguish the dream candles that unlock the real door
-        { "item": "Stranger Light Modulator" } // project the dock
+        { "item": "Dream Totem Patch" } // project the dock
     ] },
 
     { "creation_settings": [ "enable_eote_dlc" ], "from": "Shrouded Woodlands", "to": "Dream Raft Loop", "requires": [

@@ -71,7 +71,10 @@ class DeathLink(Choice):
 
 # DLC + logsanity is another 71 checks. "rumor sanity" would be another 103 (+22 with DLC).
 class Logsanity(Toggle):
-    """Adds 176 locations for all the (non-DLC, non-rumor, non-missable) ship log facts in the game."""
+    """
+    Adds 176 locations for all the (non-rumor, non-missable) ship log facts in the game.
+    Also affects how many locations are added by enable_eote_dlc.
+    """
     display_name = "Logsanity"
 
 

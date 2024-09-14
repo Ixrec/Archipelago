@@ -51,6 +51,7 @@ class OuterWildsWorld(World):
                 raise OptionError('Incompatible options: stranger spawn requires enable_eote_dlc to be true')
             if self.options.goal in [
                 Goal.option_song_of_the_stranger,
+                Goal.option_song_of_six,
                 Goal.option_song_of_seven,
                 Goal.option_echoes_of_the_eye
             ]:

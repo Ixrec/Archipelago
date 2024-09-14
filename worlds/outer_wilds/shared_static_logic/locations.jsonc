@@ -1576,7 +1576,9 @@
     },
     {
         "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041050, "name": "EotE Ship Log: Hidden Gorge Secret Room 1 - Enter",
-        "region": "Hidden Gorge", "requires": []
+        "region": "Hidden Gorge", "requires": [
+            { "item": "Stranger Light Modulator" } // for sending the elevator down
+        ]
     },
     {
         "creation_settings": [ "enable_eote_dlc", "logsanity" ], "address": 1085041051, "name": "EotE Ship Log: Hidden Gorge Secret Room 2 - Slide Reel",

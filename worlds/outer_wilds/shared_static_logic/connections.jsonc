@@ -118,7 +118,8 @@
     { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Reservoir", "requires": [
         { "item": "Stranger Light Modulator" }
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Space", "to": "Hidden Gorge Laboratory", "requires": [
+    // this is from: Hangar instead of from: Space because from a stranger spawn you might do this suit-only, before Launch Codes
+    { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Hidden Gorge Laboratory", "requires": [
         { "item": "Breach Override Codes" }
     ] },
     // the Breach Override Codes open both doors, so you can reach HG this way with no additional items

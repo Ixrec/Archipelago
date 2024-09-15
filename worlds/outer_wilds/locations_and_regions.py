@@ -49,14 +49,9 @@ all_non_event_locations_table = {name: data.address for name, data
 
 location_names: Set[str] = set(entry["name"] for entry in locations_data)
 location_name_groups = {
-    # For now, all of our location groups are auto-generated
+    # Auto-generated groups
     # We don't need an "Everywhere" group because AP makes that for us
 
-    "Frequencies": {
-        "Scan Any Distress Beacon",
-        "Scan Any Quantum Fluctuation",
-        "TH: Receive Hide & Seek Frequency",
-    },
     "Signals": set(n for n in location_names if n.endswith(" Signal")),
 
     "Ember Twin": set(n for n in location_names if n.startswith("ET: ") or n.startswith("ET Ship Log: ")),
@@ -70,10 +65,20 @@ location_name_groups = {
     "Giant's Deep": set(n for n in location_names if n.startswith("GD: ") or n.startswith("GD Ship Log: ")),
     "Dark Bramble": set(n for n in location_names if n.startswith("DB: ") or n.startswith("DB Ship Log: ")),
     "Quantum Moon": set(n for n in location_names if n.startswith("QM: ") or n.startswith("QM Ship Log: ")),
+    "Interloper": set(n for n in location_names if n is "Ruptured Core (Text Wheel)" or "Ship Log: Ruptured Core" in n),
+    "Sun Station": set(n for n in location_names if n is "Sun Station (Projection Stone Text)" or "Ship Log: Sun Station" in n),
+    "WHS": set(n for n in location_names if n is "WHS (Text Wall)" or "Ship Log: WHS" in n),
     "The Stranger": set(n for n in location_names if n.startswith("EotE: ") or n.startswith("EotE Ship Log: ")),
     "Dreamworld": set(n for n in location_names if n.startswith("DW: ") or n.startswith("DW Ship Log: ")),
 
     "Ship Logs": set(n for n in location_names if "Ship Log: " in n),
+
+    # Manually curated groups
+    "Frequencies": {
+        "Scan Any Distress Beacon",
+        "Scan Any Quantum Fluctuation",
+        "TH: Receive Hide & Seek Frequency",
+    },
 }
 
 

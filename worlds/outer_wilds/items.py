@@ -86,6 +86,18 @@ item_name_groups = {
     },
     "Base Progression": {i for i in prog_items if i not in dlc_prog_items},
     "DLC Progression": dlc_prog_items,
+    "Quantum Rules": {
+        "Imaging Rule",
+        "Entanglement Rule",
+        "Shrine Door Codes",
+    },
+    "Patches": {
+        "Dream Totem Patch",
+        "Raft Docks Patch",
+        "Limbo Warp Patch",
+        "Projection Range Patch",
+        "Alarm Bypass Patch",
+    },
 
     # Aliases
     "Little Scout": {"Scout"},

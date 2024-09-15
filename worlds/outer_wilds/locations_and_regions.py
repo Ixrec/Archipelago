@@ -70,6 +70,8 @@ location_name_groups = {
     "Giant's Deep": set(n for n in location_names if n.startswith("GD: ") or n.startswith("GD Ship Log: ")),
     "Dark Bramble": set(n for n in location_names if n.startswith("DB: ") or n.startswith("DB Ship Log: ")),
     "Quantum Moon": set(n for n in location_names if n.startswith("QM: ") or n.startswith("QM Ship Log: ")),
+    "The Stranger": set(n for n in location_names if n.startswith("EotE: ") or n.startswith("EotE Ship Log: ")),
+    "Dreamworld": set(n for n in location_names if n.startswith("DW: ") or n.startswith("DW Ship Log: ")),
 
     "Ship Logs": set(n for n in location_names if "Ship Log: " in n),
 }

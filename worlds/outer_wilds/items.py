@@ -42,12 +42,27 @@ for items_data_entry in items_data:
 all_non_event_items_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
 
 item_names: Set[str] = set(entry["name"] for entry in items_data)
+
+prog_items = set(entry["name"] for entry in items_data
+                 if entry["type"] == "progression" and entry["code"] is not None)
+dlc_prog_items = [  # it happens that all DLC items are also prog items
+    "Stranger Light Modulator",
+    "Breach Override Codes",
+    "River Lowlands Painting Code",
+    "Cinder Isles Painting Code",
+    "Hidden Gorge Painting Code",
+    "Dream Totem Patch",
+    "Raft Docks Patch",
+    "Limbo Warp Patch",
+    "Projection Range Patch",
+    "Alarm Bypass Patch",
+]
+
 item_name_groups = {
     # Auto-generated groups
     # We don't need an "Everything" group because AP makes that for us
 
-    "progression": set(entry["name"] for entry in items_data
-                       if entry["type"] == "progression" and entry["code"] is not None),
+    "progression": prog_items,
     "useful": set(entry["name"] for entry in items_data if entry["type"] == "useful"),
     "filler": set(entry["name"] for entry in items_data if entry["type"] == "filler"),
     "trap": set(entry["name"] for entry in items_data if entry["type"] == "trap"),
@@ -69,6 +84,8 @@ item_name_groups = {
         "Ghost Matter Wavelength",
         "Imaging Rule",
     },
+    "Base Progression": {i for i in prog_items if i not in dlc_prog_items},
+    "DLC Progression": dlc_prog_items,
 
     # Aliases
     "Little Scout": {"Scout"},
@@ -92,6 +109,8 @@ item_name_groups = {
     "QF Frequency": {"Quantum Fluctuations Frequency"},
     "HSF": {"Hide & Seek Frequency"},
     "HS Frequency": {"Hide & Seek Frequency"},
+    "DSRF": {"Deep Space Radio Frequency"},
+    "DSR Frequency": {"Deep Space Radio Frequency"},
 }
 
 

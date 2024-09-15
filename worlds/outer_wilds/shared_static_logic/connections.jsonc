@@ -115,6 +115,9 @@
     { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Hidden Gorge", "requires": [
         { "item": "Stranger Light Modulator" }
     ] },
+    // This is the one "irl raft loop" connection where just swimming without a raft is safe, easy, and relevant to logic
+    // because you can get breach codes before SLM. Also, all Reservoir locations are reachable without a raft.
+    { "creation_settings": [ "enable_eote_dlc" ], "from": "Hidden Gorge", "to": "Reservoir", "requires": [] },
     { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Reservoir", "requires": [
         { "item": "Stranger Light Modulator" }
     ] },

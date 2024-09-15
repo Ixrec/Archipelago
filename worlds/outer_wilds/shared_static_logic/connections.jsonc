@@ -186,6 +186,10 @@
         { "item": "Dream Totem Patch" } // project bridge, hand warp to project 2nd bridge, project raft
     ] },
     { "creation_settings": [ "enable_eote_dlc" ], "from": "Dream Raft Loop (After Dam Breaks)", "to": "Shrouded Woodlands Archive", "requires": [
+        { "anyOf": [
+            { "item": "River Lowlands Painting Code" }, // to open up the SW dock ahead of time
+            { "item": "Raft Docks Patch" } // to use the SW dock without opening it up ahead of time
+        ] },
         { "item": "Dream Totem Patch" } // project covered bridge
     ] },
 

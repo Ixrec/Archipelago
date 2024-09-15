@@ -571,11 +571,11 @@
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039041, "name": "TH Ship Log: Village 1 - Identify",
-        "region": "Timber Hearth Village", "requires": []
+        "region": "Menu", "requires": []
     },
     {
         "creation_settings": [ "logsanity" ], "address": 1085039042, "name": "TH Ship Log: Village 2 - Statue Eyes Opened",
-        "region": "Timber Hearth Village", "requires": []
+        "region": "Menu", "requires": []
     },
     // removed 1085039043 / Village 3 because it's perma-missable
     {

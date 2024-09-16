@@ -65,9 +65,9 @@ location_name_groups = {
     "Giant's Deep": set(n for n in location_names if n.startswith("GD: ") or n.startswith("GD Ship Log: ")),
     "Dark Bramble": set(n for n in location_names if n.startswith("DB: ") or n.startswith("DB Ship Log: ")),
     "Quantum Moon": set(n for n in location_names if n.startswith("QM: ") or n.startswith("QM Ship Log: ")),
-    "Interloper": set(n for n in location_names if n is "Ruptured Core (Text Wheel)" or "Ship Log: Ruptured Core" in n),
-    "Sun Station": set(n for n in location_names if n is "Sun Station (Projection Stone Text)" or "Ship Log: Sun Station" in n),
-    "WHS": set(n for n in location_names if n is "WHS (Text Wall)" or "Ship Log: WHS" in n),
+    "Interloper": set(n for n in location_names if n == "Ruptured Core (Text Wheel)" or "Ship Log: Ruptured Core" in n),
+    "Sun Station": set(n for n in location_names if n == "Sun Station (Projection Stone Text)" or "Ship Log: Sun Station" in n),
+    "WHS": set(n for n in location_names if n == "WHS (Text Wall)" or "Ship Log: WHS" in n),
     "The Stranger": set(n for n in location_names if n.startswith("EotE: ") or n.startswith("EotE Ship Log: ")),
     "Dreamworld": set(n for n in location_names if n.startswith("DW: ") or n.startswith("DW Ship Log: ")),
 

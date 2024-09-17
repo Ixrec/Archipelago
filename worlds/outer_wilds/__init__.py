@@ -142,7 +142,13 @@ class OuterWildsWorld(World):
         self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
 
     def fill_slot_data(self):
-        slot_data = self.options.as_dict("goal", "death_link", "logsanity", "spawn", "enable_eote_dlc", "dlc_only")
+        slot_data = self.options.as_dict(
+            "death_link",                   # a client/mod feature
+            "goal", "spawn",                             # affects tons of stuff, but also a client/mod faeture
+            "logsanity", "enable_eote_dlc", "dlc_only",  # changes AP locations, needed by in-game tracker
+            "split_translator"                           # changes AP items, and how client/mod implements Translator
+        )
+        # more client/mod features, these are only in the apworld because we want them fixed per-slot/at gen time
         slot_data["eotu_coordinates"] = self.eotu_coordinates
         slot_data["db_layout"] = self.db_layout
         slot_data["planet_order"] = self.planet_order

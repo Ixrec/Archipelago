@@ -183,6 +183,14 @@ class DLCOnly(Toggle):
     display_name = "DLC Only"
 
 
+class SplitTranslator(Toggle):
+    """
+    Splits the "Translator" item into 6 items: 5 for the main planets and their satellites, plus a
+    "Translator (Other)" for smaller parts of the vanilla system and systems added by story mods.
+    """
+    display_name = "Split Translator"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -200,6 +208,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     death_link: DeathLink
     logsanity: Logsanity
     shuffle_spacesuit: ShuffleSpacesuit
+    split_translator: SplitTranslator
 
 
 def get_creation_settings(options: OuterWildsGameOptions) -> Set[str]:

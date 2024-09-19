@@ -1700,7 +1700,7 @@
         ]
     },
     {
-        "category": "dlc", "address": null, "name": "Victory - Song of the Stranger",
+        "category": "base+dlc", "address": null, "name": "Victory - Song of the Stranger",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
@@ -1710,7 +1710,7 @@
         ]
     },
     {
-        "category": "dlc", "address": null, "name": "Victory - Song of Six",
+        "category": "base+dlc", "address": null, "name": "Victory - Song of Six",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
@@ -1723,7 +1723,7 @@
         ]
     },
     {
-        "category": "dlc", "address": null, "name": "Victory - Song of Seven",
+        "category": "base+dlc", "address": null, "name": "Victory - Song of Seven",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },

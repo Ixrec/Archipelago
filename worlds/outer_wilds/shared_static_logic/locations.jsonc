@@ -1686,7 +1686,7 @@
         "requires": [
             { "item": "Warp Core Installation Manual" }, // all the "Song of..." victories need these 3
             { "item": "Coordinates" },
-            { "location": "AT: Enter the ATP" }
+            { "region": "Ash Twin Interior" }
         ]
     },
     {
@@ -1695,8 +1695,8 @@
         "requires": [
             { "item": "Warp Core Installation Manual" },
             { "item": "Coordinates" },
-            { "location": "AT: Enter the ATP" },
-            { "location": "QM: Explore the Sixth Location" } // Nomai means meeting Solanum
+            { "region": "Ash Twin Interior" },
+            { "region": "Sixth Location" } // Nomai means meeting Solanum
         ]
     },
     {
@@ -1705,7 +1705,7 @@
         "requires": [
             { "item": "Warp Core Installation Manual" },
             { "item": "Coordinates" },
-            { "location": "AT: Enter the ATP" },
+            { "region": "Ash Twin Interior" },
             { "region": "Sealed Vault" } // Stranger means meeting Prisoner
         ]
     },
@@ -1715,9 +1715,9 @@
         "requires": [
             { "item": "Warp Core Installation Manual" },
             { "item": "Coordinates" },
-            { "location": "AT: Enter the ATP" },
+            { "region": "Ash Twin Interior" },
             { "anyOf": [ // Six means either Solanum OR Prisoner
-                { "location": "QM: Explore the Sixth Location" },
+                { "region": "Sixth Location" },
                 { "region": "Sealed Vault" }
             ] }
         ]
@@ -1728,8 +1728,8 @@
         "requires": [
             { "item": "Warp Core Installation Manual" },
             { "item": "Coordinates" },
-            { "location": "AT: Enter the ATP" },
-            { "location": "QM: Explore the Sixth Location" }, // Seven means both Solanum AND Prisoner
+            { "region": "Ash Twin Interior" },
+            { "region": "Sixth Location" }, // Seven means both Solanum AND Prisoner
             { "region": "Sealed Vault" }
         ]
     },

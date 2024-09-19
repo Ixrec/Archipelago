@@ -82,6 +82,8 @@ class TestDLCWithLogsanity(OuterWildsTestBase):
         # 34(+4V) DLC default locations + 72 DLC logsanity locations
         self.assertEqual(self.getLocationCount(), 375)
 
+        # Routes to Shrouded Woodlands
+
         # the obvious route: use the RL artifact on the RL flame
         self.assertReachableWith("DW Ship Log: Shrouded Woodlands 1 - Visit", [
             "Ghost Matter Wavelength", "River Lowlands Painting Code",
@@ -102,6 +104,27 @@ class TestDLCWithLogsanity(OuterWildsTestBase):
         self.assertNotReachableWith("DW Ship Log: Shrouded Woodlands 1 - Visit", [ "Dream Totem Patch", "Raft Docks Patch" ])
         self.assertNotReachableWith("DW Ship Log: Shrouded Woodlands 1 - Visit", [ "Stranger Light Modulator", "Hidden Gorge Painting Code" ])
         self.assertNotReachableWith("DW Ship Log: Shrouded Woodlands 1 - Visit", [ "Stranger Light Modulator", "Hidden Gorge Painting Code", "Raft Docks Patch" ])
+
+        # Routes to Shrouded Woodlands Archive
+
+        # the first-time vanilla route:
+        self.assertReachableWith("DW Ship Log: Shrouded Woodlands Archive 1 - Enter", [
+            "River Lowlands Painting Code", "Ghost Matter Wavelength",  # open RL dock
+            # wait for dam to break
+            "Breach Override Codes", "Hidden Gorge Painting Code",  # use a different flame
+            "Dream Totem Patch",  # to reach the dream raft, and take it to SW
+        ])
+        self.assertNotReachableWith("DW Ship Log: Shrouded Woodlands Archive 1 - Enter", [
+            "River Lowlands Painting Code", "Dream Totem Patch"
+        ])
+
+        # the "intended shortcut" using the limbo warp glitch learned from SW archive:
+        self.assertReachableWith("DW Ship Log: Shrouded Woodlands Archive 1 - Enter", [
+            "River Lowlands Painting Code", "Ghost Matter Wavelength", "Dream Totem Patch",  # get on the dream raft
+            "Limbo Warp Patch",  # fall down to Subterranean Lake "out of bounds"
+            # then simply walk into SW archives
+        ])
+        self.assertNotReachableWith("DW Ship Log: Shrouded Woodlands Archive 1 - Enter", ["Limbo Warp Patch"])
 
 
 class TestStrangerSpawn(OuterWildsTestBase):

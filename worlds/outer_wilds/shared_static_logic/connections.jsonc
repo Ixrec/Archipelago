@@ -149,7 +149,8 @@
     { "category": "dlc", "from": "Dream Raft Loop", "to": "Starlit Cove", "requires": [ { "item": "Raft Docks Patch" } ] },
     { "category": "dlc", "from": "Dream Raft Loop", "to": "Endless Canyon", "requires": [ { "item": "Raft Docks Patch" } ] },
 
-    { "category": "dlc", "from": "Dream Raft Loop", "to": "Subterranean Lake", "requires": [ { "item": "Limbo Warp Patch" } ] },
+    { "category": "dlc", "from": "Dream Raft Loop", "to": "Subterranean Lake (Out of Bounds)", "requires": [ { "item": "Limbo Warp Patch" } ] },
+    { "category": "dlc", "from": "Subterranean Lake (Out of Bounds)", "to": "Subterranean Lake", "requires": [] },
 
     { "category": "dlc", "from": "Hidden Gorge", "to": "Abandoned Temple", "requires": [
         { "item": "Ghost Matter Wavelength" },
@@ -171,7 +172,7 @@
         { "item": "Dream Totem Patch" } // project bridge, hand warp to project 2nd bridge, project raft
     ] },
 
-    // The Shrouded Woodlands Archive needs special logic because you must arrive at SW from the river loop
+    // The vanilla SW Archive route needs special logic because you must arrive at SW from the river loop
     // instead of the green fire, since entering the archive requires waiting for the RL green fire to be
     // extinguished by the dam breaking.
     // Implementing this requires a bunch of "duplicate" (After Dam Breaks) regions to express that only
@@ -197,6 +198,12 @@
         { "item": "Dream Totem Patch" } // project covered bridge
     ] },
 
+    // or if you have Limbo Warp Patch, you can get to SW archives right away via the lake
+    { "category": "dlc", "from": "Subterranean Lake (Out of Bounds)", "to": "Shrouded Woodlands Archive", "requires": [] },
+
+    // you can also use ^this path to reach SW itself without docks patch or RL painting, but
+    // only after dam breaks, and that's not worth the complexity of including it in logic
+
     { "category": "dlc", "from": "Starlit Cove", "to": "Starlit Cove Archive", "requires": [
         { "anyOf": [
             { "item": "Dream Totem Patch" }, // hand warp to extinguish well lights
@@ -208,8 +215,7 @@
         { "item": "Dream Totem Patch" } // extinguish lodge mural, project bridge, hand warp to project 2nd bridge
     ] },
 
-    { "category": "dlc", "from": "Dream Raft Loop", "to": "Sealed Vault", "requires": [
-        { "item": "Limbo Warp Patch" },
+    { "category": "dlc", "from": "Subterranean Lake (Out of Bounds)", "to": "Sealed Vault", "requires": [
         { "item": "Projection Range Patch" },
         { "item": "Alarm Bypass Patch" }
     ] }

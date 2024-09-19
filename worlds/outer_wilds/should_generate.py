@@ -17,4 +17,6 @@ def should_generate(category: Optional[str], options: OuterWildsGameOptions) -> 
         return options.dlc_only.value == 0
     elif category == 'dlc':  # only generated if enable_eote_dlc is true
         return options.enable_eote_dlc.value == 1
+    elif category == 'base+dlc':  # both base game and dlc must be enabled to generate; used only for victory events
+        return options.enable_eote_dlc.value == 1 and options.dlc_only.value == 0
     # each story mod will be its own generation category

@@ -98,17 +98,6 @@ class OuterWildsTestBase(WorldTestBase):
         "Entanglement Rule"
     ]
 
-    def test_all_worlds(self) -> None:
-        # for now, we create the Victory events unconditionally, and the Goal
-        # setting only changes which one is used in the completion_condition,
-        # so these "go mode" tests pass regardless of the Goal setting
-        self.assertRequiresAllOf("Victory - Song of Five", self.song_of_five_required_items)
-
-        self.assertNotReachableWith("Victory - Song of the Nomai", self.song_of_five_required_items)
-
-        self.assertRequiresAllOf("Victory - Song of the Nomai",
-                                 self.song_of_five_required_items + self.song_of_the_nomai_additional_required_items)
-
 
 class TestDefaultWorld(OuterWildsTestBase):
     options = {}
@@ -145,6 +134,13 @@ class TestDefaultWorld(OuterWildsTestBase):
             ["Victory - Song of Five", "Victory - Song of the Nomai"],
             [["Coordinates"]]
         )
+
+        self.assertRequiresAllOf("Victory - Song of Five", self.song_of_five_required_items)
+
+        self.assertNotReachableWith("Victory - Song of the Nomai", self.song_of_five_required_items)
+
+        self.assertRequiresAllOf("Victory - Song of the Nomai",
+                                 self.song_of_five_required_items + self.song_of_the_nomai_additional_required_items)
 
 
 class TestSongOfNomaiWorld(OuterWildsTestBase):

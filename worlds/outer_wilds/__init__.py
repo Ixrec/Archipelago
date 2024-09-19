@@ -10,7 +10,7 @@ from .orbits import generate_random_orbits
 from .warp_platforms import generate_random_warp_platform_mapping
 from .items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .locations_and_regions import all_non_event_locations_table, location_name_groups, create_regions
-from .options import OuterWildsGameOptions, RandomizeDarkBrambleLayout, Spawn, Goal
+from .options import OuterWildsGameOptions, RandomizeDarkBrambleLayout, Spawn, Goal, EnableEchoesOfTheEyeDLC
 
 
 class OuterWildsWebWorld(WebWorld):
@@ -45,6 +45,12 @@ class OuterWildsWorld(World):
         return slot_data
 
     def generate_early(self) -> None:
+        # apply options that edit other options
+        if self.options.dlc_only:
+            self.options.enable_eote_dlc = EnableEchoesOfTheEyeDLC(1)
+            self.options.spawn = Spawn(Spawn.option_stranger)
+            self.options.goal = Goal(Goal.option_echoes_of_the_eye)
+
         # validate options
         if not self.options.enable_eote_dlc:
             if self.options.spawn == Spawn.option_stranger:
@@ -132,7 +138,7 @@ class OuterWildsWorld(World):
         self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
 
     def fill_slot_data(self):
-        slot_data = self.options.as_dict("goal", "death_link", "logsanity", "spawn", "enable_eote_dlc")
+        slot_data = self.options.as_dict("goal", "death_link", "logsanity", "spawn", "enable_eote_dlc", "dlc_only")
         slot_data["eotu_coordinates"] = self.eotu_coordinates
         slot_data["db_layout"] = self.db_layout
         slot_data["planet_order"] = self.planet_order

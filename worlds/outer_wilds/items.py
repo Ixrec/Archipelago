@@ -206,7 +206,9 @@ def create_items(world: "OuterWildsWorld") -> None:
     # add enough "repeatable"/non-unique filler items (and/or traps) to make item count equal location count
     # here we use the term "junk" to mean "filler or trap items"
     unique_item_count = len(prog_and_useful_items) + len(unique_filler)
-    repeatable_filler_needed = len(multiworld.get_unfilled_locations(player)) - unique_item_count
+    unfilled_location_count = len(multiworld.get_unfilled_locations(player))
+    assert unfilled_location_count > unique_item_count
+    repeatable_filler_needed = unfilled_location_count - unique_item_count
     junk_names = list(repeatable_filler_weights.keys())
     junk_weights = list(repeatable_filler_weights.values())
     if apply_trap_items:

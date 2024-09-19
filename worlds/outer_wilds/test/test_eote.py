@@ -141,3 +141,22 @@ class TestSpawnElsewhere(OuterWildsTestBase):
 
         self.assertNotReachableWith("TH: Talk to Hornfels", [])
         self.assertReachableWith("TH: Talk to Hornfels", ["Launch Codes"])
+
+
+class TestDLCOnly(OuterWildsTestBase):
+    options = {
+        "dlc_only": 1,
+    }
+
+    def test_dlc_only(self):
+        self.assertEqual(self.getLocationCount(), 35)  # 34(+1V) DLC default locations
+
+
+class TestDLCOnlyLogsanity(OuterWildsTestBase):
+    options = {
+        "dlc_only": 1,
+        "logsanity": 1,
+    }
+
+    def test_dlc_only_logsanity(self):
+        self.assertEqual(self.getLocationCount(), 107)  # 34(+1V) DLC default locations + 72 DLC logsanity locations

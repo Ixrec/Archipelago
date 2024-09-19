@@ -110,6 +110,11 @@ def create_regions(world: "OuterWildsWorld") -> None:
         if cd["to"] not in region_data_table:
             region_data_table[cd["to"]] = OuterWildsRegionData()
 
+    # when dlc_only: true, the "dead-end" warp platforms have no locations or static connections,
+    # so the random warp setup below fails unless we've explicitly added these to the region list
+    for r in ["Sun Station", "Ash Twin Interior", "Hanging City Ceiling"]:
+        region_data_table[r] = OuterWildsRegionData()
+
     # actually create the Regions, initially all empty
     for region_name in region_data_table.keys():
         mw.regions.append(Region(region_name, p, mw))

@@ -105,69 +105,69 @@
         { "item": "Spacesuit" } // to enter the Vessel
     ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Space", "to": "Stranger Sunside Hangar", "requires": [] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
+    { "category": "dlc", "from": "Space", "to": "Stranger Sunside Hangar", "requires": [] },
+    { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "River Lowlands", "requires": [] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Cinder Isles", "requires": [
+    { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "River Lowlands", "requires": [] },
+    { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "Cinder Isles", "requires": [
         { "item": "Stranger Light Modulator" }
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Hidden Gorge", "requires": [
+    { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "Hidden Gorge", "requires": [
         { "item": "Stranger Light Modulator" }
     ] },
     // This is the one "irl raft loop" connection where just swimming without a raft is safe, easy, and relevant to logic
     // because you can get breach codes before SLM. Also, all Reservoir locations are reachable without a raft.
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Hidden Gorge", "to": "Reservoir", "requires": [] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Reservoir", "requires": [
+    { "category": "dlc", "from": "Hidden Gorge", "to": "Reservoir", "requires": [] },
+    { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "Reservoir", "requires": [
         { "item": "Stranger Light Modulator" }
     ] },
     // this is from: Hangar instead of from: Space because from a stranger spawn you might do this suit-only, before Launch Codes
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Stranger Sunside Hangar", "to": "Hidden Gorge Laboratory", "requires": [
+    { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "Hidden Gorge Laboratory", "requires": [
         { "item": "Breach Override Codes" }
     ] },
     // the Breach Override Codes open both doors, so you can reach HG this way with no additional items
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Hidden Gorge Laboratory", "to": "Hidden Gorge", "requires": [] },
+    { "category": "dlc", "from": "Hidden Gorge Laboratory", "to": "Hidden Gorge", "requires": [] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "River Lowlands", "to": "Shrouded Woodlands", "requires": [
+    { "category": "dlc", "from": "River Lowlands", "to": "Shrouded Woodlands", "requires": [
         { "item": "River Lowlands Painting Code" },
         { "location": "EotE: Find an Artifact" }
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Cinder Isles", "to": "Starlit Cove", "requires": [
+    { "category": "dlc", "from": "Cinder Isles", "to": "Starlit Cove", "requires": [
         { "item": "Cinder Isles Painting Code" },
         { "location": "EotE: Find an Artifact" }
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Hidden Gorge", "to": "Endless Canyon", "requires": [
+    { "category": "dlc", "from": "Hidden Gorge", "to": "Endless Canyon", "requires": [
         { "item": "Hidden Gorge Painting Code" } // HG has its own artifact, so we don't need to check for that
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Reservoir", "to": "Subterranean Lake", "requires": [
+    { "category": "dlc", "from": "Reservoir", "to": "Subterranean Lake", "requires": [
         { "location": "EotE: Find an Artifact" }
     ] },
 
     // we don't need e.g. "OR the RL Painting Code" here because if you can
     // unlock the dock the vanilla way, this connection is no longer relevant
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Dream Raft Loop", "to": "Shrouded Woodlands", "requires": [ { "item": "Raft Docks Patch" } ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Dream Raft Loop", "to": "Starlit Cove", "requires": [ { "item": "Raft Docks Patch" } ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Dream Raft Loop", "to": "Endless Canyon", "requires": [ { "item": "Raft Docks Patch" } ] },
+    { "category": "dlc", "from": "Dream Raft Loop", "to": "Shrouded Woodlands", "requires": [ { "item": "Raft Docks Patch" } ] },
+    { "category": "dlc", "from": "Dream Raft Loop", "to": "Starlit Cove", "requires": [ { "item": "Raft Docks Patch" } ] },
+    { "category": "dlc", "from": "Dream Raft Loop", "to": "Endless Canyon", "requires": [ { "item": "Raft Docks Patch" } ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Dream Raft Loop", "to": "Subterranean Lake", "requires": [ { "item": "Limbo Warp Patch" } ] },
+    { "category": "dlc", "from": "Dream Raft Loop", "to": "Subterranean Lake", "requires": [ { "item": "Limbo Warp Patch" } ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Hidden Gorge", "to": "Abandoned Temple", "requires": [
+    { "category": "dlc", "from": "Hidden Gorge", "to": "Abandoned Temple", "requires": [
         { "item": "Ghost Matter Wavelength" },
         { "item": "Stranger Light Modulator" }
     ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Cinder Isles", "to": "Cinder Isles Symbol Room", "requires": [
+    { "category": "dlc", "from": "Cinder Isles", "to": "Cinder Isles Symbol Room", "requires": [
         { "region": "Starlit Cove" }, // to extinguish the dream candles that unlock the real door
         { "item": "Dream Totem Patch" } // project the dock
     ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Shrouded Woodlands", "to": "Dream Raft Loop", "requires": [
+    { "category": "dlc", "from": "Shrouded Woodlands", "to": "Dream Raft Loop", "requires": [
         { "item": "Dream Totem Patch" } // extinguish door to dock, project raft
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Starlit Cove", "to": "Dream Raft Loop", "requires": [
+    { "category": "dlc", "from": "Starlit Cove", "to": "Dream Raft Loop", "requires": [
         { "item": "Dream Totem Patch" } // project dock and raft
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Endless Canyon", "to": "Dream Raft Loop", "requires": [
+    { "category": "dlc", "from": "Endless Canyon", "to": "Dream Raft Loop", "requires": [
         { "item": "Dream Totem Patch" } // project bridge, hand warp to project 2nd bridge, project raft
     ] },
 
@@ -176,20 +176,20 @@
     // extinguished by the dam breaking.
     // Implementing this requires a bunch of "duplicate" (After Dam Breaks) regions to express that only
     // dreamworld routes starting from the CI or HG green fires will work for this.
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Cinder Isles", "to": "Starlit Cove (After Dam Breaks)", "requires": [
+    { "category": "dlc", "from": "Cinder Isles", "to": "Starlit Cove (After Dam Breaks)", "requires": [
         { "item": "Cinder Isles Painting Code" },
         { "location": "EotE: Find an Artifact" }
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Hidden Gorge", "to": "Endless Canyon (After Dam Breaks)", "requires": [
+    { "category": "dlc", "from": "Hidden Gorge", "to": "Endless Canyon (After Dam Breaks)", "requires": [
         { "item": "Hidden Gorge Painting Code" } // HG has its own artifact, so we don't need to check for that
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Starlit Cove (After Dam Breaks)", "to": "Dream Raft Loop (After Dam Breaks)", "requires": [
+    { "category": "dlc", "from": "Starlit Cove (After Dam Breaks)", "to": "Dream Raft Loop (After Dam Breaks)", "requires": [
         { "item": "Dream Totem Patch" } // project dock and raft
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Endless Canyon (After Dam Breaks)", "to": "Dream Raft Loop (After Dam Breaks)", "requires": [
+    { "category": "dlc", "from": "Endless Canyon (After Dam Breaks)", "to": "Dream Raft Loop (After Dam Breaks)", "requires": [
         { "item": "Dream Totem Patch" } // project bridge, hand warp to project 2nd bridge, project raft
     ] },
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Dream Raft Loop (After Dam Breaks)", "to": "Shrouded Woodlands Archive", "requires": [
+    { "category": "dlc", "from": "Dream Raft Loop (After Dam Breaks)", "to": "Shrouded Woodlands Archive", "requires": [
         { "anyOf": [
             { "item": "River Lowlands Painting Code" }, // to open up the SW dock ahead of time
             { "item": "Raft Docks Patch" } // to use the SW dock without opening it up ahead of time
@@ -197,18 +197,18 @@
         { "item": "Dream Totem Patch" } // project covered bridge
     ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Starlit Cove", "to": "Starlit Cove Archive", "requires": [
+    { "category": "dlc", "from": "Starlit Cove", "to": "Starlit Cove Archive", "requires": [
         { "anyOf": [
             { "item": "Dream Totem Patch" }, // hand warp to extinguish well lights
             { "item": "Alarm Bypass Patch" } // or just walk past the alarms while dead
         ] }
     ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Endless Canyon", "to": "Endless Canyon Archive", "requires": [
+    { "category": "dlc", "from": "Endless Canyon", "to": "Endless Canyon Archive", "requires": [
         { "item": "Dream Totem Patch" } // extinguish lodge mural, project bridge, hand warp to project 2nd bridge
     ] },
 
-    { "creation_settings": [ "enable_eote_dlc" ], "from": "Dream Raft Loop", "to": "Sealed Vault", "requires": [
+    { "category": "dlc", "from": "Dream Raft Loop", "to": "Sealed Vault", "requires": [
         { "item": "Limbo Warp Patch" },
         { "item": "Projection Range Patch" },
         { "item": "Alarm Bypass Patch" }

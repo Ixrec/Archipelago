@@ -9,6 +9,7 @@ from BaseClasses import CollectionState, Location, MultiWorld, Region
 from worlds.generic.Rules import set_rule
 from .options import OuterWildsGameOptions, Spawn, get_creation_settings
 from .warp_platforms import warp_platform_to_logical_region, warp_platform_required_items
+from .should_generate import should_generate, should_generate_location
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld
@@ -21,8 +22,8 @@ class OuterWildsLocation(Location):
 class OuterWildsLocationData(NamedTuple):
     region: str
     address: Optional[int] = None
-    can_create: Callable[[MultiWorld, int], bool] = lambda multiworld, player: True
-    creation_settings: Optional[List[str]] = None
+    category: Optional[str] = None
+    logsanity: bool = False
 
 
 class OuterWildsRegionData(NamedTuple):
@@ -41,7 +42,8 @@ for location_datum in locations_data:
     location_data_table[location_datum["name"]] = OuterWildsLocationData(
         address=location_datum["address"],
         region=(location_datum["region"] if "region" in location_datum else None),
-        creation_settings=(location_datum["creation_settings"] if "creation_settings" in location_datum else None)
+        category=(location_datum["category"] if "category" in location_datum else None),
+        logsanity=(location_datum["logsanity"] if "logsanity" in location_datum else False),
     )
 
 all_non_event_locations_table = {name: data.address for name, data
@@ -82,18 +84,6 @@ location_name_groups = {
 }
 
 
-def get_locations_to_create(options: OuterWildsGameOptions) -> Dict[str, OuterWildsLocationData]:
-    relevant_settings = get_creation_settings(options)
-    return {k: v for k, v in location_data_table.items()
-            if v.creation_settings is None or relevant_settings.issuperset(v.creation_settings)}
-
-
-def get_connections_to_create(options: OuterWildsGameOptions) -> List[Any]:
-    relevant_settings = get_creation_settings(options)
-    return [c for c in connections_data
-            if "creation_settings" not in c or relevant_settings.issuperset(c["creation_settings"])]
-
-
 region_data_table: Dict[str, OuterWildsRegionData] = {}
 
 
@@ -103,14 +93,16 @@ def create_regions(world: "OuterWildsWorld") -> None:
     options = world.options
 
     # start by ensuring every region is a key in region_data_table
-    locations_to_create = get_locations_to_create(options)
+    locations_to_create = {k: v for k, v in location_data_table.items()
+                           if should_generate_location(v.category, v.logsanity, options)}
 
     for ld in locations_to_create.values():
         region_name = ld.region
         if region_name not in region_data_table:
             region_data_table[region_name] = OuterWildsRegionData()
 
-    connections_to_create = get_connections_to_create(options)
+    connections_to_create = [c for c in connections_data
+                             if should_generate(c["category"] if "category" in c else None, options)]
 
     for cd in connections_to_create:
         if cd["from"] not in region_data_table:

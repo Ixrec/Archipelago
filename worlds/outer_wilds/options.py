@@ -167,6 +167,16 @@ class EnableEchoesOfTheEyeDLC(Toggle):
     display_name = "Enable Echoes of the Eye DLC"
 
 
+class DLCOnly(Toggle):
+    """
+    Sets enable_eote_dlc to true, spawn to stranger, goal to echoes_of_the_eye (see descriptions of those options),
+    and then prevents generation of all the base game locations and of many items not useful in the DLC.
+
+    Not compatible with story mods (once those are implemented).
+    """
+    display_name = "DLC Only"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -174,6 +184,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     spawn: Spawn
     early_key_item: EarlyKeyItem
     enable_eote_dlc: EnableEchoesOfTheEyeDLC
+    dlc_only: DLCOnly
     randomize_coordinates: RandomizeCoordinates
     randomize_orbits: RandomizeOrbits
     randomize_warp_platforms: RandomizeWarpPlatforms

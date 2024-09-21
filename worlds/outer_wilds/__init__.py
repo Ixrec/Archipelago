@@ -45,11 +45,15 @@ class OuterWildsWorld(World):
         return slot_data
 
     def generate_early(self) -> None:
-        # apply options that edit other options
+        # apply options that edit other options or themselves
         if self.options.dlc_only:
             self.options.enable_eote_dlc = EnableEchoesOfTheEyeDLC(1)
             self.options.spawn = Spawn(Spawn.option_stranger)
             self.options.goal = Goal(Goal.option_echoes_of_the_eye)
+
+        if self.options.spawn == Spawn.option_random_non_vanilla:
+            max_spawn = Spawn.option_stranger if self.options.enable_eote_dlc else Spawn.option_giants_deep
+            self.options.spawn = Spawn(self.random.choice(range(Spawn.option_hourglass_twins, max_spawn)))
 
         # validate options
         if not self.options.enable_eote_dlc:

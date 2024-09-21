@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+import random
 from schema import Schema, And
 from typing import Set
 
@@ -127,6 +128,7 @@ class Spawn(Choice):
     option_brittle_hollow = 3
     option_giants_deep = 4
     option_stranger = 5
+    option_random_non_vanilla = 6
     default = 0
 
 

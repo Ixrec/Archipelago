@@ -82,3 +82,11 @@ class TestHGTSpawnRandomWarpEKI(OuterWildsTestBase):
         "early_key_item": EarlyKeyItem.option_nomai_warp_codes,
     }
 
+
+class TestStrangerSpawnSLMEKI(OuterWildsTestBase):
+    options = {
+        "enable_eote_dlc": True,
+        "spawn": Spawn.option_stranger,
+        "early_key_item": EarlyKeyItem.option_stranger_light_modulator,
+    }
+

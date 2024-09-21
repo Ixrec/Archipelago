@@ -232,11 +232,17 @@ def create_items(world: "OuterWildsWorld") -> None:
     if options.early_key_item:
         key_item = None
         if options.early_key_item == EarlyKeyItem.option_any:
-            key_item = random.choice(["Translator", "Nomai Warp Codes", "Launch Codes"])
+            if options.spawn == Spawn.option_stranger:
+                key_item = random.choice(["Launch Codes", "Stranger Light Modulator"])
+            else:
+                key_item = random.choice(["Translator", "Nomai Warp Codes", "Launch Codes"])
         elif options.early_key_item == EarlyKeyItem.option_translator:
             key_item = "Translator"
         elif options.early_key_item == EarlyKeyItem.option_nomai_warp_codes:
             key_item = "Nomai Warp Codes"
         elif options.early_key_item == EarlyKeyItem.option_launch_codes:
             key_item = "Launch Codes"
+        elif options.early_key_item == EarlyKeyItem.option_stranger_light_modulator:
+            key_item = "Stranger Light Modulator"
+        assert key_item is not None
         multiworld.local_early_items[player][key_item] = 1

@@ -90,3 +90,15 @@ class TestStrangerSpawnSLMEKI(OuterWildsTestBase):
         "early_key_item": EarlyKeyItem.option_stranger_light_modulator,
     }
 
+
+class TestRandomNonVanillaSpawn(OuterWildsTestBase):
+    options = {
+        "spawn": Spawn.option_random_non_vanilla,
+    }
+
+
+class TestRandomNonVanillaSpawnWithDLC(OuterWildsTestBase):
+    options = {
+        "enable_eote_dlc": True,
+        "spawn": Spawn.option_random_non_vanilla,
+    }

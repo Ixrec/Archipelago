@@ -105,7 +105,7 @@
         { "item": "Spacesuit" } // to enter the Vessel
     ] },
 
-    { "category": "dlc", "from": "Space", "to": "Stranger Sunside Hangar", "requires": [] },
+    { "category": "dlc", "from": "Space", "to": "Stranger Sunside Hangar", "requires": [ { "item": "Spacesuit" } ] },
     { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
 
     { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "River Lowlands", "requires": [] },

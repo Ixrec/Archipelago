@@ -1736,5 +1736,265 @@
     {
         "category": "dlc", "address": null, "name": "Victory - Echoes of the Eye",
         "region": "Sealed Vault", "requires": []
+    },
+
+// Hearth's Neighbor Story Mod Default Locations
+// These location ids start at 1085042000 (i.e. rounding up to the next thousand),
+// to make it slightly easier to change locations in the future.
+
+    {
+        "category": "hn1", "address": 1085042000, "name": "HN1: Lonely Hermit Elevators",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042001, "name": "HN1: Lonely Hermit GM Structure",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042002, "name": "HN1: Scan Entrance Station Signal",
+        "region": "Lava Core Frequency", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042003, "name": "HN1: Scan Lava Shrine Signal",
+        "region": "Lava Core Frequency", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042004, "name": "HN1: Scan Structure By Cliff Signal",
+        "region": "Lava Core Frequency", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042005, "name": "HN1: Scan Structure With Pillars Signal",
+        "region": "Lava Core Frequency", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042006, "name": "HN1: Scan Old Abandoned Town Signal",
+        "region": "Lava Core Frequency", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042007, "name": "HN1: Lava Shrine Symbol",
+        "region": "Lava Shrine", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042008, "name": "HN1: Lava Shrine Mural",
+        "region": "Lava Shrine", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042009, "name": "HN1: Lake Gazebo",
+        "region": "Lake Core", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042010, "name": "HN1: Lake Shrine Mural",
+        "region": "Lake Core", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042011, "name": "HN1: Scan Dead Lake Dish Signal",
+        "region": "Lonely Hermit", "requires": [
+            { "item": "Signalscope" },
+            { "item": "Neighbor's Distress Signal Frequency" },
+            { "region": "Lake Core" }
+        ]
+    },
+    {
+        "category": "hn1", "address": 1085042012, "name": "HN1: Alpine Core Code",
+        "region": "Alpine Core", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042013, "name": "HN1: Alpine Core Mural",
+        "region": "Alpine Core", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042014, "name": "HN1: Scan Derelict Ship Signal",
+        "region": "Derelict Ship Exterior", "requires": [] // the region already covers scope + freq
+    },
+    {
+        "category": "hn1", "address": 1085042015, "name": "HN1: Ship Interior",
+        "region": "Derelict Ship Interior", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042016, "name": "HN1: Ship Cockpit",
+        "region": "Derelict Ship Interior", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042017, "name": "HN1: Scan Derelict Ship Cockpit Signal",
+        "region": "Derelict Ship Interior", "requires": [
+            { "item": "Signalscope" },
+            { "item": "Galactic Communication Frequency" }
+        ]
+    },
+    {
+        "category": "hn1", "address": 1085042018, "name": "HN1: Sole Pod",
+        "region": "Sole Survivor Pod", "requires": []
+    },
+    {
+        "category": "hn1", "address": 1085042019, "name": "HN1: Scan Sole Survivor Signal",
+        "region": "Sole Survivor Pod", "requires": [] // the region already covers scope + freq
+    },
+
+// Hearth's Neighbor Story Mod Logsanity Locations
+
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042020, "name": "HN1 Ship Log: Museum Plate 1 - Two Systems",
+        "region": "Timber Hearth Village", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042021, "name": "HN1 Ship Log: Museum Plate 2 - Crashed",
+        "region": "Sole Survivor Pod", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042022, "name": "HN1 Ship Log: Escape Pod 1 - Landed",
+        "region": "Sole Survivor Pod", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042023, "name": "HN1 Ship Log: Escape Pod 2 - Thanks",
+        "region": "Sole Survivor Pod", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042024, "name": "HN1 Ship Log: Escape Pod 3 - Sequel",
+        "region": "Sole Survivor Pod", "requires": []
+    },
+
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042025, "name": "HN1 Ship Log: Lonely Hermit 1 - Planet",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042026, "name": "HN1 Ship Log: Lonely Hermit 2 - Below",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042027, "name": "HN1 Ship Log: Ghost Matter Structure 1 - Leaking",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042028, "name": "HN1 Ship Log: Ghost Matter Structure 2 - Mural",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042029, "name": "HN1 Ship Log: Extinct Volcano",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042030, "name": "HN1 Ship Log: Northern Wasteland",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042031, "name": "HN1 Ship Log: Dead Lake 1 - Elevator",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042032, "name": "HN1 Ship Log: Dead Lake 2 - Hangar",
+        "region": "Lonely Hermit", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042033, "name": "HN1 Ship Log: Satellite Room",
+        "region": "Lonely Hermit", "requires": [
+            { "item": "Signalscope" },
+            { "item": "Neighbor's Distress Signal Frequency" },
+            { "region": "Lake Core" }
+        ]
+    },
+
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042034, "name": "HN1 Ship Log: Lava Core 1 - Buttons",
+        "region": "Lava Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042035, "name": "HN1 Ship Log: Lava Core 2 - Communications",
+        "region": "Lava Core Frequency", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042036, "name": "HN1 Ship Log: Structure On A Cliff",
+        "region": "Lava Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042037, "name": "HN1 Ship Log: Structure By Pillars",
+        "region": "Lava Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042038, "name": "HN1 Ship Log: Old Abandoned Town",
+        "region": "Lava Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042039, "name": "HN1 Ship Log: Lava Shrine 1 - Entry",
+        "region": "Lava Shrine", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042040, "name": "HN1 Ship Log: Lava Shrine 2 - Murals",
+        "region": "Lava Shrine", "requires": []
+    },
+
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042041, "name": "HN1 Ship Log: Lake Core",
+        "region": "Lake Core Start Island", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042042, "name": "HN1 Ship Log: Maze Island",
+        "region": "Lake Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042043, "name": "HN1 Ship Log: Shrine Island 1 - Entrance",
+        "region": "Lake Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042044, "name": "HN1 Ship Log: Shrine Island 2 - Communications",
+        "region": "Lake Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042045, "name": "HN1 Ship Log: Shrine Island 3 - Hangar",
+        "region": "Lonely Hermit", "requires": [ { "region": "Lake Core" } ] // for flipping the Lake Shrine switch then entering the room it opened in the LH Hangar
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042046, "name": "HN1 Ship Log: Shrine Island 4 - Mural",
+        "region": "Lake Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042047, "name": "HN1 Ship Log: Shrine Island 5 - Poster",
+        "region": "Lake Core", "requires": []
+    },
+
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042048, "name": "HN1 Ship Log: Alpine Core 1 - Building",
+        "region": "Alpine Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042049, "name": "HN1 Ship Log: Alpine Core 2 - Mural",
+        "region": "Alpine Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042050, "name": "HN1 Ship Log: Odd Code",
+        "region": "Alpine Core", "requires": []
+    },
+
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042051, "name": "HN1 Ship Log: Derelict Ship 1 - Edge",
+        "region": "Derelict Ship Exterior", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042052, "name": "HN1 Ship Log: Derelict Ship 2 - Barrier",
+        "region": "Derelict Ship Exterior", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042053, "name": "HN1 Ship Log: Derelict Ship 3 - Ghost Matter",
+        "region": "Derelict Ship Interior", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042054, "name": "HN1 Ship Log: Derelict Ship 4 - Pods",
+        "region": "Derelict Ship Interior", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042055, "name": "HN1 Ship Log: Derelict Ship 5 - Cockpit",
+        "region": "Derelict Ship Interior", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042056, "name": "HN1 Ship Log: Derelict Ship 6 - Report",
+        "region": "Derelict Ship Interior", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042057, "name": "HN1 Ship Log: Derelict Ship 7 - Signal",
+        "region": "Derelict Ship Interior", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042058, "name": "HN1 Ship Log: Escape Pod Signal",
+        "region": "Lonely Hermit", "requires": [ { "region": "Sole Survivor Pod" } ] // return to LH after finding pod
     }
 ]

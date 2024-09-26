@@ -191,6 +191,14 @@ class SplitTranslator(Toggle):
     display_name = "Split Translator"
 
 
+class EnableHearthsNeighborMod(Toggle):
+    """
+    Incorporates Hearth's Neighbor story mod content into the randomizer with an additional 3 items and 20 locations.
+    If logsanity is enabled, that will add another 39 locations, for a total of 59 HN1 locations.
+    """
+    display_name = "Enable Hearth's Neighbor Story Mod"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -209,6 +217,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     logsanity: Logsanity
     shuffle_spacesuit: ShuffleSpacesuit
     split_translator: SplitTranslator
+    enable_hn1_mod: EnableHearthsNeighborMod
 
 
 def get_creation_settings(options: OuterWildsGameOptions) -> Set[str]:

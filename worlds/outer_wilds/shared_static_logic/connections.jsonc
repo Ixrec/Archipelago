@@ -23,12 +23,9 @@
     { "from": "Timber Hearth Village", "to": "Timber Hearth", "requires": [ { "item": "Spacesuit" } ] },
     { "from": "Timber Hearth", "to": "Timber Hearth Village", "requires": [] },
 
-    // you can simply fall into the black hole inside BH instead of using the warp pad
+    // you can simply fall into the black hole inside BH instead of using the warp pad, no matter what warp rando does
     { "from": "Brittle Hollow", "to": "White Hole Station", "requires": [
-        { "anyOf": [
-            { "item": "Spacesuit" }, // for movement/oxygen after jumping in the black hole
-            { "item": "Nomai Warp Codes" } // for using the warp pad, which does not require the suit
-        ] }
+        { "item": "Spacesuit" } // for movement/oxygen after jumping in the black hole
     ] },
 
     // you can simply jump off/out and fall to the rest of the Hanging City

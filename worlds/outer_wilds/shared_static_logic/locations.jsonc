@@ -1964,6 +1964,14 @@
         "category": "hn1", "logsanity": true, "address": 1085042050, "name": "HN1 Ship Log: Odd Code",
         "region": "Alpine Core", "requires": []
     },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042059, "name": "HN1 Ship Log: Blue House 1 - Visit",
+        "region": "Alpine Core", "requires": []
+    },
+    {
+        "category": "hn1", "logsanity": true, "address": 1085042060, "name": "HN1 Ship Log: Blue House 2 - Map",
+        "region": "Alpine Core", "requires": []
+    },
 
     {
         "category": "hn1", "logsanity": true, "address": 1085042051, "name": "HN1 Ship Log: Derelict Ship 1 - Edge",

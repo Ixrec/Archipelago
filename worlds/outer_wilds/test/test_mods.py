@@ -18,6 +18,6 @@ class TestHN1Logsanity(OuterWildsTestBase):
 
     def test_hn1_logsanity(self):
         # 87(+2V) base game default locations + 176 base game logsanity locations +
-        # 20 HN1 default locations + 39 HN1 logsanity locations
-        self.assertEqual(self.getLocationCount(), 324)
+        # 20 HN1 default locations + 41 HN1 logsanity locations
+        self.assertEqual(self.getLocationCount(), 326)
 

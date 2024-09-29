@@ -21,3 +21,43 @@ class TestHN1Logsanity(OuterWildsTestBase):
         # 20 HN1 default locations + 41 HN1 logsanity locations
         self.assertEqual(self.getLocationCount(), 326)
 
+
+class TestAllMods(OuterWildsTestBase):
+    options = {
+        "enable_hn1_mod": 1,
+        # todo
+    }
+
+    def test_all_mods_logsanity(self):
+        # 87(+2V) base game default locations +
+        # 20 HN1 default locations +
+        self.assertEqual(self.getLocationCount(), 109)
+
+
+class TestAllModsLogsanity(OuterWildsTestBase):
+    options = {
+        "enable_hn1_mod": 1,
+        # todo
+        "logsanity": 1
+    }
+
+    def test_all_mods_logsanity(self):
+        # 87(+2V) base game default locations + 176 base game logsanity locations +
+        # 20 HN1 default locations + 41 HN1 logsanity locations
+        self.assertEqual(self.getLocationCount(), 326)
+
+
+# this is just to get an assertion on the maximum possible location count
+class TestAllModsAndDLCLogsanity(OuterWildsTestBase):
+    options = {
+        "enable_eote_dlc": 1,
+        "enable_hn1_mod": 1,
+        # todo
+        "logsanity": 1
+    }
+
+    def test_all_mods_and_dlc_logsanity(self):
+        # 87(+2V) base game default locations + 176 base game logsanity locations +
+        # 34(+4V) DLC default locations + 72 DLC logsanity locations +
+        # 20 HN1 default locations + 41 HN1 logsanity locations
+        self.assertEqual(self.getLocationCount(), 436)

@@ -140,6 +140,7 @@ class EarlyKeyItem(Choice):
 
     `any` will randomly select one of these items that's relevant to your spawn (especially useful with `spawn: random`).
     For base game spawns it will choose Translator, NWC or LC, and for stranger spawns it will choose LC or SLM.
+    If split_translator is also on, then "Translator" means the one for your spawn planet.
 
     Recommended for games with non-vanilla spawns, especially async games.
     In addition, without this AP seems to almost always put Launch Codes in sphere 1, so `any` also helps increase variety.

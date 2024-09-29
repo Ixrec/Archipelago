@@ -194,7 +194,7 @@ class SplitTranslator(Toggle):
 class EnableHearthsNeighborMod(Toggle):
     """
     Incorporates Hearth's Neighbor story mod content into the randomizer with an additional 3 items and 20 locations.
-    If logsanity is enabled, that will add another 39 locations, for a total of 59 HN1 locations.
+    If logsanity is enabled, that will add another 41 locations, for a total of 61 HN1 locations.
     """
     display_name = "Enable Hearth's Neighbor Story Mod"
 

@@ -83,12 +83,14 @@
 
     { "category": "base", "code": null, "name": "Victory - Song of Five", "type": "progression" },
     { "category": "base", "code": null, "name": "Victory - Song of the Nomai", "type": "progression" },
-    { "category": "base+dlc", "code": null, "name": "Victory - Song of the Stranger", "type": "progression" },
-    { "category": "base+dlc", "code": null, "name": "Victory - Song of Six", "type": "progression" },
-    { "category": "base+dlc", "code": null, "name": "Victory - Song of Seven", "type": "progression" },
+    { "category": "base&dlc", "code": null, "name": "Victory - Song of the Stranger", "type": "progression" },
+    { "category": "base&dlc", "code": null, "name": "Victory - Song of Six", "type": "progression" },
+    { "category": "base&dlc", "code": null, "name": "Victory - Song of Seven", "type": "progression" },
     { "category": "dlc", "code": null, "name": "Victory - Echoes of the Eye", "type": "progression" },
 
     { "category": "hn1", "code": 1734473752, "name": "Neighbor's Distress Signal Frequency", "type": "progression" },
     { "category": "hn1", "code": 1734473753, "name": "Lava Core Signals Frequency", "type": "progression" },
-    { "category": "hn1", "code": 1734473754, "name": "Galactic Communication Frequency", "type": "progression" }
+    { "category": "hn1", "code": 1734473754, "name": "Galactic Communication Frequency", "type": "progression" },
+
+    { "category": "ac", "code": 1734473755, "name": "Astral Codec Frequency", "type": "progression" }
 ]

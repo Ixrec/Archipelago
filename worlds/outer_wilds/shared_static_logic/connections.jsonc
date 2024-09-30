@@ -247,5 +247,29 @@
     { "category": "hn1", "from": "Timber Hearth", "to": "Sole Survivor Pod", "requires": [
         { "item": "Signalscope" },
         { "item": "Galactic Communication Frequency" }
-    ] }
+    ] },
+
+    { "category": "to", "from": "Space", "to": "Dark Bramble Exterior", "requires": [] },
+
+    { "category": "to", "from": "Dark Bramble Exterior", "to": "Secluded Structure", "requires": [
+        { "location": "TO: Jellyfish Painting Path" }, // seeing the hidden path in the painting
+        { "region": "Feldspar's Camp" } // getting to the jellyfish the usual way
+    ] },
+    { "category": "to", "from": "Secluded Structure", "to": "Cliffside Home", "requires": [
+        // copy-pasted from "EotE: Find an Artifact", since you can generate Outsider locations without DLC locations
+        { "anyOf": [
+            { "item": "Ghost Matter Wavelength" }, // to safely enter River Lowlands Workshop
+            { "item": "Stranger Light Modulator" }, // to use a raft and an elevator to reach Hidden Gorge
+            { "item": "Breach Override Codes" } // to enter Hidden Gorge Laboratory
+        ] }
+        // no logic needed for "can get ship into shuttle crusher then fly it over" since this already requires reaching DB
+    ] },
+    { "category": "to&dlc", "from": "Cliffside Home", "to": "Endless Canyon", "requires": [
+        { "item": "Stranger Light Modulator" } // take the elevator down to the regular DLC content
+    ] },
+
+    { "category": "to", "from": "Dark Bramble", "to": "Projection Pool House", "requires": [ { "item": "Scout" } ] },
+
+    { "category": "ac", "from": "Space", "to": "Lingering Chime", "requires": [] },
+    { "category": "ac", "from": "Space", "to": "Dark Bramble Research Station", "requires": [] }
 ]

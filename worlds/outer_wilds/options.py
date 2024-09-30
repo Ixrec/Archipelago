@@ -200,6 +200,22 @@ class EnableHearthsNeighborMod(Toggle):
     display_name = "Enable Hearth's Neighbor Story Mod"
 
 
+class EnableTheOutsiderMod(Toggle):
+    """
+    Incorporates The Outsider story mod content into the randomizer with an additional ? items and ? locations.
+    If logsanity is enabled, that will add another ? locations, for a total of ? TO (The Outsider) locations.
+    """
+    display_name = "Enable The Outsider Story Mod"
+
+
+class EnableAstralCodecMod(Toggle):
+    """
+    Incorporates Astral Codec story mod content into the randomizer with an additional ? items and ? locations.
+    If logsanity is enabled, that will add another ? locations, for a total of ? AC locations.
+    """
+    display_name = "Enable Astral Codec Story Mod"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -219,6 +235,8 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     shuffle_spacesuit: ShuffleSpacesuit
     split_translator: SplitTranslator
     enable_hn1_mod: EnableHearthsNeighborMod
+    enable_outsider_mod: EnableTheOutsiderMod
+    enable_ac_mod: EnableAstralCodecMod
 
 
 def get_creation_settings(options: OuterWildsGameOptions) -> Set[str]:

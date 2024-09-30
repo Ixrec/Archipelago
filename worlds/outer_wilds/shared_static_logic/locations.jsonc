@@ -1700,7 +1700,7 @@
         ]
     },
     {
-        "category": "base+dlc", "address": null, "name": "Victory - Song of the Stranger",
+        "category": "base&dlc", "address": null, "name": "Victory - Song of the Stranger",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
@@ -1710,7 +1710,7 @@
         ]
     },
     {
-        "category": "base+dlc", "address": null, "name": "Victory - Song of Six",
+        "category": "base&dlc", "address": null, "name": "Victory - Song of Six",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
@@ -1723,7 +1723,7 @@
         ]
     },
     {
-        "category": "base+dlc", "address": null, "name": "Victory - Song of Seven",
+        "category": "base&dlc", "address": null, "name": "Victory - Song of Seven",
         "region": "The Vessel",
         "requires": [
             { "item": "Warp Core Installation Manual" },
@@ -2004,5 +2004,400 @@
     {
         "category": "hn1", "logsanity": true, "address": 1085042058, "name": "HN1 Ship Log: Escape Pod Signal",
         "region": "Lonely Hermit", "requires": [ { "region": "Sole Survivor Pod" } ] // return to LH after finding pod
+    },
+
+// The Outsider Story Mod Default Locations
+// These location ids start at 1085043000 (i.e. rounding up to the next thousand),
+// to make it slightly easier to change locations in the future.
+
+    {
+        "category": "to", "address": 1085043000, "name": "TO: ",
+        "region": "Dark Bramble Exterior", "requires": []
+    },
+
+// The Outsider Story Mod Logsanity Locations
+
+    { // PS_POWER_STATION_X1
+        "category": "to", "logsanity": true, "address": 1085043050, "name": "TO Ship Log: Power Station 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // PS_POWER_STATION_X2
+        "category": "to", "logsanity": true, "address": 1085043051, "name": "TO Ship Log: Power Station 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // PS_POWER_STATION_X3
+        "category": "to", "logsanity": true, "address": 1085043052, "name": "TO Ship Log: Power Station 3 - ?",
+        "region": "Dark Bramble Exterior", "requires": [] // just move any orb
+    },
+    { // PS_POWER_STATION_X4
+        "category": "to", "logsanity": true, "address": 1085043053, "name": "TO Ship Log: Power Station 4 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Scout" } ] // take scout photos through any seed
+    },
+    { // DB_BRAMBLE_VILLAGE_X1
+        "category": "to", "logsanity": true, "address": 1085043054, "name": "TO Ship Log: Bramble Village 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_BRAMBLE_VILLAGE_X2
+        "category": "to", "logsanity": true, "address": 1085043055, "name": "TO Ship Log: Bramble Village 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": [
+            { "item": "Translator (Dark Bramble)" },
+            { "item": "Ghost Matter Wavelength" }
+        ]
+    },
+    { // DB_BRAMBLE_VILLAGE_X3
+        "category": "to", "logsanity": true, "address": 1085043056, "name": "TO Ship Log: Bramble Village 3 - ?",
+        "region": "Dark Bramble Exterior", "requires": [
+            { "item": "Translator (Dark Bramble)" },
+            { "item": "Ghost Matter Wavelength" }
+        ]
+    },
+    { // DB_BRAMBLE_VILLAGE_X4
+        "category": "to", "logsanity": true, "address": 1085043057, "name": "TO Ship Log: Bramble Village 4 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_BRAMBLE_VILLAGE_X5
+        "category": "to", "logsanity": true, "address": 1085043058, "name": "TO Ship Log: Bramble Village 5 - ?",
+        "region": "Dark Bramble Exterior", "requires": [] // only requires finding the secret entrance, not opening it
+    },
+    { // DB_SECRET_ROOM_X1
+        "category": "to", "logsanity": true, "address": 1085043059, "name": "TO Ship Log: Secret Room 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": [] // how do you open the room?
+    },
+    { // DB_SECRET_ROOM_X2
+        "category": "to", "logsanity": true, "address": 1085043060, "name": "TO Ship Log: Secret Room 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_SIMULATION_HOUSE_X1
+        "category": "to", "logsanity": true, "address": 1085043061, "name": "TO Ship Log: Simulation House 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_SIMULATION_HOUSE_X2
+        "category": "to", "logsanity": true, "address": 1085043062, "name": "TO Ship Log: Simulation House 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": []
+    },
+    { // DB_SIMULATION_HOUSE_INSIDE_X1
+        "category": "to", "logsanity": true, "address": 1085043063, "name": "TO Ship Log: Simulation House Inside 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": []
+    },
+    { // DB_SIMULATION_HOUSE_INSIDE_X2
+        "category": "to", "logsanity": true, "address": 1085043064, "name": "TO Ship Log: Simulation House Inside 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_SIMULATION_HOUSE_INSIDE_X3
+        "category": "to", "logsanity": true, "address": 1085043065, "name": "TO Ship Log: Simulation House Inside 3 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_SIMULATION_HOUSE_INSIDE_X4
+        "category": "to", "logsanity": true, "address": 1085043066, "name": "TO Ship Log: Simulation House Inside 4 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_SIMULATION_HOUSE_INSIDE_X5
+        "category": "to", "logsanity": true, "address": 1085043067, "name": "TO Ship Log: Simulation House Inside 5 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // IP_DREAM_HOME_X1
+        "category": "to", "logsanity": true, "address": 1085043068, "name": "TO Ship Log: Dream Home 1 - ?",
+        "region": "Dream Home", "requires": []
+    },
+    { // IP_DREAM_HOME_X2
+        "category": "to", "logsanity": true, "address": 1085043069, "name": "TO Ship Log: Dream Home 2 - ?",
+        "region": "Dream Home", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // IP_DREAM_HOME_X3
+        "category": "to", "logsanity": true, "address": 1085043070, "name": "TO Ship Log: Dream Home 3 - ?",
+        "region": "Dream Home", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // IP_DREAM_HOME_X4
+        "category": "to", "logsanity": true, "address": 1085043071, "name": "TO Ship Log: Dream Home 4 - ?",
+        "region": "Dream Home", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_STUDY_TOWER_X1
+        "category": "to", "logsanity": true, "address": 1085043072, "name": "TO Ship Log: Study Tower 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_STUDY_TOWER_X2
+        "category": "to", "logsanity": true, "address": 1085043073, "name": "TO Ship Log: Study Tower 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_STUDY_TOWER_X3
+        "category": "to", "logsanity": true, "address": 1085043074, "name": "TO Ship Log: Study Tower 3 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_STUDY_TOWER_TOP_X1
+        "category": "to", "logsanity": true, "address": 1085043075, "name": "TO Ship Log: Study Tower Top",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_PROJECTION_POOL_HOUSE_X1
+        "category": "to", "logsanity": true, "address": 1085043076, "name": "TO Ship Log: Projection Pool House 1 - ?",
+        "region": "Projection Pool House", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_PROJECTION_POOL_HOUSE_X2
+        "category": "to", "logsanity": true, "address": 1085043077, "name": "TO Ship Log: Projection Pool House 2 - ?",
+        "region": "Projection Pool House", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_PROJECTION_POOL_HOUSE_X3
+        "category": "to", "logsanity": true, "address": 1085043078, "name": "TO Ship Log: Projection Pool House 3 - ?",
+        "region": "Projection Pool House", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_PROJECTION_POOL_HOUSE_X4
+        "category": "to", "logsanity": true, "address": 1085043079, "name": "TO Ship Log: Projection Pool House 4 - ?",
+        "region": "Projection Pool House", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_HUNTING_BLIND_X1
+        "category": "to", "logsanity": true, "address": 1085043080, "name": "TO Ship Log: Hunting Blind 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_HUNTING_BLIND_X2A
+        "category": "to", "logsanity": true, "address": 1085043081, "name": "TO Ship Log: Hunting Blind 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_HUNTING_BLIND_X2B
+        "category": "to", "logsanity": true, "address": 1085043082, "name": "TO Ship Log: Hunting Blind 3 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_HUNTING_BLIND_X3
+        "category": "to", "logsanity": true, "address": 1085043083, "name": "TO Ship Log: Hunting Blind 4 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_SHUTTLE_CRUSHER_X1
+        "category": "to", "logsanity": true, "address": 1085043084, "name": "TO Ship Log: Shuttle Crusher 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_SHUTTLE_CRUSHER_X2
+        "category": "to", "logsanity": true, "address": 1085043085, "name": "TO Ship Log: Shuttle Crusher 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_SHUTTLE_CRUSHER_X3
+        "category": "to", "logsanity": true, "address": 1085043086, "name": "TO Ship Log: Shuttle Crusher 3 - ?",
+        "region": "Dark Bramble Exterior", "requires": [] // just orb
+    },
+    { // DB_SHUTTLE_CRUSHER_X4
+        "category": "to", "logsanity": true, "address": 1085043087, "name": "TO Ship Log: Shuttle Crusher 4 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_INITIAL_CAMP_X1
+        "category": "to", "logsanity": true, "address": 1085043088, "name": "TO Ship Log: Initial Camp",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_NORTHERN_OBSERVATORY_X1 // are any items needed to get in here? just leaving the ship in orbit seems easy enough
+        "category": "to", "logsanity": true, "address": 1085043089, "name": "TO Ship Log: Northern Observatory 1 - ?",
+        "region": "Dark Bramble Exterior", "requires": []
+    },
+    { // DB_NORTHERN_OBSERVATORY_X3
+        "category": "to", "logsanity": true, "address": 1085043090, "name": "TO Ship Log: Northern Observatory 2 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_NORTHERN_OBSERVATORY_X4
+        "category": "to", "logsanity": true, "address": 1085043091, "name": "TO Ship Log: Northern Observatory 3 - ?",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // DB_DRIFTING_DEATH_X1
+        "category": "to", "logsanity": true, "address": 1085043092, "name": "TO Ship Log: Drifting Death",
+        "region": "Dark Bramble Exterior", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+
+// Astral Codec Story Mod Default Locations
+// These location ids start at 1085044000 (i.e. rounding up to the next thousand),
+// to make it slightly easier to change locations in the future.
+
+    {
+        "category": "ac", "address": 1085044000, "name": "AC: ",
+        "region": "Menu", "requires": []
+    },
+
+// Astral Codec Story Mod Logsanity Locations
+
+    { // codex_flashback_fact
+        "category": "ac", "logsanity": true, "address": 1085044050, "name": "AC Ship Log: Flashback ?",
+        "region": "Menu", "requires": [] // dying
+    },
+    { // codex_projection_fact
+        "category": "ac", "logsanity": true, "address": 1085044051, "name": "AC Ship Log: Anomaly Recording 1 - Probe",
+        "region": "GD Core", "requires": [ { "item": "Translator (Giant's Deep)" } ]
+    },
+    { // codex_projection_projection_fact
+        "category": "ac", "logsanity": true, "address": 1085044052, "name": "AC Ship Log: Anomaly Recording 2 - Vortex",
+        "region": "GD Core", "requires": [] // use projection stone in projection pool, no translation
+    },
+    { // codex_projection_text_fact
+        "category": "ac", "logsanity": true, "address": 1085044053, "name": "AC Ship Log: Anomaly Recording 3 - Location",
+        "region": "GD Core", "requires": [ { "item": "Translator (Giant's Deep)" } ]
+    },
+    { // codex_anomaly_fact
+        "category": "ac", "logsanity": true, "address": 1085044054, "name": "AC Ship Log: Anomalous Body 1 - Anomaly",
+        "region": "Space", "requires": []
+    },
+    { // codex_lingering_chime_tesseract
+        "category": "ac", "logsanity": true, "address": 1085044055, "name": "AC Ship Log: Anomalous Body 2 - Revealed",
+        "region": "Space", "requires": []
+    },
+
+    { // codex_lingering_chime_fact
+        "category": "ac", "logsanity": true, "address": 1085044056, "name": "AC Ship Log: Lingering Chime 1 - Invisible",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_material
+        "category": "ac", "logsanity": true, "address": 1085044057, "name": "AC Ship Log: Lingering Chime 2 - Material",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_water
+        "category": "ac", "logsanity": true, "address": 1085044058, "name": "AC Ship Log: Upper Deck 1 - Water",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_antenna
+        "category": "ac", "logsanity": true, "address": 1085044059, "name": "AC Ship Log: Upper Deck 2 - Antenna",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_signal
+        "category": "ac", "logsanity": true, "address": 1085044060, "name": "AC Ship Log: Upper Deck 3 - Chiming",
+        "region": "Lingering Chime", "requires": [
+            { "item": "Signalscope" },
+            { "item": "Astral Codec Frequency" }
+        ]
+    },
+    { // codex_lingering_chime_trails_activator
+        "category": "ac", "logsanity": true, "address": 1085044061, "name": "AC Ship Log: Upper Deck 4 - Wires",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_spacecraft_fact
+        "category": "ac", "logsanity": true, "address": 1085044062, "name": "AC Ship Log: Icons Display 1 - Icons",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_spacecraft_trails
+        "category": "ac", "logsanity": true, "address": 1085044063, "name": "AC Ship Log: Icons Display 2 - Purple",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_population_fact
+        "category": "ac", "logsanity": true, "address": 1085044064, "name": "AC Ship Log: Tally Display 1 - Tallies",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_population_trails
+        "category": "ac", "logsanity": true, "address": 1085044065, "name": "AC Ship Log: Tally Display 2 - Green",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_no_sun_fact
+        "category": "ac", "logsanity": true, "address": 1085044066, "name": "AC Ship Log: Circular Display",
+        "region": "Lingering Chime", "requires": []
+    },
+    { // codex_lingering_chime_lower
+        "category": "ac", "logsanity": true, "address": 1085044067, "name": "AC Ship Log: Lower Deck",
+        "region": "Lingering Chime", "requires": []
+    },
+
+    { // codex_ember_memorial
+        "category": "ac", "logsanity": true, "address": 1085044068, "name": "AC Ship Log: Reunion Memorial 1 - Visit",
+        "region": "Hourglass Twins", "requires": []
+    },
+    { // codex_ember_matter
+        "category": "ac", "logsanity": true, "address": 1085044069, "name": "AC Ship Log: Reunion Memorial 2 - Duplicate",
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+    },
+    { // codex_ember_cairns
+        "category": "ac", "logsanity": true, "address": 1085044070, "name": "AC Ship Log: Reunion Memorial 3 - Scientist",
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+    },
+    { // codex_ember_cairns_safeguards
+        "category": "ac", "logsanity": true, "address": 1085044071, "name": "AC Ship Log: Reunion Memorial 4 - Safeguards",
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+    },
+    { // codex_ember_cairns_safeguard_archivist
+        "category": "ac", "logsanity": true, "address": 1085044072, "name": "AC Ship Log: Reunion Memorial 5 - Archivist",
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+    },
+    { // codex_ember_symbols
+        "category": "ac", "logsanity": true, "address": 1085044073, "name": "AC Ship Log: Reunion Memorial 6 - Symbols",
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+    },
+    { // codex_ember_hologram
+        "category": "ac", "logsanity": true, "address": 1085044074, "name": "AC Ship Log: Reunion Memorial 7 - Archivist",
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+    },
+
+    { // codex_interloper_recorder_warning
+        "category": "ac", "logsanity": true, "address": 1085044075, "name": "AC Ship Log: Missing Fuel Geode",
+        "region": "Interloper Core", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+    { // codex_bramble_station
+        "category": "ac", "logsanity": true, "address": 1085044076, "name": "AC Ship Log: Research Station 1 - Visit",
+        "region": "Dark Bramble Research Station", "requires": []
+    },
+    { // codex_bramble_research
+        "category": "ac", "logsanity": true, "address": 1085044077, "name": "AC Ship Log: Research Station 2 - Pocket",
+        "region": "Dark Bramble Research Station", "requires": [
+            { "item": "Scout" }, // to launch through the window onto the warp transmitter, charging the receiver's backwarp
+            { "region": "Nomai Grave" }, // reach the warp receiver the usual way to use its backwarp
+            { "item": "Translator (Dark Bramble)" } // to translate the scroll you get from doing this puzzle
+        ]
+    },
+    { // codex_bramble_scroll
+        "category": "ac", "logsanity": true, "address": 1085044078, "name": "AC Ship Log: Research Station 3 - Explorer",
+        "region": "Dark Bramble Research Station", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // codex_bramble_symbols
+        "category": "ac", "logsanity": true, "address": 1085044079, "name": "AC Ship Log: Research Station 4 - Symbols",
+        "region": "Dark Bramble Research Station", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+    },
+    { // codex_bramble_hologram
+        "category": "ac", "logsanity": true, "address": 1085044080, "name": "AC Ship Log: Research Station 5 - Hologram",
+        "region": "Dark Bramble Research Station", "requires": [] // just pick up the scroll
+    },
+
+    { // codex_lingering_chime_spacecraft_complete
+        "category": "ac", "logsanity": true, "address": 1085044081, "name": "AC Ship Log: Icons Display 3 - Solution",
+        "region": "Lingering Chime", "requires": [
+            { "item": "Launch Codes" }, // to put your ship on Ash Twin
+            { "item": "Nomai Warp Codes" } // to get from AT to TH with the black hole to LC
+        ]
+    },
+    { // codex_astral_codex_galaxy
+        "category": "ac", "logsanity": true, "address": 1085044082, "name": "AC Ship Log: Astral Codec 1 - Transmitting",
+        "region": "Lingering Chime", "requires": [
+            { "location": "AC Ship Log: Icons Display 3 - Solution" },
+            { "item": "Translator (Other)" }
+        ]
+    },
+
+    { // codex_lingering_chime_population_complete
+        "category": "ac", "logsanity": true, "address": 1085044083, "name": "AC Ship Log: Tally Display 3 - Solution",
+        "region": "Lingering Chime", "requires": [
+            { "region": "Ash Twin Interior" } // to duplicate yourself using the ATP black hole at loop's end
+        ]
+    },
+    { // codex_astral_codex_species
+        "category": "ac", "logsanity": true, "address": 1085044084, "name": "AC Ship Log: Astral Codec 2 - Stories",
+        "region": "Lingering Chime", "requires": [
+            { "location": "AC Ship Log: Tally Display 3 - Solution" },
+            { "item": "Translator (Other)" }
+        ]
+    },
+
+    { // codex_lingering_chime_no_sun_complete
+        "category": "ac", "logsanity": true, "address": 1085044085, "name": "AC Ship Log: Circular Display 2 - Solution",
+        "region": "Lingering Chime", "requires": [
+            { "item": "Scout" } // to launch into DB
+            // if you can reach Lingering Chime, then you can reach TH's DB seed, so no need for another region condition
+        ]
+    },
+    { // codex_astral_codex_environments
+        "category": "ac", "logsanity": true, "address": 1085044086, "name": "AC Ship Log: Astral Codec 3 - Hope",
+        "region": "Lingering Chime", "requires": [
+            { "location": "AC Ship Log: Circular Display 2 - Solution" },
+            { "item": "Translator (Other)" }
+        ]
+    },
+
+    { // codex_astral_codex_fact
+        "category": "ac", "logsanity": true, "address": 1085044087, "name": "AC Ship Log: Astral Codec 4 - Onwards",
+        "region": "Lingering Chime", "requires": [
+            // Since only 1 of the 3 safeguards stays disabled after a loop reset, we have to be careful about the
+            // distinction between disabling all 3 safeguards in separate loops versus in the same loop.
+            { "item": "Launch Codes" }, // to put your ship on Ash Twin
+            { "item": "Nomai Warp Codes" }, // to get from AT to TH
+            { "item": "Scout" }, // to launch into TH's DB seed
+            // then use TH's black hole into LC
+            { "item": "Translator (Other)" } // translate the final Lower Deck text wheels
+            // then recall Scout and use it to download the Astral Codec
+        ]
     }
 ]

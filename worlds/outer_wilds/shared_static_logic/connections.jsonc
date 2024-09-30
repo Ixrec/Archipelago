@@ -247,5 +247,21 @@
     { "category": "hn1", "from": "Timber Hearth", "to": "Sole Survivor Pod", "requires": [
         { "item": "Signalscope" },
         { "item": "Galactic Communication Frequency" }
-    ] }
+    ] },
+
+    { "category": "to", "from": "Space", "to": "Dark Bramble Exterior", "requires": [] },
+
+    { "category": "to", "from": "Dark Bramble Exterior", "to": "Dream Home", "requires": [
+        // copy-pasted from "EotE: Find an Artifact", since you can generate Outsider locations without DLC locations
+        { "anyOf": [
+            { "item": "Ghost Matter Wavelength" }, // to safely enter River Lowlands Workshop
+            { "item": "Stranger Light Modulator" }, // to use a raft and an elevator to reach Hidden Gorge
+            { "item": "Breach Override Codes" } // to enter Hidden Gorge Laboratory
+        ] }
+    ] },
+
+    { "category": "to", "from": "Dark Bramble", "to": "Projection Pool House", "requires": [ { "item": "Scout" } ] },
+
+    { "category": "ac", "from": "Space", "to": "Lingering Chime", "requires": [] },
+    { "category": "ac", "from": "Space", "to": "Dark Bramble Research Station", "requires": [] }
 ]

@@ -222,6 +222,14 @@ class EnableAstralCodecMod(Toggle):
     display_name = "Enable Astral Codec Story Mod"
 
 
+class EnableHearthsNeighbor2MagistariumMod(Toggle):
+    """
+    Incorporates Hearth's Neighbor 2: Magistarium story mod content into the randomizer with an additional 4 items and 18 locations.
+    If logsanity is enabled, that will add another 30 locations, for a total of 48 HN2 locations.
+    """
+    display_name = "Enable Hearth's Neighbor 2: Magistarium Story Mod"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -243,6 +251,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     enable_hn1_mod: EnableHearthsNeighborMod
     enable_outsider_mod: EnableTheOutsiderMod
     enable_ac_mod: EnableAstralCodecMod
+    enable_hn2_mod: EnableHearthsNeighbor2MagistariumMod
 
 
 def get_creation_settings(options: OuterWildsGameOptions) -> Set[str]:

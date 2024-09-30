@@ -2621,5 +2621,221 @@
             { "item": "Translator (Other)" } // translate the final Lower Deck text wheels
             // then recall Scout and use it to download the Astral Codec
         ]
+    },
+
+// Hearth's Neighbor 2: Magistarium Story Mod Default Locations
+// These location ids start at 1085045000 (i.e. rounding up to the next thousand),
+// to make it slightly easier to change locations in the future.
+
+    { // HN2_Intro1
+        "category": "hn2", "address": 1085045000, "name": "HN2: The Magistarium",
+        "region": "Magistarium", "requires": [] // just fly up to it
+    },
+    { // HN2_Device_RumorChamber
+        "category": "hn2", "address": 1085045001, "name": "HN2: The Device (Memory Cube)",
+        "region": "Magistarium", "requires": [ { "item": "Memory Cube Interface" } ] // 1st cube in Grand Chamber
+    },
+    { // HN2_GC2
+        "category": "hn2", "address": 1085045002, "name": "HN2: Campfire Book",
+        "region": "Magistarium", "requires": [] // just pick up the book
+    },
+
+    { // HN2_LB3
+        "category": "hn2", "address": 1085045003, "name": "HN2: Lamp Book",
+        "region": "Magistarium Library", "requires": [] // climb on top of the lamp and pick up the book
+    },
+    { // HN2_LB6
+        "category": "hn2", "address": 1085045004, "name": "HN2: Disco Ball",
+        "region": "Magistarium Library", "requires": [] // just interact with the ball
+    },
+    { // HN2_Device_RumorLibrary
+        "category": "hn2", "address": 1085045005, "name": "HN2: Reading Room (Memory Cube)",
+        "region": "Magistarium Library", "requires": [
+            { "location": "HN2: Campfire Book" },
+            { "location": "HN2: Lamp Book" },
+            { "location": "HN2: Dormitory Book" },
+            { "item": "Memory Cube Interface" }
+        ]
+    },
+
+    { // HN2_DM2
+        "category": "hn2", "address": 1085045006, "name": "HN2: Dormitory Book",
+        "region": "Magistarium Dormitories", "requires": [] // just pick up the book in Vultos' room
+    },
+    { // EndConversation FoxleSecretCube
+        "category": "hn2", "address": 1085045007, "name": "HN2: Vultos' Room (Hidden Memory Cube)",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Memory Cube Interface" } ] // hidden behind a fake ceiling tile
+    },
+    { // HN2_DM6
+        "category": "hn2", "address": 1085045008, "name": "HN2: Vespa's Room",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Stranger Light Modulator" } ]
+    },
+    { // HN2_DM3
+        "category": "hn2", "address": 1085045009, "name": "HN2: Acquarius' Room",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // EndConversation NomaiCube
+        "category": "hn2", "address": 1085045010, "name": "HN2: Lily's Room (Memory Cube)",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+    { // HN2_DM5
+        "category": "hn2", "address": 1085045011, "name": "HN2: Roja's Room",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // HN2_DM7
+        "category": "hn2", "address": 1085045012, "name": "HN2: Quartz's Room",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+
+    { // HN2_MG3
+        "category": "hn2", "address": 1085045013, "name": "HN2: The Lie (Memory Cube)",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+    { // HN2_Device_RumorMagi
+        "category": "hn2", "address": 1085045014, "name": "HN2: Closing the Hatch (Memory Cube)",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+
+    { // HN2_EG1
+        "category": "hn2", "address": 1085045015, "name": "HN2: Engine Room",
+        "region": "Magistarium Engine Room", "requires": []
+    },
+    { // HN2_Device_RumorEngine
+        "category": "hn2", "address": 1085045016, "name": "HN2: Spare Batteries (Memory Cube)",
+        "region": "Magistarium Engine Room", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+
+    { // HN2_Device1
+        "category": "hn2", "address": 1085045017, "name": "HN2: Activate The Device",
+        "region": "Magistarium Outer Planes", "requires": []
+    },
+
+// Hearth's Neighbor 2: Magistarium Story Mod Logsanity Locations
+
+    { // HN2_Intro1
+        "category": "hn2", "logsanity": true, "address": 1085045052, "name": "HN2 Ship Log: The Magistarium 1 - Visit",
+        "region": "Magistarium", "requires": [] // just fly up to it
+    },
+    { // HN2_Intro2
+        "category": "hn2", "logsanity": true, "address": 1085045053, "name": "HN2 Ship Log: The Magistarium 2 - Oxygen",
+        "region": "Magistarium", "requires": [ { "item": "Memory Cube Interface" } ] // talk to cube in first hallway, where the air is rushing out
+    },
+    { // HN2_Intro3
+        "category": "hn2", "logsanity": true, "address": 1085045054, "name": "HN2 Ship Log: The Magistarium 3 - Power",
+        "region": "Magistarium", "requires": [] // just hang out for 6 minutes
+    },
+    { // HN2_Intro4
+        "category": "hn2", "logsanity": true, "address": 1085045055, "name": "HN2 Ship Log: The Magistarium 4 - Emergency",
+        "region": "Magistarium", "requires": [] // just hang out for 17 minutes
+    },
+    { // HN2_Intro5
+        "category": "hn2", "logsanity": true, "address": 1085045056, "name": "HN2 Ship Log: The Magistarium 5 - Dies",
+        "region": "Magistarium", "requires": [] // just hang out for 20 minutes
+    },
+
+    { // HN2_GC1
+        "category": "hn2", "logsanity": true, "address": 1085045057, "name": "HN2 Ship Log: Grand Chamber 1 - Hub",
+        "region": "Magistarium", "requires": []
+    },
+    { // HN2_GC2
+        "category": "hn2", "logsanity": true, "address": 1085045058, "name": "HN2 Ship Log: Grand Chamber 2 - Book",
+        "region": "Magistarium", "requires": []
+    },
+
+    { // HN2_EG1
+        "category": "hn2", "logsanity": true, "address": 1085045059, "name": "HN2 Ship Log: Engine Room 1 - Generator",
+        "region": "Magistarium Engine Room", "requires": []
+    },
+    { // HN2_EG2
+        "category": "hn2", "logsanity": true, "address": 1085045060, "name": "HN2 Ship Log: Engine Room 2 - Breaker",
+        "region": "Magistarium Engine Room", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+
+    { // HN2_LB1
+        "category": "hn2", "logsanity": true, "address": 1085045061, "name": "HN2 Ship Log: Library 1 - Top Floor",
+        "region": "Magistarium Library", "requires": []
+    },
+    { // HN2_LB2
+        "category": "hn2", "logsanity": true, "address": 1085045062, "name": "HN2 Ship Log: Library 2 - Overdue",
+        "region": "Magistarium Library", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+    { // HN2_LB3
+        "category": "hn2", "logsanity": true, "address": 1085045063, "name": "HN2 Ship Log: Library 3 - Lamp",
+        "region": "Magistarium Library", "requires": []
+    },
+    { // HN2_LB4
+        "category": "hn2", "logsanity": true, "address": 1085045064, "name": "HN2 Ship Log: Library 4 - Red",
+        "region": "Magistarium Library", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+    { // HN2_LB5
+        "category": "hn2", "logsanity": true, "address": 1085045065, "name": "HN2 Ship Log: Library 5 - Paintings",
+        "region": "Magistarium Library", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+    { // HN2_LB6
+        "category": "hn2", "logsanity": true, "address": 1085045066, "name": "HN2 Ship Log: Library 6 - Ball",
+        "region": "Magistarium Library", "requires": []
+    },
+
+    { // HN2_DM1
+        "category": "hn2", "logsanity": true, "address": 1085045067, "name": "HN2 Ship Log: Dormitories 1 - Culture",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // HN2_DM2
+        "category": "hn2", "logsanity": true, "address": 1085045068, "name": "HN2 Ship Log: Dormitories 2 - Book",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // HN2_DM3
+        "category": "hn2", "logsanity": true, "address": 1085045069, "name": "HN2 Ship Log: Dormitories 3 - Pool",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // HN2_DM4
+        "category": "hn2", "logsanity": true, "address": 1085045070, "name": "HN2 Ship Log: Dormitories 4 - Sealed",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+    { // HN2_DM5
+        "category": "hn2", "logsanity": true, "address": 1085045071, "name": "HN2 Ship Log: Dormitories 5 - Paintings",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // HN2_DM6
+        "category": "hn2", "logsanity": true, "address": 1085045072, "name": "HN2 Ship Log: Dormitories 6 - Inhabitant",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Stranger Light Modulator" } ]
+    },
+    { // HN2_DM7
+        "category": "hn2", "logsanity": true, "address": 1085045073, "name": "HN2 Ship Log: Dormitories 7 - Fuel",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // HN2_DM8
+        "category": "hn2", "logsanity": true, "address": 1085045074, "name": "HN2 Ship Log: Dormitories 8 - Symbol",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // HN2_DM9
+        "category": "hn2", "logsanity": true, "address": 1085045075, "name": "HN2 Ship Log: Dormitories 9 - Writing",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+
+    { // HN2_MG1
+        "category": "hn2", "logsanity": true, "address": 1085045076, "name": "HN2 Ship Log: Magister's Room 1 - Hidden",
+        "region": "Magistarium Dormitories", "requires": []
+    },
+    { // HN2_MG2
+        "category": "hn2", "logsanity": true, "address": 1085045077, "name": "HN2 Ship Log: Magister's Room 2 - Lifespans",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+    { // HN2_MG3
+        "category": "hn2", "logsanity": true, "address": 1085045078, "name": "HN2 Ship Log: Magister's Room 3 - The Lie",
+        "region": "Magistarium Dormitories", "requires": [ { "item": "Memory Cube Interface" } ]
+    },
+
+    { // HN2_Device1
+        "category": "hn2", "logsanity": true, "address": 1085045079, "name": "HN2 Ship Log: The Device 1 - Fire",
+        "region": "Magistarium Outer Planes", "requires": []
+    },
+    { // HN2_Device2
+        "category": "hn2", "logsanity": true, "address": 1085045080, "name": "HN2 Ship Log: The Device 2 - Explore",
+        "region": "Magistarium Outer Planes", "requires": []
+    },
+    { // HN2_Device3
+        "category": "hn2", "logsanity": true, "address": 1085045081, "name": "HN2 Ship Log: The Device 3 - Creators",
+        "region": "Magistarium Outer Planes", "requires": []
     }
 ]

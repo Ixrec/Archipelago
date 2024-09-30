@@ -286,5 +286,18 @@
         // being at DBRS implies Launch Codes already
         { "item": "Scout" }, // launch at the DBRS warp transmitter and it ends up at EP3/NG
         { "item": "Silent Running Mode" } // to fly into Dark Bramble safely and follow the Scout marker
+    ] },
+
+    { "category": "hn2", "from": "Space", "to": "Jam 3 Galaxy", "requires": [
+        { "item": "Spacesuit" } // we don't have proper HN2 suitless logic, so simply require suit for all of it
+    ] },
+    { "category": "hn2", "from": "Jam 3 Galaxy", "to": "Magistarium", "requires": [] },
+    { "category": "hn2", "from": "Magistarium", "to": "Magistarium Library", "requires": [ { "item": "Magistarium Library Access Code" } ] },
+    { "category": "hn2", "from": "Magistarium", "to": "Magistarium Dormitories", "requires": [ { "item": "Magistarium Dormitory Access Code" } ] },
+    { "category": "hn2", "from": "Magistarium", "to": "Magistarium Engine Room", "requires": [ { "item": "Magistarium Engine Access Code" } ] },
+    { "category": "hn2", "from": "Magistarium", "to": "Magistarium Outer Planes", "requires": [
+        { "item": "Magistarium Dormitory Access Code" }, // enter the Magister's room
+        { "item": "Memory Cube Interface" }, // close the hatch so you can safely remove your spacesuit
+        { "item": "Magistarium Dormitory Access Code" } // to get the battery
     ] }
 ]

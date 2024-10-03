@@ -207,7 +207,7 @@ class EnableTheOutsiderMod(Toggle):
 
     split_translator is highly recommended with this mod, since it adds a lot of Translator checks to Dark Bramble.
 
-    If randomize_orbits is true, this mod forces GD and DB to be in their vanilla "lanes" and have the same orbit angle.
+    If randomize_orbits is true, this option forces GD and DB to be in their vanilla "lanes" and have the same orbit angle.
     """
     display_name = "Enable The Outsider Story Mod"
 
@@ -217,7 +217,10 @@ class EnableAstralCodecMod(Toggle):
     Incorporates Astral Codec story mod content into the randomizer with an additional 1 item and 21 locations.
     If logsanity is enabled, that will add another 38 locations, for a total of 59 AC locations.
 
-    If randomize_warp_platforms is true, this mod will ensure there's a warp from the Hourglass Twins to Timber Hearth.
+    If randomize_warp_platforms is true, this option will ensure there's a warp from the Hourglass Twins to Timber Hearth.
+
+    Unfortunately, The Outsider and Astral Codec have a compatibility issue that often makes Translation Probe Thicket
+    and/or its signal invisible, but the mod will ensure you can still check the AP location for that signal.
     """
     display_name = "Enable Astral Codec Story Mod"
 

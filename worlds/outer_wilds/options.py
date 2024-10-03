@@ -206,6 +206,8 @@ class EnableTheOutsiderMod(Toggle):
     If logsanity is enabled, that will add another 44 locations, for a total of 65 TO (The Outsider) locations.
 
     split_translator is highly recommended with this mod, since it adds a lot of Translator checks to Dark Bramble.
+
+    If randomize_orbits is true, this mod forces GD and DB to be in their vanilla "lanes" and have the same orbit angle.
     """
     display_name = "Enable The Outsider Story Mod"
 

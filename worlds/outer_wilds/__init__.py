@@ -87,7 +87,7 @@ class OuterWildsWorld(World):
             if self.options.randomize_coordinates else "vanilla"
         self.warps = generate_random_warp_platform_mapping(self.random) \
             if self.options.randomize_warp_platforms else "vanilla"
-        (self.planet_order, self.orbit_angles, self.rotation_axes) = generate_random_orbits(self.random) \
+        (self.planet_order, self.orbit_angles, self.rotation_axes) = generate_random_orbits(self.random, self.options) \
             if self.options.randomize_orbits else ("vanilla", "vanilla", "vanilla")
 
         db_option = self.options.randomize_dark_bramble_layout

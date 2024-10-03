@@ -216,6 +216,8 @@ class EnableAstralCodecMod(Toggle):
     """
     Incorporates Astral Codec story mod content into the randomizer with an additional 1 item and 21 locations.
     If logsanity is enabled, that will add another 38 locations, for a total of 59 AC locations.
+
+    If randomize_warp_platforms is true, this mod will ensure there's a warp from the Hourglass Twins to Timber Hearth.
     """
     display_name = "Enable Astral Codec Story Mod"
 

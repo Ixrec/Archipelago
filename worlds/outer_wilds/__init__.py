@@ -146,7 +146,7 @@ class OuterWildsWorld(World):
             "death_link",                   # a client/mod feature
             "goal", "spawn",                             # affects tons of stuff, but also a client/mod faeture
             "logsanity", "enable_eote_dlc", "dlc_only",  # changes AP locations, needed by in-game tracker
-            "enable_hn1_mod",
+            "enable_hn1_mod", "enable_outsider_mod", "enable_ac_mod",
             "split_translator"                           # changes AP items, and how client/mod implements Translator
         )
         # more client/mod features, these are only in the apworld because we want them fixed per-slot/at gen time

@@ -217,7 +217,9 @@
         { "item": "Alarm Bypass Patch" }
     ] },
 
-    { "category": "hn1", "from": "Space", "to": "Lonely Hermit", "requires": [] },
+    { "category": "hn1", "from": "Space", "to": "Lonely Hermit", "requires": [
+        { "item": "Spacesuit" } // we don't have proper HN1 suitless logic, so simply require suit for all of it
+    ] },
 
     { "category": "hn1", "from": "Lonely Hermit", "to": "Alpine Core", "requires": [] },
 
@@ -235,7 +237,7 @@
         { "item": "Stranger Light Modulator" }
     ] },
 
-    { "category": "hn1", "from": "Space", "to": "Derelict Ship Exterior", "requires": [
+    { "category": "hn1", "from": "Lonely Hermit", "to": "Derelict Ship Exterior", "requires": [
         { "item": "Signalscope" },
         { "item": "Neighbor's Distress Signal Frequency" }
     ] },
@@ -246,10 +248,13 @@
 
     { "category": "hn1", "from": "Timber Hearth", "to": "Sole Survivor Pod", "requires": [
         { "item": "Signalscope" },
-        { "item": "Galactic Communication Frequency" }
+        { "item": "Galactic Communication Frequency" },
+        { "item": "Spacesuit" } // we don't have proper HN1 suitless logic, so simply require suit for all of it
     ] },
 
-    { "category": "to", "from": "Space", "to": "Dark Bramble Exterior", "requires": [] },
+    { "category": "to", "from": "Space", "to": "Dark Bramble Exterior", "requires": [
+        { "item": "Spacesuit" } // we don't have proper outsider suitless logic, so simply require suit for all of it
+    ] },
 
     { "category": "to", "from": "Dark Bramble Exterior", "to": "Secluded Structure", "requires": [
         { "location": "TO: Jellyfish Painting Path" }, // seeing the hidden path in the painting
@@ -270,6 +275,10 @@
 
     { "category": "to", "from": "Dark Bramble", "to": "Projection Pool House", "requires": [ { "item": "Scout" } ] },
 
-    { "category": "ac", "from": "Space", "to": "Lingering Chime", "requires": [] },
-    { "category": "ac", "from": "Space", "to": "Dark Bramble Research Station", "requires": [] }
+    { "category": "ac", "from": "Space", "to": "Lingering Chime", "requires": [
+        { "item": "Spacesuit" } // we don't have proper AC suitless logic, so simply require suit for all of it
+    ] },
+    { "category": "ac", "from": "Space", "to": "Dark Bramble Research Station", "requires": [
+        { "item": "Spacesuit" } // we don't have proper AC suitless logic, so simply require suit for all of it
+    ] }
 ]

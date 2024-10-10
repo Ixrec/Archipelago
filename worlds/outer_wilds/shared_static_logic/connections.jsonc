@@ -280,5 +280,11 @@
     ] },
     { "category": "ac", "from": "Space", "to": "Dark Bramble Research Station", "requires": [
         { "item": "Spacesuit" } // we don't have proper AC suitless logic, so simply require suit for all of it
+    ] },
+    // Astral Codec adds a new way to find Escape Pod 3 / the Nomai Grave with Scout instead of Signalscope
+    { "category": "ac", "from": "Dark Bramble Research Station", "to": "Nomai Grave", "requires": [
+        // being at DBRS implies Launch Codes already
+        { "item": "Scout" }, // launch at the DBRS warp transmitter and it ends up at EP3/NG
+        { "item": "Silent Running Mode" } // to fly into Dark Bramble safely and follow the Scout marker
     ] }
 ]

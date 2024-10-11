@@ -2354,7 +2354,7 @@
     },
     { // codex_ember_hologram
         "category": "ac", "address": 1085044011, "name": "AC: Reunion Memorial (Trigger Hologram)",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" }, { "region": "Lingering Chime" } ]
     },
 
     { // codex_interloper_recorder_warning
@@ -2513,23 +2513,23 @@
     },
     { // codex_ember_cairns
         "category": "ac", "logsanity": true, "address": 1085044071, "name": "AC Ship Log: Reunion Memorial 4 - Scientist",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" }, { "region": "Lingering Chime" } ]
     },
     { // codex_ember_cairns_safeguards
         "category": "ac", "logsanity": true, "address": 1085044072, "name": "AC Ship Log: Reunion Memorial 5 - Safeguards",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" }, { "region": "Lingering Chime" } ]
     },
     { // codex_ember_cairns_safeguard_archivist
         "category": "ac", "logsanity": true, "address": 1085044073, "name": "AC Ship Log: Reunion Memorial 6 - Archivist",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" }, { "region": "Lingering Chime" } ]
     },
     { // codex_ember_symbols
         "category": "ac", "logsanity": true, "address": 1085044074, "name": "AC Ship Log: Reunion Memorial 7 - Symbols",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" }, { "region": "Lingering Chime" } ]
     },
     { // codex_ember_hologram
         "category": "ac", "logsanity": true, "address": 1085044075, "name": "AC Ship Log: Reunion Memorial 8 - Hologram",
-        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" }, { "region": "Lingering Chime" } ]
     },
 
     { // codex_interloper_recorder_warning

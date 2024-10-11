@@ -218,9 +218,6 @@ class EnableAstralCodecMod(Toggle):
     If logsanity is enabled, that will add another 39 locations, for a total of 60 AC locations.
 
     If randomize_warp_platforms is true, this option will ensure there's a warp from the Hourglass Twins to Timber Hearth.
-
-    Unfortunately, The Outsider and Astral Codec have a compatibility issue that often makes Translation Probe Thicket
-    and/or its signal invisible, but the mod will ensure you can still check the AP location for that signal.
     """
     display_name = "Enable Astral Codec Story Mod"
 

@@ -2390,20 +2390,23 @@
         "category": "ac", "address": 1085044017, "name": "AC: LC Icons Solved",
         "region": "Lingering Chime", "requires": [
             { "item": "Launch Codes" }, // to put your ship on Ash Twin
-            { "item": "Nomai Warp Codes" } // to get from AT to TH with the black hole to LC
+            { "item": "Nomai Warp Codes" }, // to get from AT to TH with the black hole to LC
+            { "item": "Translator (Other)" } // translate the Lower Deck text wheels
         ]
     },
     { // codex_lingering_chime_population_complete
         "category": "ac", "address": 1085044018, "name": "AC: LC Tallies Solved",
         "region": "Lingering Chime", "requires": [
-            { "region": "Ash Twin Interior" } // to duplicate yourself using the ATP black hole at loop's end
+            { "region": "Ash Twin Interior" }, // to duplicate yourself using the ATP black hole at loop's end
+            { "item": "Translator (Other)" } // translate the Lower Deck text wheels
         ]
     },
     { // codex_lingering_chime_no_sun_complete
         "category": "ac", "address": 1085044019, "name": "AC: LC Circle Solved",
         "region": "Lingering Chime", "requires": [
-            { "item": "Scout" } // to launch into DB
+            { "item": "Scout" }, // to launch into DB
             // if you can reach Lingering Chime, then you can reach TH's DB seed, so no need for another region condition
+            { "item": "Translator (Other)" } // translate the Lower Deck text wheels
         ]
     },
     { // codex_astral_codex_fact
@@ -2566,43 +2569,43 @@
         "category": "ac", "logsanity": true, "address": 1085044082, "name": "AC Ship Log: Icons Display 3 - Solution",
         "region": "Lingering Chime", "requires": [
             { "item": "Launch Codes" }, // to put your ship on Ash Twin
-            { "item": "Nomai Warp Codes" } // to get from AT to TH with the black hole to LC
+            { "item": "Nomai Warp Codes" }, // to get from AT to TH with the black hole to LC
+            { "item": "Translator (Other)" } // translate the Lower Deck text wheels
         ]
     },
     { // codex_astral_codex_galaxy
         "category": "ac", "logsanity": true, "address": 1085044083, "name": "AC Ship Log: Astral Codec 1 - Transmitting",
         "region": "Lingering Chime", "requires": [
-            { "location": "AC Ship Log: Icons Display 3 - Solution" },
-            { "item": "Translator (Other)" }
+            { "location": "AC Ship Log: Icons Display 3 - Solution" }
         ]
     },
 
     { // codex_lingering_chime_population_complete
         "category": "ac", "logsanity": true, "address": 1085044084, "name": "AC Ship Log: Tally Display 3 - Solution",
         "region": "Lingering Chime", "requires": [
-            { "region": "Ash Twin Interior" } // to duplicate yourself using the ATP black hole at loop's end
+            { "region": "Ash Twin Interior" }, // to duplicate yourself using the ATP black hole at loop's end
+            { "item": "Translator (Other)" } // translate the Lower Deck text wheels
         ]
     },
     { // codex_astral_codex_species
         "category": "ac", "logsanity": true, "address": 1085044085, "name": "AC Ship Log: Astral Codec 2 - Stories",
         "region": "Lingering Chime", "requires": [
-            { "location": "AC Ship Log: Tally Display 3 - Solution" },
-            { "item": "Translator (Other)" }
+            { "location": "AC Ship Log: Tally Display 3 - Solution" }
         ]
     },
 
     { // codex_lingering_chime_no_sun_complete
         "category": "ac", "logsanity": true, "address": 1085044086, "name": "AC Ship Log: Circular Display 2 - Solution",
         "region": "Lingering Chime", "requires": [
-            { "item": "Scout" } // to launch into DB
+            { "item": "Scout" }, // to launch into DB
             // if you can reach Lingering Chime, then you can reach TH's DB seed, so no need for another region condition
+            { "item": "Translator (Other)" } // translate the Lower Deck text wheels
         ]
     },
     { // codex_astral_codex_environments
         "category": "ac", "logsanity": true, "address": 1085044087, "name": "AC Ship Log: Astral Codec 3 - Hope",
         "region": "Lingering Chime", "requires": [
-            { "location": "AC Ship Log: Circular Display 2 - Solution" },
-            { "item": "Translator (Other)" }
+            { "location": "AC Ship Log: Circular Display 2 - Solution" }
         ]
     },
 

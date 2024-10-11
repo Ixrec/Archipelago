@@ -2507,38 +2507,42 @@
         "category": "ac", "logsanity": true, "address": 1085044069, "name": "AC Ship Log: Reunion Memorial 2 - Duplicate",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
     },
+    { // codex_ember_shuttle
+        "category": "ac", "logsanity": true, "address": 1085044070, "name": "AC Ship Log: Reunion Memorial 3 - Shuttle",
+        "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
+    },
     { // codex_ember_cairns
-        "category": "ac", "logsanity": true, "address": 1085044070, "name": "AC Ship Log: Reunion Memorial 3 - Scientist",
+        "category": "ac", "logsanity": true, "address": 1085044071, "name": "AC Ship Log: Reunion Memorial 4 - Scientist",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
     },
     { // codex_ember_cairns_safeguards
-        "category": "ac", "logsanity": true, "address": 1085044071, "name": "AC Ship Log: Reunion Memorial 4 - Safeguards",
+        "category": "ac", "logsanity": true, "address": 1085044072, "name": "AC Ship Log: Reunion Memorial 5 - Safeguards",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
     },
     { // codex_ember_cairns_safeguard_archivist
-        "category": "ac", "logsanity": true, "address": 1085044072, "name": "AC Ship Log: Reunion Memorial 5 - Archivist",
+        "category": "ac", "logsanity": true, "address": 1085044073, "name": "AC Ship Log: Reunion Memorial 6 - Archivist",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
     },
     { // codex_ember_symbols
-        "category": "ac", "logsanity": true, "address": 1085044073, "name": "AC Ship Log: Reunion Memorial 6 - Symbols",
+        "category": "ac", "logsanity": true, "address": 1085044074, "name": "AC Ship Log: Reunion Memorial 7 - Symbols",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
     },
     { // codex_ember_hologram
-        "category": "ac", "logsanity": true, "address": 1085044074, "name": "AC Ship Log: Reunion Memorial 7 - Hologram",
+        "category": "ac", "logsanity": true, "address": 1085044075, "name": "AC Ship Log: Reunion Memorial 8 - Hologram",
         "region": "Hourglass Twins", "requires": [ { "item": "Translator (Hourglass Twins)" } ]
     },
 
     { // codex_interloper_recorder_warning
-        "category": "ac", "logsanity": true, "address": 1085044075, "name": "AC Ship Log: Missing Fuel Geode",
+        "category": "ac", "logsanity": true, "address": 1085044076, "name": "AC Ship Log: Missing Fuel Geode",
         "region": "Interloper Core", "requires": [ { "item": "Translator (Other)" } ]
     },
 
     { // codex_bramble_station
-        "category": "ac", "logsanity": true, "address": 1085044076, "name": "AC Ship Log: Research Station 1 - Visit",
+        "category": "ac", "logsanity": true, "address": 1085044077, "name": "AC Ship Log: Research Station 1 - Visit",
         "region": "Dark Bramble Research Station", "requires": []
     },
     { // codex_bramble_research
-        "category": "ac", "logsanity": true, "address": 1085044077, "name": "AC Ship Log: Research Station 2 - Pocket",
+        "category": "ac", "logsanity": true, "address": 1085044078, "name": "AC Ship Log: Research Station 2 - Pocket",
         "region": "Dark Bramble Research Station", "requires": [
             { "item": "Scout" }, // to launch through the window onto the warp transmitter, charging the receiver's backwarp
             { "region": "Nomai Grave" }, // reach the warp receiver the usual way to use its backwarp
@@ -2546,27 +2550,27 @@
         ]
     },
     { // codex_bramble_scroll
-        "category": "ac", "logsanity": true, "address": 1085044078, "name": "AC Ship Log: Research Station 3 - Explorer",
+        "category": "ac", "logsanity": true, "address": 1085044079, "name": "AC Ship Log: Research Station 3 - Explorer",
         "region": "Dark Bramble Research Station", "requires": [ { "item": "Translator (Dark Bramble)" } ]
     },
     { // codex_bramble_symbols
-        "category": "ac", "logsanity": true, "address": 1085044079, "name": "AC Ship Log: Research Station 4 - Symbols",
+        "category": "ac", "logsanity": true, "address": 1085044080, "name": "AC Ship Log: Research Station 4 - Symbols",
         "region": "Dark Bramble Research Station", "requires": [ { "item": "Translator (Dark Bramble)" } ]
     },
     { // codex_bramble_hologram
-        "category": "ac", "logsanity": true, "address": 1085044080, "name": "AC Ship Log: Research Station 5 - Hologram",
+        "category": "ac", "logsanity": true, "address": 1085044081, "name": "AC Ship Log: Research Station 5 - Hologram",
         "region": "Dark Bramble Research Station", "requires": [] // just pick up the scroll
     },
 
     { // codex_lingering_chime_spacecraft_complete
-        "category": "ac", "logsanity": true, "address": 1085044081, "name": "AC Ship Log: Icons Display 3 - Solution",
+        "category": "ac", "logsanity": true, "address": 1085044082, "name": "AC Ship Log: Icons Display 3 - Solution",
         "region": "Lingering Chime", "requires": [
             { "item": "Launch Codes" }, // to put your ship on Ash Twin
             { "item": "Nomai Warp Codes" } // to get from AT to TH with the black hole to LC
         ]
     },
     { // codex_astral_codex_galaxy
-        "category": "ac", "logsanity": true, "address": 1085044082, "name": "AC Ship Log: Astral Codec 1 - Transmitting",
+        "category": "ac", "logsanity": true, "address": 1085044083, "name": "AC Ship Log: Astral Codec 1 - Transmitting",
         "region": "Lingering Chime", "requires": [
             { "location": "AC Ship Log: Icons Display 3 - Solution" },
             { "item": "Translator (Other)" }
@@ -2574,13 +2578,13 @@
     },
 
     { // codex_lingering_chime_population_complete
-        "category": "ac", "logsanity": true, "address": 1085044083, "name": "AC Ship Log: Tally Display 3 - Solution",
+        "category": "ac", "logsanity": true, "address": 1085044084, "name": "AC Ship Log: Tally Display 3 - Solution",
         "region": "Lingering Chime", "requires": [
             { "region": "Ash Twin Interior" } // to duplicate yourself using the ATP black hole at loop's end
         ]
     },
     { // codex_astral_codex_species
-        "category": "ac", "logsanity": true, "address": 1085044084, "name": "AC Ship Log: Astral Codec 2 - Stories",
+        "category": "ac", "logsanity": true, "address": 1085044085, "name": "AC Ship Log: Astral Codec 2 - Stories",
         "region": "Lingering Chime", "requires": [
             { "location": "AC Ship Log: Tally Display 3 - Solution" },
             { "item": "Translator (Other)" }
@@ -2588,14 +2592,14 @@
     },
 
     { // codex_lingering_chime_no_sun_complete
-        "category": "ac", "logsanity": true, "address": 1085044085, "name": "AC Ship Log: Circular Display 2 - Solution",
+        "category": "ac", "logsanity": true, "address": 1085044086, "name": "AC Ship Log: Circular Display 2 - Solution",
         "region": "Lingering Chime", "requires": [
             { "item": "Scout" } // to launch into DB
             // if you can reach Lingering Chime, then you can reach TH's DB seed, so no need for another region condition
         ]
     },
     { // codex_astral_codex_environments
-        "category": "ac", "logsanity": true, "address": 1085044086, "name": "AC Ship Log: Astral Codec 3 - Hope",
+        "category": "ac", "logsanity": true, "address": 1085044087, "name": "AC Ship Log: Astral Codec 3 - Hope",
         "region": "Lingering Chime", "requires": [
             { "location": "AC Ship Log: Circular Display 2 - Solution" },
             { "item": "Translator (Other)" }
@@ -2603,7 +2607,7 @@
     },
 
     { // codex_astral_codex_fact
-        "category": "ac", "logsanity": true, "address": 1085044087, "name": "AC Ship Log: Astral Codec 4 - Onwards",
+        "category": "ac", "logsanity": true, "address": 1085044088, "name": "AC Ship Log: Astral Codec 4 - Onwards",
         "region": "Lingering Chime", "requires": [
             // Since only 1 of the 3 safeguards stays disabled after a loop reset, we have to be careful about the
             // distinction between disabling all 3 safeguards in separate loops versus in the same loop.

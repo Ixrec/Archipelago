@@ -2058,7 +2058,7 @@
     },
     {
         "category": "to", "address": 1085043009, "name": "TO: Cliffside Home Explanation (Text Wall)",
-        "region": "Cliffside Home", "requires": [ { "item": "Translator (Dark Bramble)" } ]
+        "region": "Cliffside Home", "requires": [ { "item": "Translator (Other)" } ]
     },
     {
         "category": "to", "address": 1085043010, "name": "TO: Study Tower (2nd Scroll)",
@@ -2198,15 +2198,15 @@
     },
     { // IP_DREAM_HOME_X2
         "category": "to", "logsanity": true, "address": 1085043069, "name": "TO Ship Log: Cliffside Home 2 - Security",
-        "region": "Cliffside Home", "requires": [ { "item": "Translator (Dark Bramble)" } ] // Me + Datura
+        "region": "Cliffside Home", "requires": [ { "item": "Translator (Other)" } ] // Me + Datura
     },
     { // IP_DREAM_HOME_X3
         "category": "to", "logsanity": true, "address": 1085043070, "name": "TO Ship Log: Cliffside Home 3 - Released",
-        "region": "Cliffside Home", "requires": [ { "item": "Translator (Dark Bramble)" } ] // Explain + Prisoner
+        "region": "Cliffside Home", "requires": [ { "item": "Translator (Other)" } ] // Explain + Prisoner
     },
     { // IP_DREAM_HOME_X4
         "category": "to", "logsanity": true, "address": 1085043071, "name": "TO Ship Log: Cliffside Home 4 - Decayed",
-        "region": "Cliffside Home", "requires": [ { "item": "Translator (Dark Bramble)" } ] // Explain + Me or Prisoner
+        "region": "Cliffside Home", "requires": [ { "item": "Translator (Other)" } ] // Explain + Me or Prisoner
     },
     { // DB_STUDY_TOWER_X1
         "category": "to", "logsanity": true, "address": 1085043072, "name": "TO Ship Log: Study Tower 1 - Flickering",

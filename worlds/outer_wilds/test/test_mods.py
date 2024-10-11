@@ -60,8 +60,8 @@ class TestACLogsanity(OuterWildsTestBase):
 
     def test_ac_logsanity(self):
         # 87(+2V) base game default locations + 176 base game logsanity locations +
-        # 21 AC default locations + 38 AC logsanity locations
-        self.assertEqual(self.getLocationCount(), 324)
+        # 21 AC default locations + 39 AC logsanity locations
+        self.assertEqual(self.getLocationCount(), 325)
 
 
 class TestAllMods(OuterWildsTestBase):
@@ -91,8 +91,8 @@ class TestAllModsLogsanity(OuterWildsTestBase):
         # 87(+2V) base game default locations + 176 base game logsanity locations +
         # 20 HN1 default locations + 41 HN1 logsanity locations +
         # 21 TO default locations + 44 TO logsanity locations +
-        # 21 AC default locations + 38 AC logsanity locations
-        self.assertEqual(self.getLocationCount(), 450)
+        # 21 AC default locations + 39 AC logsanity locations
+        self.assertEqual(self.getLocationCount(), 451)
 
 
 # this is just to get an assertion on the maximum possible location count
@@ -110,5 +110,5 @@ class TestAllModsAndDLCLogsanity(OuterWildsTestBase):
         # 34(+4V) DLC default locations + 72 DLC logsanity locations +
         # 20 HN1 default locations + 41 HN1 logsanity locations +
         # 21 TO default locations + 44 TO logsanity locations +
-        # 21 AC default locations + 38 AC logsanity locations
-        self.assertEqual(self.getLocationCount(), 560)
+        # 21 AC default locations + 39 AC logsanity locations
+        self.assertEqual(self.getLocationCount(), 561)

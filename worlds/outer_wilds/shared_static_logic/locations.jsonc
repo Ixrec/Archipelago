@@ -1267,7 +1267,7 @@
         ]
     },
     {
-        "category": "dlc", "address": 1085040021, "name": "EotE: Map Projections",
+        "category": "dlc", "address": 1085040021, "name": "EotE: Temple Map Projections",
         "region": "Abandoned Temple", "requires": [
             { "location": "EotE: Symbol Room Temple Code" }
         ]

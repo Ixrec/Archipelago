@@ -232,8 +232,8 @@ class EnableHearthsNeighbor2MagistariumMod(Toggle):
 
 class EnableFretsQuestMod(Toggle):
     """
-    Incorporates Fret's Quest story mod content into the randomizer with an additional (TODO) items and (TODO) locations.
-    If logsanity is enabled, that will add another (TODO) locations, for a total of (TODO) FQ locations.
+    Incorporates Fret's Quest story mod content into the randomizer with an additional 1 item and 18 locations.
+    If logsanity is enabled, that will add another 38 locations, for a total of 56 FQ locations.
     """
     display_name = "Enable Fret's Quest Story Mod"
 

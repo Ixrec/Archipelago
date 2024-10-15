@@ -299,5 +299,13 @@
         { "item": "Magistarium Dormitory Access Code" }, // enter the Magister's room
         { "item": "Memory Cube Interface" }, // close the hatch so you can safely remove your spacesuit
         { "item": "Magistarium Dormitory Access Code" } // to get the battery
+    ] },
+
+    { "category": "fq", "from": "Hourglass Twins", "to": "Lost Strings", "requires": [
+        { "item": "Entanglement Rule" },
+        { "item": "Spacesuit" }
+    ] },
+    { "category": "fq", "from": "Lost Strings", "to": "Banjo Galaxy", "requires": [
+        { "item": "Launch Codes" }
     ] }
 ]

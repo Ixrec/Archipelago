@@ -66,7 +66,7 @@
     { "code": 1734473727, "name": "Audio Trap", "type": "trap" },
     { "code": 1734473728, "name": "Nap Trap", "type": "trap" },
 
-    { "category": "dlc|hn1|hn2", "code": 1734473733, "name": "Stranger Light Modulator", "type": "progression" },
+    { "category": "dlc|hn1|hn2|fq", "code": 1734473733, "name": "Stranger Light Modulator", "type": "progression" },
     { "category": "dlc", "code": 1734473734, "name": "Breach Override Codes", "type": "progression" },
     { "category": "dlc", "code": 1734473735, "name": "River Lowlands Painting Code", "type": "progression" },
     { "category": "dlc", "code": 1734473736, "name": "Cinder Isles Painting Code", "type": "progression" },

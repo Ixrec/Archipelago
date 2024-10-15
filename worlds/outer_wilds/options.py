@@ -230,6 +230,14 @@ class EnableHearthsNeighbor2MagistariumMod(Toggle):
     display_name = "Enable Hearth's Neighbor 2: Magistarium Story Mod"
 
 
+class EnableFretsQuestMod(Toggle):
+    """
+    Incorporates Fret's Quest story mod content into the randomizer with an additional (TODO) items and (TODO) locations.
+    If logsanity is enabled, that will add another (TODO) locations, for a total of (TODO) FQ locations.
+    """
+    display_name = "Enable Fret's Quest Story Mod"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -252,6 +260,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     enable_outsider_mod: EnableTheOutsiderMod
     enable_ac_mod: EnableAstralCodecMod
     enable_hn2_mod: EnableHearthsNeighbor2MagistariumMod
+    enable_fq_mod: EnableFretsQuestMod
 
 
 def get_creation_settings(options: OuterWildsGameOptions) -> Set[str]:

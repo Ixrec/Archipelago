@@ -97,5 +97,7 @@
     { "category": "hn2", "code": 1734473756, "name": "Memory Cube Interface", "type": "progression" },
     { "category": "hn2", "code": 1734473757, "name": "Magistarium Library Access Code", "type": "progression" },
     { "category": "hn2", "code": 1734473758, "name": "Magistarium Dormitory Access Code", "type": "progression" },
-    { "category": "hn2", "code": 1734473759, "name": "Magistarium Engine Access Code", "type": "progression" }
+    { "category": "hn2", "code": 1734473759, "name": "Magistarium Engine Access Code", "type": "progression" },
+
+    { "category": "fq", "code": 1734473760, "name": "Hearthian Radio Frequency", "type": "progression" }
 ]

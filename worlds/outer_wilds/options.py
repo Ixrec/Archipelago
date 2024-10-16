@@ -104,8 +104,17 @@ class RandomizeOrbits(DefaultOnToggle):
     """Randomizes:
     - The order of the five planets (the Hourglass Twins as a whole, Timber Hearth, Brittle Hollow, Giant's Deep, Dark Bramble), i.e. which ones are closer or farther from the sun
     - The orbit angles of the five planets, as well as four satellites (Sun Station, Attlerock, Hollow's Lantern, and the Orbital Probe Cannon)
-    - The axes of rotation for Ember Twin, Ash Twin, Timber Hearth and Brittle Hollow. This often causes the Hourglass Twins' sand pillar to pass through different areas, or structures inside the ATP to move differently."""
+    """
     display_name = "Randomize Orbits"
+
+
+class RandomizeRotations(DefaultOnToggle):
+    """Randomizes the axes of rotation for Ember Twin, Ash Twin, Timber Hearth and Brittle Hollow.
+
+    This often causes the Hourglass Twins' sand pillar to pass through different areas,
+    and structures inside the ATP to move differently (becoming a hazard for the player).
+    """
+    display_name = "Randomize Rotations"
 
 
 class Spawn(Choice):
@@ -248,6 +257,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     dlc_only: DLCOnly
     randomize_coordinates: RandomizeCoordinates
     randomize_orbits: RandomizeOrbits
+    randomize_rotations: RandomizeRotations
     randomize_warp_platforms: RandomizeWarpPlatforms
     randomize_dark_bramble_layout: RandomizeDarkBrambleLayout
     trap_chance: TrapChance

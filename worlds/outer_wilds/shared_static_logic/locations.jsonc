@@ -2837,5 +2837,262 @@
     { // HN2_Device3
         "category": "hn2", "logsanity": true, "address": 1085045081, "name": "HN2 Ship Log: The Device 3 - Creators",
         "region": "Magistarium Outer Planes", "requires": []
+    },
+
+// Fret's Quest Story Mod Default Locations
+// These location ids start at 1085046000 (i.e. rounding up to the next thousand),
+// to make it slightly easier to change locations in the future.
+
+    {
+        "category": "fq", "address": 1085046000, "name": "FQ: Scan Gneiss's Radio Signal",
+        "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Hearthian Radio Frequency" } ]
+    },
+    {
+        "category": "fq", "address": 1085046001, "name": "FQ: Scan Rim's Radio Signal",
+        "region": "Space", "requires": [ { "item": "Signalscope" }, { "item": "Hearthian Radio Frequency" } ]
+    },
+    {
+        "category": "fq", "address": 1085046002, "name": "FQ: Scan Bridge's Radio Signal",
+        "region": "Brittle Hollow", "requires": [ { "item": "Signalscope" }, { "item": "Hearthian Radio Frequency" } ]
+    },
+    {
+        "category": "fq", "address": 1085046003, "name": "FQ: Scan Reson's Radio Signal",
+        "region": "GD Core", "requires": [ { "item": "Signalscope" }, { "item": "Hearthian Radio Frequency" } ]
+    },
+    { // RITUAL_RECORDER
+        "category": "fq", "address": 1085046004, "name": "FQ: The Ritual (Text Wheel)",
+        "region": "Hourglass Twins", "requires": [
+            { "item": "Translator (Hourglass Twins)" },
+            { "item": "Entanglement Rule" },
+            { "item": "Spacesuit" }
+        ]
+    },
+
+    {
+        "category": "fq", "address": 1085046005, "name": "FQ: Scan Reson's Second Radio Signal",
+        "region": "Lost Strings", "requires": [ { "item": "Signalscope" }, { "item": "Hearthian Radio Frequency" } ]
+    },
+    { // RESON_NEW_GALAXY
+        "category": "fq", "address": 1085046006, "name": "FQ: Ask About New Planet",
+        "region": "Lost Strings", "requires": []
+    },
+
+    { // LOST_STRINGS_LYRICS
+        "category": "fq", "address": 1085046007, "name": "FQ: Lost Strings Lyric",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // DRIED_TEARS_RECORDER
+        "category": "fq", "address": 1085046008, "name": "FQ: Dried Tears Lyric",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // BRACKETS_REST_LYRIC
+        "category": "fq", "address": 1085046009, "name": "FQ: Bracket's Rest Lyric",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // LOST_VILLAGE_LYRICS
+        "category": "fq", "address": 1085046010, "name": "FQ: Green Base Lyric",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // TUNERS_QUEST_COMPLETE
+        "category": "fq", "address": 1085046011, "name": "FQ: Tuner's Song",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+    {
+        "category": "fq", "address": 1085046012, "name": "FQ: Scan Rim's Second Radio Signal",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Signalscope" }, { "item": "Hearthian Radio Frequency" } ]
+    },
+    { // TALK_TO_ERNESTO
+        "category": "fq", "address": 1085046013, "name": "FQ: Talk to Ernesto",
+        "region": "Banjo Galaxy", "requires": []
+    },
+
+    { // READ_STRUMS_DIARY_BANJO or READ_STRUMS_DIARY
+        "category": "fq", "address": 1085046014, "name": "FQ: Strum's House Notes",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // READ_SKELETON_SCROLL_START
+        "category": "fq", "address": 1085046015, "name": "FQ: Skeleton Scroll",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // READ_BRIDGE_SCROLL_BANJO
+        "category": "fq", "address": 1085046016, "name": "FQ: Bridge's Scroll",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // READ_BANJO_SCROLL
+        "category": "fq", "address": 1085046017, "name": "FQ: Corrupted Scroll",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+// Fret's Quest Story Mod Logsanity Locations
+
+    { // BACKSTORY_FROM_FRET
+        "category": "fq", "logsanity": true, "address": 1085046050, "name": "FQ Ship Log: Fret's Quest 1 - Stolen",
+        "region": "Timber Hearth Village", "requires": []
+    },
+    { // BACKSTORY_FROM_FRET_2
+        "category": "fq", "logsanity": true, "address": 1085046051, "name": "FQ Ship Log: Fret's Quest 2 - Not Here",
+        "region": "Timber Hearth Village", "requires": []
+    },
+    { // RADIO_LISTENED_TO
+        "category": "fq", "logsanity": true, "address": 1085046052, "name": "FQ Ship Log: Fret's Quest 3 - Signal",
+        "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Hearthian Radio Frequency" } ]
+    },
+    { // REPORTED_TO_FRET
+        "category": "fq", "logsanity": true, "address": 1085046053, "name": "FQ Ship Log: Fret's Quest 4 - Reported",
+        "region": "Timber Hearth Village", "requires": [ { "location": "FQ: Tuner's Song" } ]
+    },
+    { // TUNER_GRAVE_FOUND
+        "category": "fq", "logsanity": true, "address": 1085046054, "name": "FQ Ship Log: Grave",
+        "region": "Timber Hearth", "requires": []
+    },
+
+    { // RIM_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046055, "name": "FQ Ship Log: Rim's Camp",
+        "region": "Space", "requires": [ { "item": "Translator (Timber Hearth)" } ]
+    },
+    { // BRIDGE_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046056, "name": "FQ Ship Log: Bridge's Camp",
+        "region": "Brittle Hollow", "requires": [ { "item": "Translator (Brittle Hollow)" } ]
+    },
+    { // RESON_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046057, "name": "FQ Ship Log: Reson's Camp",
+        "region": "GD Core", "requires": [ { "item": "Translator (Giant's Deep)" } ]
+    },
+    { // RITUAL_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046058, "name": "FQ Ship Log: The Ritual",
+        "region": "Hourglass Twins", "requires": [
+            { "item": "Translator (Hourglass Twins)" },
+            { "item": "Entanglement Rule" },
+            { "item": "Spacesuit" }
+        ]
+    },
+
+    { // RESON_NEW_GALAXY
+        "category": "fq", "logsanity": true, "address": 1085046059, "name": "FQ Ship Log: Reson 1 - New",
+        "region": "Lost Strings", "requires": []
+    },
+    { // RESON_BACKSTORY
+        "category": "fq", "logsanity": true, "address": 1085046060, "name": "FQ Ship Log: Reson 2 - Power",
+        "region": "Lost Strings", "requires": []
+    },
+    { // RESON_BANJO_MISSING
+        "category": "fq", "logsanity": true, "address": 1085046061, "name": "FQ Ship Log: Reson 3 - Disappeared",
+        "region": "Lost Strings", "requires": []
+    },
+
+    { // LOST_STRINGS_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046062, "name": "FQ Ship Log: Nomai Wall 1 - Recording",
+        "region": "Lost Strings", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // LOST_STRINGS_LYRICS
+        "category": "fq", "logsanity": true, "address": 1085046063, "name": "FQ Ship Log: Nomai Wall 2 - Lyrics",
+        "region": "Lost Strings", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+    { // TALKING_SKELETONS
+        "category": "fq", "logsanity": true, "address": 1085046064, "name": "FQ Ship Log: Anglerfish Skeletons 1 - Directions",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // DRIED_TEARS_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046065, "name": "FQ Ship Log: Anglerfish Skeletons 2 - Ice",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+    { // READ_SKELETON_SCROLL_START
+        "category": "fq", "logsanity": true, "address": 1085046066, "name": "FQ Ship Log: Skeleton Scroll 1 - Frozen",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // READ_SKELETON_SCROLL_BRIDGE
+        "category": "fq", "logsanity": true, "address": 1085046067, "name": "FQ Ship Log: Skeleton Scroll 2 - Antlers",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // READ_SKELETON_SCROLL_RIM
+        "category": "fq", "logsanity": true, "address": 1085046068, "name": "FQ Ship Log: Skeleton Scroll 3 - Volunteered",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // READ_SKELETON_SCROLL_FRET
+        "category": "fq", "logsanity": true, "address": 1085046069, "name": "FQ Ship Log: Skeleton Scroll 4 - Contradiction",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+    { // TALK_TO_STRUM
+        "category": "fq", "logsanity": true, "address": 1085046070, "name": "FQ Ship Log: Strum 1 - Life",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // TALK_TO_STRUM_PART_TWO
+        "category": "fq", "logsanity": true, "address": 1085046071, "name": "FQ Ship Log: Strum 2 - Discouraged",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // BRACKETS_REST_LYRIC
+        "category": "fq", "logsanity": true, "address": 1085046072, "name": "FQ Ship Log: Strum 3 - Work",
+        "region": "Banjo Galaxy", "requires": []
+    },
+
+    { // READ_STRUMS_DIARY_BANJO
+        "category": "fq", "logsanity": true, "address": 1085046073, "name": "FQ Ship Log: Strum's House 1 - Scrolls",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // READ_STRUMS_DIARY
+        "category": "fq", "logsanity": true, "address": 1085046074, "name": "FQ Ship Log: Strum's House 2 - Mocked",
+        "region": "Banjo Galaxy", "requires": []
+    },
+
+    { // LANTERN_HOUSE_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046075, "name": "FQ Ship Log: Lost Village 1 - Board Game",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // CLIFF_HOUSE_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046076, "name": "FQ Ship Log: Lost Village 2 - Kidnapping",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Stranger Light Modulator" }, { "item": "Translator (Other)" } ]
+    },
+    { // TALL_HOUSE_RECORDER
+        "category": "fq", "logsanity": true, "address": 1085046077, "name": "FQ Ship Log: Lost Village 3 - Evacuate",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // LOST_VILLAGE_LYRICS
+        "category": "fq", "logsanity": true, "address": 1085046078, "name": "FQ Ship Log: Lost Village 4 - Lyrics",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+    { // TALK_TO_RIM
+        "category": "fq", "logsanity": true, "address": 1085046079, "name": "FQ Ship Log: Ice Spire 1 - Alive",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // ASK_ABOUT_ICE
+        "category": "fq", "logsanity": true, "address": 1085046080, "name": "FQ Ship Log: Ice Spire 2 - Consistency",
+        "region": "Banjo Galaxy", "requires": []
+    },
+
+    { // TALK_TO_ERNESTO
+        "category": "fq", "logsanity": true, "address": 1085046081, "name": "FQ Ship Log: Ernesto",
+        "region": "Banjo Galaxy", "requires": []
+    },
+
+    { // TALK_TO_TUNER
+        "category": "fq", "logsanity": true, "address": 1085046082, "name": "FQ Ship Log: Tuner's Song 1 - Tuner",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // TUNERS_REQUEST
+        "category": "fq", "logsanity": true, "address": 1085046083, "name": "FQ Ship Log: Tuner's Song 2 - Lyrics",
+        "region": "Banjo Galaxy", "requires": []
+    },
+    { // TUNERS_QUEST_COMPLETE
+        "category": "fq", "logsanity": true, "address": 1085046084, "name": "FQ Ship Log: Tuner's Song 3 - Helped",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+    { // READ_BRIDGE_SCROLL_BANJO
+        "category": "fq", "logsanity": true, "address": 1085046085, "name": "FQ Ship Log: Bridge's Scroll 1 - Undamaged",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+    { // READ_BRIDGE_SCROLL_ARGUMENT
+        "category": "fq", "logsanity": true, "address": 1085046086, "name": "FQ Ship Log: Bridge's Scroll 2 - Argued",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
+    },
+
+    { // READ_BANJO_SCROLL
+        "category": "fq", "logsanity": true, "address": 1085046087, "name": "FQ Ship Log: Corrupted Scroll",
+        "region": "Banjo Galaxy", "requires": [ { "item": "Translator (Other)" } ]
     }
 ]

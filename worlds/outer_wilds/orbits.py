@@ -8,8 +8,7 @@ from .options import OuterWildsGameOptions
 #     {"HGT":30, "TH":60, "BH":90, "GD":120, "DB":150, "SS":180, "AR":210, "HL":240, "OPC":270},
 #     {"ET":"up", "AT":"down", "TH":"left", "BH":"right"}
 # )
-def generate_random_orbits(random: Random, options: OuterWildsGameOptions) -> \
-        (List[str], Dict[str, int], Dict[str, str]):
+def generate_random_orbits(random: Random, options: OuterWildsGameOptions) -> (List[str], Dict[str, int]):
     # The Outsider relies on GD and DB coming together at the end of a loop, so they stay in the last two lanes
     if options.enable_outsider_mod:
         inner_planets = ["HGT", "TH", "BH"]
@@ -65,9 +64,10 @@ def generate_random_orbits(random: Random, options: OuterWildsGameOptions) -> \
     for satellite in ("SS", "AR", "HL", "OPC"):
         orbit_angles[satellite] = random.choice(all_possible_angles)
 
-    # Rotations could be generated separately from order and angles, but since we have to
-    # generate the order and angles together, keeping all three together feels simpler.
+    return planet_order, orbit_angles
 
+
+def generate_random_rotations(random: Random) -> Dict[str, str]:
     # These are static properties of Unity's Vector3 class, e.g. Vector3.up is (0, 1, 0)
     possible_axis_directions = ["up", "down", "left", "right", "forward", "back", "zero"]
 
@@ -79,5 +79,4 @@ def generate_random_orbits(random: Random, options: OuterWildsGameOptions) -> \
     for planet in ("ET", "AT", "TH", "BH"):
         rotation_axes[planet] = random.choice(possible_axis_directions)
 
-    return planet_order, orbit_angles, rotation_axes
-
+    return rotation_axes

@@ -6,7 +6,7 @@ from Options import OptionError
 from worlds.AutoWorld import WebWorld, World
 from .coordinates import coordinate_description, generate_random_coordinates
 from .db_layout import generate_random_db_layout
-from .orbits import generate_random_orbits
+from .orbits import generate_random_orbits, generate_random_rotations
 from .warp_platforms import generate_random_warp_platform_mapping
 from .items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .locations_and_regions import all_non_event_locations_table, location_name_groups, create_regions
@@ -87,8 +87,10 @@ class OuterWildsWorld(World):
             if self.options.randomize_coordinates else "vanilla"
         self.warps = generate_random_warp_platform_mapping(self.random, self.options) \
             if self.options.randomize_warp_platforms else "vanilla"
-        (self.planet_order, self.orbit_angles, self.rotation_axes) = generate_random_orbits(self.random, self.options) \
-            if self.options.randomize_orbits else ("vanilla", "vanilla", "vanilla")
+        (self.planet_order, self.orbit_angles) = generate_random_orbits(self.random, self.options) \
+            if self.options.randomize_orbits else ("vanilla", "vanilla")
+        self.rotation_axes = generate_random_rotations(self.random) \
+            if self.options.randomize_rotations else "vanilla"
 
         db_option = self.options.randomize_dark_bramble_layout
         self.db_layout = generate_random_db_layout(self.random, db_option) \

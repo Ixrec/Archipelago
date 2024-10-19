@@ -10,11 +10,9 @@
     { "from": "Space", "to": "Giant's Deep", "requires": [] },
     // the only astral body you can't land on without an item
     { "from": "Space", "to": "Quantum Moon", "requires": [
-        { "item": "Imaging Rule" },
-        { "anyOf": [
-            { "item": "Spacesuit" }, // in this case "Spacesuit" implies the Scout Launcher and its Photo Mode
-            { "item": "Scout" } // without Photo Mode, the only way to take a photo is launching a Scout from the ship
-        ] }
+        { "item": "Imaging Rule" }
+        // In the past, a suitless player without Scout would have no way of actually taking a photo,
+        // but now that "ship photo mode" is an intended feature, we no longer need additional logic here.
     ] },
 
     { "from": "Quantum Moon", "to": "Quantum Shrine", "requires": [ { "item": "Shrine Door Codes" } ] },

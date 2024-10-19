@@ -53,9 +53,11 @@ def generate_random_warp_platform_mapping(random: Random, options: OuterWildsGam
         # Sun Station is the only warp platform that disappears about halfway through the loop.
         # Technically every other platform is exposed by then, but for some the margin is just too small.
         if dead_end_platform == 'SS':  # actually falls into the sun at 11:30 - 11:40
-            available_platforms.remove('THT')  # exposed at ~10:30
-            available_platforms.remove('BHT')  # exposed at ~10:30
-            available_platforms.remove('GDT')  # exposed at ~11:00
+            available_platforms = [p for p in available_platforms if p not in [
+                'THT',  # exposed at ~10:30
+                'BHT',  # exposed at ~10:30
+                'GDT'   # exposed at ~11:00
+            ]]
 
         destination = random.choice(available_platforms)
         mappings.append((dead_end_platform, destination))

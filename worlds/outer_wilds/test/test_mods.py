@@ -166,3 +166,17 @@ class TestAllModsAndDLCLogsanity(OuterWildsTestBase):
         # 18 HN2 default locations + 30 HN2 logsanity locations +
         # 18 FQ default locations + 38 FQ logsanity locations
         self.assertEqual(self.getLocationCount(), 665)
+
+
+class RegressionTestACAndWarpRando(OuterWildsTestBase):
+    options = {
+        "enable_ac_mod": 1,
+        "randomize_warp_platforms": 1,
+    }
+
+    # There's no easy way to test "enough seeds" to prove it's fully fixed,
+    # but when the gen failure was discovered this seed caused it.
+    seed = 1
+
+    def world_setup(self, *args, **kwargs):
+        super().world_setup(self.seed)

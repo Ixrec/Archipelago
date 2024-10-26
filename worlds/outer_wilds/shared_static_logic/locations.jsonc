@@ -2359,7 +2359,7 @@
 
     { // codex_interloper_recorder_warning
         "category": "ac", "address": 1085044012, "name": "AC: Missing Fuel Geode",
-        "region": "Interloper Core", "requires": [ { "item": "Translator (Other)" } ]
+        "region": "Interloper Core", "requires": [ { "item": "Translator (Other)" }, { "region": "Lingering Chime" } ]
     },
 
     { // codex_bramble_station
@@ -2537,7 +2537,7 @@
 
     { // codex_interloper_recorder_warning
         "category": "ac", "logsanity": true, "address": 1085044076, "name": "AC Ship Log: Missing Fuel Geode",
-        "region": "Interloper Core", "requires": [ { "item": "Translator (Other)" } ]
+        "region": "Interloper Core", "requires": [ { "item": "Translator (Other)" }, { "region": "Lingering Chime" } ]
     },
 
     { // codex_bramble_station

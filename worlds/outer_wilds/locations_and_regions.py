@@ -6,6 +6,7 @@ import typing
 from typing import Any, Callable, Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import CollectionState, Location, MultiWorld, Region
+from Utils import restricted_loads
 from worlds.generic.Rules import set_rule
 from .options import OuterWildsGameOptions, Spawn, get_creation_settings
 from .warp_platforms import warp_platform_to_logical_region, warp_platform_required_items
@@ -31,10 +32,10 @@ class OuterWildsRegionData(NamedTuple):
 
 
 pickled_data = pkgutil.get_data(__name__, "shared_static_logic/static_logic.pickle")
-locations_data = pickle.load(BytesIO(pickled_data))["LOCATIONS"]
+locations_data = restricted_loads(pickled_data)["LOCATIONS"]
 
 pickled_data = pkgutil.get_data(__name__, "shared_static_logic/static_logic.pickle")
-connections_data = pickle.load(BytesIO(pickled_data))["CONNECTIONS"]
+connections_data = restricted_loads(pickled_data)["CONNECTIONS"]
 
 
 location_data_table: Dict[str, OuterWildsLocationData] = {}

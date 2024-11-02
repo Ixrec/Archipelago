@@ -32,10 +32,9 @@ class OuterWildsRegionData(NamedTuple):
 
 
 pickled_data = pkgutil.get_data(__name__, "shared_static_logic/static_logic.pickle")
-locations_data = restricted_loads(pickled_data)["LOCATIONS"]
-
-pickled_data = pkgutil.get_data(__name__, "shared_static_logic/static_logic.pickle")
-connections_data = restricted_loads(pickled_data)["CONNECTIONS"]
+unpickled_data = restricted_loads(pickled_data)
+locations_data = unpickled_data["LOCATIONS"]
+connections_data = unpickled_data["CONNECTIONS"]
 
 
 location_data_table: Dict[str, OuterWildsLocationData] = {}

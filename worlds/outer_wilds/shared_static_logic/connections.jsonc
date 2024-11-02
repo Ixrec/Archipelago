@@ -154,7 +154,10 @@
 
     { "category": "dlc", "from": "Cinder Isles", "to": "Cinder Isles Symbol Room", "requires": [
         { "region": "Starlit Cove" }, // to extinguish the dream candles that unlock the real door
-        { "item": "Dream Totem Patch" } // project the dock
+        { "anyOf": [
+            { "item": "Dream Totem Patch" }, // project the dock that adds a walkway to the tower's lower entrance
+            { "item": "Raft Docks Patch" } // unless it's already there
+        ] }
     ] },
 
     { "category": "dlc", "from": "Shrouded Woodlands", "to": "Dream Raft Loop", "requires": [

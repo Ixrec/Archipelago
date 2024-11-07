@@ -142,7 +142,10 @@
     // unlock the dock the vanilla way, this connection is no longer relevant
     { "category": "dlc", "from": "Dream Raft Loop", "to": "Shrouded Woodlands", "requires": [ { "item": "Raft Docks Patch" } ] },
     { "category": "dlc", "from": "Dream Raft Loop", "to": "Starlit Cove", "requires": [ { "item": "Raft Docks Patch" } ] },
-    { "category": "dlc", "from": "Dream Raft Loop", "to": "Endless Canyon", "requires": [ { "item": "Raft Docks Patch" } ] },
+    { "category": "dlc", "from": "Dream Raft Loop", "to": "Endless Canyon", "requires": [
+        { "item": "Raft Docks Patch" }, // take the elevator up from the dock
+        { "item": "Projection Range Patch" } // use the bonus invisible bridge you may have never noticed in vanilla
+    ] },
 
     { "category": "dlc", "from": "Dream Raft Loop", "to": "Subterranean Lake (Out of Bounds)", "requires": [ { "item": "Limbo Warp Patch" } ] },
     { "category": "dlc", "from": "Subterranean Lake (Out of Bounds)", "to": "Subterranean Lake", "requires": [] },

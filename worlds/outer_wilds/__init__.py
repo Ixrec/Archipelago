@@ -53,7 +53,7 @@ class OuterWildsWorld(World):
 
         if self.options.spawn == Spawn.option_random_non_vanilla:
             max_spawn = Spawn.option_stranger if self.options.enable_eote_dlc else Spawn.option_giants_deep
-            self.options.spawn = Spawn(self.random.choice(range(Spawn.option_hourglass_twins, max_spawn)))
+            self.options.spawn = Spawn(self.random.choice(range(Spawn.option_hourglass_twins, max_spawn + 1)))
 
         # validate options
         if not self.options.enable_eote_dlc:

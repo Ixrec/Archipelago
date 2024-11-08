@@ -1,16 +1,14 @@
-from io import BytesIO
 import json
-import pickle
 import pkgutil
 import typing
-from typing import Any, Callable, Dict, List, NamedTuple, Optional, Set
+from typing import Any, Dict, List, NamedTuple, Optional, Set
 
-from BaseClasses import CollectionState, Location, MultiWorld, Region
+from BaseClasses import CollectionState, Location, Region
 from Utils import restricted_loads
 from worlds.generic.Rules import set_rule
-from .options import OuterWildsGameOptions, Spawn, get_creation_settings
-from .warp_platforms import warp_platform_to_logical_region, warp_platform_required_items
+from .options import Spawn
 from .should_generate import should_generate, should_generate_location
+from .warp_platforms import warp_platform_to_logical_region, warp_platform_required_items
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld

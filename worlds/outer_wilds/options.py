@@ -1,8 +1,7 @@
 from dataclasses import dataclass
-
-import random
-from schema import Schema, And
 from typing import Set
+
+from schema import Schema, And
 
 from Options import Choice, DefaultOnToggle, OptionDict, PerGameCommonOptions, Range, StartInventoryPool, Toggle
 

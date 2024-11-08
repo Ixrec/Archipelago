@@ -135,9 +135,9 @@ def create_regions(world: "OuterWildsWorld") -> None:
             requires = connection["requires"]
             rule = None if len(requires) == 0 else lambda state, r=requires, st=split_translator: eval_rule(state, p, r, st)
             entrance = region.connect(mw.get_region(to, p), None, rule)
-            indirect_regions = regions_referenced_by_rule(requires)
-            for indirect_region in indirect_regions:
-                mw.register_indirect_condition(indirect_region, entrance)
+            indirect_region_names = regions_referenced_by_rule(requires)
+            for indirect_region_name in indirect_region_names:
+                mw.register_indirect_condition(mw.get_region(indirect_region_name, p), entrance)
 
     # add access rules to the created locations
     for ld in locations_data:

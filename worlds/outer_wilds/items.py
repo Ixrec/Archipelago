@@ -1,12 +1,11 @@
-from io import BytesIO
-import pickle
+import pkgutil
 import pkgutil
 import typing
 from typing import Dict, List, NamedTuple, Optional, Set
 
 from BaseClasses import Item, ItemClassification
 from Utils import restricted_loads
-from .options import EarlyKeyItem, OuterWildsGameOptions, Spawn, get_creation_settings
+from .options import EarlyKeyItem, Spawn
 from .should_generate import should_generate
 
 if typing.TYPE_CHECKING:

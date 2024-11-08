@@ -213,7 +213,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
 
 # In particular: this eval_rule() function is the main piece of code which will have to
 # be implemented in both languages, so it's important we keep the implementations in sync
-def eval_rule(state: CollectionState, p: int, rule: [Any], split_translator: bool) -> bool:
+def eval_rule(state: CollectionState, p: int, rule: List[Any], split_translator: bool) -> bool:
     return all(eval_criterion(state, p, criterion, split_translator) for criterion in rule)
 
 
@@ -247,15 +247,15 @@ def eval_criterion(state: CollectionState, p: int, criterion: Any, split_transla
 # you must also use multiworld.register_indirect_condition."
 # And to call register_indirect_condition, we need to know what regions a rule is referencing.
 # Figuring out the regions referenced by a rule ends up being very similar to evaluating that rule.
-def regions_referenced_by_rule(rule: [Any]) -> [str]:
+def regions_referenced_by_rule(rule: List[Any]) -> List[str]:
     return [region for criterion in rule for region in regions_referenced_by_criterion(criterion)]
 
 
-def regions_referenced_by_criterion(criterion: Any) -> [str]:
+def regions_referenced_by_criterion(criterion: Any) -> List[str]:
     # see eval_criterion comments
     if isinstance(criterion, dict):
         if len(criterion.items()) != 1:
-            return False
+            raise ValueError("Invalid rule criterion: " + json.dumps(criterion))
         key, value = next(iter(criterion.items()))
         if key == "item":
             return []

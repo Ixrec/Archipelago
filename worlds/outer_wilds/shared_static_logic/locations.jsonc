@@ -1480,7 +1480,10 @@
     {
         "category": "dlc", "logsanity": true, "address": 1085041031, "name": "DW Ship Log: Starlit Cove 4 - Upper Floors",
         "region": "Starlit Cove", "requires": [
-            { "item": "Dream Totem Patch" } // project dock w/ walkway to lower tower entrance
+            { "anyOf": [
+                { "item": "Dream Totem Patch" }, // project dock w/ walkway to lower tower entrance
+                { "item": "Raft Docks Patch" } // unless it's already there
+            ] }
         ]
     },
     {

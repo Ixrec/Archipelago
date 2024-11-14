@@ -273,9 +273,7 @@
         ] }
         // no logic needed for "can get ship into shuttle crusher then fly it over" since this already requires reaching DB
     ] },
-    { "category": "to&dlc", "from": "Cliffside Home", "to": "Endless Canyon", "requires": [
-        { "item": "Stranger Light Modulator" } // take the elevator down to the regular DLC content
-    ] },
+    { "category": "to&dlc", "from": "Cliffside Home", "to": "Endless Canyon", "requires": [] },
 
     { "category": "to", "from": "Dark Bramble", "to": "Projection Pool House", "requires": [ { "item": "Scout" } ] },
 

@@ -273,7 +273,10 @@
         ] }
         // no logic needed for "can get ship into shuttle crusher then fly it over" since this already requires reaching DB
     ] },
+
     { "category": "to&dlc", "from": "Cliffside Home", "to": "Endless Canyon", "requires": [] },
+    // since you could use this route to get to the SW archive, we need the (ADB) region too
+    { "category": "to&dlc", "from": "Cliffside Home", "to": "Endless Canyon (After Dam Breaks)", "requires": [] },
 
     { "category": "to", "from": "Dark Bramble", "to": "Projection Pool House", "requires": [ { "item": "Scout" } ] },
 

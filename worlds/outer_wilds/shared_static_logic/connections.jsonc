@@ -160,6 +160,14 @@
         { "anyOf": [
             { "item": "Dream Totem Patch" }, // project the dock that adds a walkway to the tower's lower entrance
             { "item": "Raft Docks Patch" } // unless it's already there
+        ] },
+        // This is the one case where entering DW via The Outsider does not work, because after
+        // using that fire you won't have a ship to fly back to the real world's Cinder Isles tower.
+        // The only good fix I can see for this is requiring that you have access to a normal DW entrance.
+        { "anyOf": [
+            { "item": "River Lowlands Painting Code" },
+            { "item": "Cinder Isles Painting Code" },
+            { "item": "Hidden Gorge Painting Code" }
         ] }
     ] },
 

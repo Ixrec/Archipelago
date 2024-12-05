@@ -235,13 +235,13 @@
 
     { "category": "hn1", "from": "Lonely Hermit", "to": "Alpine Core", "requires": [] },
 
-    { "category": "hn1", "from": "Lonely Hermit", "to": "Lava Core", "requires": [] },
-    { "category": "hn1", "from": "Lava Core", "to": "Lava Shrine", "requires": [
-        { "item": "Scout" }
-    ] },
-    { "category": "hn1", "from": "Lava Core", "to": "Lava Core Frequency", "requires": [
+    { "category": "hn1", "from": "Lonely Hermit", "to": "Lava Core Entrance", "requires": [] },
+    { "category": "hn1", "from": "Lava Core Entrance", "to": "Lava Core Structures", "requires": [
         { "item": "Signalscope" },
         { "item": "Lava Core Signals Frequency" }
+    ] },
+    { "category": "hn1", "from": "Lava Core Structures", "to": "Lava Shrine", "requires": [
+        { "item": "Scout" }
     ] },
 
     { "category": "hn1", "from": "Lonely Hermit", "to": "Lake Core Start Island", "requires": [] },

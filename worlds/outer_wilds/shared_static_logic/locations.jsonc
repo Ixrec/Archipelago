@@ -1236,7 +1236,12 @@
     {
         "category": "dlc", "address": 1085040015, "name": "DW: Endless Canyon Mural",
         "region": "Endless Canyon", "requires": [
-            { "item": "Dream Totem Patch" } // project multiple bridges, and hand warp to reach 2nd projection totem
+            { "anyOf": [
+                // the intended vanilla route: project bridge into lodge, hand warp inside, project bridge inside lodge
+                { "item": "Dream Totem Patch" },
+                // the "shortcut": use an invisible bridge on the far right to reach lower lodge without projecting the bridge inside
+                { "item": "Projection Range Patch" }
+            ] }
         ]
     },
     {
@@ -1493,7 +1498,12 @@
     {
         "category": "dlc", "logsanity": true, "address": 1085041033, "name": "DW Ship Log: Endless Canyon 2 - Mural",
         "region": "Endless Canyon", "requires": [
-            { "item": "Dream Totem Patch" } // project multiple bridges, and hand warp to reach 2nd projection totem
+            { "anyOf": [
+                // the intended vanilla route: project bridge into lodge, hand warp inside, project bridge inside lodge
+                { "item": "Dream Totem Patch" },
+                // the "shortcut": use an invisible bridge on the far right to reach lower lodge without projecting the bridge inside
+                { "item": "Projection Range Patch" }
+            ] }
         ]
     },
     {

@@ -1755,23 +1755,23 @@
     },
     {
         "category": "hn1", "address": 1085042002, "name": "HN1: Scan Entrance Station Signal",
-        "region": "Lava Core Frequency", "requires": []
+        "region": "Lava Core Entrance", "requires": [ { "item": "Signalscope" }, { "item": "Lava Core Signals Frequency" } ]
     },
     {
         "category": "hn1", "address": 1085042003, "name": "HN1: Scan Lava Shrine Signal",
-        "region": "Lava Core Frequency", "requires": []
+        "region": "Lava Core Structures", "requires": [ { "item": "Signalscope" }, { "item": "Lava Core Signals Frequency" } ]
     },
     {
         "category": "hn1", "address": 1085042004, "name": "HN1: Scan Structure By Cliff Signal",
-        "region": "Lava Core Frequency", "requires": []
+        "region": "Lava Core Structures", "requires": [ { "item": "Signalscope" }, { "item": "Lava Core Signals Frequency" } ]
     },
     {
         "category": "hn1", "address": 1085042005, "name": "HN1: Scan Structure With Pillars Signal",
-        "region": "Lava Core Frequency", "requires": []
+        "region": "Lava Core Structures", "requires": [ { "item": "Signalscope" }, { "item": "Lava Core Signals Frequency" } ]
     },
     {
         "category": "hn1", "address": 1085042006, "name": "HN1: Scan Old Abandoned Town Signal",
-        "region": "Lava Core Frequency", "requires": []
+        "region": "Lava Core Structures", "requires": [ { "item": "Signalscope" }, { "item": "Lava Core Signals Frequency" } ]
     },
     {
         "category": "hn1", "address": 1085042007, "name": "HN1: Lava Shrine Symbol",
@@ -1899,23 +1899,23 @@
 
     {
         "category": "hn1", "logsanity": true, "address": 1085042034, "name": "HN1 Ship Log: Lava Core 1 - Buttons",
-        "region": "Lava Core", "requires": []
+        "region": "Lava Core Entrance", "requires": []
     },
     {
         "category": "hn1", "logsanity": true, "address": 1085042035, "name": "HN1 Ship Log: Lava Core 2 - Communications",
-        "region": "Lava Core Frequency", "requires": []
+        "region": "Lava Core Structures", "requires": [ { "item": "Signalscope" }, { "item": "Lava Core Signals Frequency" } ]
     },
     {
         "category": "hn1", "logsanity": true, "address": 1085042036, "name": "HN1 Ship Log: Structure On A Cliff",
-        "region": "Lava Core", "requires": []
+        "region": "Lava Core Structures", "requires": []
     },
     {
         "category": "hn1", "logsanity": true, "address": 1085042037, "name": "HN1 Ship Log: Structure By Pillars",
-        "region": "Lava Core", "requires": []
+        "region": "Lava Core Structures", "requires": []
     },
     {
         "category": "hn1", "logsanity": true, "address": 1085042038, "name": "HN1 Ship Log: Old Abandoned Town",
-        "region": "Lava Core", "requires": []
+        "region": "Lava Core Structures", "requires": []
     },
     {
         "category": "hn1", "logsanity": true, "address": 1085042039, "name": "HN1 Ship Log: Lava Shrine 1 - Entry",

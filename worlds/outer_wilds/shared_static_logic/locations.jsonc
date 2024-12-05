@@ -389,7 +389,7 @@
     },
     {
         "category": "base", "address": 1085038305, "name": "DB: Scan Escape Pod 3 Signal",
-        "region": "Nomai Grave", "requires": [ { "item": "Distress Beacon Frequency" } ] // see connection logic
+        "region": "Nomai Grave", "requires": [ { "item": "Signalscope" }, { "item": "Distress Beacon Frequency" } ]
     },
     {
         "category": "base", "address": 1085038306, "name": "TH: Scan Galena's Radio Signal",

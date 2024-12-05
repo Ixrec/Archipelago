@@ -273,13 +273,8 @@
         { "region": "Feldspar's Camp" } // getting to the jellyfish the usual way
     ] },
     { "category": "to", "from": "Secluded Structure", "to": "Cliffside Home", "requires": [
-        // copy-pasted from "EotE: Find an Artifact", since you can generate Outsider locations without DLC locations
-        { "anyOf": [
-            { "item": "Ghost Matter Wavelength" }, // to safely enter River Lowlands Workshop
-            { "item": "Stranger Light Modulator" }, // to use a raft and an elevator to reach Hidden Gorge
-            { "item": "Breach Override Codes" } // to enter Hidden Gorge Laboratory
-        ] }
-        // no logic needed for "can get ship into shuttle crusher then fly it over" since this already requires reaching DB
+        // no logic needed for "can get artifact from Stranger" because Secluded Structure logically requires Jellyfish Painting Path which requires GMW
+        // also no logic needed for "can get ship into shuttle crusher then fly it over" since this already requires reaching DB
     ] },
 
     { "category": "to&dlc", "from": "Cliffside Home", "to": "Endless Canyon", "requires": [] },

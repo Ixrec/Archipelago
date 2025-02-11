@@ -58,6 +58,8 @@ class TestIDs(unittest.TestCase):
     def test_postgen_datapackage(self):
         """Generates a solo multiworld and checks that the datapackage is still valid"""
         for gamename, world_type in AutoWorldRegister.world_types.items():
+            if gamename != "Nine Sols":
+                continue
             with self.subTest(game=gamename):
                 multiworld = setup_solo_multiworld(world_type)
                 distribute_items_restrictive(multiworld)

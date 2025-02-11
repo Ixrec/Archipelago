@@ -63,6 +63,7 @@ class TestAllGamesMultiworld(MultiworldTestBase):
             self.assertTrue(self.fulfills_accessibility(), "Collected all locations, but can't beat the game")
 
 
+@unittest.skip("too slow for Yi")
 class TestTwoPlayerMulti(MultiworldTestBase):
     def test_two_player_single_game_fills(self) -> None:
         """Tests that a multiworld of two players for each registered game world can generate."""

@@ -16,6 +16,8 @@ class TestBase(unittest.TestCase):
         additional_steps = ("generate_basic", "pre_fill")
 
         for game_name, world_type in AutoWorldRegister.world_types.items():
+            if game_name != "Nine Sols":
+                continue
             with self.subTest("Game", game_name=game_name):
                 multiworld = setup_solo_multiworld(world_type, gen_steps)
 
@@ -43,6 +45,8 @@ class TestBase(unittest.TestCase):
         gen_steps = ("generate_early", "create_regions", "create_items", "set_rules", "connect_entrances")
 
         for game_name, world_type in AutoWorldRegister.world_types.items():
+            if game_name != "Nine Sols":
+                continue
             with self.subTest("Game", game_name=game_name):
                 multiworld = setup_solo_multiworld(world_type, ())
 

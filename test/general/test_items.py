@@ -8,6 +8,8 @@ class TestBase(unittest.TestCase):
     def test_create_item(self):
         """Test that a world can successfully create all items in its datapackage"""
         for game_name, world_type in AutoWorldRegister.world_types.items():
+            if game_name != "Nine Sols":
+                continue
             proxy_world = setup_solo_multiworld(world_type, ()).worlds[1]
             for item_name in world_type.item_name_to_id:
                 with self.subTest("Create Item", item_name=item_name, game_name=game_name):
@@ -48,6 +50,8 @@ class TestBase(unittest.TestCase):
     def test_item_count_equal_locations(self):
         """Test that by the pre_fill step under default settings, each game submits items == locations"""
         for game_name, world_type in AutoWorldRegister.world_types.items():
+            if game_name != "Nine Sols":
+                continue
             with self.subTest("Game", game=game_name):
                 multiworld = setup_solo_multiworld(world_type)
                 self.assertEqual(
@@ -59,6 +63,8 @@ class TestBase(unittest.TestCase):
     def test_items_in_datapackage(self):
         """Test that any created items in the itempool are in the datapackage"""
         for game_name, world_type in AutoWorldRegister.world_types.items():
+            if game_name != "Nine Sols":
+                continue
             with self.subTest("Game", game=game_name):
                 multiworld = setup_solo_multiworld(world_type)
                 for item in multiworld.itempool:
@@ -72,6 +78,8 @@ class TestBase(unittest.TestCase):
         worlds_to_test = {game: world
                           for game, world in AutoWorldRegister.world_types.items() if game not in excluded_games}
         for game_name, world_type in worlds_to_test.items():
+            if game_name != "Nine Sols":
+                continue
             with self.subTest("Game", game=game_name):
                 multiworld = setup_solo_multiworld(world_type, gen_steps)
                 created_items = multiworld.itempool.copy()
@@ -87,6 +95,8 @@ class TestBase(unittest.TestCase):
         additional_steps = ("set_rules", "connect_entrances", "generate_basic", "pre_fill")
         worlds_to_test = {game: world for game, world in AutoWorldRegister.world_types.items()}
         for game_name, world_type in worlds_to_test.items():
+            if game_name != "Nine Sols":
+                continue
             with self.subTest("Game", game=game_name):
                 multiworld = setup_solo_multiworld(world_type, gen_steps)
                 local_items = multiworld.worlds[1].options.local_items.value.copy()

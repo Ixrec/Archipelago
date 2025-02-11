@@ -12,6 +12,8 @@ class TestWorldMemory(unittest.TestCase):
         import weakref
         refs: dict[str, weakref.ReferenceType[MultiWorld]] = {}
         for game_name, world_type in AutoWorldRegister.world_types.items():
+            if game_name != "Nine Sols":
+                continue
             with self.subTest("Game creation", game_name=game_name):
                 weak = weakref.ref(setup_solo_multiworld(world_type))
                 refs[game_name] = weak

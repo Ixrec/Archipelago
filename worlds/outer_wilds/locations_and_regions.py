@@ -15,7 +15,7 @@ if typing.TYPE_CHECKING:
 
 
 class OuterWildsLocation(Location):
-    game = "Outer Wilds"
+    game = "Outer Wilds (Logic Options Experiment)"
 
 
 class OuterWildsLocationData(NamedTuple):

@@ -27,7 +27,7 @@ class OuterWildsWebWorld(WebWorld):
 
 
 class OuterWildsWorld(World):
-    game = "Outer Wilds"
+    game = "Outer Wilds (Logic Options Experiment)"
     web = OuterWildsWebWorld()
 
     eotu_coordinates = 'vanilla'
@@ -81,8 +81,8 @@ class OuterWildsWorld(World):
         # implement Universal Tracker support
         if hasattr(self.multiworld, "generation_is_fake"):
             if hasattr(self.multiworld, "re_gen_passthrough"):
-                if "Outer Wilds" in self.multiworld.re_gen_passthrough:
-                    slot_data = self.multiworld.re_gen_passthrough["Outer Wilds"]
+                if "Outer Wilds (Logic Options Experiment)" in self.multiworld.re_gen_passthrough:
+                    slot_data = self.multiworld.re_gen_passthrough["Outer Wilds (Logic Options Experiment)"]
                     self.warps = slot_data["warps"]
                     self.spawn = slot_data["spawn"]
             return

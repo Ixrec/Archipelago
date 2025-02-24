@@ -7,7 +7,7 @@ class TestWebDescriptions(unittest.TestCase):
     def test_item_descriptions_have_valid_names(self) -> None:
         """Ensure all item descriptions match an item name or item group name"""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             valid_names = world_type.item_names.union(world_type.item_name_groups)
             for name in world_type.web.item_descriptions:
@@ -18,7 +18,7 @@ class TestWebDescriptions(unittest.TestCase):
     def test_location_descriptions_have_valid_names(self) -> None:
         """Ensure all location descriptions match a location name or location group name"""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             valid_names = world_type.location_names.union(world_type.location_name_groups)
             for name in world_type.web.location_descriptions:

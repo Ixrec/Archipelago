@@ -12,7 +12,7 @@ if path not in sys.path:
 
 
 class OuterWildsTestBase(WorldTestBase):
-    game = "Outer Wilds"
+    game = "Outer Wilds (Logic Options Experiment)"
     player: int = 1
 
     def makeStateWith(self, item_names: List[str]) -> CollectionState:

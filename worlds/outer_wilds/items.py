@@ -13,7 +13,7 @@ if typing.TYPE_CHECKING:
 
 
 class OuterWildsItem(Item):
-    game = "Outer Wilds"
+    game = "Outer Wilds (Logic Options Experiment)"
 
 
 class OuterWildsItemData(NamedTuple):

@@ -8,7 +8,7 @@ class TestBase(unittest.TestCase):
     def test_create_item(self):
         """Test that a world can successfully create all items in its datapackage"""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             proxy_world = setup_solo_multiworld(world_type, ()).worlds[1]
             for item_name in world_type.item_name_to_id:
@@ -31,7 +31,7 @@ class TestBase(unittest.TestCase):
                 {"Campaign Boss Beaten"}
         }
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game_name, game_name=game_name):
                 exclusions = exclusion_dict.get(game_name, frozenset())
@@ -44,7 +44,7 @@ class TestBase(unittest.TestCase):
     def test_item_name_group_conflict(self):
         """Test that all item name groups aren't also item names."""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game_name, game_name=game_name):
                 for group_name in world_type.item_name_groups:
@@ -54,7 +54,7 @@ class TestBase(unittest.TestCase):
     def test_item_count_equal_locations(self):
         """Test that by the pre_fill step under default settings, each game submits items == locations"""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest("Game", game=game_name):
                 multiworld = setup_solo_multiworld(world_type)
@@ -67,7 +67,7 @@ class TestBase(unittest.TestCase):
     def test_items_in_datapackage(self):
         """Test that any created items in the itempool are in the datapackage"""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest("Game", game=game_name):
                 multiworld = setup_solo_multiworld(world_type)
@@ -82,7 +82,7 @@ class TestBase(unittest.TestCase):
         worlds_to_test = {game: world
                           for game, world in AutoWorldRegister.world_types.items() if game not in excluded_games}
         for game_name, world_type in worlds_to_test.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest("Game", game=game_name):
                 multiworld = setup_solo_multiworld(world_type, gen_steps)

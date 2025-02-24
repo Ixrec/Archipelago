@@ -10,7 +10,7 @@ class TestIDs(unittest.TestCase):
     def test_range_items(self):
         """There are Javascript clients, which are limited to Number.MAX_SAFE_INTEGER due to 64bit float precision."""
         for gamename, world_type in AutoWorldRegister.world_types.items():
-            if gamename != "Outer Wilds":
+            if gamename != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game=gamename):
                 for item_id in world_type.item_id_to_name:
@@ -19,7 +19,7 @@ class TestIDs(unittest.TestCase):
     def test_range_locations(self):
         """There are Javascript clients, which are limited to Number.MAX_SAFE_INTEGER due to 64bit float precision."""
         for gamename, world_type in AutoWorldRegister.world_types.items():
-            if gamename != "Outer Wilds":
+            if gamename != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game=gamename):
                 for location_id in world_type.location_id_to_name:
@@ -28,7 +28,7 @@ class TestIDs(unittest.TestCase):
     def test_reserved_items(self):
         """negative item IDs are reserved to the special "Archipelago" world."""
         for gamename, world_type in AutoWorldRegister.world_types.items():
-            if gamename != "Outer Wilds":
+            if gamename != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game=gamename):
                 if gamename == "Archipelago":
@@ -41,7 +41,7 @@ class TestIDs(unittest.TestCase):
     def test_reserved_locations(self):
         """negative location IDs are reserved to the special "Archipelago" world."""
         for gamename, world_type in AutoWorldRegister.world_types.items():
-            if gamename != "Outer Wilds":
+            if gamename != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game=gamename):
                 if gamename == "Archipelago":
@@ -54,7 +54,7 @@ class TestIDs(unittest.TestCase):
     def test_duplicate_item_ids(self):
         """Test that a game doesn't have item id overlap within its own datapackage"""
         for gamename, world_type in AutoWorldRegister.world_types.items():
-            if gamename != "Outer Wilds":
+            if gamename != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game=gamename):
                 self.assertEqual(len(world_type.item_id_to_name), len(world_type.item_name_to_id))
@@ -62,7 +62,7 @@ class TestIDs(unittest.TestCase):
     def test_duplicate_location_ids(self):
         """Test that a game doesn't have location id overlap within its own datapackage"""
         for gamename, world_type in AutoWorldRegister.world_types.items():
-            if gamename != "Outer Wilds":
+            if gamename != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game=gamename):
                 self.assertEqual(len(world_type.location_id_to_name), len(world_type.location_name_to_id))
@@ -70,7 +70,7 @@ class TestIDs(unittest.TestCase):
     def test_postgen_datapackage(self):
         """Generates a solo multiworld and checks that the datapackage is still valid"""
         for gamename, world_type in AutoWorldRegister.world_types.items():
-            if gamename != "Outer Wilds":
+            if gamename != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest(game=gamename):
                 multiworld = setup_solo_multiworld(world_type)

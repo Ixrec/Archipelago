@@ -51,7 +51,7 @@ class MultiworldTestBase(TestCase):
 class TestAllGamesMultiworld(MultiworldTestBase):
     def test_fills(self) -> None:
         """Tests that a multiworld with one of every registered game world can generate."""
-        all_worlds = list(w for w in AutoWorldRegister.world_types.values() if w.game == "Outer Wilds")
+        all_worlds = list(w for w in AutoWorldRegister.world_types.values() if w.game == "Outer Wilds (Logic Options Experiment)")
         self.multiworld = setup_multiworld(all_worlds, ())
         for world in self.multiworld.worlds.values():
             world.options.accessibility.value = Accessibility.option_full
@@ -66,7 +66,7 @@ class TestTwoPlayerMulti(MultiworldTestBase):
     def test_two_player_single_game_fills(self) -> None:
         """Tests that a multiworld of two players for each registered game world can generate."""
         for world_type in AutoWorldRegister.world_types.values():
-            if world_type.game != "Outer Wilds":
+            if world_type.game != "Outer Wilds (Logic Options Experiment)":
                 continue
             self.multiworld = setup_multiworld([world_type, world_type], ())
             for world in self.multiworld.worlds.values():

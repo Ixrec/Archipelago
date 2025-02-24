@@ -11,7 +11,7 @@ class TestImplemented(unittest.TestCase):
     def test_completion_condition(self):
         """Ensure a completion condition is set that has requirements."""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             if not world_type.hidden and game_name not in {"Sudoku"}:
                 with self.subTest(game_name):
@@ -21,7 +21,7 @@ class TestImplemented(unittest.TestCase):
     def test_entrance_parents(self):
         """Tests that the parents of created Entrances match the exiting Region."""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             if not world_type.hidden:
                 with self.subTest(game_name):
@@ -33,7 +33,7 @@ class TestImplemented(unittest.TestCase):
     def test_stage_methods(self):
         """Tests that worlds don't try to implement certain steps that are only ever called as stage."""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             if not world_type.hidden:
                 with self.subTest(game_name):
@@ -44,7 +44,7 @@ class TestImplemented(unittest.TestCase):
     def test_slot_data(self):
         """Tests that if a world creates slot data, it's json serializable."""
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             # has an await for generate_output which isn't being called
             if game_name in {"Ocarina of Time", "Zillion"}:

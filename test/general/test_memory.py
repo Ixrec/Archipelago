@@ -10,7 +10,7 @@ class TestWorldMemory(unittest.TestCase):
         import gc
         import weakref
         for game_name, world_type in AutoWorldRegister.world_types.items():
-            if game_name != "Outer Wilds":
+            if game_name != "Outer Wilds (Logic Options Experiment)":
                 continue
             with self.subTest("Game", game_name=game_name):
                 weak = weakref.ref(setup_solo_multiworld(world_type))

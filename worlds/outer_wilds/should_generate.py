@@ -21,6 +21,8 @@ def should_generate(category: Optional[str], options: OuterWildsGameOptions) -> 
         return options.dlc_only.value == 0
     elif category == 'dlc':  # only generated if enable_eote_dlc is true
         return options.enable_eote_dlc.value == 1
+    elif category == 'feldspar_quick_access':  # only generate if logic rule is enabled
+        return options.feldspar_quick_access.value == 1
     elif category == 'hn1':
         return options.enable_hn1_mod.value == 1
     elif category == 'to':

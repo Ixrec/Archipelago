@@ -78,6 +78,11 @@ class Logsanity(Toggle):
     """
     display_name = "Logsanity"
 
+class FeldsparQuickAccess(Toggle):
+    """
+    There is a method to access Feldspar in a quicker fashion. This option allows for toggling this as a valid "In Logic" path
+    """
+    display_name = "Feldspar Quick Access"
 
 class ShuffleSpacesuit(Toggle):
     """
@@ -191,7 +196,6 @@ class DLCOnly(Toggle):
     """
     display_name = "DLC Only"
 
-
 class SplitTranslator(Toggle):
     """
     Splits the "Translator" item into 6 items: 5 for the main planets and their satellites, plus a
@@ -245,7 +249,6 @@ class EnableFretsQuestMod(Toggle):
     """
     display_name = "Enable Fret's Quest Story Mod"
 
-
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -263,6 +266,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     trap_type_weights: TrapTypeWeights
     death_link: DeathLink
     logsanity: Logsanity
+    feldspar_quick_access: FeldsparQuickAccess
     shuffle_spacesuit: ShuffleSpacesuit
     split_translator: SplitTranslator
     enable_hn1_mod: EnableHearthsNeighborMod
@@ -276,6 +280,8 @@ def get_creation_settings(options: OuterWildsGameOptions) -> Set[str]:
     relevant_settings = set()
     if options.logsanity.value == 1:
         relevant_settings.add("logsanity")
+    if options.feldspar_quick_access.value == 1:
+        relevant_settings.add("feldspar_quick_access")
     if options.enable_eote_dlc.value == 1:
         relevant_settings.add("enable_eote_dlc")
     return relevant_settings

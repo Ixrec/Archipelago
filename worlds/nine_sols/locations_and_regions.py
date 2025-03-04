@@ -167,17 +167,17 @@ def create_regions(world: "NineSolsWorld") -> None:
                     {"item": "Event - Lady Ethereal Soulscape Unlocked"},
                     {"item": "Air Dash"}
                 ]
-            rule = None if len(requires) == 0 else lambda state, r=requires: eval_rule(state, p, r)
+            rule = None  # if len(requires) == 0 else lambda state, r=requires: eval_rule(state, p, r)
             entrance = region.connect(mw.get_region(to, p), None, rule)
             indirect_region_names = regions_referenced_by_rule(requires)
             for indirect_region_name in indirect_region_names:
                 mw.register_indirect_condition(mw.get_region(indirect_region_name, p), entrance)
 
     # add access rules to the created locations
-    for ld in locations_data:
-        if ld["name"] in locations_to_create and len(ld["requires"]) > 0:
-            set_rule(mw.get_location(ld["name"], p),
-                     lambda state, r=ld["requires"]: eval_rule(state, p, r))
+    # for ld in locations_data:
+    #     if ld["name"] in locations_to_create and len(ld["requires"]) > 0:
+    #         set_rule(mw.get_location(ld["name"], p),
+    #                  lambda state, r=ld["requires"]: eval_rule(state, p, r))
 
     # add dynamic logic, i.e. connections based on player options
     mw.regions.append(Region("Menu", p, mw))

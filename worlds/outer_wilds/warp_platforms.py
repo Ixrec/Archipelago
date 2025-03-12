@@ -85,7 +85,7 @@ warp_platform_to_logical_region = {
     "ATT": "Hourglass Twins",
     "TH": "Timber Hearth",
     "THT": "Hourglass Twins",
-    "BHNG": "Brittle Hollow",
+    "BHNG": "Brittle Hollow Northern Glacier",
     "WHS": "White Hole Station",
     "BHF": "Hanging City Ceiling",
     "BHT": "Hourglass Twins",

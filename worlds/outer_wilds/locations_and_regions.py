@@ -110,7 +110,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
 
     # when dlc_only: true, the "dead-end" warp platforms have no locations or static connections,
     # so the random warp setup below fails unless we've explicitly added these to the region list
-    for r in ["Sun Station", "Ash Twin Interior", "Hanging City Ceiling", "Brittle Hollow Northern Glacier"]:
+    for r in ["Sun Station", "Ash Twin Interior", "Hanging City Ceiling"]:
         region_data_table[r] = OuterWildsRegionData()
 
     # actually create the Regions, initially all empty
@@ -152,7 +152,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
     elif world.spawn == Spawn.option_timber_hearth:
         menu.add_exits(["Timber Hearth"])
     elif world.spawn == Spawn.option_brittle_hollow:
-        menu.add_exits(["Brittle Hollow Northern Glacier"])
+        menu.add_exits(["Brittle Hollow"])
     elif world.spawn == Spawn.option_giants_deep:
         menu.add_exits(["Giant's Deep"])
     elif world.spawn == Spawn.option_stranger:

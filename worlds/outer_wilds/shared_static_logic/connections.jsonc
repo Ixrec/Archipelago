@@ -34,15 +34,7 @@
     // I believe that requires either the Spaceship or a "warp path" from the Northern Glacier pad to
     // the Hanging City Ceiling pad. The latter is hard to write logic for, so we require the ship.
     // And once the ship is required, { "region": "Brittle Hollow" } would be redundant.
-    // But if we create a new region exclusive to the Brittle Hollow spawn and the Northern Glacier warp pad,
-    // we can require access to it to ensure a "warp path" exists.
-    { "from": "Brittle Hollow Northern Glacier", "to": "Brittle Hollow", "requires": [] },
-    { "from": "Hanging City Ceiling", "to": "Black Hole Forge", "requires": [
-        { "anyOf": [
-            { "item": "Launch Codes" },
-            { "region": "Brittle Hollow Northern Glacier" }
-        ] }
-    ] },
+    { "from": "Hanging City Ceiling", "to": "Black Hole Forge", "requires": [ { "item": "Launch Codes" } ] },
 
     { "from": "Space", "to": "GD Ocean Depths", "requires": [ { "item": "Tornado Aerodynamic Adjustments" } ] },
     { "from": "GD Ocean Depths", "to": "GD Core", "requires": [ { "item": "Electrical Insulation" }, { "item": "Spacesuit" } ] },

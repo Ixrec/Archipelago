@@ -119,10 +119,20 @@ def create_items(world: "NineSolsWorld") -> None:
             for _ in range(0, instances):
                 prog_and_useful_items.append(create_item(player, name))
 
+    seals = [
+        "Seal of Kuafu",
+        "Seal of Goumang",
+        "Seal of Yanlao",
+        "Seal of Jiequan",
+        "Seal of Lady Ethereal",
+        "Seal of Ji",
+        "Seal of Fuxi",
+        "Seal of Nuwa"
+    ]
     unfilled_location_count = len(multiworld.get_unfilled_locations(player))
     itempool = []
-    for _ in range(0, unfilled_location_count):
-        itempool.append(create_item(player, "Mystic Nymph: Scout Mode"))
+    for i in range(0, unfilled_location_count):
+        itempool.append(create_item(player, seals[i % 8]))
     multiworld.itempool += itempool
 
     # # unique_filler_with_traps = unique_filler

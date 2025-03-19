@@ -203,7 +203,6 @@ def create_regions(world: "OuterWildsWorld") -> None:
             r1.connect(r2, "%s->%s warp" % (region_name_1, region_name_2), rule)
             r2.connect(r1, "%s->%s warp" % (region_name_2, region_name_1), rule)
 
-
 # In the .jsonc files we use, a location or region connection's "access rule" is defined
 # by a "requires" key, whose value is an array of "criteria" strings or objects.
 # These rules are designed to be evaluated by both this Python code and

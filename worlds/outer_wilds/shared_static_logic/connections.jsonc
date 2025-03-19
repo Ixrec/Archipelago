@@ -103,6 +103,11 @@
         { "item": "Spacesuit" } // to enter the Vessel
     ] },
 
+    // Doesn't seem to be read properly from locations_and_regions.py, but leaving this here for documentation
+    // Hotshot trick is enabled.
+    { "category": "hotshot", "from": "Space", "to": "Hotshot", "requires": [ { "item": "Spacesuit" } ] },
+    { "category": "hotshot", "from": "Hotshot", "to": "Sun Station", "requires": [] },
+
     { "category": "dlc", "from": "Space", "to": "Stranger Sunside Hangar", "requires": [ { "item": "Spacesuit" } ] },
     { "category": "dlc", "from": "Stranger Sunside Hangar", "to": "Space", "requires": [ { "item": "Launch Codes" } ] },
 

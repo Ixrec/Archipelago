@@ -399,6 +399,9 @@
         "category": "base", "address": 1085038307, "name": "TH: Scan Tephra's Radio Signal",
         "region": "Timber Hearth Village", "requires": [ { "item": "Signalscope" }, { "item": "Hide & Seek Frequency" } ]
     },
+    {
+        "category": "hotshot", "address": 1085038308, "name": "Hotshot", "region": "Hotshot", "requires": [ { "item": "Spacesuit" } ]
+    },
 
 // Logsanity Locations
 // These location ids start at 1085039000 (i.e. rounding up to the next thousand),

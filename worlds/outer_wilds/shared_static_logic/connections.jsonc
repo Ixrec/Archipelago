@@ -84,13 +84,13 @@
     // ...or launch a Scout into the DB seed back on TH.
     // Since DB can only be reached by Spaceship, we don't need an explicit "can reach TH" condition here.
     { "from": "Dark Bramble", "to": "Feldspar via Scout", "requires": [ { "item": "Scout" } ] },
-    // ...or if Feldspar Quick Access is enabled
-    { "category": "feldspar_quick_access", "from": "Space", "to": "Feldspar via Quick Access", "requires":  [ { "item":  "Spacesuit" } ] },
+    // ...or if Feldspar via DB Surface is enabled
+    { "category": "feldspar_via_db_surface", "from": "Space", "to": "Feldspar via DB Surface", "requires":  [ { "item":  "Spacesuit" } ] },
 
     // any way you reach the same group of Feldspar-related locations
     { "from": "Feldspar via Signal", "to": "Feldspar's Camp", "requires": [] },
     { "from": "Feldspar via Scout", "to": "Feldspar's Camp", "requires": [] },
-    { "category":  "feldspar_quick_access", "from": "Feldspar via Quick Access", "to":  "Feldspar's Camp", "requires":  [] },
+    { "category": "feldspar_via_db_surface", "from": "Feldspar via DB Surface", "to": "Feldspar's Camp", "requires": [] },
 
     { "from": "Dark Bramble", "to": "Nomai Grave", "requires": [
         // to follow the Escape Pod 3 signal

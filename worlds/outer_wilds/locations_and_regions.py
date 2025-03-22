@@ -225,9 +225,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
         if bhf_connection in ("BHNG", "WHS") or (
             bhf_connection in hourglass_twins and (
             bhng_connection in hourglass_twins or whs_connection in hourglass_twins)):
-            mw.get_region("Hanging City Ceiling", p).connect(
-                mw.get_region("Forge via Warps Only", p), "Forge Warp Path",
-                lambda state: state.has("Nomai Warp Codes", p))
+            mw.get_region("Forge via Warps Only", p).connect(mw.get_region("Black Hole Forge", p), "Forge Warp Path")
 
 
 # In the .jsonc files we use, a location or region connection's "access rule" is defined

@@ -226,7 +226,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
             bhf_connection in hourglass_twins and (
             bhng_connection in hourglass_twins or whs_connection in hourglass_twins)):
             mw.get_region("Hanging City Ceiling", p).connect(
-                mw.get_region("Forge via Warps", p), "Forge Warp Path",
+                mw.get_region("Forge via Warps Only", p), "Forge Warp Path",
                 lambda state: state.has("Nomai Warp Codes", p))
 
 

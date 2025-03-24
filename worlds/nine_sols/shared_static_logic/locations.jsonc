@@ -258,11 +258,11 @@
     },
     {
         "category": "easy_tricks", "address": null, "name": "Trick - Break CS Barrier With Bow",
-        "region": "Menu", "requires": [ { "anyOf": [
+        "region": "Menu", "requires": [
             { "item": "Arrow: Cloud Piercer" },
             { "item": "Dark Steel" }, // just 1 to afford Cloud Piercer S
             { "item": "Event - Kuafu in FSP" } // so you can actually buy S from him
-        ] } ]
+        ]
     },
 
     // Cortex Center

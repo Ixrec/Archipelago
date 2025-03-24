@@ -18,20 +18,21 @@ class LogicDifficulty(Choice):
     """
     `vanilla` is exactly what it sounds like: You will only be expected to do what the vanilla game required.
 
-    `easy` adds tricks that are no harder to execute than what the vanilla game requires,
-    once you've been told these tricks exist. Specifically:
+    `easy` adds tricks that are no harder to execute than what the vanilla game requires, once you've been told these
+    tricks exist. Specifically:
+    - "Pseudo Air Dashes" using either a talisman ("T-PAD") or Charged Strike ("CS-PAD")
     - Using a Cloud Piercer S (or X) arrow to break Charged Strike barriers without Charged Strike
     - Using a Thunder Buster arrow (any level) to break one-way barriers from the "wrong" side
-    - "Bow hover": Press and hold jump, shoot the bow immediately (during the first half of Yi's upward movement) with
+    - "Bow Hover": Press and hold jump, shoot the bow immediately (during the first half of Yi's upward movement) with
     any arrow equipped, and then simply never let go of the jump button until you're done hovering.
-    - "Pseudo Air Dashes" using either talismans or Charged Strike
 
-    Although these are as "easy" as vanilla, they may be more frustrating than vanilla, since missing a talisman dash
-    or bow hover may involve significant backtracking to make another attempt.
+    Although these are as "easy" as vanilla, be aware that they may be more frustrating than vanilla, since missing a
+    talisman dash or bow hover (or accidentally killing an enemy you were meant to parry for qi) may involve significant
+    backtracking to make another attempt.
 
     Bow and talisman logic will assume you only have the initial 2 arrows and 1 qi to spend in between root nodes and
     parryable enemies. Any route that requires more arrows or more qi (e.g. breaking one-way barriers with 3 Cloud
-    Piercer arrows, traversing the bottom of AF (Depths) with only talisman dashes) will simply be out of logic.
+    Piercer arrows, traversing the bottom of AF (Depths) with multiple talisman dashes) will simply be out of logic.
 
     `oops_all_ledge_storage`: TODO
     """

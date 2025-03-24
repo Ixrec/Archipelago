@@ -16,23 +16,48 @@
     { "from": "AFE - Baichang Arena", "to": "AFE - Lower Root Node", "requires": [
         { "item": "Cloud Leap" }
     ] },
-    { "from": "AFE - Baichang Arena", "to": "AFE - Below Root Node", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" },
-        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
-    ] } ] },
-    { "from": "AFE - Below Root Node", "to": "AFE - Baichang Arena", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" },
-        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
-    ] } ] },
+    { "from": "AFE - Baichang Arena", "to": "AFE - Below Root Node", "requires": [ {
+        "option": "logic_difficulty",
+        "vanilla": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" },
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
+        ] } ],
+        "easy": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" },
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ],
+            { "item": "Trick - Bow Hover" }
+        ] } ],
+        "oops_all_ledge_storage": "easy"
+    } ] },
+    { "from": "AFE - Below Root Node", "to": "AFE - Baichang Arena", "requires": [ {
+        "option": "logic_difficulty",
+        "vanilla": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" },
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
+        ] } ],
+        "easy": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" },
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ],
+            { "item": "Trick - Bow Hover" }
+        ] } ],
+        "oops_all_ledge_storage": "easy"
+    } ] },
     { "from": "AFE - Below Root Node", "to": "AFE - Statue Chest", "requires": [] }, // DJ OR grapple
     { "from": "AFE - Statue Chest", "to": "AFE - Lower Root Node", "requires": [] }, // grapple
     { "from": "AFE - Below Root Node", "to": "AFE - Lower Left Exit", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // (grapple AND (TCK OR AD OR DJ)) OR (AD AND DJ) OR (TCK AND DJ)
+        { "item": "Tai-Chi Kick" },
+        { "item": "Air Dash" },
+        { "item": "Cloud Leap" },
+        { "item": "Trick - Bow Hover" } // if Yi's head intersects the platform, he'll grab it post-hover
+        // not gonna worry about PADs yet (though T-PAD + AD works)
+    ] } ] }, // (grapple AND (TCK OR AD OR DJ)) OR (AD AND DJ) OR (TCK AND DJ) probably worse with tricks
     { "from": "AFE - Lower Left Exit", "to": "AFE - Below Root Node", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" },
-        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
+        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ],
+        { "item": "Trick - Bow Hover" }
     ] } ] },
+    // yeah we definitely want an *additive* syntax, where `vanilla` logic is always included on `easy` mode
+    // in this case, there's an enemy for T-PAD, so the trick logic change is easy: anyOf: [CL, AD, CS]
 
     { "from": "AFE - Baichang Arena", "to": "CH - Center", "requires": [] }, // elevator
 
@@ -43,29 +68,44 @@
     { "from": "AFD - Right Exit", "to": "AFE - Lower Left Exit", "requires": [] },
 
     // Apeman Facility (Depths)
-    { "from": "AFD - Upper Left Exit", "to": "AFD - Crystal Caves", "requires": [ { "item": "Air Dash" } ] }, // AD AND (grapple OR DJ)
+    { "from": "AFD - Upper Left Exit", "to": "AFD - Crystal Caves", "requires": [
+        { "item": "Air Dash" } // AD AND (grapple OR DJ)
+            // the AD becomes (AD OR CS) with CS-PADs; you need 3-4 dashes so no T-PADs or bow hovers here
+    ] },
     { "from": "AFD - Crystal Caves", "to": "AFD - Upper Left Exit", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // WC AND grapple AND (AD OR DJ)
-    { "from": "AFD - Crystal Caves", "to": "AFD - Shangui Arena", "requires": [ { "item": "Air Dash" } ] }, // AD and hacking 1
+    { "from": "AFD - Crystal Caves", "to": "AFD - Shangui Arena",
+        "requires": [ { "item": "Air Dash" } ],
+        "easy_tricks_requires": [ { "item": "Charged Strike" } ] // for a pseudo Air Dash
+        // a talisman PAD would work here, but there's no way to get qi here without AD or CS anyway
+    },
     { "from": "AFD - Crystal Caves", "to": "AFD - Root Node", "requires": [] },
-    { "from": "AFD - Root Node", "to": "AFD - Shangui Arena", "requires": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] },
+    { "from": "AFD - Root Node", "to": "AFD - Shangui Arena",
+        "requires": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ],
+        "easy_tricks_requires": [ { "item": "Cloud Leap" } ] // then use talisman instead of AD
+        // can't replace CL with multi-AD or bow hover into CL; you need the verticality of CL *then* a horizontal move
+    },
     { "from": "AFD - Root Node", "to": "AFD - Small Chest Below Root Node", "requires": [] }, // one-way fall
     { "from": "AFD - Root Node", "to": "AFD - Lower Left Exit", "requires": [] }, // one-way fall
     { "from": "AFD - Lower Left Exit", "to": "AFD - Right Exit", "requires": [] }, // one-way door
-    { "from": "AFD - Right Exit", "to": "AFD - Lower Level", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
+    { "from": "AFD - Right Exit", "to": "AFD - Lower Level",
+        "requires": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+        ] } ],
+        "easy_tricks_requires": [] // use talisman, then single jump the 2nd gap
+    },
     { "from": "AFD - Lower Level", "to": "AFD - Right Exit", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+        // CS is not enough; talisman is but there's no one to parry on these two platforms
+        // the parryable enemy one platform up requires TCK OR AD OR CL to reach anyway
     ] } ] },
     { "from": "AFD - Lower Level", "to": "AFD - Under Lower Left Exit", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // DJ OR (grapple AND (TCK OR AD))
+        // 2 dashes so no T-PADs, and CS is not long enough for the 2nd dash
     { "from": "AFD - Under Lower Left Exit", "to": "AFD - Lower Level", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" } // CS-PAD or T-PAD work, but does this connection even matter?
     ] } ] },
     { "from": "AFD - Under Lower Left Exit", "to": "AFD - Lower Left Exit", "requires": [
         { "item": "Mystic Nymph: Scout Mode" }
@@ -95,9 +135,12 @@
     { "from": "CH - Center", "to": "CH - Right Vents", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }
     ] } ] },
-    { "from": "CH - Right Vents", "to": "CH - Left Vents", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }, { "item": "Air Dash" }
-    ] } ] },
+    { "from": "CH - Right Vents", "to": "CH - Left Vents",
+        "requires": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }, { "item": "Air Dash" }
+        ] } ],
+        "easy_tricks_requires": [] // use a talisman
+    },
     { "from": "CH - Left Vents", "to": "CH - Left", "requires": [] }, // one-way fall + shortcut rope
 
     { "from": "CH - Center", "to": "FSP - Root Node", "requires": [] }, // rando will make this a one-way door
@@ -121,18 +164,28 @@
         // to evade the phase 3 orb, so that simplifies down to just WC AND TCK AND AD
         { "item": "Tai-Chi Kick" },
         { "item": "Air Dash" }
-    ] },
+    ] }, // TODO: can CS-PAD substitute for AD in a boss fight? I'm pretty sure T-PAD can't...
     { "from": "CC - Root Node", "to": "CC - Caves Upper Right", "requires": [
         { "item": "Mystic Nymph: Scout Mode" },
         // grapple AND wall climb
         { "anyOf": [ { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" } ] }
     ] },
-    { "from": "CC - Caves Upper Right", "to": "CC - Caves Upper Left", "requires": [ { "item": "Charged Strike" } ] },
-    { "from": "CC - Caves Upper Left", "to": "CC - Caves Upper Right", "requires": [ { "item": "Charged Strike" } ] },
+    { "from": "CC - Caves Upper Right", "to": "CC - Caves Upper Left",
+        "requires": [ { "item": "Charged Strike" } ],
+        "easy_tricks_requires": [ { "item": "Trick - Break CS Barrier With Bow" } ]
+    },
+    { "from": "CC - Caves Upper Left", "to": "CC - Caves Upper Right",
+        "requires": [ { "item": "Charged Strike" } ],
+        "easy_tricks_requires": [ { "item": "Trick - Break CS Barrier With Bow" } ]
+    },
     { "from": "CC - Caves Upper Left", "to": "CC - Caves Middle Left", "requires": [] },
     { "from": "CC - Caves Middle Left", "to": "CC - Caves Upper Left", "requires": [] }, // djump OR wall climb
     { "from": "CC - Caves Middle Left", "to": "CC - Caves Lower Left", "requires": [ { "item": "Tai-Chi Kick" } ] }, // TCK AND grapple
     { "from": "CC - Caves Lower Left", "to": "CC - Caves Middle Left", "requires": [ { "item": "Tai-Chi Kick" } ] }, // grapple AND wall climb AND TCK
+        // we're missing AD and CL options here in the vanilla logic
+        // T-PAD is an option both ways but you need multiple horizontals unless you're using TCK for the top,
+        // so "easy" logic down is probably TCK OR CL OR AD OR grapple where T-PAD skips the top unless TCK,
+        // easy up is TCK OR AD OR CL where T-PAD skips grapple
     { "from": "CC - Caves Lower Left", "to": "CC - Root Node", "requires": [] }, // one-way fall + shortcut rope
     { "from": "CC - Caves Lower Left", "to": "CC - Left Exit", "requires": [] },
     { "from": "CC - Left Exit", "to": "CC - Caves Lower Left", "requires": [] }, // grapple
@@ -245,14 +298,22 @@
     { "from": "RP - After Yingzhao", "to": "CH - Center", "requires": [] }, // elevator
 
     // Lake Yaochi Ruins
-    { "from": "LYR - Left Exit", "to": "LYR - Root Node", "requires": [] }, // grapple OR airdash OR djump
+    { "from": "LYR - Left Exit", "to": "LYR - Root Node",
+        "requires": [], // grapple OR airdash OR djump
+        "easy_tricks_requires": [ { "anyOf": [
+            { "item": "Charged Strike" }, { "item": "Trick - Bow Hover" }
+        ] } ] // no parryable enemies here
+    },
     { "from": "LYR - Root Node", "to": "LYR - Left Exit", "requires": [] },
     { "from": "LYR - Root Node", "to": "LYR - Upper Exit", "requires": [ { "item": "Cloud Leap" } ] },
     { "from": "LYR - Upper Exit", "to": "LYR - Root Node", "requires": [] }, // fall
-    { "from": "LYR - Root Node", "to": "LYR - Right Exit", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }, // to jump over the two-ninja pit after the roof breaks
-        { "item": "Mystic Nymph: Scout Mode" } // or hack the rope to climb out
-    ] } ] }, // then a one-way dragon boat ride; that part requires no items, but means no connection the other way
+    { "from": "LYR - Root Node", "to": "LYR - Right Exit",
+        "requires": [ { "anyOf": [
+            { "item": "Air Dash" }, { "item": "Cloud Leap" }, // to jump over the two-ninja pit after the roof breaks
+            { "item": "Mystic Nymph: Scout Mode" } // or hack the rope to climb out
+        ] } ],
+        "easy_tricks_requires": [] // use a talisman
+    }, // then a one-way dragon boat ride; that part requires no items, but means no connection the other way
     { "from": "LYR - Root Node", "to": "TRC - Upper Exit", "requires": [ { "item": "Elevator Access Token" } ] },
 
     { "from": "LYR - Root Node", "to": "YC - Upper Exit", "requires": [] },

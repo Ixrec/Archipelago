@@ -43,6 +43,9 @@ class OuterWildsWorld(World):
     def interpret_slot_data(slot_data: Dict[str, Any]) -> Dict[str, Any]:
         return slot_data
 
+    # and this is how we tell Universal Tracker we don't need the yaml
+    ut_can_gen_without_yaml = True
+
     def generate_early(self) -> None:
         # apply options that edit other options or themselves
         if self.options.dlc_only:

@@ -78,13 +78,22 @@ class OuterWildsWorld(World):
         # when items.py tries to lock Launch Codes on a location that doesn't exist.
         self.spawn = self.options.spawn
 
-        # implement Universal Tracker support
+        # implement .yaml-less Universal Tracker support
         if hasattr(self.multiworld, "generation_is_fake"):
             if hasattr(self.multiworld, "re_gen_passthrough"):
                 if "Outer Wilds" in self.multiworld.re_gen_passthrough:
                     slot_data = self.multiworld.re_gen_passthrough["Outer Wilds"]
                     self.warps = slot_data["warps"]
                     self.spawn = slot_data["spawn"]
+                    self.options.logsanity.value = slot_data["logsanity"]
+                    self.options.enable_eote_dlc.value = slot_data["enable_eote_dlc"]
+                    self.options.dlc_only.value = slot_data["dlc_only"]
+                    self.options.enable_hn1_mod.value = slot_data["enable_hn1_mod"]
+                    self.options.enable_hn2_mod.value = slot_data["enable_hn2_mod"]
+                    self.options.enable_outsider_mod.value = slot_data["enable_outsider_mod"]
+                    self.options.enable_ac_mod.value = slot_data["enable_ac_mod"]
+                    self.options.enable_fq_mod.value = slot_data["enable_fq_mod"]
+                    self.options.split_translator.value = slot_data["split_translator"]
             return
 
         # generate game-specific randomizations separate from AP items/locations

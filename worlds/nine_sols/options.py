@@ -35,6 +35,22 @@ class LogicDifficulty(Choice):
     Piercer arrows, traversing the bottom of AF (Depths) with multiple talisman dashes) will simply be out of logic.
 
     `oops_all_ledge_storage`: TODO
+    ledge storage - cling to a ledge, slash, then interrupt the slash with either cloud leap, air dash or a talisman
+        do we want talisman ledge storage in logic???
+        I like the idea that CL or AD is required to do this stuff
+        could we also make ledge cling itself an item?
+        need to test doing this with skull kick
+    ledge storage getup - after LS: jump, slash and hold up
+        this can be done anytime during the jump, so slashing before the peak lets you getup at the peak
+        e.g. the jump to the top of Daybreak Tower can be done with AD LS
+        LS getup also *resets cloud leap*, which is how CL LS lets you do a "triple jump"
+    ledge storage hover - after LS: press and hold jump, then press parry.
+        Like bow hover, the parry has to be done early. I think during the first half of upward movement???
+    ledge storage vault - after LS: press and hold jump, then press parry and hold up.
+        you have to do this below min jump height, so it only helps after a bow hover like in elevator skip
+    wall slide -
+
+    low grav, rope storage, respawn manip are all categorically out of logic???
     """
     display_name = "Logic Difficulty"
     option_vanilla = 0

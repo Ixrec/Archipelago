@@ -50,9 +50,11 @@ Receive and parse network packets from the server when the player receives an it
   your items can be received **any** number of times.
 * Admins and players may use server commands to create items without a player or location attributed to them. The
   client must be able to handle these items.
-* It must keep an index for items received in order to resync. The ItemsReceived Packets are a single list with a
-  guaranteed order.
 * It must be able to receive items that were sent to the player while they were not connected to the server.
+* It must not "duplicate" any of the received items after disconnecting and reconnecting. For many games, that means
+  the client must locally save the "last item received index".
+  * The ItemsReceived Packets are a single list with a guaranteed order, so saving a single index is sufficient to
+  distinguish new items from already received items.
 
 ### Encouraged Features
 

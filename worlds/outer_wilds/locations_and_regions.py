@@ -145,17 +145,17 @@ def create_regions(world: "OuterWildsWorld") -> None:
 
     # add dynamic logic, i.e. connections based on player options
     menu = mw.get_region("Menu", p)
-    if world.spawn == Spawn.option_vanilla:
+    if options.spawn == Spawn.option_vanilla:
         menu.add_exits(["Timber Hearth Village"])
-    elif world.spawn == Spawn.option_hourglass_twins:
+    elif options.spawn == Spawn.option_hourglass_twins:
         menu.add_exits(["Hourglass Twins"])
-    elif world.spawn == Spawn.option_timber_hearth:
+    elif options.spawn == Spawn.option_timber_hearth:
         menu.add_exits(["Timber Hearth"])
-    elif world.spawn == Spawn.option_brittle_hollow:
+    elif options.spawn == Spawn.option_brittle_hollow:
         menu.add_exits(["Brittle Hollow"])
-    elif world.spawn == Spawn.option_giants_deep:
+    elif options.spawn == Spawn.option_giants_deep:
         menu.add_exits(["Giant's Deep"])
-    elif world.spawn == Spawn.option_stranger:
+    elif options.spawn == Spawn.option_stranger:
         menu.add_exits(["Stranger Sunside Hangar"])
 
     if world.warps == 'vanilla':

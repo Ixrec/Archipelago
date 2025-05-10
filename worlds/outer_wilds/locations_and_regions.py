@@ -208,7 +208,6 @@ def create_regions(world: "OuterWildsWorld") -> None:
             required_items.extend(warp_platform_required_items.get(platform_2, []))
 
             def rule(state: CollectionState) -> bool:
-                nonlocal required_items
                 return state.has_all(required_items, p)
             r1 = mw.get_region(region_name_1, p)
             r2 = mw.get_region(region_name_2, p)

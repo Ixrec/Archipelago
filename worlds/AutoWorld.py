@@ -86,7 +86,15 @@ class AutoWorldRegister(type):
         if "game" in dct:
             if dct["game"] in AutoWorldRegister.world_types:
                 raise RuntimeError(f"""Game {dct["game"]} already registered.""")
-            AutoWorldRegister.world_types[dct["game"]] = new_class
+            if (dct["game"] == "Outer Wilds"  # the game I actually want to test
+                    # all the "magic" game names that core AP tests assume exist and fail without
+                    or dct["game"] == "Archipelago"
+                    or dct["game"] == "Test Game"
+                    or dct["game"] == "A Link to the Past"
+                    or dct["game"] == "Timespinner"
+                    # these two are easy to miss since they're only required by the CI-only hosting/__main__.py test
+                    or dct["game"] == "Clique" or dct["game"] == "Temp World"):
+                AutoWorldRegister.world_types[dct["game"]] = new_class
         new_class.__file__ = sys.modules[new_class.__module__].__file__
         if ".apworld" in new_class.__file__:
             new_class.zip_path = pathlib.Path(new_class.__file__).parents[1]

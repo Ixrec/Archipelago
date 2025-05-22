@@ -50,6 +50,7 @@ class TrapTypeWeights(OptionDict):
         "Nap Trap": And(int, lambda n: n >= 0),
         "Audio Trap": And(int, lambda n: n >= 0),
         "Suit Puncture Trap": And(int, lambda n: n >= 0),
+        "Map Disable Trap": And(int, lambda n: n >= 0),
     })
     display_name = "Trap Type Weights"
     default = {
@@ -57,6 +58,7 @@ class TrapTypeWeights(OptionDict):
         "Nap Trap": 2,
         "Audio Trap": 1,
         "Suit Puncture Trap": 1,
+        "Map Disable Trap": 1,
     }
 
 

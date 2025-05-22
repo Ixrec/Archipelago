@@ -49,12 +49,22 @@ class TrapTypeWeights(OptionDict):
         "Ship Damage Trap": And(int, lambda n: n >= 0),
         "Nap Trap": And(int, lambda n: n >= 0),
         "Audio Trap": And(int, lambda n: n >= 0),
+        "Suit Puncture Trap": And(int, lambda n: n >= 0),
+        "Map Disable Trap": And(int, lambda n: n >= 0),
+        "HUD Corruption Trap": And(int, lambda n: n >= 0),
+        "Ice Physics Trap": And(int, lambda n: n >= 0),
+        "Supernova Trap": And(int, lambda n: n >= 0),
     })
     display_name = "Trap Type Weights"
     default = {
         "Ship Damage Trap": 2,
         "Nap Trap": 2,
         "Audio Trap": 1,
+        "Suit Puncture Trap": 1,
+        "Map Disable Trap": 0,
+        "HUD Corruption Trap": 1,
+        "Ice Physics Trap": 0,
+        "Supernova Trap": 0,
     }
 
 

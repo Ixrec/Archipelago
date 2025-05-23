@@ -52,6 +52,7 @@ class TrapTypeWeights(OptionDict):
         "Suit Puncture Trap": And(int, lambda n: n >= 0),
         "Map Disable Trap": And(int, lambda n: n >= 0),
         "HUD Corruption Trap": And(int, lambda n: n >= 0),
+        "Ice Physics Trap": And(int, lambda n: n >= 0),
     })
     display_name = "Trap Type Weights"
     default = {
@@ -61,6 +62,7 @@ class TrapTypeWeights(OptionDict):
         "Suit Puncture Trap": 1,
         "Map Disable Trap": 1,
         "HUD Corruption Trap": 1,
+        "Ice Physics Trap": 1,
     }
 
 

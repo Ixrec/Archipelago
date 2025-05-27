@@ -61,10 +61,10 @@ class TrapTypeWeights(OptionDict):
         "Nap Trap": 2,
         "Audio Trap": 1,
         "Suit Puncture Trap": 1,
-        "Map Disable Trap": 1,
+        "Map Disable Trap": 0,
         "HUD Corruption Trap": 1,
-        "Ice Physics Trap": 1,
-        "Supernova Trap": 1,
+        "Ice Physics Trap": 0,
+        "Supernova Trap": 0,
     }
 
 

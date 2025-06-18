@@ -68,6 +68,23 @@ class TrapTypeWeights(OptionDict):
     }
 
 
+class UpgradeCounts(OptionDict):
+    """Choose the number of upgrades shuffled into the item pool.
+    The default in-game settings start you with 50% of each, bringing you to 200% once all upgrades are acquired.
+    You'll probably want to adjust them if you change these too drastically."""
+    schema = Schema({
+        "Oxygen Capacity Upgrade": And(int, lambda n: n >= 0),
+        "Fuel Capacity Upgrade": And(int, lambda n: n >= 0),
+        "Boost Duration Upgrade": And(int, lambda n: n >= 0),
+    })
+    display_name = "Upgrade Counts"
+    default = {
+        "Oxygen Capacity Upgrade": 3,
+        "Fuel Capacity Upgrade": 3,
+        "Boost Duration Upgrade": 3,
+    }
+
+
 class DeathLink(Choice):
     """When you die, everyone dies. Of course the reverse is true too.
     The "default" option will not include deaths to meditation, the supernova, the time loop ending,
@@ -270,6 +287,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     randomize_dark_bramble_layout: RandomizeDarkBrambleLayout
     trap_chance: TrapChance
     trap_type_weights: TrapTypeWeights
+    upgrade_counts: UpgradeCounts
     death_link: DeathLink
     logsanity: Logsanity
     shuffle_spacesuit: ShuffleSpacesuit

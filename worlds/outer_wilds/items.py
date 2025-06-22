@@ -176,6 +176,8 @@ def create_items(world: "OuterWildsWorld") -> None:
 
     items_to_create = {k: v for k, v in item_data_table.items() if should_generate(v.category, options)}
 
+    repeated_prog_useful_items = {k: v for k, v in options.upgrade_counts.items()}
+
     prog_and_useful_items: list[OuterWildsItem] = []
     unique_filler: list[OuterWildsItem] = []
     for name, item in items_to_create.items():

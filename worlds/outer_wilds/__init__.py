@@ -9,7 +9,7 @@ from .coordinates import coordinate_description, generate_random_coordinates
 from .db_layout import generate_random_db_layout
 from .items import OuterWildsItem, all_non_event_items_table, item_name_groups, create_item, create_items
 from .locations_and_regions import all_non_event_locations_table, location_name_groups, create_regions
-from .options import OuterWildsGameOptions, RandomizeDarkBrambleLayout, Spawn, Goal, EnableEchoesOfTheEyeDLC
+from .options import EarlyKeyItem, OuterWildsGameOptions, RandomizeDarkBrambleLayout, Spawn, Goal, EnableEchoesOfTheEyeDLC
 from .orbits import generate_random_orbits, generate_random_rotations
 from .warp_platforms import generate_random_warp_platform_mapping
 
@@ -104,6 +104,36 @@ class OuterWildsWorld(World):
         db_option = self.options.randomize_dark_bramble_layout
         self.db_layout = generate_random_db_layout(self.random, db_option) \
             if db_option != RandomizeDarkBrambleLayout.option_false else "vanilla"
+
+        if self.options.early_key_item:
+            relevant_translator = "Translator"
+            if self.options.split_translator:
+                if self.options.spawn == Spawn.option_hourglass_twins:
+                    relevant_translator = "Translator (Hourglass Twins)"
+                if self.options.spawn == Spawn.option_timber_hearth:
+                    relevant_translator = "Translator (Timber Hearth)"
+                if self.options.spawn == Spawn.option_brittle_hollow:
+                    relevant_translator = "Translator (Brittle Hollow)"
+                if self.options.spawn == Spawn.option_giants_deep:
+                    relevant_translator = "Translator (Giant's Deep)"
+                # ignore stranger spawn since it won't offer a Translator at all
+
+            key_item = None
+            if self.options.early_key_item == EarlyKeyItem.option_any:
+                if self.options.spawn == Spawn.option_stranger:
+                    key_item = self.random.choice(["Launch Codes", "Stranger Light Modulator"])
+                else:
+                    key_item = self.random.choice([relevant_translator, "Nomai Warp Codes", "Launch Codes"])
+            elif self.options.early_key_item == EarlyKeyItem.option_translator:
+                key_item = relevant_translator
+            elif self.options.early_key_item == EarlyKeyItem.option_nomai_warp_codes:
+                key_item = "Nomai Warp Codes"
+            elif self.options.early_key_item == EarlyKeyItem.option_launch_codes:
+                key_item = "Launch Codes"
+            elif self.options.early_key_item == EarlyKeyItem.option_stranger_light_modulator:
+                key_item = "Stranger Light Modulator"
+            assert key_item is not None
+            self.multiworld.local_early_items[self.player][key_item] = 1
 
     # members and methods implemented by locations_and_regions.py, locations.jsonc and connections.jsonc
 

@@ -1,3 +1,5 @@
+import orjson
+import pkgutil
 from typing import Any, TextIO
 
 from BaseClasses import Tutorial
@@ -166,9 +168,10 @@ class OuterWildsWorld(World):
         slot_data["orbit_angles"] = self.orbit_angles
         slot_data["rotation_axes"] = self.rotation_axes
         slot_data["warps"] = self.warps
-        # Archipelago does not yet have apworld versions (data_version is deprecated),
-        # so we have to roll our own with slot_data for the time being
-        slot_data["apworld_version"] = "0.3.18"
+        # apworld versions are not yet stored in the generated multiworld and exposed by AP servers,
+        # so we have to transmit this to the client/mod using slot_data for the time being.
+        apworld_manifest = orjson.loads(pkgutil.get_data(__name__, "archipelago.json").decode("utf-8"))
+        slot_data["apworld_version"] = apworld_manifest["world_version"]
         return slot_data
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:

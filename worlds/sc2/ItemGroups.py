@@ -10,7 +10,7 @@ For non-developers the following will be useful:
   * The exception to this are item names that would be ambiguous (eg. "Resource Efficiency")
 * Item flaggroups get unique groups as well as combined groups for numbered flaggroups
   * eg. "Unit" contains all units, "Armory" contains "Armory 1" through "Armory 6"
-  * The best place to look these up is at the bottom of items.py
+  * The best place to look these up is at the bottom of Items.py
 * Items that have a parent are grouped together
   * eg. "Zergling Items" contains all items that have "Zergling" as a parent
   * These groups do NOT contain the parent item

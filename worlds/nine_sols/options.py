@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import DefaultOnToggle, PerGameCommonOptions, Range, StartInventoryPool, Toggle
+from Options import Choice, DefaultOnToggle, PerGameCommonOptions, Range, StartInventoryPool, Toggle
 
 
 class ShuffleSolSeals(DefaultOnToggle):
@@ -77,6 +77,50 @@ class JadeCostMax(Range):
     default = 3
 
 
+class LogicDifficulty(Choice):
+    """
+    `vanilla` is exactly what it sounds like: You will only be expected to do what the vanilla game required.
+
+    `easy` adds tricks that are no harder to execute than what the vanilla game requires, once you've been told these
+    tricks exist. Specifically:
+    - "Pseudo Air Dashes" using either a talisman ("T-PAD") or Charged Strike ("CS-PAD")
+    - Using a Cloud Piercer S (or X) arrow to break Charged Strike barriers without Charged Strike
+    - Using a Thunder Buster arrow (any level) to break one-way barriers from the "wrong" side
+    - "Bow Hover": Press and hold jump, shoot the bow immediately (during the first half of Yi's upward movement) with
+    any arrow equipped, and then simply never let go of the jump button until you're done hovering.
+    - Using the Swift Runner skill to jump with extra horizontal momentum
+
+    `ledge_storage`: TODO
+    ledge storage - cling to a ledge, slash, then interrupt the slash with either cloud leap, air dash or a talisman
+        do we want talisman ledge storage in logic???
+        I like the idea that CL or AD is required to do this stuff
+        could we also make ledge cling itself an item?
+        need to test doing this with skull kick
+    ledge storage getup - after LS: jump, slash and hold up
+        this can be done anytime during the jump, so slashing before the peak lets you getup at the peak
+        e.g. the jump to the top of Daybreak Tower can be done with AD LS
+        LS getup also *resets cloud leap*, which is how CL LS lets you do a "triple jump"
+    ledge storage hover - after LS: press and hold jump, then press parry.
+        Like bow hover, the parry has to be done early. I think during the first half of upward movement???
+    ledge storage vault - after LS: press and hold jump, then press parry and hold up.
+        you have to do this below min jump height, so it only helps after a bow hover like in elevator skip
+    wall slide -
+
+    To keep entrance randomization feasible, no logic level will expect you to carry a transient resource like
+    azure sand, qi charges or ledge storage from one area to another.
+    Bow and talisman logic will assume you only have the initial 2 arrows and 1 qi to spend in between root nodes and
+    parryable enemies. Any route that requires more arrows or more qi (e.g. breaking one-way barriers with 3 Cloud
+    Piercer arrows, traversing the bottom of AF (Depths) with multiple talisman dashes) will simply be out of logic.
+
+    Other glitches like low gravity, rope storage, and respawn manip are simply out of logic.
+    """
+    display_name = "Logic Difficulty"
+    option_vanilla = 0
+    option_easy = 1
+    option_ledge_storage = 2
+    default = 0
+
+
 @dataclass
 class NineSolsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -88,4 +132,5 @@ class NineSolsGameOptions(PerGameCommonOptions):
     randomize_jade_costs: RandomizeJadeCosts
     jade_cost_min: JadeCostMin
     jade_cost_max: JadeCostMax
+    logic_difficulty: LogicDifficulty
 

@@ -161,11 +161,12 @@
         { "item": "Mystic Nymph: Scout Mode" }
     ] },
     { "from": "CH - Center", "to": "CH - Right Vents", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }
-    ] } ] },
+        [ { "item": "Tai-Chi Kick" }, { "item": "Ledge Grab" } ],
+        { "item": "Cloud Leap" }
+    ] } ] }, // the 1st jump can be an LS getup, but not the 2nd
     { "from": "CH - Right Vents", "to": "CH - Left Vents", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }, { "item": "Air Dash" }
-    ] } ] },
+    ] } ] }, // on logic_level: easy, T-dash (or bow hover)
     { "from": "CH - Left Vents", "to": "CH - Left", "requires": [] }, // one-way fall + shortcut rope
 
     { "from": "CH - Center", "to": "FSP - Root Node", "requires": [] }, // rando will make this a one-way door

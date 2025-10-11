@@ -1,17 +1,40 @@
 [
     // Apeman Facility (Monitoring)
-    { "from": "AFM - Root Node", "to": "AFM - Vents", "requires": [] }, // WC OR CL
+    { "from": "AFM - Root Node", "to": "AFM - Vents", "requires": [ { "anyOf": [
+        { "item": "Wall Climb" },
+        [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ]
+    ] } ] },
     { "from": "AFM - Vents", "to": "AFM - Exit", "requires": [] },
+    // Exit -> Vents can theoretically be done with CL + ledge storage getup, but there's no ledge there
 
     { "from": "AFM - Exit", "to": "AFE - Upper Root Node", "requires": [] },
     { "from": "AFE - Upper Root Node", "to": "AFM - Exit", "requires": [] },
 
     // Apeman Facility (Elevator)
-    { "from": "AFE - Upper Root Node", "to": "AFE - Between Root Nodes", "requires": [] }, // grapple OR CL OR AD
-    { "from": "AFE - Between Root Nodes", "to": "AFE - Upper Root Node", "requires": [] },
+    { "from": "AFE - Upper Root Node", "to": "AFE - Between Root Nodes", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+        // T-Dash works, but there's no enemy on this side. CS-Dash is too short.
+        // Bow hover from the pagoda works, but you need AD or CL to get up there anyway.
+        // Then the arena happens to require exactly Grapple OR (AD OR T-Dash) OR CL, so no change there.
+    ] } ] },
+    // this assumes the elevator call button is enabled by the mod, since it's impassable otherwise
+    { "from": "AFE - Between Root Nodes", "to": "AFE - Upper Root Node", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" } // to reach the arena's upper enemy
+    ] } ] }, // on logic_level: easy, this requires: [] because you can T-dash
+    { "from": "AFE - Between Root Nodes", "to": "AFE - Upper Right Pagoda", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+    ] } ] }, // on logic_level: easy, AD is replaced by T-dash
+    // moving boxes requires nothing to traverse (though the lower level of it is a trap without WC/LG/AD/CL),
+    // which is why "Between Root Nodes" gets to remain a single region
     { "from": "AFE - Between Root Nodes", "to": "AFE - Lower Root Node", "requires": [] },
-    { "from": "AFE - Lower Root Node", "to": "AFE - Between Root Nodes", "requires": [] }, // grapple
-    { "from": "AFE - Lower Root Node", "to": "AFE - Baichang Arena", "requires": [] }, // WC OR CL
+    // this assumes the elevator call button is enabled by the mod, since it's impassable otherwise
+    { "from": "AFE - Lower Root Node", "to": "AFE - Between Root Nodes", "requires": [
+        { "item": "Grapple" }
+    ] }, // on logic_level: ledge_storage, CL + ledge storage getup
+    { "from": "AFE - Lower Root Node", "to": "AFE - Baichang Arena", "requires": [ { "anyOf": [
+        { "item": "Wall Climb" },
+        [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ]
+    ] } ] },
     { "from": "AFE - Right Exit", "to": "AFE - Baichang Arena", "requires": [] }, // one-way door
     { "from": "AFE - Baichang Arena", "to": "AFE - Lower Root Node", "requires": [
         { "item": "Cloud Leap" }
@@ -19,20 +42,39 @@
     { "from": "AFE - Baichang Arena", "to": "AFE - Below Root Node", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" },
         [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
-    ] } ] },
+    ] } ] }, // on logic_level: easy, bow hover OR (swift runner AND (AD OR CL)) OR TCK // do we have a sand source for bow hover?
+    // on logic_level: ledge_storage, LG AND CL into LS hover
     { "from": "AFE - Below Root Node", "to": "AFE - Baichang Arena", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" },
         [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
-    ] } ] },
-    { "from": "AFE - Below Root Node", "to": "AFE - Statue Chest", "requires": [] }, // DJ OR grapple
-    { "from": "AFE - Statue Chest", "to": "AFE - Lower Root Node", "requires": [] }, // grapple
+    ] } ] }, // on logic_level: easy, bow hover OR ^ // SR doesn't help this way because the ropes are only on one side
+    // on logic_level: ledge_storage, LG AND T-dash into LS hover
+    { "from": "AFE - Below Root Node", "to": "AFE - Statue Chest", "requires": [ { "anyOf": [
+        { "item": "Grapple" },
+        { "item": "Cloud Leap" }
+    ] } ] }, // on logic_level: easy, bow hover OR (T-dash + AD) from the moving box
+    // on logic_level: ledge_storage, LG AND T-dash into LS hover from the moving box
+    { "from": "AFE - Statue Chest", "to": "AFE - Lower Root Node", "requires": [
+        { "item": "Grapple" }
+    ] }, // *maybe* on logic_level: ledge_storage, CL AND LG into LS getup can replace grapple,
+    // but you have to carry the LS from another area, i.e. you must not have gotten here using LS hover
     { "from": "AFE - Below Root Node", "to": "AFE - Lower Left Exit", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // (grapple AND (TCK OR AD OR DJ)) OR (AD AND DJ) OR (TCK AND DJ)
+        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ],
+        [ { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" } ],
+        [
+            { "item": "Grapple" },
+            { "anyOf": [ { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+        ]
+    ] } ] },
+    // on logic_level: easy, bow hover OR (T-dash AND (AD OR CL))
+    // on logic_level: ledge_storage, LG AND CL into LS hover
+    // with precise jumps, TCK alone is enough
     { "from": "AFE - Lower Left Exit", "to": "AFE - Below Root Node", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" },
         [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
     ] } ] },
+    // on logic_level: easy, bow hover OR (T-dash AND (AD OR CL))
+    // no access to LS from this side
 
     { "from": "AFE - Baichang Arena", "to": "CH - Center", "requires": [] }, // elevator
 
@@ -43,38 +85,64 @@
     { "from": "AFD - Right Exit", "to": "AFE - Lower Left Exit", "requires": [] },
 
     // Apeman Facility (Depths)
-    { "from": "AFD - Upper Left Exit", "to": "AFD - Crystal Caves", "requires": [ { "item": "Air Dash" } ] }, // AD AND (grapple OR DJ)
-    { "from": "AFD - Crystal Caves", "to": "AFD - Upper Left Exit", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // WC AND grapple AND (AD OR DJ)
-    { "from": "AFD - Crystal Caves", "to": "AFD - Shangui Arena", "requires": [ { "item": "Air Dash" } ] }, // AD and hacking 1
+    { "from": "AFD - Upper Left Exit", "to": "AFD - Crystal Caves", "requires": [ { "anyOf": [
+        // first jump: grapple OR CL // need extra height so no AD
+        // over crystals: CL OR AD
+        // down to chest:
+        // - WC AND (grapple OR AD OR CL)
+        // - grapple AND (AD OR CL)
+        // - AD AND CL works
+        // so for the whole thing, these are the minimal combinations:
+        [ { "item": "Grapple" }, { "item": "Air Dash" } ],
+        [
+            { "item": "Cloud Leap" },
+            { "anyOf": [ { "item": "Grapple" }, { "item": "Wall Climb" }, { "item": "Air Dash" } ] }
+        ]
+    ] } ] }, // on logic_level: easy, CS-dash AND (AD OR CL) for the drop down // bow hover wouldn't help, no qi source for t-dash
+    { "from": "AFD - Crystal Caves", "to": "AFD - Upper Left Exit", "requires": [
+        { "item": "Wall Climb" },
+        { "item": "Grapple" },
+        // grapple seems hard required? unless you use T-dash AND CL, that's even longer than AD
+        // AD OR CL is needed to go back over the crystals anyway
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+    ] }, // on logic_level: easy, T-dash AND (CL OR Grapple) for the hard part // AD's not enough, hovers don't work out of WC
+    { "from": "AFD - Crystal Caves", "to": "AFD - Shangui Arena", "requires": [ { "item": "Air Dash" } ] },
     { "from": "AFD - Crystal Caves", "to": "AFD - Root Node", "requires": [] },
     { "from": "AFD - Root Node", "to": "AFD - Shangui Arena", "requires": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] },
+    ] }, // on logic_level: easy, CL + swift runner
     { "from": "AFD - Root Node", "to": "AFD - Small Chest Below Root Node", "requires": [] }, // one-way fall
     { "from": "AFD - Root Node", "to": "AFD - Lower Left Exit", "requires": [] }, // one-way fall
+    //{ "from": "AFD - Lower Left Exit", "to": "AFD - Small Chest Below Root Node", "requires": [] },
+    // ^on logic_level: ledge_storage, CL AND LG into LS getup, though you have to run all the way to the right for a usable ledge
     { "from": "AFD - Lower Left Exit", "to": "AFD - Right Exit", "requires": [] }, // one-way door
     { "from": "AFD - Right Exit", "to": "AFD - Lower Level", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
+    ] } ] }, // on logic_level: easy, T-dash is plenty, though bow hover works, as does (LG AND (swift runner OR CS-dash))
     { "from": "AFD - Lower Level", "to": "AFD - Right Exit", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+        { "item": "Tai-Chi Kick" },
+        [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ],
+        { "item": "Cloud Leap" }
     ] } ] },
     { "from": "AFD - Lower Level", "to": "AFD - Under Lower Left Exit", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // DJ OR (grapple AND (TCK OR AD))
+        { "item": "Cloud Leap" },
+        [
+            { "item": "Grapple" },
+            [ { "item": "Air Dash" }, { "item": "Tai-Chi Kick" } ]
+        ]
+    ] } ] }, // bow hover works, but no arrow source
     { "from": "AFD - Under Lower Left Exit", "to": "AFD - Lower Level", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
+    ] } ] }, // on logic_level: easy, T-dash, not that it would ever matter
     { "from": "AFD - Under Lower Left Exit", "to": "AFD - Lower Left Exit", "requires": [
-        { "item": "Mystic Nymph: Scout Mode" }
-    ] }, // nymph AND grapple
+        { "item": "Mystic Nymph: Scout Mode" },
+        { "anyOf": [ { "item": "Grapple" }, { "item": "Cloud Leap" } ] }
+    ] },
     { "from": "AFD - Lower Left Exit", "to": "AFD - Climb to Root Node", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }
-    ] } ] },
+    ] } ] }, // on logic_level: ledge_storage, combining LS (setup with AD) and a T-dash barely works
     { "from": "AFD - Climb to Root Node", "to": "AFD - Root Node", "requires": [] }, // one-way door
-    { "from": "AFD - Climb to Root Node", "to": "AFD - Upper Right", "requires": [] }, // hacking 1 OR DJ
+    { "from": "AFD - Climb to Root Node", "to": "AFD - Upper Right", "requires": [] }, // hacking 1 OR CL
 
     { "from": "AFD - Upper Left Exit", "to": "FU - Lower Right Exit", "requires": [] },
     { "from": "FU - Lower Right Exit", "to": "AFD - Upper Left Exit", "requires": [] },

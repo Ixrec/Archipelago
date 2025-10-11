@@ -2,7 +2,9 @@
     // Apeman Facility (Monitoring)
     {
         "address": 101, "name": "AF (Monitoring): Break Corpse",
-        "region": "AFM - Root Node", "requires": []
+        "region": "AFM - Root Node", "requires": [ { "anyOf": [
+            { "item": "Wall Climb" }, { "item": "Cloud Leap" }
+        ] } ] // just to climb out of the little tutorial vent
     },
     {
         "address": 102, "name": "AF (Monitoring): Upper Right",
@@ -20,11 +22,11 @@
     // Apeman Facility (Elevator)
     {
         "address": 201, "name": "AF (Elevator): Hidden Atop Upper Level Pagoda (Left Chest)",
-        "region": "AFE - Between Root Nodes", "requires": []
+        "region": "AFE - Upper Right Pagoda", "requires": []
     },
     {
         "address": 207, "name": "AF (Elevator): Hidden Atop Upper Level Pagoda (Right Chest)",
-        "region": "AFE - Between Root Nodes", "requires": []
+        "region": "AFE - Upper Right Pagoda", "requires": []
     },
     {
         "address": 202, "name": "AF (Elevator): Moving Boxes",

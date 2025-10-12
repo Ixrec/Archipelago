@@ -297,7 +297,7 @@
             { "item": "Charged Strike" }, // to break in
             { "item": "Mystic Nymph: Scout Mode" } // to unlock ropes, since we can't assume
                                                    // the single-use floor will be used optimally
-        ]
+        ] // on logic_level: easy, Cloud Piercer S/X instead
     },
     {
         "address": 606, "name": "Cortex Center: Near Left Exit",

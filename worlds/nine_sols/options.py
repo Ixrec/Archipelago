@@ -83,36 +83,30 @@ class LogicDifficulty(Choice):
 
     `easy` adds tricks that are no harder to execute than what the vanilla game requires, once you've been told these
     tricks exist. Specifically:
-    - "Pseudo Air Dashes" using either a talisman ("T-PAD") or Charged Strike ("CS-PAD")
+    - "Pseudo Air Dashes" using either a talisman ("T-dash") or Charged Strike ("CS-dash")
     - Using a Cloud Piercer S (or X) arrow to break Charged Strike barriers without Charged Strike
     - Using a Thunder Buster arrow (any level) to break one-way barriers from the "wrong" side
     - "Bow Hover": Press and hold jump, shoot the bow immediately (during the first half of Yi's upward movement) with
     any arrow equipped, and then simply never let go of the jump button until you're done hovering.
     - Using the Swift Runner skill to jump with extra horizontal momentum
+    - Using knockback from firing the bow in midair to slightly extend horizontal jumps
 
-    `ledge_storage`: TODO
-    ledge storage - cling to a ledge, slash, then interrupt the slash with either cloud leap, air dash or a talisman
-        do we want talisman ledge storage in logic???
-        I like the idea that CL or AD is required to do this stuff
-        could we also make ledge cling itself an item?
-        need to test doing this with skull kick
-    ledge storage getup - after LS: jump, slash and hold up
-        this can be done anytime during the jump, so slashing before the peak lets you getup at the peak
-        e.g. the jump to the top of Daybreak Tower can be done with AD LS
-        LS getup also *resets cloud leap*, which is how CL LS lets you do a "triple jump"
-    ledge storage hover - after LS: press and hold jump, then press parry.
-        Like bow hover, the parry has to be done early. I think during the first half of upward movement???
-    ledge storage vault - after LS: press and hold jump, then press parry and hold up.
-        you have to do this below min jump height, so it only helps after a bow hover like in elevator skip
-    wall slide -
+    `ledge_storage` adds the following LS-related glitches to logic:
+        - slash vault (also called LS "getup") or parry vault (also called LS "vault")
+        - parry float/hover
+        - breaking one-way barriers from the "wrong" side with a spider leap and Charged Strike
+        - moon slash wall side
+    These are harder to explain, so if you would like to learn them, check out the Ledge Storage section of
+    Herdingoats' Nine Sols trick video: https://youtu.be/X9aii18KecU?t=766
+    To avoid the complications of skill logic, setting up ledge storage with a skull kick is out of logic. Logic will
+    assume you're doing the setup with either a Talisman dash, Air Dash, or Cloud Leap.
 
-    To keep entrance randomization feasible, no logic level will expect you to carry a transient resource like
-    azure sand, qi charges or ledge storage from one area to another.
-    Bow and talisman logic will assume you only have the initial 2 arrows and 1 qi to spend in between root nodes and
-    parryable enemies. Any route that requires more arrows or more qi (e.g. breaking one-way barriers with 3 Cloud
-    Piercer arrows, traversing the bottom of AF (Depths) with multiple talisman dashes) will simply be out of logic.
-
-    Other glitches like low gravity, rope storage, and respawn manip are simply out of logic.
+    Other speedrun tech like respawn manipulation, low gravity, rope storage, invulnerability abuse
+    (and combinations thereof like fast Sky Tower climb and miner skip) are simply out of logic.
+    No logic level will expect you to carry transient resources (azure sand, qi charges, ledge storage)
+    between areas, or increase your capacity beyond the initial 2 sand and 1 qi.
+    Parrying a flying enemy attack to reset platforming moves is only in logic at the one place in TRC
+    where the vanilla game gives you a respawning enemy for this specific purpose.
     """
     display_name = "Logic Difficulty"
     option_vanilla = 0

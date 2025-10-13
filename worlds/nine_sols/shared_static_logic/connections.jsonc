@@ -130,7 +130,7 @@
             { "item": "Grapple" },
             [ { "item": "Air Dash" }, { "item": "Tai-Chi Kick" } ]
         ]
-    ] } ] }, // bow hover works, but no arrow source
+    ] } ] }, // bow hover and T-dash work, but no arrow/qi source
     { "from": "AFD - Under Lower Left Exit", "to": "AFD - Lower Level", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // on logic_level: easy, T-dash, not that it would ever matter
@@ -222,6 +222,9 @@
         { "item": "Tai-Chi Kick" }
     ] }, // on logic_level: easy, T-dash replaces the (G OR AD) part
     { "from": "CC - Caves Lower Left", "to": "CC - Root Node", "requires": [] }, // one-way fall + shortcut rope
+    //{ "from": "CC - Root Node", "to": "CC - Caves Lower Left", "requires": [] },
+    // on logic_level: easy, AD AND CL AND (CS OR grapple OR bow)
+    // any% NMG speedrun uses T-dash (and bow and CS and grapple) here, but there's no enemy for rando to get qi
     { "from": "CC - Caves Lower Left", "to": "CC - Left Exit", "requires": [] },
     { "from": "CC - Left Exit", "to": "CC - Caves Lower Left", "requires": [] }, // grapple
 

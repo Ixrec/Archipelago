@@ -126,5 +126,5 @@ class NineSolsGameOptions(PerGameCommonOptions):
     randomize_jade_costs: RandomizeJadeCosts
     jade_cost_min: JadeCostMin
     jade_cost_max: JadeCostMax
-    logic_difficulty: LogicDifficulty
+    # logic_difficulty: LogicDifficulty
 

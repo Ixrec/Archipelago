@@ -101,8 +101,8 @@ class LogicDifficulty(Choice):
     To avoid the complications of skill logic, setting up ledge storage with a skull kick is out of logic. Logic will
     assume you're doing the setup with either a Talisman dash, Air Dash, or Cloud Leap.
 
-    Other speedrun tech like respawn manipulation, low gravity, rope storage, invulnerability abuse
-    (and combinations thereof like fast Sky Tower climb and miner skip) are simply out of logic.
+    Other speedrun tech like respawn manipulation, low gravity, rope storage, invulnerability abuse, dashing
+    between lasers, and combinations thereof like fast Sky Tower climb and miner skip are simply out of logic.
     No logic level will expect you to carry transient resources (azure sand, qi charges, ledge storage)
     between areas, or increase your capacity beyond the initial 2 sand and 1 qi.
     Parrying a flying enemy attack to reset platforming moves is only in logic at the one place in TRC

@@ -345,7 +345,7 @@
     {
         "address": 803, "name": "PR (East): Top Platform in Upper Right Shaft",
         "region": "PRE - Upper Right", "requires": [ { "item": "Mystic Nymph: Scout Mode" } ] // to lower rope
-    },
+    }, // wall slide AND T-dash would work, but there's no usable ledge in the area
     {
         "address": 804, "name": "PR (East): Hack Statue",
         "region": "PRE - Upper Right", "requires": [ { "item": "Tai-Chi Kick" } ] // AND hacking
@@ -371,7 +371,7 @@
     {
         "address": 903, "name": "PR (Central): Hack Statue",
         "region": "PRC - Upper Right", "requires": [
-            { "item": "Mystic Nymph: Scout Mode" }, // to lower rope
+            { "anyOf": [ { "item": "Mystic Nymph: Scout Mode" }, { "item": "Cloud Leap" } ] }, // lower or skip rope
             { "item": "Tai-Chi Kick" } // for the statue
         ]
     },
@@ -389,7 +389,7 @@
     },
     {
         "address": 907, "name": "PR (Central): Examine Energy Meter",
-        "region": "PRC - Above Root Node", "requires": []
+        "region": "PRC - Left Transporter", "requires": []
     },
     {
         "address": 908, "name": "PR (Central): Near Left Transporter",
@@ -418,10 +418,12 @@
     },
     {
         "address": 1004, "name": "PR (West): Hack Statue",
-        "region": "PRW - Power Lines", "requires": [ // hacking 2 to open the door AND
+        "region": "PRW - Power Lines", "requires": [
             { "anyOf": [
                 { "item": "Unbounded Counter" }, // to destroy the turret
-                { "region": "PRW - Above Power Lines" } // to move a box in between the turret and the hacking point
+                { "region": "PRW - Above Power Lines" }, // to move a box in between the turret and the hacking point
+                [ { "item": "Cloud Leap" }, { "item": "Wall Climb" } ] // to jump directly up to that box
+                // on logic_level: easy, thunder buster to skip the whole turret hack door
             ] },
             { "item": "Tai-Chi Kick" } // required for the statue itself, and the easiest way to cross the red floor
         ]

@@ -302,9 +302,13 @@
     { "from": "PRE - Root Node", "to": "PRE - Right Transporter", "requires": [
         { "item": "Mystic Nymph: Scout Mode" } // for laser barrier
     ] },
-    { "from": "PRE - Root Node", "to": "PRE - Upper Right", "requires": [] }, // grapple OR djump
+    { "from": "PRE - Root Node", "to": "PRE - Upper Right", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Cloud Leap" }
+    ] } ] }, // on logic_level: ledge storage, wall slide works with any setup using the ledge right of the node
     { "from": "PRE - Upper Right", "to": "PRE - Root Node", "requires": [] },
-    { "from": "PRE - Upper Right", "to": "PRE - Upper Left", "requires": [] }, // one-way hacking door, then grapple OR djump
+    { "from": "PRE - Upper Right", "to": "PRE - Upper Left", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Cloud Leap" } // one-way hacking door, then this jump
+    ] } ] },
     { "from": "PRE - Upper Left", "to": "PRE - Left Transporter", "requires": [] }, // one-way hacking elevator
     { "from": "PRE - Left Transporter", "to": "PRE - Jiaoduan Arena", "requires": [
         { "item": "Mystic Nymph: Scout Mode" } // for laser barrier
@@ -317,25 +321,32 @@
     // Power Reservoir (Central)
     { "from": "PRC - Right Transporter", "to": "PRC - Upper Right", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
+    ] } ] }, // on logic_level: easy, bow hover // CS + AD + T-dash works but is redundant // no ledge for parry hover
     { "from": "PRC - Upper Right", "to": "PRC - Building Right of Light Bridge", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
+    ] } ] }, // on logic_level: easy, T-dash
     { "from": "PRC - Building Right of Light Bridge", "to": "PRC - Light Bridge", "requires": [] }, // one-way door
     { "from": "PRC - Light Bridge", "to": "PRC - Root Node", "requires": [] }, // one-way fall
     { "from": "PRC - Root Node", "to": "PRC - Light Bridge", "requires": [] }, // hacking to unlock door right of Backup Control Room
     { "from": "PRC - Left Transporter", "to": "PRC - Chest Near Left Transporter", "requires": [
-        { "item": "Cloud Leap" }
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
     ] },
     { "from": "PRC - Chest Near Left Transporter", "to": "PRC - Left Transporter", "requires": [] }, // fall
     { "from": "PRC - Left Transporter", "to": "PRC - Root Node", "requires": [] }, // one-way door
-    { "from": "PRC - Left Transporter", "to": "PRC - Above Root Node", "requires": [] }, // DJ OR grapple
+    { "from": "PRC - Left Transporter", "to": "PRC - Above Root Node", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Cloud Leap" } // one-way hacking door, then this jump
+    ] } ] }, // on logic_level: ledge_storage, CL + LS getup, using ledges around the moving box
     { "from": "PRC - Above Root Node", "to": "PRC - Chest Near Left Transporter", "requires": [
         { "item": "Mystic Nymph: Scout Mode" } // to open door
     ] },
     { "from": "PRC - Above Root Node", "to": "PRC - Chest Left of Light Bridge", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
+        [ { "item": "Tai-Chi Kick" }, { "item": "Wall Climb" } ],
+        [
+            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] },
+            { "anyOf": [ { "item": "Wall Climb" }, { "item": "Ledge Grab" } ] }
+        ]
+    ] } ] }, // on logic_level: easy, T-dash replaces TCK/AD/CL
+    // parry hover would work, but the only ledge close enough needs CL
     { "from": "PRC - Chest Left of Light Bridge", "to": "PRC - Light Bridge", "requires": [] }, // one-way door
 
     { "from": "PRC - Left Transporter", "to": "PRW - Right Transporter", "requires": [] },
@@ -348,19 +359,37 @@
 
     // Power Reservoir (West)
     { "from": "PRW - Root Node", "to": "PRW - Guarded Chest", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" },
-        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
-    ] } ] }, // DJ OR grapple then WC OR DJ then (DJ AND TCK) OR (WC AND (TCK OR (DJ AND AD)))
-		     // probably want to simplify this in practice even when we do shuffle WC/grapple
-    { "from": "PRW - Guarded Chest", "to": "PRW - Root Node", "requires": [] }, // grapple
+        [ { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" } ],
+        [
+            { "item": "Wall Climb" },
+            { "anyOf": [
+                [
+                    { "item": "Cloud Leap" },
+                    { "anyOf": [ { "item": "Air Dash" }, { "item": "Charged Strike" } ] }
+                ],
+                [
+                    { "item": "Grapple" },
+                    { "item": "Air Dash" },
+                    { "item": "Charged Strike" }
+                ]
+            ] }
+        ]
+    ] } ] },
+    // easy using T-dash deletes the AND (AD OR CS), also turns the AND AD AND CS into AND (AD OR CS)
+    // TCK is incompatible with LS, but wall sliding up the big room allows: (LG AND (CL OR (G AND AD)))
+    { "from": "PRW - Guarded Chest", "to": "PRW - Root Node", "requires": [ { "item": "Grapple" } ] },
     { "from": "PRW - Guarded Chest", "to": "PRW - Power Lines", "requires": [] }, // one-way debris+fall
+    //{ "from": "PRW - Power Lines", "to": "PRW - Guarded Chest", "requires": [] },
+    // on logic_level: easy, (G OR CL) AND Thunder Buster AND (WC OR LG)
+    // LS is irrelevant here because the one-way barriers are too high to spider leap onto
     { "from": "PRW - Power Lines", "to": "PRW - Root Node", "requires": [] }, // one-way door
     { "from": "PRW - Power Lines", "to": "PRW - Tao Fruit", "requires": [
         { "item": "Mystic Nymph: Scout Mode" } // to open door, AND hacking 2
     ] },
-    { "from": "PRW - Power Lines", "to": "PRW - Above Power Lines", "requires": [] },
-        // (WC AND hacking 1) the intended way from the upper left,
-        // OR (WC AND DJ) using the boxes in the upper right intended as a shortcut
+    { "from": "PRW - Power Lines", "to": "PRW - Above Power Lines", "requires": [ { "anyOf": [
+        { "item": "Wall Climb" }, // the intended way using the two boxes in the upper left and hacking a bridge
+        [ { "item": "Cloud Leap" }, { "item": "Wall Climb" } ] // shortcut using the turret-blocking box in upper right
+    ] } ] }, // on logic_level: ledge_storage, there's also wall slide in upper left room (or CL + wall slide in upper right)
     { "from": "PRW - Above Power Lines", "to": "PRW - Right Transporter", "requires": [] }, // one-way door
 
     // Radiant Pagoda

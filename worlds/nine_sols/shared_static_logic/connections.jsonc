@@ -397,14 +397,21 @@
     { "from": "RP - After Yingzhao", "to": "CH - Center", "requires": [] }, // elevator
 
     // Lake Yaochi Ruins
-    { "from": "LYR - Left Exit", "to": "LYR - Root Node", "requires": [] }, // grapple OR airdash OR djump
-    { "from": "LYR - Root Node", "to": "LYR - Left Exit", "requires": [] },
+    { "from": "LYR - Left Exit", "to": "LYR - Root Node", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+    ] } ] }, // on logic_level: easy, bow hover OR CS-dash OR SR // LS can't help
+    { "from": "LYR - Root Node", "to": "LYR - Left Exit", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+    ] } ] }, // on logic_level: easy, just T-dash; there are enemies on the right
     { "from": "LYR - Root Node", "to": "LYR - Upper Exit", "requires": [ { "item": "Cloud Leap" } ] },
+    // on logic_level: ledge_storage, LS getup (any setup) is enough to reach the roof; any% runs do this
     { "from": "LYR - Upper Exit", "to": "LYR - Root Node", "requires": [] }, // fall
     { "from": "LYR - Root Node", "to": "LYR - Right Exit", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }, // to jump over the two-ninja pit after the roof breaks
         { "item": "Mystic Nymph: Scout Mode" } // or hack the rope to climb out
-    ] } ] }, // then a one-way dragon boat ride; that part requires no items, but means no connection the other way
+    ] } ] }, // on logic_level: easy, just T-dash // LS is redundant
+    // then a one-way dragon boat ride; even bow/parry hover can't bypass the boat because of flying enemies
+    // it is *possible* to hover under the flying enemies without getting hit, but this is too unreliable for logic
     { "from": "LYR - Root Node", "to": "TRC - Upper Exit", "requires": [ { "item": "Elevator Access Token" } ] },
 
     { "from": "LYR - Root Node", "to": "YC - Upper Exit", "requires": [] },

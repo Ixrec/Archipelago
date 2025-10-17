@@ -466,7 +466,9 @@
     },
     {
         "address": 1203, "name": "LYR: Above Leftmost Pool",
-        "region": "LYR - Left Exit", "requires": [] // grapple OR djump
+        "region": "LYR - Left Exit", "requires": [ { "anyOf": [
+            { "item": "Grapple" }, { "item": "Cloud Leap" }
+        ] } ] // LS tricks don't get us high enough
     },
     {
         "address": 1204, "name": "LYR: Right of Leftmost Pool",

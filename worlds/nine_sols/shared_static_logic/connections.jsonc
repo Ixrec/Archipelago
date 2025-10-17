@@ -479,14 +479,23 @@
     // Yinglong Canal
     { "from": "YC - Upper Exit", "to": "YC - Upper Caves", "requires": [ { "item": "Charged Strike" } ] },
     { "from": "YC - Upper Caves", "to": "YC - Upper Exit", "requires": [ { "item": "Charged Strike" } ] },
+    // on logic_level: easy, Cloud Piercer S/X
     { "from": "YC - Upper Caves", "to": "YC - Farmland Markings", "requires": [] }, // fall
-    { "from": "YC - Farmland Markings", "to": "YC - Upper Caves", "requires": [] }, // wall climb
-    { "from": "YC - Farmland Markings", "to": "YC - Above Egg Cave", "requires": [] }, // djump OR wall climb
+    { "from": "YC - Farmland Markings", "to": "YC - Upper Caves", "requires": [ { "anyOf": [
+        { "item": "Wall Climb" }, { "item": "Cloud Leap" }
+    ] } ] },
+    { "from": "YC - Farmland Markings", "to": "YC - Above Egg Cave", "requires": [ { "anyOf": [
+        [ { "item": "Wall Climb" }, { "item": "Ledge Grab" } ],
+        { "item": "Cloud Leap" }
+    ] } ] },
     { "from": "YC - Above Egg Cave", "to": "YC - Farmland Markings", "requires": [] }, // fall
     { "from": "YC - Above Egg Cave", "to": "YC - Egg Cave & Left Exit", "requires": [] }, // fall
     { "from": "YC - Egg Cave & Left Exit", "to": "YC - Above Egg Cave", "requires": [ { "item": "Cloud Leap" } ] },
     { "from": "YC - Farmland Markings", "to": "YC - Root Node", "requires": [] }, // fall
-    { "from": "YC - Root Node", "to": "YC - Farmland Markings", "requires": [] }, // djump OR grapple
+    { "from": "YC - Root Node", "to": "YC - Farmland Markings", "requires": [ { "anyOf": [
+        { "item": "Grapple" },
+        [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ]
+    ] } ] },
     { "from": "YC - Egg Cave & Left Exit", "to": "YC - Root Node", "requires": [] }, // one-way door
 
     { "from": "YC - Egg Cave & Left Exit", "to": "TRC - Ground Floor & Exits", "requires": [] },

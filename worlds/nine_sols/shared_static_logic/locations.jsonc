@@ -610,7 +610,13 @@
     },
     {
         "address": 1604, "name": "Yinglong Canal: Climbing Puzzle Above Farmland Markings",
-        "region": "YC - Farmland Markings", "requires": []
+        "region": "YC - Farmland Markings", "requires": [ { "anyOf": [
+            [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ],
+            [
+                { "item": "Wall Climb" },
+                { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] }
+            ]
+        ] } ]
     },
     {
         "address": 1605, "name": "Yinglong Canal: Between Egg Cave and Farmland Markings",
@@ -618,11 +624,15 @@
     },
     {
         "address": 1606, "name": "Yinglong Canal: Break Center Yinglong Egg",
-        "region": "YC - Egg Cave & Left Exit", "requires": [] // djump OR wall climb
+        "region": "YC - Egg Cave & Left Exit", "requires": [ { "anyOf": [
+            { "item": "Wall Climb" }, { "item": "Cloud Leap" }
+        ] } ]
     },
     {
         "address": 1607, "name": "Yinglong Canal: Near Root Node",
-        "region": "YC - Root Node", "requires": []
+        "region": "YC - Root Node", "requires": [ { "anyOf": [
+            { "item": "Ledge Grab" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+        ] } ]
     },
 
     // Factory (Great Hall)

@@ -571,7 +571,14 @@
     },
     {
         "address": 1406, "name": "W&OS: Climb Elevator Shaft By Root Node",
-        "region": "W&OS - Root Node", "requires": [ { "item": "Mystic Nymph: Scout Mode" } ] // AND grapple (OR djump???)
+        "region": "W&OS - Root Node", "requires": [
+            { "item": "Mystic Nymph: Scout Mode" },
+            { "anyOf": [
+                { "item": "Grapple" },
+                [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
+                // this is barely possible with CL alone, but too tight for default logic
+            ] }
+        ]
     },
 
     // Agrarian Hall

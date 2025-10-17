@@ -436,13 +436,29 @@
     { "from": "GH - 2nd Waterfall Hack", "to": "W&OS - Center", "requires": [] }, // one-way fall
 
     // Water & Oxygen Synthesis
-    { "from": "W&OS - Center", "to": "W&OS - Left Exit", "requires": [] }, // grapple OR airdash OR djump???
+    { "from": "W&OS - Center", "to": "W&OS - Left Exit", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+    ] } ] }, // on logic_level: easy, just T-dash // LS is redundant
     { "from": "W&OS - Center", "to": "W&OS - Pipeline Panel", "requires": [ { "item": "Cloud Leap" } ] },
-    { "from": "W&OS - Center", "to": "W&OS - Root Node", "requires": [] }, // hacking AND (grapple OR airdash OR djump)
-    { "from": "W&OS - Left Exit", "to": "W&OS - Red Crystal Cave", "requires": [] }, // wall climb AND grapple
+    // on logic_level: easy, a long leftward bow hover just under the stalactite
+    // on logic_level: ledge_storage, LS getup to higher wood platforms using AD OR T-dash setup on ledge below shortcut rope
+    { "from": "W&OS - Left Exit", "to": "W&OS - Red Crystal Cave", "requires": [
+        { "item": "Grapple" },
+        { "anyOf": [ { "item": "Wall Climb" }, { "item": "Cloud Leap" } ] }
+    ] },
     { "from": "W&OS - Red Crystal Cave", "to": "W&OS - Pipeline Panel", "requires": [ { "item": "Charged Strike" } ] },
     { "from": "W&OS - Pipeline Panel", "to": "W&OS - Red Crystal Cave", "requires": [ { "item": "Charged Strike" } ] },
+    // on logic_level: easy, Cloud Piercer S/X
+    { "from": "W&OS - Center", "to": "W&OS - Root Node", "requires": [ { "anyOf": [
+        { "item": "Grapple" },
+        [
+            { "item": "Charged Strike" },
+            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+        ]
+    ] } ] }, // on logic_level: easy, bow hover // on logic_level: ledge_storage, parry hover
+    // 2 T-dashes is enough, but that's out of logic
     { "from": "W&OS - Root Node", "to": "W&OS - Right Exit", "requires": [ { "item": "Charged Strike" } ] }, // one-way dragon boat ride
+    // Thunder Buster and Cloud Piercer S arrows do *not* work on the CS bell, it really has to be CS here
 
     { "from": "W&OS - Left Exit", "to": "YC - Root Node", "requires": [] },
     { "from": "YC - Root Node", "to": "W&OS - Left Exit", "requires": [

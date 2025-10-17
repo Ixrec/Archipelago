@@ -426,6 +426,7 @@
     // Greenhouse
     { "from": "GH - Root Node", "to": "GH - Chiyou & 1st Waterfall Hack", "requires": [ { "item": "Charged Strike" } ] },
     { "from": "GH - Chiyou & 1st Waterfall Hack", "to": "GH - Root Node", "requires": [ { "item": "Charged Strike" } ] },
+    // on logic_level: easy, Cloud Piercer S/X
     { "from": "GH - Chiyou & 1st Waterfall Hack", "to": "GH - 2nd Waterfall Hack", "requires": [] }, // hacking
     { "from": "GH - 2nd Waterfall Hack", "to": "GH - 3rd Waterfall Hack", "requires": [] }, // hacking
     { "from": "GH - 3rd Waterfall Hack", "to": "GH - Mutated Crops", "requires": [] }, // hacking

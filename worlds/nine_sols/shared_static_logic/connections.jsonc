@@ -321,7 +321,7 @@
     // Power Reservoir (Central)
     { "from": "PRC - Right Transporter", "to": "PRC - Upper Right", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // on logic_level: easy, bow hover // CS + AD + T-dash works but is redundant // no ledge for parry hover
+    ] } ] }, // on logic_level: easy, SR OR bow hover // CS + AD + T-dash works but is redundant // no ledge for parry hover
     { "from": "PRC - Upper Right", "to": "PRC - Building Right of Light Bridge", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // on logic_level: easy, T-dash

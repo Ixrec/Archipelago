@@ -502,25 +502,37 @@
     { "from": "TRC - Ground Floor & Exits", "to": "YC - Egg Cave & Left Exit", "requires": [] },
 
     // Factory (Great Hall)
-    { "from": "FGH - Lower Levels, Root Node & Right Exit", "to": "FGH - Lower Left Elevator", "requires": [] }, // fall
-    { "from": "FGH - Lower Left Elevator", "to": "FGH - Lower Levels, Root Node & Right Exit", "requires": [] }, // grapple
-    { "from": "FGH - Left Exit", "to": "FGH - Lower Levels, Root Node & Right Exit", "requires": [] }, // bridge only hackable from left side
-    { "from": "FGH - Lower Levels, Root Node & Right Exit", "to": "FGH - Upper Left Elevator", "requires": [ { "item": "Unbounded Counter" } ] },
-    { "from": "FGH - Lower Levels, Root Node & Right Exit", "to": "FGH - Hammer Brothers Roof", "requires": [ { "anyOf": [
+    { "from": "FGH - Right Exit", "to": "FGH - Lower Levels & Root Node", "requires": [ { "anyOf": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+    ] } ] },
+    { "from": "FGH - Lower Levels & Root Node", "to": "FGH - Right Exit", "requires": [] }, // fall
+    { "from": "FGH - Lower Levels & Root Node", "to": "FGH - Lower Left Elevator", "requires": [] }, // fall
+    { "from": "FGH - Lower Left Elevator", "to": "FGH - Lower Levels & Root Node", "requires": [ { "item": "Grapple" } ] },
+    { "from": "FGH - Left Exit", "to": "FGH - Lower Levels & Root Node", "requires": [] }, // bridge only hackable from left side
+    { "from": "FGH - Lower Levels & Root Node", "to": "FGH - Upper Left Elevator", "requires": [ { "item": "Unbounded Counter" } ] },
+    { "from": "FGH - Lower Levels & Root Node", "to": "FGH - Hammer Brothers Roof", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // this is for the gap between two conveyor belts above the leftmost safety orb
-    { "from": "FGH - Lower Levels, Root Node & Right Exit", "to": "FGH - Above Root Node", "requires": [
-        { "item": "Cloud Leap" }
+    // on logic_level: easy, T-dash
+    { "from": "FGH - Lower Levels & Root Node", "to": "FGH - Above Root Node", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
     ] }, // from the rightmost safety orb's right platform, cloud leap is the only way to the higher middle platform
-    { "from": "FGH - Hammer Brothers Roof", "to": "FGH - Above Root Node", "requires": [] }, // wall climb OR cl
+    // from the middle safety orb, G AND AD AND CL AND WC (in that order) works, but is redundant with these other routes
+    { "from": "FGH - Hammer Brothers Roof", "to": "FGH - Above Root Node", "requires": [ { "anyOf": [
+        { "item": "Wall Climb" }, { "item": "Cloud Leap" }
+    ] } ] },
     { "from": "FGH - Above Root Node", "to": "FGH - Hammer Brothers Roof", "requires": [] }, // fall
-    { "from": "FGH - Above Root Node", "to": "FGH - Lower Levels, Root Node & Right Exit", "requires": [] }, // fall farther
+    { "from": "FGH - Above Root Node", "to": "FGH - Lower Levels & Root Node", "requires": [] }, // fall farther
+    { "from": "FGH - Lower Levels & Root Node", "to": "FGH - Platform Above Factory (Underground)", "requires": [] }, // fall
+    { "from": "FGH - Platform Above Factory (Underground)", "to": "FGH - Lower Levels & Root Node", "requires": [ { "anyOf": [
+        { "item": "Wall Climb" }, { "item": "Ledge Grab" }, { "item": "Cloud Leap" }
+    ] } ] },
 
     { "from": "FGH - Left Exit", "to": "OW - Root Node & Middle Exits", "requires": [] },
     { "from": "OW - Root Node & Middle Exits", "to": "FGH - Left Exit", "requires": [] },
 
-    { "from": "FGH - Lower Levels, Root Node & Right Exit", "to": "FU - Upper Right Exit", "requires": [] }, // one-way fall
-    { "from": "FU - Upper Right Exit", "to": "FGH - Lower Levels, Root Node & Right Exit", "requires": [] }, // just walk to the right, then one-way debris
+    { "from": "FGH - Platform Above Factory (Underground)", "to": "FU - Upper Right Exit", "requires": [] }, // one-way fall
+    { "from": "FU - Upper Right Exit", "to": "FGH - Platform Above Factory (Underground)", "requires": [] }, // just walk to the left, then one-way door
 
     { "from": "FGH - Lower Left Elevator", "to": "FU - Upper Elevator", "requires": [] },
     { "from": "FU - Upper Elevator", "to": "FGH - Lower Left Elevator", "requires": [] },
@@ -695,7 +707,7 @@
     // we can't let you leave until you've activated the root node, and we can't let you enter
     // until you have what you need to reach the root node. So we end up with the whole first
     // half of Prison being a single logical region.
-    { "from": "FGH - Lower Levels, Root Node & Right Exit", "to": "P - Up To Root Node", "requires": [
+    { "from": "FGH - Lower Levels & Root Node", "to": "P - Up To Root Node", "requires": [
         { "item": "Event - Jiequan 1 Fight Unlocked" }
     ] },
     { "from": "P - Up To Root Node", "to": "P - Kanghui Level", "requires": [ { "anyOf": [

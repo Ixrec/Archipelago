@@ -89,7 +89,6 @@ class LogicDifficulty(Choice):
     - "Bow Hover": Press and hold jump, shoot the bow immediately (during the first half of Yi's upward movement) with
     any arrow equipped, and then simply never let go of the jump button until you're done hovering.
     - Using the Swift Runner skill to jump with extra horizontal momentum
-    - Using knockback from firing the bow in midair to slightly extend horizontal jumps
 
     `ledge_storage` adds the following LS-related glitches to logic:
         - slash vault (also called LS "getup") or parry vault (also called LS "vault")

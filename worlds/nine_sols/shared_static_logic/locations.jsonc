@@ -702,8 +702,9 @@
         "address": 1804, "name": "Factory (U): Hack 2 Statues",
         "region": "FU - Main Intersection", "requires": [
             { "item": "Charged Strike" }, // to defeat the 1st statue
-            { "region": "FU - Middle Right Exit" } // it might look like you need TCK to get the 2nd statue,
-                                            // but simply falling, holding left and ledge grabbing is enough
+            { "region": "FU - Middle Right Exit" } // has the platform above the 2nd statue
+            // actually getting onto the 2nd statue's ledge can be done with CL OR LG OR TCK OR AD OR CS-dash OR T-dash,
+            // but we already needed CS for the 1st statue, so this part doesn't affect logic
         ]
     },
     {
@@ -720,9 +721,9 @@
     },
     {
         "address": 1808, "name": "Factory (U): Below Walkway to Left Exit",
-        "region": "FU - Left Exit", "requires": [ { "anyOf": [
+        "region": "FU - After Laser", "requires": [ { "anyOf": [
             { "item": "Air Dash" }, { "item": "Cloud Leap" }
-        ] } ]
+        ] } ] // on logic_level: easy, T-dash
     },
     {
         "address": 1809, "name": "Factory (U): Behind Moving Boxes",

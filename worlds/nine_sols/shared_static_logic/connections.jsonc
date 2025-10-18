@@ -540,43 +540,76 @@
     { "from": "FGH - Upper Left Elevator", "to": "FPA - Lower Left Elevator", "requires": [] }, // one-way elevator
 
     // Factory (Underground)
-    { "from": "FU - Upper Right Exit", "to": "FU - Upper Elevator & Kuiyan Arena", "requires": [] }, // fall
-    { "from": "FU - Upper Elevator & Kuiyan Arena", "to": "FU - Upper Right Exit", "requires": [ { "item": "Cloud Leap" } ] },
-    { "from": "FU - Upper Elevator & Kuiyan Arena", "to": "FU - Main Intersection", "requires": [] }, // hacking one-way door
+    { "from": "FU - Upper Right Exit", "to": "FU - Upper Central Platform", "requires": [] }, // fall
+    { "from": "FU - Upper Central Platform", "to": "FU - Upper Right Exit", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+    ] },
+    { "from": "FU - Upper Central Platform", "to": "FU - Kuiyan Arena", "requires": [] }, // fall to the right
+    { "from": "FU - Kuiyan Arena", "to": "FU - Upper Central Platform", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }
+    ] },
+    { "from": "FU - Upper Central Platform", "to": "FU - Upper Elevator", "requires": [] }, // fall to the left
+    { "from": "FU - Upper Elevator", "to": "FU - Upper Central Platform", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }
+    ] },
+    { "from": "FU - Kuiyan Arena", "to": "FU - Main Intersection", "requires": [] }, // hacking one-way door
     { "from": "FU - Main Intersection", "to": "FU - Broken Shanhai", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
-    { "from": "FU - Broken Shanhai", "to": "FU - Middle Right Exit", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, // kinda tight, may revisit
-        [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ]
-    ] } ] },
+    ] } ] }, // on logic_level: easy, T-dash
+    { "from": "FU - Broken Shanhai", "to": "FU - Middle Right Exit", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] },
+        { "anyOf": [
+            { "item": "Tai-Chi Kick" }, // kinda tight, may revisit
+            [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ]
+        ] }
+    ] },
+    // we skip the BS <- MRE connection because MRE -> MI -> BS has weaker requirements (unless we want a precise TCK-only jump)
     { "from": "FU - Middle Right Exit", "to": "FU - Main Intersection", "requires": [ { "anyOf": [
         { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // drop down to one-way door, then a long jump over spikes with a kick target
+    // on logic_level: easy, T-dash
     { "from": "FU - Middle Right Exit", "to": "FU - Lower Right Exit", "requires": [] }, // fall
-    { "from": "FU - Lower Right Exit", "to": "FU - Middle Right Exit", "requires": [] }, // grapple OR cl
+    { "from": "FU - Lower Right Exit", "to": "FU - Middle Right Exit", "requires": [ { "anyOf": [
+        { "item": "Grapple" }, { "item": "Cloud Leap" }
+    ] } ] },
     { "from": "FU - Main Intersection", "to": "FU - Root Node & Lower Elevator", "requires": [] }, // fall from ropes on left
     { "from": "FU - Root Node & Lower Elevator", "to": "FU - Main Intersection", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // either CL up to the chest and ropes, or (AD OR CL) over the spikes to the statue
-    { "from": "FU - Upper Elevator & Kuiyan Arena", "to": "FU - Crystal Passage", "requires": [ { "anyOf": [
+    // on logic_level: easy, bow hover OR (SR AND CS-dash) // in RN&LE no enemies for a T-dash, and no ledge to store
+    { "from": "FU - Upper Elevator", "to": "FU - Crystal Passage", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
-    { "from": "FU - Crystal Passage", "to": "FU - Upper Elevator & Kuiyan Arena", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" } // AND wall climb
-    ] } ] },
-    { "from": "FU - Root Node & Lower Elevator", "to": "FU - Crystal Passage", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" } // AND wall climb
-    ] } ] },
-    { "from": "FU - Crystal Passage", "to": "FU - Root Node & Lower Elevator", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
-    { "from": "FU - Root Node & Lower Elevator", "to": "FU - Left Exit", "requires": [ { "item": "Air Dash" } ] },
-    { "from": "FU - Left Exit", "to": "FU - Root Node & Lower Elevator", "requires": [ { "item": "Air Dash" } ] },
-    { "from": "FU - Left Exit", "to": "FU - Behind Moving Boxes", "requires": [
-        { "item": "Mystic Nymph: Scout Mode" } // AND wall climb
+    ] } ] }, // on logic_level: easy, T-dash (CS-dash also works)
+    { "from": "FU - Crystal Passage", "to": "FU - Upper Elevator", "requires": [
+        { "item": "Wall Climb" },
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
     ] },
-    { "from": "FU - Behind Moving Boxes", "to": "FU - Upper Elevator & Kuiyan Arena", "requires": [] }, // one-way debris
+    { "from": "FU - Root Node & Lower Elevator", "to": "FU - Crystal Passage", "requires": [
+        { "item": "Wall Climb" },
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+    ] }, // again, no enemies in RN&LE for a T-dash to help
+    { "from": "FU - Crystal Passage", "to": "FU - Root Node & Lower Elevator", "requires": [] }, // single jump is enough to clear the spikes
+    { "from": "FU - Root Node & Lower Elevator", "to": "FU - After Laser", "requires": [ { "item": "Air Dash" } ] },
+    { "from": "FU - After Laser", "to": "FU - Root Node & Lower Elevator", "requires": [ { "item": "Air Dash" } ] },
+    { "from": "FU - After Laser", "to": "FU - Left Exit", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }
+    ] },
+    { "from": "FU - Left Exit", "to": "FU - After Laser", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" }, { "item": "Air Dash" } ] }
+    ] }, // on logic_level: easy, 2 T-dashes (this is okay because both ledges have an enemy you can parry)
+    { "from": "FU - Left Exit", "to": "FU - Behind Moving Boxes", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }, // for the ledge after climbing the rope
+        { "item": "Mystic Nymph: Scout Mode" }, // to toggle the box movement
+        { "item": "Wall Climb" } // to ride the boxes
+    ] },
+    { "from": "FU - Behind Moving Boxes", "to": "FU - Left Exit", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] },
+        // no need to toggle the box movement when we're going this way
+        { "item": "Wall Climb" }
+    ] },
+    { "from": "FU - Behind Moving Boxes", "to": "FU - Upper Elevator", "requires": [] }, // one-way debris
+    //{ "from": "FU - Upper Elevator", "to": "FU - Behind Moving Boxes", "requires": [] }, // on logic_level: easy, thunder buster
+    // I could not get spider leap/wall slide into CS to work here
 
     { "from": "FU - Middle Right Exit", "to": "AM - Left Exit", "requires": [] },
     { "from": "AM - Left Exit", "to": "FU - Middle Right Exit", "requires": [] },

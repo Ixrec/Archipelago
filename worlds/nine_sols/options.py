@@ -93,7 +93,6 @@ class LogicDifficulty(Choice):
     `ledge_storage` adds the following LS-related glitches to logic:
         - slash vault (also called LS "getup") or parry vault (also called LS "vault")
         - parry float/hover
-        - breaking one-way barriers from the "wrong" side with a spider leap and Charged Strike
         - moon slash wall side
     These are harder to explain, so if you would like to learn them, check out the Ledge Storage section of
     Herdingoats' Nine Sols trick video: https://youtu.be/X9aii18KecU?t=766

@@ -622,26 +622,36 @@
 
     // Outer Warehouse
     { "from": "OW - Lower Right Exit", "to": "OW - Activate Crates And Return", "requires": [
-        // getting to the hack point requires TCK or AD or CL
-        { "item": "Air Dash" }, // but the lasers on the return trip hard require AD
-        // (unless we expect players to figure out you can ground dash from tiny ledges)
-        { "item": "Mystic Nymph: Scout Mode" } // and the crushers on the return trip need Nymph to disable
-    ] }, // and wall climb and hacking
-    { "from": "OW - Lower Right Exit", "to": "OW - Root Node & Middle Exits", "requires": [
-        { "region": "OW - Activate Crates And Return" } // and wall climb
+        { "item": "Wall Climb" }, // climbing up to the hack point hard requires this
+        { "item": "Mystic Nymph: Scout Mode" }, // and the crushers on the return trip need Nymph to disable
+        // The lasers on the return trip hard require AD AND TCK, unless we expect players to figure out you can
+        // ground dash through the lasers from tiny ledges. All other platforming gets absorbed by that requirement.
+        { "item": "Air Dash" },
+        { "item": "Tai-Chi Kick" }
     ] },
-    { "from": "OW - Root Node & Middle Exits", "to": "OW - Crate Riding", "requires": [] }, // wall climb
-    // ^these crates are active without hacking the panel in the bottom left, so visiting that is not required
-    // also: the one-way door from Crusher Gauntlet to Enemy Gauntlet Room doesn't create a region split because
-    // Enemy Gauntlet Room requires no items to reach (besides the wall climb Crate Riding already needs)
-    { "from": "OW - Crate Riding", "to": "OW - Root Node & Middle Exits", "requires": [] }, // fall
-    { "from": "OW - Crate Riding", "to": "OW - Shortcut Elevator", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
+    { "from": "OW - Lower Right Exit", "to": "OW - Root Node & Middle Exits", "requires": [
+        { "region": "OW - Activate Crates And Return" },
+        { "anyOf": [ // to jump from the lower crate track to the upper one
+            { "item": "Wall Climb" },
+            [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ]
+        ] }
+    ] },
+    // The crates in the middle of OW are active without hacking the panel in the bottom left.
+    // The crate track you start on goes to "OW: Enemy Gauntlet Room". On the way up you'll see another track on the left
+    // that goes to "OW: Crusher Gauntlet", and a third track on the right that goes to "OW - Shortcut Elevator".
+    { "from": "OW - Root Node & Middle Exits", "to": "OW - Shortcut Elevator", "requires": [
+        { "item": "Wall Climb" },
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+    ] }, // I suspect this is possible without wall climb, but the crushers and unsafe crates make it totally impractical.
     { "from": "OW - Shortcut Elevator", "to": "OW - Root Node & Middle Exits", "requires": [] }, // hacking
-    { "from": "OW - Shortcut Elevator", "to": "OW - Robot", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // and wall climb and grapple
+    { "from": "OW - Shortcut Elevator", "to": "OW - Robot", "requires": [
+        { "item": "Grapple" },
+        { "item": "Wall Climb" },
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+    ] },
+    // the parryable enemies up here tend to get themselves killed so let's not put T-dashes in logic
+    // on logic_level: ledge_storage, you can replace the WC between grapple points with LS getup,
+    // allowing for a (G AND CL AND LG) route.
     { "from": "OW - Robot", "to": "OW - Upper Left Exit", "requires": [] }, // hacking, one-way robot-breakable box
 
     { "from": "OW - Root Node & Middle Exits", "to": "YH - Right Exit", "requires": [] }, // OW's *left* middle exit

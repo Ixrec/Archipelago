@@ -741,13 +741,34 @@
     },
     {
         "address": 1903, "name": "OW: Crusher Gauntlet",
-        "region": "OW - Crate Riding", "requires": [ { "anyOf": [
-            { "item": "Air Dash" }, { "item": "Cloud Leap" }
-        ] } ] // AND hacking; this gets more complex if we ever allow OW - Crate Riding without WC
+        "region": "OW - Root Node & Middle Exits", "requires": [ { "anyOf": [
+            [
+                { "item": "Wall Climb" },
+                { "anyOf": [
+                    { "item": "Cloud Leap" },
+                    [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ]
+                ] }
+            ],
+            [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ]
+        ] } ] // AND hacking
+        // the key constraints here are:
+        // - the final jump past the last horizontal red piston requires CL OR LG
+        // - the jump up to the horizontal piston's ledge *can* be done with a precise and inconsistent CL,
+        // but I'd rather have the logic for it be CL AND (WC OR AD OR LG)
+        // - all crates on the left crate track are either fragile or lack a safe top, so a WC-less route must
+        // get from the crusher stop to the ledge in one jump, which requires CL AND AD
+        // on logic_level: easy, T-dash can turn that CL AND AD jump into just CL, but you still need WC OR LG for the rest
     },
     {
         "address": 1904, "name": "OW: Enemy Gauntlet Room",
-        "region": "OW - Crate Riding", "requires": [] // just combat
+        "region": "OW - Root Node & Middle Exits", "requires": [ { "anyOf": [
+            { "location": "OW: Crusher Gauntlet" }, // one-way door
+            { "item": "Wall Climb" }, // simply ride any box with a green side all the way
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] // or ride a safe-top box to the crusher,
+            // Air Dash between the two crates to the left (assume both are red) and Cloud Leap to reach the ledge
+        ] } ] // then it's just combat
+        // this can be done itemless by waiting for two safe-top crates in a row and hopping between them
+        // after the first crush, but I'd rather not require players to figure that out
     },
     {
         "address": 1905, "name": "OW: Vents Above Robot",

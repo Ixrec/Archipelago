@@ -239,7 +239,7 @@
     // No Shennong event because rando moves him into FSP immediately
     {
         "address": null, "name": "Event - Jiequan 1 Fight Unlocked",
-        "region": "FGH - Lower Levels, Root Node & Right Exit", "requires": [
+        "region": "FGH - Lower Levels & Root Node", "requires": [
             { "item_group": "Sol Seals", "count_option": "seals_for_prison" },
             { "item": "Mystic Nymph: Scout Mode" }
             // AND grapple
@@ -638,27 +638,27 @@
     // Factory (Great Hall)
     {
         "address": 1701, "name": "Factory (GH): Near Rightmost Shield Orb",
-        "region": "FGH - Lower Levels, Root Node & Right Exit", "requires": []
+        "region": "FGH - Lower Levels & Root Node", "requires": []
     },
     {
         "address": 1702, "name": "Factory (GH): Near Root Node",
-        "region": "FGH - Lower Levels, Root Node & Right Exit", "requires": []
+        "region": "FGH - Lower Levels & Root Node", "requires": []
     },
     {
         "address": 1703, "name": "Factory (GH): Near Middle Shield Orb",
-        "region": "FGH - Lower Levels, Root Node & Right Exit", "requires": []
+        "region": "FGH - Lower Levels & Root Node", "requires": []
     },
     {
         "address": 1704, "name": "Factory (GH): Tianhuo Flower Below Hammers",
-        "region": "FGH - Lower Levels, Root Node & Right Exit", "requires": []
+        "region": "FGH - Lower Levels & Root Node", "requires": []
     },
     {
         "address": 1705, "name": "Factory (GH): Break the Hammers",
-        "region": "FGH - Lower Levels, Root Node & Right Exit", "requires": [ { "item": "Unbounded Counter" } ]
+        "region": "FGH - Lower Levels & Root Node", "requires": [ { "item": "Unbounded Counter" } ]
     },
     {
         "address": 1706, "name": "Factory (GH): Examine Furnace Monitor",
-        "region": "FGH - Lower Levels, Root Node & Right Exit", "requires": []
+        "region": "FGH - Lower Levels & Root Node", "requires": []
     },
     {
         "address": 1707, "name": "Factory (GH): Raise the Bridge for Chiyou",
@@ -692,7 +692,7 @@
     },
     {
         "address": 1802, "name": "Factory (U): Defeat Red Tiger Elite: Kuiyan",
-        "region": "FU - Upper Elevator & Kuiyan Arena", "requires": []
+        "region": "FU - Kuiyan Arena", "requires": []
     },
     {
         "address": 1803, "name": "Factory (U): Near Lower Elevator",

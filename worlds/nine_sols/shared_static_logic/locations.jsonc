@@ -790,27 +790,36 @@
             { "item": "Tai-Chi Kick" }, // 1st and 2nd statues need this
             { "region": "IW - Upper Right Statue" },
             { "region": "IW - Above Frogs" },
-            { "region": "IW - Upper Left" } // (TCK OR DJ) to reach 3rd, but we already need TCK anyway
+            { "region": "IW - Upper Left" },
+            { "item": "Air Dash" } // AND TCK to reach 3rd statue from Upper Left
         ]
     },
     {
         "address": 2002, "name": "IW: Shielded Walking Chest",
         "region": "IW - Above Frogs", "requires": [ { "item": "Charged Strike" } ]
         // or beating Tieyan to break shield tower, but since Tieyan also requires CS, this is simpler
+        // on logic_level: easy, Cloud Piercer S/X
+        // on logic_level: ledge_storage, CL + LS getup gets you to the shield tower without Tieyan
     },
     {
         "address": 2003, "name": "IW: Defeat Celestial Enforcer: Tieyan",
         "region": "IW - Above Frogs", "requires": [
             { "region": "IW - Upper Right Hack Point" },
+            // riding the boxes up is itemless
+            // ground dashing through the laser is itemless; this time I think the ledge is wide enough to be in logic
             { "item": "Charged Strike" } // for once, the actual fight has combat logic
-        ] // AND WC
+        ]
+        // on logic_level: easy, Cloud Piercer S/X in theory, but logic should stay CS since the shield comes back
+        // on logic_level: ledge_storage, CL + LS getup gets you to the shield tower and into Tieyan arena without
+        // hack point; not sure if it matters since both regions need WC and only WC even on LS logic
     },
     {
         "address": 2004, "name": "IW: Nymph Puzzle Room",
         "region": "IW - Bottom Left", "requires": [
             { "item": "Mystic Nymph: Scout Mode" },
-            { "item": "Air Dash" }
-        ] // AND WC
+            { "item": "Air Dash" },
+            { "item": "Wall Climb" }
+        ]
     },
     {
         "address": 2005, "name": "IW: Dusk Guardian Recording Device",

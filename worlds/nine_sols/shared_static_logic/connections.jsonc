@@ -661,22 +661,33 @@
     { "from": "IW - Right Exit", "to": "OW - Upper Left Exit", "requires": [] },
 
     // Inner Warehouse
-    { "from": "IW - Right Exit", "to": "IW - Root Node", "requires": [] }, // WC
+    { "from": "IW - Right Exit", "to": "IW - Root Node", "requires": [ { "item": "Wall Climb" } ] },
+    // on logic_level: ledge_storage, wall slide with T-dash setup
     { "from": "IW - Root Node", "to": "IW - Right Exit", "requires": [] }, // fall
-    { "from": "IW - Root Node", "to": "IW - Upper Right Hack Point", "requires": [] }, // WC
-    { "from": "IW - Root Node", "to": "IW - Upper Right Statue", "requires": [] }, // WC
-    { "from": "IW - Upper Right Statue", "to": "IW - Above Frogs", "requires": [] }, // fall
-    { "from": "IW - Above Frogs", "to": "IW - Upper Right Statue", "requires": [] }, // grapple
+    { "from": "IW - Root Node", "to": "IW - Upper Right Hack Point", "requires": [ { "item": "Wall Climb" } ] },
+    { "from": "IW - Root Node", "to": "IW - Upper Right Statue", "requires": [ { "item": "Wall Climb" } ] },
+    // these crates are moving in the opposite direction we want to go, and even CL + LS tricks is not enough vertical
+    // to do this without wall climbing the sides, so in this case the logic really is just WC
+    { "from": "IW - Upper Right Statue", "to": "IW - Above Frogs", "requires": [ { "anyOf": [
+        { "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Ledge Grab" }
+    ] } ] }, // on logic_level: easy, T-dash
+    { "from": "IW - Above Frogs", "to": "IW - Upper Right Statue", "requires": [ { "item": "Grapple" } ] },
+    // on logic_level: ledge_storage, CL + LS getup works
     { "from": "IW - Above Frogs", "to": "IW - Root Node", "requires": [] }, // fall
-    { "from": "IW - Above Frogs", "to": "IW - Bottom Left", "requires": [] }, // WC
+    { "from": "IW - Above Frogs", "to": "IW - Bottom Left", "requires": [ { "item": "Wall Climb" } ] },
+    // since you need the crate to shield you from lasers, there's no getting around WC here (without invuln abuse)
     { "from": "IW - Above Frogs", "to": "IW - Upper Left", "requires": [
         { "item": "Mystic Nymph: Scout Mode" }, // to lower rope
-        { "anyOf": [ { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" } ] }
-    ] },
-    { "from": "IW - Upper Left", "to": "IW - Tao Fruit", "requires": [] }, // hacking AND WC
+        { "item": "Tai-Chi Kick" }
+    ] }, // here we can get away without WC by simply lowering the rope and jumping to it before the crushers hit us
+    // on logic_level: ledge_storage, CL + LS getup in the "U room" lets you go straight to the upper left ledge,
+    // though we may also want to require CS OR Cloud Piercer S/X since the shielded beetle is a pain for LS setup
+    { "from": "IW - Upper Left", "to": "IW - Tao Fruit", "requires": [ { "item": "Wall Climb" } ] },
+    // the crusher can also barely be skipped with AD AND CL to the next crate, unsure if we want this in logic
 
     { "from": "IW - Root Node", "to": "BR - Upper Exit", "requires": [
-        // 1st terminal near root node, only requires hacking 2
+        // 1st terminal is near root node, reachable with only single jumps, rope and hacking
+        // 1st terminal itself only requires hacking 2
         { "region": "IW - Bottom Left" } // also hacking 2
     ] }, // one-way funicular?
 

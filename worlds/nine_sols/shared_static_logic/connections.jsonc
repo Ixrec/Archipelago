@@ -693,20 +693,35 @@
 
     // Boundless Repository
     { "from": "BR - Upper Exit", "to": "BR - Root Node", "requires": [] }, // TODO: combat logic?
-    { "from": "BR - Root Node", "to": "BR - Gauntlet Part 1", "requires": [] },
-    { "from": "BR - Gauntlet Part 1", "to": "BR - Gauntlet Part 2A", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // gets messier with WC
-    { "from": "BR - Gauntlet Part 2A", "to": "BR - Gauntlet Part 2B", "requires": [] }, // WC, since part 1 can be done without it
-    { "from": "BR - Gauntlet Part 2B", "to": "BR - After Gauntlet", "requires": [
-        { "item": "Tai-Chi Kick" }, { "item": "Air Dash" } // AND WC AND grapple AND hacking
-        // TCK is hard-required at the start of part 3
-        // AD is hard-required at the start and end of part 4
-        // WC is hard-required at least once each in parts 2, 3 and 4
-        // grapple is hard required in part 4
+    { "from": "BR - Root Node", "to": "BR - Gauntlet Part 1 (Before Chest)", "requires": [] },
+    { "from": "BR - Gauntlet Part 1 (Before Chest)", "to": "BR - Gauntlet Part 1 (After Chest)", "requires": [ { "anyOf": [
+        { "item": "Cloud Leap" },
+        [ { "item": "Air Dash" }, { "item": "Wall Climb" }, { "item": "Ledge Grab" } ]
+    ] } ] },
+    // on logic_level: easy, T-dashes cover all but the final ledge, reducing this to CL OR LG
+    { "from": "BR - Gauntlet Part 1 (After Chest)", "to": "BR - Gauntlet Part 2 (Before Laser Hallway)", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Wall Climb" } ] }
+    ] }, // a short green wall is the only obstacle for the rest of Part 1
+    { "from": "BR - Gauntlet Part 2 (Before Laser Hallway)", "to": "BR - Gauntlet Part 2 (After Laser Hallway)", "requires": [
+        { "item": "Wall Climb" } // much longer green wall, so there's finally no alternative to WC
     ] },
+    { "from": "BR - Gauntlet Part 2 (After Laser Hallway)", "to": "BR - After Gauntlet", "requires": [
+        // remaining Part 2 platforming is all doable with AD, among other stuff, but AD is hard-required later
+        { "item": "Wall Climb" }, { "item": "Tai-Chi Kick" }, // the start of Part 3 immediately requires WC AND TCK
+        // WC is required again in Part 3 to stall between two horizontal lasers
+        // the Part 3 rope to red tunnel platform jump requires AD on vanilla, but T-dash is an option there
+        { "item": "Air Dash" }, // start of Part 4 has a vertical laser on a red floor, so AD is hard-required
+        // WC is required again in Part 4 after the vertical laser
+        { "item": "Grapple" } // for the Part 4 grapple shaft
+        // wall slide *almost* works here, but unless you get a really fast slide Yanlao will just shoot you off
+        // WC AND AD are required yet again when the very end of Part 4 puts a vertical laser between green walls
+    ] }, // surprisingly, logic level makes no difference here
     { "from": "BR - After Gauntlet", "to": "BR - Inside Vault", "requires": [
-        // hacking gauntlet locks does require stuff, but all of it is already required by After Gauntlet
+        // Locks 1 and 2 are on the critical path itemless
+        // Lock 3 requires CL OR AD (use the rising platform for AD)
+        // Lock 4 requires clearing the shielded enemies; there are many options here but
+        // AD to break the shield tower is the easiest since After Gauntlet already requires AD
+        // In the end the only novel requirement is that lock 5 requires beating Yanlao first:
         { "region": "YH - After Yanlao" } // AND hacking 3
     ] },
 

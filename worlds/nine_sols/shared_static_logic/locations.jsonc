@@ -841,21 +841,21 @@
     },
     {
         "address": 2103, "name": "BR: Gauntlet Part 1 Chest",
-        "region": "BR - Gauntlet Part 1", "requires": [ { "anyOf": [
+        "region": "BR - Gauntlet Part 1 (After Chest)", "requires": [ { "anyOf": [
             { "item": "Air Dash" }, { "item": "Cloud Leap" }
-        ] } ] // (WC AND AD) OR DJ
+        ] } ] // LG is barely enough with coyote time, but let's skip that; you likely need AD OR CL to get here anyway
     },
     {
         "address": 2104, "name": "BR: Gauntlet Part 2 First Chest",
-        "region": "BR - Gauntlet Part 2A", "requires": []
+        "region": "BR - Gauntlet Part 2 (Before Laser Hallway)", "requires": []
     },
     {
         "address": 2105, "name": "BR: Gauntlet Part 2 Chest Past Lasers",
-        "region": "BR - Gauntlet Part 2B", "requires": []
+        "region": "BR - Gauntlet Part 2 (After Laser Hallway)", "requires": []
     },
     {
         "address": 2106, "name": "BR: Gauntlet Part 2 Chest Past Beetle",
-        "region": "BR - Gauntlet Part 2B", "requires": []
+        "region": "BR - Gauntlet Part 2 (After Laser Hallway)", "requires": []
     },
     {
         "address": 2107, "name": "BR: Vault 1st Chest",

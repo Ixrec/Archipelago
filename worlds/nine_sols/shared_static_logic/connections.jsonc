@@ -734,40 +734,63 @@
 
     // Abandoned Mines
     { "from": "AM - Left Exit", "to": "AM - Above Left Exit", "requires": [
-        { "item": "Mystic Nymph: Scout Mode" } // for lights and rope
-    ] }, // AND slide/grapple
+        { "item": "Grapple" }, // for slider
+        { "item": "Mystic Nymph: Scout Mode" }, // for rope and lights
+        { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] } // slightly high jump after rope
+    ] },
     { "from": "AM - Above Left Exit", "to": "AM - Left Exit", "requires": [
-        { "item": "Mystic Nymph: Scout Mode" } // for lights?
-    ] }, // AND slide/grapple
-    { "from": "AM - Above Left Exit", "to": "AM - Root Node", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // AND slide/grapple
-    { "from": "AM - Root Node", "to": "AM - Above Left Exit", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // AND slide/grapple
+        { "item": "Mystic Nymph: Scout Mode" }, // for lights?
+        { "item": "Grapple" } // for slider
+    ] },
+    { "from": "AM - Above Left Exit", "to": "AM - Root Node", "requires": [
+        { "item": "Grapple" }, // for slider
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } // for two slightly long jumps over spikes
+    ] },
+    { "from": "AM - Root Node", "to": "AM - Above Left Exit", "requires": [
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] },
+        { "item": "Grapple" }
+    ] },
+    // on logic_level: easy, bow hover works both ways
+    // on logic_level: ledge_storage, LS hover works both ways, but no one to parry so AD OR CL setup makes it redundant
     { "from": "AM - Root Node", "to": "AM - Platforms Left of Root Node", "requires": [
         { "item": "Mystic Nymph: Scout Mode" }, // for lights
-        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+        // the little rock platform needs LG OR AD OR CL, but that's redundant because:
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } // from rock platform to wooden platforms
     ] },
     { "from": "AM - Platforms Left of Root Node", "to": "AM - Yinyue Arena", "requires": [
-        { "item": "Mystic Nymph: Scout Mode" }, { "item": "Air Dash" } // to reach the light switch
-    ] }, // AND slide/grapple
+        { "item": "Grapple" }, // to reach the rock ledge up and left of "Platforms Left of Root Node"
+        { "item": "Air Dash" }, // twice between spikes to reach the light switch (CL falls under out-of-logic darkroom navigation)
+        { "item": "Mystic Nymph: Scout Mode" } // to flick the light switch
+    ] }, // on logic_level: easy, T-dash AND CL AND AD bypasses grapple slides
+    // T-dash can't skip the AD requirement since you need to AD twice in the spikes, not just once
+    // if we ever allowed darkroom navigation, then you could go straight up to Yinyue with CL OR LG after the Grapple part
     { "from": "AM - Platforms Left of Root Node", "to": "AM - Above Root Node", "requires": [
+        { "anyOf": [ { "item": "Wall Climb" }, { "item": "Cloud Leap" } ] }, // two green walls
+        // the spike gauntlet is long enough you simply need TCK for it on vanilla logic,
         { "item": "Tai-Chi Kick" },
+        // but 2 of the TCK targets are far enough apart you need something else to help
         { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
-    ] }, // (WC OR CL) ledge, then (CL OR AD OR grapple) ropes, then (TCK AND (AD OR CL)) spikes
-    { "from": "AM - Above Root Node", "to": "AM - Root Node", "requires": [] }, // fall
+    ] }, // on logic_level: easy, (T-dash AND Grapple) can replace (AD OR CL), and bow hover fully solves spike gauntlet
+    // on logic_level: ledge_storage, nothing changes because if you have WC the ledge on the light spinner won't work for LS
+    // no point doing the reverse connection since it'd be dark and it's easier to fall down to root node
+    { "from": "AM - Above Root Node", "to": "AM - Root Node", "requires": [] }, // fall, break one-way barrier
+    // on logic_level: easy, Thunder Buster enables the reverse connection with CL OR (WC AND LG)
+    { "from": "AM - Above Root Node", "to": "AM - Upper Right Exit", "requires": [ { "item": "Grapple" } ] },
     { "from": "AM - Above Root Node", "to": "AM - Bottom Right", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // can also fall from the slide/grapple, but I'd rather not include that
+    // on logic_level: easy, T-dash sort of works, but then you need CL OR LG to get back up to use it... will ignore for now
     { "from": "AM - Bottom Right", "to": "AM - Tao Fruit", "requires": [ { "anyOf": [
         { "item": "Mystic Nymph: Scout Mode" } // to lower rope
     ] } ] },
     { "from": "AM - Tao Fruit", "to": "AM - After Tao Fruit", "requires": [
-        { "item": "Air Dash" } // AND grapple
+        { "item": "Air Dash" },
+        { "item": "Grapple" }
     ] }, // this is *possible* with CL (AND grapple) instead, but very annoying
+    // wall slide is possible, but you need Grapple for the slide anyway so it doesn't affect logic
+    //{ "from": "AM - Bottom Right", "to": "AM - After Tao Fruit", "requires": [] }, // on logic_level: easy, Thunder Buster
 
-    { "from": "AM - Above Root Node", "to": "UC - Left Exit", "requires": [
+    { "from": "AM - Upper Right Exit", "to": "UC - Left Exit", "requires": [
         { "item": "Abandoned Mines Access Token" }
     ] },
 
@@ -780,8 +803,14 @@
         { "item": "Event - Jiequan 1 Fight Unlocked" }
     ] },
     { "from": "P - Up To Root Node", "to": "P - Kanghui Level", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // (CL OR (AD AND grapple)) AND hacking 3
+        { "item": "Cloud Leap" }, // solves everything
+        [
+            // the very first gap can be cleared with AD, or G AND LG, or G AND TCK, which is redundant since...
+            { "item": "Air Dash" }, // the two ropes around Jiequan's portrait
+            { "item": "Ledge Grab" }, // the ledge leading out of the warden fight (AND hacking 3)
+            { "item": "Grapple" } // finally the grapple point between cells on the far left
+        ]
+    ] } ] }, // on logic_level: easy, both uses of AD can be replaced by bow hover OR (G AND (LG OR TCK) AND T-dash)
     { "from": "P - Kanghui Level", "to": "P - After Kanghui", "requires": [] }, // TODO: combat logic?
 
     { "from": "P - After Kanghui", "to": "FMR - Left Elevator", "requires": [] }, // one-way elevator

@@ -241,8 +241,9 @@
         "address": null, "name": "Event - Jiequan 1 Fight Unlocked",
         "region": "FGH - Lower Levels & Root Node", "requires": [
             { "item_group": "Sol Seals", "count_option": "seals_for_prison" },
-            { "item": "Mystic Nymph: Scout Mode" }
-            // AND grapple
+            { "item": "Mystic Nymph: Scout Mode" },
+            { "item": "Grapple" },
+            { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] }
         ]
     },
     {
@@ -891,7 +892,9 @@
     // Abandoned Mines
     {
         "address": 2301, "name": "AM: Above Left Exit",
-        "region": "AM - Above Left Exit", "requires": [] // grapple OR { "item": "Cloud Leap" }
+        "region": "AM - Above Left Exit", "requires": [
+            { "anyOf": [ { "item": "Grapple" }, { "item": "Cloud Leap" } ] }
+        ]
     },
     {
         "address": 2302, "name": "AM: Defeat Celestial Warden: Yinyue",
@@ -930,13 +933,13 @@
     },
     {
         "address": 2403, "name": "Prison: Above Stairs on Second Level",
-        "region": "P - Up To Root Node", "requires": []
+        "region": "P - Up To Root Node", "requires": [] // might need to come back with an "un-weakened" single jump
     },
     {
         "address": 2404, "name": "Prison: Near Root Node",
         "region": "P - Up To Root Node", "requires": [ { "anyOf": [
             { "item": "Air Dash" }, { "item": "Cloud Leap" }
-        ] } ]
+        ] } ] // on logic_level: easy, bow hover // no one around for T-dash LS setup
     },
     {
         "address": 2405, "name": "Prison: Examine Scroll in Upper Left Cell",

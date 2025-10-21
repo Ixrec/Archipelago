@@ -858,60 +858,79 @@
     { "from": "FMR - Moving Platforms", "to": "FMR - Right Elevator", "requires": [] }, // fall, one-way door
 
     // Factory (Production Area)
-    { "from": "FPA - Lower Left Elevator", "to": "FPA - Root Node", "requires": [] }, // WC
-    { "from": "FPA - Root Node", "to": "FPA - Lower Left Elevator", "requires": [ { "item": "Cloud Leap" } ] },
+    { "from": "FPA - Lower Left Elevator", "to": "FPA - Root Node", "requires": [ { "item": "Wall Climb" } ] },
+    { "from": "FPA - Root Node", "to": "FPA - Lower Left Elevator", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+    ] }, // ledge storage can do one of the high jumps here, but not all of them
     { "from": "FPA - Root Node", "to": "FPA - Lower Left Fire Zone", "requires": [
         { "item": "Mystic Nymph: Scout Mode" } // to lower rope
     ] },
     { "from": "FPA - Lower Left Fire Zone", "to": "FPA - Lower Left Elevator", "requires": [] }, // one-way door
     { "from": "FPA - Lower Left Fire Zone", "to": "FPA - Lower Left Fire Zone Platforms", "requires": [ { "anyOf": [
         { "item": "Cloud Leap" },
-        [ { "item": "Air Dash" }, { "item": "Tai-Chi Kick" } ]
-    ] } ] },
+        [ { "item": "Air Dash" }, { "item": "Tai-Chi Kick" }, { "item": "Ledge Grab" } ]
+    ] } ] }, // on logic_level: easy, T-dash for horizontal AND TCK for vertical
     { "from": "FPA - Lower Left Fire Zone Platforms", "to": "FPA - Chest Platform Below Sniper Zone", "requires": [ { "item": "Cloud Leap" } ] },
-    { "from": "FPA - Lower Left Fire Zone Platforms", "to": "FPA - Left Vents", "requires": [] },
+    // on logic_level: easy, T-dash AND TCK also gets you up here
+    { "from": "FPA - Lower Left Fire Zone Platforms", "to": "FPA - Left Vents", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Tai-Chi Kick" } ] }
+    ] }, // on logic_level: easy, T-dash again
     { "from": "FPA - Left Vents", "to": "FPA - Lower Left Fire Zone Platforms", "requires": [] },
     { "from": "FPA - Left Vents", "to": "FPA - Lower Left Elevator", "requires": [] }, // shortcut rope
     { "from": "FPA - Left Vents", "to": "FPA - Upper Left Fire Zone & Pharmacy", "requires": [] },
     { "from": "FPA - Upper Left Fire Zone & Pharmacy", "to": "FPA - Hacked Statue in Left Building", "requires": [
         { "anyOf": [ // get to the top floor
-            { "item": "Cloud Leap" },
-            { "item": "Mystic Nymph: Scout Mode" } // nymph AND hacking 3 AND grapple
+            { "item": "Cloud Leap" }, // the left side, above the little room of fire
+            [ { "item": "Mystic Nymph: Scout Mode" }, { "item": "Grapple" } ] // AND hacking 3
+            // ^ the right side, grappling up the shaft
+            // on logic_level: ledge_storage, AD AND LG into either LS getup on the left or wall slide on the right
         ] },
         { "anyOf": [ // reach the hack point to clear the enemies
-            [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ], // AND hacking (only this combo gets to bypass WC)
-            [ { "item": "Tai-Chi Kick" }, { "item": "Air Dash" } ], // AND WC AND hacking
-            [ { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" } ] // AND WC AND hacking
+            [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ],
+            [
+                { "item": "Wall Climb" },
+                { "item": "Tai-Chi Kick" },
+                { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }
+            ] // this *could* be done with 2 T-dashes using the hackable statue for qi, but we're not requiring that lol
         ] },
         { "item": "Charged Strike" } // AND hacking to actually hack the statue
     ] },
     { "from": "FPA - Upper Left Fire Zone & Pharmacy", "to": "FPA - Chest Platform Below Sniper Zone", "requires": [ { "anyOf": [
         { "item": "Cloud Leap" }, { "item": "Air Dash" }
-    ] } ] },
+    ] } ] }, // on logic_level: easy, TCK to get qi for a T-dash
     { "from": "FPA - Upper Left Fire Zone & Pharmacy", "to": "FPA - Pharmacy Interior", "requires": [
         { "region": "FPA - Hacked Statue in Left Building" },
         { "item": "Unbounded Counter" } // AND hacking is all you need for the fire zone statue
     ] },
     { "from": "FPA - Lower Left Fire Zone Platforms", "to": "FPA - Guard Production Station", "requires": [] }, // fall
-    { "from": "FPA - Guard Production Station", "to": "FPA - Lower Left Fire Zone Platforms", "requires": [] }, // grapple
+    { "from": "FPA - Guard Production Station", "to": "FPA - Lower Left Fire Zone Platforms", "requires": [
+        { "item": "Grapple" }
+    ] }, // on logic_level: ledge_storage, CL + LS getup works with any setup using a ledge left of root node
     { "from": "FPA - Guard Production Station", "to": "FPA - Root Node", "requires": [] }, // one-way door
-    { "from": "FPA - Guard Production Station", "to": "FPA - Right Fire Zone & Lower Right Exit & Wuqiang Arena", "requires": [
+    { "from": "FPA - Guard Production Station", "to": "FPA - Right Fire Zone & Wuqiang Arena", "requires": [
         { "item": "Mystic Nymph: Scout Mode" }, // to disable fire in the vents (one-way) to "sniper room"
         { "anyOf": [
             { "item": "Cloud Leap" },
-            [ { "item": "Air Dash" }, { "item": "Tai-Chi Kick" } ]
+            [ { "item": "Air Dash" }, { "item": "Tai-Chi Kick" }, { "item": "Grapple" } ]
         ] } // to traverse the "sniper room" up to the one-way door back to GPS
-        // (grapple OR CL) to reach the hallway above
     ] },
-    { "from": "FPA - Right Fire Zone & Lower Right Exit & Wuqiang Arena", "to": "FPA - Upper Elevator", "requires": [ { "anyOf": [
+    { "from": "FPA - Right Fire Zone & Wuqiang Arena", "to": "FPA - Guard Production Station", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }, // to reach the hallway above the "sniper room"
+        { "item": "Mystic Nymph: Scout Mode" } // to open the "shortcut" door to GPS
+    ] },
+    { "from": "FPA - Right Fire Zone & Wuqiang Arena", "to": "FPA - Upper Elevator", "requires": [
         { "item": "Air Dash" },
-        [ { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" } ]
-    ] } ] },
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" } ] }
+    ] },
+    { "from": "FPA - Right Fire Zone & Wuqiang Arena", "to": "FPA - Lower Right Exit", "requires": [] }, // fall
+    { "from": "FPA - Lower Right Exit", "to": "FPA - Right Fire Zone & Wuqiang Arena", "requires": [
+        { "item": "Ledge Grab" }
+    ] },
     { "from": "FPA - Upper Elevator", "to": "FPA - Upper Left Fire Zone & Pharmacy", "requires": [
-        { "item": "Cloud Leap" } // OR grapple
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Grapple" } ] }
     ] }, // one-way door
 
-    { "from": "FPA - Right Fire Zone & Lower Right Exit & Wuqiang Arena", "to": "FGH - Above Root Node", "requires": [] }, // one-way elevator
+    { "from": "FPA - Lower Right Exit", "to": "FGH - Above Root Node", "requires": [] }, // one-way elevator
 
     { "from": "FPA - Upper Elevator", "to": "SH - Root Node", "requires": [] }, // one-way elevator
 
@@ -921,8 +940,11 @@
     // Underground Cave + 95th Livestock Pen / Peach Blossom Village + Livestock Harvesting Platform
     { "from": "UC - Left Exit", "to": "UC - Upper Cave", "requires": [ { "item": "Charged Strike" } ] },
     { "from": "UC - Upper Cave", "to": "UC - Left Exit", "requires": [ { "item": "Charged Strike" } ] },
+    // on logic_level: easy, Cloud Piercer S/X
     { "from": "UC - Upper Cave", "to": "UC - Camp", "requires": [] }, // fall
-    { "from": "UC - Camp", "to": "UC - Upper Cave", "requires": [] }, // WC OR DJ
+    { "from": "UC - Camp", "to": "UC - Upper Cave", "requires": [
+        { "anyOf": [ { "item": "Wall Climb" }, { "item": "Cloud Leap" } ] }
+    ] },
     { "from": "UC - Camp", "to": "Lieguan Arena", "requires": [] },
 
     { "from": "Lieguan Arena", "to": "GD - Left Exit", "requires": [] }, // TODO: combat logic?

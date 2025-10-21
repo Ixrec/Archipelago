@@ -1006,7 +1006,7 @@
         "region": "FPA - Lower Left Elevator", "requires": [ { "anyOf": [
             { "item": "Mystic Nymph: Scout Mode" }, // turn off the fire
             { "item": "Cloud Leap" } // or jump straight up to it from the far left
-        ] } ]
+        ] } ] // or you could tank the fire damage
     },
     {
         "address": 2602, "name": "Factory (PA): Hallway Near Jiequan Statue",
@@ -1044,11 +1044,11 @@
     },
     {
         "address": 2610, "name": "Factory (PA): Bottom of Right Fire Zone",
-        "region": "FPA - Right Fire Zone & Lower Right Exit & Wuqiang Arena", "requires": []
+        "region": "FPA - Right Fire Zone & Wuqiang Arena", "requires": []
     },
     {
         "address": 2611, "name": "Factory (PA): Defeat Shanhai 9000",
-        "region": "FPA - Right Fire Zone & Lower Right Exit & Wuqiang Arena", "requires": [ { "item": "Unbounded Counter" } ]
+        "region": "FPA - Lower Right Exit", "requires": [ { "item": "Unbounded Counter" } ]
     },
     {
         "address": 2612, "name": "Factory (PA): Top of Right Fire Zone",
@@ -1056,11 +1056,11 @@
     },
     {
         "address": 2613, "name": "Factory (PA): Far Side of Wuqiang Arena",
-        "region": "FPA - Right Fire Zone & Lower Right Exit & Wuqiang Arena", "requires": []
+        "region": "FPA - Right Fire Zone & Wuqiang Arena", "requires": []
     },
     {
         "address": 2614, "name": "Factory (PA): Defeat Celestial Sentinel: Wuqiang",
-        "region": "FPA - Right Fire Zone & Lower Right Exit & Wuqiang Arena", "requires": []
+        "region": "FPA - Right Fire Zone & Wuqiang Arena", "requires": []
     },
 
     // Shengwu Hall
@@ -1110,7 +1110,9 @@
     },
     {
         "address": 2902, "name": "Galactic Dock: Tianhuo Flower",
-        "region": "GD - Root Node & Right Exit", "requires": [] // grapple OR djump?
+        "region": "GD - Root Node & Right Exit", "requires": [
+            { "anyOf": [ { "item": "Grapple" }, { "item": "Cloud Leap" } ] }
+        ]
     },
     {
         "address": 2903, "name": "Galactic Dock: Shaman's Gift",

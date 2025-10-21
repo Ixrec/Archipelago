@@ -975,7 +975,7 @@
         "address": 2503, "name": "Factory (MR): Above Left Elevator",
         "region": "FMR - Left Elevator", "requires": [ { "anyOf": [
             { "item": "Air Dash" }, { "item": "Cloud Leap" }
-        ] } ]
+        ] } ] // on logic_level: easy, bow hover // no parryable enemies or ledges
     },
     {
         "address": 2504, "name": "Factory (MR): Walking Chest Above Green Pillar",
@@ -983,7 +983,7 @@
     },
     {
         "address": 2505, "name": "Factory (MR): Behind Turret Near Green Pillar",
-        "region": "FMR - Right of Green Pillar", "requires": [ { "item": "Unbounded Counter" } ]
+        "region": "FMR - Chest Right of Green Pillar", "requires": []
     },
     {
         "address": 2506, "name": "Factory (MR): Near Moving Platforms",
@@ -991,7 +991,13 @@
     },
     {
         "address": 2507, "name": "Factory (MR): Tianhuo Flower Above Right Elevator",
-        "region": "FMR - Moving Platforms", "requires": [ { "item": "Mystic Nymph: Scout Mode" } ]
+        "region": "FMR - Moving Platforms", "requires": [
+            { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }, // to reach upper ledge
+            { "item": "Mystic Nymph: Scout Mode" } // unlock arena door
+        ] // the upper route through the shielded enemies arena
+        // on logic_level: easy, bow hover OR (T-dash AND AD AND CL AND LG)
+        // the NMG speedrun does T-dash AD AND CS AND bow knockback, but I can't get this to work without LG at the end
+        // on logic_level: ledge_storage, parry hover with any setup
     },
 
     // Factory (Production Area)

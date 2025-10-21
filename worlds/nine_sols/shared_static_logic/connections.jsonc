@@ -265,6 +265,7 @@
         [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ]
     ] } ] }, // on logic_level: easy, swift runner AND AD AND LG also works
     // T-dash helps but no qi source, bow hover into LS vault with AD setup works but is redundant with SR
+    // T-dash is back in if we check you have root node region access, so we know you can simply fall down from the parryable enemies
     { "from": "CTH - Lower Right Vents", "to": "CTH - Vents Statue", "requires": [
         { "item": "Tai-Chi Kick" }, // the first part where 2 TCK targets are stacked vertically
         { "anyOf": [ // the second part with a TCK target and WC surface
@@ -817,27 +818,44 @@
 
     // Factory (Machine Room)
     { "from": "FMR - Left Elevator", "to": "FMR - Walking Chest Above Green Pillar", "requires": [
-        { "item": "Unbounded Counter" }
-    ] }, // AND WC
+        { "item": "Wall Climb" }, // partway up the pillar
+        { "anyOf": [ { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }, // left to turret platform
+        { "item": "Unbounded Counter" }, // to break through turret wall
+        { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] } // final ledge up to walking chest platform
+    ] }, // no parryable enemies for T-dash
     { "from": "FMR - Walking Chest Above Green Pillar", "to": "FMR - Above Green Pillar", "requires": [] }, // fall
-    { "from": "FMR - Above Green Pillar", "to": "FMR - Walking Chest Above Green Pillar", "requires": [ { "item": "Cloud Leap" } ] },
-    { "from": "FMR - Left Elevator", "to": "FMR - Top of Green Pillar", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }
-    ] } ] }, // AND WC
+    { "from": "FMR - Above Green Pillar", "to": "FMR - Walking Chest Above Green Pillar", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+    ] },
+    { "from": "FMR - Left Elevator", "to": "FMR - Top of Green Pillar", "requires": [
+        { "item": "Wall Climb" },
+        { "anyOf": [ { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" } ] } // gap in the green wall
+    ] },
     { "from": "FMR - Top of Green Pillar", "to": "FMR - Above Green Pillar", "requires": [
-        { "item": "Unbounded Counter" }
-    ] }, // AND grapple
+        { "item": "Unbounded Counter" }, { "item": "Grapple" }
+    ] }, // CL + LS getup is barely not enough
     { "from": "FMR - Top of Green Pillar", "to": "FMR - Left Elevator", "requires": [] }, // fall
-    { "from": "FMR - Top of Green Pillar", "to": "FMR - Right of Green Pillar", "requires": [] }, // fall
-    { "from": "FMR - Right of Green Pillar", "to": "FMR - Top of Green Pillar", "requires": [] }, // WC
-    { "from": "FMR - Right of Green Pillar", "to": "FMR - Root Node", "requires": [] }, // fall
-    { "from": "FMR - Root Node", "to": "FMR - Right of Green Pillar", "requires": [ { "anyOf": [
-        { "item": "Unbounded Counter" }, { "item": "Cloud Leap" }
-    ] } ] }, // (UC OR CL) to bypass first barrier AND (WC OR CL) to escape sniper room
+    { "from": "FMR - Top of Green Pillar", "to": "FMR - Disc Throwers Right of Green Pillar", "requires": [] }, // fall
+    { "from": "FMR - Disc Throwers Right of Green Pillar", "to": "FMR - Top of Green Pillar", "requires": [ { "anyOf": [
+        { "item": "Wall Climb" },
+        [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ]
+    ] } ] },
+    { "from": "FMR - Top of Green Pillar", "to": "FMR - Chest Right of Green Pillar", "requires": [
+        { "item": "Unbounded Counter" }
+    ] },
+    //{ "from": "FMR - Disc Throwers Right of Green Pillar", "to": "FMR - Chest Right of Green Pillar", "requires": [] },
+    // on logic_level: easy, T-dash AND CL AND (AD OR CS), or bow hover
+    // on logic_level: ledge_storage, CL AND LG into hover
+    { "from": "FMR - Disc Throwers Right of Green Pillar", "to": "FMR - Root Node", "requires": [] }, // fall
+    { "from": "FMR - Root Node", "to": "FMR - Disc Throwers Right of Green Pillar", "requires": [ { "anyOf": [
+        [ { "item": "Unbounded Counter" }, { "item": "Wall Climb" } ], // do the whole obstacle course loop
+        { "item": "Cloud Leap" } // or just grab the rope you came down
+    ] } ] },
     { "from": "FMR - Above Green Pillar", "to": "FMR - Moving Platforms", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
     ] } ] }, // in practice this should be free, but collapsible platforms require us to assume the worst case
-    { "from": "FMR - Moving Platforms", "to": "FMR - Right Elevator", "requires": [] }, // one-way debris
+    // no T-dashes in logic because it's possible to get here from Left Elevator without passing a parryable enemy
+    { "from": "FMR - Moving Platforms", "to": "FMR - Right Elevator", "requires": [] }, // fall, one-way door
 
     // Factory (Production Area)
     { "from": "FPA - Lower Left Elevator", "to": "FPA - Root Node", "requires": [] }, // WC

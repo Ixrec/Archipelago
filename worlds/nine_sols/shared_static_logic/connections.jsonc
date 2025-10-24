@@ -999,36 +999,49 @@
     // Grotto of Scriptures (East)
     { "from": "GoSE - Lower Exit", "to": "GoSE - Spike Ball Hall Floor", "requires": [ { "item": "Cloud Leap" } ] },
     { "from": "GoSE - Spike Ball Hall Floor", "to": "GoSE - Lower Exit", "requires": [] }, // fall
-    { "from": "GoSE - Spike Ball Hall Floor", "to": "GoSE - Spike Ball Hall Platforms", "requires": [ { "item": "Cloud Leap" } ] }, // DJ AND (grapple OR AD)
+    { "from": "GoSE - Spike Ball Hall Floor", "to": "GoSE - Spike Ball Hall Platforms", "requires": [
+        { "item": "Cloud Leap" }, // the spike balls are slightly too large to single jump over
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Grapple" } ] }
+    ] }, // on logic_level: easy, T-dash instead of AD // bow/parry hover works but are redundant
     { "from": "GoSE - Spike Ball Hall Platforms", "to": "GoSE - Spike Ball Hall Floor", "requires": [] }, // fall
-    { "from": "GoSE - Spike Ball Hall Platforms", "to": "GoSE - Root Node", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // DJ or (grapple AND AD)
+    { "from": "GoSE - Spike Ball Hall Platforms", "to": "GoSE - Root Node", "requires": [
+        { "item": "Cloud Leap" }
+    ] }, // on logic_level: easy, AD AND LG AND G AND use the archer to T-dash onto the tiny wooden platform???
+    // I think you still need to jump over a spike ball at the end, so this may hard require CL on all logic levels
     { "from": "GoSE - Root Node", "to": "GoSE - Spike Ball Hall Platforms", "requires": [] }, // fall
     { "from": "GoSE - Root Node", "to": "GoSE - Middle Exit", "requires": [] }, // fall
     { "from": "GoSE - Middle Exit", "to": "GoSE - Root Node", "requires": [
-        { "item": "Cloud Leap" } // to jump over the spike balls, in case you didn't get it 1st try and the pillars are no longer there
+        { "item": "Cloud Leap" } // to jump up to the rope, and then from wooden platforms to node ledge
     ] },
-    { "from": "GoSE - Root Node", "to": "GoSE - Outside Yin Jifu's Tomb", "requires": [] }, // fall slightly, portal on right
+    { "from": "GoSE - Root Node", "to": "GoSE - Outside Yin Jifu's Tomb", "requires": [
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } // fall slightly, use portal to the right
+    ] }, // on logic_level: easy, T-dash
+    // { "from": "GoSE - Outside Yin Jifu's Tomb", "to": "GoSE - Yin Jifu's Tomb", "requires": [] },
+    // on logic_level: easy, Thunder Buster
     { "from": "GoSE - Outside Yin Jifu's Tomb", "to": "GoSE - Stone Carvings", "requires": [] }, // one-way door
     // we mostly ignore the logic for *exiting* YJ tomb regions, because this is the only way into any of them
-    { "from": "GoSE - Outside Yin Jifu's Tomb", "to": "GoSE - Yin Jifu's Spike Ball Puzzle", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
-    { "from": "GoSE - Yin Jifu's Spike Ball Puzzle", "to": "GoSE - Yin Jifu's Tomb", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" }, { "item": "Unbounded Counter" } // combat logic for the worms/lurkers; you can't just run past them here
-    ] } ] },
-    // but the GG tomb regions have interesting connections from GoSW and YJ's tomb, so these have to be as thorough as usual
+    { "from": "GoSE - Outside Yin Jifu's Tomb", "to": "GoSE - Yin Jifu's Tomb", "requires": [ { "anyOf": [
+        [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ],
+        { "item": "Cloud Leap" }
+    ] } ] }, // I previously thought we needed combat logic for the worms/lurkers in the locked arena,
+    // but it turns out you can damage them without using TCK OR UC to stun them first.
+    // The GG tomb regions have interesting connections from GoSW and YJ's tomb, so these have to be as thorough as usual
     { "from": "GoSE - Root Node", "to": "GoSE - Outside Guiguzi's Tomb", "requires": [
         { "item": "Cloud Leap" } // to the portal above and left of the root node
-    ] },
+    ] }, // LS parry vault would work, but LS here needs CL setup
     { "from": "GoSE - Outside Guiguzi's Tomb", "to": "GoSE - Root Node", "requires": [] }, // portal, fall
     { "from": "GoSE - Outside Guiguzi's Tomb", "to": "GoSE - Upper Exit", "requires": [ { "item": "Cloud Leap" } ] },
     { "from": "GoSE - Upper Exit", "to": "GoSE - Outside Guiguzi's Tomb", "requires": [] }, // fall
-    { "from": "GoSE - Outside Guiguzi's Tomb", "to": "GoSE - Stone Carvings", "requires": [ { "item": "Cloud Leap" } ] },
+    { "from": "GoSE - Outside Guiguzi's Tomb", "to": "GoSE - Stone Carvings", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Grapple" }
+    ] }, // on logic_level: ledge_storage, CL + LS getup
     { "from": "GoSE - Stone Carvings", "to": "GoSE - Outside Guiguzi's Tomb", "requires": [] }, // fall
-    { "from": "GoSE - Stone Carvings", "to": "GoSE - Upper Exit", "requires": [ { "item": "Cloud Leap" } ] },
-    { "from": "GoSE - Upper Exit", "to": "GoSE - Stone Carvings", "requires": [ { "item": "Cloud Leap" } ] },
+    { "from": "GoSE - Stone Carvings", "to": "GoSE - Upper Exit", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+    ] },
+    { "from": "GoSE - Upper Exit", "to": "GoSE - Stone Carvings", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+    ] },
     { "from": "GoSE - Outside Guiguzi's Tomb", "to": "GoSE - Guiguzi's Tomb", "requires": [
         { "item": "Cloud Leap" }, // technically unnecessary if you start from Upper Exit, but
         // that implies teleporting/quit-and-reloading if you mess it up, so I'd rather not
@@ -1044,17 +1057,24 @@
     // Grotto of Scriptures (West)
     // First, the regions available "early", before completing enough of East Grotto to find the upper entrance
     { "from": "GoSW - Lower Right Exits", "to": "GoSW - Cixing Arena", "requires": [] }, // fall
-    { "from": "GoSW - Cixing Arena", "to": "GoSW - Lower Right Exits", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // grapple AND (DJ up OR AD across to warp)
-    { "from": "GoSW - Cixing Arena", "to": "GoSW - Lower Left Transporter", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] }, // grapple AND (AD OR DJ)
+    { "from": "GoSW - Cixing Arena", "to": "GoSW - Lower Right Exits", "requires": [
+        { "item": "Grapple" }, // to get out of the arena itself
+        { "anyOf": [
+            { "item": "Air Dash" }, // across the chasm to portal
+            { "item": "Cloud Leap" } // up the wooden platforms
+        ] }
+    ] },
+    { "from": "GoSW - Cixing Arena", "to": "GoSW - Lower Left Transporter", "requires": [
+        { "item": "Grapple" }, // to get out of the arena itself
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+    ] }, // on logic_level: easy, T-dashes replace AD OR CL
     { "from": "GoSW - Lower Left Transporter", "to": "GoSW - Cixing Arena", "requires": [
         { "item": "Cloud Leap" } // the first rope after transporter hard requires CL,
         // middle -> right rope over the spikes doesn't work for me with AD alone (even though the reverse does),
         // and finally no grapple in this direction
     ] },
+    //{ "from": "GoSW - Lower Left Transporter", "to": "GoSW - Lower Right Exits", "requires": [] },
+    // on logic_level: easy, CL AND bow hover
     // And since these are also simple and isolated, we'll do the Lear's grave stuff next
     { "from": "GoSW - Cixing Arena", "to": "GoSW - Lear's Grave", "requires": [
         // to activate the door and force Cixing to spawn in defense
@@ -1065,32 +1085,36 @@
         { "item": "Tai-Chi Kick" }, // combat logic: specifically Cixing's crimson thrust combo needs kick IMO
         // to reach the part of the grave with items in it
         { "item": "Charged Strike" }
-    ] },
+    ] }, // on logic_level: easy, Cloud Piercer S/X replaces CS
     // Now for the messy part of West Grotto: the semi-scripted progression from
     // upper right exit to Ji fight through the rotating platforms puzzle.
     // Remember that unlike vanilla we might be starting at the GoSW node.
-    { "from": "GoSW - Upper Right Exit", "to": "GoSW - Root Node", "requires": [ { "anyOf": [
-        { "item": "Air Dash" }, { "item": "Cloud Leap" }
-        // The first time, when the spike ball chases you, the final jump requires just CL.
-        // But if you die or TP out and come back this way later, using the ropes and portals, then
-        // jumping over the stationary spike ball and climbing up to the node is (DJ OR AD) AND WC.
-    ] } ] },
+    { "from": "GoSW - Upper Right Exit", "to": "GoSW - Root Node", "requires": [
+        // The first time, when the spike ball chases you, the final jump requires just CL AND LG.
+        // But if you die or TP out and come back this way later, you have to jump over the
+        // stationary spike ball (or the gap where it was) and climb up to the node.
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] },
+        { "item": "Wall Climb" }
+    ] },
     { "from": "GoSW - Upper Right Exit", "to": "GoSW - Lower Platform Rotation Button", "requires": [] }, // rope to portal, fall
     { "from": "GoSW - Root Node", "to": "GoSW - Lower Platform Rotation Button", "requires": [] }, // fall
     { "from": "GoSW - Lower Platform Rotation Button", "to": "GoSW - Lower Right Exits", "requires": [] }, // press button, fall, go right and open one-way door
+    // This single region connection into SBR represents solving the rotating platforms puzzle
     { "from": "GoSW - Lower Platform Rotation Button", "to": "GoSW - Spike Ball Release", "requires": [
         // open one-way door to Lower Right Exits as described above, then reset and return here
         // walk all the way right, drop down where the shortcut rope is, then walk left through the now-open door
         { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } // to cross the spikes down here
         // continue left into the portal, then on the other side keep walking left to the hack point
-    ] },
+    ] }, // on logic_level: easy, the statues allow T-dashing over both spike pits
     { "from": "GoSW - Spike Ball Release", "to": "GoSW - Luyan's Tomb", "requires": [
         // the portal at SBR lets you take shortcut ropes and more portals back and forth to the platform rotation button
-        // then you just need WC to climb the vertical platform from the SBR side
+        // to cross the gap, if you dropped the spike ball already
+        { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] },
+        { "item": "Wall Climb" } // to climb the vertical platform from the SBR side
     ] },
     { "from": "GoSW - Spike Ball Release", "to": "GoSW - Above Western Cliffs", "requires": [
-        { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" }
-    ] },
+        { "item": "Cloud Leap" } // most jumps have alternatives, but the final jump around the westernmost outcrop is just CL
+    ] }, // this is where any% runs do an enemy manip to skull kick, but we don't want that in logic
     { "from": "GoSW - Above Western Cliffs", "to": "GoSW - Root Node", "requires": [
         { "item": "Mystic Nymph: Scout Mode" } // to open the one-way door
     ] },

@@ -1211,7 +1211,7 @@
         "address": 3104, "name": "GoS (East): Spike Ball Hall Upper Left",
         "region": "GoSE - Spike Ball Hall Platforms", "requires": [ { "anyOf": [
             { "item": "Air Dash" }, { "item": "Cloud Leap" }
-        ] } ]
+        ] } ] // T-dashes could help but enemies aren't reliable enough for all jumps // LS up here would need CL setup
     },
     {
         "address": 3105, "name": "GoS (East): Lurkers Under Tunnel Walkway",
@@ -1235,7 +1235,7 @@
     },
     {
         "address": 3110, "name": "GoS (East): Upper Right of Room Above Yin Jifu's Tomb",
-        "region": "GoSE - Yin Jifu's Spike Ball Puzzle", "requires": []
+        "region": "GoSE - Yin Jifu's Tomb", "requires": []
     },
     {
         "address": 3111, "name": "GoS (East): Examine Mural in Yin Jifu's Tomb",
@@ -1249,7 +1249,7 @@
     {
         "address": 3113, "name": "GoS (East): Outside Guiguzi's Tomb",
         "region": "GoSE - Guiguzi's Tomb", "requires": [ { "item": "Cloud Leap" } ]
-    },
+    }, // LS getup works, but I see no way to bring LS here without CL setup
     {
         "address": 3114, "name": "GoS (East): Examine Mural in Guiguzi's Tomb",
         "region": "GoSE - Guiguzi's Tomb", "requires": [
@@ -1263,12 +1263,12 @@
         "address": 3201, "name": "GoS (West): Above Elevator",
         "region": "GoSW - Lower Right Exits", "requires": [
             { "item": "Cloud Leap" } // from the upper portal
-        ]
+        ] // on logic_level: ledge_storage, AD AND LG lets you AD to the last wood platform and LS getup to the rope
     },
     {
         "address": 3202, "name": "GoS (West): Platforms In Top Middle Room",
         "region": "GoSW - Spike Ball Release", "requires": [
-            // portal next to SBR is the only way to the upper half of this room
+            // portal next to SBR is the only way to the upper half of this room // couldn't get wall slide here
             { "item": "Cloud Leap" } // without the collapsing platforms, AD might also work
         ] // does NOT require spike ball chase
     },
@@ -1277,6 +1277,7 @@
         "region": "GoSW - Spike Ball Release", "requires": [ { "anyOf": [
             { "item": "Air Dash" }, { "item": "Cloud Leap" }
         ] } ] // DOES require spike ball chase, so if you spawned at GoSW node you may need to trigger it
+        // on logic_level: easy, T-dash
     },
     {
         "address": 3204, "name": "GoS (West): Below Luyan's Tomb",

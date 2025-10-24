@@ -954,20 +954,40 @@
 
     // Grotto of Scriptures (Entry)
     { "from": "GoSY - Root Node", "to": "GoSY - Treasure Room", "requires": [ { "item": "Cloud Leap" } ] },
-    { "from": "GoSY - Lower Right Exit", "to": "GoSY - Middle Caves & Lower Portals", "requires": [] }, // WC OR using portal (AD OR CL)
-    { "from": "GoSY - Middle Caves & Lower Portals", "to": "GoSY - Lower Right Exit", "requires": [] }, // fall
-    { "from": "GoSY - Middle Caves & Lower Portals", "to": "GoSY - Upper Caves", "requires": [] }, // WC OR DJ
+    { "from": "GoSY - Root Node", "to": "GoSY - Coffin", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Charged Strike" }, { "item": "Ledge Grab" } ] }
+    ] }, // on logic_level: easy, bow hover // on logic_level: ledge_storage, parry hover
+    //{ "from": "GoSY - Root Node", "to": "GoSY - Greenhouse", "requires": [] },
+    // on logic_level: ledge_storage, bow hover into an LS parry vault, no T-dash setup, so (bow AND LG AND (AD OR CL))
+    // "elevator skip" in the ASS% speedrun is bow hover, parry vault, T-dash, AD, and 2 bow knockbacks
+    // rando can't assume you have T-dash here, but it can assume you watched the cutscene and came back afterward
+    { "from": "GoSY - Greenhouse", "to": "GoSY - Coffin", "requires": [] }, // fall
+    { "from": "GoSY - Lower Right Exit", "to": "GoSY - Middle Caves & Lower Portals", "requires": [ { "anyOf": [
+        { "item": "Wall Climb" }, // climb up the caves the obvious way
+        [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] // or cross the yellow water into a portal
+    ] } ] }, // on logic_level: easy, bow hover OR (T-dash AND (CL OR AD)) into portal
+    // on logic_level: ledge_storage, T-dash setup for LS hover into portal
+    { "from": "GoSY - Middle Caves & Lower Portals", "to": "GoSY - Lower Right Exit", "requires": [ { "anyOf": [
+         { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }, // climb the ledge to the left
+        [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] // or take the portal and cross the yellow water
+    ] } ] },
+    { "from": "GoSY - Middle Caves & Lower Portals", "to": "GoSY - Upper Caves", "requires": [
+         { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Wall Climb" } ] }
+    ] },
     { "from": "GoSY - Upper Caves", "to": "GoSY - Middle Caves & Lower Portals", "requires": [] }, // fall
     { "from": "GoSY - Upper Caves", "to": "GoSY - Below Elevator & Upper Cave Portals", "requires": [ { "anyOf": [
         { "item": "Charged Strike" }, // either go through the obvious CS barrier
-        { "item": "Cloud Leap" } // or jump to the top right platform with chests and use the portal to bypass the barrier
-    ] } ] },
+        [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] // or jump to the top right platform with chests and portal
+    ] } ] }, // on logic_level: easy, Cloud Piercer S/X
     { "from": "GoSY - Below Elevator & Upper Cave Portals", "to": "GoSY - Upper Caves", "requires": [] }, // fall, portal, fall again
     { "from": "GoSY - Below Elevator & Upper Cave Portals", "to": "GoSY - Root Node", "requires": [] }, // one-way door
     { "from": "GoSY - Below Elevator & Upper Cave Portals", "to": "GoSY - Elevator", "requires": [
         { "item": "Cloud Leap" } // this is one of the big CL barriers in vanilla
     ] },
     { "from": "GoSY - Elevator", "to": "GoSY - Below Elevator & Upper Cave Portals", "requires": [] }, // fall
+    { "from": "GoSY - Elevator", "to": "GoSY - Greenhouse", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+    ] },
     { "from": "GoSY - Elevator", "to": "GoSY - Upper Right Exit", "requires": [ { "item": "Cloud Leap" } ] },
     { "from": "GoSY - Upper Right Exit", "to": "GoSY - Elevator", "requires": [] }, // fall
 

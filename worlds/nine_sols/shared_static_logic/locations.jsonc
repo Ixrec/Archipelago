@@ -1126,7 +1126,7 @@
     },
     {
         "address": 3002, "name": "GoS (Entry): Examine Coffin",
-        "region": "GoSY - Root Node", "requires": []
+        "region": "GoSY - Coffin", "requires": []
     },
     {
         "address": 3003, "name": "GoS (Entry): Poem Treasure 1st Chest",
@@ -1158,7 +1158,7 @@
     },
     {
         "address": 3010, "name": "GoS (Entry): Lower Left Caves",
-        "region": "GoSY - Lower Right Exit", "requires": []
+        "region": "GoSY - Lower Right Exit", "requires": [ { "item": "Wall Climb" } ]
     },
     {
         "address": 3011, "name": "GoS (Entry): Alcove Above Middle Caves Portal",
@@ -1186,12 +1186,12 @@
     },
     {
         "address": 3017, "name": "GoS (Entry): Greenhouse Between Elevators",
-        "region": "GoSY - Elevator", "requires": [ { "item": "Cloud Leap" } ]
-        // ^ this will need a proper region if we ever get "Elevator Skip" in logic
+        "region": "GoSY - Greenhouse", "requires": []
     },
     {
         "address": 3018, "name": "GoS (Entry): Near Upper Right Exit",
         "region": "GoSY - Upper Right Exit", "requires": [ { "item": "Charged Strike" } ]
+        // on logic_level: easy, Cloud Piercer S/X
     },
 
     // Grotto of Scriptures (East)

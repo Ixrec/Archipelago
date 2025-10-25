@@ -1157,8 +1157,7 @@
             { "item": "Wall Climb" },
             [ { "item": "Grapple" }, { "item": "Ledge Grab" } ]
         ] }
-    ] }, // there is *almost* a CL-free route using AD AND G AND LG AND WC, but it fails when jumping from the blue stack
-    // to the first rope with red links at the bottom, because LS vault/getup are not quite high enough
+    ] }, // on logic_level: ledge_storage, there is a CL-free route using AD AND G AND LG AND WC with multiple LS vaults
     { "from": "ST - Upper Checkpoint Platform", "to": "ST - Lower Checkpoint Platform", "requires": [] }, // fall
     { "from": "ST - Upper Checkpoint Platform", "to": "ST - Stowaway", "requires": [
         { "item": "Cloud Leap" }, { "item": "Wall Climb" }

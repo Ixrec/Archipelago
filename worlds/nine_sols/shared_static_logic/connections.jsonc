@@ -1139,30 +1139,41 @@
 
     // Sky Tower
     { "from": "ST - Lower Exit", "to": "ST - Lower Chest", "requires": [ { "item": "Cloud Leap" } ] },
-    { "from": "ST - Lower Exit", "to": "ST - Lower Checkpoint Platform", "requires": [ { "item": "Cloud Leap" } ] }, // AND WC
+    // on logic_level: ledge_storage, AD setup into LS vault/getup bypasses the one CL jump, LG + AD can handle the rest
+    { "from": "ST - Lower Exit", "to": "ST - Lower Checkpoint Platform", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Wall Climb" }
+    ] }, // see previous LS comment: LG + AD + WC can handle the rest until just below LCP, then we need CL OR G
+    // either way, CL AND WC are hard requirements for LCP, so we may ignore WC-less or CL-less strats at higher parts of ST
     { "from": "ST - Lower Checkpoint Platform", "to": "ST - Lower Exit", "requires": [] }, // fall
     { "from": "ST - Lower Checkpoint Platform", "to": "ST - Lower Chest", "requires": [] }, // fall
     { "from": "ST - Lower Checkpoint Platform", "to": "ST - Middle Chest", "requires": [
-        // either drop down slightly and use WC to get up to this chest, OR
-        // (DJ OR (grapple AND AD)) from above, using the platform right of the red rope
-    ] },
+        { "item": "Wall Climb" } // drop down from LCP, go right, then climb // ignore WC-less ways of dropping down from above
+    ] }, // for LS logic we may need to account for the CL-less path up here
     { "from": "ST - Lower Checkpoint Platform", "to": "ST - Upper Checkpoint Platform", "requires": [
-        { "item": "Cloud Leap" } // AND (grapple OR WC)
-    ] },
+        { "item": "Cloud Leap" }, // LS tricks can skip one CL jump, but not all of them
+        // for the green wall, laser and grapple point cluster: either WC OR G
+        // then for the stack of 3 blue platforms: WC OR (CL AND LG) gets you from 1st to 2nd
+        { "anyOf": [ // those simplify to:
+            { "item": "Wall Climb" },
+            [ { "item": "Grapple" }, { "item": "Ledge Grab" } ]
+        ] }
+    ] }, // there is *almost* a CL-free route using AD AND G AND LG AND WC, but it fails when jumping from the blue stack
+    // to the first rope with red links at the bottom, because LS vault/getup are not quite high enough
     { "from": "ST - Upper Checkpoint Platform", "to": "ST - Lower Checkpoint Platform", "requires": [] }, // fall
     { "from": "ST - Upper Checkpoint Platform", "to": "ST - Stowaway", "requires": [
-        { "item": "Cloud Leap" }, { "item": "Air Dash" } // AND WC
+        { "item": "Cloud Leap" }, { "item": "Wall Climb" }
     ] },
     { "from": "ST - Stowaway", "to": "ST - Upper Checkpoint Platform", "requires": [] }, // fall
     { "from": "ST - Stowaway", "to": "ST - Upper Exit & Root Node", "requires": [
-        { "item": "Mystic Nymph: Scout Mode" }
-    ] }, // nymph AND grapple
+        { "item": "Mystic Nymph: Scout Mode" },
+        { "item": "Grapple" }
+    ] }, // on logic_level: ledge_storage, CL + LG replace G
     { "from": "ST - Upper Exit & Root Node", "to": "ST - Right Exit", "requires": [
         { "item": "Air Dash" } // since you have to cross the pink waterfall from the side with no platform
-    ] },
+    ] }, // there is a tiny foothold you can use to ground dash, but (like OW) we won't put that in logic
     { "from": "ST - Right Exit", "to": "ST - Upper Exit & Root Node", "requires": [
-        { "item": "Cloud Leap" } // AND WC, since this way you have to climb up the boxes as they move down
-    ] },
+        { "item": "Cloud Leap" }, { "item": "Wall Climb" } // this way you have to climb up the boxes as they move down
+    ] }, // AD AND WC is just barely possible, but since single jump + WC isn't, that's not intuitive enough IMO
 
     { "from": "ST - Upper Exit & Root Node", "to": "TRC - Upper Exit", "requires": [ { "item": "Elevator Access Token" } ] },
 

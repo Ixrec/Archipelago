@@ -1332,12 +1332,12 @@
     },
     {
         "address": 3403, "name": "Sky Tower: Surrounded By Hazards",
-        "region": "ST - Upper Checkpoint Platform", "requires": []
+        "region": "ST - Upper Checkpoint Platform", "requires": [ { "item": "Cloud Leap" } ]
     },
     {
         "address": 3404, "name": "Sky Tower: Ropes Below Root Node",
         "region": "ST - Upper Checkpoint Platform", "requires": [
-            { "item": "Cloud Leap" }, { "item": "Air Dash" } // AND WC
+            { "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Wall Climb" }
         ]
     },
     {

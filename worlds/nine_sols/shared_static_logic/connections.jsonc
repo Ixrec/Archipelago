@@ -222,8 +222,9 @@
         { "item": "Tai-Chi Kick" }
     ] }, // on logic_level: easy, T-dash replaces the (G OR AD) part
     { "from": "CC - Caves Lower Left", "to": "CC - Root Node", "requires": [] }, // one-way fall + shortcut rope
-    //{ "from": "CC - Root Node", "to": "CC - Caves Lower Left", "requires": [] },
-    // on logic_level: easy, AD AND CL AND (CS OR grapple OR bow)
+    { "from": "CC - Root Node", "to": "CC - Caves Lower Left", "requires": [
+        { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" }
+    ] }, // on logic_level: easy, AD AND CL AND (CS OR grapple OR bow), though I took bow knockback out of logic
     // any% NMG speedrun uses T-dash (and bow and CS and grapple) here, but there's no enemy for rando to get qi
     { "from": "CC - Caves Lower Left", "to": "CC - Left Exit", "requires": [] },
     { "from": "CC - Left Exit", "to": "CC - Caves Lower Left", "requires": [] }, // grapple

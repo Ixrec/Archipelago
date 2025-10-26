@@ -1350,31 +1350,42 @@
     { "from": "TRC - Root Node", "to": "TRC - Lower Mutant Spike Room", "requires": [
         { "item": "Super Mutant Buster" },
         { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }
-    ] },
-    { "from": "TRC - Lower Mutant Spike Room", "to": "TRC - Ground Floor & Exits", "requires": [
+    ] }, // you could T-dash using the flying enemy, but it tends to knock you off the rope, and then you need
+    // CL OR AD to reliably get back on the rope, so I'd rather leave this out of logic
+    { "from": "TRC - Lower Mutant Spike Room", "to": "TRC - Right Stairwell", "requires": [
         { "item": "Super Mutant Buster" } // one-way mutant barrier
     ] },
     { "from": "TRC - Ground Floor & Exits", "to": "TRC - Lower Sickbay", "requires": [
-        { "item": "Super Mutant Buster" }, // AND grapple
-        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }
+        { "item": "Super Mutant Buster" },
+        { "item": "Grapple" },
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] } // on logic_level: easy, T-dash
     ] },
-    { "from": "TRC - Lower Sickbay", "to": "TRC - Upper Levels", "requires": [] }, // WC
+    { "from": "TRC - Lower Sickbay", "to": "TRC - Upper Levels", "requires": [
+        { "item": "Wall Climb" }
+    ] },
     { "from": "TRC - Upper Levels", "to": "TRC - Xingtian Sickbay", "requires": [
         { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }
-    ] },
+    ] }, // also a precise single jump I'd rather leave out of logic
     { "from": "TRC - Upper Levels", "to": "TRC - Root Node", "requires": [] }, // one-way door
     { "from": "TRC - Upper Levels", "to": "TRC - Right Stairwell", "requires": [] }, // fall
+    { "from": "TRC - Right Stairwell", "to": "TRC - Ground Floor & Exits", "requires": [] }, // fall
     { "from": "TRC - Ground Floor & Exits", "to": "TRC - Dusk Guardian HQ Upper Levels", "requires": [
         { "item": "Super Mutant Buster" },
         // left node
         { "region": "TRC - Lower Sickbay" },
-        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] },
-        // center and right nodes
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }, // on logic_level: easy, T-dash
+        // center node
+        { "region": "TRC - Upper Levels" }, // from root node level, jump left to the platform above this node
+        // right node
         { "region": "TRC - Right Stairwell" }
-    ] },
-    { "from": "TRC - Dusk Guardian HQ Upper Levels", "to": "TRC - Dusk Guardian HQ Lower Levels", "requires": [
-        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }
     ] }
+    //{ "from": "TRC - Dusk Guardian HQ Upper Levels", "to": "TRC - Dusk Guardian HQ Lower Levels", "requires": [
+    //    { "anyOf": [
+    //        { "item": "Cloud Leap" },
+    //        [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ]
+    //    ] }
+    //] } // on logic_level: easy, T-dash
+    // this connection doesn't matter unless we add TRI to logic someday
 
     // Tianhuo Research Institute
     // nothing for now

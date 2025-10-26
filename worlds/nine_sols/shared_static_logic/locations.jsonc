@@ -1544,7 +1544,8 @@
     },
     {
         "address": 3708, "name": "ED (Sanctum): Above Lower Left Garden",
-        "region": "EDS - Elevator", "requires": [ { "item": "Cloud Leap" } ]
+        "region": "EDS - Elevator", "requires": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ]
+        // on logic_level: ledge_storage: wall slide into AD AND T-dash AND WC (AND G for setup ledge)
     },
 
     // Nobility Hall

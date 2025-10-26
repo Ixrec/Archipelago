@@ -1310,19 +1310,32 @@
     { "from": "EDS - Below Root Node", "to": "EDS - Right Exit", "requires": [ { "item": "Air Dash" } ] },
     { "from": "EDS - Right Exit", "to": "EDS - Root Node", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
+    ] } ] }, // on logic_level: easy, CS-dash
     { "from": "EDS - Root Node", "to": "EDS - Right Exit", "requires": [ { "anyOf": [
         { "item": "Air Dash" }, { "item": "Cloud Leap" }
-    ] } ] },
-    { "from": "EDS - Right Exit", "to": "EDS - Monitoring Panel", "requires": [ { "item": "Tai-Chi Kick" } ] },
+    ] } ] }, // on logic_level: easy, CS-dash
+    { "from": "EDS - Right Exit", "to": "EDS - Monitoring Panel", "requires": [
+        { "item": "Tai-Chi Kick" },
+        { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] }
+    ] },
     { "from": "EDS - Monitoring Panel", "to": "EDS - East Rooftop", "requires": [ { "item": "Cloud Leap" } ] },
     { "from": "EDS - East Rooftop", "to": "EDS - Outside Nobility Hall", "requires": [] }, // fall
-    { "from": "EDS - Outside Nobility Hall", "to": "EDS - East Rooftop", "requires": [ { "item": "Cloud Leap" } ] },
-    // ONH->RN shortcut rope and ONH->MP nymph shortcut door are irrelevant to logic
+    { "from": "EDS - Outside Nobility Hall", "to": "EDS - East Rooftop", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+    ] },
     { "from": "EDS - Outside Nobility Hall", "to": "EDS - Below Nobility Hall", "requires": [ { "item": "Super Mutant Buster" } ] },
-    { "from": "EDS - Below Nobility Hall", "to": "EDS - Below Root Node", "requires": [ { "item": "Mystic Nymph: Scout Mode" } ] },
+    { "from": "EDS - Outside Nobility Hall", "to": "EDS - Root Node", "requires": [] }, // shortcut rope
+    { "from": "EDS - Outside Nobility Hall", "to": "EDS - Monitoring Panel", "requires": [
+        { "item": "Mystic Nymph: Scout Mode" },
+        { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }
+    ] }, // on logic_level: easy, CS-dash; but this is just a shortcut that doesn't matter in practice
+    { "from": "EDS - Below Nobility Hall", "to": "EDS - Root Node", "requires": [ { "item": "Super Mutant Buster" } ] },
+    { "from": "EDS - Below Nobility Hall", "to": "EDS - Below Root Node", "requires": [
+        { "item": "Super Mutant Buster" },
+        { "item": "Mystic Nymph: Scout Mode" }
+    ] },
     { "from": "EDS - Below Root Node", "to": "EDS - Ground Floor Below Root Node", "requires": [] }, // fall
-    { "from": "EDS - Ground Floor Below Root Node", "to": "EDS - Below Root Node", "requires": [] }, // grapple
+    { "from": "EDS - Ground Floor Below Root Node", "to": "EDS - Below Root Node", "requires": [ { "item": "Grapple" } ] },
     { "from": "EDS - Ground Floor Below Root Node", "to": "EDS - Right Exit", "requires": [] }, // one-way door
     { "from": "EDS - Ground Floor Below Root Node", "to": "EDS - Elevator", "requires": [ { "item": "Super Mutant Buster" } ] },
 

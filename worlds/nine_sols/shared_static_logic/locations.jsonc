@@ -1361,14 +1361,24 @@
     {
         "address": 3501, "name": "ED (Passages): Above Transporter",
         "region": "EDP - Above Right Transporter", "requires": [
-            { "item": "Tai-Chi Kick" }
-        ] // slide/grapple AND TCK AND (DJ OR WC)
+            { "item": "Grapple" }, // on logic_level: ledge_storage, any setup into bow hover and LS vault skips the zipline
+            { "item": "Tai-Chi Kick" },
+            { "anyOf": [
+                { "item": "Cloud Leap" }, // land on top of the right TCK wall, then jump to chest
+                [
+                    { "item": "Ledge Grab" }, // for the box ledge under the zipline
+                    { "item": "Wall Climb" }, // to climb the right TCK wall as intended
+                    { "item": "Air Dash" } // to actually reach the chest platform without CL
+                    // on logic_level: easy, you can bring a T-dash up here to replace the AD
+                ]
+            ] }
+        ]
     },
     {
         "address": 3502, "name": "ED (Passages): Hack 2 Statues",
-        "region": "EDP - Root Node", "requires": [
+        "region": "EDP - Around Root Node", "requires": [
             // 1st statue requires jumping from slider to slider left of Root Node
-            { "item": "Cloud Leap" },
+            { "item": "Cloud Leap" }, // on logic_level: easy, CS-dash AND T-dash AND AD AND LG can replace CL here
             { "item": "Charged Strike" }, // and the statue itself has a shield
             // 2nd statue needed its own region because of multiple entrances
             { "region": "EDP - Between Root Node & Tianshou Arena" },
@@ -1395,8 +1405,10 @@
         "address": 3507, "name": "ED (Passages): Far Left Rooms",
         "region": "EDP - Left Pink Pool", "requires": [
             { "item": "Tai-Chi Kick" }, // platforms above pool
-            { "item": "Air Dash" } // AND WC to climb the left pink waterfall
-            // the last jump is (AD OR DJ) so that's already covered, then just fall down
+            // T-dash OR AD OR CL OR CS to reach left platform, but AD is hard required anyway because:
+            { "item": "Wall Climb" }, { "item": "Air Dash" } // to climb and exit pink waterfall room
+            // on logic_level: ledge_storage, CL AND LS wall slide replaces WC (using AD setup on TCK platforms)
+            // the last jump is (AD OR DJ OR T-dash) so that's already covered by AD, then just fall down
         ]
     },
     {
@@ -1413,14 +1425,16 @@
     },
     {
         "address": 3511, "name": "ED (Passages): Covered By Lasers",
-        "region": "EDP - Laser Gauntlet", "requires": [
+        "region": "EDP - End Of Laser Gauntlet", "requires": [
             { "item": "Mystic Nymph: Scout Mode" } // to disable the laser cover
-            // AND slide/grapple AND WC
         ]
     },
     {
         "address": 3512, "name": "ED (Passages): Above Upper Hallway Turret",
-        "region": "EDP - Upper Elevator", "requires": [ { "item": "Unbounded Counter" } ]
+        "region": "EDP - Upper Elevator", "requires": [
+            { "item": "Unbounded Counter" },
+            { "item": "Grapple" }
+        ]
     },
 
     // Empyrean Dist. (Living Area)

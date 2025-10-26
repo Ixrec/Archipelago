@@ -1158,6 +1158,7 @@
             [ { "item": "Grapple" }, { "item": "Ledge Grab" } ]
         ] }
     ] }, // on logic_level: ledge_storage, there is a CL-free route using AD AND G AND LG AND WC with multiple LS vaults
+    // Juanba agrees we should require bow hover for the jump after Surrounded by Hazards, instead of midair turnaround into LS getup
     { "from": "ST - Upper Checkpoint Platform", "to": "ST - Lower Checkpoint Platform", "requires": [] }, // fall
     { "from": "ST - Upper Checkpoint Platform", "to": "ST - Stowaway", "requires": [
         { "item": "Cloud Leap" }, { "item": "Wall Climb" }
@@ -1180,44 +1181,92 @@
     { "from": "EDP - Left Exit", "to": "ST - Right Exit", "requires": [] },
 
     // Empyrean Dist. (Passages)
-    { "from": "EDP - Left Exit", "to": "EDP - Root Node", "requires": [
-        { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" } // AND WC AND slide/grapple
+    { "from": "EDP - Left Exit", "to": "EDP - Around Root Node", "requires": [
+        { "item": "Cloud Leap" },
+        { "item": "Tai-Chi Kick" }, // both required to reach the TCK platforms in the middle room
+        { "item": "Wall Climb" }, // required by green walls under node // on logic_level: ledge_storage, CL AND LS getup
+        { "anyOf": [
+            { "item": "Grapple" }, // using the sliders/ziplines as intended
+            [ { "item": "Air Dash" }, { "item": "Ledge Grab" }] // "just" jump across the huge gaps
+        ] }
+    ] }, // on logic_level: easy, 2 bow hovers; still need CL to enter middle room, and hover from lower platform leads
+    // to green walls, but if you can TCK AND CL to upper platform then hover goes straight to node
+    { "from": "EDP - Around Root Node", "to": "EDP - Left Exit", "requires": [ { "anyOf": [
+        [ // take the sliders backwards as intended
+            { "item": "Grapple" },
+            { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" } ] }
+        ],
+        [ // skip grapple by using only the TCK targets
+            { "item": "Tai-Chi Kick" },
+            { "item": "Cloud Leap" },
+            { "item": "Air Dash" } // on logic_level: easy, T-dashes replace this, since TCKs give qi
+        ]
+    ] } ] }, // on logic_level: easy, 2 bow hovers replaces all other items
+    { "from": "EDP - Around Root Node", "to": "EDP - Root Node", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Ledge Grab" } ] }
     ] },
-    { "from": "EDP - Root Node", "to": "EDP - Left Exit", "requires": [
-        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" } ] } // for doing the slider backwards
-        // AND slide/grapple
+    { "from": "EDP - Root Node", "to": "EDP - Around Root Node", "requires": [] }, // fall
+    { "from": "EDP - Around Root Node", "to": "EDP - Above Right Transporter", "requires": [
+        { "item": "Grapple" } // zipline over the chasm
     ] },
-    { "from": "EDP - Root Node", "to": "EDP - Lower Right Transporter", "requires": [] }, // AND slide/grapple
+    { "from": "EDP - Above Right Transporter", "to": "EDP - Around Root Node", "requires": [
+        { "item": "Grapple" } // zipline over the chasm
+    ] },
+    { "from": "EDP - Above Right Transporter", "to": "EDP - Lower Right Transporter", "requires": [
+        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] } // need to climb one of these box ledges
+    ] },
     { "from": "EDP - Lower Right Transporter", "to": "EDP - Above Right Transporter", "requires": [
         { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" }
-    ] },
-    { "from": "EDP - Above Right Transporter", "to": "EDP - Lower Right Transporter", "requires": [] }, // fall
-    { "from": "EDP - Above Right Transporter", "to": "EDP - Root Node", "requires": [] }, // slide/grapple
-    { "from": "EDP - Root Node", "to": "EDP - Alcove Right of Root Node", "requires": [
-        { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] } // AND slide/grapple
-    ] },
-    { "from": "EDP - Root Node", "to": "EDP - Slider Right Of Root Node", "requires": [
+    ] }, // on logic_level: ledge_storage, LS getup w/ T-dash setup can replace the CL
+    { "from": "EDP - Around Root Node", "to": "EDP - Alcove Right of Root Node", "requires": [
         { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] }
-    ] }, // (DJ OR (WC AND AD)) AND slide/grapple
-    { "from": "EDP - Slider Right Of Root Node", "to": "EDP - Between Root Node & Tianshou Arena", "requires": [
-        { "item": "Unbounded Counter" }
+    ] }, // on logic_level: easy, T-dash (use small elevator right of node to find a parryable sniper)
+    { "from": "EDP - Around Root Node", "to": "EDP - Slider Right Of Root Node", "requires": [
+        { "item": "Grapple" }, // on logic_level: easy, CL AND AD AND T-dash (again, sniper near root node)
+        { "anyOf": [
+            [ { "item": "Air Dash" }, { "item": "Wall Climb" } ], // the intended path around the pink waterfall
+            { "item": "Cloud Leap" } // you have to hold up, but this does get you to the same platform
+        ] }
     ] },
-    { "from": "EDP - Root Node", "to": "EDP - Left Pink Pool", "requires": [
-        { "item": "Air Dash" } // AND slide/grapple
-    ] },
+    { "from": "EDP - Slider Right Of Root Node", "to": "EDP - Between Root Node & Tianshou Arena", "requires": [] }, // fall
+    { "from": "EDP - Around Root Node", "to": "EDP - Left Pink Pool", "requires": [
+        { "item": "Grapple" }, // ziplines; the final jump can be CL OR TCK OR AD, but...
+        { "item": "Air Dash" } // for the pink waterfall
+    ] }, // ground dash AND CL can also bypass waterfall, that's out of logic for now
     { "from": "EDP - Left Pink Pool", "to": "EDP - Outside Tianshou Arena", "requires": [
-        { "item": "Cloud Leap" }, { "item": "Tai-Chi Kick" }, { "item": "Air Dash" } // AND slide/grapple
+        { "item": "Tai-Chi Kick" }, // platforms above pool
+        // one higher TCK target requires AD OR CL OR CS OR T-dash, but later steps will cover that
+        { "item": "Grapple" }, // on logic_level: easy, bypass ziplines using CL AND AD AND T-dash AND CS-dash (bow hover works on the 1st zipline, but not the 2nd)
+        { "item": "Cloud Leap" },
+        { "item": "Air Dash" } // next pink waterfall and TCK platform puzzle hard require CL AND AD AND TCK
     ] },
     { "from": "EDP - Outside Tianshou Arena", "to": "EDP - Between Root Node & Tianshou Arena", "requires": [] }, // shortcut rope
+    // this region probably has no practical impact on logic, but let's map it out anyway
+    { "from": "EDP - Around Root Node", "to": "EDP - Robot Hack Point", "requires": [
+        { "item": "Grapple" }, // on logic_level: easy, the ziplines can be skipped using AD AND CL AND T-dash and CS-dash
+        // since beetles aren't parryable, you only get T-dash for the 1st zipline
+        { "item": "Tai-Chi Kick" },
+        { "item": "Wall Climb" },
+        { "item": "Air Dash" },
+        { "item": "Cloud Leap" }
+    ] },
+    { "from": "EDP - Robot Hack Point", "to": "EDP - Between Root Node & Tianshou Arena", "requires": [
+        { "item": "Mystic Nymph: Scout Mode" }
+    ] },
     { "from": "EDP - Outside Tianshou Arena", "to": "EDP - Tianshou Arena", "requires": [
         { "item": "Mystic Nymph: Scout Mode" } // to disable the triple pink waterfall
     ] },
     { "from": "EDP - Tianshou Arena", "to": "EDP - Upper Elevator", "requires": [
-        { "item": "Cloud Leap" } // AND grapple; is defeating Tianshou actually required?
+        { "item": "Cloud Leap" }, { "item": "Grapple" } // after defeating Tianshou
     ] },
     { "from": "EDP - Upper Elevator", "to": "EDP - Upper Right Exit", "requires": [] }, // one-way door
+    // in most speedruns, the rope storage setup known as "miner skip" is all about teleporting past ^this door
     { "from": "EDP - Upper Right Exit", "to": "EDP - Laser Gauntlet", "requires": [ { "item": "Tai-Chi Kick" } ] },
-    { "from": "EDP - Laser Gauntlet", "to": "EDP - Lower Right Transporter", "requires": [] }, // one-way door // AND slide/grapple AND WC
+    { "from": "EDP - Laser Gauntlet", "to": "EDP - End Of Laser Gauntlet", "requires": [
+        { "item": "Grapple" }, // on logic_level: easy, CS-dash AND AD AND T-dash AND CL replaces zipline
+        { "item": "Wall Climb" } // we still need to cling to the 2nd green wall to get past the last red floor
+    ] }, // one-way door
+    { "from": "EDP - End Of Laser Gauntlet", "to": "EDP - Above Right Transporter", "requires": [] }, // one-way door
 
     { "from": "EDP - Upper Elevator", "to": "EDLA - Root Node & Lower Elevator", "requires": [] }, // one-way elevator
 

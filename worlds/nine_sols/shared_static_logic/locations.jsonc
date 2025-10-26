@@ -1441,30 +1441,31 @@
     {
         "address": 3601, "name": "ED (Living Area): Above Right Elevator",
         "region": "EDLA - Root Node & Lower Elevator", "requires": [ { "item": "Cloud Leap" } ]
+        // we can't use LS here because you need LG to get onto the elevator in the first place
     },
     {
         "address": 3602, "name": "ED (Living Area): Retrieve Chip From Shanhai 9000",
-        "region": "EDLA - East Building Interior", "requires": []
+        "region": "EDLA - East Building Interior Part 1", "requires": []
     },
     {
         "address": 3603, "name": "ED (Living Area): Examine Bulletin Board",
-        "region": "EDLA - East Building Interior", "requires": []
+        "region": "EDLA - East Building Interior Part 1", "requires": []
     },
     {
         "address": 3604, "name": "ED (Living Area): Walking Chest In East Building",
-        "region": "EDLA - East Building Interior", "requires": []
+        "region": "EDLA - East Building Interior Part 2", "requires": []
     },
     {
         "address": 3605, "name": "ED (Living Area): Above Root Node",
-        "region": "EDLA - East Building Interior", "requires": []
+        "region": "EDLA - East Building Interior Part 2", "requires": []
     },
     {
         "address": 3606, "name": "ED (Living Area): Middle Elevator Chest Room",
-        "region": "EDLA - East Building Interior", "requires": []
+        "region": "EDLA - East Building Interior Part 2", "requires": []
     },
     {
         "address": 3607, "name": "ED (Living Area): Defeat Mutated Zouyan in Middle Elevator Room",
-        "region": "EDLA - East Building Interior", "requires": [ { "item": "Super Mutant Buster" } ]
+        "region": "EDLA - East Building Interior Part 2", "requires": [ { "item": "Super Mutant Buster" } ]
     },
     {
         "address": 3608, "name": "ED (Living Area): Fuxi's Vital Sanctum",
@@ -1481,15 +1482,15 @@
     },
     {
         "address": 3611, "name": "ED (Living Area): Roof Right of Opera Theater",
-        "region": "EDLA - Opera Theater Right Roof", "requires": []
+        "region": "EDLA - Opera Theater Roofs", "requires": []
     },
     {
         "address": 3612, "name": "ED (Living Area): Roof Left of Opera Theater",
-        "region": "EDLA - Opera Theater", "requires": [ { "item": "Cloud Leap" } ]
+        "region": "EDLA - Opera Theater Roofs", "requires": []
     },
     {
         "address": 3613, "name": "ED (Living Area): East Building Rooftops",
-        "region": "EDLA - East Building Rooftops", "requires": [ { "item": "Mystic Nymph: Scout Mode" } ] // to lower rope
+        "region": "EDLA - East Building Rooftops Chest", "requires": []
     },
     {
         "address": 3614, "name": "ED (Living Area): Dusk Guardian Recording Device",

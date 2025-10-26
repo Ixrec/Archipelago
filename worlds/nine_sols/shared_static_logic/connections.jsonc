@@ -1271,23 +1271,32 @@
     { "from": "EDP - Upper Elevator", "to": "EDLA - Root Node & Lower Elevator", "requires": [] }, // one-way elevator
 
     // Empyrean Dist. (Living Area)
-    { "from": "EDLA - Root Node & Lower Elevator", "to": "EDLA - East Building Interior", "requires": [
+    { "from": "EDLA - Root Node & Lower Elevator", "to": "EDLA - East Building Interior Part 1", "requires": [
         { "item": "Cloud Leap" } // AND hacking 2 to activate the lift
-    ] },
-    // since East Building Interior has only one way in, which already requires CL + H2,
-    // this logic ignores the other CL and H2 checks that happen later in the building
-    { "from": "EDLA - East Building Interior", "to": "EDLA - Opera Theater", "requires": [] }, // one-way elevator
-    { "from": "EDLA - Opera Theater", "to": "EDLA - East Building Rooftops", "requires": [
-        { "item": "Cloud Leap" }, { "item": "Air Dash" } // AND WC
-    ] },
-    { "from": "EDLA - Opera Theater", "to": "EDLA - Opera Theater Right Roof", "requires": [ { "item": "Cloud Leap" } ] },
-    { "from": "EDLA - Opera Theater Right Roof", "to": "EDLA - East Building Rooftops", "requires": [] }, // fall
-    { "from": "EDLA - East Building Rooftops", "to": "EDLA - Tao Fruit", "requires": [
-        { "item": "Mystic Nymph: Scout Mode" },
+    ] }, // on logic_level: ledge_storage, T-dash setup left of node into wall slide all the way up the right side of EDLA
+    // single jump from high up this wall is plenty to reach EBI, or with more waiting EBR
+    //{ "from": "EDLA - Root Node & Lower Elevator", "to": "EDLA - East Building Rooftops", "requires": [] },
+    { "from": "EDLA - East Building Interior Part 1", "to": "EDLA - East Building Interior Part 2", "requires": [
         { "item": "Cloud Leap" }
+    ] }, // even LS is not enough because the final jump up to walking chest platform has nowhere to set up LS
+    // reaching the hack point for the next elevator requires CL or 1 LS getup, so we don't need a "part 3" region
+    { "from": "EDLA - East Building Interior Part 2", "to": "EDLA - Opera Theater", "requires": [] }, // one-way elevator
+    { "from": "EDLA - Opera Theater", "to": "EDLA - East Building Rooftops", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Wall Climb" }
+    ] }, // on logic_level: easy, SR AND CL AND AD lets you skip WC here // you'll always need CL for the rope at the end
+    { "from": "EDLA - Opera Theater", "to": "EDLA - Opera Theater Roofs", "requires": [
+        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
     ] },
+    { "from": "EDLA - Opera Theater Roofs", "to": "EDLA - East Building Rooftops", "requires": [] }, // fall
+    { "from": "EDLA - East Building Rooftops", "to": "EDLA - East Building Rooftops Chest", "requires": [
+        { "item": "Mystic Nymph: Scout Mode" } // to lower rope
+    ] }, // on logic_level: ledge_storage, CL AND LS getup
+    { "from": "EDLA - East Building Rooftops Chest", "to": "EDLA - Tao Fruit", "requires": [
+        { "item": "Cloud Leap" }
+    ] }, // on logic_level: ledge_storage, LS getup with T-dash setup, assuming you have nymph to get back up without LS, followed by SR OR AD
     { "from": "EDLA - Opera Theater", "to": "EDLA - Five Bells Room", "requires": [] }, // fall
     { "from": "EDLA - Five Bells Room", "to": "EDLA - Opera Theater", "requires": [ { "item": "Cloud Leap" } ] },
+    // the rightmost bell is *just* low enough to grab its rope with single jump, but we won't expect players to find that
     { "from": "EDLA - Five Bells Room", "to": "EDLA - Backer Room", "requires": [ { "item": "Charged Strike" } ] }, // to ring the bells
     { "from": "EDLA - Five Bells Room", "to": "EDLA - Left Exit", "requires": [] }, // fall
     { "from": "EDLA - Left Exit", "to": "EDLA - Five Bells Room", "requires": [ { "item": "Cloud Leap" } ] },

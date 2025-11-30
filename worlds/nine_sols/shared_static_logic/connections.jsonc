@@ -22,21 +22,35 @@
         // Then the arena happens to require exactly Grapple OR (AD OR T-Dash) OR CL, so no change there.
     ] } ] },
     // this assumes the elevator call button is enabled by the mod, since it's impassable otherwise
-    { "from": "AFE - Between Root Nodes", "to": "AFE - Upper Root Node", "requires": [ { "anyOf": [
-        { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" } // to reach the arena's upper enemy
-    ] } ] }, // on logic_level: easy, this requires: [] because you can T-dash
-    { "from": "AFE - Between Root Nodes", "to": "AFE - Upper Right Pagoda", "requires": [ { "anyOf": [
-        { "item": "Grapple" },
-        [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ],
-        { "item": "Cloud Leap" }
-    ] } ] }, // on logic_level: easy, AD is replaced by T-dash
+    {
+        "from": "AFE - Between Root Nodes", "to": "AFE - Upper Root Node",
+        "requires": [ { "anyOf": [
+            { "item": "Grapple" }, { "item": "Air Dash" }, { "item": "Cloud Leap" } // to reach the arena's upper enemy
+        ] } ],
+        "medium_requires": [] // T-dash
+    },
+    {
+        "from": "AFE - Between Root Nodes", "to": "AFE - Upper Right Pagoda",
+        "requires": [ { "anyOf": [
+            { "item": "Grapple" },
+            [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ],
+            { "item": "Cloud Leap" }
+        ] } ],
+        "medium_requires": [ { "anyOf": [
+            { "item": "Grapple" },
+            { "item": "Ledge Grab" }, // AD is replaced by T-dash
+            { "item": "Cloud Leap" }
+        ] } ]
+    },
     // moving boxes requires nothing to traverse (though the lower level of it is a trap without WC/LG/AD/CL),
     // which is why "Between Root Nodes" gets to remain a single region
     { "from": "AFE - Between Root Nodes", "to": "AFE - Lower Root Node", "requires": [] },
     // this assumes the elevator call button is enabled by the mod, since it's impassable otherwise
-    { "from": "AFE - Lower Root Node", "to": "AFE - Between Root Nodes", "requires": [
-        { "item": "Grapple" }
-    ] }, // on logic_level: ledge_storage, CL + ledge storage getup
+    {
+        "from": "AFE - Lower Root Node", "to": "AFE - Between Root Nodes",
+        "requires": [ { "item": "Grapple" } ],
+        "ls_requires": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] // CL + LS vault
+    },
     { "from": "AFE - Lower Root Node", "to": "AFE - Baichang Arena", "requires": [ { "anyOf": [
         { "item": "Wall Climb" },
         [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ]
@@ -46,42 +60,75 @@
     { "from": "AFE - Baichang Arena", "to": "AFE - Lower Root Node", "requires": [
         { "item": "Cloud Leap" }
     ] },
-    { "from": "AFE - Baichang Arena", "to": "AFE - Below Root Node", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" },
-        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
-    ] } ] }, // on logic_level: easy, bow hover OR (swift runner AND (AD OR CL)) OR TCK // do we have a sand source for bow hover?
-    // on logic_level: ledge_storage, LG AND CL into LS hover
-    { "from": "AFE - Below Root Node", "to": "AFE - Baichang Arena", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" },
-        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
-    ] } ] }, // on logic_level: easy, bow hover OR ^ // SR doesn't help this way because the ropes are only on one side
-    // on logic_level: ledge_storage, LG AND T-dash into LS hover
-    { "from": "AFE - Below Root Node", "to": "AFE - Statue Chest", "requires": [ { "anyOf": [
-        { "item": "Grapple" },
-        { "item": "Cloud Leap" }
-    ] } ] }, // on logic_level: easy, bow hover OR (T-dash + AD) from the moving box
-    // on logic_level: ledge_storage, LG AND T-dash into LS hover from the moving box
-    { "from": "AFE - Statue Chest", "to": "AFE - Lower Root Node", "requires": [
-        { "item": "Grapple" }
-    ] }, // *maybe* on logic_level: ledge_storage, CL AND LG into LS getup can replace grapple,
-    // but you have to carry the LS from another area, i.e. you must not have gotten here using LS hover
-    { "from": "AFE - Below Root Node", "to": "AFE - Lower Left Exit", "requires": [ { "anyOf": [
-        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ],
-        [ { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" } ],
-        [
-            { "item": "Grapple" },
-            { "anyOf": [ { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+    {
+        "from": "AFE - Baichang Arena", "to": "AFE - Below Root Node",
+        "requires": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" },
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
+        ] } ],
+        "medium_requires": [ { "anyOf": [
+            { "item": "Trick - Bow Hover" },
+            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } // Swift Runner replaces one of AD or CL
+            // TODO: Swift Runner as an item
+        ] } ],
+        "ls_requires": [
+            { "item": "Ledge Grab" }, // LS parry hover
+            { "item": "Cloud Leap" } // CL is the only way to set up LS here
         ]
-    ] } ] },
-    // on logic_level: easy, bow hover OR (T-dash AND (AD OR CL))
-    // on logic_level: ledge_storage, LG AND CL into LS hover
-    // with precise jumps, TCK alone is enough
-    { "from": "AFE - Lower Left Exit", "to": "AFE - Below Root Node", "requires": [ { "anyOf": [
-        { "item": "Tai-Chi Kick" },
-        [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
-    ] } ] },
-    // on logic_level: easy, bow hover OR (T-dash AND (AD OR CL))
-    // no access to LS from this side
+    },
+    {
+        "from": "AFE - Below Root Node", "to": "AFE - Baichang Arena",
+        "requires": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" },
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
+        ] } ],
+        "medium_requires": [ { "item": "Trick - Bow Hover" } ],
+        "ls_requires": [ { "item": "Ledge Grab" } ] // LS parry hover, T-dash setup
+    },
+    {
+        "from": "AFE - Below Root Node", "to": "AFE - Statue Chest",
+        "requires": [ { "anyOf": [ // climb up from the ground as intended
+            { "item": "Grapple" },
+            { "item": "Cloud Leap" }
+        ] } ],
+        "medium_requires": [ { "anyOf": [ // use the moving box as our starting point instead
+            { "item": "Trick - Bow Hover" },
+            { "item": "Air Dash" } // and T-dash
+        ] } ],
+        "ls_requires": [ { "item": "Ledge Grab" } ] // LS parry hover from the moving box, T-dash setup
+    },
+    {
+        "from": "AFE - Statue Chest", "to": "AFE - Lower Root Node",
+        "requires": [ { "item": "Grapple" } ],
+        "ls_requires": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] // carry LS from the moving box
+    },
+    {
+        "from": "AFE - Below Root Node", "to": "AFE - Lower Left Exit",
+        "requires": [ { "anyOf": [
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ],
+            [ { "item": "Tai-Chi Kick" }, { "item": "Cloud Leap" } ],
+            [
+                { "item": "Grapple" },
+                { "anyOf": [ { "item": "Tai-Chi Kick" }, { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+            ]
+        ] } ],
+        "medium_requires": [ { "anyOf": [
+            { "item": "Trick - Bow Hover" },
+            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } // and T-dash
+        ] } ],
+        "ls_requires": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] // LS parry hover
+    }, // with precise jumps, TCK alone is enough
+    {
+        "from": "AFE - Lower Left Exit", "to": "AFE - Below Root Node",
+        "requires": [ { "anyOf": [
+            { "item": "Tai-Chi Kick" },
+            [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ]
+        ] } ],
+        "medium_requires": [ { "anyOf": [
+            { "item": "Trick - Bow Hover" },
+            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } // and T-dash
+        ] } ]
+    }, // no access to LS from this side
 
     { "from": "AFE - Baichang Arena", "to": "CH - Center", "requires": [] }, // elevator
 

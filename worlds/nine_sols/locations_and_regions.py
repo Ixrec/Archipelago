@@ -6,7 +6,7 @@ from typing import Any, NamedTuple
 from BaseClasses import CollectionState, Location, Region
 from Utils import restricted_loads
 from worlds.generic.Rules import set_rule
-from .options import FirstRootNode, NineSolsGameOptions
+from .options import FirstRootNode, NineSolsGameOptions, LogicDifficulty
 from .should_generate import should_generate
 
 if typing.TYPE_CHECKING:
@@ -191,7 +191,14 @@ def create_regions(world: "NineSolsWorld") -> None:
                     {"item": "Event - Lady Ethereal Soulscape Unlocked"},
                     {"item": "Air Dash"}
                 ]
-            rule = None if len(requires) == 0 else lambda state, r=requires: eval_rule(state, p, options, r)  # noqa
+            rule = None
+            if len(requires) > 0:
+                all_requirements = requires
+                if "medium_requires" in connection and options.logic_difficulty >= LogicDifficulty.option_medium:
+                    all_requirements = [{"anyOf": [all_requirements, connection["medium_requires"]]}]
+                if "ls_requires" in connection and options.logic_difficulty == LogicDifficulty.option_ledge_storage:
+                    all_requirements = [{"anyOf": [all_requirements, connection["ls_requires"]]}]
+                rule = lambda state, r=all_requirements: eval_rule(state, p, options, r)  # noqa
             entrance = region.connect(mw.get_region(to, p), None, rule)
             indirect_region_names = regions_referenced_by_rule(requires)
             for indirect_region_name in indirect_region_names:

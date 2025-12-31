@@ -282,6 +282,19 @@ class EnableForgottenCastawaysMod(Toggle):
     display_name = "Enable Forgotten Castaways Story Mod"
 
 
+class EnableEchoHikeMod(Toggle):
+    """
+    Incorporates Echo Hike story mod content into the randomizer with an additional 1 item and 3 locations.
+    If logsanity is enabled, that will add another 8 locations, for a total of 11 EH locations.
+    The main appeal of this mod is the unique "Threader" item, which is a grapple beam/hook that works on any
+    surface in the game.
+    When this is enabled, using the Threader will be in-logic for multiple base game, DLC and story mod
+    locations outside of Echo Hike itself, and receiving the "Threader" AP item will spawn Threaders
+    on all the base game, DLC and story mod planets/areas where you might need one.
+    """
+    display_name = "Enable Echo Hike Story Mod"
+
+
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -308,6 +321,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     enable_hn2_mod: EnableHearthsNeighbor2MagistariumMod
     enable_fq_mod: EnableFretsQuestMod
     enable_fc_mod: EnableForgottenCastawaysMod
+    enable_eh_mod: EnableEchoHikeMod
 
 
 def get_creation_settings(options: OuterWildsGameOptions) -> set[str]:

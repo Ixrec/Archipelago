@@ -194,7 +194,8 @@ class TestDLCOnlyWithStoryMods(OuterWildsTestBase):
         "enable_ac_mod": 1,
         "enable_hn2_mod": 1,
         "enable_fq_mod": 1,
-        "enable_fc_mod": 1
+        "enable_fc_mod": 1,
+        "enable_eh_mod": 1,
     }
 
     def test_default(self):

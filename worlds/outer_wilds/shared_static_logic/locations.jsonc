@@ -231,11 +231,7 @@
     },
     {
         "category": "base", "address": 1085038277, "name": "GD: Complete the Tower (Text Wall)",
-        "region": "Space", "requires": [
-            { "item": "Translator (Giant's Deep)" },
-            { "item": "Imaging Rule" },
-            { "item": "Spacesuit" }
-        ]
+        "region": "GD Tower End", "requires": []
     },
     {
         "category": "base", "address": 1085038278, "name": "GD: Enter the Ocean Depths",
@@ -876,11 +872,11 @@
     },
     {
         "category": "base", "logsanity": true, "address": 1085039118, "name": "GD Ship Log: Tower 3 - Rule of Imaging",
-        "region": "Space", "requires": [ { "item": "Translator (Giant's Deep)" }, { "item": "Imaging Rule" }, { "item": "Spacesuit" } ]
+        "region": "GD Tower End", "requires": []
     },
     {
         "category": "base", "logsanity": true, "address": 1085039119, "name": "GD Ship Log: Tower 4 - Other Shards",
-        "region": "Space", "requires": [ { "item": "Translator (Giant's Deep)" }, { "item": "Imaging Rule" }, { "item": "Spacesuit" } ]
+        "region": "GD Tower End", "requires": []
     },
     {
         "category": "base", "logsanity": true, "address": 1085039120, "name": "GD Ship Log: OPC 1 - Entered",
@@ -3819,5 +3815,63 @@
     {
         "category": "fc", "logsanity": true, "address": 1085047217, "name": "FC Ship Log: DNP 7 - Friend",
         "region": "Bramble's Finale", "requires": []
-    }
+    },
+
+// Echo Hike Story Mod Default Locations
+// These location ids start at 1085048000 (i.e. rounding up to the next thousand),
+// to make it slightly easier to change locations in the future.
+    { // EH_ENTER
+        "category": "eh", "address": 1085048000, "name": "EH: Enter The Structure",
+        "region": "Echo Hike", "requires": [ ]
+    },
+
+    { // EH_ENTER
+        "category": "eh", "address": 1085048001, "name": "EH: Light a Beacon",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    },
+
+    { // EH_PHOSPHORS
+        "category": "eh", "address": 1085048002, "name": "EH: Meet The Phosphors",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    },
+
+    { // SLF__EH_ENTRANCE_X1
+        "category": "eh", "logsanity": true, "address": 1085048100, "name": "EH Ship Log: Sunken Entrance 1 - Chasm",
+        "region": "Echo Hike", "requires": [ ]
+    },
+
+    { // SLF__EH_ENTRANCE_X2
+        "category": "eh", "logsanity": true, "address": 1085048101, "name": "EH Ship Log: Sunken Entrance 2 - Device",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    },
+    
+    { // SLF__EH_CAVERN_X1
+        "category": "eh", "logsanity": true, "address": 1085048102, "name": "EH Ship Log: Frozen Cavern 1 - Entrance",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    },
+    
+    { // SLF__EH_CAVERN_X2
+        "category": "eh", "logsanity": true, "address": 1085048103, "name": "EH Ship Log: Frozen Cavern 2 - Inactive Beacons",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    },
+    
+    { // SLF__EH_CAVERN_X3
+        "category": "eh", "logsanity": true, "address": 1085048104, "name": "EH Ship Log: Frozen Cavern 3 - Activating Beacons",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    },
+    
+    { // SLF__EH_PHOSPHORS_X1
+        "category": "eh", "logsanity": true, "address": 1085048105, "name": "EH Ship Log: Phosphor Shoal 1 - Phosphors",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    },
+    
+    { // SLF__EH_PHOSPHORS_X2
+        "category": "eh", "logsanity": true, "address": 1085048106, "name": "EH Ship Log: Phosphor Shoal 2 - Planet",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    },
+    
+    { // SLF__EH_PHOSPHORS_X3
+        "category": "eh", "logsanity": true, "address": 1085048107, "name": "EH Ship Log: Phosphor Shoal 3 - Thanks",
+        "region": "Echo Hike", "requires": [ { "item": "Threader" } ]
+    }   
 ]

@@ -120,5 +120,7 @@
     { "category": "fc", "code": 1734473775, "name": "Gravitational Anomaly Signal", "type": "progression" },
     { "category": "fc", "code": 1734473776, "name": "Geothermal Activity Signal", "type": "progression" },
     { "category": "fc", "code": 1734473777, "name": "Echolocation Tones Frequency", "type": "progression" },
-    { "category": "fc", "code": 1734473778, "name": "Hot Shard Signal", "type": "progression" }
+    { "category": "fc", "code": 1734473778, "name": "Hot Shard Signal", "type": "progression" },
+
+    { "category": "eh", "code": 1734473779, "name": "Threader", "type": "progression" }
 ]

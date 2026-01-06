@@ -72,11 +72,11 @@ class UpgradeCounts(OptionCounter):
     """Choose the number of upgrades shuffled into the item pool.
     The default in-game settings start you with 50% of each, bringing you to 200% once all upgrades are acquired.
     You'll probably want to adjust them if you change these too drastically."""
-    schema = Schema({
-        Optional("Oxygen Capacity Upgrade"): lambda n: n >= 0,
-        Optional("Fuel Capacity Upgrade"): lambda n: n >= 0,
-        Optional("Boost Duration Upgrade"): lambda n: n >= 0,
-    })
+    valid_keys = {
+        "Oxygen Capacity Upgrade",
+        "Fuel Capacity Upgrade",
+        "Boost Duration Upgrade",
+    }
     display_name = "Upgrade Counts"
     default = {
         "Oxygen Capacity Upgrade": 3,

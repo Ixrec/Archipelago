@@ -193,6 +193,7 @@ class TestUpgradeCounts(OuterWildsTestBase):
 class TestZeroUpgradeCounts(OuterWildsTestBase):
     options = {
         "upgrade_counts": {
+            "invalid key, this test should fail": 0,
             "Oxygen Capacity Upgrade": 0,
             "Fuel Capacity Upgrade": 0,
             "Boost Duration Upgrade": 0,

@@ -157,6 +157,9 @@ def create_regions(world: "OuterWildsWorld") -> None:
         menu.add_exits(["Giant's Deep"])
     elif options.spawn == Spawn.option_stranger:
         menu.add_exits(["Stranger Sunside Hangar"])
+    elif options.spawn == Spawn.option_deep_bramble:
+        menu.add_exits(["Deep Bramble"])
+        mw.get_entrance("Menu -> Space", p).access_rule = lambda state: state.has_all(["Launch Codes", "Deep Bramble Coordinates"], p)
 
     if world.warps == 'vanilla':
         def has_codes(state): return state.has("Nomai Warp Codes", p)
@@ -213,7 +216,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
             r2 = mw.get_region(region_name_2, p)
             r1.connect(r2, "%s->%s warp" % (region_name_1, region_name_2), rule)
             r2.connect(r1, "%s->%s warp" % (region_name_2, region_name_1), rule)
-        
+
         # To access the Black Hole Forge without the Launch Codes, there needs to be
         # a path from Brittle Hollow proper to the Hanging City Ceiling. This path
         # exists if the BHF warp is connected to one of the other two warps accessible

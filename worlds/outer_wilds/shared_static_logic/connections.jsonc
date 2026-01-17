@@ -328,5 +328,61 @@
     ] },
     { "category": "fq", "from": "Lost Strings", "to": "Banjo Galaxy", "requires": [
         { "item": "Launch Codes" }
+    ] },
+
+    // Warping to Deep Bramble only requires a Black Hole Core, and High Energy Lab access is guaranteed if you have access to the Vessel
+    { "category": "fc", "from": "The Vessel", "to": "Deep Bramble", "requires": [] },
+    // Space access already requires Launch Codes
+    { "category": "fc", "from": "Space", "to": "Deep Bramble", "requires": [ { "item":  "Deep Bramble Coordinates" } ] },
+    { "category": "fc", "from": "Deep Bramble", "to": "Lover's Rock", "requires": [
+        { "item": "Signalscope" },
+        { "item": "Nomai Trailmarkers Frequency" }
+    ] },
+    { "category": "fc", "from": "Deep Bramble", "to": "Folly's Exterior", "requires": [
+        { "item": "Signalscope" },
+        { "item": "Gravitational Anomaly Signal" }
+    ] },
+    { "category": "fc", "from": "Deep Bramble", "to": "Graviton's Folly", "requires": [
+        { "item": "Launch Codes" },
+        { "item": "Signalscope" },
+        { "item": "Gravitational Anomaly Signal" }
+    ] },
+    { "category": "fc", "from": "Graviton's Folly", "to": "Folly's Core", "requires": [
+        { "item": "Translator (Deep Bramble)" },
+        { "item": "Expanded Dictionary" },
+        { "item": "Spacesuit" }
+    ] },
+    { "category": "fc", "from": "Deep Bramble", "to": "Shattered Hearth", "requires": [
+        { "item": "Launch Codes" },
+        { "item": "Signalscope" },
+        { "anyOf": [ { "item": "Geothermal Activity Signal" }, { "item": "Echolocation Tones Frequency" }, [ { "item": "Quantum Fluctuations Frequency" }, { "item": "Hot Shard Signal" } ] ] }
+    ] },
+    { "category": "fc", "from": "Deep Bramble", "to": "Dangerous Node", "requires": [
+        { "item": "Launch Codes" },
+        { "item": "Signalscope" },
+        { "item": "Echolocation Tones Frequency" }
+    ] },
+
+    { "category": "fc", "from": "Shattered Hearth", "to": "Magma's Recursion", "requires": [ { "item":  "Thermal Insulation" }, { "item": "Spacesuit" } ] },
+    { "category": "fc", "from": "Magma's Recursion", "to": "Bramble's Heart", "requires": [ { "item":  "Probability Rule" }, { "item": "Entanglement Rule" } ] },
+    { "category": "fc", "from": "Magma's Recursion", "to": "Eye Signal Lab", "requires": [
+        { "region": "Lover's Rock" },
+        { "item": "Crystal Repair Manual" }
+    ] },
+
+    { "category": "fc", "from": "Shattered Hearth", "to": "Enzyme Lab", "requires": [ { "item":  "Taming Techniques" }, { "item":  "Spacesuit" } ] },
+    { "category": "fc", "from": "Shattered Hearth", "to": "Translation Lab", "requires": [ { "item":  "Scout" } ] },
+    { "category": "fc", "from": "Shattered Hearth", "to": "Venomous Reject", "requires": [
+        { "item": "Scout" },
+        { "item": "Taming Techniques" },
+        { "item": "Silent Running Mode" },
+        { "item": "Spacesuit" }
+    ] },
+
+    { "category": "fc", "from": "Bramble's Heart", "to": "Bramble's Finale", "requires": [
+        { "region": "Venomous Reject" },
+        { "region": "Dangerous Node" },
+        { "item": "Translator (Deep Bramble)" },
+        { "item": "Expanded Dictionary" }
     ] }
 ]

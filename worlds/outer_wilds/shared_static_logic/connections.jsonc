@@ -333,7 +333,7 @@
     // Warping to Deep Bramble only requires a Black Hole Core, and High Energy Lab access is guaranteed if you have access to the Vessel
     { "category": "fc", "from": "The Vessel", "to": "Deep Bramble", "requires": [] },
     // Space access already requires Launch Codes
-    { "category": "fc", "from": "Space", "to": "Deep Bramble", "requires": [ { "item":  "Deep Bramble Coordinates" } ] },
+    { "category": "fc", "from": "Space", "to": "Deep Bramble via Warp Drive", "requires": [ { "item":  "Deep Bramble Coordinates" } ] },
     { "category": "fc", "from": "Deep Bramble", "to": "Lover's Rock", "requires": [
         { "item": "Signalscope" },
         { "item": "Nomai Trailmarkers Frequency" }
@@ -342,8 +342,7 @@
         { "item": "Signalscope" },
         { "item": "Gravitational Anomaly Signal" }
     ] },
-    { "category": "fc", "from": "Deep Bramble", "to": "Graviton's Folly", "requires": [
-        { "item": "Launch Codes" },
+    { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Graviton's Folly", "requires": [
         { "item": "Signalscope" },
         { "item": "Gravitational Anomaly Signal" }
     ] },
@@ -352,13 +351,11 @@
         { "item": "Expanded Dictionary" },
         { "item": "Spacesuit" }
     ] },
-    { "category": "fc", "from": "Deep Bramble", "to": "Shattered Hearth", "requires": [
-        { "item": "Launch Codes" },
+    { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Shattered Hearth", "requires": [
         { "item": "Signalscope" },
         { "anyOf": [ { "item": "Geothermal Activity Signal" }, { "item": "Echolocation Tones Frequency" }, [ { "item": "Quantum Fluctuations Frequency" }, { "item": "Hot Shard Signal" } ] ] }
     ] },
-    { "category": "fc", "from": "Deep Bramble", "to": "Dangerous Node", "requires": [
-        { "item": "Launch Codes" },
+    { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Dangerous Node", "requires": [
         { "item": "Signalscope" },
         { "item": "Echolocation Tones Frequency" }
     ] },

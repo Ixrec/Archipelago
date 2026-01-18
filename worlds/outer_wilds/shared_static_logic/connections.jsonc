@@ -353,7 +353,11 @@
     ] },
     { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Shattered Hearth", "requires": [
         { "item": "Signalscope" },
-        { "anyOf": [ { "item": "Geothermal Activity Signal" }, { "item": "Echolocation Tones Frequency" }, [ { "item": "Quantum Fluctuations Frequency" }, { "item": "Hot Shard Signal" } ] ] }
+        { "anyOf": [
+            { "item": "Geothermal Activity Signal" },
+            { "item": "Echolocation Tones Frequency" },
+            { "allOf": [ { "item": "Quantum Fluctuations Frequency" }, { "item": "Hot Shard Signal" } ] }
+        ] }
     ] },
     { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Dangerous Node", "requires": [
         { "item": "Signalscope" },

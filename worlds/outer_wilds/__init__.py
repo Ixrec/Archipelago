@@ -39,12 +39,7 @@ class OuterWildsWorld(World):
     rotation_axes = 'vanilla'
     warps = 'vanilla'
 
-    # this is how we tell the Universal Tracker we want to use re_gen_passthrough
-    @staticmethod
-    def interpret_slot_data(slot_data: dict[str, Any]) -> dict[str, Any]:
-        return slot_data
-
-    # and this is how we tell Universal Tracker we don't need the yaml
+    # this is how we tell Universal Tracker we don't need the yaml
     ut_can_gen_without_yaml = True
 
     def generate_early(self) -> None:

@@ -212,7 +212,7 @@ class OuterWildsWorld(World):
     def fill_slot_data(self):
         slot_data = self.options.as_dict(
             "death_link",                   # a client/mod feature
-            "goal", "spawn",                             # affects tons of stuff, but also a client/mod faeture
+            "goal", "required_friends", "spawn",         # affects tons of stuff, but also a client/mod faeture
             "logsanity", "enable_eote_dlc", "dlc_only",  # changes AP locations, needed by in-game tracker
             "enable_hn1_mod", "enable_hn2_mod",
             "enable_outsider_mod", "enable_ac_mod", "enable_fq_mod", "enable_fc_mod", "enable_eh_mod",

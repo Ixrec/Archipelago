@@ -14,6 +14,7 @@ class Goal(Choice):
     Song of Six:          Reach the Eye after meeting either Solanum or the Prisoner
     Song of Seven:        Reach the Eye after meeting both Solanum and the Prisoner
     Echoes of the Eye:    Meet the Prisoner and complete the DLC
+    Song of the Universe: Reach the Eye after meeting the specified number of friends
     """
     display_name = "Goal"
     option_song_of_five = 0

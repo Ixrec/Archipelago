@@ -18,8 +18,8 @@ class TestDLC(OuterWildsTestBase):
         # With DLC enabled there are more victory events, but "only 'Song of' goals need Coordinates" remains true
         self.assertAccessDependency(
             [
-                "Victory - Song of Five", "Victory - Song of the Nomai", "Victory - Song of the Stranger",
-                "Victory - Song of Six", "Victory - Song of Seven"
+                "Victory - Song of Five", "Victory - Song of the Nomai", "Victory - Song of the Universe",
+                "Victory - Song of the Stranger", "Victory - Song of Six", "Victory - Song of Seven"
             ],
             [["Coordinates"]]
         )

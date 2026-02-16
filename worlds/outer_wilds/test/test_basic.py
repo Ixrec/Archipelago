@@ -33,9 +33,9 @@ class TestDefaultWorld(OuterWildsTestBase):
             "Silent Running Mode", "Scout"
         ])
 
-        # On default options, these are the only two goals, and the only locations requiring coordinates
+        # On default options, these are the only three goals, and the only locations requiring coordinates
         self.assertAccessDependency(
-            ["Victory - Song of Five", "Victory - Song of the Nomai"],
+            ["Victory - Song of Five", "Victory - Song of the Nomai", "Victory - Song of the Universe"],
             [["Coordinates"]]
         )
 
@@ -45,6 +45,8 @@ class TestDefaultWorld(OuterWildsTestBase):
 
         self.assertRequiresAllOf("Victory - Song of the Nomai",
                                  self.song_of_five_required_items + self.song_of_the_nomai_additional_required_items)
+
+        self.assertRequiresAllOf("Victory - Song of the Universe", self.song_of_five_required_items)
 
 
 class TestSplitTranslator(OuterWildsTestBase):

@@ -83,20 +83,20 @@ class OuterWildsWorld(World):
             if hasattr(self.multiworld, "re_gen_passthrough"):
                 if "Outer Wilds" in self.multiworld.re_gen_passthrough:
                     slot_data = self.multiworld.re_gen_passthrough["Outer Wilds"]
-                    self.warps = slot_data["warps"]
-                    self.options.goal.value = slot_data["goal"]
-                    self.options.spawn = slot_data["spawn"]
-                    self.options.logsanity.value = slot_data["logsanity"]
-                    self.options.enable_eote_dlc.value = slot_data["enable_eote_dlc"]
-                    self.options.dlc_only.value = slot_data["dlc_only"]
-                    self.options.enable_hn1_mod.value = slot_data["enable_hn1_mod"]
-                    self.options.enable_hn2_mod.value = slot_data["enable_hn2_mod"]
-                    self.options.enable_outsider_mod.value = slot_data["enable_outsider_mod"]
-                    self.options.enable_ac_mod.value = slot_data["enable_ac_mod"]
-                    self.options.enable_fq_mod.value = slot_data["enable_fq_mod"]
-                    self.options.enable_fc_mod.value = slot_data["enable_fc_mod"]
-                    self.options.enable_eh_mod.value = slot_data["enable_eh_mod"]
-                    self.options.split_translator.value = slot_data["split_translator"]
+                    self.warps = slot_data["warps"] # is always set
+                    self.options.goal.value = slot_data.get("goal", 0)
+                    self.options.spawn.value = slot_data.get("spawn", 0)
+                    self.options.logsanity.value = slot_data.get("logsanity", 0)
+                    self.options.enable_eote_dlc.value = slot_data.get("enable_eote_dlc", 0)
+                    self.options.dlc_only.value = slot_data.get("dlc_only", 0)
+                    self.options.enable_hn1_mod.value = slot_data.get("enable_hn1_mod", 0)
+                    self.options.enable_hn2_mod.value = slot_data.get("enable_hn2_mod", 0)
+                    self.options.enable_outsider_mod.value = slot_data.get("enable_outsider_mod", 0)
+                    self.options.enable_ac_mod.value = slot_data.get("enable_ac_mod", 0)
+                    self.options.enable_fq_mod.value = slot_data.get("enable_fq_mod", 0)
+                    self.options.enable_fc_mod.value = slot_data.get("enable_fc_mod", 0)
+                    self.options.enable_eh_mod.value = slot_data.get("enable_eh_mod", 0)
+                    self.options.split_translator.value = slot_data.get("split_translator", 0)
             return
 
         # generate game-specific randomizations separate from AP items/locations

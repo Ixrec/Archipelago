@@ -234,3 +234,32 @@ class RegressionTestACAndWarpRando(OuterWildsTestBase):
 
     def world_setup(self, *args, **kwargs):
         super().world_setup(self.seed)
+
+
+class TestSongOfTheUniverseMinContentZeroFriends(OuterWildsTestBase):
+    options = {
+        "song_of_the_universe": 1,
+        "required_friends": 0,
+    }
+
+
+class TestSongOfTheUniverseMinContentMaxFriends(OuterWildsTestBase):
+    options = {
+        "song_of_the_universe": 1,
+        "required_friends": 1,
+    }
+
+
+class TestSongOfTheUniverseMaxContentMaxFriends(OuterWildsTestBase):
+    options = {
+        "song_of_the_universe": 1,
+        "required_friends": 9,
+        "enable_eote_dlc": 1,
+        "enable_hn1_mod": 1,
+        "enable_outsider_mod": 1,
+        "enable_ac_mod": 1,
+        "enable_hn2_mod": 1,
+        "enable_fq_mod": 1,
+        "enable_fc_mod": 1,
+        "enable_eh_mod": 1,
+    }

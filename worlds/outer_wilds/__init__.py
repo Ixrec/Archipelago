@@ -3,7 +3,7 @@ import pkgutil
 from typing import Any, TextIO
 
 from BaseClasses import Tutorial
-from Options import OptionError
+from Options import OptionError, OptionGroup
 from worlds.AutoWorld import WebWorld, World
 from .coordinates import coordinate_description, generate_random_coordinates
 from .db_layout import generate_random_db_layout
@@ -25,6 +25,42 @@ class OuterWildsWebWorld(WebWorld):
             link="guide/en",
             authors=["Ixrec"]
         )
+    ]
+    option_groups = [
+        OptionGroup("Goal", [
+            Goal,
+            RequiredFriends,
+        ]),
+        OptionGroup("Spawn & General Progression", [
+            Spawn,
+            EarlyKeyItem,
+            RandomizeWarpPlatforms,
+            SplitTranslator,
+            Logsanity,
+            ShuffleSpacesuit,
+        ]),
+        OptionGroup("Content", [
+            EnableEchoesOfTheEyeDLC,
+            DLCOnly,
+            EnableAstralCodecMod,
+            EnableEchoHikeMod,
+            EnableForgottenCastawaysMod,
+            EnableFretsQuestMod,
+            EnableHearthsNeighborMod,
+            EnableHearthsNeighbor2MagistariumMod,
+            EnableTheOutsiderMod,
+        ]),
+        OptionGroup("Additional Non-Logical Randomizations", [
+            RandomizeCoordinates,
+            RandomizeOrbits,
+            RandomizeRotations,
+            RandomizeDarkBrambleLayout,
+        ]),
+        OptionGroup("(Non-Progression) Item Options", [
+            TrapChance,
+            TrapTypeWeights,
+            UpgradeCounts,
+        ]),
     ]
 
 

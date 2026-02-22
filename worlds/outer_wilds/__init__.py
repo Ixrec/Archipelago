@@ -72,6 +72,20 @@ class OuterWildsWorld(World):
             ]:
                 raise OptionError('Incompatible options: goal %s requires enable_eote_dlc to be true', self.options.goal)
 
+        if self.options.goal == Goal.option_song_of_the_universe:
+            max_friends = sum([
+                self.options.enable_eote_dlc,
+                self.options.enable_hn1_mod,
+                self.options.enable_outsider_mod,
+                self.options.enable_ac_mod,
+                self.options.enable_hn2_mod,
+                self.options.enable_fq_mod,
+                self.options.enable_fc_mod,
+                self.options.enable_eh_mod,
+            ], 1) # Solanum always counts
+            if self.options.required_friends > max_friends:
+                raise OptionError(f'Incompatible options: required_friends is ({self.options.required_friends}), but the other options only make {max_friends} available')
+
         if self.options.shuffle_spacesuit and self.options.spawn != Spawn.option_vanilla:
             raise OptionError('Incompatible options: shuffle_spacesuit is true and spawn is non-vanilla (%s)', self.options.spawn)
 
@@ -190,6 +204,7 @@ class OuterWildsWorld(World):
             'song_of_six':          "Victory - Song of Six",
             'song_of_seven':        "Victory - Song of Seven",
             'echoes_of_the_eye':    "Victory - Echoes of the Eye",
+            'song_of_the_universe': "Victory - Song of the Universe",
         }
 
         goal_item = option_key_to_item_name[self.options.goal.current_key]
@@ -198,7 +213,7 @@ class OuterWildsWorld(World):
     def fill_slot_data(self):
         slot_data = self.options.as_dict(
             "death_link",                   # a client/mod feature
-            "goal", "spawn",                             # affects tons of stuff, but also a client/mod faeture
+            "goal", "required_friends", "spawn",         # affects tons of stuff, but also a client/mod faeture
             "logsanity", "enable_eote_dlc", "dlc_only",  # changes AP locations, needed by in-game tracker
             "enable_hn1_mod", "enable_hn2_mod",
             "enable_outsider_mod", "enable_ac_mod", "enable_fq_mod", "enable_fc_mod", "enable_eh_mod",

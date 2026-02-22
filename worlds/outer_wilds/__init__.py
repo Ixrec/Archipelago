@@ -97,6 +97,7 @@ class OuterWildsWorld(World):
                     self.options.enable_fc_mod.value = slot_data.get("enable_fc_mod", 0)
                     self.options.enable_eh_mod.value = slot_data.get("enable_eh_mod", 0)
                     self.options.split_translator.value = slot_data.get("split_translator", 0)
+                    self.options.shuffle_spacesuit.value = slot_data.get("shuffle_spacesuit", 0)
             return
 
         # generate game-specific randomizations separate from AP items/locations
@@ -201,7 +202,8 @@ class OuterWildsWorld(World):
             "logsanity", "enable_eote_dlc", "dlc_only",  # changes AP locations, needed by in-game tracker
             "enable_hn1_mod", "enable_hn2_mod",
             "enable_outsider_mod", "enable_ac_mod", "enable_fq_mod", "enable_fc_mod", "enable_eh_mod",
-            "split_translator"                           # changes AP items, and how client/mod implements Translator
+            "split_translator",                          # changes AP items, and how client/mod implements Translator
+            "shuffle_spacesuit",
         )
         # more client/mod features, these are only in the apworld because we want them fixed per-slot/at gen time
         slot_data["eotu_coordinates"] = self.eotu_coordinates

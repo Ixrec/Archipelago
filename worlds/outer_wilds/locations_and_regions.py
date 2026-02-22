@@ -173,8 +173,10 @@ def create_regions(world: "OuterWildsWorld") -> None:
             ("FC: Conclusion", options.enable_fc_mod),                                   # Forgotten Castaways
             ("EH: Meet The Phosphors", options.enable_eh_mod),                           # Echo Hike
         ]
+        available_friend_locations = [location for (location, enabled) in friend_list if enabled]
+        required_count = options.required_friends
         add_rule(mw.get_location("Victory - Song of the Universe", p),
-                 lambda state: sum([enabled and state.can_reach_location(friend, p) for (friend, enabled) in friend_list]) >= options.required_friends)
+                 lambda state: sum([state.can_reach_location(friend, p) for friend in available_friend_locations]) >= required_count)
 
     if world.warps == 'vanilla':
         def has_codes(state): return state.has("Nomai Warp Codes", p)

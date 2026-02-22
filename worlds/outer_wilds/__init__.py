@@ -84,7 +84,7 @@ class OuterWildsWorld(World):
                 self.options.enable_eh_mod,
             ], 1) # Solanum always counts
             if self.options.required_friends > max_friends:
-                raise OptionError(f'Incompatible options: required_friends ({self.options.required_friends}) must not be greater than the number available ({max_friends})')
+                raise OptionError(f'Incompatible options: required_friends is ({self.options.required_friends}), but the other options only make {max_friends} available')
 
         if self.options.shuffle_spacesuit and self.options.spawn != Spawn.option_vanilla:
             raise OptionError('Incompatible options: shuffle_spacesuit is true and spawn is non-vanilla (%s)', self.options.spawn)

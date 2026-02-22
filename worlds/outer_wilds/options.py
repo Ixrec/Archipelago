@@ -27,7 +27,9 @@ class Goal(Choice):
 
 
 class RequiredFriends(Range):
-    """The number of "friends" you have to meet before reaching the Eye. Only used with the `song_of_the_universe` goal option.
+    """The number of "friends" you have to meet before reaching the Eye
+    (not counting the five Hearthian travelers who always join you there).
+    Only used with the `song_of_the_universe` goal option.
     Each enabled story mod adds a potential "friend," as does the DLC. Solanum is, of course, always enabled.
     
     For example, setting this to `0` is the same as the `song_of_five` goal.

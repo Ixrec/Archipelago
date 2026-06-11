@@ -161,6 +161,31 @@ location_name_groups = {
         "Cortex Center: Retrieve Chip From Shanhai 9000",
         "Nuwa's Vital Sanctum", "Chest After Fengs", "Nuwa's Tianhuo Flower",
         "Examine Ji", "Ji's Vital Sanctum", "Retrieve Chip From Shanhai 1000",
+    },
+    "Hackable Statue Rewards": {
+        "AF (Elevator): Hack Statue", "AF (Depths): Hack 3 Statues",
+        "CTH: Hack 2 Statues", "PR (East): Hack Statue", "PR (Central): Hack Statue", "PR (West): Hack Statue",
+        "LYR: Statue Hack Room Near Root Node",
+        "Factory (U): Hack 2 Statues", 
+        "IW: Hack 3 Statues",
+        "ED (Passages): Hack 2 Statues",
+    },
+    "Miniboss Rewards": {
+        "AF (Elevator): Defeat Red Tiger Elite: Baichang",
+        "AF (Depths): Defeat Celestial Spectre: Shangui (1st Reward)", "AF (Depths): Defeat Celestial Spectre: Shangui (2nd Reward)",
+        "Central Hall: Turrets and Double Axe Robot Room",
+        "CTH: Defeat Red Tiger Elite: Yanren", "PR (East): Defeat Celestial Guardian: Jiaoduan",
+        "Greenhouse: Defeat Celestial Spectre: Shuigui",
+        "Factory (U): Defeat Red Tiger Elite: Kuiyan", "Prison: Defeat Kanghui", # debating whether Kanghui should be included or not
+        "Factory (PA): Defeat Celestial Sentinel: Wuqiang", "AM: Defeat Celestial Warden: Yinyue", "Village: Defeat Red Tiger Elite: Lieguan",
+        "IW: Defeat Celestial Enforcer: Tieyan",
+        "GoS (West): Yin Jifu's Tianhuo Flower", "GoS (West): Guiguzi's Tianhuo Flower", "GoS (West): Luyan's Tianhuo Flower",
+        "GoS (West): Chest in Lear's Grave", # these should all be for defeating Cixing (I think that's their name) in GoS (West)
+        "ED (Passages): Defeat The Great Miner: Tianshou",
+    },
+    "Lear's Grave": {
+        "GoS (West): Yin Jifu's Tianhuo Flower", "GoS (West): Guiguzi's Tianhuo Flower", "GoS (West): Luyan's Tianhuo Flower",
+        "GoS (West): Chest in Lear's Grave",
     }
 }
 

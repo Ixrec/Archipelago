@@ -186,6 +186,25 @@ location_name_groups = {
     "Lear's Grave": {
         "GoS (West): Yin Jifu's Tianhuo Flower", "GoS (West): Guiguzi's Tianhuo Flower", "GoS (West): Luyan's Tianhuo Flower",
         "GoS (West): Chest in Lear's Grave",
+    },
+    "Database Locations": {
+        "AF (Monitoring): Examine Apeman Surveillance", 
+        "Central Hall: Examine Council Sign", "Central Hall: Examine Launch Memorial", "Central Hall: Examine Council Tenets",
+        "CTH: Examine Panel by Root Node", "PR (Central): Examine Energy Meter", "Examine Radiant Pagoda Control Panel",
+        "PR (West): Dusk Guardian Recording Device",
+        "LYR: Examine Stele", "Greenhouse: Examine Water Report", "Greenhouse: Examine Mutated Crops",
+        "W&OS: Dusk Guardian Recording Device", "W&OS: Examine Pipeline Panel", "Yinglong Canal: Examine Farmland Markings",
+        "Factory (GH): Break the Hammers", "Factory (GH): Examine Furnace Monitor",
+        "Factory (GH): Recording Device in Platform Puzzle Room", "Factory (U): Examine Evacuation Notice",
+        "Prison: Examine Scroll in Lower Right Cell", "Prison: Examine Scroll in Upper Left Cell",
+        "Factory (PA): Examine Production Station", "Factory (PA): Examine Pharmacy Panel", "Examine Sphere Before Jiequan",
+        "UC: Examine Stone Inscription", "UC: Examine Note", "UC: Examine Scroll", "Galactic Dock: Examine Sign",
+        "OW: Examine Warehouse Database", "IW: Dusk Guardian Recording Device", "BR: Examine Console", "BR: Examine Vault Scroll",
+        "GoS (Entry): Examine Painting", "GoS (Entry): Examine Coffin", "GoS (East): Examine Mural in Yin Jifu's Tomb",
+        "GoS (East): Examine Stone Carvings", "GoS (East): Examine Mural in Guiguzi's Tomb", "GoS (West): Examine Mural in Luyan's Tomb",
+        "Sky Tower: Examine Stowaway's Belongings", "ED (Passages): Examine Water Tower", "ED (Living Area): Examine Bulletin Board",
+        "ED (Living Area): Dusk Guardian Recording Device", "ED (Sanctum): Examine Monitoring Panel",
+        "TRC: Dusk Guardian Recording Device", "TRC: Examine Dusk Guardian HQ Screen"
     }
 }
 

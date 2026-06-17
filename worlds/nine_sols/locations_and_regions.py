@@ -173,7 +173,6 @@ location_name_groups = {
     "Miniboss Rewards": {
         "AF (Elevator): Defeat Red Tiger Elite: Baichang",
         "AF (Depths): Defeat Celestial Spectre: Shangui (1st Reward)", "AF (Depths): Defeat Celestial Spectre: Shangui (2nd Reward)",
-        "Central Hall: Turrets and Double Axe Robot Room",
         "CTH: Defeat Red Tiger Elite: Yanren", "PR (East): Defeat Celestial Guardian: Jiaoduan",
         "Greenhouse: Defeat Celestial Spectre: Shuigui",
         "Factory (U): Defeat Red Tiger Elite: Kuiyan", "Factory (PA): Defeat Celestial Sentinel: Wuqiang", 

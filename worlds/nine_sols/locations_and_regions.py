@@ -204,7 +204,18 @@ location_name_groups = {
         "GoS (East): Examine Stone Carvings", "GoS (East): Examine Mural in Guiguzi's Tomb", "GoS (West): Examine Mural in Luyan's Tomb",
         "Sky Tower: Examine Stowaway's Belongings", "ED (Passages): Examine Water Tower", "ED (Living Area): Examine Bulletin Board",
         "ED (Living Area): Dusk Guardian Recording Device", "ED (Sanctum): Examine Monitoring Panel",
-        "TRC: Dusk Guardian Recording Device", "TRC: Examine Dusk Guardian HQ Screen"
+        "TRC: Dusk Guardian Recording Device", "TRC: Examine Dusk Guardian HQ Screen",
+    },
+    "Shanhai 9000": {
+        "Cortex Center: Retrieve Chip From Shanhai 9000",
+        "PR (Central): Retrieve Chip From Shanhai 9000",
+        "Greenhouse: Retrieve Chip From Shanhai 9000",
+        "Factory (U): Find Broken Shanhai 9000",
+        "Factory (PA): Defeat Shanhai 9000",
+        "OW: Retrieve Chip From Shanhai 9000",
+        "Retrieve Chip From Shanhai 1000",
+        "ED (Living Area): Retrieve Chip From Shanhai 9000",
+        "TRC: Find Broken Shanhai 9000",
     }
 }
 

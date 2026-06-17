@@ -176,9 +176,9 @@ location_name_groups = {
         "Central Hall: Turrets and Double Axe Robot Room",
         "CTH: Defeat Red Tiger Elite: Yanren", "PR (East): Defeat Celestial Guardian: Jiaoduan",
         "Greenhouse: Defeat Celestial Spectre: Shuigui",
-        "Factory (U): Defeat Red Tiger Elite: Kuiyan", "Prison: Defeat Kanghui", # debating whether Kanghui should be included or not
-        "Factory (PA): Defeat Celestial Sentinel: Wuqiang", "AM: Defeat Celestial Warden: Yinyue", "Village: Defeat Red Tiger Elite: Lieguan",
-        "IW: Defeat Celestial Enforcer: Tieyan", "BR: Near Xingtian Console",
+        "Factory (U): Defeat Red Tiger Elite: Kuiyan", "Factory (PA): Defeat Celestial Sentinel: Wuqiang", 
+        "AM: Defeat Celestial Warden: Yinyue", "Village: Defeat Red Tiger Elite: Lieguan", "Galactic Dock: Shaman's Gift",
+        "IW: Defeat Celestial Enforcer: Tieyan",
         "GoS (West): Yin Jifu's Tianhuo Flower", "GoS (West): Guiguzi's Tianhuo Flower", "GoS (West): Luyan's Tianhuo Flower",
         "GoS (West): Chest in Lear's Grave", # these should all be for defeating Cixing (I think that's their name) in GoS (West)
         "ED (Passages): Defeat The Great Miner: Tianshou",
@@ -206,7 +206,7 @@ location_name_groups = {
         "ED (Living Area): Dusk Guardian Recording Device", "ED (Sanctum): Examine Monitoring Panel",
         "TRC: Dusk Guardian Recording Device", "TRC: Examine Dusk Guardian HQ Screen",
     },
-    "Shanhai 9000": {
+    "Shanhai": {
         "Cortex Center: Retrieve Chip From Shanhai 9000",
         "PR (Central): Retrieve Chip From Shanhai 9000",
         "Greenhouse: Retrieve Chip From Shanhai 9000",

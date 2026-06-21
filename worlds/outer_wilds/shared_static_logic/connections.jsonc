@@ -251,7 +251,9 @@
         { "item": "Alarm Bypass Patch" }
     ] },
 
+    { "category": "hn1", "from": "Timber Hearth Village", "to": "Hearth's Neighbor Museum Plate", "requires": [] },
     { "category": "hn1", "from": "Space", "to": "Lonely Hermit", "requires": [
+        { "region": "Hearth's Neighbor Museum Plate" }, // look at the Museum Plate to unlock the HN1 system
         { "item": "Spacesuit" } // we don't have proper HN1 suitless logic, so simply require suit for all of it
     ] },
 

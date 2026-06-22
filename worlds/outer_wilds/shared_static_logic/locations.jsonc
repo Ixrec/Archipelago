@@ -1225,9 +1225,7 @@
     },
     {
         "category": "dlc", "address": 1085040014, "name": "DW: Starlit Cove Upper Tower Floors",
-        "region": "Starlit Cove", "requires": [
-            { "item": "Dream Totem Patch" } // project dock w/ walkway to lower tower entrance
-        ]
+        "region": "Starlit Cove Upper Tower Floors", "requires": []
     },
     {
         "category": "dlc", "address": 1085040015, "name": "DW: Endless Canyon Mural",

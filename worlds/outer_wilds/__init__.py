@@ -129,7 +129,7 @@ class OuterWildsWorld(World):
             raise OptionError('Incompatible options: deep bramble spawn requires enable_fc_mod to be true')
 
         # implement .yaml-less Universal Tracker support
-        if hasattr(self.multiworld, "generation_is_fake"):
+        if getattr(self.multiworld, "generation_is_fake", False):
             if hasattr(self.multiworld, "re_gen_passthrough"):
                 if "Outer Wilds" in self.multiworld.re_gen_passthrough:
                     slot_data = self.multiworld.re_gen_passthrough["Outer Wilds"]

@@ -148,6 +148,7 @@ class OuterWildsWorld(World):
                     self.options.enable_eh_mod.value = slot_data.get("enable_eh_mod", 0)
                     self.options.split_translator.value = slot_data.get("split_translator", 0)
                     self.options.shuffle_spacesuit.value = slot_data.get("shuffle_spacesuit", 0)
+                    self.options.required_friends.value = slot_data.get("required_friends", 0)
             return
 
         # generate game-specific randomizations separate from AP items/locations

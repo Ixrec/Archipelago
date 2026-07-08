@@ -1234,12 +1234,19 @@
     { "from": "OW - Shortcut Elevator", "to": "OW - Root Node & Middle Exits", "requires": [] }, // hacking
     {
         "from": "OW - Shortcut Elevator", "to": "OW - Robot",
-        "requires": [
-            { "item": "Grapple" },
-            { "item": "Wall Climb" },
-            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
-        ],
-        // the parryable enemies up here tend to get themselves killed so let's not put T-dashes in logic
+		"requires": [
+			{ "item": "Grapple" },
+			{ "item": "Wall Climb" },
+			{ "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
+		],
+		"medium_requires": [
+			{ "item": "Grapple" },
+			{ "item": "Wall Climb" },
+			{ "anyOf": [ {"item": "Unbounded Counter" }, [ { "item": "Charged Strike" }, { "item": "Ledge Grab" } ] ] }
+		],
+		// charged strike + ledge grab permutation needs swift runner as well once implemented but is also doable with a slight coyote
+        // the parryable enemies up here tend to get themselves killed, howver the turret inbetween the boxes
+		// can be parried for qi instead using unbounded counter
         "ls_requires": [ // replace the one WC use with CL + LS vault
             { "item": "Grapple" },
             { "item": "Ledge Grab" },

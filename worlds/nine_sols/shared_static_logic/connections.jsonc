@@ -1233,7 +1233,7 @@
             { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] }
 			],
 			// I suspect this is possible without wall climb, but the crushers and unsafe crates make it totally impractical.
-		"medium_requires": [ {"item": "Wall climb" } ] 
+		"medium_requires": [ {"item": "Wall Climb" } ] 
 			// T-Dash over to the other track instead of using CL or AD.
 			// Swift Runner also works instead of a T-Dash but seems redundant.
 	}, 

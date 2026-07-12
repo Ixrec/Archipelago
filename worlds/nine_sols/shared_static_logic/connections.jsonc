@@ -2153,7 +2153,8 @@
 				// bow hover past both ziplines (needs two arrows)
 				// the second hover can be started from below the TCK platform tutorial room
 				{ "item": "Trick - Bow Hover" },
-				[ { "item": "Grapple" }, { "item": "Cloud Leap" } ] // t-dash replaces air dash to reach the zipline
+				// or reach the second zipline again, but this time T-dash replaces air dash
+				[ { "item": "Grapple" }, { "item": "Cloud Leap" } ]
 			] }
 		],
 		"ls_requires": [

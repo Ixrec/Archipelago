@@ -2431,7 +2431,8 @@
     },
 	{
 		"from": "ED (Sanctum) - Root Node", "to": "ED (Sanctum) - Outside Nobility Hall",
-		"ls_requires": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] // triple jump up to the shortcut rope
+        // use elevator shaft ledges (not in this region but reachable with CL alone) to do CL setup
+		"ls_requires": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] // then triple jump up to the shortcut rope
 	},
     { "from": "ED (Sanctum) - Right Exit", "to": "ED (Sanctum) - Monitoring Panel", "requires": [
         { "item": "Tai-Chi Kick" },

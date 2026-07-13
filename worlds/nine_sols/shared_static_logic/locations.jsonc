@@ -1577,7 +1577,10 @@
 					// using a bow hover specifically requires cloud leap because there is no way to get ls
 					// on the top platform left of the box without it and hovering from the box does not reach the rope
 				] }
-				{ "anyOf": [ { "item": "Cloud Leap" }, { "item": "Air Dash" } ] } //for the ls setup before the zipline
+				{ "anyOf": [ // setup LS with...
+				    { "item": "Cloud Leap" }, // CL setup is easy
+				    { "item": "Air Dash" } // use AD to reach ledge left of box, do AD setup *and* T-dash to land on box with LS
+				] }
                     // then wall slide up to the chest, using LS you got before the zipline
                 ]
                 [ // various ways of using LS to get onto the rope, then using TCK at the end as usual

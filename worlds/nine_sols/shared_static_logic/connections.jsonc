@@ -2445,8 +2445,8 @@
         "requires": [
 			{ "anyOf": [
 				[ 
-				{ "item": "Mystic Nymph: Scout Mode" },
-				{ "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" }, { "item": "Air Dash" } ] } 
+				    { "item": "Mystic Nymph: Scout Mode" },
+				    { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" }, { "item": "Air Dash" } ] } 
 				],
 				// or we can bypass the shortcut door by going around the long way
 				// this is doable on vanilla logic but is most likely only ever relevant on ls logic

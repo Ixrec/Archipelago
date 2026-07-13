@@ -1610,11 +1610,11 @@
     },
     {
         "address": 3506, "name": "ED (Passages): Above Pink Pool Left Of Root Node",
-        "region": "ED (Passages) - Left Pink Pool", "requires": [ { "item": "Tai-Chi Kick" } ]
+        "region": "ED (Passages) - Above Left Pink Pool", "requires": []
     },
     {
         "address": 3507, "name": "ED (Passages): Far Left Rooms",
-        "region": "ED (Passages) - Left Pink Pool",
+        "region": "ED (Passages) - Above Left Pink Pool",
         "requires": [
             { "item": "Tai-Chi Kick" }, // platforms above pool
             // T-dash OR AD OR CL OR CS to reach left platform, but AD is hard required anyway because:
@@ -1622,7 +1622,8 @@
             // the last jump is (AD OR DJ OR T-dash) so that's already covered by AD, then just fall down
         ],
         "ls_requires": [
-            { "item": "Tai-Chi Kick" }, // platforms above pool as before
+			// LS has a connection that allows for dropping from above making TCK not hard required
+			// getting from "Above Left Pink Pool" over to the left side is doable with AD and CL and T-Dash either way
             { "item": "Air Dash" }, // still hard required by waterfall room, and still solves most of the other platforming
             { "item": "Ledge Grab" }, // do an AD setup using the TCK platforms
             { "item": "Cloud Leap" } // then CL and wall slide up the right side of waterfall room to replace WC

@@ -82,13 +82,12 @@ location_name_groups = {
 }
 
 
-region_data_table: dict[str, OuterWildsRegionData] = {}
-
-
 def create_regions(world: "OuterWildsWorld") -> None:
     mw = world.multiworld
     p = world.player
     options = world.options
+
+    region_data_table: dict[str, OuterWildsRegionData] = {}
 
     # start by ensuring every region is a key in region_data_table
     locations_to_create = {k: v for k, v in location_data_table.items()

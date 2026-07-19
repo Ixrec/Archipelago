@@ -71,7 +71,6 @@ non_apworlds: set[str] = {
     "Ocarina of Time",
     "Overcooked! 2",
     "Raft",
-    "Sudoku",
     "Super Mario 64",
     "VVVVVV",
     "Wargroove",
@@ -202,7 +201,7 @@ if is_windows:
         icon=resolve_icon(c.icon),
     ))
 
-extra_data = ["LICENSE", "data", "EnemizerCLI", "SNI"]
+extra_data = ["LICENSE", "data", "SNI"]
 extra_libs = ["libssl.so", "libcrypto.so"] if is_linux else []
 
 
@@ -381,8 +380,8 @@ class BuildExeCommand(cx_Freeze.command.build_exe.build_exe):
         from Options import generate_yaml_templates
         from worlds.AutoWorld import AutoWorldRegister
         from worlds.Files import APWorldContainer
-        # assert not non_apworlds - set(AutoWorldRegister.world_types), \
-        #     f"Unknown world {non_apworlds - set(AutoWorldRegister.world_types)} designated for .apworld"
+        assert not non_apworlds - set(AutoWorldRegister.world_types), \
+            f"Unknown world {non_apworlds - set(AutoWorldRegister.world_types)} designated for .apworld"
         folders_to_remove: list[str] = []
         generate_yaml_templates(self.buildfolder / "Players" / "Templates", False)
         for worldname, worldtype in AutoWorldRegister.world_types.items():
@@ -457,9 +456,8 @@ class BuildExeCommand(cx_Freeze.command.build_exe.build_exe):
                              for world_directory in folders_to_remove)
         else:
             # make sure extra programs are executable
-            enemizer_exe = self.buildfolder / 'EnemizerCLI/EnemizerCLI.Core'
             sni_exe = self.buildfolder / 'SNI/sni'
-            extra_exes = (enemizer_exe, sni_exe)
+            extra_exes = (sni_exe,)
             for extra_exe in extra_exes:
                 if extra_exe.is_file():
                     extra_exe.chmod(0o755)
@@ -658,7 +656,7 @@ cx_Freeze.setup(
     options={
         "build_exe": {
             "packages": ["worlds", "kivy", "cymem", "websockets", "kivymd"],
-            "includes": [],
+            "includes": ["rule_builder.cached_world"],
             "excludes": ["numpy", "Cython", "PySide2", "PIL",
                          "pandas"],
             "zip_includes": [],

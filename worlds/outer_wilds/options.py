@@ -130,7 +130,7 @@ class ShuffleSpacesuit(Toggle):
 
     This option is incompatible with non-vanilla spawns (i.e. generation will fail), since those imply playing "shipless" at first, and almost nothing can be done both shipless and suitless.
     
-    Be warned that this is a harder setting for Outer Wilds and can require you to die multiple times to reach locations. Use at your own risk as it cannot be turned off.
+    Be warned that this is a harder setting for Outer Wilds and can require you to die multiple times to reach locations. Use at your own risk.
     """
     display_name = "Shuffle Spacesuit"
 

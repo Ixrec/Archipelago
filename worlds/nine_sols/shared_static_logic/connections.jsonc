@@ -1223,6 +1223,14 @@
             { "item": "Air Dash" },
             { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Tai-Chi Kick" } ] }
         ],
+        "medium_requires:": [
+            { "item": "Wall Climb" }, // climbing up to the hack point hard requires this
+            { "item": "Trick - Bow Hover" }, // hover through the crushers on the return trip
+            // The lasers on the return trip hard require AD AND TCK, unless we expect players to figure out you can
+            // ground dash through the lasers from tiny ledges. All other platforming gets absorbed by that requirement.
+            { "item": "Air Dash" },
+            { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Tai-Chi Kick" } ] }
+        ],
         "ls_requires": [
             { "item": "Ledge Grab" },
             { "item": "Cloud Leap" }, // triple jump replaces wall climb

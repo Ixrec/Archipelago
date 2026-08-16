@@ -1234,7 +1234,7 @@
             { "item": "Cloud Leap" }, // triple jump replaces wall climb
             // the rest is the same
             { "item": "Air Dash" }
-            // except no LG or TCK and Nymph or CL since we require one of either for the triple jump
+            // except we skip the (LG or TCK) and (Nymph or CL) because the triple jump already required LG and CL
         ]
     },
     { "from": "OW - Lower Right Exit", "to": "OW - Root Node & Middle Exits", "requires": [

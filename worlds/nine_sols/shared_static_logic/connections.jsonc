@@ -2436,7 +2436,7 @@
         "from": "ED (Passages) - Left Pink Pool", "to": "ED (Passages) - Statue In Left Chasm",
         "ls_requires": [ //parry hover to reach the statue from the pool
             { "item": "Ledge Grab" }, 
-            {"item": "Cloud Leap"}, // to obtain ledge storage from left side of pink pool
+            { "item": "Cloud Leap"}, // to obtain ledge storage from left side of pink pool
             { "item": "Air Dash" } // to dash past the waterfall on right side of pink pool
 
         ]

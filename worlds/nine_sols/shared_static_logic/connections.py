@@ -2021,7 +2021,9 @@ connections_data = [
     {
         "from": "GoS (West) - Lower Right Exits", "to": "GoS (West) - Cixing Arena Left Overlook",
         "medium_requires": [{ "item": "Trick - Bow Hover" }],
-        "ls_requires": [{ "item": "Ledge Grab" }, { "item": "Cloud Leap" }] # CL setup into parry hover
+        #parry hover above the arena
+        "ls_requires": [{ "item": "Ledge Grab" }] # You can cross the chasm with t-dash + ledge grab and obtain ledge storage
+                        
     },
     # And since these are also simple and isolated, we'll do the Lear's grave stuff next
     { "from": "GoS (West) - Cixing Arena", "to": "GoS (West) - Lear's Lecture Hall", "requires": [

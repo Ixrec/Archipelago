@@ -2037,6 +2037,12 @@ connections_data = [
         "requires": [{ "item": "Charged Strike" }],
         "medium_requires": [{ "item": "Trick - Break CS Barrier With Bow" }]
     },
+    # You can also make it to the main rotational platforms area from this area with ledge storage triple jump
+    {
+        "from": "GoS (West) - Lower Right Exits", "to": "GoS (West) - Lower Platform Rotation Button",
+        # Drop from top platforms with ledge storage and t-dash below the rope platform to triple jump up
+        "ls requires": [{ "item": "Cloud Leap"}, {"item": "Ledge Grab"}]
+    },
     # Now for the messy part of West Grotto: the semi-scripted progression from
     # upper right exit to Ji fight through the rotating platforms puzzle.
     # Remember that unlike vanilla we might be starting at the GoSW node.

@@ -2041,7 +2041,7 @@ connections_data = [
     {
         "from": "GoS (West) - Lower Right Exits", "to": "GoS (West) - Lower Platform Rotation Button",
         # Drop from top platforms with ledge storage and t-dash below the rope platform to triple jump up
-        "ls requires": [{ "item": "Cloud Leap"}, {"item": "Ledge Grab"}]
+        "ls_requires": [{ "item": "Cloud Leap"}, {"item": "Ledge Grab"}]
     },
     # Now for the messy part of West Grotto: the semi-scripted progression from
     # upper right exit to Ji fight through the rotating platforms puzzle.

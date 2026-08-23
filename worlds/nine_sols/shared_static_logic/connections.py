@@ -256,8 +256,10 @@ connections_data = [
             ]
         ] } ],
         "medium_requires": [ # T-dash past the first TCK target
-            { "item": "Trick - Long Jump with Swift Runner" } # SR onto the rope, climb up to parry enemy
-        ], # drop and T-dash again past the last TCK target
+            { "item": "Trick - Long Jump with Swift Runner" }, # SR onto the rope, climb up to parry enemy
+         # drop and T-dash again past the last TCK target
+            { "item": "Grapple"}
+        ],
         # bow hover could maybe help, but no guarantee you'll have an arrow
         "ls_requires": [ # do the AD setup on the ledge right of Lower Level chest
             { "item": "Ledge Grab" }, { "item": "Air Dash" } # then parry vault up to the rope instead of CL or G

@@ -1238,7 +1238,7 @@ connections_data = [
             { "item": "Air Dash" },
             { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Tai-Chi Kick" } ] }
         ],
-        "medium_requires:": [
+        "medium_requires": [
             { "item": "Wall Climb" },
             { "item": "Trick - Bow Hover" }, # hover through the crushers on the return trip
             { "item": "Air Dash" },

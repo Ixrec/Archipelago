@@ -1475,12 +1475,22 @@ connections_data = [
     {
         "from": "AM - Above Left Exit", "to": "AM - Root Node",
         "requires": [
-            { "item": "Grapple" }, # for slider
+            { "anyOf": [
+                { "item": "Grapple" }, # for slider
+                [{ "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Ledge Grab" }]
+                # bypass the slider by jumping up to the ledge 
+            ]}, 
             { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } # for two slightly long jumps over spikes
         ],
         "medium_requires": [
-            { "item": "Grapple" }, # for slider
-            { "item": "Trick - Long Jump with Swift Runner" } # for the spike jumps
+            { "anyOf" [ { "item": "Grapple" }, # for slider
+                       [{ "item": "Cloud Leap" }, { "item": "Ledge Grab" }], # t-dash to replace air dash and jump up to ledge
+                        # You can also make it up without ledge grab from the even higher platform with air dash, t-dash,
+                        # CL, and either CS or swift runner
+                        [{ "item": "Cloud Leap" }, { "item": "Air Dash" }, 
+                         {"anyOf": [{ "item": "Trick - Long Jump with Swift Runner" }, { "item": "Charged Strike" } ] } ]
+        ]}, # you can bow hover but you might not have any shots left for this
+            { "anyOf": [{ "item": "Trick - Long Jump with Swift Runner" }, { "item": "Charged Strike" }]} # for the spike jumps
         ]
     },
     {

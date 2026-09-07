@@ -1483,7 +1483,7 @@ connections_data = [
             { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } # for two slightly long jumps over spikes
         ],
         "medium_requires": [
-            { "anyOf" [ { "item": "Grapple" }, # for slider
+            { "anyOf": [ { "item": "Grapple" }, # for slider
                        [{ "item": "Cloud Leap" }, { "item": "Ledge Grab" }], # t-dash to replace air dash and jump up to ledge
                         # You can also make it up without ledge grab from the even higher platform with air dash, t-dash,
                         # CL, and either CS or swift runner

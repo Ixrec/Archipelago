@@ -1579,11 +1579,22 @@ connections_data = [
     { "from": "AM - Bottom Right", "to": "AM - Tao Fruit", "requires": [ { "anyOf": [
         { "item": "Mystic Nymph: Scout Mode" } # to lower rope
     ] } ] },
-    { "from": "AM - Tao Fruit", "to": "AM - After Tao Fruit", "requires": [
-        { "item": "Air Dash" },
-        { "item": "Grapple" }
-    ] }, # this is *possible* with CL (AND grapple) instead, but very annoying
-    # wall slide is possible, but you need Grapple for the slide anyway so it doesn't affect logic
+    { "from": "AM - Tao Fruit", "to": "AM - After Tao Fruit", 
+        "requires": [
+            { "item": "Air Dash" },
+            { "item": "Grapple" }
+        ], # this is *possible* with CL (AND grapple) instead, but very annoying
+        "medium_requires":[ 
+             { "item": "Grapple" } # T-dash replaces air dash, you obtain qi from enemy in bottom right
+        ], 
+        "ls_requires":[ 
+            # Wall slide up with CL then use CL, T-dash, air dash, and either CS or SR to skip the grapple line
+            { "item": "Air Dash" }, 
+            { "item": "Cloud Leap" }, 
+            { "item": "Ledge Grab" }, 
+            { "anyof":[ { "item": "Charged Strike" }, { "item": "Trick - Long Jump with Swift Runner" } ] }
+        ]
+    }, 
     {
         "from": "AM - Bottom Right", "to": "AM - After Tao Fruit",
         "medium_requires": [{ "item": "Trick - Break One-Way Barrier With Bow" }]

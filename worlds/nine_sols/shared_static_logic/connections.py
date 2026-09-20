@@ -2759,29 +2759,55 @@ connections_data = [
     { "from": "FSP - Root Node", "to": "FSP - Kuafu's Shop", "requires": [ { "item": "Event - Kuafu in FSP" } ] },
     { "from": "FSP - Root Node", "to": "FSP - Kuafu's Extra Inventory", "requires": [ { "item": "Event - Kuafu Extra Shop Inventory" } ] },
 
+    # we don't have a good way of expressing "any 2 of these 3 regions"
+    {
+        "from": "FSP - Root Node", "to": "Left-Side Map Access",
+        "requires": [{"anyOf": [
+            [{"region": "Factory (MR) - Root Node"}, {"region": "Factory (PA) - Root Node"}],
+            [{"region": "Factory (MR) - Root Node"}, {"region": "IW - Root Node"}],
+            [{"region": "Factory (PA) - Root Node"}, {"region": "IW - Root Node"}]
+        ]}]
+    },
+    {
+        "from": "FSP - Root Node", "to": "Central Map Access",
+        "requires": [{"anyOf": [
+            [{"region": "AF (Depths) - Root Node"}, {"region": "CTH - Root Node"}],
+            [{"region": "AF (Depths) - Root Node"}, {"region": "PR (Central) - Root Node"}],
+            [{"region": "CTH - Root Node"}, {"region": "PR (Central) - Root Node"}]
+        ]}]
+    },
+    {
+        "from": "FSP - Root Node", "to": "Right-Side Map Access",
+        "requires": [{"anyOf": [
+            [{"region": "ED (Passages) - Root Node"}, {"region": "GoS (East) - Root Node"}],
+            [{"region": "ED (Passages) - Root Node"}, {"region": "W&OS - Root Node"}],
+            [{"region": "GoS (East) - Root Node"}, {"region": "W&OS - Root Node"}]
+        ]}]
+    },
+
     {
         "from": "FSP - Root Node", "to": "FSP Shops & Skill Tree (Low Cost)",
         "requires": [ { "anyOf": [
-            { "region": "Factory (MR) - Root Node" },
-            { "region": "ED (Passages) - Root Node" },
-            { "region": "PR (Central) - Root Node" }
+            { "region": "Left-Side Map Access" },
+            { "region": "Central Map Access" },
+            { "region": "Right-Side Map Access" }
         ] } ]
     },
     {
         "from": "FSP - Root Node", "to": "FSP Shops & Skill Tree (Medium Cost)",
         # we don't have a good way of expressing "any 2 of these 3 regions"
         "requires": [ { "anyOf": [
-            [ { "region": "Factory (MR) - Root Node" }, { "region": "ED (Passages) - Root Node" } ],
-            [ { "region": "Factory (MR) - Root Node" }, { "region": "PR (Central) - Root Node" } ],
-            [ { "region": "ED (Passages) - Root Node" }, { "region": "PR (Central) - Root Node" } ]
+            [ { "region": "Left-Side Map Access" }, { "region": "Right-Side Map Access" } ],
+            [ { "region": "Left-Side Map Access" }, { "region": "Central Map Access" } ],
+            [ { "region": "Right-Side Map Access" }, { "region": "Central Map Access" } ]
         ] } ]
     },
     {
         "from": "FSP - Root Node", "to": "FSP Shops & Skill Tree (High Cost)",
         "requires": [
-            { "region": "Factory (MR) - Root Node" },
-            { "region": "ED (Passages) - Root Node" },
-            { "region": "PR (Central) - Root Node" }
+            { "region": "Left-Side Map Access" },
+            { "region": "Central Map Access" },
+            { "region": "Right-Side Map Access" }
         ]
     },
 

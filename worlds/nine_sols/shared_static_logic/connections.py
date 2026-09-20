@@ -1950,12 +1950,14 @@ connections_data = [
     # we mostly ignore the logic for *exiting* YJ tomb regions, because this is the only way into any of them
     {
         "from": "GoS (East) - Outside Yin Jifu's Tomb", "to": "GoS (East) - Yin Jifu's Tomb",
-        "requires": [ { "anyOf": [
-            [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ],
-            { "item": "Cloud Leap" }
-        ] } ], # I previously thought we needed combat logic for the worms/lurkers in the locked arena,
-        # but it turns out you can damage them without using TCK OR UC to stun them first.
-        "medium_requires": [{ "item": "Trick - Break One-Way Barrier With Bow" }]
+        "requires": [
+            { "anyOf": [ # jumping over the spikes in the upper right room
+                [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ],
+                { "item": "Cloud Leap" }
+            ] },
+            { "item": "Tai-Chi Kick" } # for fighting the worms in the arena
+        ],
+        "medium_requires": [{ "item": "Trick - Break One-Way Barrier With Bow" }] # skip the arena fight
     },
     # The GG tomb regions have interesting connections from GoSW and YJ's tomb, so these have to be as thorough as usual
     { "from": "GoS (East) - Root Node", "to": "GoS (East) - Outside Guiguzi's Tomb", "requires": [

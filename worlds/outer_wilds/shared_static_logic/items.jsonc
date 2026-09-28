@@ -52,6 +52,8 @@
     { "code": 1734473718, "name": "Eject Button", "type": "useful" },
     { "code": 1734473719, "name": "Velocity Matcher", "type": "useful" },
     { "code": 1734473720, "name": "Surface Integrity Scanner", "type": "useful" },
+    { "code": 1734473786, "name": "Medkit", "type": "useful" },
+    { "code": 1734473787, "name": "Ship Jetpack Fuel Tank", "type": "useful" },
     { "code": 1734473788, "name": "Velocity Indicator", "type": "useful" },
     { "code": 1734473789, "name": "Distance Indicator", "type": "useful" },
     { "code": 1734473729, "name": "Oxygen Capacity Upgrade", "type": "useful" },

@@ -1500,16 +1500,20 @@ connections_data = [
         "medium_requires": [ { "anyOf": [
             { "item": "Trick - Long Jump with Swift Runner" },
             { "item": "Charged Strike" }
-            # bow hover also works, but is OoL for now because you might not have any shots left
+            # bow hover also works, but is OoL in this direction because you might not have any shots left
         ] } ]
     },
     {
         "from": "AM - Root Node", "to": "AM - Bottom Left Entrance to Central Cavern",
         "requires": [
-            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] },
-            { "item": "Grapple" }
+            { "item": "Mystic Nymph: Scout Mode" }, # for lights
+            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } # for two slightly long jumps over spikes
         ],
-        "medium_requires": [{ "item": "Trick - Bow Hover" }]
+        "medium_requires": [ { "anyOf": [
+            { "item": "Trick - Long Jump with Swift Runner" },
+            { "item": "Charged Strike" },
+            { "item": "Trick - Bow Hover" }
+        ] } ]
     }, # LS parry hover works both ways, but no one to parry for T-dash setup, so AD OR CL setup makes it redundant
     { "from": "AM - Root Node", "to": "AM - Platforms Left of Root Node", "requires": [
         { "item": "Mystic Nymph: Scout Mode" }, # for lights

@@ -1494,6 +1494,18 @@ connections_data = [
     },
     { "from": "AM - Bottom Left Entrance to Central Cavern", "to": "AM - Spinner Above Left Exit", "requires": [] },  # fall down
     {
+        "from": "AM - Spinner Above Left Exit", "to": "AM - Chest Above Left Exit",
+        "requires": [ { "anyOf": [
+            { "item": "Grapple" },  # use the grapple point as intended (NOT the slider)
+            { "item": "Cloud Leap" }  # or jump up
+        ] } ]
+    },
+    {
+        "from": "AM - Bottom Left Entrance to Central Cavern", "to": "AM - Chest Above Left Exit",
+        "medium_requires": [{ "item": "Trick - Bow Hover" }],
+        "ls_requires": [{ "item": "Air Dash" }, { "item": "Ledge Grab" }] # parry hover with AD setup
+    },
+    {
         "from": "AM - Bottom Left Entrance to Central Cavern", "to": "AM - Root Node",
         # for two slightly long jumps over spikes
         "requires": [ { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } ],

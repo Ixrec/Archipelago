@@ -1457,6 +1457,10 @@ connections_data = [
         "medium_requires": [{ "item": "Trick - Bow Hover" }, { "item": "Cloud Leap" }],
         "ls_requires": [{ "item": "Ledge Grab" }, { "item": "Cloud Leap" }] # parry hover
     },
+    { "from": "AM - Under First Rope", "to": "AM - Left Exit", "requires": [
+        { "item": "Mystic Nymph: Scout Mode" }, # for lights?
+        { "item": "Grapple" } # for slider
+    ] },
     {
         "from": "AM - Under First Rope", "to": "AM - Above Left Exit",
         "requires": [
@@ -1468,10 +1472,7 @@ connections_data = [
             { "item": "Trick - Bow Hover" } # from the rope platform, skipping the slightly high jump
         ]
     },
-    { "from": "AM - Above Left Exit", "to": "AM - Left Exit", "requires": [
-        { "item": "Mystic Nymph: Scout Mode" }, # for lights?
-        { "item": "Grapple" } # for slider
-    ] },
+    { "from": "AM - Above Left Exit", "to": "AM - Under First Rope", "requires": [] },  # fall down
     {
         "from": "AM - Above Left Exit", "to": "AM - Root Node",
         "requires": [

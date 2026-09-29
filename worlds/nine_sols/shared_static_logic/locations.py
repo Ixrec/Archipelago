@@ -1024,7 +1024,7 @@ locations_data = [
     # Abandoned Mines
     {
         "address": 2301, "name": "AM: Above Left Exit",
-        "region": "AM - Above Left Exit", "requires": [
+        "region": "AM - Spinner Above Left Exit", "requires": [
             { "anyOf": [ { "item": "Grapple" }, { "item": "Cloud Leap" } ] }
         ]
     },

@@ -1452,17 +1452,17 @@ connections_data = [
 
     # Abandoned Mines
     {
-        "from": "AM - Left Exit", "to": "AM - Under First Rope",
+        "from": "AM - Left Exit", "to": "AM - Under Left Exit Rope",
         "requires": [{ "item": "Grapple" }], # for slider
         "medium_requires": [{ "item": "Trick - Bow Hover" }, { "item": "Cloud Leap" }],
         "ls_requires": [{ "item": "Ledge Grab" }, { "item": "Cloud Leap" }] # parry hover
     },
-    { "from": "AM - Under First Rope", "to": "AM - Left Exit", "requires": [
+    { "from": "AM - Under Left Exit Rope", "to": "AM - Left Exit", "requires": [
         { "item": "Mystic Nymph: Scout Mode" }, # for lights?
         { "item": "Grapple" } # for slider
     ] },
     {
-        "from": "AM - Under First Rope", "to": "AM - Above Left Exit",
+        "from": "AM - Under Left Exit Rope", "to": "AM - Spinner Above Left Exit",
         "requires": [
             { "item": "Mystic Nymph: Scout Mode" }, # for rope and lights
             { "anyOf": [ { "item": "Ledge Grab" }, { "item": "Cloud Leap" } ] } # slightly high jump after rope
@@ -1472,15 +1472,15 @@ connections_data = [
             { "item": "Trick - Bow Hover" } # from the rope platform, skipping the slightly high jump
         ]
     },
-    { "from": "AM - Above Left Exit", "to": "AM - Under First Rope", "requires": [] },  # fall down
+    { "from": "AM - Spinner Above Left Exit", "to": "AM - Under Left Exit Rope", "requires": [] },  # fall down
     {
-        "from": "AM - Above Left Exit", "to": "AM - Root Node",
+        "from": "AM - Spinner Above Left Exit", "to": "AM - Root Node",
         "requires": [
             { "anyOf": [
                 { "item": "Grapple" }, # for slider
                 [{ "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Ledge Grab" }]
                 # bypass the slider by jumping up to the ledge 
-            ]}, 
+            ] },
             { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } # for two slightly long jumps over spikes
         ],
         "medium_requires": [
@@ -1495,7 +1495,7 @@ connections_data = [
         ]
     },
     {
-        "from": "AM - Root Node", "to": "AM - Above Left Exit",
+        "from": "AM - Root Node", "to": "AM - Spinner Above Left Exit",
         "requires": [
             { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] },
             { "item": "Grapple" }

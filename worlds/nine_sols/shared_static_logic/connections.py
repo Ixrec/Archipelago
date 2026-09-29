@@ -1474,28 +1474,37 @@ connections_data = [
     },
     { "from": "AM - Spinner Above Left Exit", "to": "AM - Under Left Exit Rope", "requires": [] },  # fall down
     {
-        "from": "AM - Spinner Above Left Exit", "to": "AM - Root Node",
-        "requires": [
-            { "anyOf": [
-                { "item": "Grapple" }, # for slider
-                [{ "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Ledge Grab" }]
-                # bypass the slider by jumping up to the ledge 
-            ] },
-            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } # for two slightly long jumps over spikes
-        ],
-        "medium_requires": [
-            { "anyOf": [ { "item": "Grapple" }, # for slider
-                       [{ "item": "Cloud Leap" }, { "item": "Ledge Grab" }], # t-dash to replace air dash and jump up to ledge
-                        # You can also make it up without ledge grab from the even higher platform with air dash, t-dash,
-                        # CL, and either CS or swift runner
-                        [{ "item": "Cloud Leap" }, { "item": "Air Dash" }, 
-                         {"anyOf": [{ "item": "Trick - Long Jump with Swift Runner" }, { "item": "Charged Strike" } ] } ]
-        ]}, # you can bow hover but you might not have any shots left for this
-            { "anyOf": [{ "item": "Trick - Long Jump with Swift Runner" }, { "item": "Charged Strike" }]} # for the spike jumps
-        ]
+        "from": "AM - Spinner Above Left Exit", "to": "AM - Bottom Left Entrance to Central Cavern",
+        "requires": [ { "anyOf": [
+            { "item": "Grapple" }, # for slider
+            # bypass the slider by jumping up to the ledge
+            [ { "item": "Cloud Leap" }, { "item": "Air Dash" }, { "item": "Ledge Grab" } ]
+        ] } ],
+        "medium_requires": [ { "anyOf": [
+            { "item": "Grapple" },  # for slider
+            # From spinner platform: T-dash to replace air dash and jump up to ledge
+            [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ],
+            # From slightly higher platform left of the spinner, skipping ledge grab is possible with:
+            [
+                { "item": "Cloud Leap" },
+                { "item": "Air Dash" },  # also T-dash
+                { "anyOf": [ { "item": "Trick - Long Jump with Swift Runner" }, { "item": "Charged Strike" } ] }
+            ]
+        ] } ]
+    },
+    { "from": "AM - Bottom Left Entrance to Central Cavern", "to": "AM - Spinner Above Left Exit", "requires": [] },  # fall down
+    {
+        "from": "AM - Bottom Left Entrance to Central Cavern", "to": "AM - Root Node",
+        # for two slightly long jumps over spikes
+        "requires": [ { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } ],
+        "medium_requires": [ { "anyOf": [
+            { "item": "Trick - Long Jump with Swift Runner" },
+            { "item": "Charged Strike" }
+            # bow hover also works, but is OoL for now because you might not have any shots left
+        ] } ]
     },
     {
-        "from": "AM - Root Node", "to": "AM - Spinner Above Left Exit",
+        "from": "AM - Root Node", "to": "AM - Bottom Left Entrance to Central Cavern",
         "requires": [
             { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] },
             { "item": "Grapple" }

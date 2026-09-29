@@ -184,7 +184,7 @@ class OuterWildsWorld(World):
             if self.options.early_key_item == EarlyKeyItem.option_any:
                 if self.options.spawn == Spawn.option_stranger:
                     key_item = self.random.choice(["Launch Codes", "Stranger Light Modulator"])
-                if self.options.spawn == Spawn.option_deep_bramble:
+                elif self.options.spawn == Spawn.option_deep_bramble:
                     key_item = self.random.choice([relevant_translator, "Signalscope", "Launch Codes"])
                 else:
                     key_item = self.random.choice([relevant_translator, "Nomai Warp Codes", "Launch Codes"])

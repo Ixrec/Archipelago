@@ -693,8 +693,8 @@ connections_data = [
     { "from": "PR (Central) - Left Transporter", "to": "PR (Central) - Chest Near Left Transporter", 
      "requires": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
         ], 
-        "medium_requires": [ { "anyOf": [ #jump from edge of left transport platform with air dash, t-dash, swift run, and charged strike
-             [ { "item": "Air Dash" }, { "item": "Charged Strike" }, { "item": "Trick - Long Jump with Swift Runner" }, { "item": "Ledge Grab" } ],
+        "medium_requires": [ { "anyOf": [ #jump from edge of left transport platform with air dash, t-dash, and charged strike
+             [ { "item": "Air Dash" }, { "item": "Charged Strike" }, { "item": "Ledge Grab" } ],
              [ { "item": "Cloud Leap" }, { "item": "Trick - Bow Hover" } ] #or hover from left transport platform and jump onto chest platform
             ] } ] 
     },

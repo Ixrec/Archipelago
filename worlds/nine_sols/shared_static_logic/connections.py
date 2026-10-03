@@ -690,9 +690,14 @@ connections_data = [
     { "from": "PR (Central) - Building Right of Light Bridge", "to": "PR (Central) - Light Bridge", "requires": [] }, # one-way door
     { "from": "PR (Central) - Light Bridge", "to": "PR (Central) - Backup Control Room", "requires": [] }, # one-way fall
     { "from": "PR (Central) - Backup Control Room", "to": "PR (Central) - Light Bridge", "requires": [] }, # hacking to unlock door right of Backup Control Room
-    { "from": "PR (Central) - Left Transporter", "to": "PR (Central) - Chest Near Left Transporter", "requires": [
-        { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
-    ] },
+    { "from": "PR (Central) - Left Transporter", "to": "PR (Central) - Chest Near Left Transporter", 
+     "requires": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" }
+        ], 
+        "medium_requires": [ { "anyOf": [ #jump from edge of left transport platform with air dash, t-dash, and charged strike
+             [ { "item": "Air Dash" }, { "item": "Charged Strike" }, { "item": "Ledge Grab" } ],
+             [ { "item": "Cloud Leap" }, { "item": "Trick - Bow Hover" } ] #or hover from left transport platform and jump onto chest platform
+            ] } ] 
+    },
     { "from": "PR (Central) - Chest Near Left Transporter", "to": "PR (Central) - Left Transporter", "requires": [] }, # fall
     { "from": "PR (Central) - Left Transporter", "to": "PR (Central) - Root Node", "requires": [] }, # one-way door
     { "from": "PR (Central) - Backup Control Room", "to": "PR (Central) - Root Node", "requires": [] }, # one-way door

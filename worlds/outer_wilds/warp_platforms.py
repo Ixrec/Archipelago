@@ -1,5 +1,6 @@
 from random import Random
 from .options import OuterWildsGameOptions, Spawn
+from Options import OptionError
 
 
 # we use lists instead of sets here to ensure determinism
@@ -45,8 +46,24 @@ def generate_random_warp_platform_mapping(random: Random, options: OuterWildsGam
         unmapped_platforms.remove("TH")
         unmapped_platforms.remove(hgt_platform)
 
+    # Handle warp plando.
+    for w1, w2 in options.warp_platform_plando.items():
+        if (w1 in dead_end_platforms and w2 in dead_end_platforms):
+            raise OptionError(f"Error while processing warp plando: Trying to connect 2 dead ends ({w1} - {w2})")
+        if (w1 == w2):
+            raise OptionError(f"Error while processing warp plando: Trying to connect {w1} to itself.")
+        if (w1 not in unmapped_platforms):
+            raise OptionError(f"Error while processing warp plando: {w1} is connected twice.")
+        if (w2 not in unmapped_platforms):
+            raise OptionError(f"Error while processing warp plando: {w2} is connected twice.")
+        mappings.append((w1, w2))
+        unmapped_platforms.remove(w1)
+        unmapped_platforms.remove(w2)
+    
     # Handle dead ends first to avoid pairing dead ends with other dead ends (e.g. Sun Station <-> ATP)
     for dead_end_platform in dead_end_platforms:
+        if (dead_end_platform not in unmapped_platforms):
+            continue # Warp has been connected via plando.
         available_platforms = [p for p in unmapped_platforms if p in platforms_reachable_by_ship]
 
         # Sun Station is the only warp platform that disappears about halfway through the loop.

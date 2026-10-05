@@ -1237,7 +1237,7 @@ connections_data = [
         "requires": [
             { "item": "Wall Climb" }, # climbing up to the hack point hard requires this
             { "anyOf": [
-                { "item": "Mystic Nymph Scout Mode" }, # The crushers on the way back are intended to be disabled by Nymph
+                { "item": "Mystic Nymph: Scout Mode" }, # The crushers on the way back are intended to be disabled by Nymph
                 { "item": "Cloud Leap" } # but CL and AD together let you stall a cycle to make it back without Nymph
             ] },
             # The lasers on the return trip hard require AD AND TCK, unless we expect players to figure out you can

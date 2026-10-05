@@ -1128,12 +1128,13 @@
         "category": "base", "address": 1085039178, "name": "Scan Deep Space Satellite Signal",
         "region": "Space", "requires": [
             { "item": "Signalscope" },
-            { "item": "Deep Space Radio Frequency" }
+            { "item": "Deep Space Radio Frequency" },
+            { "item": "Ship Fuel Capacity Upgrade" }
         ]
     },
     {
         "category": "dlc", "address": 1085039179, "name": "Gabbro's Satellite Recorder",
-        "region": "Space", "requires": []
+        "region": "Space", "requires": [ { "item": "Ship Fuel Capacity Upgrade" } ]
     },
 
 // EotE DLC Default Locations
@@ -1689,40 +1690,27 @@
 
     {
         "category": "base", "address": null, "name": "Victory - Song of Five",
-        "region": "The Vessel",
-        "requires": [
-            { "item": "Warp Core Installation Manual" }, // all the "Song of..." victories need these 3
-            { "item": "Coordinates" },
-            { "region": "Ash Twin Interior" }
-        ]
+        "region": "Eye of the Universe",
+        "requires": []
     },
     {
         "category": "base", "address": null, "name": "Victory - Song of the Nomai",
-        "region": "The Vessel",
+        "region": "Eye of the Universe",
         "requires": [
-            { "item": "Warp Core Installation Manual" },
-            { "item": "Coordinates" },
-            { "region": "Ash Twin Interior" },
             { "region": "Sixth Location" } // Nomai means meeting Solanum
         ]
     },
     {
         "category": "base&dlc", "address": null, "name": "Victory - Song of the Stranger",
-        "region": "The Vessel",
+        "region": "Eye of the Universe",
         "requires": [
-            { "item": "Warp Core Installation Manual" },
-            { "item": "Coordinates" },
-            { "region": "Ash Twin Interior" },
             { "region": "Sealed Vault" } // Stranger means meeting Prisoner
         ]
     },
     {
         "category": "base&dlc", "address": null, "name": "Victory - Song of Six",
-        "region": "The Vessel",
+        "region": "Eye of the Universe",
         "requires": [
-            { "item": "Warp Core Installation Manual" },
-            { "item": "Coordinates" },
-            { "region": "Ash Twin Interior" },
             { "anyOf": [ // Six means either Solanum OR Prisoner
                 { "region": "Sixth Location" },
                 { "region": "Sealed Vault" }
@@ -1731,11 +1719,8 @@
     },
     {
         "category": "base&dlc", "address": null, "name": "Victory - Song of Seven",
-        "region": "The Vessel",
+        "region": "Eye of the Universe",
         "requires": [
-            { "item": "Warp Core Installation Manual" },
-            { "item": "Coordinates" },
-            { "region": "Ash Twin Interior" },
             { "region": "Sixth Location" }, // Seven means both Solanum AND Prisoner
             { "region": "Sealed Vault" }
         ]
@@ -1746,11 +1731,8 @@
     },
     {
         "category": "base", "address": null, "name": "Victory - Song of the Universe",
-        "region": "The Vessel",
+        "region": "Eye of the Universe",
         "requires": [
-            { "item": "Warp Core Installation Manual" },
-            { "item": "Coordinates" },
-            { "region": "Ash Twin Interior" }
             // More logic is added dynamically
         ]
     },

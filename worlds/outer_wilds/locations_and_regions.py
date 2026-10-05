@@ -8,7 +8,7 @@ from Utils import restricted_loads
 from worlds.generic.Rules import add_rule, set_rule
 from .options import Goal, Spawn
 from .should_generate import should_generate, should_generate_location
-from .warp_platforms import warp_platform_to_logical_region, warp_platform_required_items
+from .warp_platforms import connection_exists, warp_platform_to_logical_region, warp_platform_required_items
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld
@@ -143,21 +143,18 @@ def create_regions(world: "OuterWildsWorld") -> None:
                      lambda state, r=ld["requires"], st=split_translator: eval_rule(state, p, r, st))
 
     # add dynamic logic, i.e. connections based on player options
+    starting_region = {
+        Spawn.option_vanilla: "Timber Hearth Village",
+        Spawn.option_hourglass_twins: "Hourglass Twins",
+        Spawn.option_timber_hearth: "Timber Hearth",
+        Spawn.option_brittle_hollow: "Brittle Hollow",
+        Spawn.option_giants_deep: "Giant's Deep",
+        Spawn.option_stranger: "Stranger Sunside Hangar",
+        Spawn.option_deep_bramble: "Deep Bramble",
+    }[options.spawn]
     menu = mw.get_region("Menu", p)
-    if options.spawn == Spawn.option_vanilla:
-        menu.add_exits(["Timber Hearth Village"])
-    elif options.spawn == Spawn.option_hourglass_twins:
-        menu.add_exits(["Hourglass Twins"])
-    elif options.spawn == Spawn.option_timber_hearth:
-        menu.add_exits(["Timber Hearth"])
-    elif options.spawn == Spawn.option_brittle_hollow:
-        menu.add_exits(["Brittle Hollow"])
-    elif options.spawn == Spawn.option_giants_deep:
-        menu.add_exits(["Giant's Deep"])
-    elif options.spawn == Spawn.option_stranger:
-        menu.add_exits(["Stranger Sunside Hangar"])
-    elif options.spawn == Spawn.option_deep_bramble:
-        menu.add_exits(["Deep Bramble"])
+    menu.add_exits([starting_region])
+    if options.spawn == Spawn.option_deep_bramble:
         mw.get_entrance("Menu -> Space", p).access_rule = lambda state: state.has_all(["Launch Codes", "Deep Bramble Coordinates"], p)
         mw.get_region("Deep Bramble", p).add_exits(["Deep Bramble via Warp Drive"], {"Deep Bramble via Warp Drive": lambda state: state.has("Launch Codes", p)})
 
@@ -178,47 +175,9 @@ def create_regions(world: "OuterWildsWorld") -> None:
         add_rule(mw.get_location("Victory - Song of the Universe", p),
                  lambda state: sum([state.can_reach_location(friend, p) for friend in available_friend_locations]) >= required_count)
 
-    if world.warps == 'vanilla':
-        def has_codes(state): return state.has("Nomai Warp Codes", p)
-
-        hgt = mw.get_region("Hourglass Twins", p)
-        hgt.add_exits([
-            "Sun Station",
-            "Ash Twin Interior",
-            "Timber Hearth",
-            "Hanging City Ceiling",
-            "Giant's Deep",
-        ], {
-            "Sun Station": lambda state: state.has_all(["Nomai Warp Codes", "Spacesuit"], p),
-            "Ash Twin Interior": has_codes,
-            "Timber Hearth": has_codes,
-            "Hanging City Ceiling": has_codes,
-            "Giant's Deep": has_codes,
-        })
-
-        mw.get_region("Sun Station", p).connect(
-            hgt, "SS vanilla warp",
-            lambda state: state.has_all(["Nomai Warp Codes", "Spacesuit"], p))
-        mw.get_region("Ash Twin Interior", p).connect(hgt, "ATP vanilla warp", has_codes)
-        mw.get_region("Timber Hearth", p).connect(hgt, "TH vanilla warp", has_codes)
-        mw.get_region("Hanging City Ceiling", p).connect(hgt, "BHF vanilla warp", has_codes)
-        mw.get_region("Giant's Deep", p).connect(hgt, "GD vanilla warp", has_codes)
-
-        mw.get_region("White Hole Station", p).add_exits(["Brittle Hollow"], {"Brittle Hollow": has_codes})
-    else:
-        # Hang on to the pertinent warp connections
-        bhf_connection = None
-        bhng_connection = None
-        whs_connection = None
-
+    # Connect warp platfrom regions (none exist in dlc only).
+    if not options.dlc_only:
         for (platform_1, platform_2) in world.warps:
-            if platform_1 == "BHF": bhf_connection = platform_2
-            elif platform_1 == "BHNG": bhng_connection = platform_2
-            elif platform_1 == "WHS": whs_connection = platform_2
-            if platform_2 == "BHF": bhf_connection = platform_1
-            elif platform_2 == "BHNG": bhng_connection = platform_1
-            elif platform_2 == "WHS": whs_connection = platform_1
-
             region_name_1 = warp_platform_to_logical_region[platform_1]
             region_name_2 = warp_platform_to_logical_region[platform_2]
             if region_name_1 == region_name_2:
@@ -234,17 +193,38 @@ def create_regions(world: "OuterWildsWorld") -> None:
             r1.connect(r2, "%s->%s warp" % (region_name_1, region_name_2), rule)
             r2.connect(r1, "%s->%s warp" % (region_name_2, region_name_1), rule)
 
+        # Check which connections require bigger fuel tank (multiple trips).
+        def has_fuel(state): return state.has("Ship Fuel Capacity Upgrade", p)
+        def has_codes(state): return state.has("Nomai Warp Codes", p)
+        starting_warp_region = starting_region
+        # Vanilla spawn's region doesn't match directly to warp platforms.
+        # Warping from Deep Bramble to OW system doesn't take fuel and leads to TH.
+        if starting_warp_region in { "Timber Hearth Village", "Deep Bramble" }:
+            starting_warp_region = "Timber Hearth"
+        
         # To access the Black Hole Forge without the Launch Codes, there needs to be
-        # a path from Brittle Hollow proper to the Hanging City Ceiling. This path
-        # exists if the BHF warp is connected to one of the other two warps accessible
-        # from Brittle Hollow (BHNG/WHS) either directly, or indirectly through the
-        # Hourglass Twins. This means that there is no path if either BHF or both of
-        # BHNG & WHS connect to an isolated warp pad (i.e. SS, ATP, TH, GD).
-        hourglass_twins = ("ET", "ST", "ETT", "ATT", "THT", "BHT", "GDT")
-        if bhf_connection in ("BHNG", "WHS") or (
-            bhf_connection in hourglass_twins and (
-            bhng_connection in hourglass_twins or whs_connection in hourglass_twins)):
+        # a path from Brittle Hollow proper to the Hanging City Ceiling.
+        if connection_exists(world.warps, "Brittle Hollow", "Hanging City Ceiling"):
             mw.get_region("Forge via Warps Only", p).connect(mw.get_region("Black Hole Forge", p), "Forge Warp Path")
+        # Alternatively you can fly to the correct warp platform, but check if flipping the switch requires a ship too.
+        bhf_rule = has_fuel
+        if options.spawn == Spawn.option_brittle_hollow or connection_exists(world.warps, starting_warp_region, "Brittle Hollow", True):
+            bhf_rule = None
+        mw.get_region("Forge via Ship & Warps", p).add_exits(["Black Hole Forge"], {"Black Hole Forge": bhf_rule})
+
+        core_rule = has_fuel
+        if connection_exists(world.warps, starting_warp_region, "Ash Twin Interior", True):
+            core_rule = None
+        mw.get_region("The Vessel", p).add_exits(["Bring Warp Core"], { "Bring Warp Core": core_rule })
+
+        if options.enable_fc_mod:
+            # Get the BH warp core by 1) spawn on HGT, 2) have enough fuel to fetch it or 3) fetch by warping.
+            if options.spawn == Spawn.option_hourglass_twins:
+                mw.get_region("The Vessel", p).add_exits(["Deep Bramble"], { "Deep Bramble": None })
+            else:
+                mw.get_region("The Vessel", p).add_exits({"Deep Bramble": "Get BH core via flying"}, { "Deep Bramble": has_fuel })
+                if connection_exists(world.warps, starting_warp_region, "Hourglass Twins", True):
+                    mw.get_region("The Vessel", p).add_exits({"Deep Bramble": "Get BH core via warps"}, { "Deep Bramble": has_codes })
 
 
 # In the .jsonc files we use, a location or region connection's "access rule" is defined

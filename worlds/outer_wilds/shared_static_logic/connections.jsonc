@@ -8,6 +8,13 @@
     { "from": "Space", "to": "Brittle Hollow", "requires": [] },
     { "from": "Space", "to": "White Hole Station", "requires": [ { "item": "Spacesuit" } ] },
     { "from": "Space", "to": "Giant's Deep", "requires": [] },
+    // This gets connected later to The Vessel with dynamically changing requirements (ship fuel).
+    { "from": "Bring Warp Core", "to": "Eye of the Universe",
+        "requires": [
+            { "item": "Warp Core Installation Manual" }, // all the "Song of..." victories need these 3
+            { "item": "Coordinates" },
+            { "region": "Ash Twin Interior" }
+    ] },
     // the only astral body you can't land on without an item
     { "from": "Space", "to": "Quantum Moon", "requires": [
         { "item": "Imaging Rule" }
@@ -34,7 +41,6 @@
     // I believe that requires either the Spaceship or a "warp path" from the Northern Glacier pad to
     // the Hanging City Ceiling pad. The warp path connection is conditionally added elsewhere if it exists.
     { "from": "Hanging City Ceiling", "to": "Forge via Ship & Warps", "requires": [ { "item": "Launch Codes" }, { "item": "Spacesuit" } ] },
-    { "from": "Forge via Ship & Warps", "to": "Black Hole Forge", "requires": [] },
     { "from": "Hanging City Ceiling", "to": "Forge via Warps Only", "requires": [ { "item": "Spacesuit" } ] },
 
     { "from": "Space", "to": "GD Ocean Depths", "requires": [ { "item": "Tornado Aerodynamic Adjustments" } ] },
@@ -279,7 +285,8 @@
 
     { "category": "hn1", "from": "Lonely Hermit", "to": "Derelict Ship Exterior", "requires": [
         { "item": "Signalscope" },
-        { "item": "Neighbor's Distress Signal Frequency" }
+        { "item": "Neighbor's Distress Signal Frequency" },
+        { "item": "Ship Fuel Capacity Upgrade" }
     ] },
     { "category": "hn1", "from": "Derelict Ship Exterior", "to": "Derelict Ship Interior", "requires": [
         { "item": "Ghost Matter Wavelength" }
@@ -312,7 +319,8 @@
     { "category": "to", "from": "Dark Bramble", "to": "Projection Pool House", "requires": [ { "item": "Scout" } ] },
 
     { "category": "ac", "from": "Space", "to": "Lingering Chime", "requires": [
-        { "item": "Spacesuit" } // we don't have proper AC suitless logic, so simply require suit for all of it
+        { "item": "Spacesuit" }, // we don't have proper AC suitless logic, so simply require suit for all of it
+        { "item": "Ship Fuel Capacity Upgrade" }
     ] },
     { "category": "ac", "from": "Space", "to": "Dark Bramble Research Station", "requires": [
         { "item": "Spacesuit" } // we don't have proper AC suitless logic, so simply require suit for all of it
@@ -345,7 +353,7 @@
     ] },
 
     // Warping to Deep Bramble only requires a Black Hole Core, and High Energy Lab access is guaranteed if you have access to the Vessel
-    { "category": "fc", "from": "The Vessel", "to": "Deep Bramble", "requires": [] },
+    // { "category": "fc", "from": "The Vessel", "to": "Deep Bramble", "requires": [] },
     // Space access already requires Launch Codes
     { "category": "fc", "from": "Space", "to": "Deep Bramble via Warp Drive", "requires": [ { "item":  "Deep Bramble Coordinates" } ] },
     { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Deep Bramble", "requires": [] },
@@ -383,11 +391,16 @@
     { "category": "fc", "from": "Magma's Recursion", "to": "Bramble's Heart", "requires": [ { "item":  "Probability Rule" }, { "item": "Entanglement Rule" } ] },
     { "category": "fc", "from": "Magma's Recursion", "to": "Eye Signal Lab", "requires": [
         { "region": "Lover's Rock" },
-        { "item": "Crystal Repair Manual" }
+        { "item": "Crystal Repair Manual" },
+        { "item": "Ship Fuel Capacity Upgrade" }
     ] },
 
     { "category": "fc", "from": "Shattered Hearth", "to": "Enzyme Lab", "requires": [ { "item":  "Taming Techniques" }, { "item":  "Spacesuit" } ] },
-    { "category": "fc", "from": "Shattered Hearth", "to": "Translation Lab", "requires": [ { "item":  "Scout" } ] },
+    { "category": "fc", "from": "Shattered Hearth", "to": "Translation Lab", "requires": [
+        { "item": "Scout" },
+        { "item": "Ship Fuel Capacity Upgrade" }
+    ] },
+
     { "category": "fc", "from": "Shattered Hearth", "to": "Venomous Reject", "requires": [
         { "item": "Scout" },
         { "item": "Taming Techniques" },
@@ -399,7 +412,8 @@
         { "region": "Venomous Reject" },
         { "region": "Dangerous Node" },
         { "item": "Translator (Deep Bramble)" },
-        { "item": "Expanded Dictionary" }
+        { "item": "Expanded Dictionary" },
+        { "item": "Ship Fuel Capacity Upgrade" }
     ] },
 
     { "category": "eh", "from": "Space", "to": "Jam 3 Galaxy (EH)", "requires": [

@@ -87,6 +87,21 @@ class TrapTypeWeights(OptionCounter):
     }
 
 
+class ShuffleEquipment(Choice):
+    """Choose how much non-progression equipment gets shuffled into the pool.
+    Situational (easy): Surface Integrity Scanner, Eject Button, Landing Camera
+    Useful (normal): Autopilot, Velocity Matcher + everything above
+    Essential (hard): Velocity Indicator, Distance Indicator + everything above"""
+    display_name = "Shuffle Equipment"
+    option_situational = 0
+    option_useful = 1
+    option_essential = 2
+    alias_easy = 0
+    alias_normal = 1
+    alias_hard = 2
+    default = 1
+
+
 class UpgradeCounts(OptionCounter):
     """Choose the number of upgrades shuffled into the item pool.
     The default in-game settings start you with 50% of each, bringing you to 200% once all upgrades are acquired.
@@ -332,6 +347,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     randomize_dark_bramble_layout: RandomizeDarkBrambleLayout
     trap_chance: TrapChance
     trap_type_weights: TrapTypeWeights
+    shuffle_equipment: ShuffleEquipment
     upgrade_counts: UpgradeCounts
     death_link: DeathLink
     logsanity: Logsanity

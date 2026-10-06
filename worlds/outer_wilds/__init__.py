@@ -35,6 +35,7 @@ class OuterWildsWebWorld(WebWorld):
             Spawn,
             EarlyKeyItem,
             RandomizeWarpPlatforms,
+            WarpPlatformPlando,
             SplitTranslator,
             Logsanity,
             ShuffleSpacesuit,
@@ -155,7 +156,7 @@ class OuterWildsWorld(World):
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
         self.warps = generate_random_warp_platform_mapping(self.random, self.options) \
-            if self.options.randomize_warp_platforms else "vanilla"
+            if self.options.randomize_warp_platforms or len(self.options.warp_platform_plando) > 0 else "vanilla"
         (self.planet_order, self.orbit_angles) = generate_random_orbits(self.random, self.options) \
             if self.options.randomize_orbits else ("vanilla", "vanilla")
         self.rotation_axes = generate_random_rotations(self.random) \

@@ -1,8 +1,6 @@
 from dataclasses import dataclass
-
-from schema import Schema, And, Optional
-
-from Options import Choice, DefaultOnToggle, PerGameCommonOptions, Range, StartInventoryPool, Toggle, OptionCounter
+from schema import Schema, And, Optional, Or
+from Options import Choice, DefaultOnToggle, PerGameCommonOptions, Range, StartInventoryPool, Toggle, OptionCounter, OptionDict
 
 
 class Goal(Choice):
@@ -220,6 +218,26 @@ class RandomizeWarpPlatforms(Toggle):
     display_name = "Randomize Warp Platforms"
 
 
+class WarpPlatformPlando(OptionDict):
+    """
+    Allows you to connect warp platforms manually. Any undefined platforms will be connected randomly, regardless of randomize_warp_platforms option.
+    Example (connects Ash Twin Tower -> Ash Twin Project and Timber Hearth -> Black Hole Forge):
+      warp_platform_plando:
+        ATT: ATP
+        TH: BHF
+    Warp platform abbreviations:
+      SS, ET, ATP, TH, BHNG (Brittle Hollow Northern Glacier), BHF, GD,
+      ST (Sun Tower), ETT, ATT, THT, BHT, GDT, WHS
+    """
+    display_name = "Warp Platform Plando"
+    default = {}
+
+    warp_platforms = {"SS", "ST", "ET", "ETT", "ATP", "ATT", "TH", "THT", "BHNG", "WHS", "BHF", "BHT", "GD", "GDT"}
+    schema = Schema({
+        Optional(Or(*warp_platforms)): Optional(Or(*warp_platforms))
+    })
+
+
 class EnableEchoesOfTheEyeDLC(Toggle):
     """
     Incorporates Echoes of the Eye content into the randomizer with an additional 10 items and 34 locations.
@@ -329,6 +347,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     randomize_orbits: RandomizeOrbits
     randomize_rotations: RandomizeRotations
     randomize_warp_platforms: RandomizeWarpPlatforms
+    warp_platform_plando: WarpPlatformPlando
     randomize_dark_bramble_layout: RandomizeDarkBrambleLayout
     trap_chance: TrapChance
     trap_type_weights: TrapTypeWeights

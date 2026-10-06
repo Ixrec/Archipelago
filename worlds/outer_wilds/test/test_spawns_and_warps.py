@@ -102,3 +102,16 @@ class TestRandomNonVanillaSpawnWithDLC(OuterWildsTestBase):
         "enable_eote_dlc": True,
         "spawn": Spawn.option_random_non_vanilla,
     }
+
+
+class TestWarpPlando(OuterWildsTestBase):
+    options = {
+        "warp_platform_plando": { "ATP": "ATT" }
+    }
+
+    def test_plando_success(self):
+        self.assertIn(("ATP", "ATT"), self.world.warps)
+
+    def test_plando_no_duplicates(self):
+        all_warps = [w for t in self.world.warps for w in t]
+        self.assertTrue(len(all_warps) == len(set(all_warps)))

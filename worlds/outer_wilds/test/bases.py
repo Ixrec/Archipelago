@@ -70,6 +70,7 @@ class OuterWildsTestBase(WorldTestBase):
 
     song_of_five_required_items = [
         "Spacesuit",
+        "Ship Fuel Capacity Upgrade",
         "Launch Codes",
         "Nomai Warp Codes",
         "Warp Core Installation Manual",

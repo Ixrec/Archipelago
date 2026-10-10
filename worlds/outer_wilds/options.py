@@ -135,6 +135,24 @@ class ShuffleSpacesuit(Toggle):
     display_name = "Shuffle Spacesuit"
 
 
+class ShuffleShipFuelCapacityUpgrade(Choice):
+    """
+    Limits the ship's initial fuel capacity greatly, requiring you to fly economically.
+    Locations that require multiple interplanetary trips or that are on distant objects logically require Ship Fuel Capacity Upgrade.
+    Note: especially difficult with Shuffle Equipment set to Essential or Randomize Dark Bramble Layout enabled.
+
+    Disabled: You start with default fuel tank.
+    Normal: There's enough fuel for one average trip with autopilot-style flying.
+    Hard: Halves the amount of fuel from normal.
+    """
+    display_name = "Shuffle Ship Fuel Capacity Upgrade"
+    option_disabled = 0
+    option_normal = 1
+    option_hard = 2
+    alias_false = 0
+    default = 0
+
+
 class RandomizeDarkBrambleLayout(Choice):
     """Randomizes which Dark Bramble 'rooms' link to which other rooms, so you can't rely on your memory of the vanilla layout.
     Be aware that randomized layouts are often significantly harder to navigate than vanilla Dark Bramble, since they allow several paths to the same room and more complex loops / recursion.
@@ -336,6 +354,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     death_link: DeathLink
     logsanity: Logsanity
     shuffle_spacesuit: ShuffleSpacesuit
+    shuffle_ship_fuel_capacity_upgrade: ShuffleShipFuelCapacityUpgrade
     split_translator: SplitTranslator
     enable_hn1_mod: EnableHearthsNeighborMod
     enable_outsider_mod: EnableTheOutsiderMod

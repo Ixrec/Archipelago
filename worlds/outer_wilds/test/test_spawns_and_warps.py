@@ -1,5 +1,5 @@
 from .bases import OuterWildsTestBase
-from ..options import EarlyKeyItem, Spawn
+from ..options import EarlyKeyItem, Spawn, ShuffleShipFuelCapacityUpgrade
 
 
 class TestRandomWarpDeterminism(OuterWildsTestBase):
@@ -102,3 +102,28 @@ class TestRandomNonVanillaSpawnWithDLC(OuterWildsTestBase):
         "enable_eote_dlc": True,
         "spawn": Spawn.option_random_non_vanilla,
     }
+
+
+class TestNoShipFuelRequirement(OuterWildsTestBase):
+    options = {
+        "spawn": Spawn.option_timber_hearth,
+        "warp_platform_plando": { "TH": "THT", "ATT": "ATP" },
+        "shuffle_ship_fuel_capacity_upgrade": ShuffleShipFuelCapacityUpgrade.option_normal
+    }
+
+    def test_goal(self):
+        # Goal should be reachable without extra fuel: warp through TH -> THT, ATT -> ATP, fetch warp core, return, fly to DB.
+        goal_items_no_fuel = [i for i in self.song_of_five_required_items if i != "Ship Fuel Capacity Upgrade"]
+        self.assertRequiresAllOf("Victory - Song of Five", goal_items_no_fuel)
+
+
+class TestShipFuelRequirement(OuterWildsTestBase):
+    options = {
+        "spawn": Spawn.option_brittle_hollow,
+        "warp_platform_plando": { "WHS": "ATP" },
+        "shuffle_ship_fuel_capacity_upgrade": ShuffleShipFuelCapacityUpgrade.option_normal
+    }
+
+    def test_goal(self):
+        # Goal should be require extra fuel, since we can't get back from WHS to BH.
+        self.assertRequiresAllOf("Victory - Song of Five", self.song_of_five_required_items)

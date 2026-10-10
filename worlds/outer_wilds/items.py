@@ -183,6 +183,11 @@ def create_items(world: "OuterWildsWorld") -> None:
                 multiworld.push_precollected(create_item(player, "Spacesuit"))
             else:
                 prog_and_useful_items.append(create_item(player, "Spacesuit"))
+        elif name == "Ship Fuel Capacity Upgrade":
+            if options.shuffle_ship_fuel_capacity_upgrade.value == 0:
+                multiworld.push_precollected(create_item(player, "Ship Fuel Capacity Upgrade"))
+            else:
+                prog_and_useful_items.append(create_item(player, "Ship Fuel Capacity Upgrade"))
         elif name == "Launch Codes" and options.spawn == Spawn.option_vanilla:
             # in vanilla spawn, Launch Codes is locked to Hornfels to ensure the player starts the time loop
             multiworld.get_location("TH: Talk to Hornfels", player).place_locked_item(create_item(player, name))

@@ -11,7 +11,7 @@ from .items import OuterWildsItem, all_non_event_items_table, item_name_groups, 
 from .locations_and_regions import all_non_event_locations_table, location_name_groups, create_regions
 from .options import *
 from .orbits import generate_random_orbits, generate_random_rotations
-from .warp_platforms import generate_random_warp_platform_mapping
+from .warp_platforms import generate_random_warp_platform_mapping, vanilla_warp_mapping
 
 
 class OuterWildsWebWorld(WebWorld):
@@ -38,6 +38,7 @@ class OuterWildsWebWorld(WebWorld):
             SplitTranslator,
             Logsanity,
             ShuffleSpacesuit,
+            ShuffleShipFuelCapacityUpgrade,
         ]),
         OptionGroup("Content", [
             EnableEchoesOfTheEyeDLC,
@@ -155,7 +156,8 @@ class OuterWildsWorld(World):
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
         self.warps = generate_random_warp_platform_mapping(self.random, self.options) \
-            if self.options.randomize_warp_platforms else "vanilla"
+            if self.options.randomize_warp_platforms \
+            else vanilla_warp_mapping
         (self.planet_order, self.orbit_angles) = generate_random_orbits(self.random, self.options) \
             if self.options.randomize_orbits else ("vanilla", "vanilla")
         self.rotation_axes = generate_random_rotations(self.random) \
@@ -256,6 +258,7 @@ class OuterWildsWorld(World):
             "enable_outsider_mod", "enable_ac_mod", "enable_fq_mod", "enable_fc_mod", "enable_eh_mod",
             "split_translator",                          # changes AP items, and how client/mod implements Translator
             "shuffle_spacesuit",
+            "shuffle_ship_fuel_capacity_upgrade",        # changes how client/mod decides fuel drain factor
         )
         # more client/mod features, these are only in the apworld because we want them fixed per-slot/at gen time
         slot_data["eotu_coordinates"] = self.eotu_coordinates
@@ -288,7 +291,7 @@ class OuterWildsWorld(World):
                                  '\n\nPlanet Order: %s\nOrbit Angles: %s\nRotation Axes: %s\n' %
                                  (self.multiworld.player_name[self.player],
                                   self.planet_order, self.orbit_angles, self.rotation_axes))
-        if self.warps != 'vanilla':
+        if self.options.randomize_warp_platforms:
             spoiler_handle.write('\nRandomized Warp Platforms for %s:'
                                  '\n\n%s\n' %
                                  (self.multiworld.player_name[self.player],

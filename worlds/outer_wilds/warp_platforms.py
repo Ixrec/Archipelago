@@ -28,10 +28,9 @@ dead_end_platforms = [
 ]
 
 platforms_reachable_by_ship = [p for p in warp_platforms if p not in dead_end_platforms]
+vanilla_warp_mapping = [("SS", "ST"), ("ET", "ETT"), ("ATP", "ATT"), ("TH", "THT"), ("BHNG", "WHS"), ("BHF", "BHT"), ("GD", "GDT")]
 
 
-# The vanilla warp mapping is:
-# [("SS", "ST"), ("ET", "ETT"), ("ATP", "ATT"), ("TH", "THT"), ("BHNG", "WHS"), ("BHF", "BHT"), ("GD", "GDT")]
 def generate_random_warp_platform_mapping(random: Random, options: OuterWildsGameOptions) -> list[tuple[str, str]]:
     unmapped_platforms = warp_platforms.copy()
     mappings = []
@@ -74,6 +73,41 @@ def generate_random_warp_platform_mapping(random: Random, options: OuterWildsGam
 
     return mappings
 
+
+def connection_exists(mappings: list[tuple[str, str]], from_region: str, to_region: str, two_way: bool = False, skip_regions: set[str]|None = None) -> bool:
+    # Avoid infinite recursion by keeping list of what regions have been checked.
+    if skip_regions == None:
+        skip_regions = set()
+    if from_region in skip_regions or from_region not in warp_platform_to_logical_region.values():
+        return False
+    # Check not only local warps but also ones we can walk to (ie. BH's multiple warps).
+    reachable_regions = { from_region }
+    if two_way:
+        reachable_regions.update(*{r for r in connected_regions.get(from_region, set()) if from_region in connected_regions.get(r, set())})
+    else:
+        reachable_regions.update(*connected_regions.get(from_region, set()))
+    reachable_regions.difference_update(skip_regions)
+    from_warps = [warp for warp, region in warp_platform_to_logical_region.items() if region in reachable_regions]
+
+    skip_regions.update(reachable_regions)
+    
+    while len(from_warps) > 0:
+        warp = from_warps.pop(0)
+        to_warp = get_connected_warp(mappings, warp)
+        target_region = warp_platform_to_logical_region[to_warp]
+        if target_region == to_region or connection_exists(mappings, target_region, to_region, two_way, skip_regions):
+            return True
+    return False
+
+
+def get_connected_warp(mappings: list[tuple[str, str]], from_warp: str) -> str:
+    return [*[w2 for (w1, w2) in mappings if w1 == from_warp], *[w1 for (w1, w2) in mappings if w2 == from_warp]][0]
+
+
+connected_regions = {
+    "Brittle Hollow": {"White Hole Station"},
+    "Hanging City Ceiling": {"White Hole Station", "Brittle Hollow"},
+}
 
 warp_platform_to_logical_region = {
     "SS": "Sun Station",

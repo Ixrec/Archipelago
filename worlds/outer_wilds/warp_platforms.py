@@ -64,13 +64,13 @@ class WarpPlatforms:
         self.platforms_reachable_by_ship = [p for p in self.warp_platforms if p not in self.dead_end_platforms]
 
 
-    def generate_random_warp_platform_mapping(self, random: Random, options: OuterWildsGameOptions) -> None:
+    def generate_random_warp_platform_mapping(self, random: Random, spawn: Spawn, ac_enabled) -> None:
         unmapped_platforms = self.warp_platforms.copy()
         self.mappings = []
 
         # Astral Codec requires a shipless warp path from the Hourglass Twins to Timber Hearth.
         # For simplicity, we connect HGT to TH directly, only randomizing which HGT pad gets used.
-        if options.enable_ac_mod:
+        if ac_enabled:
             available_hgt_platforms = ["ST", "ETT", "ATT", "THT", "BHT", "GDT", "ET"]  # all the towers plus Ember Twin
             hgt_platform = random.choice(available_hgt_platforms)
             self.mappings.append(("TH", hgt_platform))
@@ -92,7 +92,7 @@ class WarpPlatforms:
                 # The above rules out a direct THT/BHT/GDT->SS warp, but we also need to rule out a longer
                 # warp path through THT/BHT/GDT being the only way to SS. Such a path would have to go
                 # through Brittle Hollow because it's the only planet besides HGT with multiple warp pads.
-                if options.spawn != Spawn.option_brittle_hollow:
+                if spawn != Spawn.option_brittle_hollow:
                     available_platforms = [p for p in available_platforms if p not in ['BHNG', 'WHS']]
 
             destination = random.choice(available_platforms)

@@ -456,7 +456,7 @@
 	{ "category": "hs", "from": "Heliostudy", "to": "The Big One Tower", "requires": [ { "item": "The Big One Orb" } ] },
 	{ "category": "hs", "from": "Heliostudy", "to": "The Big One Ghost Matter Cave", "requires": [ { "item": "Glacial Abyss! Orb" } ] },
 	{ "category": "hs", "from": "Heliostudy", "to": "Subsurface Ocean", "requires": [
-		{ "anyOf": [ { "item": "Glacial Abyss! Orb" }, { "item": "Shattered Geode Orb" } ] } ] }
+		{ "anyOf": [ { "item": "Glacial Abyss! Orb" }, { "item": "Shattered Geode Orb" } ] }
 	] },
 	{ "category": "hs", "from": "Heliostudy", "to": "Glacial Abyss! Core", "requires": [
 		{ "anyOf": [ { "item": "Glacial Abyss! Orb" }, { "item": "Shattered Geode Orb" } ] }

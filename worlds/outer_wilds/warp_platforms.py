@@ -43,6 +43,7 @@ warp_platform_to_logical_region = {
 }
 warp_platform_required_items = {
     "SS": ["Spacesuit"],
+    "ST": ["Spacesuit"],
 }
 platforms_reachable_by_ship = [p for p in warp_platforms if p not in dead_end_platforms]
 

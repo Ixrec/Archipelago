@@ -25,11 +25,6 @@ dead_end_platforms = [
     "BHF",
 ]
 
-# From region: to regions which can be accessed without the ship.
-connected_regions = {
-    "Brittle Hollow": {"White Hole Station"},
-    "Hanging City Ceiling": {"White Hole Station", "Brittle Hollow"},
-}
 warp_platform_to_logical_region = {
     "SS": "Sun Station",
     "ST": "Hourglass Twins",
@@ -108,31 +103,42 @@ class WarpPlatforms:
         self.mappings.extend(list(zip(it, it)))
 
 
-    def connection_exists(self, from_region: str, to_region: str, two_way: bool = False, skip_regions: set[str]|None = None) -> bool:
-        # Avoid infinite recursion by keeping list of what regions have been checked.
-        if skip_regions is None:
-            skip_regions = set()
-        if from_region in skip_regions or from_region not in warp_platform_to_logical_region.values():
+    def shipless_connection_exists(self, from_region: str, to_region: str, two_way: bool = False) -> bool:
+        if from_region not in warp_platform_to_logical_region.values():
             return False
-        # Check not only local warps but also ones we can walk to (ie BH's multiple warps).
-        reachable_regions = { from_region }
-        if two_way:
-            reachable_regions.update(*{r for r in connected_regions.get(from_region, set()) if from_region in connected_regions.get(r, set())})
-        else:
-            reachable_regions.update(*connected_regions.get(from_region, set()))
-        reachable_regions.difference_update(skip_regions)
-        from_warps = [warp for warp, region in warp_platform_to_logical_region.items() if region in reachable_regions]
+        return self._connection_exists_recursive_impl(from_region, to_region, two_way, set())
 
-        skip_regions.update(reachable_regions)
+    itemless_warp_region_connections = {
+        "Brittle Hollow": {"White Hole Station"},
+        "Hanging City Ceiling": {"White Hole Station", "Brittle Hollow"},
+    }
 
+    # Here we make the strong assumption that all logic outside of this file is irrelevant,
+    # because this is only used to tell if a "shipless warp path" exists between two platforms
+    def _connection_exists_recursive_impl(self, from_region: str, to_region: str, two_way: bool, already_checked_regions: set[str]) -> bool:
+        if from_region in already_checked_regions:
+            return False
+
+        # First expand the from_region into a list of all warp-containing regions reachable by walking/falling without the ship
+        warp_regions_reachable_warpless = { from_region }
+        if from_region in self.itemless_warp_region_connections.keys():
+            if two_way:
+                warp_regions_reachable_warpless.update(*{r for r in self.itemless_warp_region_connections[from_region] if from_region in self.itemless_warp_region_connections[r]})
+            else:
+                warp_regions_reachable_warpless.update(*self.itemless_warp_region_connections[from_region])
+        warp_regions_reachable_warpless.difference_update(already_checked_regions)
+        from_warps = [warp for warp, region in warp_platform_to_logical_region.items() if region in warp_regions_reachable_warpless]
+        already_checked_regions.update(warp_regions_reachable_warpless)
+
+        # Then check the actual warp connections, with recursive calls to search for a complete path
         while len(from_warps) > 0:
-            warp = from_warps.pop(0)
-            to_warp = self.get_connected_warp(warp)
-            target_region = warp_platform_to_logical_region[to_warp]
-            if target_region == to_region or self.connection_exists(target_region, to_region, two_way, skip_regions):
+            next_target_region = warp_platform_to_logical_region[self.get_connected_warp(from_warps.pop(0))]
+            if next_target_region == to_region or self._connection_exists_recursive_impl(next_target_region, to_region, two_way, already_checked_regions):
                 return True
         return False
 
 
-    def get_connected_warp(self, from_warp: str) -> str:
-        return [*[w2 for (w1, w2) in self.mappings if w1 == from_warp], *[w1 for (w1, w2) in self.mappings if w2 == from_warp]][0]
+    def get_connected_warp(self, warp: str) -> str:
+        source = [w1 for (w1, w2) in self.mappings if w2 == warp]  # if arg was a destination
+        destination = [w2 for (w1, w2) in self.mappings if w1 == warp]  # if arg was a source
+        return [*source, *destination][0]  # assume mappings contains every warp exactly once

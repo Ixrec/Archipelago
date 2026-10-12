@@ -123,9 +123,10 @@ class WarpPlatforms:
         warp_regions_reachable_warpless = { from_region }
         if from_region in self.itemless_warp_region_connections.keys():
             if two_way:
-                warp_regions_reachable_warpless.update(*{r for r in self.itemless_warp_region_connections[from_region] if from_region in self.itemless_warp_region_connections[r]})
+                warp_regions_reachable_warpless.update({r for r in self.itemless_warp_region_connections[from_region] if from_region in self.itemless_warp_region_connections[r]})
             else:
-                warp_regions_reachable_warpless.update(*self.itemless_warp_region_connections[from_region])
+                warp_regions_reachable_warpless.update(self.itemless_warp_region_connections[from_region])
+
         warp_regions_reachable_warpless.difference_update(already_checked_regions)
         from_warps = [warp for warp, region in warp_platform_to_logical_region.items() if region in warp_regions_reachable_warpless]
         already_checked_regions.update(warp_regions_reachable_warpless)

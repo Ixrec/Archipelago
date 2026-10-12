@@ -37,11 +37,10 @@ def test_vanilla_connection_exists() -> None:
     assert wp.shipless_connection_exists("Sun Station", "Giant's Deep")
 
     # connections involving HCC -> BH and HCC -> WHS falls
-    # TODO: fix shipless_connection_exists so it works on any BH-related connection not starting at BH
-    # assert wp.shipless_connection_exists("Hanging City Ceiling", "Brittle Hollow")
-    # assert wp.shipless_connection_exists("Hanging City Ceiling", "White Hole Station")
-    # assert wp.shipless_connection_exists("Sun Station", "Brittle Hollow")
-    # assert wp.shipless_connection_exists("Sun Station", "White Hole Station")
+    assert wp.shipless_connection_exists("Hanging City Ceiling", "Brittle Hollow")
+    assert wp.shipless_connection_exists("Hanging City Ceiling", "White Hole Station")
+    assert wp.shipless_connection_exists("Sun Station", "Brittle Hollow")
+    assert wp.shipless_connection_exists("Sun Station", "White Hole Station")
     assert wp.shipless_connection_exists("Brittle Hollow", "White Hole Station")
     assert wp.shipless_connection_exists("Brittle Hollow", "Hanging City Ceiling") == False
     assert wp.shipless_connection_exists("Brittle Hollow", "Sun Station") == False

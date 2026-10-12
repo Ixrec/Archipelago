@@ -315,6 +315,13 @@ class EnableEchoHikeMod(Toggle):
     """
     display_name = "Enable Echo Hike Story Mod"
 
+class EnableHeliostudyMod(Toggle):
+    """
+    Incorporates Heliostudy story mod content into the randomizer with an additional 5 items and 20 locations.
+    If logsanity is enabled, that will add another 28 locations, for a total of 48 HS locations.
+    """
+    display_name = "Enable Heliostudy Story Mod"
+
 
 @dataclass
 class OuterWildsGameOptions(PerGameCommonOptions):
@@ -344,6 +351,7 @@ class OuterWildsGameOptions(PerGameCommonOptions):
     enable_fq_mod: EnableFretsQuestMod
     enable_fc_mod: EnableForgottenCastawaysMod
     enable_eh_mod: EnableEchoHikeMod
+    enable_hs_mod: EnableHeliostudyMod
 
 
 def get_creation_settings(options: OuterWildsGameOptions) -> set[str]:

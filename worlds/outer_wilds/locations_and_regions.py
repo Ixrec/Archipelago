@@ -172,6 +172,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
             ("FQ: Tuner's Song", options.enable_fq_mod),                                 # Fret's Quest
             ("FC: Conclusion", options.enable_fc_mod),                                   # Forgotten Castaways
             ("EH: Meet The Phosphors", options.enable_eh_mod),                           # Echo Hike
+            ("HS: Submission", options.enable_hs_mod),                                   # Heliostudy
         ]
         available_friend_locations = [location for (location, enabled) in friend_list if enabled]
         required_count = options.required_friends

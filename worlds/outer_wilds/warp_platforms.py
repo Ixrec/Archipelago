@@ -1,71 +1,74 @@
 from random import Random
 from .options import OuterWildsGameOptions, Spawn
 
-class WarpPlatforms:
-    vanilla_warp_mapping = [
-        ("SS", "ST"),
-        ("ET", "ETT"),
-        ("ATP", "ATT"),
-        ("TH", "THT"),
-        ("BHNG", "WHS"),
-        ("BHF", "BHT"),
-        ("GD", "GDT"),
-    ]
+# Use lists instead of sets for collections whose copies will get shuffled to ensure determinism.
+warp_platforms = [
+    "SS",  # Sun Station
+    "ST",  # Sun Tower on Ash Twin
+    "ET",  # Ember Twin
+    "ETT",  # Ember Twin Tower
+    "ATP",  # inside Ash Twin Project
+    "ATT",  # Ash Twin Tower on Ash Twin's surface
+    "TH",  # Timber Hearth
+    "THT",  # Timber Hearth Tower on Ash Twin
+    "BHNG",  # Brittle Hollow Northern Glacier
+    "WHS",  # White Hole Station
+    "BHF",  # the pad on the Hanging City ceiling used to access Black Hole Forge
+    "BHT",  # Brittle Hollow Tower on Ash Twin
+    "GD",  # Giant's Deep
+    "GDT",  # Giant's Deep Tower on Ash Twin
+]
+# These are the warp platforms which (logically) can only be reached via another warp platform.
+dead_end_platforms = [
+    "SS",
+    "ATP",
+    "BHF",
+]
 
+# From region: to regions which can be accessed without the ship.
+connected_regions = {
+    "Brittle Hollow": {"White Hole Station"},
+    "Hanging City Ceiling": {"White Hole Station", "Brittle Hollow"},
+}
+warp_platform_to_logical_region = {
+    "SS": "Sun Station",
+    "ST": "Hourglass Twins",
+    "ET": "Hourglass Twins",
+    "ETT": "Hourglass Twins",
+    "ATP": "Ash Twin Interior",
+    "ATT": "Hourglass Twins",
+    "TH": "Timber Hearth",
+    "THT": "Hourglass Twins",
+    "BHNG": "Brittle Hollow",
+    "WHS": "White Hole Station",
+    "BHF": "Hanging City Ceiling",
+    "BHT": "Hourglass Twins",
+    "GD": "Giant's Deep",
+    "GDT": "Hourglass Twins",
+}
+warp_platform_required_items = {
+    "SS": ["Spacesuit"],
+}
+platforms_reachable_by_ship = [p for p in warp_platforms if p not in dead_end_platforms]
+
+vanilla_warp_mapping = [
+    ("SS", "ST"),
+    ("ET", "ETT"),
+    ("ATP", "ATT"),
+    ("TH", "THT"),
+    ("BHNG", "WHS"),
+    ("BHF", "BHT"),
+    ("GD", "GDT"),
+]
+
+
+class WarpPlatforms:
     def __init__(self):
-        self.mappings: list[tuple[str, str]] = WarpPlatforms.vanilla_warp_mapping.copy()
-        # Use lists instead of sets in collections that get shuffled to ensure determinism.
-        self.warp_platforms = [
-            "SS",       # Sun Station
-            "ST",       # Sun Tower on Ash Twin
-            "ET",       # Ember Twin
-            "ETT",      # Ember Twin Tower
-            "ATP",      # inside Ash Twin Project
-            "ATT",      # Ash Twin Tower on Ash Twin's surface
-            "TH",       # Timber Hearth
-            "THT",      # Timber Hearth Tower on Ash Twin
-            "BHNG",     # Brittle Hollow Northern Glacier
-            "WHS",      # White Hole Station
-            "BHF",      # the pad on the Hanging City ceiling used to access Black Hole Forge
-            "BHT",      # Brittle Hollow Tower on Ash Twin
-            "GD",       # Giant's Deep
-            "GDT",      # Giant's Deep Tower on Ash Twin
-        ]
-        # These are the warp platforms which (logically) can only be reached via another warp platform.
-        self.dead_end_platforms = [
-            "SS",
-            "ATP",
-            "BHF",
-        ]
-        # From region: to regions which can be accessed without the ship.
-        self.connected_regions = {
-            "Brittle Hollow": {"White Hole Station"},
-            "Hanging City Ceiling": {"White Hole Station", "Brittle Hollow"},
-        }
-        self.warp_platform_to_logical_region = {
-            "SS": "Sun Station",
-            "ST": "Hourglass Twins",
-            "ET": "Hourglass Twins",
-            "ETT": "Hourglass Twins",
-            "ATP": "Ash Twin Interior",
-            "ATT": "Hourglass Twins",
-            "TH": "Timber Hearth",
-            "THT": "Hourglass Twins",
-            "BHNG": "Brittle Hollow",
-            "WHS": "White Hole Station",
-            "BHF": "Hanging City Ceiling",
-            "BHT": "Hourglass Twins",
-            "GD": "Giant's Deep",
-            "GDT": "Hourglass Twins",
-        }
-        self.warp_platform_required_items = {
-            "SS": ["Spacesuit"],
-        }
-        self.platforms_reachable_by_ship = [p for p in self.warp_platforms if p not in self.dead_end_platforms]
+        self.mappings: list[tuple[str, str]] = vanilla_warp_mapping.copy()
 
 
     def generate_random_warp_platform_mapping(self, random: Random, spawn: Spawn, ac_enabled) -> None:
-        unmapped_platforms = self.warp_platforms.copy()
+        unmapped_platforms = warp_platforms.copy()
         self.mappings = []
 
         # Astral Codec requires a shipless warp path from the Hourglass Twins to Timber Hearth.
@@ -78,8 +81,8 @@ class WarpPlatforms:
             unmapped_platforms.remove(hgt_platform)
 
         # Handle dead ends first to avoid pairing dead ends with other dead ends (e.g. Sun Station <-> ATP)
-        for dead_end_platform in self.dead_end_platforms:
-            available_platforms = [p for p in unmapped_platforms if p in self.platforms_reachable_by_ship]
+        for dead_end_platform in dead_end_platforms:
+            available_platforms = [p for p in unmapped_platforms if p in platforms_reachable_by_ship]
 
             # Sun Station is the only warp platform that disappears about halfway through the loop.
             # Technically every other platform is exposed by then, but for some the margin is just too small.
@@ -109,23 +112,23 @@ class WarpPlatforms:
         # Avoid infinite recursion by keeping list of what regions have been checked.
         if skip_regions is None:
             skip_regions = set()
-        if from_region in skip_regions or from_region not in self.warp_platform_to_logical_region.values():
+        if from_region in skip_regions or from_region not in warp_platform_to_logical_region.values():
             return False
         # Check not only local warps but also ones we can walk to (ie BH's multiple warps).
         reachable_regions = { from_region }
         if two_way:
-            reachable_regions.update(*{r for r in self.connected_regions.get(from_region, set()) if from_region in self.connected_regions.get(r, set())})
+            reachable_regions.update(*{r for r in connected_regions.get(from_region, set()) if from_region in connected_regions.get(r, set())})
         else:
-            reachable_regions.update(*self.connected_regions.get(from_region, set()))
+            reachable_regions.update(*connected_regions.get(from_region, set()))
         reachable_regions.difference_update(skip_regions)
-        from_warps = [warp for warp, region in self.warp_platform_to_logical_region.items() if region in reachable_regions]
+        from_warps = [warp for warp, region in warp_platform_to_logical_region.items() if region in reachable_regions]
 
         skip_regions.update(reachable_regions)
 
         while len(from_warps) > 0:
             warp = from_warps.pop(0)
             to_warp = self.get_connected_warp(warp)
-            target_region = self.warp_platform_to_logical_region[to_warp]
+            target_region = warp_platform_to_logical_region[to_warp]
             if target_region == to_region or self.connection_exists(target_region, to_region, two_way, skip_regions):
                 return True
         return False

@@ -8,7 +8,7 @@ from Utils import restricted_loads
 from worlds.generic.Rules import add_rule, set_rule
 from .options import Goal, Spawn
 from .should_generate import should_generate, should_generate_location
-from .warp_platforms import WarpPlatforms
+from .warp_platforms import warp_platform_to_logical_region, warp_platform_required_items
 
 if typing.TYPE_CHECKING:
     from . import OuterWildsWorld
@@ -181,13 +181,13 @@ def create_regions(world: "OuterWildsWorld") -> None:
     # Connect warp platform regions (none exist in dlc only).
     if not options.dlc_only:
         for (platform_1, platform_2) in world.warps.mappings:
-            region_name_1 = world.warps.warp_platform_to_logical_region[platform_1]
-            region_name_2 = world.warps.warp_platform_to_logical_region[platform_2]
+            region_name_1 = warp_platform_to_logical_region[platform_1]
+            region_name_2 = warp_platform_to_logical_region[platform_2]
             if region_name_1 == region_name_2:
                 continue
             required_items = ["Nomai Warp Codes"]
-            required_items.extend(world.warps.warp_platform_required_items.get(platform_1, []))
-            required_items.extend(world.warps.warp_platform_required_items.get(platform_2, []))
+            required_items.extend(warp_platform_required_items.get(platform_1, []))
+            required_items.extend(warp_platform_required_items.get(platform_2, []))
 
             def rule(state: CollectionState, items=required_items) -> bool:  # noqa
                 return state.has_all(items, p)

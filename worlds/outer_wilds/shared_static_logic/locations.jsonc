@@ -3931,13 +3931,13 @@
 		"category": "hs", "address": 1085049010, "name": "HS: Learn Requirement 6",
 		"region": "Shattered Geode Quantum Cave", "requires": [ { "item": "Translator (Other)" } ]
 	},
-	{ // HS_SUBSURFACE_OCEAN
-		"category": "hs", "address": 1085049011, "name": "HS: Subsurface Ocean",
-		"region": "Subsurface Ocean", "requires": [ ]
-	},
 	{ // HS_REQUIREMENT_7
-		"category": "hs", "address": 1085049012, "name": "HS: Learn Requirement 7",
+		"category": "hs", "address": 1085049011, "name": "HS: Learn Requirement 7",
 		"region": "Glacial Abyss! Core", "requires": [ { "item": "Translator (Other)" } ]
+	},
+	{ // HS_SUBSURFACE_OCEAN
+		"category": "hs", "address": 1085049012, "name": "HS: Subsurface Ocean",
+		"region": "Subsurface Ocean", "requires": [ ]
 	},
 	{ // HS_COMPLETE_REQUIREMENT_1
 		"category": "hs", "address": 1085049013, "name": "HS: Fulfill Requirement 1",
@@ -4043,12 +4043,12 @@
 		"region": "Glacial Abyss! Core", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_Core_Warp
-		"category": "hs", "address": 1085049037, "name": "HS Ship Log: Missing Orrery Warp Transmitter",
+		"category": "hs", "address": 1085049037, "name": "HS Ship Log: Abyssal Core 2 - Warp Transmitter",
 		"region": "Glacial Abyss! Core", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_MissingWarp_Fact
-		"category": "hs", "address": 1085049038, "name": "HS Ship Log: Abyssal Core 2 - Warp Transmitter",
-		"region": "Glacial Abyss! Core", "requires": [ { "item": "Translator (Other)" } ]
+		"category": "hs", "address": 1085049038, "name": "HS Ship Log: Missing Orrery Warp Transmitter",
+		"region": "Glacial Abyss! Core", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_Core_Door
 		"category": "hs", "address": 1085049039, "name": "HS Ship Log: Abyssal Core 3 - Door",

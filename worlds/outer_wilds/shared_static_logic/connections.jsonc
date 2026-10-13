@@ -435,7 +435,7 @@
     { "category": "eh&fc", "from": "Magma's Recursion", "to": "Eye Signal Lab via Threader", "requires": [ { "item": "Threader" } ] },
     { "category": "eh&fc", "from": "Eye Signal Lab via Threader", "to": "Eye Signal Lab", "requires": [] },
 	
-    { "category": "hs", "from": "Space", "to": "Heliostudy", "requires": [ "Spacesuit" ] }, // we don't have proper Heliostudy suitless logic, so simply require suit for all of it
+    { "category": "hs", "from": "Space", "to": "Heliostudy", "requires": [ { "item": "Spacesuit" } ] }, // we don't have proper Heliostudy suitless logic, so simply require suit for all of it
 	{ "category": "hs", "from": "Heliostudy", "to": "Enclosed Structure", "requires": [
 		{ "item": "Nomai Warp Codes" },
 		{ "anyOf": [ { "item": "Daucus Orb" }, { "item": "Shattered Geode Orb" } ] }

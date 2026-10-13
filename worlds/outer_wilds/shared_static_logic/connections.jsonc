@@ -471,6 +471,6 @@
 	
 	// Alternate way to reach the top of The Big One Tower and Glacial Abyss! Core
 	{ "category": "eh&hs", "from": "Heliostudy", "to": "Heliostudy via Threader", "requires": [ { "item": "Threader" } ] },
-	{ "categpry": "eh&hs", "from": "Heliostudy via Threader", "to": "The Big One Tower", "requires": [ ] }
+	{ "categpry": "eh&hs", "from": "Heliostudy via Threader", "to": "The Big One Tower", "requires": [ ] },
 	{ "category": "eh&hs", "from": "Heliostudy via Threader", "to": "Glacial Abyss! Core", "requires": [ { "item": "Glacial Abyss! Orb" } ]}
 ]

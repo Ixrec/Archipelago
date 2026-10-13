@@ -3983,115 +3983,115 @@
 	},
 // Heliostudy Story Mod Logsanity Locations
 	{ // SLF__Walker_Jam5_Planet1_Harmonic_Hint
-		"category": "hs", "address": 1085049020, "name": "HS Ship Log: Signal Detector",
+		"category": "hs", "logsanity": true, "address": 1085049020, "name": "HS Ship Log: Signal Detector",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Planet1_Warp_Hint
-		"category": "hs", "address": 1085049021, "name": "HS Ship Log: Warp Transmitter",
+		"category": "hs", "logsanity": true, "address": 1085049021, "name": "HS Ship Log: Warp Transmitter",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Planet1_Quantum_Hint
-		"category": "hs", "address": 1085049022, "name": "HS Ship Log: Quantum Rock",
+		"category": "hs", "logsanity": true, "address": 1085049022, "name": "HS Ship Log: Quantum Rock",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_ProjectRequirements_OppositeSides_Fact
-		"category": "hs", "address": 1085049023, "name": "HS Ship Log: Fifth Requirement",
+		"category": "hs", "logsanity": true, "address": 1085049023, "name": "HS Ship Log: Fifth Requirement",
 		"region": "Harmonic Convergence", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_ProjectRequirements_MiddleOrbit_Fact
-		"category": "hs", "address": 1085049024, "name": "HS Ship Log: Sixth Requirement",
+		"category": "hs", "logsanity": true, "address": 1085049024, "name": "HS Ship Log: Sixth Requirement",
 		"region": "Shattered Geode Quantum Cave", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Planet2_Tower_Hint
-		"category": "hs", "address": 1085049025, "name": "HS Ship Log: Tall Tower",
+		"category": "hs", "logsanity": true, "address": 1085049025, "name": "HS Ship Log: Tall Tower",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Planet2_GhostMatter_Hint
-		"category": "hs", "address": 1085049026, "name": "HS Ship Log: Ghost Matter Cave",
+		"category": "hs", "logsanity": true, "address": 1085049026, "name": "HS Ship Log: Ghost Matter Cave",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_ProjectRequirements_Geysers_Fact
-		"category": "hs", "address": 1085049027, "name": "HS Ship Log: Second Requirement",
+		"category": "hs", "logsanity": true, "address": 1085049027, "name": "HS Ship Log: Second Requirement",
 		"region": "The Big One Ghost Matter Cave", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_ProjectRequirements_FrozenPlanet_Fact
-		"category": "hs", "address": 1085049028, "name": "HS Ship Log: First Requirement",
+		"category": "hs", "logsanity": true, "address": 1085049028, "name": "HS Ship Log: First Requirement",
 		"region": "The Big One Tower", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Planet3_Buried_Hint
-		"category": "hs", "address": 1085049029, "name": "HS Ship Log: Buried Structure",
+		"category": "hs", "logsanity": true, "address": 1085049029, "name": "HS Ship Log: Buried Structure",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Planet3_NoDoor_Hint
-		"category": "hs", "address": 1085049030, "name": "HS Ship Log: Enclosed Structure",
+		"category": "hs", "logsanity": true, "address": 1085049030, "name": "HS Ship Log: Enclosed Structure",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_ProjectRequirements_WarpAlignment_Fact
-		"category": "hs", "address": 1085049031, "name": "HS Ship Log: Third Requirement",
+		"category": "hs", "logsanity": true, "address": 1085049031, "name": "HS Ship Log: Third Requirement",
 		"region": "Enclosed Structure", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_ProjectRequirements_DoubleSand_Fact
-		"category": "hs", "address": 1085049032, "name": "HS Ship Log: Fourth Requirement",
+		"category": "hs", "logsanity": true, "address": 1085049032, "name": "HS Ship Log: Fourth Requirement",
 		"region": "Daucus Surface", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_Ice_Fact
-		"category": "hs", "address": 1085049033, "name": "HS Ship Log: Subsurface Ocean",
+		"category": "hs", "logsanity": true, "address": 1085049033, "name": "HS Ship Log: Subsurface Ocean",
 		"region": "Subsurface Ocean", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_Warp_Fact
-		"category": "hs", "address": 1085049034, "name": "HS Ship Log: Undersea Warp Receiver",
+		"category": "hs", "logsanity": true, "address": 1085049034, "name": "HS Ship Log: Undersea Warp Receiver",
 		"region": "Subsurface Ocean", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_Geysers_Hint
-		"category": "hs", "address": 1085049035, "name": "HS Ship Log: Geysers",
+		"category": "hs", "logsanity": true, "address": 1085049035, "name": "HS Ship Log: Geysers",
 		"region": "Subsurface Ocean", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_Core_Fact
-		"category": "hs", "address": 1085049036, "name": "HS Ship Log: Abyssal Core 1 - Core",
+		"category": "hs", "logsanity": true, "address": 1085049036, "name": "HS Ship Log: Abyssal Core 1 - Core",
 		"region": "Glacial Abyss! Core", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_Core_Warp
-		"category": "hs", "address": 1085049037, "name": "HS Ship Log: Abyssal Core 2 - Warp Transmitter",
+		"category": "hs", "logsanity": true, "address": 1085049037, "name": "HS Ship Log: Abyssal Core 2 - Warp Transmitter",
 		"region": "Glacial Abyss! Core", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_MissingWarp_Fact
-		"category": "hs", "address": 1085049038, "name": "HS Ship Log: Missing Orrery Warp Transmitter",
+		"category": "hs", "logsanity": true, "address": 1085049038, "name": "HS Ship Log: Missing Orrery Warp Transmitter",
 		"region": "Glacial Abyss! Core", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Planet4_Core_Door
-		"category": "hs", "address": 1085049039, "name": "HS Ship Log: Abyssal Core 3 - Door",
+		"category": "hs", "logsanity": true, "address": 1085049039, "name": "HS Ship Log: Abyssal Core 3 - Door",
 		"region": "Glacial Abyss! Core", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_ProjectRequirements_FinalLocation_Fact
-		"category": "hs", "address": 1085049040, "name": "HS Ship Log: Seventh Requirement",
+		"category": "hs", "logsanity": true, "address": 1085049040, "name": "HS Ship Log: Seventh Requirement",
 		"region": "Glacial Abyss! Core", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Platform_Discovery
-		"category": "hs", "address": 1085049041, "name": "HS Ship Log: Invitation Platform 1 - Invitation",
+		"category": "hs", "logsanity": true, "address": 1085049041, "name": "HS Ship Log: Invitation Platform 1 - Invitation",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Platform_Combination
-		"category": "hs", "address": 1085049042, "name": "HS Ship Log: Invitation Platform 2 - Activation",
+		"category": "hs", "logsanity": true, "address": 1085049042, "name": "HS Ship Log: Invitation Platform 2 - Activation",
 		"region": "Submission Chamber", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Station_Fact
-		"category": "hs", "address": 1085049043, "name": "HS Ship Log: Orrery Station 1 - Station",
+		"category": "hs", "logsanity": true, "address": 1085049043, "name": "HS Ship Log: Orrery Station 1 - Station",
 		"region": "Heliostudy", "requires": [ ]
 	},
 	{ // SLF__Walker_Jam5_Station_Orrery_Fact
-		"category": "hs", "address": 1085049044, "name": "HS Ship Log: Orrery Station 2 - Orrery",
+		"category": "hs", "logsanity": true, "address": 1085049044, "name": "HS Ship Log: Orrery Station 2 - Orrery",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_Orrery_Warp
-		"category": "hs", "address": 1085049045, "name": "HS Ship Log: Orrery Station 3 - Warp",
+		"category": "hs", "logsanity": true, "address": 1085049045, "name": "HS Ship Log: Orrery Station 3 - Warp",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Station_ProjectRequirements_Count
-		"category": "hs", "address": 1085049046, "name": "HS Ship Log: Orrery Station 4 - Requirements",
+		"category": "hs", "logsanity": true, "address": 1085049046, "name": "HS Ship Log: Orrery Station 4 - Requirements",
 		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Star_Heliostudy_Fact
-		"category": "hs", "address": 1085049047, "name": "HS Ship Log: Heliostudy",
+		"category": "hs", "logsanity": true, "address": 1085049047, "name": "HS Ship Log: Heliostudy",
 		"region": "Heliostudy", "requires": [ ]
 	}
 ]

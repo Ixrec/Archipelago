@@ -447,7 +447,9 @@
 			{ "allOf": [ { "item": "Shattered Geode Orb" }, { "item": "The Big One Orb" }, { "item": "Glacial Abyss! Orb" } ] },
 			{ "allOf": [ { "item": "Daucus Orb" }, { "item": "Shattered Geode Orb" }, { "item": "Glacial Abyss! Orb" } ] },
 			{ "allOf": [ { "item": "Daucus Orb" }, { "item": "The Big One Orb" }, { "item": "Shattered Geode Orb" } ] }
-        ] }
+        ] },
+		{ "item": "Signalscope" }, // and the proper signals
+		{ "item": "Heliochord Frequency" }
 	] },
 	{ "category": "hs", "from": "Heliostudy", "to": "Shattered Geode Quantum Cave", "requires": [ { "item": "Entanglement Rule" }, { "item": "Shattered Geode Orb" } ] },
 	{ "category": "hs", "from": "Heliostudy", "to": "The Big One Tower", "requires": [ { "item": "The Big One Orb" } ] },

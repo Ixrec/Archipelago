@@ -171,7 +171,7 @@ class OuterWildsWorld(World):
             self.warps.apply_warp_plando(self.options.warp_platform_plando.value)
         if self.options.enable_ac_mod:
             self.warps.apply_ac_modifications(self.random)
-        self.warps.generate_random_warp_platform_mapping(self.random, self.options.spawn)
+        self.warps.randomize_unmapped_warps(self.random, self.options.spawn)
         (self.planet_order, self.orbit_angles) = generate_random_orbits(self.random, self.options) \
             if self.options.randomize_orbits else ("vanilla", "vanilla")
         self.rotation_axes = generate_random_rotations(self.random) \

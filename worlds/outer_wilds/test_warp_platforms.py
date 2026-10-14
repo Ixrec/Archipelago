@@ -53,7 +53,7 @@ def test_fixed_seed_get_connected_warp() -> None:
     wp = WarpPlatforms()
     r = Random()
     r.seed(1)
-    wp.generate_random_warp_platform_mapping(r, Spawn(Spawn.option_vanilla))
+    wp.randomize_unmapped_warps(r, Spawn(Spawn.option_vanilla))
 
     assert wp.get_connected_warp("SS") == "ET"
     assert wp.get_connected_warp("ATP") == "GDT"
@@ -70,7 +70,7 @@ def test_fixed_seed_connection_exists() -> None:
     # this seed has WHS warp to an Ash Twin tower, which is what we want to test
     # it also has Sun Station warp to Hourglass Twins, so we can leave many control asserts unchanged
     r.seed(1)
-    wp.generate_random_warp_platform_mapping(r, Spawn(Spawn.option_vanilla))
+    wp.randomize_unmapped_warps(r, Spawn(Spawn.option_vanilla))
 
     # trivial, warpless, invalid connections
     assert wp.shipless_connection_exists("Sun Station", "Sun Station")
@@ -109,7 +109,7 @@ def test_fixed_seed_connection_exists() -> None:
 def test_warp_plando() -> None:
     wp = WarpPlatforms()
     wp.apply_warp_plando({"ATP": "ATT", "TH": "GD", "BHNG": "WHS"})
-    wp.generate_random_warp_platform_mapping(Random(), Spawn(Spawn.option_vanilla))
+    wp.randomize_unmapped_warps(Random(), Spawn(Spawn.option_vanilla))
     # Test plando working.
     assert wp.get_connected_warp("ATP") == "ATT"
     # Test that non-plando platforms got mapped.
@@ -133,5 +133,5 @@ def test_ac_warps() -> None:
     wp = WarpPlatforms()
     r = Random()
     wp.apply_ac_modifications(r)
-    wp.generate_random_warp_platform_mapping(r, Spawn(Spawn.option_vanilla))
+    wp.randomize_unmapped_warps(r, Spawn(Spawn.option_vanilla))
     assert wp.shipless_connection_exists("Hourglass Twins", "Timber Hearth")

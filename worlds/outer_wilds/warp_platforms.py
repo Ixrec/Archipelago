@@ -71,7 +71,7 @@ class WarpPlatforms:
         self.mappings = vanilla_warp_mapping.copy()
 
 
-    def generate_random_warp_platform_mapping(self, random: Random, spawn: Spawn) -> None:
+    def randomize_unmapped_warps(self, random: Random, spawn: Spawn) -> None:
         unmapped_platforms = self.get_unmapped_warps()
         platforms_reachable_by_ship = [p for p in warp_platforms if p not in self.dead_end_platforms]
         # Handle dead ends first to avoid pairing dead ends with other dead ends (e.g. Sun Station <-> ATP)

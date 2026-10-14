@@ -18,13 +18,6 @@ warp_platforms = [
     "GD",  # Giant's Deep
     "GDT",  # Giant's Deep Tower on Ash Twin
 ]
-# These are the warp platforms which (logically) can only be reached via another warp platform.
-dead_end_platforms = [
-    "SS",
-    "ATP",
-    "BHF",
-]
-
 warp_platform_to_logical_region = {
     "SS": "Sun Station",
     "ST": "Hourglass Twins",
@@ -45,7 +38,6 @@ warp_platform_required_items = {
     "SS": ["Spacesuit"],
     "ST": ["Spacesuit"],
 }
-platforms_reachable_by_ship = [p for p in warp_platforms if p not in dead_end_platforms]
 
 vanilla_warp_mapping = [
     ("SS", "ST"),
@@ -62,10 +54,23 @@ class WarpPlatforms:
     def __init__(self):
         self.mappings: list[tuple[str, str]] = vanilla_warp_mapping.copy()
 
+        # These are the warp platforms which (logically) can only be reached via another warp platform.
+        self.dead_end_platforms = [
+            "SS",
+            "ATP",
+            "BHF",
+        ]
+        self.itemless_warp_region_connections = {
+            "Brittle Hollow": {"White Hole Station"},
+            "Hanging City Ceiling": {"White Hole Station", "Brittle Hollow"},
+        }
+
 
     def generate_random_warp_platform_mapping(self, random: Random, spawn: Spawn, ac_enabled) -> None:
         unmapped_platforms = warp_platforms.copy()
         self.mappings = []
+
+        platforms_reachable_by_ship = [p for p in warp_platforms if p not in self.dead_end_platforms]
 
         # Astral Codec requires a shipless warp path from the Hourglass Twins to Timber Hearth.
         # For simplicity, we connect HGT to TH directly, only randomizing which HGT pad gets used.
@@ -77,7 +82,7 @@ class WarpPlatforms:
             unmapped_platforms.remove(hgt_platform)
 
         # Handle dead ends first to avoid pairing dead ends with other dead ends (e.g. Sun Station <-> ATP)
-        for dead_end_platform in dead_end_platforms:
+        for dead_end_platform in self.dead_end_platforms:
             available_platforms = [p for p in unmapped_platforms if p in platforms_reachable_by_ship]
 
             # Sun Station is the only warp platform that disappears about halfway through the loop.
@@ -109,10 +114,6 @@ class WarpPlatforms:
             return False
         return self._connection_exists_recursive_impl(from_region, to_region, two_way, set())
 
-    itemless_warp_region_connections = {
-        "Brittle Hollow": {"White Hole Station"},
-        "Hanging City Ceiling": {"White Hole Station", "Brittle Hollow"},
-    }
 
     # Here we make the strong assumption that all logic outside of this file is irrelevant,
     # because this is only used to tell if a "shipless warp path" exists between two platforms
@@ -144,3 +145,10 @@ class WarpPlatforms:
         source = [w1 for (w1, w2) in self.mappings if w2 == warp]  # if arg was a destination
         destination = [w2 for (w1, w2) in self.mappings if w1 == warp]  # if arg was a source
         return [*source, *destination][0]  # assume mappings contains every warp exactly once
+
+
+    def apply_eh_modifications(self) -> None:
+        self.dead_end_platforms.remove("BHF")
+        bh_connections = self.itemless_warp_region_connections.get("Brittle Hollow")
+        if bh_connections:
+            bh_connections.add("Hanging City Ceiling")

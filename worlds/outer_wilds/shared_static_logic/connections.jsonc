@@ -421,6 +421,7 @@
         { "item": "Spacesuit" } ]
     },
     { "category": "eh", "from": "Forge via Threader", "to": "Black Hole Forge", "requires": []},
+    { "category": "eh", "from": "Forge via Threader", "to": "Hanging City Ceiling", "requires": []},
 
     // Alternate way to navigate the Stranger.
     { "category": "eh&dlc", "from": "Stranger Sunside Hangar", "to": "Stranger via Threader", "requires": [ { "item": "Threader" } ] },

@@ -94,6 +94,8 @@ class WarpPlatforms:
                 if spawn != Spawn.option_brittle_hollow:
                     available_platforms = [p for p in available_platforms if p not in ['BHNG', 'WHS']]
 
+            if len(available_platforms) == 0:
+                raise OptionError(f"Error while randomizing warps: Can't connect dead end warp {dead_end_platform} to non dead end warp.")
             destination = random.choice(available_platforms)
             self.mappings.append((dead_end_platform, destination))
             unmapped_platforms.remove(dead_end_platform)

@@ -115,7 +115,7 @@
     { "category": "fc", "split_translator": true, "code": 1734473766, "name": "Translator (Deep Bramble)", "type": "progression" },
     { "category": "fc", "code": 1734473767, "name": "Expanded Dictionary", "type": "progression" },
 
-    { "category": "eh|fc|hn1|hn2|hs", "code": 1734473768, "name": "Warp Drive", "type": "progression" },
+    { "category": "eh|fc|hn1|hn2|hs", "code": 1734473768, "name": "Interstellar Warp Drive", "type": "progression" },
 
     { "category": "fc", "code": 1734473769, "name": "Taming Techniques", "type": "progression" },
     { "category": "fc", "code": 1734473770, "name": "Crystal Repair Manual", "type": "progression" },

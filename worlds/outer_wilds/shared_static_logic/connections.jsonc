@@ -257,7 +257,7 @@
 
     { "category": "hn1", "from": "Space", "to": "Lonely Hermit", "requires": [
         { "item": "Spacesuit" }, // we don't have proper HN1 suitless logic, so simply require suit for all of it
-        { "item": "Warp Drive" }
+        { "item": "Interstellar Warp Drive" }
       ] },
 
     { "category": "hn1", "from": "Lonely Hermit", "to": "Alpine Core", "requires": [] },
@@ -325,7 +325,7 @@
 
     { "category": "hn2", "from": "Space", "to": "Jam 3 Galaxy (HN2)", "requires": [
         { "item": "Spacesuit" }, // we don't have proper HN2 suitless logic, so simply require suit for all of it
-        { "item": "Warp Drive" }
+        { "item": "Interstellar Warp Drive" }
       ] },
     { "category": "hn2", "from": "Jam 3 Galaxy (HN2)", "to": "Magistarium", "requires": [] },
     { "category": "hn2", "from": "Magistarium", "to": "Magistarium Library", "requires": [ { "item": "Magistarium Library Access Code" } ] },
@@ -347,7 +347,7 @@
     // Warping to Deep Bramble only requires a Black Hole Core, and High Energy Lab access is guaranteed if you have access to the Vessel
     { "category": "fc", "from": "The Vessel", "to": "Deep Bramble", "requires": [] },
     // Space access already requires Launch Codes
-    { "category": "fc", "from": "Space", "to": "Deep Bramble via Warp Drive", "requires": [ { "item":  "Warp Drive" } ] },
+    { "category": "fc", "from": "Space", "to": "Deep Bramble via Warp Drive", "requires": [ { "item":  "Interstellar Warp Drive" } ] },
     { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Deep Bramble", "requires": [] },
     { "category": "fc", "from": "Deep Bramble", "to": "Lover's Rock", "requires": [
         { "item": "Signalscope" },
@@ -404,7 +404,7 @@
 
     { "category": "eh", "from": "Space", "to": "Jam 3 Galaxy (EH)", "requires": [
         { "item": "Spacesuit" }, // We don't have proper EH suitless logic, so simply require suit for all of it.
-        { "item": "Warp Drive" }
+        { "item": "Interstellar Warp Drive" }
     ] },
     { "category": "eh", "from": "Jam 3 Galaxy (EH)", "to": "Echo Hike", "requires": [ { "item": "Spacesuit" } ] },
 
@@ -436,7 +436,7 @@
     { "category": "eh&fc", "from": "Magma's Recursion", "to": "Eye Signal Lab via Threader", "requires": [ { "item": "Threader" } ] },
     { "category": "eh&fc", "from": "Eye Signal Lab via Threader", "to": "Eye Signal Lab", "requires": [] },
 	
-    { "category": "hs", "from": "Space", "to": "Heliostudy", "requires": [ { "item": "Spacesuit" }, { "item": "Warp Drive" } ] }, // we don't have proper Heliostudy suitless logic, so simply require suit for all of it
+    { "category": "hs", "from": "Space", "to": "Heliostudy", "requires": [ { "item": "Spacesuit" }, { "item": "Interstellar Warp Drive" } ] }, // we don't have proper Heliostudy suitless logic, so simply require suit for all of it
 	{ "category": "hs", "from": "Heliostudy", "to": "Enclosed Structure", "requires": [
 		{ "item": "Nomai Warp Codes" },
 		{ "anyOf": [ { "item": "Daucus Orb" }, { "item": "Shattered Geode Orb" } ] }

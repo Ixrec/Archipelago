@@ -160,10 +160,16 @@ class WarpPlatforms:
                 raise OptionError(f"Error while processing warp plando: Trying to connect 2 dead ends ({w1} - {w2})")
             if w1 == w2:
                 raise OptionError(f"Error while processing warp plando: Trying to connect {w1} to itself.")
-            if w1 not in unmapped_warps:
-                raise OptionError(f"Error while processing warp plando: {w1} is connected twice.")
-            if w2 not in unmapped_warps:
-                raise OptionError(f"Error while processing warp plando: {w2} is connected twice.")
+            # Remove any existing connection (ie vanilla warp).
+            connections_to_remove = []
+            for warp_to_disconnect in (w1, w2):
+                for (wm1, wm2) in self.mappings:
+                    if wm1 == warp_to_disconnect or wm2 == warp_to_disconnect:
+                        connections_to_remove.append((wm1, wm2))
+            for connection in connections_to_remove:
+                self.mappings.remove(connection)
+                unmapped_warps.extend(connection)
+
             self.mappings.append((w1, w2))
             unmapped_warps.remove(w1)
             unmapped_warps.remove(w2)

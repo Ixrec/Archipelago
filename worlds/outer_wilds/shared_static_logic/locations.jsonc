@@ -3373,7 +3373,7 @@
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047104, "name": "DB Ship Log: Stranded Nomai 5 - Warp",
-        "region": "Space", "requires": [ { "item": "Deep Bramble Coordinates" } ] // Regulated by DpB Coords to control your ability to warp into the Deep Bramble
+        "region": "The Vessel", "requires": [ ]
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047105, "name": "FC Ship Log: Bramble's Doorstep 1 - Visit",
@@ -3381,7 +3381,7 @@
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047106, "name": "FC Ship Log: Bramble's Doorstep 2 - Nomai",
-        "region": "Deep Bramble", "requires": [ { "item": "Deep Bramble Coordinates" } ] // Regulated by DpB Coords to control your ability to warp out of the Deep Bramble
+        "region": "Deep Bramble", "requires": [ { "item": "Translator (Deep Bramble)" } ]
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047107, "name": "FC Ship Log: Bramble's Doorstep 3 - Split",

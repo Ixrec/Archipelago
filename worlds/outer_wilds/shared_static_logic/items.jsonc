@@ -123,5 +123,11 @@
     { "category": "fc", "code": 1734473777, "name": "Echolocation Tones Frequency", "type": "progression" },
     { "category": "fc", "code": 1734473778, "name": "Hot Shard Signal", "type": "progression" },
 
-    { "category": "eh", "code": 1734473779, "name": "Threader", "type": "progression" }
+    { "category": "eh", "code": 1734473779, "name": "Threader", "type": "progression" },
+
+    { "category": "hs", "code": 1734473780, "name": "Heliochord Frequency", "type": "progression" },
+    { "category": "hs", "code": 1734473781, "name": "Daucus Orb", "type": "progression" },
+    { "category": "hs", "code": 1734473782, "name": "Glacial Abyss! Orb", "type": "progression" },
+    { "category": "hs", "code": 1734473783, "name": "Shattered Geode Orb", "type": "progression" },
+    { "category": "hs", "code": 1734473784, "name": "The Big One Orb", "type": "progression" }
 ]

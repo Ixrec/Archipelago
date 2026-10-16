@@ -35,6 +35,7 @@ class OuterWildsWebWorld(WebWorld):
             Spawn,
             EarlyKeyItem,
             RandomizeWarpPlatforms,
+            WarpPlatformPlando,
             SplitTranslator,
             Logsanity,
             ShuffleSpacesuit,
@@ -137,7 +138,9 @@ class OuterWildsWorld(World):
             if hasattr(self.multiworld, "re_gen_passthrough"):
                 if "Outer Wilds" in self.multiworld.re_gen_passthrough:
                     slot_data = self.multiworld.re_gen_passthrough["Outer Wilds"]
-                    if slot_data["warps"] != "vanilla":
+                    if slot_data["warps"] == "vanilla": # Legacy support.
+                        self.warps.apply_vanilla_warp_platform_mapping()
+                    else:
                         self.warps.mappings = slot_data["warps"] # is always set
                     self.options.goal.value = slot_data.get("goal", 0)
                     self.options.spawn.value = slot_data.get("spawn", 0)
@@ -160,10 +163,15 @@ class OuterWildsWorld(World):
         # generate game-specific randomizations separate from AP items/locations
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
+        if not self.options.randomize_warp_platforms:
+            self.warps.apply_vanilla_warp_platform_mapping()
         if self.options.enable_eh_mod:
             self.warps.apply_eh_modifications()
-        if self.options.randomize_warp_platforms:
-            self.warps.generate_random_warp_platform_mapping(self.random, self.options.spawn, self.options.enable_ac_mod.value)
+        if len(self.options.warp_platform_plando) > 0:
+            self.warps.apply_warp_plando(self.options.warp_platform_plando.value)
+        if self.options.enable_ac_mod:
+            self.warps.apply_ac_modifications(self.random)
+        self.warps.randomize_unmapped_warps(self.random, self.options.spawn)
         (self.planet_order, self.orbit_angles) = generate_random_orbits(self.random, self.options) \
             if self.options.randomize_orbits else ("vanilla", "vanilla")
         self.rotation_axes = generate_random_rotations(self.random) \
@@ -296,8 +304,8 @@ class OuterWildsWorld(World):
                                  '\n\nPlanet Order: %s\nOrbit Angles: %s\nRotation Axes: %s\n' %
                                  (self.multiworld.player_name[self.player],
                                   self.planet_order, self.orbit_angles, self.rotation_axes))
-        if self.options.randomize_warp_platforms:
-            spoiler_handle.write('\nRandomized Warp Platforms for %s:'
+        if self.options.randomize_warp_platforms or len(self.options.warp_platform_plando) > 0:
+            spoiler_handle.write('\nWarp Platforms for %s:'
                                  '\n\n%s\n' %
                                  (self.multiworld.player_name[self.player],
                                   self.warps.mappings))

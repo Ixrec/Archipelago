@@ -305,7 +305,7 @@ class OuterWildsWorld(World):
                                  (self.multiworld.player_name[self.player],
                                   self.planet_order, self.orbit_angles, self.rotation_axes))
         if self.options.randomize_warp_platforms or len(self.options.warp_platform_plando) > 0:
-            spoiler_handle.write('\nRandomized Warp Platforms for %s:'
+            spoiler_handle.write('\nWarp Platforms for %s:'
                                  '\n\n%s\n' %
                                  (self.multiworld.player_name[self.player],
                                   self.warps.mappings))

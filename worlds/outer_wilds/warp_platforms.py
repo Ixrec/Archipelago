@@ -184,7 +184,7 @@ class WarpPlatforms:
 
         if "TH" not in unmapped_warps:
             if self.shipless_connection_exists("Hourglass Twins", "Timber Hearth"):
-                return # Connection already exists via plando.
+                return # Connection already exists via plando or vanilla mapping.
             raise OptionError("Astral Codec requires Hourglass Twins to be connected to Timber Hearth, but TH is connected to somewhere else.")
 
         available_hgt_platforms = [w for w in unmapped_warps if warp_platform_to_logical_region[w] == "Hourglass Twins"]

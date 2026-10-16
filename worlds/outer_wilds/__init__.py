@@ -61,6 +61,7 @@ class OuterWildsWebWorld(WebWorld):
         OptionGroup("(Non-Progression) Item Options", [
             TrapChance,
             TrapTypeWeights,
+            ShuffleEquipment,
             UpgradeCounts,
         ]),
     ]

@@ -86,17 +86,15 @@ class TrapTypeWeights(OptionCounter):
 
 
 class ShuffleEquipment(Choice):
-    """Choose how much non-progression equipment gets shuffled into the pool.
-    Situational (easy): Surface Integrity Scanner, Eject Button, Landing Camera
-    Useful (normal): Autopilot, Velocity Matcher + everything above
-    Essential (hard): Velocity Indicator, Distance Indicator, Ship Medkit, Ship Jetpack Refueler, Ship Lights + everything above"""
+    """Choose how much of your non-progression equipment gets taken away and shuffled into the item pool.
+
+    Easy: Surface Integrity Scanner, Eject Button, Landing Camera
+    Normal: Autopilot, Velocity Matcher + everything above
+    Hard: Velocity Indicator, Distance Indicator, Ship Medkit, Ship Jetpack Refueler, Ship Lights + everything above"""
     display_name = "Shuffle Equipment"
-    option_situational = 0
-    option_useful = 1
-    option_essential = 2
-    alias_easy = 0
-    alias_normal = 1
-    alias_hard = 2
+    option_easy = 0
+    option_normal = 1
+    option_hard = 2
     default = 1
 
 

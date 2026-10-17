@@ -56,6 +56,7 @@
     { "code": 1734473787, "name": "Ship Jetpack Refueler", "type": "useful" },
     { "code": 1734473788, "name": "Velocity Indicator", "type": "useful" },
     { "code": 1734473789, "name": "Distance Indicator", "type": "useful" },
+    { "code": 1734473790, "name": "Ship Lights", "type": "useful" },
     { "code": 1734473729, "name": "Oxygen Capacity Upgrade", "type": "useful" },
     { "code": 1734473730, "name": "Fuel Capacity Upgrade", "type": "useful" },
     { "code": 1734473731, "name": "Boost Duration Upgrade", "type": "useful" },

@@ -89,7 +89,7 @@ class ShuffleEquipment(Choice):
     """Choose how much non-progression equipment gets shuffled into the pool.
     Situational (easy): Surface Integrity Scanner, Eject Button, Landing Camera
     Useful (normal): Autopilot, Velocity Matcher + everything above
-    Essential (hard): Velocity Indicator, Distance Indicator + everything above"""
+    Essential (hard): Velocity Indicator, Distance Indicator, Ship Medkit, Ship Jetpack Refueler, Ship Lights + everything above"""
     display_name = "Shuffle Equipment"
     option_situational = 0
     option_useful = 1

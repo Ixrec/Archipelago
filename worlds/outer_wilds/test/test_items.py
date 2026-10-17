@@ -2,8 +2,11 @@ from .bases import OuterWildsTestBase
 
 
 default_precollected_equipment = {
+    "Ship Medkit",
+    "Ship Jetpack Refueler",
     "Velocity Indicator",
     "Distance Indicator",
+    "Ship Lights",
 }
 
 

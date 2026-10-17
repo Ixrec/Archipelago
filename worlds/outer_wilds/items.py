@@ -188,7 +188,7 @@ def create_items(world: "OuterWildsWorld") -> None:
             world.get_location("TH: Talk to Hornfels").place_locked_item(create_item(player, name))
         elif name in {"Autopilot", "Velocity Matcher"} and options.shuffle_equipment < ShuffleEquipment.option_useful:
             multiworld.push_precollected(create_item(player, name))
-        elif name in {"Velocity Indicator", "Distance Indicator"} and options.shuffle_equipment < ShuffleEquipment.option_essential:
+        elif name in {"Ship Medkit", "Ship Jetpack Refueler", "Velocity Indicator", "Distance Indicator", "Ship Lights"} and options.shuffle_equipment < ShuffleEquipment.option_essential:
             multiworld.push_precollected(create_item(player, name))
         elif item.type == ItemClassification.filler:
             if name not in repeatable_filler_weights:

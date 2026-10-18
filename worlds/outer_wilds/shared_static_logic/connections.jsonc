@@ -465,8 +465,8 @@
 		{ "item": "Nomai Warp Codes" }
 	] },
 	{ "category": "hs", "from": "Glacial Abyss! Core", "to": "Submission Chamber", "requires": [
-		{ "item": "The Big One Orb" },
-		{ "item": "Glacial Abyss! Orb" },
+		{ "item": "The Big One Orb" }, // no alternative for Requirement 6: "The largest planet is not in the furthest orbit"
+		{ "item": "Glacial Abyss! Orb" }, // no alternative for Requirement 2: "A planet has exposed geothermal activity"
 		{ "anyOf": [ { "item": "Shattered Geode Orb" }, { "item": "Daucus Orb" } ] }
 	] },
 	

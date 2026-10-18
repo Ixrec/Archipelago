@@ -469,9 +469,12 @@
 		{ "item": "Nomai Warp Codes" }
 	] },
 	{ "category": "hs", "from": "Glacial Abyss! Core", "to": "Submission Chamber", "requires": [
+		{ "item": "Nomai Warp Codes" }, // need to warp between Abyssal Core and Orrery Station to input any solution,
+                                        // since Core can only be entered while Requirement 2 is unfulfilled
 		{ "item": "The Big One Orb" }, // no alternative for Requirement 6: "The largest planet is not in the furthest orbit"
-		{ "item": "Glacial Abyss! Orb" }, // no alternative for Requirement 2: "A planet has exposed geothermal activity"
-		{ "anyOf": [ { "item": "Shattered Geode Orb" }, { "item": "Daucus Orb" } ] }
+		{ "item": "Glacial Abyss! Orb" } // no alternative for Requirement 2: "A planet has exposed geothermal activity"
+        // All other requirements can be met without moving Geode or Daucus directly: do the water + sand transfers,
+        // freeze TBO, place TBO opposite Daucus in the middle orbit, and place GA in the outer orbit behind SG.
 	] },
 	
 	// Alternate way to reach the top of The Big One Tower

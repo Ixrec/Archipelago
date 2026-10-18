@@ -441,11 +441,15 @@
 		{ "anyOf": [ { "item": "Daucus Orb" }, { "item": "Shattered Geode Orb" } ] }
 	] },
 	{ "category": "hs", "from": "Heliostudy", "to": "Daucus Surface", "requires": [ { "anyOf": [ { "item": "Daucus Orb" }, { "item": "The Big One Orb" } ] } ] },
-	{ "category": "hs", "from": "Heliostudy", "to": "Harmonic Convergence", "requires": [ // Harmonic Convergence can be done with any 3 orbs
-		{ "anyOf": [
+	{ "category": "hs", "from": "Heliostudy", "to": "Harmonic Convergence", "requires": [
+        // Harmonic Convergence needs you to stand on SG and point the Signalscope at the other 3 planets and the sun at the same time.
+        // SG must be moved to an outer orbit for this to work, so SG orb is always required.
+        // Daucus and TBO's starting positions line up with the sun well enough that SG + GA orbs alone are enough.
+        // SG + TBO orbs are *not* enough because Daucus and GA's starting positions don't line up with the sun.
+        // And SG + Daucus doesn't work because the other two planets are both in the outer orbit.
+		{ "anyOf": [ // so these are all the orb combinations that do work:
+			{ "allOf": [ { "item": "Shattered Geode Orb" }, { "item": "Glacial Abyss! Orb" } ] },
 			{ "allOf": [ { "item": "Daucus Orb" }, { "item": "The Big One Orb" }, { "item": "Glacial Abyss! Orb" } ] },
-			{ "allOf": [ { "item": "Shattered Geode Orb" }, { "item": "The Big One Orb" }, { "item": "Glacial Abyss! Orb" } ] },
-			{ "allOf": [ { "item": "Daucus Orb" }, { "item": "Shattered Geode Orb" }, { "item": "Glacial Abyss! Orb" } ] },
 			{ "allOf": [ { "item": "Daucus Orb" }, { "item": "The Big One Orb" }, { "item": "Shattered Geode Orb" } ] }
         ] },
 		{ "item": "Signalscope" }, // and the proper signals

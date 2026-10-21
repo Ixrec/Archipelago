@@ -3373,7 +3373,7 @@
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047104, "name": "DB Ship Log: Stranded Nomai 5 - Warp",
-        "region": "Space", "requires": [ { "item": "Deep Bramble Coordinates" } ] // Regulated by DpB Coords to control your ability to warp into the Deep Bramble
+        "region": "The Vessel", "requires": [ ]
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047105, "name": "FC Ship Log: Bramble's Doorstep 1 - Visit",
@@ -3381,7 +3381,7 @@
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047106, "name": "FC Ship Log: Bramble's Doorstep 2 - Nomai",
-        "region": "Deep Bramble", "requires": [ { "item": "Deep Bramble Coordinates" } ] // Regulated by DpB Coords to control your ability to warp out of the Deep Bramble
+        "region": "Deep Bramble", "requires": [ { "item": "Translator (Deep Bramble)" } ]
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047107, "name": "FC Ship Log: Bramble's Doorstep 3 - Split",
@@ -3947,33 +3947,33 @@
 		"category": "hs", "address": 1085049012, "name": "HS: Subsurface Ocean",
 		"region": "Subsurface Ocean", "requires": [ ]
 	},
-	{ // HS_COMPLETE_REQUIREMENT_1 - "A planet has solid ice"
+	{ // HS_COMPLETE_REQUIREMENT_1
 		"category": "hs", "address": 1085049013, "name": "HS: Fulfill Requirement 1",
 		"region": "Glacial Abyss! Core", "requires": [ ]
 	},
-	{ // HS_COMPLETE_REQUIREMENT_2 - "A planet has exposed geothermal activity"
+	{ // HS_COMPLETE_REQUIREMENT_2
 		"category": "hs", "address": 1085049014, "name": "HS: Fulfill Requirement 2",
-		"region": "Glacial Abyss! Core", "requires": [ { "item": "Glacial Abyss! Orb" } ] // melting Abyss is the only option
+		"region": "Glacial Abyss! Core", "requires": [ { "item": "Glacial Abyss! Orb" } ]
 	},
-	{ // HS_COMPLETE_REQUIREMENT_3 - "At least one warp receiver is aligned"
+	{ // HS_COMPLETE_REQUIREMENT_3
 		"category": "hs", "address": 1085049015, "name": "HS: Fulfill Requirement 3",
 		"region": "Glacial Abyss! Core", "requires": [ ]
 	},
-	{ // HS_COMPLETE_REQUIREMENT_4 - "More than one planet has sand"
+	{ // HS_COMPLETE_REQUIREMENT_4
 		"category": "hs", "address": 1085049016, "name": "HS: Fulfill Requirement 4",
-		"region": "Glacial Abyss! Core", "requires": [ { "anyOf": [ // only Daucus starts with sand, and only TBO can yoink it
-            { "item": "Daucus Orb" },
-			{ "item": "The Big One Orb" }
-        ] } ]
+		"region": "Glacial Abyss! Core", "requires": [
+			{ "anyOf": [ { "item": "Daucus Orb" },
+				{ "item": "The Big One Orb" } ]
+		} ]
 	},
-	{ // HS_COMPLETE_REQUIREMENT_5 - "Any planets in the same orbit are on opposite sides of the sun"
+	{ // HS_COMPLETE_REQUIREMENT_5
 		"category": "hs", "address": 1085049017, "name": "HS: Fulfill Requirement 5",
-		"region": "Glacial Abyss! Core", "requires": [ { "anyOf": [ // only Abyss and TBO start in the same orbit
-            { "item": "Glacial Abyss! Orb" },
-			{ "item": "The Big One Orb" }
-        ] } ]
+		"region": "Glacial Abyss! Core", "requires": [
+			{ "anyOf": [ { "item": "Glacial Abyss! Orb" },
+				{ "item": "The Big One Orb" } ]
+		} ]
 	},
-	{ // HS_COMPLETE_REQUIREMENT_6 - "The largest planet is not in the furthest orbit"
+	{ // HS_COMPLETE_REQUIREMENT_6
 		"category": "hs", "address": 1085049018, "name": "HS: Fulfill Requirement 6",
 		"region": "Glacial Abyss! Core", "requires": [ { "item": "The Big One Orb" } ]
 	},
@@ -4068,7 +4068,7 @@
 	},
 	{ // SLF__Walker_Jam5_Platform_Discovery
 		"category": "hs", "logsanity": true, "address": 1085049041, "name": "HS Ship Log: Invitation Platform 1 - Invitation",
-		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
+		"region": "Jam 5", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Platform_Combination
 		"category": "hs", "logsanity": true, "address": 1085049042, "name": "HS Ship Log: Invitation Platform 2 - Activation",

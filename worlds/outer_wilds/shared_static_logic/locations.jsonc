@@ -4068,7 +4068,7 @@
 	},
 	{ // SLF__Walker_Jam5_Platform_Discovery
 		"category": "hs", "logsanity": true, "address": 1085049041, "name": "HS Ship Log: Invitation Platform 1 - Invitation",
-		"region": "Heliostudy", "requires": [ { "item": "Translator (Other)" } ]
+		"region": "Jam 5", "requires": [ { "item": "Translator (Other)" } ]
 	},
 	{ // SLF__Walker_Jam5_Platform_Combination
 		"category": "hs", "logsanity": true, "address": 1085049042, "name": "HS Ship Log: Invitation Platform 2 - Activation",

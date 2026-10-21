@@ -346,9 +346,9 @@
 
     // Warping to Deep Bramble only requires a Black Hole Core, and High Energy Lab access is guaranteed if you have access to the Vessel
     { "category": "fc", "from": "The Vessel", "to": "Deep Bramble", "requires": [] },
-    { "category": "fc", "from": "Menu", "to": "Deep Bramble", "requires": [ { "item": "Interstellar Warp Drive" } ] },
+    { "category": "fc", "from": "Menu", "to": "Deep Bramble via Warp Drive", "requires": [ { "item": "Interstellar Warp Drive" } ] },
     // Space access already requires Launch Codes
-    { "category": "fc", "from": "Space", "to": "Deep Bramble via Warp Drive", "requires": [ { "item":  "Interstellar Warp Drive" } ] },
+    { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Deep Bramble with Ship", "requires": [ { "item":  "Launch Codes" } ] },
     { "category": "fc", "from": "Deep Bramble", "to": "Lover's Rock", "requires": [
         { "item": "Signalscope" },
         { "item": "Nomai Trailmarkers Frequency" }
@@ -357,7 +357,7 @@
         { "item": "Signalscope" },
         { "item": "Gravitational Anomaly Signal" }
     ] },
-    { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Graviton's Folly", "requires": [
+    { "category": "fc", "from": "Deep Bramble with Ship", "to": "Graviton's Folly", "requires": [
         { "item": "Signalscope" },
         { "item": "Gravitational Anomaly Signal" }
     ] },
@@ -366,7 +366,7 @@
         { "item": "Expanded Dictionary" },
         { "item": "Spacesuit" }
     ] },
-    { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Shattered Hearth", "requires": [
+    { "category": "fc", "from": "Deep Bramble with Ship", "to": "Shattered Hearth", "requires": [
         { "item": "Signalscope" },
         { "anyOf": [
             { "item": "Geothermal Activity Signal" },
@@ -374,7 +374,7 @@
             { "allOf": [ { "item": "Quantum Fluctuations Frequency" }, { "item": "Hot Shard Signal" } ] }
         ] }
     ] },
-    { "category": "fc", "from": "Deep Bramble via Warp Drive", "to": "Dangerous Node", "requires": [
+    { "category": "fc", "from": "Deep Bramble with Ship", "to": "Dangerous Node", "requires": [
         { "item": "Signalscope" },
         { "item": "Echolocation Tones Frequency" }
     ] },

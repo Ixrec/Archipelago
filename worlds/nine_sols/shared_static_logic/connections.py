@@ -2122,7 +2122,7 @@ connections_data = [
         "from": "GoS (West) - Lower Platform Rotation Button", "to": "GoS (West) - Upper Right Exit", 
         "requires": [
             # rotate platforms to vertical
-            { "item": "Wall Climb" } # climb up the platform / green wall on the righ
+            { "item": "Wall Climb" } # climb up the platform / green wall on the right
             # go through portal, fall and walk right
         ],
         "ls_requires":[

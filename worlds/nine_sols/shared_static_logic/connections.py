@@ -2118,11 +2118,19 @@ connections_data = [
     { "from": "GoS (West) - Upper Right Exit", "to": "GoS (West) - Lower Platform Rotation Button", "requires": [
         # climb up rope, take portal on the right, fall down
     ] },
-    { "from": "GoS (West) - Lower Platform Rotation Button", "to": "GoS (West) - Upper Right Exit", "requires": [
-        # rotate platforms to vertical
-        { "item": "Wall Climb" } # climb up the platform / green wall on the right
-        # go through portal, fall and walk right
-    ] },
+    { 
+        "from": "GoS (West) - Lower Platform Rotation Button", "to": "GoS (West) - Upper Right Exit", 
+        "requires": [
+            # rotate platforms to vertical
+            { "item": "Wall Climb" } # climb up the platform / green wall on the righ
+            # go through portal, fall and walk right
+        ],
+        "ls_requires":[
+            # rotate platforms to vertical
+            { "item": "Ledge Grab"} # then obtain ledge storage and wall slide up the vertical platform
+            # qi can be obtained from enemies on the right before rotating, though this area should be inaccessible logically without cloud leap
+        ]
+    },
     { "from": "GoS (West) - Root Node", "to": "GoS (West) - Lower Platform Rotation Button", "requires": [] }, # fall and hold right
     { "from": "GoS (West) - Lower Platform Rotation Button", "to": "GoS (West) - Lower Right Exits", "requires": [] }, # press button, fall, go right and open one-way door
     # This single region connection into SBR represents solving the rotating platforms puzzle

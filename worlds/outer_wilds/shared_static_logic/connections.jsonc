@@ -479,5 +479,6 @@
 	] },
 	
 	// Alternate way to reach the top of The Big One Tower
-	{ "category": "eh&hs", "from": "Heliostudy", "to": "The Big One Tower", "requires": [ { "item": "Threader" } ] }
+	{ "category": "eh&hs", "from": "Heliostudy", "to": "The Big One Tower via Threader", "requires": [ { "item": "Threader" } ] },
+	{ "category": "eh&hs", "from": "The Big One Tower via Threader", "to": "The Big One Tower", "requires": [] }
 ]

@@ -157,6 +157,7 @@ class TestAllMods(OuterWildsTestBase):
         "enable_fq_mod": 1,
         "enable_fc_mod": 1,
         "enable_eh_mod": 1,
+        "enable_hs_mod": 1,
     }
 
     def test_all_mods(self):
@@ -168,7 +169,8 @@ class TestAllMods(OuterWildsTestBase):
         # 20 FQ default locations +
         # 54 FC default locations +
         # 3 EH default locations
-        self.assertEqual(self.getLocationCount(), 247)
+        # 20 HS default locations
+        self.assertEqual(self.getLocationCount(), 267)
 
 
 class TestAllModsLogsanity(OuterWildsTestBase):
@@ -180,6 +182,7 @@ class TestAllModsLogsanity(OuterWildsTestBase):
         "enable_fq_mod": 1,
         "enable_fc_mod": 1,
         "enable_eh_mod": 1,
+        "enable_hs_mod": 1,
         "logsanity": 1
     }
 
@@ -192,7 +195,8 @@ class TestAllModsLogsanity(OuterWildsTestBase):
         # 20 FQ default locations + 38 FQ logsanity locations +
         # 54 FC default locations + 118 FC logsanity locations +
         # 3 EH default locations + 8 EH logsanity locations
-        self.assertEqual(self.getLocationCount(), 741)
+        # 20 HS default locations + 28 HS logsanity locations
+        self.assertEqual(self.getLocationCount(), 789)
 
 
 # this is just to get an assertion on the maximum possible location count
@@ -206,6 +210,7 @@ class TestAllModsAndDLCLogsanity(OuterWildsTestBase):
         "enable_fq_mod": 1,
         "enable_fc_mod": 1,
         "enable_eh_mod": 1,
+        "enable_hs_mod": 1,
         "logsanity": 1
     }
 
@@ -219,7 +224,8 @@ class TestAllModsAndDLCLogsanity(OuterWildsTestBase):
         # 20 FQ default locations + 38 FQ logsanity locations +
         # 54 FC default locations + 118 FC logsanity locations
         # 3 EH default locations + 8 EH logsanity locations
-        self.assertEqual(self.getLocationCount(), 851)
+        # 20 HS default locations + 28 HS logsanity locations
+        self.assertEqual(self.getLocationCount(), 899)
 
 
 class RegressionTestACAndWarpRando(OuterWildsTestBase):

@@ -121,7 +121,8 @@ class WarpPlatforms:
         self.mappings.extend(list(zip(it, it)))
 
 
-    def shipless_connection_exists(self, from_region: str, to_region: str, two_way: bool = False) -> bool:
+    # To be precise, here "warp only" means Nomai Warp Codes and Spacesuit are the only AP items needed to use the connection.
+    def warp_only_connection_exists(self, from_region: str, to_region: str, two_way: bool = False) -> bool:
         if from_region not in warp_platform_to_logical_region.values():
             return False
         return self._connection_exists_recursive_impl(from_region, to_region, two_way, set())
@@ -198,7 +199,7 @@ class WarpPlatforms:
         # For simplicity, we connect HGT to TH directly, only randomizing which HGT pad gets used.
 
         if "TH" not in unmapped_warps:
-            if self.shipless_connection_exists("Hourglass Twins", "Timber Hearth"):
+            if self.warp_only_connection_exists("Hourglass Twins", "Timber Hearth"):
                 return # Connection already exists via plando or vanilla mapping.
             raise OptionError("Astral Codec requires Hourglass Twins to be connected to Timber Hearth, but TH is connected to somewhere else.")
 
@@ -211,6 +212,3 @@ class WarpPlatforms:
 
     def _apply_eh_modifications(self) -> None:
         self.dead_end_platforms.remove("BHF")
-        bh_connections = self.itemless_warp_region_connections.get("Brittle Hollow")
-        if bh_connections:
-            bh_connections.add("Hanging City Ceiling")

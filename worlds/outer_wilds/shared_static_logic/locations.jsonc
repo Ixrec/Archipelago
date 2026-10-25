@@ -3970,7 +3970,7 @@
 		"category": "hs", "address": 1085049017, "name": "HS: Fulfill Requirement 5",
 		"region": "Glacial Abyss! Core", "requires": [ { "anyOf": [ // only Abyss and TBO start in the same orbit
             { "item": "Glacial Abyss! Orb" },
-      { "item": "The Big One Orb" }
+			{ "item": "The Big One Orb" }
         ] } ]
 	},
 	{ // HS_COMPLETE_REQUIREMENT_6 - "The largest planet is not in the furthest orbit"

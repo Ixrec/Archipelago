@@ -163,12 +163,12 @@ class WarpPlatforms:
             if w1 == w2:
                 raise OptionError(f"Error while processing warp plando: Trying to connect {w1} to itself.")
             # Remove any existing connection (ie vanilla warp).
-            connections_to_remove = []
+            connections_to_remove = set()
             for warp_to_disconnect in (w1, w2):
                 for (wm1, wm2) in self.mappings:
                     if wm1 == warp_to_disconnect or wm2 == warp_to_disconnect:
-                        connections_to_remove.append((wm1, wm2))
-            for connection in connections_to_remove:
+                        connections_to_remove.add((wm1, wm2))
+            for connection in sorted(connections_to_remove):
                 self.mappings.remove(connection)
                 unmapped_warps.extend(connection)
 

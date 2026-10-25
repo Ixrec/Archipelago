@@ -217,7 +217,10 @@ def create_regions(world: "OuterWildsWorld") -> None:
         # To access the Black Hole Forge without the Launch Codes, there needs to be
         # a path from Brittle Hollow proper to the Hanging City Ceiling.
         if world.warps.shipless_connection_exists("Brittle Hollow", "Hanging City Ceiling"):
-            mw.get_region("Forge via Warps Only", p).connect(mw.get_region("Black Hole Forge", p), "Forge Warp Path")
+            hcc_warps_only = Region("Raise Forge then HCC via Warps Only", p, mw)
+            mw.regions.append(hcc_warps_only)
+            mw.get_region("Brittle Hollow", p).connect(hcc_warps_only, None, HasAll("Spacesuit", "Nomai Warp Codes"))
+            hcc_warps_only.connect(mw.get_region("Hanging City Ceiling (After Raising Forge)", p))
 
 
 # In the .jsonc files we use, a location or region connection's "access rule" is defined

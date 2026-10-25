@@ -220,10 +220,45 @@ class TestBHSpawnThreaderWarpPathThroughHCC(OuterWildsTestBase):
         self.assertNotReachableWith("BH: Forge (2nd Scroll)", ["Translator"])
         self.assertNotReachableWith("BH: Forge (2nd Scroll)", ["Translator", "Nomai Warp Codes"])
         # this time the Forge is reachable directly with Threader
-        self.assertReachableWith("BH: Forge (2nd Scroll)", ["Translator", "Threader"])
+        self.assertReachableWith("BH: Forge (2nd Scroll)", ["Translator", "Threader"])  # ignoring Spacesuit since it's precollected
 
         # and the HCC/BHF warp is no longer a dead end, so it can be used to reach another dead end
         self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Threader"])
         self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Nomai Warp Codes"])
         self.assertReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Threader", "Nomai Warp Codes"])
+
+
+class TestVanillaSpawnThreaderWarpPathThroughHCC(OuterWildsTestBase):
+    options = {
+        "spawn": Spawn.option_vanilla,
+        "shuffle_spacesuit": True,
+        "enable_eh_mod": 1,
+        "warp_platform_plando": {
+            "TH": "BHNG",
+            "BHF": "SS", # would be an illegal dead end pair without EH
+            "BHT": "ST",
+            "THT": "WHS",
+            # leave the rest vanilla
+            "ET": "ETT",
+            "ATP": "ATT",
+            "GD": "GDT",
+        },
+    }
+
+    def test_warp_path(self):
+        self.assertReachableWith("TH: Talk to Hornfels", [])
+
+        self.assertNotReachableWith("BH: Forge (2nd Scroll)", ["Translator"])
+        self.assertNotReachableWith("BH: Forge (2nd Scroll)", ["Translator", "Nomai Warp Codes"])
+        self.assertNotReachableWith("BH: Forge (2nd Scroll)", ["Translator", "Spacesuit"])
+        self.assertNotReachableWith("BH: Forge (2nd Scroll)", ["Translator", "Threader"])
+        # this time the Forge is reachable directly with Threader *and* Spacesuit is explicitly required
+        self.assertReachableWith("BH: Forge (2nd Scroll)", ["Translator", "Spacesuit", "Threader"])
+
+        # and the HCC/BHF warp is no longer a dead end, so it can be used to reach another dead end
+        self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Threader"])
+        self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Nomai Warp Codes"])
+        self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Spacesuit", "Nomai Warp Codes"])
+        self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Threader", "Nomai Warp Codes"])
+        self.assertReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Spacesuit", "Threader", "Nomai Warp Codes"])
 

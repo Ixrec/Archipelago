@@ -258,7 +258,12 @@ class TestVanillaSpawnThreaderWarpPathThroughHCC(OuterWildsTestBase):
         # and the HCC/BHF warp is no longer a dead end, so it can be used to reach another dead end
         self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Threader"])
         self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Nomai Warp Codes"])
-        self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Spacesuit", "Nomai Warp Codes"])
-        self.assertNotReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Threader", "Nomai Warp Codes"])
-        self.assertReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Spacesuit", "Threader", "Nomai Warp Codes"])
+        # due to Launch Codes being locked on vanilla spawn the Ship & Warps path is still available, so asserting on the final location is not meaningful
+        self.assertReachableWith("Sun Station (Projection Stone Text)", ["Translator", "Spacesuit", "Nomai Warp Codes"])
+        # instead we settle for asserting on the HCC regions
+        self.assertRegionNotReachableWith("Raise Forge then HCC via Threader", ["Threader"])
+        self.assertRegionNotReachableWith("Raise Forge then HCC via Threader", ["Spacesuit"])
+        self.assertRegionReachableWith("Raise Forge then HCC via Threader", ["Spacesuit", "Threader"])
+        self.assertRegionNotReachableWith("Raise Forge then HCC via Ship & Warps", ["Spacesuit", "Threader"])
+        self.assertRaises(KeyError, lambda: self.multiworld.get_region("Raise Forge then HCC via Warps Only", self.player)) # region not created since there's no warp-only path
 

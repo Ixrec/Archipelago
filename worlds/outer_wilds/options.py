@@ -180,7 +180,7 @@ class Spawn(Choice):
 
     'vanilla' is the same as the base game: you wake up in TH Village, talk to Hornfels to get the Launch Codes, then walk by the Nomai statue to start the time loop.
     All other options (including timber_hearth) will spawn you in your spacesuit, with the time loop already started, and the Launch Codes item placed randomly like any other AP item.
-    `stranger` of course requires `enable_eotc_dlc` to be true
+    `stranger` of course requires `enable_eote_dlc` to be true
     `deep_bramble` requires `enable_fc_mod` to be true
 
     The idea is that non-vanilla spawns will require you to play "shipless" for a while, possibly using Nomai Warp Codes to visit other planets. The ship will still spawn nearby, so you can use the ship log/tracker right away.

@@ -11,8 +11,8 @@ class OuterWildsTestBase(WorldTestBase):
             state.collect(i)
         return state
 
-    def getLocationCount(self) -> int:
-        return sum(1 for _ in self.multiworld.get_locations(1))
+    def getLocationCount(self, include_events = False) -> int:
+        return sum(1 for e in self.multiworld.get_locations(1) if (include_events or not e.is_event))
 
     def isReachableWith(self, location_name: str, item_names: list[str]) -> bool:
         state = self.makeStateWith(item_names)

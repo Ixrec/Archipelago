@@ -165,15 +165,7 @@ class OuterWildsWorld(World):
         # generate game-specific randomizations separate from AP items/locations
         self.eotu_coordinates = generate_random_coordinates(self.random) \
             if self.options.randomize_coordinates else "vanilla"
-        if not self.options.randomize_warp_platforms:
-            self.warps.apply_vanilla_warp_platform_mapping()
-        if self.options.enable_eh_mod:
-            self.warps.apply_eh_modifications()
-        if len(self.options.warp_platform_plando) > 0:
-            self.warps.apply_warp_plando(self.options.warp_platform_plando.value)
-        if self.options.enable_ac_mod:
-            self.warps.apply_ac_modifications(self.random)
-        self.warps.randomize_unmapped_warps(self.random, self.options.spawn)
+        self.warps.apply_options(self.random, self.options)
         (self.planet_order, self.orbit_angles) = generate_random_orbits(self.random, self.options) \
             if self.options.randomize_orbits else ("vanilla", "vanilla")
         self.rotation_axes = generate_random_rotations(self.random) \

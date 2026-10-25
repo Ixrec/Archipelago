@@ -3953,7 +3953,7 @@
 	},
 	{ // HS_COMPLETE_REQUIREMENT_2 - "A planet has exposed geothermal activity"
 		"category": "hs", "address": 1085049014, "name": "HS: Fulfill Requirement 2",
-		"region": "Glacial Abyss! Core", "requires": [ { "item": "Glacial Abyss! Orb" } ]
+		"region": "Glacial Abyss! Core", "requires": [ { "item": "Glacial Abyss! Orb" } ] // melting Abyss is the only option
 	},
 	{ // HS_COMPLETE_REQUIREMENT_3 - "At least one warp receiver is aligned"
 		"category": "hs", "address": 1085049015, "name": "HS: Fulfill Requirement 3",
@@ -3961,16 +3961,16 @@
 	},
 	{ // HS_COMPLETE_REQUIREMENT_4 - "More than one planet has sand"
 		"category": "hs", "address": 1085049016, "name": "HS: Fulfill Requirement 4",
-		"region": "Glacial Abyss! Core", "requires": [
-			{ "anyOf": [ { "item": "Daucus Orb" },
-				{ "item": "The Big One Orb" } ]
-		} ]
+		"region": "Glacial Abyss! Core", "requires": [ { "anyOf": [ // only Daucus starts with sand, and only TBO can yoink it
+            { "item": "Daucus Orb" },
+			{ "item": "The Big One Orb" }
+        ] } ]
 	},
 	{ // HS_COMPLETE_REQUIREMENT_5 - "Any planets in the same orbit are on opposite sides of the sun"
 		"category": "hs", "address": 1085049017, "name": "HS: Fulfill Requirement 5",
 		"region": "Glacial Abyss! Core", "requires": [ { "anyOf": [ // only Abyss and TBO start in the same orbit
             { "item": "Glacial Abyss! Orb" },
-			      { "item": "The Big One Orb" }
+      { "item": "The Big One Orb" }
         ] } ]
 	},
 	{ // HS_COMPLETE_REQUIREMENT_6 - "The largest planet is not in the furthest orbit"

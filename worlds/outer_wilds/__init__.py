@@ -4,6 +4,7 @@ from typing import Any, TextIO
 
 from BaseClasses import Tutorial
 from Options import OptionError, OptionGroup
+from rule_builder.rules import Has
 from worlds.AutoWorld import WebWorld, World
 from .coordinates import coordinate_description, generate_random_coordinates
 from .db_layout import generate_random_db_layout
@@ -262,7 +263,7 @@ class OuterWildsWorld(World):
         }
 
         goal_item = option_key_to_item_name[self.options.goal.current_key]
-        self.multiworld.completion_condition[self.player] = lambda state: state.has(goal_item, self.player)
+        self.set_completion_rule(Has(goal_item))
 
     def fill_slot_data(self):
         slot_data = self.options.as_dict(

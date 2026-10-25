@@ -259,7 +259,7 @@ class TestSongOfTheUniverseMinContentMaxFriends(OuterWildsTestBase):
 class TestSongOfTheUniverseMaxContentMaxFriends(OuterWildsTestBase):
     options = {
         "song_of_the_universe": 1,
-        "required_friends": 9,
+        "required_friends": 10,
         "enable_eote_dlc": 1,
         "enable_hn1_mod": 1,
         "enable_outsider_mod": 1,
@@ -268,4 +268,5 @@ class TestSongOfTheUniverseMaxContentMaxFriends(OuterWildsTestBase):
         "enable_fq_mod": 1,
         "enable_fc_mod": 1,
         "enable_eh_mod": 1,
+        "enable_hs_mod": 1,
     }

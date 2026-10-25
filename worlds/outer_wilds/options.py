@@ -33,11 +33,11 @@ class RequiredFriends(Range):
     For example, setting this to `0` is the same as the `song_of_five` goal.
     Enabling the DLC, no story mods, and setting this to `1` is equivalent to the `song_of_six` goal.
 
-    Enabling the DLC & all 7 story mods allows a maximum of 9 "friends."
+    Enabling the DLC & all 8 story mods allows a maximum of 10 "friends."
     """
     display_name = "Required Friends"
     range_start = 0
-    range_end = 9
+    range_end = 10
     default = 1
 
 

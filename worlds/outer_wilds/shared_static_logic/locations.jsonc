@@ -3373,7 +3373,7 @@
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047104, "name": "DB Ship Log: Stranded Nomai 5 - Warp",
-        "region": "The Vessel", "requires": [ ]
+        "region": "Deep Bramble via Vessel Device", "requires": [ ]
     },
     {
         "category": "fc", "logsanity": true, "address": 1085047105, "name": "FC Ship Log: Bramble's Doorstep 1 - Visit",

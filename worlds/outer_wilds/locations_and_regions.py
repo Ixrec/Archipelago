@@ -168,7 +168,7 @@ def create_regions(world: "OuterWildsWorld") -> None:
         )
         world.create_entrance(
             mw.get_region("Deep Bramble", p),
-            mw.get_region("Deep Bramble via Warp Drive", p),
+            mw.get_region("Deep Bramble with Ship", p),
             Has("Launch Codes")
         )
         if options.enable_ac_mod and options.logsanity:

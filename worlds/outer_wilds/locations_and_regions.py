@@ -164,17 +164,17 @@ def create_regions(world: "OuterWildsWorld") -> None:
         menu.add_exits(["Deep Bramble"])
         world.set_rule(
             mw.get_entrance("Menu -> Space", p),
-            HasAll("Launch Codes", "Deep Bramble Coordinates")
+            HasAll("Launch Codes", "Interstellar Warp Drive")
         )
         world.create_entrance(
             mw.get_region("Deep Bramble", p),
-            mw.get_region("Deep Bramble via Warp Drive", p),
+            mw.get_region("Deep Bramble with Ship", p),
             Has("Launch Codes")
         )
         if options.enable_ac_mod and options.logsanity:
             world.set_rule(
                 mw.get_location("AC Ship Log: Flashback Vision", p),
-                HasAll("Launch Codes", "Deep Bramble Coordinates")
+                HasAll("Launch Codes", "Interstellar Warp Drive")
             )
 
     if options.goal == Goal.option_song_of_the_universe:

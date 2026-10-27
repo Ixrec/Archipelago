@@ -1398,7 +1398,7 @@ locations_data = [
     },
     {
         "address": 3110, "name": "GoS (East): Upper Right of Room Above Yin Jifu's Tomb",
-        "region": "GoS (East) - Yin Jifu's Tomb", "requires": [ { "anyOf": [
+        "region": "GoS (East) - Outside Yin Jifu's Tomb", "requires": [ { "anyOf": [
             [ { "item": "Air Dash" }, { "item": "Ledge Grab" } ],
             { "item": "Cloud Leap" }
         ] } ]

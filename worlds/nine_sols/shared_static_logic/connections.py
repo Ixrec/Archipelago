@@ -2116,7 +2116,7 @@ connections_data = [
     ] },
     { "from": "GoS (West) - Survived Spike Ball Chase", "to": "GoS (West) - Root Node", "requires": [] },
     { "from": "GoS (West) - Upper Right Exit", "to": "GoS (West) - Lower Platform Rotation Button", "requires": [
-        # climb up rope, take portal on the right, fall down
+       { "region": "GoS (West) - Survived Spike Ball Chase" } # climb up rope after chase, take portal on the right, fall down
     ] },
     { "from": "GoS (West) - Lower Platform Rotation Button", "to": "GoS (West) - Upper Right Exit", "requires": [
         # rotate platforms to vertical
@@ -2161,7 +2161,9 @@ connections_data = [
         { "item": "Mystic Nymph: Scout Mode" } # to open the one-way door
     ] },
     { "from": "GoS (West) - Above Western Cliffs", "to": "GoS (West) - Upper Left Exit", "requires": [] }, # one-way bridge hack
-    { "from": "GoS (West) - Upper Right Exit", "to": "GoS (West) - Lower Right Exits", "requires": [] }, # rope to portal, fall, press button for vertical green platforms, fall, one-way door
+    { "from": "GoS (West) - Upper Right Exit", "to": "GoS (West) - Lower Right Exits", "requires": [
+        { "region": "GoS (West) - Survived Spike Ball Chase" } # need the spike ball gone for rope to be there
+    ] }, # rope to portal, fall, press button for vertical green platforms, fall, one-way door
     { "from": "GoS (West) - Root Node", "to": "GoS (West) - Lower Right Exits", "requires": [] }, # fall, press button for vertical green platforms, fall, one-way door
 
     { "from": "GoS (West) - Lower Right Exits", "to": "GoS (Entry) - Elevator", "requires": [] }, # one-way elevator

@@ -143,7 +143,7 @@ connections_data = [
         ] } ],
         "medium_requires": [ { "anyOf": [
             { "item": "Trick - Bow Hover" },
-            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" } ] } # and T-dash
+            { "anyOf": [ { "item": "Air Dash" }, { "item": "Cloud Leap" }, { "item": "Tai-Chi"} ] } # and T-dash
         ] } ],
         "ls_requires": [ { "item": "Ledge Grab" } ] # T-Dash setup at moving boxes, then parry hover
     }, # with precise jumps, TCK alone is enough

@@ -2400,7 +2400,7 @@
     },
     { // codex_bramble_hologram
         "category": "ac", "address": 1085044016, "name": "AC: Research Station (Trigger Hologram)",
-        "region": "Dark Bramble Research Station", "requires": [{ "item": "Astral Vision" }]
+        "region": "Dark Bramble Research Station", "requires": [{ "item": "Astral Vision" }] // just pick up the scroll
     },
 
     { // codex_lingering_chime_spacecraft_complete

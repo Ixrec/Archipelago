@@ -64,6 +64,7 @@ class OuterWildsWebWorld(WebWorld):
             TrapTypeWeights,
             ShuffleEquipment,
             UpgradeCounts,
+            UpgradeMaxima,
         ]),
     ]
 
@@ -260,12 +261,13 @@ class OuterWildsWorld(World):
     def fill_slot_data(self):
         slot_data = self.options.as_dict(
             "death_link",                   # a client/mod feature
-            "goal", "required_friends", "spawn",         # affects tons of stuff, but also a client/mod faeture
+            "goal", "required_friends", "spawn",         # affects tons of stuff, but also a client/mod feature
             "logsanity", "enable_eote_dlc", "dlc_only",  # changes AP locations, needed by in-game tracker
             "enable_hn1_mod", "enable_hn2_mod",
             "enable_outsider_mod", "enable_ac_mod", "enable_fq_mod", "enable_fc_mod", "enable_eh_mod", "enable_hs_mod",
             "split_translator",                          # changes AP items, and how client/mod implements Translator
             "shuffle_spacesuit",
+            "upgrade_counts", "upgrade_maxima"           # so the client can compute the effect of each upgrade
         )
         # more client/mod features, these are only in the apworld because we want them fixed per-slot/at gen time
         slot_data["eotu_coordinates"] = self.eotu_coordinates

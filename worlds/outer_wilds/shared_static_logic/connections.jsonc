@@ -313,6 +313,11 @@
     { "category": "to", "from": "Dark Bramble", "to": "Projection Pool House", "requires": [ { "item": "Scout" } ] },
 
     { "category": "ac", "from": "Space", "to": "Lingering Chime", "requires": [
+        { "item": "Astral Vision" },
+        { "item": "Spacesuit" } // we don't have proper AC suitless logic, so simply require suit for all of it
+    ] },
+    { "category": "ac", "from": "Timber Hearth", "to": "Lingering Chime", "requires": [
+        { "item": "Astral Vision" },
         { "item": "Spacesuit" } // we don't have proper AC suitless logic, so simply require suit for all of it
     ] },
     { "category": "ac", "from": "Space", "to": "Dark Bramble Research Station", "requires": [

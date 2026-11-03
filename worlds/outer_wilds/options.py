@@ -169,7 +169,12 @@ class ShuffleSpacesuit(Toggle):
 
 class RandomizeDarkBrambleLayout(Choice):
     """Randomizes which Dark Bramble 'rooms' link to which other rooms, so you can't rely on your memory of the vanilla layout.
-    Be aware that randomized layouts are often significantly harder to navigate than vanilla Dark Bramble, since they allow several paths to the same room and more complex loops / recursion.
+
+    Be aware that randomized layouts are often significantly harder to navigate than vanilla Dark Bramble.
+    There may be several paths to the same area, you may need to "back out" of one area before seeing the
+    waypoint/signal/etc you want to follow, there may be more complex loops than the vanilla game's
+    single recursive node, some waypoints/signals/etc may be misleading because of those loops, and so on.
+
     'hub_start' forces the first room to be Hub (same as the vanilla game), which tends to generate shorter and simpler paths than full randomization."""
     display_name = "Randomize Dark Bramble Layout"
     option_false = 0

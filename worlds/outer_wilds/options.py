@@ -229,12 +229,16 @@ class Spawn(Choice):
 
 class EarlyKeyItem(Choice):
     """
-    Ensure that one of Translator, Nomai Warp Codes, Launch Codes, or Stranger Light Modulator will be somewhere
-    in sphere 1 and in your own world, guaranteeing you can find it without waiting on other players.
+    Ensure that one of Translator, Nomai Warp Codes, Launch Codes, Stranger Light Modulator or Interstellar Warp Drive
+    will be somewhere in sphere 1 and in your own world, guaranteeing you can find it without waiting on other players.
 
-    `any` will randomly select one of these items that's relevant to your spawn (especially useful with `spawn: random`).
-    For base game spawns it will choose Translator, NWC or LC, and for stranger spawns it will choose LC or SLM.
-    If split_translator is also on, then "Translator" means the one for your spawn planet.
+    `any` will randomly select one of these items, but only one that's "relevant" given your other options.
+    Launch Codes and Interstellar Warp Drive are always relevant.
+    Translator is relevant for every `spawn` except `stranger`. If split_translator is also on,
+    then "Translator" means whichever translator applies to that spawn.
+    Nomai Warp Codes are relevant if `spawn` is any vanilla system planet with a warp platform.
+    Stranger Light Modulator is only relevant if `spawn` is `stranger`.
+    Signalscope is only relevant if `spawn` is `deep_bramble`.
 
     Recommended for games with non-vanilla spawns, especially async games.
     In addition, without this AP seems to almost always put Launch Codes in sphere 1, so `any` also helps increase variety.
@@ -246,6 +250,8 @@ class EarlyKeyItem(Choice):
     option_nomai_warp_codes = 3
     option_launch_codes = 4
     option_stranger_light_modulator = 5
+    option_signalscope = 6
+    option_interstellar_warp_drive = 7
 
 
 class RandomizeWarpPlatforms(Toggle):

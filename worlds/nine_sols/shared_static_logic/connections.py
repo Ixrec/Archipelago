@@ -1312,13 +1312,20 @@ connections_data = [
             { "item": "Trick - Long Jump with Swift Runner" }, # or a slight coyote jump, but we're trying to keep those OoL
             { "item": "Ledge Grab" }
         ],
-        "ls_requires": [ 
-            { "anyOf":[ { "item": "Grapple" }, # replace the one WC use with CL + LS vault
-                       # or air dash and cloud leap from the moving boxes up the first grapple and save ledge storage to triple jump the 2nd grapple
-                       [ { "item": "Air Dash" }, { "item": "Wall Climb"} ] ] },  # you could t-dash but theres no close enemies and AD makes it easier
-            { "item": "Ledge Grab" },
-            { "item": "Cloud Leap" }
-        ] # while possible to do the AD CL strat again above to skip ledge grab that box can be destroyed permananetly thus stranding you.
+        "ls_requires": [
+            { "item": "Ledge Grab" }, { "item": "Cloud Leap" }, # triple jump, and climbing over boxes on the top floor
+            { "anyOf": [ # there are 2 ways to exploit triple jump here
+                # 1: grapple normally, skip WC with triple jump, grapple normally again
+                { "item": "Grapple" },
+                [ # 2: set up LS first, then:
+                    { "item": "Air Dash" }, # first grapple skip: from a moving boxe on the left jump + AD + CL
+                    { "item": "Wall Climb" } # normally
+                    # finally use triple jump for second grapple skip
+                ]
+                # T-dash could replace AD but again T-dash is out of logic here
+                # AD + CL over boxes can skip using LG there, but the box can be destroyed permanently, and we need LG anyway
+            ] },
+        ]
     },
     { "from": "OW - Robot", "to": "OW - Upper Left Exit", "requires": [] }, # hacking, one-way robot-breakable box
 

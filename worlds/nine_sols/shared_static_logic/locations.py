@@ -1373,7 +1373,7 @@ locations_data = [
                     { "item": "Trick - Long Jump with Swift Runner" }
                 ],
                 { "item": "Trick - Bow Hover"}, # bow hover to middle platform and t-dash to leftmost platform
-                { "item": "Charged Strike"}, # CS (or t-dash its much easier) to middle platform then CS to leftmost platform
+                { "item": "Charged Strike"}, # CS-dash and T-dash over the two gaps, in either order
                 { "item": "Tai-Chi Kick" } # or get a 2nd qi / 2nd T-dash from the worm on this platform
             ] }
         ]

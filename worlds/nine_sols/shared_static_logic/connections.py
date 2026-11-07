@@ -1830,7 +1830,12 @@ connections_data = [
             { "item": "Cloud Leap" },
             [ { "item": "Air Dash" }, { "item": "Tai-Chi Kick" }, { "item": "Grapple" } ]
         ] } ], # to traverse the "sniper room" up to the one-way door back to GPS
-        "medium_requires": [ { "item": "Tai-Chi Kick" }, { "item": "Grapple" } ] # replace air dash with t-dash using qi from TCK
+        "medium_requires": [
+            { "item": "Mystic Nymph: Scout Mode" }, # to disable fire
+            # replace air dash with t-dash using qi from TCK
+            { "item": "Tai-Chi Kick" },
+            { "item": "Grapple" }
+        ]
       },
     { "from": "Factory (PA) - Right Fire Zone & Wuqiang Arena", "to": "Factory (PA) - Guard Production Station", "requires": [
         { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }, # to reach the hallway above the "sniper room"

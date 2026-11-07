@@ -2043,7 +2043,17 @@ connections_data = [
     {
         "from": "GoS (East) - Stone Carvings", "to": "GoS (East) - Upper Exit",
         "requires": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ],
-        "ls_requires": [ { "item": "Ledge Grab" } ] # wall slide up and over the obstacle, T-dash setup is fine here
+        "ls_requires": [
+            { "item": "Ledge Grab" },  # wall slide up and over the obstacle
+            { "region": "GoS (East) - Outside Yin Jifu's Tomb" }, # the ledge used to obtain LS is in this region
+            # t-dash setup alone is not fine here, you must clear a gap while retaining qi for that setup
+            { "anyOf": [ { "item": "Charged Strike" },
+                         { "item": "Trick - Long Jump with Swift Runner" },
+                         { "item": "Air Dash"},
+                         { "item": "Trick - Bow Hover"},
+                         { "item": "Grapple"} # or grab qi from the enemies below
+            ]} 
+        ]
     },
     { "from": "GoS (East) - Upper Exit", "to": "GoS (East) - Stone Carvings", "requires": [
         { "item": "Cloud Leap" }, { "item": "Ledge Grab" }

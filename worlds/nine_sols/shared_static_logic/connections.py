@@ -2128,7 +2128,7 @@ connections_data = [
         "ls_requires":[
             # rotate platforms to vertical
             { "item": "Ledge Grab"} # then obtain ledge storage and wall slide up the vertical platform
-            # qi can be obtained from enemies on the right before rotating, though this area should be inaccessible logically without cloud leap
+            # qi can be obtained from enemies on the right before rotating
         ]
     },
     { "from": "GoS (West) - Root Node", "to": "GoS (West) - Lower Platform Rotation Button", "requires": [] }, # fall and hold right

@@ -1832,13 +1832,20 @@ connections_data = [
         "ls_requires": [{ "item": "Ledge Grab" }, { "item": "Cloud Leap" }] # setup using ledge left of node
     },
     { "from": "Factory (PA) - Guard Production Station", "to": "Factory (PA) - Root Node", "requires": [] }, # one-way door
-    { "from": "Factory (PA) - Guard Production Station", "to": "Factory (PA) - Right Fire Zone & Wuqiang Arena", "requires": [
+    { "from": "Factory (PA) - Guard Production Station", "to": "Factory (PA) - Right Fire Zone & Wuqiang Arena", 
+        "requires": [
         { "item": "Mystic Nymph: Scout Mode" }, # to disable fire in the vents (one-way) to "sniper room"
         { "anyOf": [
             { "item": "Cloud Leap" },
             [ { "item": "Air Dash" }, { "item": "Tai-Chi Kick" }, { "item": "Grapple" } ]
-        ] } # to traverse the "sniper room" up to the one-way door back to GPS
-    ] },
+        ] } ], # to traverse the "sniper room" up to the one-way door back to GPS
+        "medium_requires": [
+            { "item": "Mystic Nymph: Scout Mode" }, # to disable fire
+            # replace air dash with t-dash using qi from TCK
+            { "item": "Tai-Chi Kick" },
+            { "item": "Grapple" }
+        ]
+      },
     { "from": "Factory (PA) - Right Fire Zone & Wuqiang Arena", "to": "Factory (PA) - Guard Production Station", "requires": [
         { "anyOf": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ] }, # to reach the hallway above the "sniper room"
         { "item": "Mystic Nymph: Scout Mode" } # to open the "shortcut" door to GPS

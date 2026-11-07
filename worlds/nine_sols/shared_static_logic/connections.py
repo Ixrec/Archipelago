@@ -2029,6 +2029,7 @@ connections_data = [
         "requires": [ { "item": "Cloud Leap" }, { "item": "Ledge Grab" } ],
         "ls_requires": [
             { "item": "Ledge Grab" },  # wall slide up and over the obstacle
+            { "region": "GoS (East) - Outside Yin Jifu's Tomb" }, # the ledge used to obtain LS is in this region
             # t-dash setup alone is not fine here, you must clear a gap while retaining qi for that setup
             { "anyOf": [ { "item": "Charged Strike" },
                          { "item": "Trick - Long Jump with Swift Runner" },
